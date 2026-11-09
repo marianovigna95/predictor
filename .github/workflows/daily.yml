@@ -1,0 +1,42 @@
+# Auto-aggiornamento giornaliero del sito statico su GitHub Pages (repo pubblico, gratis).
+# Cron 2x/giorno (Europe/Rome): 07:30 forecast mattina, 21:30 verifica sera.
+name: daily-predictor
+on:
+  schedule:
+    - cron: "30 6 * * *"    # 07:30 IT — refresh quote + forecast + pagine
+    - cron: "30 20 * * *"   # 21:30 IT — verifica esiti + CLV + surebets + alert
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13" }
+      - run: pip install pandas numpy scikit-learn requests fpdf2 pymupdf
+      - name: Pipeline mattina/sera (fonti keyless; step con throttling non bloccanti)
+        run: |
+          D=$(date +%F)
+          python3 src/step1b_fixtures_leagues.py || true
+          python3 src/step22_odds_refresh.py --date $D || true          # quote wincomparator (se finestra esiste)
+          python3 src/step1c_verify_espn.py $D || true                  # verifica esiti ESPN
+          python3 src/step20_eval_day.py --date $D || true
+          python3 src/step15_betarchives.py --since $(date -d "yesterday" +%F) || true
+          python3 src/step11_clv.py || true
+          python3 src/weekly_multi.py || true
+          python3 src/step19_diretta.py || true
+          python3 src/step21_surebets.py $D || true
+          python3 src/step26_telegram.py --date $D --min 1.0 || true    # alert Telegram se env impostate
+          python3 src/make_site.py
+          python3 src/step23_ppa.py --minp 60 --topn 30 || true
+          python3 src/step24_ppa_pdf.py --minp 60 || true
+          python3 src/step25_verifica_mensile.py || true
+      - name: Pubblica su GitHub Pages (root del repo)
+        run: |
+          cp site/*.html site/manifest.webmanifest site/sw.js site/icon-*.png . 2>/dev/null || true
+          cp site/ppa_*.pdf . 2>/dev/null || true
+          git config user.email "bot@arena.ai" && git config user.name "predictor-bot"
+          git add -A && git commit -m "auto-update $(date -u +%F_%H:%M)" || echo "nessuna modifica"
+          git push
