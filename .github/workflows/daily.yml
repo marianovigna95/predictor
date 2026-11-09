@@ -20,7 +20,9 @@ jobs:
           mv *.py src/ 2>/dev/null || true
           # in alternativa, se presente, estrai anche lo zip del codice
           if [ -f predictor-src.zip ]; then python3 -c "import zipfile; zipfile.ZipFile('predictor-src.zip').extractall('src')"; fi
-          ls src | head -20
+          # dati storici (CSV) compressi nel repo: estraili in data/
+          if [ -f predictor-data.zip ]; then python3 -c "import zipfile; zipfile.ZipFile('predictor-data.zip').extractall('.')"; fi
+          ls src | head -5; ls data | head -5; du -sh data
       - uses: actions/setup-python@v5
         with: { python-version: "3.13" }
       - run: pip install pandas numpy scikit-learn requests fpdf2 pymupdf
