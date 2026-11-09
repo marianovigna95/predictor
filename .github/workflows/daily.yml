@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Estrai codice sorgente (src/) dallo zip nel repo
+        run: |
+          mkdir -p src data site
+          python3 -c "import zipfile; zipfile.ZipFile('predictor-src.zip').extractall('src')"
+          ls src | head
       - uses: actions/setup-python@v5
         with: { python-version: "3.13" }
       - run: pip install pandas numpy scikit-learn requests fpdf2 pymupdf
@@ -29,7 +34,7 @@ jobs:
           python3 src/step19_diretta.py || true
           python3 src/step21_surebets.py $D || true
           python3 src/step26_telegram.py --date $D --min 1.0 || true    # alert Telegram se env impostate
-          python3 src/make_site.py
+          python3 src/make_site.py || true
           python3 src/step23_ppa.py --minp 60 --topn 30 || true
           python3 src/step24_ppa_pdf.py --minp 60 || true
           python3 src/step25_verifica_mensile.py || true
