@@ -1,0 +1,11 @@
+Partita,p1%,pX%,p2%,Pick modello,conf%,Risultato,Esito,✅/❌ modello,Pick mercato,✅/❌ mercato,Over2.5%,O/U reale,rps_modello,rps_mercato
+Bologna - Monza,48.4,24.1,27.5,1,48.4,2-1,1,✅,1,✅,41.7,Over,0.171,0.114
+Udinese - Roma,21.9,23.0,55.0,2,55.0,2-5,2,✅,2,✅,48.1,Over,0.125,0.089
+Milan - Inter,27.9,23.6,48.5,2,48.5,3-1,1,❌,2,❌,58.9,Over,0.378,0.332
+Como - Venezia,62.1,23.7,14.2,1,62.1,1-0,1,✅,1,✅,31.8,Under,0.082,0.043
+Frosinone - Torino,59.5,19.7,20.8,1,59.5,3-1,1,✅,1,✅,72.9,Over,0.104,0.205
+Lazio - Cagliari,50.7,25.0,24.3,1,50.7,3-1,1,✅,1,✅,36.1,Over,0.151,0.068
+Lecce - Genoa,36.9,29.1,33.9,1,36.9,1-2,2,❌,2,✅,35.7,Under,0.126,0.121
+Juventus - Napoli,41.4,27.2,31.4,1,41.4,2-0,1,✅,1,✅,43.4,Over,0.135,0.13
+Sassuolo - Fiorentina,45.6,23.5,30.9,1,45.6,3-1,1,✅,2,❌,66.9,Over,0.196,0.3
+Atalanta - Parma,58.1,22.8,19.1,1,58.1,0-0,X,❌,1,❌,44.3,Under,0.187,0.214

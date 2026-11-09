@@ -1,0 +1,25 @@
+lega,partita,pronostico,reale,hit,p%,quota,rps_mod,rps_mkt,pO25%,ou_reale,ou_hit
+Serie A,Napoli - Lazio,2,X,0,47.0,3.35,0.1613305,0.1336878340354051,40.2,Under,1
+Serie A,Genoa - Milan,1,2,0,42.2,4.66,0.29512400000000005,0.15488473465001734,43.3,Over,0
+Serie A,Monza - Atalanta,1,2,0,55.1,4.34,0.43908250000000004,0.19778225519312023,40.6,Over,0
+Serie A,Inter - Como,1,1,1,57.7,2.11,0.11660899999999995,0.18035674287038284,43.5,Under,1
+Serie A,Fiorentina - Juventus,1,X,0,40.6,3.56,0.16122250000000002,0.15494572782192723,59.6,Over,1
+Premier League,Brighton - Brentford,1,1,1,50.1,1.93,0.158561,0.14785859133513857,61.1,Under,0
+Premier League,Crystal Palace - Liverpool,1,2,0,42.6,6.47,0.3233,0.15325427177310283,63.4,Over,1
+Premier League,Ipswich - Bournemouth,1,2,0,44.4,,0.34147250000000007,,59.8,Over,1
+Premier League,Sunderland - Chelsea,1,1,1,49.4,3.58,0.1615585,0.32771938982390314,45.4,Under,1
+Premier League,Man United - Aston Villa,1,X,0,42.7,3.75,0.14014949999999998,0.11602080633369113,62.0,Over,1
+LaLiga,Elche - Betis,2,2,1,41.4,2.21,0.23155600000000004,0.2021375504479042,60.5,Under,0
+LaLiga,Sociedad - Vallecano,1,1,1,53.5,1.89,0.13886449999999997,0.14241040918400646,60.7,Under,0
+LaLiga,Celta - Levante,1,X,0,43.2,1.88,0.1386125,0.17223165985680902,34.3,Under,1
+LaLiga,Villarreal - Getafe,1,1,1,51.3,1.57,0.1483525,0.08244937232872612,43.1,Under,1
+LaLiga,Ath Madrid - Barcelona,2,2,1,40.6,,0.24695099999999998,,68.8,Over,1
+Bundesliga,FC Koln - Leverkusen,1,2,0,43.3,,0.314857,,61.8,Over,1
+Bundesliga,Freiburg - Union Berlin,1,1,1,56.1,1.5,0.12235249999999998,0.0705409490112566,52.5,Under,0
+Bundesliga,Hoffenheim - Schalke 04,1,1,1,49.4,1.6,0.1692025,0.0929326406441586,58.9,Over,1
+Ligue 1,Rennes - Lille,1,2,0,52.0,2.42,0.3994645,0.30733497852869723,77.1,Over,1
+Ligue 1,Angers - Nice,1,2,0,46.4,4.15,0.3388479999999999,0.1785510204069218,62.7,Under,0
+Ligue 1,Brest - Lyon,1,1,1,48.5,2.86,0.178517,0.2846813025481218,59.4,Under,0
+Ligue 1,Le Havre - Lorient,2,2,1,42.6,2.55,0.22739599999999996,0.2550011095625568,61.5,Under,0
+Ligue 1,Le Mans - Monaco,1,X,0,48.8,,0.1579925,,58.0,Under,0
+Ligue 1,Lens - Marseille,1,2,0,47.4,2.35,0.35873999999999995,0.31804141432199196,64.2,Over,1

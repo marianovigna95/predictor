@@ -1,0 +1,2846 @@
+season,player,team,xG,games,time,shots,goals,position,yellow,red
+2022/2023,Victor Osimhen,Napoli,26.63,32,2609,134,26,F S,4,0
+2022/2023,Lautaro Martínez,Inter,19.82,38,2566,126,21,F S,4,0
+2022/2023,Boulaye Dia,Salernitana,9.12,33,2532,48,16,F M S,3,0
+2022/2023,Rafael Leão,Milan,12.85,35,2453,92,15,M S,5,1
+2022/2023,Olivier Giroud,Milan,15.18,33,2166,81,13,F S,6,1
+2022/2023,Ademola Lookman,Atalanta,10.58,31,1745,52,13,F M S,3,0
+2022/2023,M&#039;Bala Nzola,Spezia,12.47,31,2659,63,13,F S,8,0
+2022/2023,Ciro Immobile,Lazio,14.89,31,2239,77,12,F S,2,0
+2022/2023,Paulo Dybala,Roma,9.71,25,1763,65,12,F M S,4,0
+2022/2023,Domenico Berardi,Sassuolo,11.07,26,1894,83,12,F M S,8,0
+2022/2023,Antonio Sanabria,Torino,11.51,33,2457,69,12,F S,4,0
+2022/2023,Khvicha Kvaratskhelia,Napoli,8.06,34,2575,85,12,F M S,1,0
+2022/2023,Riccardo Orsolini,Bologna,10.2,32,2121,92,11,F M S,6,2
+2022/2023,Romelu Lukaku,Inter,9.81,25,1675,51,10,F S,1,0
+2022/2023,Marko Arnautovic,Bologna,8.07,21,1556,31,10,F S,5,0
+2022/2023,Mattia Zaccagni,Lazio,8.35,35,2812,57,10,F M S,9,0
+2022/2023,Dusan Vlahovic,Juventus,10.76,27,1947,68,10,F S,1,0
+2022/2023,Teun Koopmeiners,Atalanta,8.45,33,2860,59,10,M S,7,0
+2022/2023,Beto,Udinese,10.86,33,2131,61,10,F S,2,0
+2022/2023,Felipe Anderson,Lazio,6.82,38,2986,41,9,F M S,3,0
+2022/2023,Edin Dzeko,Inter,10.62,33,1707,74,9,F S,2,0
+2022/2023,Sergej Milinkovic-Savic,Lazio,7.64,36,3044,64,9,M S,10,0
+2022/2023,Rasmus Højlund,Atalanta,10.29,32,1846,54,9,F S,1,0
+2022/2023,Tammy Abraham,Roma,12.65,38,2199,61,8,F S,2,0
+2022/2023,Daniel Ciofani,Cremonese,6.31,32,1030,32,8,F S,1,0
+2022/2023,Adrien Rabiot,Juventus,7.23,32,2756,48,8,M S,9,0
+2022/2023,Gabriel Strefezza,Lecce,6.2,35,2490,69,8,F M S,5,0
+2022/2023,Arthur Cabral,Fiorentina,7.45,28,1415,54,8,F S,4,0
+2022/2023,Stephan El Shaarawy,Roma,5.43,29,1509,42,7,D F M S,3,0
+2022/2023,Manolo Gabbiadini,Sampdoria,6.77,35,2374,72,7,F M S,6,0
+2022/2023,Antonio Candreva,Salernitana,3.93,35,2767,46,7,D F M S,1,1
+2022/2023,Arkadiusz Milik,Juventus,7.24,27,1592,43,7,F S,1,1
+2022/2023,Davide Frattesi,Sassuolo,7.42,36,2930,64,7,M S,4,0
+2022/2023,Armand Lauriente,Sassuolo,4.17,28,2222,56,7,F M S,8,1
+2022/2023,David Okereke,Cremonese,5.15,33,2277,61,7,F M S,4,0
+2022/2023,Lewis Ferguson,Bologna,4.28,32,2340,43,7,F M S,4,0
+2022/2023,Luis Alberto,Lazio,4.82,35,2446,47,6,M S,4,0
+2022/2023,Moise Kean,Juventus,7.23,28,974,38,6,F S,5,1
+2022/2023,Nicolò Barella,Inter,2.84,35,2643,33,6,M S,6,0
+2022/2023,Stefan Posch,Bologna,3.61,30,2556,27,6,D,6,0
+2022/2023,Luka Jovic,Fiorentina,8.55,31,1526,57,6,F S,3,0
+2022/2023,Brahim Diaz,Milan,7.09,33,1999,35,6,M S,3,0
+2022/2023,Francesco Caputo,"Empoli,Sampdoria",10.02,36,2847,61,6,F M S,1,0
+2022/2023,Nicolás González,Fiorentina,7.06,24,1338,60,6,F M S,3,0
+2022/2023,Nicolò Cambiaghi,Empoli,3.47,28,1268,35,6,F M S,3,1
+2022/2023,Eljif Elmas,Napoli,3.97,36,1595,33,6,F M S,5,0
+2022/2023,Carlos Augusto,Monza,4.3,35,3094,42,6,D M,4,0
+2022/2023,Patrick Ciurria,Monza,4.57,36,2765,50,6,D M S,4,0
+2022/2023,Assan Ceesay,Lecce,5.53,34,1824,43,6,F S,2,0
+2022/2023,Cyriel Dessers,Cremonese,6.51,26,1598,50,6,F S,3,0
+2022/2023,Giacomo Bonaventura,Fiorentina,4.33,30,1915,49,5,M S,4,0
+2022/2023,Mario Pasalic,Atalanta,5.76,32,1811,32,5,F M S,3,0
+2022/2023,Gianluca Caprari,Monza,4.92,37,2513,51,5,F M S,7,0
+2022/2023,Simone Verdi,Verona,2.73,24,1094,30,5,F M S,3,0
+2022/2023,Roberto Pereyra,Udinese,5.22,34,2869,42,5,D F M S,6,0
+2022/2023,Andrea Pinamonti,Sassuolo,6.85,32,2191,67,5,F S,3,1
+2022/2023,Nikola Vlasic,Torino,5.87,34,2740,53,5,F M S,1,0
+2022/2023,Matteo Pessina,Monza,4.66,35,2958,28,5,F M S,6,0
+2022/2023,Lazar Samardzic,Udinese,2.08,37,1847,50,5,M S,1,0
+2022/2023,Lorenzo Colombo,Lecce,6.12,33,1521,45,5,F S,4,0
+2022/2023,Junior Messias,Milan,2.51,25,1534,32,5,D M S,3,0
+2022/2023,Sandi Lovric,Udinese,3.9,37,2375,71,5,M S,4,0
+2022/2023,Dany Mota,Monza,6.05,29,1933,29,5,F M S,2,0
+2022/2023,Pedro,Lazio,3.07,36,1880,42,4,F S,1,0
+2022/2023,Giovanni Simeone,Napoli,1.89,25,361,14,4,F S,1,0
+2022/2023,Darko Lazovic,Verona,4.06,30,2284,43,4,D M S,0,0
+2022/2023,Davide Zappacosta,Atalanta,1.2,21,1485,25,4,D M S,4,0
+2022/2023,Riccardo Saponara,Fiorentina,3.79,29,1199,37,4,F M S,4,0
+2022/2023,Federico Dimarco,Inter,3.51,33,2117,48,4,D S,0,0
+2022/2023,Lorenzo Pellegrini,Roma,8.05,32,2574,65,4,F M S,5,0
+2022/2023,Andrea Petagna,Monza,5.08,31,1669,36,4,F S,2,0
+2022/2023,Nicola Sansone,Bologna,3.46,18,719,22,4,F M S,2,0
+2022/2023,Theo Hernández,Milan,4.21,32,2781,52,4,D,7,0
+2022/2023,Aleksey Miranchuk,Torino,2.4,29,2122,40,4,F M S,0,0
+2022/2023,Ángel Di María,Juventus,2.91,26,1375,38,4,F M S,1,1
+2022/2023,Jonathan Ikone,Fiorentina,5.15,33,2013,51,4,F M S,4,0
+2022/2023,Yann Karamoh,Torino,3.46,21,697,21,4,M S,2,0
+2022/2023,Andrea Colpani,Monza,2.06,27,920,24,4,M S,1,0
+2022/2023,Bremer,Juventus,5.6,30,2649,32,4,D,6,0
+2022/2023,Krzysztof Piatek,Salernitana,7.47,33,2155,58,4,F S,5,0
+2022/2023,Christian Kouamé,Fiorentina,5.89,28,1882,41,4,F M S,5,0
+2022/2023,Tonny Vilhena,Salernitana,2.33,33,2300,31,4,D M S,5,0
+2022/2023,Matheus Henrique,Sassuolo,3.8,30,1958,25,4,M S,4,0
+2022/2023,Tommaso Baldanzi,Empoli,2.29,26,1809,33,4,M S,2,0
+2022/2023,Luca Caldirola,Monza,1.36,31,2376,10,3,D S,6,0
+2022/2023,Filip Kostic,Juventus,2.67,37,2618,37,3,D F M S,3,0
+2022/2023,Hakan Calhanoglu,Inter,2.91,33,2390,56,3,M S,3,0
+2022/2023,Henrikh Mkhitaryan,Inter,2.82,31,2003,35,3,M S,4,0
+2022/2023,Chris Smalling,Roma,2.25,32,2812,17,3,D S,7,0
+2022/2023,Luis Muriel,Atalanta,2.59,29,1047,34,3,F M S,0,2
+2022/2023,Filip Djuricic,Sampdoria,2.48,32,2212,26,3,M S,9,0
+2022/2023,Piotr Zielinski,Napoli,2.87,37,2324,53,3,M S,3,0
+2022/2023,Stefano Sensi,Monza,1.18,28,1644,18,3,M S,8,0
+2022/2023,Matteo Politano,Napoli,4.12,27,1168,33,3,F M S,1,0
+2022/2023,Marcelo Brozovic,Inter,2.08,28,1771,25,3,M S,9,0
+2022/2023,Marten de Roon,Atalanta,1.27,35,2972,19,3,D M S,7,0
+2022/2023,Joaquín Correa,Inter,3.67,26,947,22,3,F S,1,0
+2022/2023,Ante Rebic,Milan,3.35,23,950,27,3,F M S,4,0
+2022/2023,Daniele Verde,Spezia,2.67,25,998,32,3,F M S,1,0
+2022/2023,Danilo,Juventus,2.49,37,3174,32,3,D S,5,0
+2022/2023,Lassana Coulibaly,Salernitana,1.1,35,2922,17,3,M S,12,0
+2022/2023,Robin Gosens,Inter,2.41,32,1158,26,3,D M S,2,0
+2022/2023,Franck Zambo,Napoli,4.41,36,3077,50,3,M,3,0
+2022/2023,Musa Barrow,Bologna,2.83,32,2003,66,3,F M S,3,0
+2022/2023,Frank Tsadjout,Cremonese,2.04,20,1060,26,3,F M S,1,0
+2022/2023,Jaka Bijol,Udinese,2.51,32,2732,20,3,D,9,0
+2022/2023,Remi Oudin,Lecce,1.77,31,1296,38,3,F M S,3,0
+2022/2023,Giovanni Di Lorenzo,Napoli,2.7,37,3257,30,3,D S,2,0
+2022/2023,Nicolo Fagioli,Juventus,1.85,26,1523,13,3,M S,3,0
+2022/2023,Ibañez,Roma,4.27,33,2800,29,3,D S,9,1
+2022/2023,Hirving Lozano,Napoli,5.59,32,1619,42,3,F M S,3,0
+2022/2023,Nicolás Domínguez,Bologna,2.11,31,2317,42,3,F M S,10,0
+2022/2023,Iyenoma Destiny Udogie,Udinese,3.51,33,2726,27,3,D S,5,0
+2022/2023,Joakim Maehle,Atalanta,3.04,34,2228,26,3,D M S,5,1
+2022/2023,Federico Baschirotto,Lecce,2.2,37,3330,21,3,D,6,0
+2022/2023,Cyril Ngonge,Verona,1.99,14,761,27,3,F M S,2,0
+2022/2023,Divock Origi,Milan,3.56,27,981,29,2,F M S,1,0
+2022/2023,Gerard Deulofeu,Udinese,5.72,16,1230,44,2,F S,2,0
+2022/2023,Nemanja Matic,Roma,0.93,35,1795,11,2,M S,5,0
+2022/2023,Georginio Wijnaldum,Roma,2.1,14,783,20,2,M S,0,0
+2022/2023,Alessio Romagnoli,Lazio,0.73,34,2926,13,2,D S,6,0
+2022/2023,Duván Zapata,Atalanta,3.83,25,1383,41,2,F S,1,0
+2022/2023,Cristiano Biraghi,Fiorentina,1.86,33,2572,25,2,D S,1,0
+2022/2023,Ilija Nestorovski,Udinese,1.45,21,599,14,2,F S,3,0
+2022/2023,Federico Ceccherini,Verona,0.75,22,1437,7,2,D S,9,1
+2022/2023,Matías Vecino,Lazio,2.79,32,1669,26,2,M S,6,0
+2022/2023,Federico Chiesa,Juventus,1.75,21,829,26,2,D F M S,2,0
+2022/2023,Adam Masina,Udinese,0.07,14,781,2,2,D S,2,0
+2022/2023,Federico Di Francesco,Lecce,3.65,36,2051,40,2,F M S,6,0
+2022/2023,Gregoire Defrel,Sassuolo,4.21,27,1165,16,2,F S,3,0
+2022/2023,Rafael Toloi,Atalanta,2.82,32,2805,29,2,D,8,0
+2022/2023,Sasa Lukic,Torino,1.95,16,1194,16,2,M S,4,0
+2022/2023,Fabio Depaoli,"Sampdoria,Verona",1.63,34,2300,19,2,D M S,8,0
+2022/2023,Sebastiano Luperto,Empoli,1.66,36,3144,18,2,D,2,2
+2022/2023,Federico Bonazzoli,Salernitana,2.29,24,1094,32,2,F M S,1,0
+2022/2023,Jeremie Boga,Atalanta,1.54,23,759,13,2,F M S,0,0
+2022/2023,Thomas Henry,Verona,2.11,16,1047,18,2,F S,4,0
+2022/2023,Marco Faraoni,Verona,3.02,23,1496,20,2,D M S,7,0
+2022/2023,Pietro Pellegri,Torino,1.2,18,448,10,2,F S,3,0
+2022/2023,Grigoris Kastanos,Salernitana,1.43,28,1266,30,2,D M S,4,0
+2022/2023,Nikola Milenkovic,Fiorentina,1.66,27,2128,19,2,D S,4,0
+2022/2023,Antonin Barak,"Fiorentina,Verona",1.8,31,1837,32,2,F M S,4,0
+2022/2023,Abdelhamid Sabiri,Sampdoria,3.43,18,1064,33,2,M S,5,0
+2022/2023,Mathías Olivera,Napoli,0.86,30,1619,9,2,D S,2,0
+2022/2023,Charalampos Lykogiannis,Bologna,0.83,21,1101,19,2,D M S,3,0
+2022/2023,Rodrigo Becão,Udinese,0.96,28,2493,19,2,D,11,0
+2022/2023,Ismael Bennacer,Milan,1.11,28,2034,16,2,M S,5,0
+2022/2023,Leonardo Sernicola,Cremonese,1.07,32,2328,25,2,D M S,11,0
+2022/2023,Nemanja Radonjic,Torino,5.51,28,1450,52,2,F M S,1,0
+2022/2023,Roberto Piccoli,"Empoli,Verona",1.96,20,684,16,2,F S,0,0
+2022/2023,Wilfried Stephane Singo,Torino,3.65,31,2072,33,2,D M S,8,0
+2022/2023,Giacomo Raspadori,"Napoli,Sassuolo",3.88,26,926,40,2,F M S,1,0
+2022/2023,Nehuén Pérez,Udinese,1.3,34,2843,16,2,D S,7,1
+2022/2023,Samuele Ricci,Torino,2.3,28,2070,21,2,M S,6,0
+2022/2023,Lameck Banda,Lecce,2.96,36,1639,36,2,F M S,6,0
+2022/2023,Kingsley Ehizibue,Udinese,2.26,27,1532,13,2,D S,7,0
+2022/2023,Gaetano Castrovilli,Fiorentina,1.21,15,713,18,2,M S,3,0
+2022/2023,Amir Rrahmani,Napoli,1.63,29,2446,21,2,D S,2,0
+2022/2023,Tommaso Augello,Sampdoria,1.14,37,3084,11,2,D M S,3,0
+2022/2023,Sandro Tonali,Milan,2.34,34,2720,32,2,M S,7,0
+2022/2023,Joshua Zirkzee,Bologna,3.4,19,776,29,2,F S,2,0
+2022/2023,Daniel Maldini,Spezia,1.15,18,594,15,2,F M S,1,0
+2022/2023,Lorenzo Pirola,Salernitana,1.28,26,1969,13,2,D S,4,0
+2022/2023,Alexis Saelemaekers,Milan,3.15,30,1382,35,2,D M S,1,0
+2022/2023,Adolfo Gaich,Verona,2.93,16,733,24,2,F S,2,0
+2022/2023,Ivan Ilic,"Torino,Verona",0.61,25,2050,14,2,M S,4,0
+2022/2023,Razvan Marin,Empoli,1.07,33,2544,33,2,M S,7,0
+2022/2023,Sam Lammers,"Empoli,Sampdoria",5.55,33,2012,51,2,F S,1,0
+2022/2023,Tommaso Pobega,Milan,1.56,19,864,20,2,M S,4,0
+2022/2023,Emmanuel Gyasi,Spezia,4.14,35,2875,34,2,D F M,10,0
+2022/2023,Simone Bastoni,Spezia,0.95,19,1219,22,2,D M S,7,0
+2022/2023,Martín Satriano,Empoli,4.59,31,1716,37,2,F S,4,0
+2022/2023,Nicola Zalewski,Roma,1.37,33,2222,29,2,D M S,3,0
+2022/2023,Giorgio Scalvini,Atalanta,1.41,32,2369,17,2,D M S,7,0
+2022/2023,Filippo Bandinelli,Empoli,1.43,35,2316,24,2,M S,10,0
+2022/2023,Nedim Bajrami,"Empoli,Sassuolo",2.77,37,1730,44,2,F M S,1,0
+2022/2023,Alessandro Zanoli,"Napoli,Sampdoria",2.95,23,1539,16,2,D M S,3,0
+2022/2023,Tyronne Ebuehi,Empoli,3.19,26,1942,19,2,D S,0,0
+2022/2023,Pasquale Mazzocchi,Salernitana,1.33,27,1968,18,2,D S,2,0
+2022/2023,Fabiano Parisi,Empoli,1.88,33,2842,21,2,D,10,1
+2022/2023,Abdou Harroui,Sassuolo,1.72,23,609,14,2,M S,2,0
+2022/2023,Kim Min-Jae,Napoli,1.67,35,3070,8,2,D,5,0
+2022/2023,Kristian Thorstvedt,Sassuolo,2.02,31,1112,20,2,M S,5,0
+2022/2023,Josh Doig,Verona,1.23,22,1358,18,2,D M S,1,0
+2022/2023,Emanuele Valeri,Cremonese,2.53,37,2796,39,2,D M S,3,0
+2022/2023,Giulio Donati,Monza,0.57,8,414,2,1,D S,2,1
+2022/2023,Matteo Darmian,Inter,1.19,31,2048,7,1,D S,3,0
+2022/2023,Fikayo Tomori,Milan,1.8,33,2775,9,1,D S,5,0
+2022/2023,Ola Aina,Torino,0.82,19,867,8,1,D S,5,0
+2022/2023,Federico Fazio,Salernitana,0.77,14,1071,11,1,D S,2,1
+2022/2023,Juan Cuadrado,Juventus,1.22,31,2097,32,1,D F M S,6,1
+2022/2023,Armando Izzo,Monza,2.0,30,2490,16,1,D S,10,0
+2022/2023,Bryan Cristante,Roma,2.51,36,2951,29,1,D M S,8,0
+2022/2023,Lorenzo De Silvestri,Bologna,0.97,15,654,5,1,D M S,1,0
+2022/2023,Karol Linetty,Torino,1.03,32,1885,16,1,M S,8,0
+2022/2023,Fabio Quagliarella,Sampdoria,2.73,23,773,36,1,F S,2,0
+2022/2023,Juan Jesus,Napoli,0.58,15,920,5,1,D S,2,0
+2022/2023,Leandro Paredes,Juventus,0.59,25,943,16,1,M S,7,0
+2022/2023,Leonardo Bonucci,Juventus,1.41,16,871,5,1,D S,1,0
+2022/2023,Gianmarco Ferrari,Sassuolo,0.9,33,2204,8,1,D S,5,0
+2022/2023,Elseid Hysaj,Lazio,0.45,34,1981,4,1,D S,3,0
+2022/2023,Alfred Duncan,Fiorentina,0.37,25,1112,9,1,M S,3,0
+2022/2023,Leonardo Spinazzola,Roma,0.73,26,1647,10,1,D M S,3,0
+2022/2023,Stefan de Vrij,Inter,1.5,27,1938,19,1,D S,4,0
+2022/2023,Davide Calabria,Milan,0.97,25,1704,16,1,D S,6,0
+2022/2023,Mattia Destro,Empoli,1.91,17,546,20,1,F S,3,0
+2022/2023,Isaac Success,Udinese,3.41,30,1844,35,1,F S,4,0
+2022/2023,Zlatan Ibrahimovic,Milan,1.01,4,146,6,1,F S,0,0
+2022/2023,Roberto Soriano,Bologna,0.65,27,1323,13,1,F M S,1,0
+2022/2023,Matteo Bianchetti,Cremonese,1.23,25,2128,7,1,D S,5,0
+2022/2023,Kevin Lasagna,Verona,5.46,26,1573,52,1,F M S,2,0
+2022/2023,Paolo Ghiglione,Cremonese,0.63,15,713,7,1,D M S,4,0
+2022/2023,Jesé,Sampdoria,0.37,11,187,3,1,F S,0,0
+2022/2023,Alexis Blin,Lecce,2.98,35,2376,23,1,D M S,8,0
+2022/2023,Jean-Daniel Akpa-Akpro,Empoli,1.63,24,1387,14,1,M S,7,2
+2022/2023,Koffi Djidji,Torino,0.46,34,2425,7,1,D S,3,0
+2022/2023,Rolando Mandragora,Fiorentina,1.24,29,1955,38,1,M S,8,0
+2022/2023,Milan Djuric,Verona,1.71,28,1350,16,1,F S,3,0
+2022/2023,Tolgay Arslan,Udinese,1.93,36,1160,25,1,M S,3,0
+2022/2023,José Luis Palomino,Atalanta,0.92,15,746,6,1,D S,4,0
+2022/2023,Hans Hateboer,Atalanta,1.99,17,1411,13,1,D M,7,0
+2022/2023,Emanuel Vignato,"Bologna,Empoli",0.16,13,260,3,1,M S,1,0
+2022/2023,Alessandro Buongiorno,Torino,2.26,34,2733,21,1,D S,8,0
+2022/2023,Weston McKennie,Juventus,0.64,15,1068,8,1,D M S,0,0
+2022/2023,Fode Toure,Milan,1.39,10,513,5,1,D M S,0,0
+2022/2023,Eldor Shomurodov,"Roma,Spezia",2.45,21,898,24,1,F S,2,0
+2022/2023,Tanguy NDombele Alvaro,Napoli,1.08,30,772,16,1,M S,5,0
+2022/2023,Stanislav Lobotka,Napoli,0.51,38,3117,11,1,M S,2,0
+2022/2023,Gianluca Mancini,Roma,2.15,35,2883,22,1,D S,7,0
+2022/2023,Nicolas Haas,Empoli,1.12,24,1158,8,1,M S,2,0
+2022/2023,Mehdi Leris,Sampdoria,4.03,32,2471,30,1,D M S,13,0
+2022/2023,Marvin Zeegelaar,Udinese,0.49,7,359,3,1,D S,1,1
+2022/2023,Salvatore Esposito,Spezia,0.7,15,962,14,1,M S,3,1
+2022/2023,Nicolo Zaniolo,Roma,4.03,13,906,28,1,F M S,4,0
+2022/2023,Toma Basic,Lazio,1.38,25,458,11,1,M S,2,0
+2022/2023,William Troost-Ekong,Salernitana,0.62,9,432,2,1,D S,1,0
+2022/2023,Mehdi Bourabia,Spezia,1.54,37,2833,33,1,M S,3,0
+2022/2023,Arkadiusz Reca,Spezia,0.96,30,2179,22,1,D M S,5,0
+2022/2023,Koray Günter,"Sampdoria,Verona",0.82,23,1779,10,1,D S,5,0
+2022/2023,Omar Colley,Sampdoria,1.42,16,1383,6,1,D S,5,0
+2022/2023,Dimitris Nikolaou,Spezia,0.73,36,2968,10,1,D S,9,1
+2022/2023,Nicolo Rovella,"Juventus,Monza",1.32,28,1769,23,1,M S,6,1
+2022/2023,Merih Demiral,Atalanta,0.81,28,1509,7,1,D S,5,0
+2022/2023,Hans Nicolussi Caviglia,Salernitana,0.16,12,569,5,1,M S,2,0
+2022/2023,Gianluca Gaetano,Napoli,1.08,8,62,7,1,S,0,0
+2022/2023,Aleksa Terzic,Fiorentina,0.7,22,902,9,1,D S,2,0
+2022/2023,Pawel Dawidowicz,Verona,1.35,23,1634,11,1,D S,6,1
+2022/2023,Ruslan Malinovskiy,Atalanta,0.66,15,525,19,1,M S,2,0
+2022/2023,Georgios Kyriakopoulos,"Bologna,Sassuolo",1.11,24,1492,20,1,D F M S,5,0
+2022/2023,Janis Antiste,Sassuolo,0.06,2,47,1,1,S,0,0
+2022/2023,Pierre Kalulu Kyatengwa,Milan,2.0,34,2530,11,1,D S,4,0
+2022/2023,Pablo Marí,Monza,0.67,30,2492,10,1,D S,4,0
+2022/2023,Luka Romero,Lazio,0.86,6,142,5,1,F S,0,0
+2022/2023,Nikola Moro,Bologna,0.73,26,1217,21,1,M S,1,0
+2022/2023,Nicolò Casale,Lazio,0.51,29,2439,8,1,D S,6,0
+2022/2023,Lucas Martínez Quarta,Fiorentina,2.47,27,2183,28,1,D S,6,0
+2022/2023,Bruno Amione,"Sampdoria,Verona",0.62,27,2164,12,1,D S,9,1
+2022/2023,Filippo Ranocchia,Monza,1.52,14,512,19,1,F M S,1,0
+2022/2023,Edoardo Bove,Roma,1.15,22,987,7,1,D M S,2,0
+2022/2023,Yayah Kallon,Verona,1.84,22,843,20,1,M S,1,0
+2022/2023,Denzel Dumfries,Inter,4.18,34,2236,33,1,D M S,4,0
+2022/2023,Petar Stojanovic,Empoli,0.34,27,1505,11,1,D S,3,0
+2022/2023,Nadir Zortea,"Atalanta,Sassuolo",0.34,19,853,9,1,D S,5,0
+2022/2023,Matìas Soulè Malvano,Juventus,1.56,13,400,10,1,D M S,0,0
+2022/2023,Johan Vásquez,Cremonese,0.57,25,1801,12,1,D S,7,0
+2022/2023,Pablo Galdames,Cremonese,0.26,13,740,7,1,M S,2,0
+2022/2023,Cristian Volpato,Roma,0.21,7,217,4,1,M S,0,0
+2022/2023,Michel Aebischer,Bologna,1.42,32,1547,15,1,D F M S,4,0
+2022/2023,Éderson,Atalanta,2.03,35,2234,36,1,F M S,4,0
+2022/2023,Samuel Iling-Junior,Juventus,0.72,12,282,4,1,D S,1,0
+2022/2023,Christian Gytkjær,Monza,3.34,22,520,13,1,F S,0,0
+2022/2023,Joan Gonzàlez,Lecce,1.82,35,2229,17,1,M S,8,0
+2022/2023,Marcos Antônio,Lazio,0.88,16,576,3,1,M S,2,0
+2022/2023,Dodô,Fiorentina,0.54,33,2335,11,1,D S,3,1
+2022/2023,Charles Pickel,Cremonese,2.03,33,2510,23,1,D F M S,8,1
+2022/2023,Cristian Buonaiuto,Cremonese,2.89,29,957,43,1,F M S,3,0
+2022/2023,Emil Holm,Spezia,0.89,20,1403,15,1,D F M S,4,0
+2022/2023,Erik Botheim,Salernitana,0.37,28,842,7,1,F M S,2,0
+2022/2023,Agustín Álvarez Martínez,Sassuolo,1.26,22,322,14,1,F S,1,0
+2022/2023,Luka Lochoshvili,Cremonese,0.95,25,1878,9,1,D S,4,0
+2022/2023,Ola Solbakken,Roma,1.06,14,517,9,1,F M S,2,0
+2022/2023,Przemyslaw Wisniewski,Spezia,1.24,14,995,6,1,D S,3,0
+2022/2023,Jeremy Toljan,Sassuolo,0.44,31,2672,5,0,D S,3,0
+2022/2023,Ricardo Rodríguez,Torino,0.43,35,2664,11,0,D S,3,0
+2022/2023,Franck Ribéry,Salernitana,0.0,1,35,0,0,S,0,0
+2022/2023,Kaan Ayhan,Sassuolo,0.01,10,536,1,0,D S,1,0
+2022/2023,Albin Ekdal,Spezia,2.71,31,1731,19,0,M S,4,1
+2022/2023,Pedro Obiang,Sassuolo,0.28,17,881,7,0,M S,2,0
+2022/2023,Florian Thauvin,Udinese,0.48,16,529,10,0,F M S,1,0
+2022/2023,Harry Winks,Sampdoria,0.42,20,1721,14,0,M S,2,0
+2022/2023,Mattia Perin,Juventus,0.0,11,948,0,0,GK S,0,0
+2022/2023,Miguel Veloso,Verona,0.8,22,1169,16,0,M S,6,0
+2022/2023,Tomás Rincón,Sampdoria,0.61,34,2574,11,0,M S,7,1
+2022/2023,Mattia De Sciglio,Juventus,0.07,17,1053,4,0,D S,0,0
+2022/2023,Manuel Locatelli,Juventus,1.33,32,2478,29,0,M S,8,0
+2022/2023,Samuele Perisan,Empoli,0.0,7,630,0,0,GK,0,0
+2022/2023,Vincenzo Fiorillo,Salernitana,0.0,1,90,0,0,GK,0,0
+2022/2023,Marco Benassi,"Cremonese,Fiorentina",0.88,17,1095,19,0,D M S,0,0
+2022/2023,Andrea Belotti,Roma,4.83,31,1126,20,0,F S,0,0
+2022/2023,Federico Marchetti,Spezia,0.0,1,66,0,0,S,0,0
+2022/2023,Patric,Lazio,0.07,18,1423,2,0,D S,1,0
+2022/2023,Danilo Cataldi,Lazio,0.17,29,1986,6,0,M S,5,0
+2022/2023,Jacopo Sala,Spezia,0.0,6,99,0,0,M S,1,0
+2022/2023,Milan Skriniar,Inter,0.87,21,1772,9,0,D S,3,1
+2022/2023,Wojciech Szczesny,Juventus,0.0,28,2472,0,0,GK,1,0
+2022/2023,Alessandro Florenzi,Milan,0.89,6,194,5,0,D S,1,0
+2022/2023,Mato Jajalo,Udinese,0.04,3,53,2,0,S,0,0
+2022/2023,Giuseppe Pezzella,Lecce,0.13,16,925,4,0,D S,2,0
+2022/2023,Alex Sandro,Juventus,0.39,25,1789,5,0,D S,5,1
+2022/2023,Daniele Rugani,Juventus,0.72,9,562,4,0,D S,0,0
+2022/2023,Emil Audero,Sampdoria,0.0,25,2250,0,0,GK,1,0
+2022/2023,Lukasz Skorupski,Bologna,0.0,37,3330,0,0,GK,4,0
+2022/2023,Rade Krunic,Milan,1.15,23,1675,14,0,M S,8,0
+2022/2023,Ivan Radovanovic,Salernitana,0.17,10,672,7,0,D M S,1,1
+2022/2023,Alex Cordaz,Inter,0.0,1,24,0,0,S,0,0
+2022/2023,Andrea Barberis,Monza,0.08,9,322,2,0,M S,0,0
+2022/2023,Luigi Sepe,Salernitana,0.0,17,1530,0,0,GK,3,0
+2022/2023,Lorenzo Tonelli,Empoli,0.0,1,16,0,0,S,0,0
+2022/2023,Vlad Chiriches,Cremonese,0.0,16,991,0,0,D S,2,0
+2022/2023,Nicola Murru,Sampdoria,0.03,20,742,2,0,D S,3,0
+2022/2023,Ciprian Tatarusanu,Milan,0.0,16,1440,0,0,GK,0,0
+2022/2023,Marios Oikonomou,Sampdoria,0.25,6,221,3,0,D S,3,0
+2022/2023,Alex Ferrari,"Cremonese,Sampdoria",0.14,28,1891,5,0,D S,6,0
+2022/2023,Mouhamadou Sarr,Cremonese,0.0,2,180,0,0,GK,0,0
+2022/2023,Andrea Consigli,Sassuolo,0.0,35,3150,0,0,GK,0,0
+2022/2023,Francesco Acerbi,Inter,0.84,31,2413,18,0,D S,4,0
+2022/2023,Gianluca Pegolo,Sassuolo,0.0,2,180,0,0,GK,0,0
+2022/2023,Mattia Caldara,Spezia,0.76,20,1241,10,0,D S,6,0
+2022/2023,Andrea Conti,Sampdoria,0.0,1,18,0,0,S,0,0
+2022/2023,Roberto Gagliardini,Inter,0.81,19,758,16,0,M S,3,1
+2022/2023,Marco Sportiello,Atalanta,0.0,15,1342,0,0,GK S,0,0
+2022/2023,Marco D&#039;Alessandro,Monza,0.21,8,278,4,0,D M S,2,0
+2022/2023,Alberto Grassi,Empoli,0.5,25,1186,10,0,M S,3,0
+2022/2023,Samir Handanovic,Inter,0.0,14,1236,0,0,GK,0,0
+2022/2023,Jeison Murillo,Sampdoria,0.12,20,1072,3,0,D S,4,1
+2022/2023,Gary Medel,Bologna,0.07,29,1474,2,0,D M S,5,0
+2022/2023,Andrea Ranocchia,Monza,0.0,1,51,0,0,D,0,0
+2022/2023,Danilo D&#039;Ambrosio,Inter,0.32,15,721,3,0,D S,3,1
+2022/2023,Stefan Radu,Lazio,0.0,1,1,0,0,S,0,0
+2022/2023,Bartlomiej Dragowski,Spezia,0.0,34,2946,0,0,GK,1,0
+2022/2023,Valerio Verre,Sampdoria,0.39,18,664,14,0,M S,5,0
+2022/2023,Marko Pjaca,Empoli,0.65,17,506,15,0,F M S,1,0
+2022/2023,Manuel De Luca,Sampdoria,0.0,2,37,0,0,S,0,0
+2022/2023,Norbert Gyömbér,Salernitana,0.78,27,1772,8,0,D S,5,0
+2022/2023,Riccardo Marchizza,Sassuolo,0.0,10,277,0,0,D S,1,0
+2022/2023,Antonio Mirante,Milan,0.0,1,1,0,0,S,0,0
+2022/2023,Luca Zanimacchia,Cremonese,0.95,15,756,18,0,M S,2,0
+2022/2023,Luca Marrone,Monza,0.05,2,140,1,0,D,0,0
+2022/2023,Paul Pogba,Juventus,0.49,6,99,5,0,M S,0,0
+2022/2023,Mário Rui,Napoli,0.68,22,1781,11,0,D S,2,1
+2022/2023,Ionut Radu,Cremonese,0.0,9,810,0,0,GK,0,0
+2022/2023,Pierluigi Gollini,"Fiorentina,Napoli",0.0,7,630,0,0,GK,0,0
+2022/2023,Alex Meret,Napoli,0.0,34,3060,0,0,GK,0,0
+2022/2023,Berat Gjimshiti,Atalanta,0.54,24,1791,4,0,D S,3,0
+2022/2023,Pepín,Monza,0.3,25,1116,10,0,M S,4,0
+2022/2023,Jaime Báez,Cremonese,0.07,2,92,2,0,M S,0,0
+2022/2023,Simone Romagnoli,Lecce,0.01,7,153,1,0,D S,0,0
+2022/2023,Francesco Bardi,Bologna,0.0,1,90,0,0,GK,0,0
+2022/2023,Samir Ujkani,Empoli,0.0,1,6,0,0,S,0,0
+2022/2023,Kastriot Dermaku,Lecce,0.0,1,31,0,0,S,0,0
+2022/2023,Martin Erlic,Sassuolo,0.2,28,2329,4,0,D S,2,0
+2022/2023,Filippo Romagna,Sassuolo,0.0,2,44,0,0,S,0,0
+2022/2023,Diego Llorente,Roma,0.25,9,563,5,0,D S,0,0
+2022/2023,Guillermo Ochoa,Salernitana,0.0,20,1800,0,0,GK,1,0
+2022/2023,Gonzalo Escalante,Cremonese,0.18,9,556,6,0,M S,0,1
+2022/2023,Adam Ounas,Napoli,0.04,2,7,1,0,S,0,0
+2022/2023,Salvatore Sirigu,Fiorentina,0.0,1,90,0,0,GK,0,0
+2022/2023,Adama Soumaoro,Bologna,0.19,23,1880,2,0,D S,3,1
+2022/2023,Tiemoué Bakayoko,Milan,0.0,3,29,0,0,S,0,0
+2022/2023,Jean-Victor Makengo,Udinese,0.34,16,826,7,0,M S,2,0
+2022/2023,Samuel Umtiti,Lecce,0.65,25,2118,12,0,D S,8,0
+2022/2023,Mike Maignan,Milan,0.0,22,1980,0,0,GK,0,0
+2022/2023,Soualiho Meité,Cremonese,0.42,31,2383,17,0,M S,5,0
+2022/2023,Maxime Lopez,Sassuolo,0.95,30,2298,16,0,M S,11,0
+2022/2023,Kelvin Adou,Spezia,2.77,30,2374,26,0,D S,5,1
+2022/2023,Mattia Valoti,Monza,0.11,16,434,2,0,F M S,1,0
+2022/2023,Alessio Cragno,Monza,0.0,1,90,0,0,GK,0,0
+2022/2023,Kevin Bonifazi,Bologna,0.16,13,894,2,0,D S,2,0
+2022/2023,Salvatore Molina,Monza,0.05,5,214,1,0,D S,1,0
+2022/2023,Simon Kjaer,Milan,0.0,17,1020,0,0,D S,4,0
+2022/2023,Andrew Gravillon,Torino,0.01,7,312,1,0,D S,2,0
+2022/2023,Bartosz Bereszynski,"Napoli,Sampdoria",0.12,18,1384,3,0,D M S,2,0
+2022/2023,Alessio Zerbin,Napoli,0.3,10,184,5,0,F M S,1,0
+2022/2023,Matteo Gabbia,Milan,0.01,12,605,1,0,D S,2,0
+2022/2023,Alessandro Bastoni,Inter,1.22,29,2173,12,0,D S,3,0
+2022/2023,Francesco Rossi,Atalanta,0.0,1,1,0,0,S,0,0
+2022/2023,Michele Cerofolini,Fiorentina,0.0,5,450,0,0,GK,0,0
+2022/2023,Luca Pellegrini,Lazio,0.11,7,167,3,0,D S,3,0
+2022/2023,Wladimiro Falcone,Lecce,0.0,38,3420,0,0,GK,2,0
+2022/2023,Marlon Santos,Monza,0.14,28,1585,5,0,D S,7,1
+2022/2023,Martin Hongla,Verona,0.12,9,535,5,0,M S,4,0
+2022/2023,Walace,Udinese,0.83,37,3215,32,0,M,6,0
+2022/2023,Ondrej Duda,Verona,0.94,15,1068,13,0,M S,4,0
+2022/2023,Diego Demme,Napoli,0.0,7,144,0,0,M S,0,0
+2022/2023,Josip Brekalo,Fiorentina,0.5,6,221,5,0,M S,1,0
+2022/2023,Adrien Tameze,Verona,1.42,37,3060,12,0,D M S,3,0
+2022/2023,Marco Silvestri,Udinese,0.0,38,3420,0,0,GK,0,0
+2022/2023,Denis Zakaria,Juventus,0.0,2,121,0,0,M S,0,0
+2022/2023,Michaël Cuisance,Sampdoria,0.57,12,632,10,0,M S,1,0
+2022/2023,Vanja Milinkovic-Savic,Torino,0.0,38,3420,0,0,GK,4,0
+2022/2023,Petko Hristov,Spezia,0.03,9,363,1,0,D S,0,0
+2022/2023,Adam Marusic,Lazio,0.99,33,2776,17,0,D S,8,0
+2022/2023,Manuel Lazzari,Lazio,0.37,28,1896,6,0,D S,8,0
+2022/2023,Lorenzo Venuti,Fiorentina,0.59,17,931,7,0,D S,2,0
+2022/2023,Bram Nuytinck,"Sampdoria,Udinese",0.21,25,1898,5,0,D S,5,0
+2022/2023,Junior Sambia,Salernitana,0.61,22,687,13,0,D S,3,0
+2022/2023,Santiago Ascacibar,Cremonese,0.32,13,719,14,0,M S,1,0
+2022/2023,Rogerio,Sassuolo,0.47,36,3007,15,0,D S,5,1
+2022/2023,Panagiotis Retsos,Verona,0.07,2,118,1,0,D S,0,0
+2022/2023,Marash Kumbulla,Roma,0.01,7,262,1,0,D S,1,1
+2022/2023,Valentino Lazaro,Torino,0.47,23,1388,7,0,D M S,4,0
+2022/2023,Rick Karsdorp,Roma,0.11,13,714,2,0,D S,0,0
+2022/2023,Ethan Ampadu,Spezia,1.31,31,2670,16,0,D M,8,1
+2022/2023,Raoul Bellanova,Inter,0.81,18,464,4,0,D S,0,0
+2022/2023,Kristijan Bistrovic,Lecce,0.46,11,464,8,0,M S,0,0
+2022/2023,Riccardo Sottil,Fiorentina,0.89,18,840,21,0,F M S,1,0
+2022/2023,Luca Ranieri,Fiorentina,0.06,9,502,1,0,D S,1,0
+2022/2023,Ndary Adopo,Torino,0.08,9,246,2,0,D M S,1,0
+2022/2023,Gonzalo Villar,Sampdoria,0.02,15,689,1,0,M S,2,0
+2022/2023,Yacine Adli,Milan,0.16,6,137,2,0,M S,1,0
+2022/2023,Rui Patrício,Roma,0.0,35,3150,0,0,GK,1,0
+2022/2023,Mehmet Zeki Çelik,Roma,0.33,24,1487,5,0,D M S,5,1
+2022/2023,Pietro Terracciano,Fiorentina,0.0,29,2610,0,0,GK,1,0
+2022/2023,Ivan Provedel,Lazio,0.0,38,3413,0,0,GK S,1,0
+2022/2023,Hamed Junior Traore,Sassuolo,0.9,11,588,8,0,F M S,1,0
+2022/2023,Ignacio Pussetto,Sampdoria,0.19,5,140,2,0,M S,1,0
+2022/2023,Giangiacomo Magnani,Verona,0.26,24,1538,7,0,D S,7,1
+2022/2023,Juan Musso,Atalanta,0.0,24,2077,0,0,GK,1,0
+2022/2023,Ronaldo Vieira,"Sampdoria,Torino",0.63,18,833,6,0,M S,3,0
+2022/2023,Alessandro Russo,Sassuolo,0.0,1,90,0,0,GK,0,0
+2022/2023,Caleb Okoli,Atalanta,0.73,17,944,7,0,D S,2,0
+2022/2023,Karim Zedadka,Napoli,0.0,3,15,0,0,S,0,0
+2022/2023,Valentin Gendrey,Lecce,0.87,37,3111,10,0,D S,4,0
+2022/2023,Domagoj Bradaric,Salernitana,0.17,31,2246,7,0,D M S,5,0
+2022/2023,Szymon Zurkowski,"Fiorentina,Spezia",0.89,12,437,9,0,M S,1,0
+2022/2023,Liam Henderson,Empoli,0.47,25,989,12,0,M S,9,0
+2022/2023,Sofyan Amrabat,Fiorentina,0.4,29,2016,13,0,M S,11,0
+2022/2023,Jerdy Schouten,Bologna,0.29,33,2537,8,0,M S,3,0
+2022/2023,Igor Julio,Fiorentina,0.37,27,2054,7,0,D S,8,1
+2022/2023,Mert Müldür,Sassuolo,0.0,2,11,0,0,D S,0,0
+2022/2023,Yildirim Mert Cetin,Lecce,0.0,1,20,0,0,D,0,0
+2022/2023,Antonino Gallo,Lecce,0.52,32,2483,10,0,D S,3,1
+2022/2023,Kevin Agudelo,Spezia,1.32,34,2147,28,0,F M S,5,0
+2022/2023,Sebastian Walukiewicz,Empoli,0.21,11,593,2,0,D S,0,0
+2022/2023,Samuel Di Carmine,Cremonese,0.05,2,23,1,0,S,0,0
+2022/2023,Andrea Carboni,Monza,0.07,4,161,1,0,D S,0,0
+2022/2023,Dylan Bronn,Salernitana,0.42,24,1689,8,0,D S,4,1
+2022/2023,Marin Pongracic,Lecce,0.01,9,794,1,0,D,2,0
+2022/2023,Kristoffer Askildsen,Lecce,0.41,21,710,10,0,M S,3,0
+2022/2023,Oliver Abildgaard,Verona,0.06,13,564,3,0,M S,2,0
+2022/2023,Malick Thiaw,Milan,1.12,20,1359,8,0,D S,5,0
+2022/2023,Filippo Terracciano,Verona,0.09,20,797,5,0,D M S,2,0
+2022/2023,Matteo Lovato,Salernitana,0.02,17,787,1,0,D S,2,0
+2022/2023,Enzo Ebosse,Udinese,0.06,20,904,3,0,D S,3,0
+2022/2023,Brandon Soppy,"Atalanta,Udinese",0.38,16,738,9,0,D M S,3,0
+2022/2023,Flavius Daniliuc,Salernitana,0.79,27,2198,10,0,D S,10,0
+2022/2023,Deyovaisio Zeefuik,Verona,0.0,1,9,0,0,S,0,0
+2022/2023,Mergim Vojvoda,Torino,1.62,29,1704,23,0,D M S,3,0
+2022/2023,Jacopo Segre,Torino,0.0,1,19,0,0,S,0,0
+2022/2023,Guglielmo Vicario,Empoli,0.0,31,2784,0,0,GK,3,0
+2022/2023,Nicola Ravaglia,Sampdoria,0.0,9,810,0,0,GK,0,0
+2022/2023,Marco Carnesecchi,Cremonese,0.0,27,2430,0,0,GK,1,0
+2022/2023,Matteo Ruggeri,Atalanta,0.41,15,812,10,0,D M S,3,0
+2022/2023,Lorenzo Montipò,Verona,0.0,37,3330,0,0,GK,1,0
+2022/2023,Alessandro Tuia,Lecce,0.08,7,515,2,0,D S,1,0
+2022/2023,Jeroen Zoet,Spezia,0.0,5,335,0,0,GK S,1,0
+2022/2023,Salvador Ferrer,Spezia,0.0,5,125,0,0,S,0,0
+2022/2023,Giulio Maggiore,Salernitana,0.33,16,888,6,0,M S,2,0
+2022/2023,Sergiño Dest,Milan,0.38,8,312,2,0,D S,0,0
+2022/2023,Ajdin Hrustic,Verona,0.21,6,228,3,0,M S,0,0
+2022/2023,Franco Ezequiel Carboni,Monza,0.09,3,57,1,0,S,0,0
+2022/2023,Matteo Cancellieri,Lazio,0.32,20,203,6,0,F S,4,0
+2022/2023,Martin Turk,Sampdoria,0.0,4,360,0,0,GK,0,0
+2022/2023,Ardian Ismajli,Empoli,0.59,25,2092,9,0,D S,3,0
+2022/2023,Tommaso Milanese,Cremonese,0.0,2,20,0,0,S,0,0
+2022/2023,Alessandro Bianco,Fiorentina,0.05,7,148,2,0,M S,1,0
+2022/2023,Jayden Braaf,Verona,0.78,6,274,9,0,M S,1,0
+2022/2023,Valentin Antov,Monza,0.0,9,292,0,0,D S,2,0
+2022/2023,Viktor Kovalenko,Spezia,1.28,18,545,11,0,M S,1,0
+2022/2023,Emil Bohinen,Salernitana,0.12,24,815,4,0,M S,0,0
+2022/2023,Antonio Raimondo,Bologna,0.0,2,7,0,0,S,0,0
+2022/2023,Marco Bertini,Lazio,0.0,1,1,0,0,S,0,0
+2022/2023,Andrea Cambiaso,Bologna,0.81,32,2171,17,0,D M S,2,0
+2022/2023,Luís Maximiano,Lazio,0.0,1,5,0,0,GK,0,1
+2022/2023,Kristjan Asllani,Inter,0.44,20,567,11,0,M S,2,0
+2022/2023,Emmanuel Ekong,Empoli,0.02,2,17,1,0,S,0,0
+2022/2023,Julian Kristoffersen,Salernitana,0.0,1,16,0,0,S,0,0
+2022/2023,Pietro Ceccaroni,Lecce,0.06,2,35,2,0,S,0,0
+2022/2023,Matias Viña,Roma,0.0,3,56,0,0,D S,0,0
+2022/2023,Youssef Maleh,"Fiorentina,Lecce",0.86,24,980,13,0,M S,5,0
+2022/2023,Petar Zovko,Spezia,0.0,1,73,0,0,S,0,0
+2022/2023,Domen Crnigoj,Salernitana,0.06,7,300,1,0,M S,1,0
+2022/2023,Aster Vranckx,Milan,0.04,9,222,2,0,M S,1,0
+2022/2023,Koni de Winter,Empoli,0.0,14,1019,0,0,D S,3,0
+2022/2023,Fabio Miretti,Juventus,2.23,27,1224,20,0,M S,2,0
+2022/2023,David Zima,Torino,0.64,9,400,4,0,D S,0,0
+2022/2023,Jakub Kiwior,Spezia,0.65,17,1452,9,0,D M,3,0
+2022/2023,David Strelec,Spezia,0.57,7,165,3,0,F S,0,0
+2022/2023,Gerard Yepes,Sampdoria,0.07,5,191,1,0,M S,2,0
+2022/2023,Filippo Missori,Roma,0.0,3,181,0,0,D S,1,0
+2022/2023,Felix Afena-Gyan,Cremonese,1.57,23,794,21,0,F M S,4,0
+2022/2023,Niklas Pyyhtia,Bologna,0.35,6,88,3,0,S,0,0
+2022/2023,Mattia Zanotti,Inter,0.0,2,25,0,0,S,0,0
+2022/2023,Diego Coppola,Verona,0.27,19,1154,3,0,D S,5,0
+2022/2023,Ruan,Sassuolo,0.95,23,1734,5,0,D S,9,3
+2022/2023,Leo Østigard,Napoli,0.06,7,412,3,0,D S,1,0
+2022/2023,Nicolò Cocetta,Udinese,0.0,1,29,0,0,S,0,0
+2022/2023,Jacopo Fazzini,Empoli,0.97,21,812,14,0,M S,4,0
+2022/2023,Tommaso De Nipoti,Atalanta,0.0,1,1,0,0,S,0,0
+2022/2023,Antonio Iervolino,Salernitana,0.0,1,1,0,0,S,0,0
+2022/2023,Marko Lazetic,Milan,0.06,1,7,1,0,S,1,0
+2022/2023,Denso Kasius,Bologna,0.13,7,341,4,0,D M S,1,0
+2022/2023,Liberato Cacace,Empoli,0.32,12,573,7,0,D S,1,0
+2022/2023,Emil Ceïde,Sassuolo,1.12,19,479,10,0,F S,0,0
+2022/2023,Demba Seck,Torino,0.89,19,501,10,0,F M S,0,0
+2022/2023,Daniele Montevago,Sampdoria,0.58,6,232,7,0,F S,1,0
+2022/2023,Mario Gila,Lazio,0.0,4,73,0,0,S,0,0
+2022/2023,Simone Pafundi,Udinese,0.02,8,54,1,0,S,0,0
+2022/2023,Duccio Degli Innocenti,Empoli,0.0,1,1,0,0,S,0,0
+2022/2023,Charles De Ketelaere,Milan,2.65,32,1071,19,0,M S,2,0
+2022/2023,Festy Ebosele,Udinese,0.21,17,385,4,0,D S,4,0
+2022/2023,Axel Guessand,Udinese,0.0,1,82,0,0,D,0,0
+2022/2023,James Abankwah,Udinese,0.0,2,62,0,0,D S,0,0
+2022/2023,Lorenzo Malagrida,Sampdoria,0.15,6,99,2,0,S,2,0
+2022/2023,Michele Di Gregorio,Monza,0.0,37,3330,0,0,GK,0,0
+2022/2023,Samuele Birindelli,Monza,1.12,31,1385,14,0,D M S,8,0
+2022/2023,Samuele Vignato,Monza,0.03,5,47,1,0,S,0,0
+2022/2023,Warren Bondo,Monza,0.05,4,50,1,0,S,1,0
+2022/2023,Emirhan Ilkhan,"Sampdoria,Torino",0.04,12,186,3,0,M S,1,0
+2022/2023,Brian Bayeye,Torino,0.0,2,58,0,0,M S,0,0
+2022/2023,Morten Hjulmand,Lecce,0.49,35,2967,17,0,M S,9,1
+2022/2023,Thórir Helgason,Lecce,0.05,12,200,2,0,M S,0,0
+2022/2023,Marcin Listkowski,Lecce,0.07,5,63,1,0,S,0,0
+2022/2023,Joel Voelkerling Persson,Lecce,0.03,9,75,1,0,S,0,0
+2022/2023,Pablo Rodríguez,Lecce,0.0,4,42,0,0,S,0,0
+2022/2023,André Onana,Inter,0.0,24,2160,0,0,GK,1,0
+2022/2023,Emanuel Aiwu,Cremonese,0.08,23,1637,3,0,D S,3,0
+2022/2023,Giacomo Quagliata,Cremonese,0.36,20,679,9,0,D M S,0,1
+2022/2023,Christian Acella,Cremonese,0.0,1,13,0,0,S,0,0
+2022/2023,Mikael Ellertsson,Spezia,0.11,11,138,2,0,M S,3,0
+2022/2023,Diego Valencia,Salernitana,0.04,12,203,1,0,S,1,0
+2022/2023,Mile Svilar,Roma,0.0,3,270,0,0,GK,1,0
+2022/2023,Alessandro Cortinovis,Verona,0.0,1,5,0,0,S,0,0
+2022/2023,Sulemana,Verona,0.24,16,627,9,0,M S,4,0
+2022/2023,Federico Gatti,Juventus,0.43,18,1443,13,0,D S,4,0
+2022/2023,Luca D&#039;Andrea,Sassuolo,0.32,5,330,7,0,F,0,0
+2022/2023,Perr Schuurs,Torino,0.93,30,2334,14,0,D S,5,0
+2022/2023,Leandro Sanca,Spezia,0.0,4,23,0,0,S,0,0
+2022/2023,Joaquín Sosa,Bologna,0.04,10,682,3,0,D S,2,0
+2022/2023,Simone Perilli,Verona,0.0,1,90,0,0,GK,0,0
+2022/2023,Michele Castagnetti,Cremonese,0.47,27,1402,12,0,M S,2,0
+2022/2023,Jhon Lucumí,Bologna,0.6,33,2906,11,0,D,8,0
+2022/2023,Julius Beck,Spezia,0.0,1,8,0,0,S,0,0
+2022/2023,Telasco Segovia,Sampdoria,0.0,1,1,0,0,S,0,0
+2022/2023,Isak Hien,Verona,0.2,32,2601,3,0,D S,9,0
+2022/2023,Juan Cabal,Verona,0.01,11,437,1,0,D S,3,0
+2022/2023,Valentín Carboni,Inter,0.0,5,16,0,0,S,0,0
+2022/2023,Vivaldo Semedo,Udinese,0.06,5,23,1,0,S,0,0
+2022/2023,Mady Camara,Roma,0.37,15,709,11,0,M S,3,0
+2022/2023,Jack Hendry,Cremonese,0.0,4,217,0,0,D S,1,0
+2022/2023,Tommaso Barbieri,Juventus,0.0,3,110,0,0,D S,0,0
+2022/2023,Enzo Barrenechea,Juventus,0.05,3,164,2,0,M,0,0
+2022/2023,Benjamin Tahirovic,Roma,0.0,11,349,0,0,M S,1,0
+2022/2023,Leonardo Buta,Udinese,0.0,2,9,0,0,S,0,0
+2022/2023,Lukas Vorlicky,Atalanta,0.04,3,18,1,0,S,0,0
+2022/2023,Flavio Paoletti,Sampdoria,0.0,12,261,0,0,M S,1,0
+2022/2023,João Moutinho,Spezia,0.0,4,46,0,0,S,0,0
+2022/2023,Gvidas Gineitis,Torino,0.02,3,137,1,0,M S,2,0
+2022/2023,Jordan Majchrzak,Roma,0.0,1,7,0,0,S,0,0
+2022/2023,Tommaso Cassandro,Lecce,0.0,1,12,0,0,S,0,0
+2022/2023,Raimonds Krollis,Spezia,0.08,4,27,2,0,S,0,0
+2022/2023,Tio Cipot,Spezia,0.03,8,120,2,0,S,0,0
+2022/2023,Herculano Nabian,Empoli,0.0,1,1,0,0,S,0,0
+2022/2023,Mihailo Ivanovic,Sampdoria,0.0,1,2,0,0,S,0,0
+2022/2023,Niccolò Pisilli,Roma,0.0,1,1,0,0,S,0,0
+2022/2023,Alberto Basso,Cremonese,0.07,1,11,1,0,S,0,0
+2022/2023,Samuel Ntanda,Sampdoria,0.05,1,1,1,0,S,0,0
+2023/2024,Lautaro Martínez,Inter,19.92,33,2688,109,24,F S,5,0
+2023/2024,Dusan Vlahovic,Juventus,18.16,33,2346,110,16,F S,6,1
+2023/2024,Olivier Giroud,Milan,15.56,35,2397,77,15,F S,1,1
+2023/2024,Victor Osimhen,Napoli,17.08,25,2015,90,15,F S,4,1
+2023/2024,Albert Gudmundsson,Genoa,10.58,35,3034,56,14,F M S,4,0
+2023/2024,Hakan Calhanoglu,Inter,9.98,32,2618,62,13,M,5,0
+2023/2024,Romelu Lukaku,Roma,11.81,32,2665,65,13,F S,5,1
+2023/2024,Duván Zapata,"Atalanta,Torino",12.92,37,3036,104,13,F S,2,0
+2023/2024,Paulo Dybala,Roma,10.75,28,2011,59,13,F M S,3,0
+2023/2024,Marcus Thuram,Inter,15.49,35,2750,77,13,F S,3,0
+2023/2024,Christian Pulisic,Milan,8.11,36,2658,65,12,F M S,2,0
+2023/2024,Gianluca Scamacca,Atalanta,8.27,29,1445,60,12,F S,1,0
+2023/2024,Nicolás González,Fiorentina,10.85,29,1915,85,12,M S,1,0
+2023/2024,Joshua Zirkzee,Bologna,9.11,34,2802,86,12,F S,8,0
+2023/2024,Teun Koopmeiners,Atalanta,6.48,34,2641,54,12,F M S,5,0
+2023/2024,Andrea Pinamonti,Sassuolo,10.1,38,3161,84,11,F S,4,0
+2023/2024,Ademola Lookman,Atalanta,11.02,31,1930,67,11,F M S,4,0
+2023/2024,Khvicha Kvaratskhelia,Napoli,12.99,34,2774,129,11,F M S,8,0
+2023/2024,Matìas Soulè Malvano,Frosinone,11.0,36,3173,84,11,F M,4,0
+2023/2024,Riccardo Orsolini,Bologna,8.41,33,1795,59,10,M S,2,0
+2023/2024,Charles De Ketelaere,Atalanta,7.58,35,2064,45,10,F M S,1,0
+2023/2024,Federico Chiesa,Juventus,8.02,33,2220,74,9,F M S,1,0
+2023/2024,Domenico Berardi,Sassuolo,6.62,17,1448,51,9,F M,6,0
+2023/2024,Milan Djuric,"Monza,Verona",7.57,37,2479,51,9,F S,4,0
+2023/2024,Rafael Leão,Milan,9.51,34,2534,70,9,F M S,5,0
+2023/2024,Giacomo Bonaventura,Fiorentina,5.7,31,2325,52,8,M S,6,0
+2023/2024,Lorenzo Pellegrini,Roma,5.23,29,1878,47,8,M S,7,0
+2023/2024,Matteo Politano,Napoli,7.07,37,2436,75,8,F M S,2,1
+2023/2024,Andrea Colpani,Monza,5.2,38,2751,65,8,F M S,1,0
+2023/2024,Cyril Ngonge,"Napoli,Verona",5.59,32,1750,59,8,F M S,6,0
+2023/2024,Lorenzo Lucca,Udinese,9.1,37,2624,61,8,F S,6,0
+2023/2024,Ciro Immobile,Lazio,10.91,31,1675,49,7,F S,8,0
+2023/2024,Mateo Retegui,Genoa,7.06,29,2235,63,7,F S,5,0
+2023/2024,Walid Cheddira,Frosinone,9.74,36,2150,60,7,F M S,0,0
+2023/2024,Nikola Krstovic,Lecce,12.6,35,2401,92,7,F S,4,1
+2023/2024,Ruben Loftus-Cheek,Milan,3.99,29,2111,41,6,M S,5,0
+2023/2024,M&#039;Baye Niang,Empoli,5.78,14,692,24,6,F S,1,0
+2023/2024,Mario Pasalic,Atalanta,7.95,34,2039,40,6,F M S,3,0
+2023/2024,Andrea Belotti,"Fiorentina,Roma",7.54,29,1626,47,6,F S,1,0
+2023/2024,Matías Vecino,Lazio,4.24,31,1100,33,6,M S,8,0
+2023/2024,Antonio Candreva,Salernitana,4.41,34,2769,65,6,F M S,5,0
+2023/2024,Mattia Zaccagni,Lazio,5.53,28,2001,42,6,D F M S,8,0
+2023/2024,Davide Frattesi,Inter,8.65,32,877,32,6,M S,1,0
+2023/2024,Luka Jovic,Milan,5.65,23,844,22,6,F S,2,1
+2023/2024,Matteo Pessina,Monza,6.19,37,3243,28,6,M,3,1
+2023/2024,Lazar Samardzic,Udinese,3.76,34,2393,57,6,M S,3,0
+2023/2024,Éderson,Atalanta,4.51,36,2888,38,6,M S,8,0
+2023/2024,Kristian Thorstvedt,Sassuolo,4.57,34,2439,42,6,M S,7,0
+2023/2024,Lewis Ferguson,Bologna,6.61,31,2725,60,6,M,8,0
+2023/2024,Lucas Beltrán,Fiorentina,3.81,32,1712,31,6,F M S,6,0
+2023/2024,Noah Okafor,Milan,4.57,28,837,22,6,F M S,1,0
+2023/2024,Marko Arnautovic,Inter,5.6,27,748,17,5,F S,0,0
+2023/2024,Florian Thauvin,Udinese,5.91,29,1717,48,5,F M S,4,0
+2023/2024,Felipe Anderson,Lazio,5.54,38,2812,43,5,D F M S,3,0
+2023/2024,Luis Alberto,Lazio,5.47,33,2341,56,5,M S,7,0
+2023/2024,Federico Dimarco,Inter,3.21,30,2166,50,5,D S,0,0
+2023/2024,Luca Mazzitelli,Frosinone,2.27,29,2229,49,5,M S,4,1
+2023/2024,Antonio Sanabria,Torino,10.54,35,2156,54,5,F M S,2,0
+2023/2024,Theo Hernández,Milan,5.67,32,2804,57,5,D S,11,1
+2023/2024,Adrien Rabiot,Juventus,3.89,31,2650,38,5,M S,8,0
+2023/2024,Nicolas Viola,Cagliari,3.55,26,1183,38,5,F M S,3,0
+2023/2024,Armand Lauriente,Sassuolo,6.07,37,2972,84,5,F M S,5,0
+2023/2024,Roberto Piccoli,"Empoli,Lecce",6.93,37,1366,58,5,F M S,5,0
+2023/2024,Giacomo Raspadori,Napoli,6.7,37,1546,61,5,F M S,0,0
+2023/2024,Gianluca Gaetano,"Cagliari,Napoli",2.41,20,910,22,5,F M S,2,1
+2023/2024,Lucas Martínez Quarta,Fiorentina,2.62,29,2290,24,5,D S,9,0
+2023/2024,Michael Folorunsho,Verona,4.3,34,2827,47,5,F M S,5,0
+2023/2024,Giovanni Fabbian,Bologna,4.74,27,1044,28,5,F M S,4,0
+2023/2024,Tijjani Noslin,Verona,3.64,17,1368,36,5,F M,2,0
+2023/2024,Fikayo Tomori,Milan,3.61,26,2133,17,4,D S,6,1
+2023/2024,Leonardo Pavoletti,Cagliari,3.13,19,595,25,4,F S,4,0
+2023/2024,Arkadiusz Milik,Juventus,5.39,32,858,36,4,F S,2,1
+2023/2024,Roberto Pereyra,Udinese,4.36,27,1873,28,4,D F M S,6,0
+2023/2024,Houssem Aouar,Roma,3.09,16,743,12,4,F M S,3,0
+2023/2024,Gianluca Mancini,Roma,2.6,36,2881,19,4,D S,9,0
+2023/2024,Boulaye Dia,Salernitana,4.6,17,1134,29,4,F M S,1,0
+2023/2024,Marco Brescianini,Frosinone,2.03,36,2324,31,4,D F M S,1,0
+2023/2024,Szymon Zurkowski,Empoli,1.45,13,879,16,4,M S,4,0
+2023/2024,Ruslan Malinovskiy,Genoa,0.98,28,1551,39,4,F M S,7,0
+2023/2024,Daniel Maldini,"Empoli,Monza",1.82,18,568,21,4,F M S,1,0
+2023/2024,Alexis Saelemaekers,Bologna,2.82,30,1909,29,4,F M S,4,1
+2023/2024,Lorenzo Colombo,Monza,4.19,25,1351,37,4,F S,3,0
+2023/2024,Giulio Maggiore,Salernitana,3.37,27,1826,23,4,M S,7,1
+2023/2024,Matteo Cancellieri,Empoli,5.75,36,1772,40,4,D F M S,7,0
+2023/2024,Denzel Dumfries,Inter,3.94,31,1648,24,4,D S,2,1
+2023/2024,Caleb Ekuban,Genoa,3.07,29,1104,26,4,F S,0,0
+2023/2024,Loum Tchaouna,Salernitana,2.74,33,2096,44,4,F M S,4,0
+2023/2024,Zito,Cagliari,4.58,30,1942,51,4,F M S,6,0
+2023/2024,Dany Mota,Monza,5.25,34,2084,38,4,D F M S,3,0
+2023/2024,Valentín Castellanos,Lazio,6.69,35,1650,54,4,F S,2,0
+2023/2024,Federico Gatti,Juventus,6.3,32,2654,35,4,D S,7,0
+2023/2024,Darko Lazovic,Verona,3.13,32,1965,34,3,D F M S,0,1
+2023/2024,Gianluca Lapadula,Cagliari,4.98,23,1203,35,3,F S,3,0
+2023/2024,Bryan Cristante,Roma,4.36,37,3300,54,3,D M,8,0
+2023/2024,Leandro Paredes,Roma,3.03,34,2680,32,3,M S,15,1
+2023/2024,Stephan El Shaarawy,Roma,2.46,33,1732,40,3,D F M S,2,0
+2023/2024,Simy,Salernitana,3.11,15,679,13,3,F S,0,0
+2023/2024,Piotr Zielinski,Napoli,2.77,28,1979,30,3,M S,1,0
+2023/2024,Francesco Acerbi,Inter,1.42,29,2381,15,3,D S,1,0
+2023/2024,Federico Bonazzoli,Verona,2.09,24,997,27,3,F S,2,0
+2023/2024,Aleksey Miranchuk,Atalanta,7.99,27,1168,38,3,F M S,1,0
+2023/2024,Sardar Azmoun,Roma,2.56,23,528,16,3,F M S,4,0
+2023/2024,Thomas Henry,Verona,3.19,18,287,14,3,F S,2,2
+2023/2024,Rolando Mandragora,Fiorentina,3.85,33,1563,30,3,M S,5,0
+2023/2024,Grigoris Kastanos,Salernitana,2.41,26,1504,30,3,D M S,5,0
+2023/2024,Alessandro Buongiorno,Torino,2.13,29,2531,13,3,D,7,0
+2023/2024,Jonathan Ikone,Fiorentina,6.11,28,1666,39,3,M S,5,0
+2023/2024,Eldor Shomurodov,Cagliari,3.29,22,924,21,3,F M S,1,0
+2023/2024,Nikola Vlasic,Torino,3.21,33,2630,46,3,F M S,3,0
+2023/2024,Remi Oudin,Lecce,1.36,31,1839,34,3,F M S,3,0
+2023/2024,Bremer,Juventus,2.34,36,3235,18,3,D,9,0
+2023/2024,Francesco Caputo,Empoli,3.82,20,1296,23,3,F S,0,0
+2023/2024,Nemanja Radonjic,Torino,1.13,10,370,12,3,M S,1,0
+2023/2024,Amir Rrahmani,Napoli,3.41,30,2612,25,3,D,5,0
+2023/2024,Ivan Ilic,Torino,2.57,31,2097,27,3,M S,3,0
+2023/2024,M&#039;Bala Nzola,Fiorentina,4.34,33,1526,32,3,F M S,2,0
+2023/2024,Kaio Jorge,Frosinone,7.67,20,791,27,3,F S,2,0
+2023/2024,Abdou Harroui,Frosinone,3.4,18,1041,33,3,F M S,2,0
+2023/2024,Gustav Isaksen,Lazio,1.65,28,1061,23,3,D F M S,3,0
+2023/2024,Tijjani Reijnders,Milan,4.09,36,2843,44,3,M S,8,0
+2023/2024,Tomás Suslov,Verona,3.38,32,2105,53,3,M S,7,0
+2023/2024,Henrikh Mkhitaryan,Inter,3.49,36,2847,39,2,M S,4,0
+2023/2024,Alexis Sánchez,Inter,2.66,23,716,18,2,F S,0,0
+2023/2024,Matteo Darmian,Inter,1.57,33,2436,10,2,D S,2,0
+2023/2024,Cristiano Biraghi,Fiorentina,1.54,29,2366,17,2,D S,8,0
+2023/2024,Davide Zappacosta,Atalanta,3.11,31,1888,37,2,D M S,5,0
+2023/2024,Lorenzo De Silvestri,Bologna,0.2,15,668,4,2,D S,0,0
+2023/2024,Patric,Lazio,1.41,20,1606,6,2,D S,4,0
+2023/2024,Luis Muriel,Atalanta,1.21,18,364,23,2,F S,0,0
+2023/2024,Daniele Rugani,Juventus,2.44,17,1195,8,2,D S,2,0
+2023/2024,Nicolò Barella,Inter,5.04,37,2896,41,2,M S,7,0
+2023/2024,Pol Lirola,Frosinone,1.17,25,1557,9,2,D S,1,0
+2023/2024,Alfred Duncan,Fiorentina,1.75,30,1922,23,2,M S,2,0
+2023/2024,Nicola Sansone,Lecce,3.14,25,714,23,2,F M S,4,0
+2023/2024,Matteo Gabbia,Milan,1.6,18,1273,11,2,D S,5,0
+2023/2024,Walace,Udinese,0.57,37,3260,27,2,M,7,0
+2023/2024,Matteo Guendouzi,Lazio,1.35,33,2378,26,2,M S,3,1
+2023/2024,Daichi Kamada,Lazio,1.77,29,1552,29,2,M S,3,0
+2023/2024,Antonin Barak,Fiorentina,2.34,21,784,20,2,F M S,2,0
+2023/2024,Mattia Bani,Genoa,1.61,27,2313,9,2,D,9,0
+2023/2024,Yann Bisseck,Inter,0.84,16,880,12,2,D S,0,0
+2023/2024,Charalampos Lykogiannis,Bologna,1.23,22,882,15,2,D S,3,0
+2023/2024,Yerry Mina,"Cagliari,Fiorentina",1.41,18,1261,4,2,D S,5,0
+2023/2024,Riccardo Sottil,Fiorentina,2.65,22,1116,34,2,M S,1,0
+2023/2024,Luca Ranieri,Fiorentina,1.44,26,2066,10,2,D S,14,0
+2023/2024,Arthur,Fiorentina,1.02,33,2030,12,2,M S,2,0
+2023/2024,Ismael Bennacer,Milan,1.85,20,1158,12,2,M S,2,0
+2023/2024,Jens Odgaard,Bologna,1.24,10,430,11,2,F M S,1,0
+2023/2024,Christian Kouamé,Fiorentina,2.19,23,1073,24,2,F M S,0,0
+2023/2024,Lameck Banda,Lecce,4.25,21,1381,50,2,F M S,5,1
+2023/2024,Valentin Gendrey,Lecce,1.35,37,3054,17,2,D S,5,0
+2023/2024,Eljif Elmas,Napoli,0.56,11,326,6,2,F M S,2,0
+2023/2024,Morten Thorsby,Genoa,2.07,24,1127,13,2,M S,2,0
+2023/2024,Nahitan Nández,Cagliari,3.65,33,2374,23,2,D F M S,7,0
+2023/2024,Riccardo Calafiori,Bologna,1.37,30,2342,17,2,D S,3,0
+2023/2024,Ilario Monterisi,Frosinone,1.42,24,1470,5,2,D S,1,0
+2023/2024,El Bilal Touré,Atalanta,1.88,11,369,12,2,F S,2,0
+2023/2024,Oier Zarraga,Udinese,0.56,15,383,6,2,M S,0,0
+2023/2024,Reinier,Frosinone,1.44,22,1089,14,2,F M S,3,0
+2023/2024,Pontus Almqvist,Lecce,2.97,30,2132,40,2,F M S,5,0
+2023/2024,Radu Dragusin,Genoa,1.22,19,1710,17,2,D,1,0
+2023/2024,Viktor Kovalenko,Empoli,1.27,17,595,11,2,M S,1,0
+2023/2024,Andrea Cambiaso,Juventus,3.4,34,2410,29,2,D F M S,10,0
+2023/2024,Nedim Bajrami,Sassuolo,2.21,28,1326,32,2,F M S,0,0
+2023/2024,Nadir Zortea,"Atalanta,Frosinone",0.52,19,1389,12,2,D M S,4,0
+2023/2024,Matheus Henrique,Sassuolo,3.35,31,2502,19,2,M S,6,1
+2023/2024,Tommaso Baldanzi,"Empoli,Roma",2.68,27,1261,29,2,F M S,3,0
+2023/2024,Diego Coppola,Verona,1.7,24,1639,13,2,D S,9,0
+2023/2024,Morten Frendrup,Genoa,1.54,37,3154,30,2,D M S,6,0
+2023/2024,Sulemana,Cagliari,0.56,21,1349,13,2,M S,4,0
+2023/2024,Valentín Carboni,Monza,2.12,31,1137,23,2,M S,2,0
+2023/2024,Vitinha,Genoa,1.19,9,273,14,2,F M S,2,0
+2023/2024,Kenan Yildiz,Juventus,1.9,27,923,19,2,F S,3,0
+2023/2024,Dean Huijsen,"Juventus,Roma",0.54,14,494,6,2,D S,4,0
+2023/2024,Patrick Dorgu,Lecce,2.84,32,1553,19,2,D F M S,6,0
+2023/2024,Alberto Dossena,Cagliari,2.62,35,2978,24,2,D S,5,0
+2023/2024,Gaetano Oristanio,Cagliari,2.04,25,1094,23,2,F M S,1,0
+2023/2024,Oussama El Azzouzi,Bologna,0.47,18,520,2,2,M S,4,0
+2023/2024,Martín Payero,Udinese,1.42,29,1796,38,2,M S,6,1
+2023/2024,Karol Swiderski,Verona,2.08,15,484,15,2,F M S,0,0
+2023/2024,Luca Caldirola,Monza,0.72,29,2140,9,1,D S,5,1
+2023/2024,Ricardo Rodríguez,Torino,0.28,35,2792,11,1,D M S,4,0
+2023/2024,Sead Kolasinac,Atalanta,1.11,30,2206,13,1,D S,4,0
+2023/2024,Pedro,Lazio,1.82,33,753,11,1,F S,4,0
+2023/2024,Tammy Abraham,Roma,0.69,8,230,4,1,F S,1,0
+2023/2024,Federico Fazio,Salernitana,0.61,17,1353,8,1,D S,3,0
+2023/2024,Keinan Davis,Udinese,0.55,8,160,6,1,S,2,0
+2023/2024,Giovanni Simeone,Napoli,4.13,28,752,35,1,F S,3,0
+2023/2024,Davide Biraschi,Genoa,0.42,1,90,1,1,D,0,0
+2023/2024,Manuel Locatelli,Juventus,1.19,36,3023,25,1,M S,6,0
+2023/2024,Jakub Jankto,Cagliari,1.45,18,900,12,1,M S,0,0
+2023/2024,Danilo Cataldi,Lazio,0.31,28,1355,12,1,M S,8,0
+2023/2024,Juan Jesus,Napoli,1.42,24,2122,8,1,D S,7,0
+2023/2024,Alessandro Florenzi,Milan,1.53,31,1721,32,1,D M S,5,0
+2023/2024,Alex Sandro,Juventus,0.78,16,702,5,1,D S,1,0
+2023/2024,Gianmarco Ferrari,Sassuolo,1.42,31,2257,16,1,D S,4,0
+2023/2024,Milan Badelj,Genoa,1.33,33,2588,21,1,M S,6,0
+2023/2024,Federico Di Francesco,Lecce,0.11,2,13,2,1,S,0,0
+2023/2024,Gregoire Defrel,Sassuolo,0.99,20,728,12,1,F M S,0,0
+2023/2024,Remo Freuler,Bologna,1.59,32,2657,14,1,M S,9,0
+2023/2024,Andrea Petagna,Cagliari,1.78,18,1017,19,1,F S,2,0
+2023/2024,Roberto Gagliardini,Monza,4.72,33,2392,36,1,D M S,5,0
+2023/2024,Leonardo Spinazzola,Roma,0.24,24,1297,8,1,D M S,0,0
+2023/2024,Stefan de Vrij,Inter,0.74,25,1561,10,1,D S,0,0
+2023/2024,Davide Calabria,Milan,1.23,29,2216,21,1,D S,3,2
+2023/2024,Alessandro Deiola,Cagliari,2.92,27,1611,25,1,M S,7,0
+2023/2024,Sebastiano Luperto,Empoli,1.45,38,3410,20,1,D,4,0
+2023/2024,Isaac Success,Udinese,2.89,27,837,19,1,F M S,4,0
+2023/2024,Christian Kabasele,Udinese,0.94,13,858,6,1,D S,5,0
+2023/2024,Jaime Báez,Frosinone,0.44,11,523,9,1,F M S,1,0
+2023/2024,Simone Romagnoli,Frosinone,1.29,33,2706,12,1,D S,6,0
+2023/2024,Martin Erlic,Sassuolo,1.26,32,2637,8,1,D S,5,0
+2023/2024,Diego Llorente,Roma,0.32,29,2267,9,1,D S,5,0
+2023/2024,Danilo,Juventus,1.12,29,2449,17,1,D S,7,0
+2023/2024,Hassane Kamara,Udinese,2.54,35,2285,26,1,D S,4,0
+2023/2024,Alberto Cerri,Empoli,1.47,12,567,10,1,F S,2,0
+2023/2024,Pietro Pellegri,Torino,1.56,24,728,13,1,F M S,3,0
+2023/2024,Alessandro Bastoni,Inter,1.22,28,2307,15,1,D,5,0
+2023/2024,Luca Pellegrini,Lazio,0.27,19,774,7,1,D S,5,1
+2023/2024,Renato Sanches,Roma,0.24,7,133,2,1,M S,2,0
+2023/2024,Ondrej Duda,Verona,2.17,32,2505,23,1,M S,10,2
+2023/2024,Stefan Posch,Bologna,1.27,31,2441,18,1,D S,7,0
+2023/2024,Josip Brekalo,Fiorentina,0.47,11,664,9,1,M S,0,0
+2023/2024,Adam Marusic,Lazio,0.77,37,3120,8,1,D,3,1
+2023/2024,Junior Sambia,Salernitana,0.53,18,1015,12,1,D S,4,0
+2023/2024,Mathías Olivera,Napoli,0.81,23,1573,12,1,D S,3,0
+2023/2024,Raoul Bellanova,Torino,1.76,37,3104,32,1,D M S,5,0
+2023/2024,Yacine Adli,Milan,0.17,24,1435,4,1,M S,3,0
+2023/2024,Giovanni Di Lorenzo,Napoli,3.1,36,3235,38,1,D,6,0
+2023/2024,Samuel Chukwueze,Milan,2.32,24,1011,28,1,F M S,1,0
+2023/2024,Uros Racic,Sassuolo,0.94,22,800,17,1,M S,1,0
+2023/2024,Samuele Ricci,Torino,1.25,32,2425,30,1,M S,6,1
+2023/2024,Nicolò Cambiaghi,Empoli,4.17,37,2573,72,1,F M S,3,0
+2023/2024,Gaetano Castrovilli,Fiorentina,0.58,6,374,5,1,M S,0,0
+2023/2024,Tommaso Augello,Cagliari,0.55,32,2446,10,1,D M S,5,0
+2023/2024,Gabriel Strefezza,Lecce,2.29,19,1125,28,1,F M S,4,0
+2023/2024,Andrea Carboni,Monza,1.47,21,1489,18,1,D S,1,0
+2023/2024,Lorenzo Pirola,Salernitana,0.79,27,2006,15,1,D S,4,0
+2023/2024,Mitchel Bakker,Atalanta,0.29,14,363,5,1,D M S,1,0
+2023/2024,Nikola Moro,Bologna,1.01,23,839,11,1,F M S,0,0
+2023/2024,Dan Ndoye,Bologna,6.09,32,1780,41,1,F M S,4,0
+2023/2024,Shon Weissman,Salernitana,0.78,11,496,6,1,F S,0,0
+2023/2024,Junior Messias,Genoa,1.69,18,1042,22,1,D F M S,0,0
+2023/2024,Gabriele Zappa,Cagliari,1.48,38,2553,19,1,D M S,2,0
+2023/2024,Emmanuel Gyasi,Empoli,3.24,33,1855,16,1,D F M S,9,0
+2023/2024,Simone Bastoni,Empoli,0.38,16,747,7,1,D M S,3,0
+2023/2024,Hamza Rafia,Lecce,0.66,28,1234,16,1,M S,4,0
+2023/2024,Giorgio Scalvini,Atalanta,1.32,33,2579,19,1,D M S,3,0
+2023/2024,Chaka Traorè,Milan,0.11,2,13,1,1,S,0,0
+2023/2024,Kristjan Asllani,Inter,0.69,23,746,15,1,M S,1,0
+2023/2024,Mattia Viti,Sassuolo,1.28,15,993,4,1,D S,0,0
+2023/2024,Fabio Miretti,Juventus,1.33,25,1118,20,1,F M S,3,0
+2023/2024,Johan Vásquez,Genoa,2.08,37,2843,34,1,D M S,6,0
+2023/2024,Cristian Volpato,Sassuolo,0.44,22,606,12,1,F M S,1,0
+2023/2024,Leo Østigard,Napoli,1.03,25,1611,7,1,D S,2,0
+2023/2024,Arijon Ibrahimovic,Frosinone,0.77,16,463,12,1,F M S,1,0
+2023/2024,Jacopo Fazzini,Empoli,1.07,31,1213,23,1,M S,6,0
+2023/2024,Jovane Cabral,Salernitana,1.3,12,681,25,1,D F M S,1,0
+2023/2024,Samuel Iling-Junior,Juventus,0.87,24,759,9,1,D S,1,0
+2023/2024,Jordan Zemura,Udinese,0.62,27,1006,5,1,D S,1,0
+2023/2024,Rasmus Kristensen,Roma,0.67,29,1748,9,1,D M S,5,0
+2023/2024,Sandi Lovric,Udinese,3.51,29,1995,43,1,M S,1,1
+2023/2024,Samuele Vignato,Monza,1.61,10,332,7,1,M S,2,0
+2023/2024,Warren Bondo,Monza,1.02,25,1456,17,1,M S,9,0
+2023/2024,Joan Gonzàlez,Lecce,1.74,29,1283,14,1,M S,6,0
+2023/2024,Emil Holm,Atalanta,3.35,22,956,26,1,D M S,5,0
+2023/2024,Perr Schuurs,Torino,0.72,9,771,7,1,D,2,0
+2023/2024,Michael Kayode,Fiorentina,0.86,26,2076,7,1,D S,2,0
+2023/2024,Mirko Maric,Monza,1.16,10,266,7,1,F S,0,0
+2023/2024,Marvin Çuni,Frosinone,1.36,22,506,10,1,F S,0,0
+2023/2024,Daniel Boloca,Sassuolo,0.66,30,2031,13,1,M S,6,1
+2023/2024,Ylber Ramadani,Lecce,1.13,34,2989,31,1,M,13,0
+2023/2024,Antoine Makoumbou,Cagliari,0.62,32,2715,8,1,M,3,2
+2023/2024,Matteo Prati,Cagliari,2.13,26,1978,35,1,M S,4,0
+2023/2024,Sam Beukema,Bologna,2.66,30,2554,12,1,D S,4,1
+2023/2024,Chukwubuikem Ikwuemesi,Salernitana,2.51,25,1039,22,1,F S,2,0
+2023/2024,Agustín Martegani,Salernitana,0.71,18,717,15,1,M S,1,0
+2023/2024,Zanos Savva,Torino,0.45,2,25,1,1,S,0,0
+2023/2024,Niccolò Pierozzi,Salernitana,0.25,12,878,8,1,D S,6,0
+2023/2024,Jan-Carlo Simic,Milan,0.66,4,137,2,1,S,0,0
+2023/2024,Tajon Buchanan,Inter,0.26,10,133,4,1,S,0,0
+2023/2024,Kingstone Mutandwa,Cagliari,0.05,5,25,2,1,S,0,0
+2023/2024,Lautaro Giannetti,Udinese,1.04,7,630,3,1,D,4,0
+2023/2024,Santiago Castro,Bologna,0.84,8,229,7,1,F S,1,0
+2023/2024,Filip Kostic,Juventus,0.71,29,1876,21,0,D S,2,0
+2023/2024,Giulio Donati,Monza,0.02,4,23,1,0,S,1,0
+2023/2024,Yann Sommer,Inter,0.0,34,3060,0,0,GK,1,0
+2023/2024,Jérôme Boateng,Salernitana,0.0,7,245,0,0,D S,0,0
+2023/2024,Jeremy Toljan,Sassuolo,0.69,25,2088,12,0,D S,1,0
+2023/2024,Suat Serdar,Verona,1.06,25,1661,22,0,M S,7,0
+2023/2024,Pedro Obiang,Sassuolo,0.03,8,451,2,0,M S,1,0
+2023/2024,Chris Smalling,Roma,0.03,8,377,1,0,D S,0,0
+2023/2024,Angelino,Roma,0.21,16,1169,8,0,D S,2,0
+2023/2024,Juan Cuadrado,Inter,0.24,10,234,5,0,S,1,0
+2023/2024,Mattia Perin,Juventus,0.0,3,227,0,0,GK,0,0
+2023/2024,Armando Izzo,Monza,0.52,23,1663,5,0,D S,9,0
+2023/2024,Alessio Romagnoli,Lazio,0.83,29,2408,11,0,D S,9,0
+2023/2024,Mattia De Sciglio,Juventus,0.0,1,46,0,0,D,0,0
+2023/2024,Samuele Perisan,Empoli,0.0,1,90,0,0,GK,0,0
+2023/2024,Simone Scuffet,Cagliari,0.0,31,2790,0,0,GK,3,0
+2023/2024,Gianluca Caprari,Monza,0.77,6,284,8,0,F M S,0,0
+2023/2024,Vincenzo Fiorillo,Salernitana,0.0,4,360,0,0,GK,1,0
+2023/2024,Karol Linetty,Torino,0.54,28,1856,16,0,M S,12,0
+2023/2024,Pedro Pereira,Monza,0.19,23,828,3,0,D S,3,0
+2023/2024,Wojciech Szczesny,Juventus,0.0,35,3150,0,0,GK,1,0
+2023/2024,Kostas Manolas,Salernitana,0.26,8,492,2,0,D S,0,0
+2023/2024,Kevin Strootman,Genoa,0.07,27,1222,1,0,M S,4,0
+2023/2024,Edoardo Goldaniga,Cagliari,0.62,13,1017,4,0,D S,3,0
+2023/2024,Giuseppe Pezzella,Empoli,0.12,19,1089,3,0,D S,4,0
+2023/2024,Emil Audero,Inter,0.0,4,339,0,0,GK,0,0
+2023/2024,Moise Kean,Juventus,2.7,19,646,16,0,F S,2,0
+2023/2024,Lukasz Skorupski,Bologna,0.0,32,2880,0,0,GK,2,0
+2023/2024,Rade Krunic,Milan,0.19,10,684,2,0,M S,3,0
+2023/2024,Riccardo Saponara,Verona,0.14,12,323,5,0,F M S,0,0
+2023/2024,Elseid Hysaj,Lazio,0.42,22,1188,2,0,D S,2,0
+2023/2024,Adam Masina,"Torino,Udinese",0.22,20,1081,6,0,D S,2,0
+2023/2024,Simone Verdi,Torino,0.0,1,1,0,0,S,0,0
+2023/2024,Andrea Consigli,Sassuolo,0.0,35,3150,0,0,GK,1,0
+2023/2024,Stefano Sensi,Inter,0.08,4,34,2,0,S,0,0
+2023/2024,Etrit Berisha,Empoli,0.0,14,1260,0,0,GK,0,0
+2023/2024,Rafael Toloi,Atalanta,0.07,18,956,3,0,D S,4,1
+2023/2024,Mattia Caldara,Milan,0.08,1,31,1,0,S,0,0
+2023/2024,Alejandro Gomez,Monza,0.0,2,37,0,0,S,0,0
+2023/2024,Marco Sportiello,Milan,0.0,7,630,0,0,GK,0,0
+2023/2024,Alberto Grassi,Empoli,0.91,27,1837,23,0,M S,4,1
+2023/2024,Danilo D&#039;Ambrosio,Monza,0.74,24,1525,14,0,D S,3,1
+2023/2024,Federico Ravaglia,Bologna,0.0,6,538,0,0,GK,0,0
+2023/2024,Mattia Destro,Empoli,1.25,15,340,10,0,F S,2,0
+2023/2024,Norbert Gyömbér,Salernitana,0.15,22,1779,4,0,D S,9,0
+2023/2024,Riccardo Marchizza,Frosinone,0.25,13,1152,8,0,D,1,0
+2023/2024,Antonio Mirante,Milan,0.0,2,179,0,0,GK,0,0
+2023/2024,Marten de Roon,Atalanta,0.61,30,2598,16,0,D M S,10,0
+2023/2024,Paul Pogba,Juventus,0.0,2,47,0,0,S,0,0
+2023/2024,Mário Rui,Napoli,0.11,21,1206,5,0,D S,5,1
+2023/2024,Pierluigi Gollini,Napoli,0.02,7,630,1,0,GK,0,0
+2023/2024,Nicola Leali,Genoa,0.0,2,178,0,0,GK,1,0
+2023/2024,Alex Meret,Napoli,0.0,31,2774,0,0,GK,0,0
+2023/2024,Stefano Sabelli,Genoa,0.88,32,2491,9,0,D M S,5,0
+2023/2024,Daniele Sommariva,Genoa,0.0,1,2,0,0,S,0,0
+2023/2024,Boris Radunovic,Cagliari,0.0,7,630,0,0,GK,0,0
+2023/2024,Berat Gjimshiti,Atalanta,0.98,37,2829,13,0,D S,5,0
+2023/2024,Pepín,Monza,0.14,10,224,5,0,M S,2,0
+2023/2024,Samu Castillejo,Sassuolo,0.35,17,521,6,0,F M S,2,0
+2023/2024,Guillermo Ochoa,Salernitana,0.0,21,1890,0,0,GK,0,0
+2023/2024,Alexis Blin,Lecce,1.14,31,1619,13,0,M S,4,0
+2023/2024,Jean-Daniel Akpa-Akpro,Monza,0.35,19,685,7,0,D M S,5,0
+2023/2024,Benoit Costil,Salernitana,0.0,13,1170,0,0,GK,0,0
+2023/2024,Lassana Coulibaly,Salernitana,0.44,28,2096,13,0,M S,5,0
+2023/2024,Benjamin Pavard,Inter,0.91,23,1692,15,0,D S,6,0
+2023/2024,Koffi Djidji,Torino,0.09,13,751,2,0,D S,2,0
+2023/2024,Mike Maignan,Milan,0.0,29,2610,0,0,GK,1,1
+2023/2024,Maxime Lopez,"Fiorentina,Sassuolo",0.16,21,913,4,0,M S,1,1
+2023/2024,George Puscas,Genoa,2.79,8,177,11,0,F S,0,0
+2023/2024,Alessio Cragno,Sassuolo,0.0,3,270,0,0,GK,0,0
+2023/2024,Nikita Contini,Napoli,0.0,1,16,0,0,S,0,0
+2023/2024,Kevin Bonifazi,"Bologna,Frosinone",0.0,7,394,0,0,D S,0,0
+2023/2024,Karlo Lulic,Frosinone,0.0,1,14,0,0,S,0,0
+2023/2024,Marco Faraoni,"Fiorentina,Verona",0.58,19,997,10,0,D M S,5,0
+2023/2024,Luca Garritano,Frosinone,1.09,12,474,12,0,D M S,1,0
+2023/2024,Simon Kjaer,Milan,0.71,20,1171,6,0,D S,1,0
+2023/2024,José Luis Palomino,Atalanta,0.0,4,15,0,0,S,0,0
+2023/2024,Mamadou Coulibaly,Salernitana,0.0,1,1,0,0,S,0,0
+2023/2024,Bartosz Bereszynski,Empoli,0.04,24,1780,3,0,D S,3,0
+2023/2024,Alessio Zerbin,"Monza,Napoli",0.8,20,820,9,0,D F M S,0,1
+2023/2024,Francesco Rossi,Atalanta,0.0,1,3,0,0,S,0,0
+2023/2024,Hans Hateboer,Atalanta,0.33,23,1094,11,0,D M S,5,0
+2023/2024,Emanuel Vignato,Salernitana,0.02,9,305,1,0,F M S,1,0
+2023/2024,Michele Cerofolini,Frosinone,0.0,8,672,0,0,GK S,1,0
+2023/2024,Wladimiro Falcone,Lecce,0.0,38,3420,0,0,GK,0,0
+2023/2024,Martin Hongla,Verona,0.09,15,1079,3,0,M S,0,0
+2023/2024,Aarón Martín,Genoa,0.19,22,1393,5,0,D S,2,1
+2023/2024,Diego Demme,Napoli,0.01,2,68,1,0,M S,1,0
+2023/2024,Weston McKennie,Juventus,3.14,34,2603,23,0,D M S,6,0
+2023/2024,Domingos Quina,Udinese,0.0,2,10,0,0,S,0,0
+2023/2024,Yann Karamoh,Torino,0.18,10,135,2,0,M S,0,0
+2023/2024,Adrien Tameze,Torino,0.47,29,2171,9,0,D M S,6,1
+2023/2024,Davy Klaassen,Inter,0.05,13,181,1,0,M S,1,0
+2023/2024,Carlo Pinsoglio,Juventus,0.0,1,43,0,0,S,0,0
+2023/2024,Stanislav Lobotka,Napoli,0.63,38,3324,14,0,M,4,0
+2023/2024,Marco Silvestri,Udinese,0.0,17,1530,0,0,GK,0,0
+2023/2024,Nicolas Haas,Empoli,0.07,1,90,1,0,M,1,0
+2023/2024,Vanja Milinkovic-Savic,Torino,0.0,36,3240,0,0,GK,2,0
+2023/2024,Nikola Milenkovic,Fiorentina,0.61,34,2497,10,0,D S,4,0
+2023/2024,Manuel Lazzari,Lazio,1.02,24,1678,8,0,D S,4,1
+2023/2024,Lorenzo Venuti,Lecce,0.08,14,353,3,0,D S,1,0
+2023/2024,Marash Kumbulla,Sassuolo,0.0,7,357,0,0,D S,1,0
+2023/2024,Valentino Lazaro,Torino,2.35,35,1966,18,0,D M S,3,0
+2023/2024,Rick Karsdorp,Roma,0.41,18,1195,8,0,D S,2,0
+2023/2024,Jordi Mboula,Verona,0.43,11,311,4,0,F M S,0,0
+2023/2024,Franck Zambo,Napoli,2.7,34,2793,33,0,M S,2,0
+2023/2024,Timothy Weah,Juventus,1.86,30,1245,12,0,D S,5,0
+2023/2024,Ndary Adopo,Atalanta,0.25,10,84,1,0,S,0,0
+2023/2024,Jaka Bijol,Udinese,1.36,24,2082,15,0,D S,4,0
+2023/2024,Rui Patrício,Roma,0.0,23,2070,0,0,GK,1,0
+2023/2024,Rúben Vinagre,Verona,0.02,12,267,2,0,D S,0,0
+2023/2024,Mehmet Zeki Çelik,Roma,0.13,17,645,2,0,D S,1,0
+2023/2024,Toma Basic,Salernitana,0.44,15,1172,12,0,M S,5,0
+2023/2024,Pietro Terracciano,Fiorentina,0.0,33,2970,0,0,GK,3,0
+2023/2024,Ivan Provedel,Lazio,0.0,30,2700,0,0,GK,0,0
+2023/2024,Hamed Junior Traore,Napoli,0.71,9,386,10,0,M S,1,0
+2023/2024,Simone Aresti,Cagliari,0.0,1,1,0,0,S,0,0
+2023/2024,Giangiacomo Magnani,Verona,0.53,33,2433,11,0,D S,6,0
+2023/2024,Mehdi Bourabia,Frosinone,0.15,10,194,2,0,M S,1,0
+2023/2024,Evan Ndicka,Roma,1.16,25,2187,9,0,D,6,0
+2023/2024,Elia Caprile,Empoli,0.0,23,2070,0,0,GK,0,0
+2023/2024,Juan Musso,Atalanta,0.0,11,990,0,0,GK,0,0
+2023/2024,Davide Bettella,Monza,0.0,1,1,0,0,S,0,0
+2023/2024,Leander Dendoncker,Napoli,0.02,3,16,1,0,S,0,0
+2023/2024,Luca Gemello,Torino,0.0,2,180,0,0,GK,0,0
+2023/2024,Caleb Okoli,Frosinone,0.66,34,2908,13,0,D S,9,0
+2023/2024,Nicolo Fagioli,Juventus,0.28,8,432,6,0,M S,1,0
+2023/2024,Nicolo Rovella,Lazio,0.57,23,1328,5,0,M S,6,0
+2023/2024,Hans Nicolussi Caviglia,Juventus,0.11,8,263,3,0,M S,1,0
+2023/2024,Iron Gomis,Salernitana,0.44,5,124,3,0,M S,0,0
+2023/2024,Nehuén Pérez,Udinese,1.71,36,3240,20,0,D,7,1
+2023/2024,Tiago Djaló,Juventus,0.0,1,15,0,0,S,0,0
+2023/2024,Domagoj Bradaric,Salernitana,0.59,34,2759,19,0,D M S,5,0
+2023/2024,Fabien Centonze,Verona,0.01,10,680,1,0,D S,2,0
+2023/2024,Kingsley Ehizibue,Udinese,1.5,23,957,18,0,D S,4,0
+2023/2024,Pawel Dawidowicz,Verona,0.43,28,2144,9,0,D M S,5,0
+2023/2024,Liam Henderson,Empoli,0.0,1,1,0,0,S,0,0
+2023/2024,Filip Jagiello,Genoa,0.0,2,30,0,0,S,0,0
+2023/2024,Marco Mancosu,Cagliari,1.25,6,164,7,0,F M S,0,0
+2023/2024,Antonino Gallo,Lecce,0.76,35,2526,15,0,D S,2,0
+2023/2024,Sebastian Walukiewicz,Empoli,0.19,27,2051,4,0,D S,6,0
+2023/2024,Georgios Kyriakopoulos,Monza,1.16,28,1722,24,0,D S,3,0
+2023/2024,Marley Aké,Udinese,0.0,1,7,0,0,S,0,0
+2023/2024,Stefano Turati,Frosinone,0.0,31,2748,0,0,GK,0,0
+2023/2024,Lucien Agoume,Inter,0.0,1,3,0,0,S,0,0
+2023/2024,Dylan Bronn,Salernitana,0.06,4,44,1,0,S,0,0
+2023/2024,Nicolás Domínguez,Bologna,0.0,2,103,0,0,M S,0,0
+2023/2024,Marin Pongracic,Lecce,1.3,36,3220,13,0,D,7,1
+2023/2024,Pierre Kalulu Kyatengwa,Milan,0.08,9,363,2,0,D S,0,0
+2023/2024,Maduka Okoye,Udinese,0.0,21,1890,0,0,GK,2,0
+2023/2024,Malick Thiaw,Milan,0.68,21,1626,5,0,D S,5,1
+2023/2024,Pablo Marí,Monza,0.32,34,2609,8,0,D S,7,0
+2023/2024,Luka Romero,Milan,0.13,4,72,1,0,S,1,0
+2023/2024,Filippo Terracciano,"AC Milan,Verona",0.34,21,1361,8,0,D M S,2,0
+2023/2024,Matteo Lovato,"Salernitana,Torino",0.05,26,1482,2,0,D S,4,0
+2023/2024,Enzo Ebosse,Udinese,0.0,1,15,0,0,S,0,0
+2023/2024,Brandon Soppy,Torino,0.02,5,173,1,0,D S,0,0
+2023/2024,Flavius Daniliuc,Salernitana,0.13,14,732,2,0,D S,2,0
+2023/2024,Yunus Musah,Milan,0.65,30,1439,14,0,D M S,5,0
+2023/2024,Mergim Vojvoda,Torino,0.27,28,1372,9,0,D M S,3,0
+2023/2024,Nicolò Casale,Lazio,0.98,20,1559,7,0,D S,5,0
+2023/2024,Razvan Marin,Empoli,1.01,30,1815,35,0,M S,3,0
+2023/2024,Marco Carnesecchi,Atalanta,0.0,27,2427,0,0,GK,0,0
+2023/2024,Matteo Ruggeri,Atalanta,0.63,34,2489,12,0,D M S,3,0
+2023/2024,Lorenzo Montipò,Verona,0.0,37,3330,0,0,GK,0,0
+2023/2024,Tommaso Pobega,Milan,0.32,11,298,5,0,D M S,0,0
+2023/2024,Nicola Zalewski,Roma,1.11,22,976,16,0,D F S,1,1
+2023/2024,Bruno Amione,Verona,0.16,10,587,5,0,D S,2,0
+2023/2024,Giuseppe Caso,Frosinone,0.33,14,381,7,0,F S,2,0
+2023/2024,Josep Martínez,Genoa,0.0,36,3240,0,0,GK,2,1
+2023/2024,Ardian Ismajli,Empoli,0.26,26,2037,5,0,D S,2,0
+2023/2024,Alessandro Di Pardo,Cagliari,0.11,15,318,3,0,D S,0,0
+2023/2024,Filippo Ranocchia,Empoli,0.21,9,474,6,0,M S,3,0
+2023/2024,Saba Sazonov,Torino,0.38,12,340,1,0,D S,2,0
+2023/2024,Emil Bohinen,"Genoa,Salernitana",0.08,17,580,4,0,M S,1,0
+2023/2024,Kacper Urbanski,Bologna,1.48,22,911,17,0,F M S,3,0
+2023/2024,Edoardo Bove,Roma,1.52,31,1766,19,0,M S,2,0
+2023/2024,Yayah Kallon,Verona,0.0,1,2,0,0,S,0,0
+2023/2024,Jesper Lindstrom,Napoli,0.59,22,389,14,0,F S,2,0
+2023/2024,Emmanuel Ekong,Empoli,0.0,1,1,0,0,S,0,0
+2023/2024,Sydney van Hooijdonk,Bologna,0.73,9,190,5,0,F S,0,0
+2023/2024,Alessandro Zanoli,"Napoli,Salernitana",0.21,21,963,3,0,D S,4,0
+2023/2024,Tyronne Ebuehi,Empoli,0.26,15,1093,5,0,D S,0,0
+2023/2024,Matias Viña,Sassuolo,0.36,15,1047,8,0,D S,1,0
+2023/2024,Youssef Maleh,Empoli,0.93,34,2639,18,0,M S,11,0
+2023/2024,Pasquale Mazzocchi,"Napoli,Salernitana",0.34,28,1730,13,0,D S,4,1
+2023/2024,David Okereke,Torino,0.36,9,238,8,0,F M S,0,0
+2023/2024,Fabiano Parisi,Fiorentina,1.1,21,1451,12,0,D S,4,0
+2023/2024,Ridgeciano Haps,Genoa,0.1,16,767,4,0,D M S,0,0
+2023/2024,Koni de Winter,Genoa,0.55,29,2383,11,0,D S,6,1
+2023/2024,David Zima,Torino,0.0,5,81,0,0,S,0,0
+2023/2024,Beto,Udinese,0.0,1,81,0,0,F,0,0
+2023/2024,Oliver Christensen,Fiorentina,0.0,4,360,0,0,GK,0,0
+2023/2024,Pablo Galdames,Genoa,0.03,2,8,1,0,S,0,0
+2023/2024,Nicola Bagnolini,Bologna,0.0,1,2,0,0,S,0,0
+2023/2024,Adam Obert,Cagliari,0.13,17,929,3,0,D S,1,0
+2023/2024,Filippo Missori,Sassuolo,0.24,8,254,4,0,D S,0,0
+2023/2024,Ruan,Sassuolo,0.56,26,1513,7,0,D S,5,1
+2023/2024,Justin Kumi,Sassuolo,0.0,1,1,0,0,S,0,0
+2023/2024,Silvan Hefti,Genoa,0.0,6,104,0,0,D S,0,0
+2023/2024,Lapo Francesco Maria Nava,Milan,0.0,1,1,0,0,S,0,0
+2023/2024,Giorgio Cittadini,"Genoa,Monza",0.0,6,117,0,0,D S,1,0
+2023/2024,Jens Cajuste,Napoli,1.44,26,986,16,0,M S,7,0
+2023/2024,Michel Aebischer,Bologna,0.97,36,2232,17,0,M S,8,0
+2023/2024,Liberato Cacace,Empoli,0.46,31,1914,13,0,D S,6,0
+2023/2024,Emil Ceïde,Sassuolo,0.14,11,141,2,0,S,0,0
+2023/2024,Demba Seck,"Frosinone,Torino",1.48,20,716,16,0,F M S,1,0
+2023/2024,Giovanni Bonfanti,Atalanta,0.05,2,86,1,0,D S,0,0
+2023/2024,Mario Gila,Lazio,0.43,21,1822,8,0,D,2,1
+2023/2024,Simone Pafundi,Udinese,0.0,1,3,0,0,S,0,0
+2023/2024,Djed Spence,Genoa,0.09,16,836,2,0,D M S,1,0
+2023/2024,Mateusz Wieteska,Cagliari,0.27,19,954,4,0,D S,3,1
+2023/2024,Festy Ebosele,Udinese,0.81,31,1732,16,0,D S,4,1
+2023/2024,Axel Guessand,Udinese,0.01,1,38,1,0,S,0,0
+2023/2024,Michele Di Gregorio,Monza,0.0,33,2872,0,0,GK,0,0
+2023/2024,Carlos Augusto,Inter,1.1,37,1659,22,0,D S,1,0
+2023/2024,Samuele Birindelli,Monza,1.2,35,2006,25,0,D S,7,0
+2023/2024,Patrick Ciurria,Monza,1.48,22,1606,28,0,D F M S,2,0
+2023/2024,Alessandro Sorrentino,Monza,0.0,7,548,0,0,GK S,0,0
+2023/2024,Federico Baschirotto,Lecce,2.31,37,3298,18,0,D,3,1
+2023/2024,Marcin Listkowski,Lecce,0.01,1,7,1,0,S,0,0
+2023/2024,Medon Berisha,Lecce,0.13,6,196,2,0,M S,0,0
+2023/2024,Dodô,Fiorentina,0.08,9,522,2,0,D S,0,0
+2023/2024,Erik Botheim,Salernitana,0.03,7,317,1,0,F M S,1,0
+2023/2024,Mile Svilar,Roma,0.0,15,1350,0,0,GK,1,0
+2023/2024,Simone Perilli,Verona,0.0,1,90,0,0,GK,0,0
+2023/2024,Josh Doig,"Sassuolo,Verona",0.59,28,2205,13,0,D M S,7,0
+2023/2024,Emanuele Valeri,Frosinone,1.37,16,1173,20,0,D M S,3,0
+2023/2024,Jhon Lucumí,Bologna,0.75,29,2201,11,0,D S,1,0
+2023/2024,Reda Belahyane,Verona,0.03,2,88,1,0,M S,0,0
+2023/2024,Isak Hien,"Atalanta,Verona",0.36,26,1783,8,0,D S,4,1
+2023/2024,Juan Cabal,Verona,0.44,22,1498,12,0,D S,6,0
+2023/2024,Vivaldo Semedo,Udinese,0.0,1,9,0,0,S,0,0
+2023/2024,Enzo Barrenechea,Frosinone,0.5,36,2836,20,0,M S,10,0
+2023/2024,Gvidas Gineitis,Torino,0.61,14,522,9,0,M S,2,0
+2023/2024,Lorenzo Amatucci,Fiorentina,0.02,2,14,1,0,S,0,0
+2023/2024,Ola Solbakken,Roma,0.0,1,16,0,0,S,0,0
+2023/2024,Carlos Alcaraz,Juventus,0.4,10,378,11,0,M S,0,0
+2023/2024,Victor Kristiansen,Bologna,0.26,32,2323,6,0,D S,5,0
+2023/2024,Andrea Ferraris,Monza,0.0,1,8,0,0,S,0,0
+2023/2024,Alphadjo Cissè,Verona,0.0,1,6,0,0,S,0,0
+2023/2024,Niccolò Pisilli,Roma,0.0,1,8,0,0,S,0,0
+2023/2024,Nikola Sekulov,Juventus,0.0,1,10,0,0,S,0,0
+2023/2024,Leonardo Mendicino,Atalanta,0.0,1,1,0,0,S,0,0
+2023/2024,Andres Sfait,Salernitana,0.0,2,17,0,0,S,0,0
+2023/2024,Ebenezer Akinsanmiro,Inter,0.0,1,12,0,0,S,0,0
+2023/2024,Riccardo Pagano,Roma,0.06,4,39,1,0,S,0,0
+2023/2024,Steven Shpendi,Empoli,0.46,12,401,7,0,F S,0,0
+2023/2024,Anthony Oyono,Frosinone,0.24,16,1193,4,0,D S,4,0
+2023/2024,Francesco Gelli,Frosinone,0.77,27,1562,10,0,D F M S,3,0
+2023/2024,Giorgi Kvernadze,Frosinone,0.0,5,45,0,0,S,0,0
+2023/2024,Gennaro Borrelli,Frosinone,0.0,1,19,0,0,S,0,0
+2023/2024,Luigi Canotto,Frosinone,0.0,1,11,0,0,S,0,0
+2023/2024,Przemyslaw Szyminski,Frosinone,0.0,1,2,0,0,S,0,0
+2023/2024,Natan,Napoli,0.26,14,963,6,0,D S,1,1
+2023/2024,Raffaele Di Gennaro,Inter,0.0,1,21,0,0,S,0,0
+2023/2024,Gino Infantino,Fiorentina,0.01,6,68,1,0,S,1,0
+2023/2024,Tomasso Martinelli,Fiorentina,0.0,1,90,0,0,GK,0,0
+2023/2024,Pietro Comuzzo,Fiorentina,0.0,4,37,0,0,S,1,0
+2023/2024,Samuele Mulattieri,Sassuolo,1.3,27,388,13,0,F S,1,0
+2023/2024,Kevin Miranda,Sassuolo,0.0,1,10,0,0,S,0,0
+2023/2024,Luca Lipani,Sassuolo,0.18,8,392,3,0,M S,0,0
+2023/2024,Mateusz Legowski,Salernitana,0.3,29,1099,7,0,M S,3,0
+2023/2024,João Ferreira,Udinese,0.15,35,1788,3,0,D S,10,0
+2023/2024,Mohamed Kaba,Lecce,1.49,23,1375,14,0,M S,2,1
+2023/2024,Rares Burnete,Lecce,0.0,1,6,0,0,S,0,0
+2023/2024,Jeppe Corfitzen,Lecce,0.0,1,7,0,0,S,0,0
+2023/2024,Paulo Azzi,Cagliari,0.94,25,923,22,0,D M S,1,0
+2023/2024,Tommaso Corazza,Bologna,0.1,9,178,1,0,D S,1,0
+2023/2024,Davide Bartesaghi,Milan,0.0,6,61,0,0,S,0,0
+2023/2024,Kevin Zeroli,Milan,0.0,3,22,0,0,S,0,0
+2023/2024,Mateus Lusuardi,Frosinone,0.05,4,230,1,0,D S,1,0
+2023/2024,Marco Pellegrino,"AC Milan,Salernitana",0.11,11,609,3,0,D S,1,0
+2023/2024,Jesper Karlsson,Bologna,0.48,7,344,6,0,M S,0,0
+2023/2024,Seydou Fini,Genoa,0.14,3,31,2,0,S,0,0
+2023/2024,Marcus Pedersen,Sassuolo,0.15,28,1580,3,0,D S,4,0
+2023/2024,Thomas Thiesson Kristensen,Udinese,1.32,26,2100,10,0,D S,2,1
+2023/2024,Christos Mandas,Lazio,0.0,9,721,0,0,GK S,0,0
+2023/2024,Berkan Kutlu,Genoa,0.22,6,182,4,0,S,0,0
+2023/2024,Ahmed Touba,Lecce,0.04,6,272,1,0,D S,1,0
+2023/2024,Alan Matturro,Genoa,0.05,6,101,1,0,D S,0,0
+2023/2024,Pantelis Hatzidiakos,Cagliari,0.26,13,890,4,0,D,1,0
+2023/2024,Juan Manuel Cruz,Verona,0.02,4,100,1,0,F S,0,0
+2023/2024,Charlys,Verona,0.0,2,23,0,0,S,0,0
+2023/2024,Antonio Tikvic,Udinese,0.0,1,1,0,0,S,0,0
+2023/2024,Trivante Stewart,Salernitana,0.07,4,93,2,0,S,0,0
+2023/2024,Jackson Tchatchoua,Verona,0.0,26,1713,0,0,D S,2,0
+2023/2024,Alessandro Vogliacco,Genoa,0.22,20,1183,5,0,D S,4,0
+2023/2024,João Costa,Roma,0.0,3,6,0,0,S,1,0
+2023/2024,Alejandro Jiménez,Milan,0.0,3,64,0,0,S,1,0
+2023/2024,Joseph Nonge,Juventus,0.0,2,22,0,0,S,1,0
+2023/2024,Francesco Camarda,Milan,0.0,2,8,0,0,S,0,0
+2023/2024,Christos Papadopoulos,Genoa,0.0,1,2,0,0,S,0,0
+2023/2024,Farès Ghedjemis,Frosinone,0.24,6,159,3,0,F S,1,0
+2023/2024,Andrea Sodero,Empoli,0.0,1,2,0,0,S,0,0
+2023/2024,Giacomo Corona,Empoli,0.0,1,2,0,0,S,0,0
+2023/2024,Brenner,Udinese,0.54,8,190,4,0,F M S,0,0
+2023/2024,Santiago Pierotti,Lecce,0.33,11,175,7,0,S,0,0
+2023/2024,Elayis Tavsan,Verona,0.1,3,39,3,0,S,0,0
+2023/2024,Dani Silva,Verona,0.06,14,415,3,0,M S,2,0
+2023/2024,Triantafyllos Pasalidis,Salernitana,0.0,8,453,0,0,D S,3,0
+2023/2024,Stefan Mitrovic,Verona,0.41,10,377,7,0,M S,0,0
+2023/2024,David Ankeye,Genoa,0.0,6,48,0,0,S,0,0
+2023/2024,Leonardo Cerri,Juventus,0.0,1,4,0,0,S,0,0
+2023/2024,Alessandro Dellavalle,Torino,0.0,1,13,0,0,S,0,0
+2023/2024,Gerardo Fusco,Salernitana,0.0,1,10,0,0,S,0,0
+2024/2025,Mateo Retegui,Atalanta,23.06,36,2435,104,25,F S,3,0
+2024/2025,Moise Kean,Fiorentina,21.89,32,2722,105,19,F S,6,0
+2024/2025,Ademola Lookman,Atalanta,13.81,31,2295,82,15,F M S,4,0
+2024/2025,Riccardo Orsolini,Bologna,10.36,30,1914,75,15,F M S,2,0
+2024/2025,Romelu Lukaku,Napoli,13.29,36,2913,64,14,F S,4,0
+2024/2025,Marcus Thuram,Inter,12.12,32,2316,65,14,F S,1,0
+2024/2025,Scott McTominay,Napoli,8.86,34,2938,76,12,M S,3,0
+2024/2025,Lautaro Martínez,Inter,14.97,31,2605,102,12,F,1,0
+2024/2025,Artem Dovbyk,Roma,14.35,32,2454,63,12,F S,0,0
+2024/2025,Lorenzo Lucca,Udinese,9.25,33,2369,66,12,F S,10,0
+2024/2025,Christian Pulisic,Milan,11.68,34,2518,57,11,F M S,1,0
+2024/2025,Nikola Krstovic,Lecce,12.19,37,3096,137,11,F,6,0
+2024/2025,Pedro,Lazio,6.39,30,1057,39,10,F M S,2,0
+2024/2025,Andrea Pinamonti,Genoa,7.93,36,2886,79,10,F S,4,0
+2024/2025,Dusan Vlahovic,Juventus,15.1,29,1793,77,10,F S,3,0
+2024/2025,Roberto Piccoli,Cagliari,17.92,37,3180,97,10,F,6,0
+2024/2025,Valentín Castellanos,Lazio,16.13,29,2407,108,10,F S,9,1
+2024/2025,Tijjani Reijnders,Milan,8.07,37,3136,77,10,M S,2,1
+2024/2025,Boulaye Dia,Lazio,6.9,35,2220,39,9,F M S,2,0
+2024/2025,Che Adams,Torino,9.51,36,2650,64,9,F S,2,0
+2024/2025,Florian Thauvin,Udinese,9.34,25,2010,54,8,F M S,0,0
+2024/2025,Mattia Zaccagni,Lazio,6.88,34,2750,48,8,F M S,10,0
+2024/2025,Randal Kolo Muani,Juventus,4.81,16,1175,26,8,F M S,0,0
+2024/2025,Rafael Leão,Milan,8.67,34,2329,67,8,F M S,5,0
+2024/2025,Sebastiano Esposito,Empoli,6.24,33,2370,61,8,F M S,1,0
+2024/2025,Dan Ndoye,Bologna,8.56,30,2166,52,8,F M S,4,0
+2024/2025,Assane Diao,Como,3.52,15,1268,28,8,F M S,2,0
+2024/2025,Santiago Castro,Bologna,8.54,36,2313,63,8,F S,7,0
+2024/2025,Patrick Cutrone,Como,8.81,33,2058,69,7,F S,1,0
+2024/2025,Alexis Saelemaekers,"AC Milan,Roma",3.07,23,1510,25,7,D F M S,4,0
+2024/2025,Denzel Dumfries,Inter,6.13,29,1929,37,7,D M S,4,0
+2024/2025,Charles De Ketelaere,Atalanta,9.46,36,2092,48,7,F M S,1,0
+2024/2025,Kenan Yildiz,Juventus,4.91,35,2414,61,7,F M S,2,1
+2024/2025,Paulo Dybala,Roma,7.1,24,1431,50,6,F M S,2,0
+2024/2025,Joel Pohjanpalo,Venezia,7.44,20,1635,38,6,F S,1,0
+2024/2025,Franck Zambo,Napoli,5.06,35,2862,44,6,M S,5,0
+2024/2025,Jens Odgaard,Bologna,5.31,29,1987,49,6,F M S,1,0
+2024/2025,Giacomo Raspadori,Napoli,5.08,26,1110,42,6,F M S,1,0
+2024/2025,Gabriel Strefezza,Como,3.99,37,2648,57,6,F M S,5,0
+2024/2025,Daniel Maldini,"Atalanta,Monza",6.71,30,1574,49,6,F M S,5,0
+2024/2025,Lorenzo Colombo,Empoli,6.49,37,2254,56,6,F M S,3,1
+2024/2025,Nadir Zortea,Cagliari,2.93,35,2749,32,6,D M S,2,0
+2024/2025,Albert Gudmundsson,Fiorentina,4.85,24,1284,27,6,F M S,2,0
+2024/2025,Nico Paz,Como,9.96,35,2704,110,6,F M S,6,0
+2024/2025,Ange-Yoan Bonny,Parma,8.87,37,2580,63,6,F S,2,0
+2024/2025,Casper Tengstedt,Verona,5.57,25,1552,38,6,F M S,2,0
+2024/2025,Hakan Calhanoglu,Inter,4.41,29,1999,46,5,M S,5,0
+2024/2025,Álvaro Morata,Milan,4.82,16,1110,27,5,F M S,5,0
+2024/2025,Milan Djuric,"Monza,Parma Calcio 1913",4.08,27,1522,28,5,F S,4,0
+2024/2025,Davide Frattesi,Inter,5.32,28,1194,28,5,M S,1,0
+2024/2025,Robin Gosens,Fiorentina,2.42,32,2544,23,5,D M S,6,0
+2024/2025,Nikola Vlasic,Torino,3.39,30,2127,31,5,F M S,0,0
+2024/2025,Timothy Weah,Juventus,3.73,30,1636,21,5,D F M S,4,0
+2024/2025,Khvicha Kvaratskhelia,Napoli,4.2,17,1201,50,5,F M S,1,0
+2024/2025,Matìas Soulè Malvano,Roma,3.7,27,1807,42,5,D F M S,3,0
+2024/2025,Dany Mota,Monza,4.94,31,2121,42,5,F M S,3,0
+2024/2025,Lucas Beltrán,Fiorentina,6.05,33,1965,29,5,F M S,6,0
+2024/2025,Daniel Mosquera,Verona,7.17,35,1334,57,5,F S,4,0
+2024/2025,Jacob Ondrejka,Parma,1.35,12,408,14,5,M S,0,0
+2024/2025,Santiago Giménez,Milan,4.46,14,665,23,5,F S,3,1
+2024/2025,Marko Arnautovic,Inter,4.48,18,531,14,4,F S,1,0
+2024/2025,Bryan Cristante,Roma,2.45,30,2046,30,4,M S,8,0
+2024/2025,Davide Zappacosta,Atalanta,3.03,30,2102,39,4,D M S,3,0
+2024/2025,Federico Dimarco,Inter,4.16,33,2214,56,4,D M S,3,0
+2024/2025,Marten de Roon,Atalanta,1.26,36,3060,14,4,D M S,5,0
+2024/2025,Theo Hernández,Milan,3.17,33,2698,44,4,D S,4,1
+2024/2025,Rolando Mandragora,Fiorentina,2.28,29,1940,38,4,M S,7,0
+2024/2025,Eldor Shomurodov,Roma,5.65,27,1082,29,4,F M S,1,0
+2024/2025,Adam Marusic,Lazio,2.18,35,2336,22,4,D M S,1,0
+2024/2025,Enrico Del Prato,Parma,1.97,34,2944,12,4,D M S,8,0
+2024/2025,Yacine Adli,Fiorentina,0.9,26,1246,14,4,M S,1,1
+2024/2025,Kephren Thuram,Juventus,3.53,35,2331,36,4,M S,5,0
+2024/2025,Marco Brescianini,Atalanta,4.4,29,959,20,4,M S,1,0
+2024/2025,Hans Nicolussi Caviglia,Venezia,2.24,35,2883,53,4,M S,5,1
+2024/2025,Eljif Elmas,Torino,1.38,13,1032,19,4,F M S,0,0
+2024/2025,Simon Sohm,Parma,4.35,37,3015,34,4,M S,6,0
+2024/2025,Dennis Man,Parma,7.0,33,1997,49,4,F M S,0,0
+2024/2025,Jacopo Fazzini,Empoli,3.69,20,1403,26,4,F M S,1,1
+2024/2025,Éderson,Atalanta,4.34,37,2898,39,4,M S,3,1
+2024/2025,Amin Sarr,Verona,4.79,32,1940,23,4,F S,1,0
+2024/2025,Gustav Isaksen,Lazio,5.24,37,2254,55,4,F M S,5,0
+2024/2025,Santiago Pierotti,Lecce,4.26,36,1963,32,4,F M S,4,1
+2024/2025,Matteo Darmian,Inter,2.3,29,1781,11,3,D S,3,0
+2024/2025,Tammy Abraham,"AC Milan,Roma",7.74,29,1174,28,3,F S,1,0
+2024/2025,Mario Pasalic,Atalanta,7.04,34,1973,46,3,M S,1,0
+2024/2025,Duván Zapata,Torino,3.21,7,597,21,3,F,1,0
+2024/2025,Gianluca Caprari,Monza,3.86,34,1644,29,3,F M S,3,0
+2024/2025,Danilo Cataldi,Fiorentina,0.79,25,1762,13,3,M S,1,0
+2024/2025,Leandro Paredes,Roma,2.16,22,1370,26,3,M S,4,0
+2024/2025,Stephan El Shaarawy,Roma,2.97,31,1075,28,3,D F M S,2,0
+2024/2025,Nicolò Barella,Inter,2.02,33,2485,43,3,M S,4,0
+2024/2025,Matteo Politano,Napoli,3.65,37,2881,56,3,D F M S,3,0
+2024/2025,Stefan de Vrij,Inter,1.87,26,1719,13,3,D S,2,0
+2024/2025,Pietro Pellegri,Empoli,0.52,11,411,8,3,F S,3,0
+2024/2025,Hernani,Parma,2.77,25,1330,20,3,M S,7,0
+2024/2025,Nicolas Viola,Cagliari,3.04,27,1293,31,3,F M S,2,0
+2024/2025,Yann Bisseck,Inter,2.45,27,1646,21,3,D S,4,0
+2024/2025,Giovanni Di Lorenzo,Napoli,3.56,37,3330,21,3,D,6,0
+2024/2025,Nicolás González,Juventus,4.39,26,1789,45,3,D F M S,3,0
+2024/2025,Samuel Chukwueze,Milan,2.79,26,910,32,3,F M S,0,0
+2024/2025,Lucas Da Cunha,Como,1.58,36,2639,37,3,M S,4,0
+2024/2025,Razvan Marin,Cagliari,2.2,33,1374,24,3,M S,4,0
+2024/2025,Tete Morente,Lecce,3.1,31,2036,41,3,F M S,5,0
+2024/2025,Matteo Cancellieri,Parma,2.51,27,1453,22,3,F M S,2,1
+2024/2025,Koni de Winter,Genoa,2.77,25,2132,13,3,D S,6,0
+2024/2025,Fabio Miretti,Genoa,3.49,25,1718,24,3,M S,2,0
+2024/2025,Teun Koopmeiners,Juventus,4.89,28,1998,42,3,F M S,3,0
+2024/2025,Johan Vásquez,Genoa,2.44,36,3036,36,3,D S,9,0
+2024/2025,Jurgen Ekkelenkamp,Udinese,3.13,34,1884,26,3,M S,2,0
+2024/2025,Thijs Dallinga,Bologna,5.54,31,1124,31,3,F S,1,0
+2024/2025,Carlos Augusto,Inter,3.48,29,1658,24,3,D M S,1,0
+2024/2025,Samuele Birindelli,Monza,1.89,21,1497,15,3,D M S,2,0
+2024/2025,Gvidas Gineitis,Torino,1.85,30,1431,29,3,M S,5,0
+2024/2025,Patrick Dorgu,Lecce,3.16,21,1843,36,3,D F M,2,1
+2024/2025,Gaetano Oristanio,Venezia,5.69,37,2353,44,3,F M S,3,0
+2024/2025,Giovanni Fabbian,Bologna,2.88,30,992,21,3,M S,2,0
+2024/2025,Fisayo Dele-Bashiru,Lazio,1.49,20,947,16,3,M S,0,0
+2024/2025,Samuel Mbangula,Juventus,0.46,23,687,9,3,M S,1,0
+2024/2025,Francisco Conceição,Juventus,3.13,26,1320,40,3,F M S,3,1
+2024/2025,Benjamín Domínguez,Bologna,2.43,24,1309,30,3,F M S,0,0
+2024/2025,Mateo Pellegrino,Parma,4.88,13,742,22,3,F S,2,0
+2024/2025,Suat Serdar,Verona,1.62,22,1380,30,2,M S,2,1
+2024/2025,Angelino,Roma,1.42,38,3182,24,2,D M S,1,0
+2024/2025,Keinan Davis,Udinese,3.07,23,1049,29,2,F S,2,0
+2024/2025,Leonardo Pavoletti,Cagliari,2.77,26,377,18,2,F S,5,0
+2024/2025,Darko Lazovic,Verona,2.92,27,1467,20,2,D M S,0,0
+2024/2025,Alessio Romagnoli,Lazio,3.57,32,2676,20,2,D S,4,2
+2024/2025,Manuel Locatelli,Juventus,1.73,36,2852,25,2,M S,9,0
+2024/2025,Andrea Belotti,Como,2.58,18,584,19,2,F S,1,0
+2024/2025,Keita,Monza,1.88,11,644,14,2,F S,2,0
+2024/2025,Piotr Zielinski,Inter,2.69,26,947,17,2,M S,0,0
+2024/2025,Matías Vecino,Lazio,3.1,20,843,16,2,M S,7,0
+2024/2025,Lorenzo Pellegrini,Roma,5.43,25,1648,42,2,M S,4,0
+2024/2025,Alessandro Deiola,Cagliari,1.46,29,1439,18,2,M S,6,0
+2024/2025,Christian Kabasele,Udinese,2.26,16,1164,15,2,D S,0,0
+2024/2025,Joaquín Correa,Inter,2.39,19,701,14,2,F M S,3,0
+2024/2025,Antonio Sanabria,Torino,2.57,26,1321,19,2,F S,2,0
+2024/2025,Maxwel Cornet,Genoa,1.01,7,240,5,2,M S,0,0
+2024/2025,Matteo Gabbia,Milan,1.56,26,2159,14,2,D S,4,0
+2024/2025,Weston McKennie,Juventus,2.94,32,2334,22,2,D F M S,3,0
+2024/2025,Jonathan Ikone,"Como,Fiorentina",3.43,27,831,25,2,F M S,1,0
+2024/2025,Gianluca Mancini,Roma,2.96,37,3152,22,2,D S,8,0
+2024/2025,Luka Jovic,Milan,2.27,15,549,11,2,F S,1,0
+2024/2025,Nicolo Zaniolo,"Atalanta,Fiorentina",1.91,23,665,20,2,F M S,6,0
+2024/2025,Andrea Colpani,Fiorentina,3.35,25,1469,36,2,M S,1,0
+2024/2025,Samuel Gigot,Lazio,1.36,15,692,4,2,D S,2,0
+2024/2025,Maxence Caqueret,Como,0.77,18,1110,8,2,M S,4,0
+2024/2025,Kouadio Kone,Roma,2.96,34,2597,34,2,M S,6,0
+2024/2025,Gianluca Gaetano,Cagliari,4.63,28,976,30,2,M S,0,0
+2024/2025,João Félix,Milan,2.88,15,761,29,2,M S,3,0
+2024/2025,Georgios Kyriakopoulos,Monza,1.03,34,2865,27,2,D S,5,0
+2024/2025,Lazar Samardzic,Atalanta,1.93,31,1119,33,2,M S,3,0
+2024/2025,Faustino Anjorin,Empoli,0.79,22,1127,23,2,M S,3,0
+2024/2025,Strahinja Pavlovic,Milan,2.17,24,1866,17,2,D S,3,1
+2024/2025,Gabriele Zappa,Cagliari,0.79,37,3070,11,2,D S,4,0
+2024/2025,Tommaso Pobega,Bologna,2.5,21,1180,24,2,M S,4,2
+2024/2025,Emmanuel Gyasi,Empoli,5.1,37,3238,22,2,D M,5,0
+2024/2025,Andrea Cambiaso,Juventus,0.93,33,2227,17,2,D F M S,4,0
+2024/2025,Kristjan Asllani,Inter,2.28,22,960,16,2,M S,4,0
+2024/2025,Gianluca Busio,Venezia,2.85,33,2537,36,2,F M S,4,0
+2024/2025,Fabiano Parisi,Fiorentina,0.44,26,1107,9,2,D M S,3,0
+2024/2025,Iker Bravo,Udinese,1.2,29,629,13,2,F M S,3,0
+2024/2025,Diego Coppola,Verona,1.31,34,2928,10,2,D S,10,0
+2024/2025,Morten Frendrup,Genoa,1.69,35,3115,31,2,M,5,0
+2024/2025,Zito,Cagliari,1.86,26,1634,23,2,F M S,2,0
+2024/2025,Liberato Cacace,Empoli,4.27,33,2224,29,2,D M S,6,0
+2024/2025,Sandi Lovric,Udinese,2.56,36,2370,49,2,M S,5,0
+2024/2025,Christian Gytkjær,Venezia,3.43,29,720,18,2,F S,0,0
+2024/2025,Federico Baschirotto,Lecce,1.79,38,3420,22,2,D,3,0
+2024/2025,Mikael Ellertsson,Venezia,1.38,36,2503,21,2,D M S,2,0
+2024/2025,Sulemana,Atalanta,0.58,9,282,5,2,M S,1,0
+2024/2025,Emanuele Valeri,Parma,1.6,35,2883,27,2,D M S,1,0
+2024/2025,Vitinha,Genoa,1.78,25,1346,33,2,F M S,2,0
+2024/2025,Niccolò Pisilli,Roma,3.07,28,1198,27,2,M S,7,0
+2024/2025,Saúl Coco,Torino,1.95,32,2851,20,2,D,10,0
+2024/2025,Jesper Karlsson,"Bologna,Lecce",2.35,20,802,16,2,F M S,3,0
+2024/2025,Tasos Douvikas,Como,3.14,13,587,14,2,F S,1,0
+2024/2025,Jackson Tchatchoua,Verona,1.95,36,3172,18,2,D M,7,1
+2024/2025,Alessandro Vogliacco,"Genoa,Parma Calcio 1913",1.58,22,1499,6,2,D S,5,0
+2024/2025,Tijjani Noslin,Lazio,2.66,30,830,19,2,F M S,2,0
+2024/2025,Antoine Hainaut,Parma,0.85,25,1184,6,2,D M S,4,0
+2024/2025,Nicolò Savona,Juventus,0.62,28,1724,6,2,D S,5,0
+2024/2025,David Neres,Napoli,2.99,28,1268,29,2,F S,1,0
+2024/2025,Lorenzo Venturino,Genoa,1.16,6,149,4,2,M S,0,0
+2024/2025,Daniel Fila,Venezia,1.92,10,495,8,2,F S,1,1
+2024/2025,Henrikh Mkhitaryan,Inter,1.72,32,2441,23,1,M S,4,0
+2024/2025,Armando Izzo,Monza,0.49,30,2455,6,1,D S,12,0
+2024/2025,Giovanni Simeone,Napoli,2.27,30,349,13,1,F S,1,0
+2024/2025,Mattia De Sciglio,Empoli,0.8,16,750,5,1,D S,0,0
+2024/2025,Francesco Zampano,Venezia,1.28,24,1633,7,1,D M S,5,0
+2024/2025,Cristiano Biraghi,"Fiorentina,Torino",0.64,23,1585,15,1,D S,1,0
+2024/2025,Lorenzo De Silvestri,Bologna,1.09,18,1074,9,1,D S,1,0
+2024/2025,Patric,Lazio,0.88,10,593,2,1,D S,2,0
+2024/2025,Karol Linetty,Torino,0.85,28,1548,17,1,M S,6,0
+2024/2025,Pedro Pereira,Monza,1.74,35,2689,13,1,D S,10,0
+2024/2025,Edoardo Goldaniga,Como,2.38,32,2525,12,1,D S,10,1
+2024/2025,Milan Badelj,Genoa,0.96,23,1525,13,1,M S,2,0
+2024/2025,Adam Masina,Torino,0.87,28,1911,7,1,D S,5,0
+2024/2025,Stefano Sensi,Monza,0.89,12,253,7,1,M S,0,0
+2024/2025,Luca Mazzitelli,Como,0.22,11,330,7,1,M S,1,0
+2024/2025,Remo Freuler,Bologna,1.5,37,3230,17,1,M,6,0
+2024/2025,Leonardo Spinazzola,Napoli,1.02,27,1531,12,1,D F S,1,0
+2024/2025,Alberto Grassi,Empoli,1.17,28,2245,11,1,M S,8,0
+2024/2025,Sebastiano Luperto,Cagliari,2.47,36,3240,21,1,D,4,0
+2024/2025,Ante Rebic,Lecce,1.79,27,753,13,1,F M S,3,1
+2024/2025,Berat Gjimshiti,Atalanta,3.07,34,2653,20,1,D S,6,0
+2024/2025,Lassana Coulibaly,Lecce,1.3,38,2687,9,1,M S,3,0
+2024/2025,Hassane Kamara,Udinese,0.75,30,2020,17,1,D M S,6,1
+2024/2025,José Luis Palomino,Cagliari,0.3,18,1067,2,1,D S,3,0
+2024/2025,Alessio Zerbin,"Napoli,Venezia",2.16,20,1523,17,1,D M S,4,0
+2024/2025,Alessandro Bastoni,Inter,0.67,33,2468,13,1,D S,4,1
+2024/2025,Grigoris Kastanos,Verona,1.09,27,852,22,1,F M S,4,0
+2024/2025,Alessandro Buongiorno,Napoli,0.79,22,1931,8,1,D,2,0
+2024/2025,Ondrej Duda,Verona,0.89,28,2414,25,1,M S,10,1
+2024/2025,Matteo Guendouzi,Lazio,1.56,37,3281,27,1,M,7,0
+2024/2025,Philip Billing,Napoli,1.9,10,164,6,1,M S,1,0
+2024/2025,Guillermo Maripán,Torino,1.04,28,2340,12,1,D S,4,1
+2024/2025,Antoine Bernede,Verona,0.22,14,591,4,1,M S,2,0
+2024/2025,Yerry Mina,Cagliari,2.47,31,2590,26,1,D,4,1
+2024/2025,Oumar Solet,Udinese,0.89,19,1676,12,1,D,1,1
+2024/2025,Riccardo Sottil,"AC Milan,Fiorentina",1.18,24,932,24,1,M S,1,0
+2024/2025,Luca Ranieri,Fiorentina,1.38,36,3085,11,1,D S,7,0
+2024/2025,Ndary Adopo,Cagliari,1.13,35,2416,20,1,M S,3,1
+2024/2025,Jaka Bijol,Udinese,2.14,34,2964,19,1,D,11,1
+2024/2025,Youssouf Fofana,Milan,1.14,35,2516,36,1,M S,5,0
+2024/2025,Giangiacomo Magnani,Verona,1.52,17,1049,11,1,D S,2,0
+2024/2025,Christian Kouamé,"Empoli,Fiorentina",3.36,26,1100,25,1,F M S,1,0
+2024/2025,John Yeboah,Venezia,2.53,33,1198,30,1,F M S,6,0
+2024/2025,Nicolo Fagioli,"Fiorentina,Juventus",0.89,32,1514,22,1,M S,4,0
+2024/2025,Samuele Ricci,Torino,1.26,34,2863,22,1,M,8,1
+2024/2025,Nicolò Cambiaghi,Bologna,0.73,18,581,14,1,F M S,0,0
+2024/2025,Domagoj Bradaric,Verona,0.88,28,1963,9,1,D M S,6,0
+2024/2025,Amir Rrahmani,Napoli,2.26,38,3410,28,1,D,2,0
+2024/2025,Pierre Kalulu Kyatengwa,Juventus,0.85,29,2330,7,1,D S,2,1
+2024/2025,Kike Pérez,Venezia,1.36,16,1130,13,1,M S,4,0
+2024/2025,Oier Zarraga,Udinese,0.29,22,881,6,1,M S,0,0
+2024/2025,Mergim Vojvoda,"Como,Torino",0.68,28,1836,9,1,D S,6,0
+2024/2025,Ivan Ilic,Torino,1.13,19,898,11,1,M S,4,0
+2024/2025,Junior Messias,Genoa,2.6,17,832,18,1,F M S,1,0
+2024/2025,Adrián Bernabé,Parma,1.51,21,1464,27,1,M S,1,0
+2024/2025,Lautaro Valenti,Parma,0.2,20,1559,7,1,D S,4,1
+2024/2025,Lucas Martínez Quarta,Fiorentina,0.91,8,341,3,1,D S,1,0
+2024/2025,Nicola Zalewski,"Inter,Roma",0.43,23,963,10,1,D M S,4,0
+2024/2025,Pontus Almqvist,Parma,2.06,29,1085,26,1,D F M S,5,0
+2024/2025,Alessandro Bianco,"Fiorentina,Monza",1.39,35,2636,26,1,M S,9,0
+2024/2025,Kacper Urbanski,"Bologna,Monza",0.69,15,737,9,1,M S,3,0
+2024/2025,Edoardo Bove,Fiorentina,1.26,12,863,7,1,M S,3,0
+2024/2025,Caleb Ekuban,Genoa,3.43,18,526,18,1,F S,1,0
+2024/2025,Mattia Viti,Empoli,1.03,30,2580,11,1,D,3,0
+2024/2025,Alessandro Zanoli,Genoa,0.65,31,1716,11,1,D M S,3,0
+2024/2025,Michael Svoboda,Venezia,0.2,16,1311,4,1,D S,1,0
+2024/2025,Tommaso Baldanzi,Roma,1.92,31,777,20,1,M S,2,0
+2024/2025,Ridgeciano Haps,Venezia,1.49,25,1369,15,1,D S,3,0
+2024/2025,Loum Tchaouna,Lazio,2.58,24,624,23,1,F M S,2,1
+2024/2025,Abdou Harroui,Verona,2.45,10,452,15,1,F M S,1,0
+2024/2025,Adam Obert,Cagliari,1.02,21,1072,9,1,D M S,4,0
+2024/2025,Fali Candé,Venezia,0.82,17,1530,5,1,D,4,0
+2024/2025,Cesare Casadei,Torino,1.25,15,1030,14,1,F M S,1,0
+2024/2025,Yannick Engelhardt,Como,0.81,26,1134,8,1,D M S,4,0
+2024/2025,Mario Gila,Lazio,0.96,32,2740,15,1,D S,8,0
+2024/2025,Samuel Iling-Junior,Bologna,0.18,7,98,4,1,S,0,0
+2024/2025,Jordan Zemura,Udinese,1.08,23,1401,13,1,D S,2,0
+2024/2025,Souleymane Isaak Touré,Udinese,0.74,12,742,4,1,D S,2,2
+2024/2025,Patrick Ciurria,Monza,0.52,21,1101,11,1,D F M S,1,0
+2024/2025,Emil Holm,Bologna,0.73,21,1129,10,1,D S,3,0
+2024/2025,Federico Gatti,Juventus,2.64,30,2207,25,1,D S,2,0
+2024/2025,Lewis Ferguson,Bologna,0.95,16,974,6,1,M S,0,0
+2024/2025,Ali Dembélé,Torino,0.38,15,369,5,1,D S,2,1
+2024/2025,Amir Richardson,Fiorentina,1.08,27,1083,11,1,M S,6,0
+2024/2025,Pietro Comuzzo,Fiorentina,0.47,33,2192,4,1,D S,5,0
+2024/2025,Ylber Ramadani,Lecce,0.54,29,1831,17,1,M S,3,0
+2024/2025,Noah Okafor,"AC Milan,Napoli",2.23,15,435,13,1,F M S,0,0
+2024/2025,Mathis Lambourde,Verona,0.34,7,69,2,1,S,1,0
+2024/2025,Thomas Thiesson Kristensen,Udinese,0.95,24,1747,4,1,D S,5,0
+2024/2025,Martín Payero,Udinese,1.37,25,1391,31,1,M S,5,0
+2024/2025,Lautaro Giannetti,Udinese,0.08,15,892,2,1,D S,4,0
+2024/2025,Brenner,Udinese,0.49,9,389,7,1,F M S,0,0
+2024/2025,Alieu Njie,Torino,1.24,16,361,9,1,S,1,0
+2024/2025,Jeff Ekhator,Genoa,1.33,24,727,10,1,F M S,1,0
+2024/2025,Patrizio Masini,Genoa,0.44,26,1528,8,1,M S,3,0
+2024/2025,Mehdi Taremi,Inter,3.33,26,781,14,1,F S,1,0
+2024/2025,Anas Haj Mohamed,Parma,1.05,15,450,7,1,M S,4,0
+2024/2025,Dailon Livramento,Verona,2.38,29,922,13,1,F M S,2,1
+2024/2025,Marin Sverko,Venezia,0.2,16,1123,3,1,D S,3,0
+2024/2025,Magnus Kofod Andersen,Venezia,0.23,14,692,8,1,M S,1,0
+2024/2025,Alessandro Gabrielloni,Como,0.29,15,109,5,1,S,1,0
+2024/2025,Jay Idzes,Venezia,2.11,35,3130,16,1,D,5,0
+2024/2025,Alieu Fadera,Como,1.8,28,1652,28,1,D M S,2,1
+2024/2025,Gabriel Charpentier,Parma,0.85,10,242,9,1,S,1,0
+2024/2025,Giovanni Leoni,Parma,0.39,17,1210,2,1,D S,3,1
+2024/2025,Florinel Coman,Cagliari,0.13,9,253,4,1,M S,2,0
+2024/2025,Luca Caldirola,Monza,0.34,14,865,4,0,D S,5,0
+2024/2025,Yann Sommer,Inter,0.0,33,2970,0,0,GK,0,0
+2024/2025,Sead Kolasinac,Atalanta,0.83,23,1917,10,0,D,7,0
+2024/2025,Mats Hummels,Roma,0.62,14,925,8,0,D S,1,0
+2024/2025,Alexis Sánchez,Udinese,1.23,13,435,7,0,F S,0,0
+2024/2025,David de Gea,Fiorentina,0.0,35,3150,0,0,GK,1,0
+2024/2025,Alberto Moreno,Como,0.39,24,1740,14,0,D M S,4,0
+2024/2025,Kyle Walker,Milan,0.04,11,658,2,0,D S,1,0
+2024/2025,Dele Alli,Como,0.0,1,8,0,0,S,0,1
+2024/2025,Ruben Loftus-Cheek,Milan,0.73,19,1022,9,0,M S,3,0
+2024/2025,Fikayo Tomori,Milan,0.12,22,1590,2,0,D S,2,1
+2024/2025,Juan Cuadrado,Atalanta,1.47,23,800,16,0,D F M S,3,0
+2024/2025,Mattia Perin,Juventus,0.0,5,450,0,0,GK,0,0
+2024/2025,Gianluca Lapadula,Cagliari,1.54,12,281,15,0,F S,1,0
+2024/2025,Simone Scuffet,"Cagliari,Napoli",0.0,14,1260,0,0,GK,0,0
+2024/2025,Daniele Baselli,Como,0.0,2,22,0,0,M S,0,0
+2024/2025,Daniele Padelli,Udinese,0.0,1,90,0,0,GK,0,0
+2024/2025,Juan Jesus,Napoli,0.26,15,1076,3,0,D S,2,0
+2024/2025,Alessandro Florenzi,Milan,0.0,1,4,0,0,S,0,0
+2024/2025,Giuseppe Pezzella,Empoli,0.56,35,2914,15,0,D M S,7,0
+2024/2025,Emil Audero,Como,0.04,8,720,1,0,GK,0,0
+2024/2025,Lukasz Skorupski,Bologna,0.0,27,2364,0,0,GK,1,0
+2024/2025,Federico Barba,Como,0.63,7,434,2,0,D S,0,0
+2024/2025,José Reina,Como,0.0,12,1034,0,0,GK,0,1
+2024/2025,Elseid Hysaj,Lazio,0.09,11,413,2,0,D S,0,1
+2024/2025,Simone Verdi,Como,0.07,9,97,2,0,S,1,0
+2024/2025,Francesco Acerbi,Inter,0.34,23,1695,5,0,D S,0,0
+2024/2025,Alfred Duncan,Venezia,0.97,16,965,15,0,M S,2,0
+2024/2025,Rafael Toloi,Atalanta,0.09,11,448,3,0,D S,1,0
+2024/2025,Andrea Petagna,Monza,0.25,13,319,4,0,F S,1,0
+2024/2025,Roberto Gagliardini,Monza,0.0,8,148,0,0,S,1,0
+2024/2025,Marco Sportiello,Milan,0.0,2,124,0,0,GK S,0,0
+2024/2025,Danilo D&#039;Ambrosio,Monza,0.73,20,1098,9,0,D S,2,1
+2024/2025,Federico Ravaglia,Bologna,0.0,12,1056,0,0,GK S,0,0
+2024/2025,Davide Calabria,"AC Milan,Bologna",0.63,18,949,6,0,D S,3,0
+2024/2025,Mario Balotelli,Genoa,0.06,6,46,2,0,S,2,0
+2024/2025,Nicola Sansone,Lecce,0.16,5,54,3,0,S,0,0
+2024/2025,Ionut Radu,Venezia,0.0,15,1350,0,0,GK,1,0
+2024/2025,Pierluigi Gollini,Genoa,0.0,7,630,0,0,GK,1,0
+2024/2025,Nicola Leali,Genoa,0.0,29,2610,0,0,GK,1,0
+2024/2025,Alex Meret,Napoli,0.0,34,3005,0,0,GK,0,0
+2024/2025,Stefano Sabelli,Genoa,0.14,34,2072,6,0,D S,3,0
+2024/2025,Daniele Sommariva,Genoa,0.0,1,26,0,0,S,0,0
+2024/2025,Nicholas Pierini,Venezia,0.04,2,77,1,0,S,0,0
+2024/2025,Martin Erlic,Bologna,0.24,8,326,6,0,D S,0,0
+2024/2025,Sergi Roberto,Como,0.51,13,692,6,0,M S,4,0
+2024/2025,Danilo,Juventus,0.06,12,573,1,0,D S,2,0
+2024/2025,Jean-Daniel Akpa-Akpro,Monza,0.43,14,979,4,0,D M S,4,0
+2024/2025,Frederic Guilbert,Lecce,0.31,31,2488,11,0,D M,3,2
+2024/2025,Benjamin Pavard,Inter,0.48,23,1581,8,0,D S,4,0
+2024/2025,Mike Maignan,Milan,0.0,37,3296,0,0,GK,1,0
+2024/2025,Mattia Valoti,Monza,0.0,5,31,0,0,S,1,0
+2024/2025,Kevin Bonifazi,Lecce,0.0,3,56,0,0,S,0,0
+2024/2025,Marco Faraoni,Verona,0.31,8,256,1,0,D M S,0,0
+2024/2025,Marc-Oliver Kempf,Como,1.46,31,2622,20,0,D M S,4,1
+2024/2025,Wylan Cyprien,Parma,0.35,2,21,1,0,S,0,0
+2024/2025,Alberto Cerri,Como,1.47,5,74,4,0,S,0,0
+2024/2025,Filippo Melegoni,Genoa,0.04,3,87,1,0,M S,0,0
+2024/2025,Giorgio Altare,Venezia,0.08,12,750,3,0,D S,2,0
+2024/2025,Luca Pellegrini,Lazio,0.74,22,1045,13,0,D S,5,0
+2024/2025,Wladimiro Falcone,Lecce,0.0,38,3420,0,0,GK,2,0
+2024/2025,Aarón Martín,Genoa,0.74,36,3100,16,0,D M S,5,0
+2024/2025,Stefan Posch,"Atalanta,Bologna",0.69,19,1087,5,0,D S,1,0
+2024/2025,Jean Butez,Como,0.0,19,1663,0,0,GK S,0,0
+2024/2025,Yann Karamoh,Torino,1.75,29,1031,25,0,F M S,2,0
+2024/2025,Adrien Tameze,Torino,0.3,20,647,7,0,D M S,3,0
+2024/2025,Leandro Chichizola,Parma,0.0,1,90,0,0,GK,0,0
+2024/2025,Douglas Luiz,Juventus,0.69,19,491,8,0,M S,2,0
+2024/2025,Stanislav Lobotka,Napoli,0.25,32,2678,7,0,M S,3,0
+2024/2025,Marco Silvestri,Empoli,0.0,5,450,0,0,GK,0,0
+2024/2025,Mario Hermoso,Roma,0.07,8,228,1,0,D S,0,1
+2024/2025,Nicolas Haas,Empoli,0.01,10,270,1,0,M S,1,0
+2024/2025,Vanja Milinkovic-Savic,Torino,0.0,37,3330,0,0,GK,3,0
+2024/2025,Manuel Lazzari,Lazio,0.13,25,1408,6,0,D S,3,0
+2024/2025,Antonin Barak,Fiorentina,0.05,1,57,2,0,M,0,0
+2024/2025,Mattia Bani,Genoa,1.5,20,1513,8,0,D S,3,0
+2024/2025,Junior Sambia,Empoli,0.54,17,350,10,0,D S,0,0
+2024/2025,Gianluca Scamacca,Atalanta,0.13,1,2,1,0,S,0,0
+2024/2025,Valentino Lazaro,Torino,1.25,33,2335,16,0,D M S,6,0
+2024/2025,Mathías Olivera,Napoli,1.1,32,2360,16,0,D S,4,0
+2024/2025,Raoul Bellanova,"Atalanta,Torino",2.01,35,2505,19,0,D M S,3,0
+2024/2025,Ben Kone,Como,0.01,4,43,1,0,S,1,0
+2024/2025,Andy Pelmard,Lecce,0.0,3,124,0,0,D S,1,0
+2024/2025,Semuel Pizzignacco,Monza,0.0,9,735,0,0,GK S,0,0
+2024/2025,Charalampos Lykogiannis,Bologna,0.26,17,1056,6,0,D S,3,0
+2024/2025,Rui Patrício,Atalanta,0.0,3,270,0,0,GK,0,0
+2024/2025,Mehmet Zeki Çelik,Roma,0.62,31,2270,13,0,D M S,5,0
+2024/2025,Remi Oudin,Lecce,0.11,11,285,3,0,M S,1,0
+2024/2025,Bremer,Juventus,0.13,6,540,3,0,D,2,0
+2024/2025,Pietro Terracciano,Fiorentina,0.0,3,270,0,0,GK,0,0
+2024/2025,Francesco Caputo,Empoli,0.0,1,1,0,0,S,0,0
+2024/2025,Ismael Bennacer,Milan,0.05,6,308,3,0,M S,2,0
+2024/2025,Ivan Provedel,Lazio,0.0,29,2610,0,0,GK,0,0
+2024/2025,Matteo Pessina,Monza,0.18,11,866,3,0,M S,2,0
+2024/2025,Evan Ndicka,Roma,1.0,38,3420,18,0,D,2,0
+2024/2025,Borna Sosa,Torino,0.21,19,1195,4,0,D S,0,0
+2024/2025,Elia Caprile,"Cagliari,Napoli",0.0,22,1945,0,0,GK S,0,0
+2024/2025,Juan Musso,Atalanta,0.0,1,90,0,0,GK,0,0
+2024/2025,Drissa Camara,Parma,1.3,21,395,15,0,F S,3,0
+2024/2025,Juan Miranda,Bologna,0.73,31,2271,22,0,D S,4,1
+2024/2025,Nunzio Lella,Venezia,0.0,1,2,0,0,S,0,0
+2024/2025,Nicolo Rovella,Lazio,1.6,33,2747,28,0,M S,13,0
+2024/2025,Antonio Candela,Venezia,0.21,14,1020,5,0,D S,2,0
+2024/2025,Emerson,Milan,0.35,17,1392,10,0,D S,5,0
+2024/2025,Nehuén Pérez,Udinese,0.0,2,180,0,0,D,0,0
+2024/2025,Lameck Banda,Lecce,1.56,15,592,17,0,F M S,1,0
+2024/2025,Ben Godfrey,Atalanta,0.0,1,21,0,0,S,0,0
+2024/2025,Valentin Gendrey,Lecce,0.17,2,180,2,0,D,0,0
+2024/2025,Cheikh Niasse,Verona,0.17,11,760,3,0,M S,4,0
+2024/2025,Kingsley Ehizibue,Udinese,1.67,33,2534,14,0,D M S,5,0
+2024/2025,Gaetano Castrovilli,"Lazio,Monza",0.65,21,725,8,0,M S,0,0
+2024/2025,Szymon Zurkowski,Empoli,0.12,5,90,2,0,S,0,0
+2024/2025,Pawel Dawidowicz,Verona,0.2,26,1864,4,0,D M S,7,1
+2024/2025,Liam Henderson,Empoli,0.5,36,2358,22,0,M S,10,0
+2024/2025,Sofyan Amrabat,Fiorentina,0.0,2,180,0,0,M,0,0
+2024/2025,Tommaso Augello,Cagliari,0.2,38,2724,8,0,D M S,3,0
+2024/2025,Morten Thorsby,Genoa,2.9,30,1907,15,0,F M S,6,0
+2024/2025,Ruslan Malinovskiy,Genoa,0.24,9,372,9,0,M S,2,0
+2024/2025,Jesse Joronen,Venezia,0.0,8,703,0,0,GK S,0,0
+2024/2025,Billy Gilmour,Napoli,0.63,26,1161,9,0,M S,0,0
+2024/2025,Antonino Gallo,Lecce,0.34,31,2624,9,0,D,3,1
+2024/2025,Yordan Osorio,Parma,0.03,3,170,1,0,D S,0,0
+2024/2025,Sebastian Walukiewicz,"Empoli,Torino",0.39,31,1853,6,0,D S,6,0
+2024/2025,Lloyd Kelly,Juventus,0.62,12,1018,7,0,D S,1,0
+2024/2025,Stefano Turati,Monza,0.0,30,2678,0,0,GK,1,0
+2024/2025,Giuseppe Ciocci,Cagliari,0.0,1,3,0,0,S,0,0
+2024/2025,Andrea Carboni,Monza,0.34,26,2209,8,0,D M S,5,0
+2024/2025,Balthazar Pierret,Lecce,0.14,30,1741,6,0,M S,2,0
+2024/2025,Gastón Pereiro,Genoa,0.0,2,26,0,0,S,0,0
+2024/2025,Marin Pongracic,Fiorentina,0.09,20,1380,3,0,D S,1,1
+2024/2025,Filip Stankovic,Venezia,0.0,16,1367,0,0,GK,1,0
+2024/2025,Mitchel Bakker,Atalanta,0.0,1,20,0,0,S,0,0
+2024/2025,Razvan Sava,Udinese,0.0,12,1080,0,0,GK,1,0
+2024/2025,Maduka Okoye,Udinese,0.0,25,2250,0,0,GK,1,0
+2024/2025,Jean Onana,Genoa,0.01,9,291,1,0,M S,1,0
+2024/2025,Oliver Abildgaard,Como,0.0,1,7,0,0,S,0,0
+2024/2025,Lucas Gourna Douath,Roma,0.23,6,220,3,0,M S,2,0
+2024/2025,Malick Thiaw,Milan,0.45,22,1800,7,0,D S,2,0
+2024/2025,Pablo Marí,"Fiorentina,Monza",0.32,32,2731,7,0,D S,4,1
+2024/2025,Filippo Terracciano,Milan,0.15,13,527,3,0,D M S,3,0
+2024/2025,Botond Balogh,Parma,0.5,29,2055,3,0,D S,5,0
+2024/2025,Nikola Moro,Bologna,0.47,22,1223,14,0,M S,1,0
+2024/2025,Enzo Ebosse,Udinese,0.0,2,83,0,0,S,1,0
+2024/2025,Enzo Le Fée,Roma,0.19,6,317,4,0,M S,1,0
+2024/2025,Flavius Daniliuc,Verona,0.13,18,990,3,0,D S,0,0
+2024/2025,Yunus Musah,Milan,2.6,29,1561,22,0,D F M S,5,0
+2024/2025,Nicolò Casale,"Bologna,Lazio",0.27,17,1036,5,0,D S,1,0
+2024/2025,Marco Carnesecchi,Atalanta,0.0,34,3060,0,0,GK,1,0
+2024/2025,Matteo Ruggeri,Atalanta,0.5,30,1739,3,0,D M S,2,0
+2024/2025,Lorenzo Montipò,Verona,0.0,36,3240,0,0,GK,0,0
+2024/2025,Hamza Rafia,Lecce,0.4,18,1083,10,0,M S,4,0
+2024/2025,Alberto Paleari,Torino,0.0,1,90,0,0,GK,0,0
+2024/2025,Josep Martínez,Inter,0.0,5,450,0,0,GK,0,0
+2024/2025,Franco Ezequiel Carboni,Venezia,0.01,8,220,1,0,D M S,2,0
+2024/2025,Nahuel Estévez,Parma,0.1,14,658,5,0,M S,2,0
+2024/2025,Ardian Ismajli,Empoli,0.51,29,2510,5,0,D,3,0
+2024/2025,Giorgio Scalvini,Atalanta,0.09,6,284,4,0,D S,2,0
+2024/2025,Mihai Valentin Mihaila,Parma,2.55,21,1315,30,0,F M S,2,0
+2024/2025,Viktor Kovalenko,Empoli,0.15,6,61,3,0,S,0,0
+2024/2025,Saba Sazonov,Torino,0.0,1,1,0,0,S,0,0
+2024/2025,Emil Bohinen,Genoa,0.08,3,158,2,0,M S,0,0
+2024/2025,Antonio Raimondo,Venezia,0.51,9,71,1,0,S,0,0
+2024/2025,Nuno Tavares,Lazio,1.57,23,1725,28,0,D S,2,1
+2024/2025,Silvère Ganvoula,Monza,0.39,7,324,4,0,F S,0,0
+2024/2025,Odilon Kossounou,Atalanta,1.09,18,1126,6,0,D S,1,0
+2024/2025,Petar Stojanovic,Empoli,0.0,1,1,0,0,S,0,0
+2024/2025,Emmanuel Ekong,Empoli,0.13,15,146,4,0,S,1,0
+2024/2025,Tyronne Ebuehi,Empoli,0.0,4,64,0,0,S,0,0
+2024/2025,Bjarki Steinn Bjarkason,Venezia,0.0,9,153,0,0,D S,2,0
+2024/2025,Youssef Maleh,Empoli,1.0,22,1524,17,0,M S,3,1
+2024/2025,Pasquale Mazzocchi,Napoli,0.33,20,691,3,0,D S,2,0
+2024/2025,Domen Crnigoj,Venezia,0.09,8,121,1,0,M S,0,0
+2024/2025,Rafa Marín,Napoli,0.1,4,133,2,0,D S,1,0
+2024/2025,Estanis Pedrola,Bologna,0.12,1,8,2,0,S,0,0
+2024/2025,Arijon Ibrahimovic,Lazio,0.06,1,6,2,0,S,0,0
+2024/2025,Michel Aebischer,Bologna,0.43,14,729,10,0,M S,2,0
+2024/2025,Yllan Okou,Verona,0.0,1,1,0,0,S,0,0
+2024/2025,Simone Pafundi,Udinese,0.06,9,94,2,0,S,0,0
+2024/2025,Faride Alidou,Verona,0.01,3,63,1,0,S,0,0
+2024/2025,Mateusz Wieteska,Cagliari,0.37,5,170,1,0,D S,1,0
+2024/2025,James Abankwah,Udinese,0.11,6,70,1,0,S,1,0
+2024/2025,Michele Di Gregorio,Juventus,0.0,33,2970,0,0,GK,0,0
+2024/2025,Samuele Vignato,Monza,0.23,17,444,4,0,M S,0,0
+2024/2025,Warren Bondo,"AC Milan,Monza",0.42,24,1797,14,0,M S,4,1
+2024/2025,Thórir Helgason,Lecce,1.3,21,1156,16,0,M S,0,0
+2024/2025,Medon Berisha,Lecce,0.66,17,697,24,0,M S,5,0
+2024/2025,Dodô,Fiorentina,1.41,35,3126,27,0,D M,8,0
+2024/2025,Mile Svilar,Roma,0.08,38,3420,1,0,GK,1,0
+2024/2025,Simone Perilli,Verona,0.0,2,180,0,0,GK,0,0
+2024/2025,Jhon Lucumí,Bologna,0.79,32,2626,12,0,D S,8,1
+2024/2025,Reda Belahyane,"Lazio,Verona",0.19,28,1849,6,0,M S,4,2
+2024/2025,Isak Hien,Atalanta,0.95,30,2336,8,0,D S,10,0
+2024/2025,Juan Cabal,Juventus,0.13,7,464,5,0,D S,0,0
+2024/2025,Jacopo Seghetti,Empoli,0.0,1,90,0,0,GK,0,0
+2024/2025,Michael Kayode,Fiorentina,0.09,5,118,1,0,D S,0,0
+2024/2025,Ola Solbakken,Empoli,0.79,21,750,4,0,F M S,2,0
+2024/2025,Devis Vásquez,Empoli,0.0,32,2880,0,0,GK,2,0
+2024/2025,Cyril Ngonge,Napoli,0.59,18,177,13,0,F S,2,0
+2024/2025,Máximo Perrone,Como,0.95,26,1866,10,0,M S,6,0
+2024/2025,Renato Veiga,Juventus,0.82,13,1091,12,0,D S,2,0
+2024/2025,Alphadjo Cissè,Verona,0.04,2,5,2,0,S,0,0
+2024/2025,Aaron Ciammaglichella,Torino,0.0,1,1,0,0,S,0,0
+2024/2025,Mirko Maric,"Monza,Venezia",1.13,18,439,7,0,F S,0,0
+2024/2025,Marco Palestra,Atalanta,0.0,9,213,0,0,D S,0,0
+2024/2025,Cher Ndour,Fiorentina,0.15,9,397,4,0,M S,1,0
+2024/2025,Arthur Atta,Udinese,1.54,27,1223,26,0,M S,5,0
+2024/2025,Luca Marianucci,Empoli,0.63,18,1058,8,0,D M S,0,1
+2024/2025,Michael Folorunsho,"Fiorentina,Napoli",0.62,20,662,10,0,D M S,5,0
+2024/2025,Mohamed Kaba,Lecce,0.65,15,422,4,0,M S,1,0
+2024/2025,Rares Burnete,Lecce,0.06,4,17,1,0,S,0,0
+2024/2025,Alberto Dossena,Como,0.66,23,1834,12,0,D S,1,1
+2024/2025,Paulo Azzi,Cagliari,0.66,6,437,8,0,D S,2,0
+2024/2025,Antoine Makoumbou,Cagliari,0.2,33,2189,7,0,M S,2,1
+2024/2025,Matteo Prati,Cagliari,0.07,12,579,4,0,M S,1,0
+2024/2025,Sam Beukema,Bologna,1.66,35,3010,15,0,D S,1,0
+2024/2025,Oussama El Azzouzi,Bologna,0.0,2,11,0,0,S,0,0
+2024/2025,Davide Bartesaghi,Milan,0.03,4,115,1,0,D S,0,1
+2024/2025,Kevin Zeroli,"AC Milan,Monza",0.5,9,404,6,0,M S,0,0
+2024/2025,Walid Cheddira,Napoli,0.0,1,5,0,0,S,0,0
+2024/2025,Marcus Pedersen,Torino,0.84,29,1349,8,0,D S,3,0
+2024/2025,Christos Mandas,Lazio,0.0,9,810,0,0,GK,0,0
+2024/2025,Alan Matturro,Genoa,0.16,13,888,4,0,D S,2,0
+2024/2025,Tomás Suslov,Verona,1.68,31,2123,32,0,F M S,5,1
+2024/2025,Alejandro Jiménez,Milan,1.28,22,1285,15,0,D M S,6,0
+2024/2025,Francesco Camarda,Milan,0.52,10,194,8,0,F S,0,0
+2024/2025,Alberto Manzoni,Atalanta,0.03,1,1,1,0,S,0,0
+2024/2025,Stefan Lekovic,Monza,0.07,7,355,3,0,D S,0,0
+2024/2025,Tajon Buchanan,Inter,0.0,6,79,0,0,S,0,0
+2024/2025,Kingstone Mutandwa,Cagliari,0.21,6,102,4,0,S,0,0
+2024/2025,Omari Forson,Monza,0.43,9,198,5,0,F S,0,0
+2024/2025,Saba Goglichidze,Empoli,0.26,33,2560,6,0,D S,3,1
+2024/2025,Andrea Mazza,Monza,0.0,1,7,0,0,S,0,0
+2024/2025,Dani Silva,Verona,0.03,11,398,2,0,M S,1,0
+2024/2025,David Ankeye,Genoa,0.0,4,38,0,0,S,0,0
+2024/2025,Maat Caprini,Fiorentina,0.0,2,7,0,0,S,0,0
+2024/2025,Matteo Palma,Udinese,0.0,1,2,0,0,S,0,0
+2024/2025,Junior Ajayi,Verona,0.0,2,10,0,0,S,0,0
+2024/2025,Federico Accornero,Genoa,0.0,1,1,0,0,S,0,0
+2024/2025,Honest Ahanor,Genoa,0.7,6,263,3,0,D M S,0,0
+2024/2025,Zion Suzuki,Parma,0.0,37,3319,0,0,GK,0,1
+2024/2025,Woyo Coulibaly,Parma,0.11,14,1082,3,0,D S,1,1
+2024/2025,Alessandro Circati,Parma,0.18,6,540,2,0,D,1,0
+2024/2025,Mateusz Kowalski,Parma,0.55,1,61,1,0,M,0,0
+2024/2025,Lorenzo Tosto,Empoli,0.0,1,1,0,0,S,0,0
+2024/2025,Álex Valle,Como,0.33,15,1042,9,0,D S,2,0
+2024/2025,Jesper Karlström,Udinese,1.02,37,3201,13,0,M S,9,0
+2024/2025,Martin Frese,Verona,0.06,11,543,2,0,D M S,0,0
+2024/2025,Daniele Ghilardi,Verona,0.53,24,2029,12,0,D S,7,1
+2024/2025,Alen Sherri,Cagliari,0.0,7,627,0,0,GK,0,0
+2024/2025,Mattia Felici,Cagliari,1.09,20,908,10,0,M S,1,0
+2024/2025,Samuel Dahl,Roma,0.0,2,39,0,0,S,0,0
+2024/2025,Richie Sagrado,Venezia,0.03,3,145,1,0,D,1,0
+2024/2025,Issa Doumbia,Venezia,1.56,24,922,17,0,M S,0,0
+2024/2025,Kialonda Gaspar,Lecce,0.77,24,2148,16,0,D,3,0
+2024/2025,Filip Marchwinski,Lecce,0.0,1,13,0,0,S,0,0
+2024/2025,Federico Cassa,Atalanta,0.0,2,7,0,0,S,0,0
+2024/2025,Jonas Rouhi,Juventus,0.0,5,206,0,0,D S,0,0
+2024/2025,Marco Sala,"Como,Lecce",0.0,10,325,0,0,D S,3,0
+2024/2025,Matthias Braunöder,Como,0.06,8,267,2,0,M S,1,1
+2024/2025,Alessandro Marcandalli,"Genoa,Venezia",0.57,10,407,2,0,D S,2,0
+2024/2025,Saad El Haddad,Venezia,0.0,3,23,0,0,S,0,0
+2024/2025,Alessio Iovine,Como,0.02,10,373,1,0,D S,2,0
+2024/2025,Ali Jasim,Como,0.0,2,8,0,0,S,0,0
+2024/2025,Lorenzo Anghelè,Juventus,0.0,1,2,0,0,S,0,0
+2024/2025,Joël Schingtienne,Venezia,0.0,16,1124,0,0,D S,2,0
+2024/2025,Vanja Vlahovic,Atalanta,0.08,3,56,1,0,S,0,0
+2024/2025,Gaby Jean,Lecce,0.08,19,1384,1,0,D S,0,0
+2024/2025,Lior Kasa,Genoa,0.89,8,221,5,0,M S,2,0
+2024/2025,Damián Pizarro,Udinese,0.0,2,12,0,0,S,0,0
+2024/2025,Ignace Van der Brempt,Como,0.57,20,1256,7,0,D S,3,0
+2024/2025,Saud Abdulhamid,Roma,0.01,4,208,1,0,D S,0,0
+2024/2025,Ismael Konaté,Empoli,0.43,12,87,3,0,S,0,0
+2024/2025,Vasilije Adzic,Juventus,0.03,6,33,1,0,S,0,0
+2024/2025,Matías Moreno,Fiorentina,0.0,4,144,0,0,D S,0,0
+2024/2025,Tomás Palacios,"Inter,Monza",0.04,10,447,1,0,D S,2,0
+2024/2025,Mandela Keita,Parma,0.1,30,1852,5,0,M S,4,1
+2024/2025,Rui Modesto,Udinese,0.51,20,581,3,0,D S,1,0
+2024/2025,Fellipe Jack,Como,0.0,7,162,0,0,D S,2,0
+2024/2025,Kevin Martins,Monza,0.0,9,163,0,0,D S,1,0
+2024/2025,Brooke Norton-Cuffy,Genoa,0.22,14,726,5,0,D F M S,0,0
+2024/2025,Mattia Liberali,Milan,0.07,1,63,2,0,M,0,0
+2024/2025,Tommaso Gabellini,Torino,0.02,1,8,1,0,S,0,0
+2024/2025,Adrian Benedyczak,Parma,0.17,9,195,3,0,M S,0,0
+2024/2025,Tommaso Rubino,Fiorentina,0.0,1,5,0,0,S,0,0
+2024/2025,Jacopo Bacci,Empoli,0.0,3,24,0,0,S,0,0
+2024/2025,Diego Pugno,Juventus,0.0,1,5,0,0,S,0,0
+2024/2025,Thomas Campaniello,Empoli,0.36,3,19,1,0,S,0,0
+2024/2025,Sergiu Perciun,Torino,0.06,5,133,2,0,S,0,0
+2024/2025,Nicolás Valentini,Verona,0.27,14,1139,8,0,D S,3,1
+2024/2025,Bob Omoregbe,Milan,0.0,1,2,0,0,S,0,0
+2024/2025,Mathias Løvik,Parma,0.14,6,77,1,0,S,0,0
+2024/2025,Cheick Conde,Venezia,0.0,9,136,0,0,M S,2,0
+2024/2025,Luka Topalovic,Inter,0.0,1,5,0,0,S,0,0
+2024/2025,Alberto Costa,Juventus,1.03,9,342,7,0,D S,3,0
+2024/2025,Devyne Rensch,Roma,0.62,14,458,3,0,D S,0,0
+2024/2025,Danilo Veiga,Lecce,0.72,13,332,5,0,D S,0,0
+2024/2025,Tiago Gabriel,Lecce,0.0,2,92,0,0,S,0,0
+2024/2025,Arvid Brorsson,Monza,0.0,6,357,0,0,D S,0,0
+2024/2025,Daniel Oyegoke,Verona,0.01,5,91,1,0,S,1,0
+2024/2025,Benjamin Siegrist,Genoa,0.0,2,154,0,0,GK,0,0
+2024/2025,Ivan Smolcic,Como,0.78,9,627,7,0,D S,2,0
+2024/2025,Oliver Provstgaard,Lazio,0.0,2,27,0,0,S,1,0
+2024/2025,Victor Nelsson,Roma,0.05,4,179,1,0,D S,0,0
+2024/2025,Anass Salah-Eddine,Roma,0.46,3,156,2,0,D S,0,0
+2024/2025,Konan N’Dri,Lecce,0.48,11,285,9,0,M S,0,0
+2024/2025,Sebastian Otoa,Genoa,0.0,3,183,0,0,D,1,1
+2024/2025,Nicola Pintus,Cagliari,0.0,1,1,0,0,S,0,0
+2024/2025,Alessio Cacciamani,Torino,0.0,2,21,0,0,S,0,0
+2025/2026,Lautaro Martínez,Inter,17.14,30,2205,92,17,F S,4,0
+2025/2026,Donyell Malen,Roma,15.2,18,1499,70,14,F,1,0
+2025/2026,Tasos Douvikas,Como,15.17,38,2279,65,14,F S,0,0
+2025/2026,Marcus Thuram,Inter,11.9,29,1933,74,13,F S,2,0
+2025/2026,Rasmus Højlund,Napoli,13.31,33,2784,60,13,F S,1,0
+2025/2026,Nico Paz,Como,8.9,35,2905,121,12,F M S,5,0
+2025/2026,Giovanni Simeone,Torino,11.18,32,2273,78,11,F M S,1,0
+2025/2026,Keinan Davis,Udinese,9.89,30,2106,50,10,F S,6,0
+2025/2026,Federico Bonazzoli,Cremonese,9.02,35,2571,75,10,F S,4,0
+2025/2026,Scott McTominay,Napoli,12.43,33,2798,101,10,M S,1,0
+2025/2026,Riccardo Orsolini,Bologna,10.89,35,2146,82,10,F M S,2,0
+2025/2026,Gianluca Scamacca,Atalanta,8.87,24,1318,57,10,F S,2,0
+2025/2026,Kenan Yildiz,Juventus,8.63,36,2877,97,10,F M S,2,0
+2025/2026,Nikola Krstovic,Atalanta,15.67,33,1781,99,10,F S,4,0
+2025/2026,Hakan Calhanoglu,Inter,5.15,22,1674,50,9,M S,7,0
+2025/2026,Andrea Pinamonti,Sassuolo,11.53,36,2610,73,9,F S,2,1
+2025/2026,Rafael Leão,Milan,9.6,29,1874,63,9,F S,5,0
+2025/2026,Mateo Pellegrino,Parma,9.91,37,3012,73,9,F S,5,0
+2025/2026,Moise Kean,Fiorentina,15.38,26,2042,98,8,F S,4,0
+2025/2026,Domenico Berardi,Sassuolo,6.78,26,1995,40,8,F M S,2,1
+2025/2026,Christian Pulisic,Milan,9.54,30,1612,54,8,F S,0,0
+2025/2026,Nikola Vlasic,Torino,7.41,37,3079,49,8,F M S,7,0
+2025/2026,Jamie Vardy,Cremonese,6.28,29,2120,30,7,F S,5,0
+2025/2026,Federico Dimarco,Inter,7.29,35,2709,65,7,D S,3,0
+2025/2026,Christopher Nkunku,Milan,9.94,32,1343,29,7,F S,0,0
+2025/2026,Rolando Mandragora,Fiorentina,4.7,34,2470,64,7,M S,7,0
+2025/2026,Armand Lauriente,Sassuolo,4.39,38,2655,71,7,F M S,4,0
+2025/2026,Dusan Vlahovic,Juventus,7.54,19,972,49,7,F S,0,0
+2025/2026,Sebastiano Esposito,Cagliari,5.74,36,2751,57,7,F M S,6,0
+2025/2026,Lorenzo Colombo,Genoa,9.4,38,2373,66,7,F S,2,0
+2025/2026,Gift Orban,Verona,12.24,28,2055,85,7,F S,4,1
+2025/2026,Santiago Castro,Bologna,8.3,35,2381,63,7,F S,3,0
+2025/2026,Stefano Moreo,Pisa,6.22,37,2336,52,7,F M S,2,0
+2025/2026,Francesco Pio Esposito,Inter,9.86,35,1535,57,7,F S,1,0
+2025/2026,Piotr Zielinski,Inter,2.1,34,2048,29,6,M S,3,0
+2025/2026,Adrien Rabiot,Milan,4.36,29,2546,46,6,M S,4,1
+2025/2026,Che Adams,Torino,6.61,33,1899,53,6,F M S,0,0
+2025/2026,Ruslan Malinovskiy,Genoa,4.39,34,2279,55,6,M S,10,0
+2025/2026,Lucas Da Cunha,Como,6.93,36,2765,42,6,M S,4,0
+2025/2026,Jonathan Christian David,Juventus,11.46,35,1784,41,6,F S,0,0
+2025/2026,Matìas Soulè Malvano,Roma,4.68,33,2207,52,6,F M S,1,0
+2025/2026,Cesare Casadei,Torino,4.65,33,1971,35,6,M S,5,0
+2025/2026,Ismaël Koné,Sassuolo,5.08,35,2795,23,6,M S,3,1
+2025/2026,Martin Baturina,Como,1.9,29,1579,28,6,F M S,0,0
+2025/2026,Kevin De Bruyne,Napoli,3.52,18,1176,27,5,M S,1,0
+2025/2026,Pedro,Lazio,2.25,29,954,22,5,F M S,4,0
+2025/2026,Weston McKennie,Juventus,8.64,36,2857,43,5,D M S,5,0
+2025/2026,Nicolo Zaniolo,Udinese,6.14,32,2308,72,5,F M S,8,0
+2025/2026,Jens Odgaard,Bologna,2.73,26,1391,35,5,F M S,1,0
+2025/2026,Lameck Banda,Lecce,3.25,32,1768,38,5,F M S,6,1
+2025/2026,Strahinja Pavlovic,Milan,3.91,34,2876,26,5,D S,3,0
+2025/2026,Jurgen Ekkelenkamp,Udinese,4.73,31,2234,33,5,F M S,1,0
+2025/2026,Leo Østigard,Genoa,2.92,30,2631,22,5,D,7,0
+2025/2026,Albert Gudmundsson,Fiorentina,5.8,33,2290,41,5,F M S,4,1
+2025/2026,Vitinha,Genoa,6.91,35,2262,65,5,F M S,5,0
+2025/2026,Arthur Atta,Udinese,4.23,32,2575,57,5,F M S,3,0
+2025/2026,Gennaro Borrelli,Cagliari,4.58,27,1263,30,5,F S,4,0
+2025/2026,Gustav Isaksen,Lazio,5.41,30,1606,48,5,F S,0,0
+2025/2026,Ange-Yoan Bonny,Inter,4.58,33,1112,22,5,F S,1,0
+2025/2026,Wesley,Roma,2.48,30,2474,25,5,D M S,5,2
+2025/2026,Henrikh Mkhitaryan,Inter,6.04,30,1547,43,4,M S,5,0
+2025/2026,Federico Bernardeschi,Bologna,3.18,29,1198,39,4,F M S,3,0
+2025/2026,Lorenzo Pellegrini,Roma,4.78,24,1508,32,4,F M S,2,0
+2025/2026,Jeremie Boga,Juventus,4.13,15,666,24,4,F M S,1,0
+2025/2026,Marc-Oliver Kempf,Como,3.28,34,2317,22,4,D S,3,0
+2025/2026,Gianluca Mancini,Roma,2.39,36,3087,20,4,D,9,0
+2025/2026,Franck Zambo,Napoli,2.55,18,1253,23,4,M S,1,0
+2025/2026,Bremer,Juventus,2.71,26,2187,23,4,D S,5,0
+2025/2026,Roberto Piccoli,Fiorentina,6.83,32,1653,47,4,F S,1,0
+2025/2026,M&#039;Bala Nzola,"Pisa,Sassuolo",7.32,30,1514,39,4,F S,2,1
+2025/2026,Matteo Cancellieri,Lazio,5.22,30,1740,41,4,F M S,6,0
+2025/2026,Caleb Ekuban,Genoa,4.12,31,944,29,4,F M S,0,0
+2025/2026,Kristian Thorstvedt,Sassuolo,6.64,32,2450,43,4,F M S,9,0
+2025/2026,Walid Cheddira,"Lecce,Sassuolo",4.56,33,1193,33,4,F S,3,0
+2025/2026,Tijjani Noslin,Lazio,4.32,29,1113,35,4,F S,4,1
+2025/2026,Semih Kiliçsoy,Cagliari,2.05,22,973,17,4,F S,1,0
+2025/2026,Nikola Stulic,Lecce,5.47,34,1713,33,4,F S,1,0
+2025/2026,Kieron Bowie,Verona,4.1,14,1211,33,4,F,1,0
+2025/2026,Alisson Santos,Napoli,1.51,14,836,29,4,F M S,1,0
+2025/2026,Filip Kostic,Juventus,0.67,18,461,9,3,D M S,1,0
+2025/2026,Ruben Loftus-Cheek,Milan,4.14,28,1122,29,3,F M S,2,0
+2025/2026,Mario Pasalic,Atalanta,3.45,33,1922,24,3,M S,3,0
+2025/2026,Duván Zapata,Torino,4.4,28,1088,34,3,F S,0,0
+2025/2026,Davide Zappacosta,Atalanta,3.23,35,2605,37,3,D M S,3,0
+2025/2026,Danilo Cataldi,Lazio,2.71,27,2007,26,3,M S,6,0
+2025/2026,Nicolò Barella,Inter,3.82,34,2561,35,3,M S,7,0
+2025/2026,Leonardo Spinazzola,Napoli,1.21,32,1906,21,3,D M S,2,0
+2025/2026,Christian Kabasele,Udinese,1.67,30,2273,9,3,D S,5,1
+2025/2026,Mattia Zaccagni,Lazio,6.38,26,2127,34,3,F M,6,1
+2025/2026,Lassana Coulibaly,Lecce,3.2,33,2708,28,3,M S,4,0
+2025/2026,Mario Hermoso,Roma,2.19,27,2106,20,3,D S,9,0
+2025/2026,Robin Gosens,Fiorentina,2.4,26,1908,18,3,D M S,2,0
+2025/2026,Yann Bisseck,Inter,2.83,23,1924,25,3,D S,2,0
+2025/2026,Oumar Solet,Udinese,2.9,35,2962,33,3,D S,1,0
+2025/2026,Evan Ndicka,Roma,2.39,31,2686,23,3,D,5,0
+2025/2026,Kephren Thuram,Juventus,4.06,35,2481,50,3,M S,2,0
+2025/2026,Giacomo Raspadori,Atalanta,3.49,13,784,28,3,F M S,0,0
+2025/2026,Nicolò Cambiaghi,Bologna,2.92,28,1510,24,3,F M S,3,1
+2025/2026,Morten Thorsby,"Cremonese,Genoa",2.72,24,1390,21,3,M S,4,0
+2025/2026,Alexis Saelemaekers,Milan,3.6,35,2819,43,3,D F M S,5,0
+2025/2026,Junior Messias,Genoa,1.86,20,655,19,3,M S,1,0
+2025/2026,Adrián Bernabé,Parma,2.62,32,2542,50,3,D M S,0,0
+2025/2026,Tommaso Pobega,Bologna,1.84,26,1446,25,3,M S,2,1
+2025/2026,Giorgio Scalvini,Atalanta,3.86,24,1841,20,3,D S,2,0
+2025/2026,Denzel Dumfries,Inter,3.65,20,1332,23,3,D S,2,0
+2025/2026,Andrea Cambiaso,Juventus,2.9,36,2846,26,3,D M S,3,1
+2025/2026,Jonathan Rowe,Bologna,4.98,28,1612,48,3,F M S,2,0
+2025/2026,Evan Ferguson,Roma,3.48,16,777,26,3,F S,1,0
+2025/2026,Charles De Ketelaere,Atalanta,4.55,31,2206,46,3,F M S,4,0
+2025/2026,Adam Buksa,Udinese,2.78,25,886,12,3,F S,3,0
+2025/2026,Máximo Perrone,Como,2.49,36,2758,18,3,M S,8,0
+2025/2026,Artem Dovbyk,Roma,3.1,14,364,12,3,F S,0,0
+2025/2026,Cher Ndour,Fiorentina,2.61,33,1875,24,3,M S,2,0
+2025/2026,Thomas Thiesson Kristensen,Udinese,1.88,28,2482,11,3,D,4,0
+2025/2026,Jeff Ekhator,Genoa,3.19,30,930,20,3,F M S,3,0
+2025/2026,David Neres,Napoli,1.48,16,932,17,3,F M S,3,0
+2025/2026,Francisco Conceição,Juventus,8.49,31,2124,73,3,D F M S,3,0
+2025/2026,Giovane,"Napoli,Verona",4.27,33,1873,56,3,F M S,2,0
+2025/2026,Jayden Addai,Como,1.51,12,688,13,3,M S,4,0
+2025/2026,Kenneth Taylor,Lazio,2.09,17,1418,16,3,M,5,0
+2025/2026,Suat Serdar,Verona,2.67,20,1102,19,2,M S,3,0
+2025/2026,Alberto Moreno,Como,1.59,19,1240,11,2,D S,4,0
+2025/2026,Bryan Cristante,Roma,2.35,37,3116,43,2,M S,6,0
+2025/2026,Andrea Belotti,Cagliari,2.31,8,212,6,2,F S,0,0
+2025/2026,Paulo Dybala,Roma,6.29,22,1360,43,2,F M S,1,0
+2025/2026,Matteo Politano,Napoli,3.13,34,2249,49,2,D F M S,4,0
+2025/2026,Luca Mazzitelli,Cagliari,0.71,18,753,15,2,M S,3,0
+2025/2026,Luka Modric,Milan,1.25,34,2827,20,2,M S,4,0
+2025/2026,Ademola Lookman,Atalanta,3.85,12,803,27,2,F M S,0,0
+2025/2026,Matteo Guendouzi,Lazio,1.22,16,1434,16,2,M,5,0
+2025/2026,Guillermo Maripán,Torino,2.43,27,2151,18,2,D S,4,0
+2025/2026,Antonio Caracciolo,Pisa,2.36,35,3077,25,2,D S,10,0
+2025/2026,Mehdi Leris,Pisa,1.97,34,1910,25,2,D M S,2,0
+2025/2026,Manuel Akanji,Inter,2.3,33,2814,23,2,D S,4,0
+2025/2026,Yerry Mina,Cagliari,1.76,26,2162,10,2,D,3,1
+2025/2026,Enrico Del Prato,Parma,2.26,35,2958,18,2,D S,5,0
+2025/2026,Toma Basic,Lazio,1.31,23,1764,30,2,M,0,1
+2025/2026,Youssouf Fofana,Milan,4.59,33,2231,44,2,M S,4,0
+2025/2026,Giovanni Di Lorenzo,Napoli,1.95,26,2278,25,2,D,1,0
+2025/2026,Marco Brescianini,"Atalanta,Fiorentina",2.35,26,1018,13,2,M S,2,0
+2025/2026,Maxence Caqueret,Como,1.74,30,1493,18,2,M S,3,0
+2025/2026,Nicolo Fagioli,Fiorentina,1.9,33,2588,33,2,M S,5,0
+2025/2026,Kouadio Kone,Roma,1.94,29,2468,21,2,M S,2,0
+2025/2026,Gianluca Gaetano,Cagliari,2.0,33,1920,34,2,F M S,4,0
+2025/2026,Kingsley Ehizibue,Udinese,1.43,32,1810,9,2,D M S,5,0
+2025/2026,Amir Rrahmani,Napoli,1.35,21,1809,15,2,D,2,0
+2025/2026,Gabriel Strefezza,Parma,1.06,14,1026,24,2,F S,3,0
+2025/2026,Daniel Maldini,"Atalanta,Lazio",2.81,21,944,23,2,F M S,1,0
+2025/2026,Lazar Samardzic,Atalanta,2.78,26,1005,25,2,M S,1,0
+2025/2026,Filippo Terracciano,Cremonese,2.33,36,3023,14,2,D S,6,0
+2025/2026,Mergim Vojvoda,Como,1.47,30,1602,18,2,D F M S,1,0
+2025/2026,Matteo Tramoni,Pisa,3.21,27,1630,28,2,F M S,3,0
+2025/2026,Nicola Zalewski,Atalanta,3.14,33,1917,38,2,D M S,3,0
+2025/2026,Kamaldeen Sulemana,Atalanta,2.49,25,993,25,2,M S,4,0
+2025/2026,David Okereke,Cremonese,0.69,10,397,8,2,F S,0,0
+2025/2026,Cristian Volpato,Sassuolo,1.75,24,1060,21,2,F M S,4,0
+2025/2026,Éderson,Atalanta,5.55,30,2253,35,2,M S,3,0
+2025/2026,Manor Solomon,Fiorentina,1.01,16,872,11,2,F M S,1,0
+2025/2026,Thijs Dallinga,Bologna,3.89,23,785,24,2,F S,2,0
+2025/2026,Federico Baschirotto,Cremonese,1.14,29,2540,12,2,D,2,0
+2025/2026,Medon Berisha,Lecce,1.31,13,893,24,2,M S,0,0
+2025/2026,Valentín Castellanos,Lazio,2.06,11,697,20,2,F S,2,0
+2025/2026,Federico Gatti,Juventus,1.96,21,1081,14,2,D S,3,0
+2025/2026,Juan Cabal,Juventus,1.08,12,262,5,2,D S,1,0
+2025/2026,Niccolò Pisilli,Roma,2.27,25,1263,19,2,M S,3,0
+2025/2026,Michael Folorunsho,Cagliari,2.95,27,2032,36,2,D F M S,3,0
+2025/2026,Sam Beukema,Napoli,1.73,24,1675,8,2,D S,2,0
+2025/2026,Giovanni Fabbian,"Bologna,Fiorentina",2.67,29,1160,22,2,M S,2,0
+2025/2026,Davide Bartesaghi,Milan,1.37,31,2447,22,2,D M S,3,0
+2025/2026,Assane Diao,Como,3.18,17,1098,31,2,M S,2,0
+2025/2026,Jacobo Ramón,Como,5.47,32,2744,39,2,D S,11,1
+2025/2026,Martin Frese,Verona,1.36,31,2429,21,2,D S,8,0
+2025/2026,Mattia Felici,Cagliari,1.34,12,397,9,2,D M S,3,0
+2025/2026,Henrik Meister,Pisa,5.32,28,1494,20,2,F S,2,0
+2025/2026,Alieu Fadera,Sassuolo,2.36,28,959,13,2,F S,5,0
+2025/2026,Jesús Rodriguez,Como,3.92,31,1728,45,2,F M S,3,1
+2025/2026,Brooke Norton-Cuffy,Genoa,2.01,27,2221,15,2,D M S,3,1
+2025/2026,Tiago Gabriel,Lecce,3.98,37,3223,20,2,D S,7,0
+2025/2026,Konan N’Dri,Lecce,0.71,27,474,19,2,M S,3,0
+2025/2026,Tarik Muharemovic,Sassuolo,2.83,32,2837,20,2,D,7,0
+2025/2026,Zachary Athekame,Milan,0.38,27,804,13,2,D S,3,0
+2025/2026,Riyad Idrissi,Cagliari,0.79,23,737,6,2,D S,3,0
+2025/2026,Rafik Belghali,Verona,2.6,26,1935,21,2,D M S,6,0
+2025/2026,Petar Sucic,Inter,2.18,34,1763,22,2,M S,5,0
+2025/2026,Omri Gandelman,Lecce,1.73,19,971,10,2,M S,0,0
+2025/2026,Nesta Elphege,Parma,2.35,9,297,6,2,F S,0,0
+2025/2026,Paul Mendy,Cagliari,2.39,9,326,15,2,F S,1,0
+2025/2026,Ulisses García,Sassuolo,0.07,13,941,2,1,D S,3,0
+2025/2026,Romelu Lukaku,Napoli,0.59,5,33,2,1,S,1,0
+2025/2026,Nemanja Matic,Sassuolo,0.33,34,2686,11,1,M S,6,1
+2025/2026,Juan Cuadrado,Pisa,0.96,19,460,10,1,D M S,3,0
+2025/2026,Leonardo Pavoletti,Cagliari,1.37,13,193,6,1,F S,1,0
+2025/2026,Manuel Locatelli,Juventus,2.42,36,3031,46,1,M,9,0
+2025/2026,Stephan El Shaarawy,Roma,2.02,20,623,18,1,F M S,4,0
+2025/2026,Matías Vecino,Lazio,0.31,13,592,7,1,M S,1,0
+2025/2026,Remo Freuler,Bologna,1.68,29,2236,8,1,M S,5,0
+2025/2026,Roberto Gagliardini,Verona,1.33,29,2212,15,1,M S,9,0
+2025/2026,Manuel De Luca,Cremonese,0.84,2,10,2,1,S,0,0
+2025/2026,Sebastiano Luperto,"Cagliari,Cremonese",0.95,34,3024,12,1,D,4,0
+2025/2026,Marten de Roon,Atalanta,0.82,34,2720,16,1,D M S,6,1
+2025/2026,Franco Vázquez,Cremonese,1.45,15,485,12,1,F M S,1,0
+2025/2026,Antonio Sanabria,Cremonese,2.98,25,921,12,1,F S,2,0
+2025/2026,Jean-Daniel Akpa-Akpro,Verona,0.88,22,1531,13,1,M S,9,0
+2025/2026,Patrick Cutrone,Parma,3.27,15,908,25,1,F S,0,0
+2025/2026,Alessandro Bastoni,Inter,1.69,28,2269,17,1,D,6,0
+2025/2026,Luca Pellegrini,Lazio,0.64,24,1485,7,1,D S,8,0
+2025/2026,Aarón Martín,Genoa,1.32,33,2167,11,1,D M S,2,0
+2025/2026,Estupiñán,Milan,0.48,19,1045,9,1,D S,5,1
+2025/2026,Stefan Posch,Como,0.86,14,362,8,1,D S,1,0
+2025/2026,Diego Carlos,Como,1.67,27,1946,8,1,D S,8,0
+2025/2026,Niclas Füllkrug,Milan,3.41,20,626,16,1,F S,0,0
+2025/2026,Stanislav Lobotka,Napoli,0.41,32,2442,8,1,M S,3,0
+2025/2026,Adam Marusic,Lazio,1.74,33,2794,16,1,D S,1,1
+2025/2026,Antoine Bernede,Verona,1.02,32,2349,21,1,M S,2,0
+2025/2026,Riccardo Sottil,Lecce,0.76,21,1078,20,1,F M S,1,0
+2025/2026,Luca Ranieri,Fiorentina,2.08,34,2489,18,1,D S,8,1
+2025/2026,Ndary Adopo,Cagliari,2.53,38,3074,28,1,D M S,4,0
+2025/2026,Mehmet Zeki Çelik,Roma,1.77,34,2747,22,1,D M S,2,1
+2025/2026,Boulaye Dia,Lazio,2.7,27,1257,12,1,F M S,1,0
+2025/2026,Juan Miranda,Bologna,0.52,32,2576,13,1,D S,6,0
+2025/2026,Samuele Ricci,Milan,2.11,31,1273,18,1,M S,3,0
+2025/2026,Eljif Elmas,Napoli,3.64,33,1791,27,1,F M S,3,0
+2025/2026,Billy Gilmour,Napoli,0.57,17,798,10,1,M S,1,0
+2025/2026,Lloyd Kelly,Juventus,0.97,35,2997,17,1,D S,4,0
+2025/2026,Pierre Kalulu Kyatengwa,Juventus,1.45,37,3281,12,1,D,2,1
+2025/2026,Miguel Gutiérrez,Napoli,0.57,28,1478,15,1,D S,0,0
+2025/2026,Rafael Obrador,Torino,0.17,16,1135,7,1,D M S,1,0
+2025/2026,Nikola Moro,Bologna,0.93,30,1784,21,1,M S,1,0
+2025/2026,Jack Harrison,Fiorentina,0.92,15,983,13,1,D F M S,1,0
+2025/2026,Yunus Musah,"AC Milan,Atalanta",0.75,20,623,7,1,D M S,1,0
+2025/2026,Luis Henrique,Inter,1.15,30,1617,15,1,D S,1,0
+2025/2026,Andy Diouf,Inter,0.94,19,462,10,1,D M S,1,0
+2025/2026,Odilon Kossounou,Atalanta,0.26,19,981,5,1,D S,1,0
+2025/2026,Simone Canestrelli,Pisa,1.35,37,3200,16,1,D S,4,0
+2025/2026,Alessandro Zanoli,Udinese,0.1,19,1314,3,1,D M S,1,0
+2025/2026,Dennis Johnsen,Cremonese,0.74,11,390,5,1,F M S,0,0
+2025/2026,Youssef Maleh,"Cremonese,Lecce",1.29,23,1574,22,1,M S,4,1
+2025/2026,Fabiano Parisi,Fiorentina,1.3,23,1550,24,1,D F M S,6,0
+2025/2026,Tommaso Baldanzi,"Genoa,Roma",1.88,18,787,20,1,F M S,2,0
+2025/2026,Koni de Winter,Milan,0.8,26,1797,7,1,D S,1,0
+2025/2026,Fabio Miretti,Juventus,1.63,23,585,18,1,M S,1,0
+2025/2026,Johan Vásquez,Genoa,1.89,36,3219,24,1,D,2,0
+2025/2026,Abdou Harroui,Verona,1.17,23,908,12,1,F M S,3,0
+2025/2026,Iker Bravo,Udinese,0.46,8,199,4,1,F S,1,0
+2025/2026,Antonio Vergara,Napoli,0.71,12,625,10,1,M S,2,0
+2025/2026,Morten Frendrup,Genoa,0.27,36,3093,8,1,M S,5,0
+2025/2026,Michel Aebischer,Pisa,0.83,35,2911,19,1,M S,8,0
+2025/2026,Loïs Openda,Juventus,3.65,24,631,25,1,F M S,0,0
+2025/2026,Carlos Augusto,Inter,1.96,34,1745,20,1,D S,6,0
+2025/2026,Emirhan Ilkhan,Torino,2.36,19,1028,13,1,M S,2,1
+2025/2026,Dodô,Fiorentina,1.38,36,3158,25,1,D M,7,0
+2025/2026,Emil Holm,"Bologna,Juventus",1.15,18,891,13,1,D S,1,1
+2025/2026,Mikael Ellertsson,Genoa,2.15,36,2770,26,1,D M S,1,1
+2025/2026,Sulemana,"Bologna,Cagliari",1.69,19,866,11,1,M S,3,0
+2025/2026,Jhon Lucumí,Bologna,1.38,29,2282,8,1,D S,5,0
+2025/2026,Lewis Ferguson,Bologna,0.65,27,1576,13,1,M S,5,1
+2025/2026,Isak Hien,Atalanta,1.08,28,1951,9,1,D S,5,0
+2025/2026,Cyril Ngonge,Torino,2.76,20,987,24,1,F S,2,0
+2025/2026,Marco Palestra,Cagliari,1.65,37,3087,29,1,D F M S,3,0
+2025/2026,Saúl Coco,Torino,1.16,35,3093,15,1,D,3,0
+2025/2026,Pietro Comuzzo,Fiorentina,0.81,27,1697,10,1,D S,2,0
+2025/2026,Lorenzo Lucca,Napoli,1.91,16,381,15,1,F S,1,0
+2025/2026,Ylber Ramadani,Lecce,1.22,37,3236,35,1,M,10,0
+2025/2026,Gaetano Oristanio,Parma,2.4,20,853,23,1,F M S,1,0
+2025/2026,Matteo Prati,"Cagliari,Torino",1.68,33,1893,31,1,M S,5,0
+2025/2026,Marcus Pedersen,Torino,1.62,29,2148,15,1,D M S,3,0
+2025/2026,Martín Payero,Cremonese,1.43,25,1469,23,1,M S,8,0
+2025/2026,Neil El Aynaoui,Roma,0.96,25,958,6,1,M S,5,0
+2025/2026,Francesco Camarda,Lecce,2.38,21,671,16,1,F S,1,0
+2025/2026,Santiago Pierotti,Lecce,3.77,37,2661,32,1,F M S,4,0
+2025/2026,Alieu Njie,Torino,1.21,15,266,5,1,F M S,2,0
+2025/2026,Alessandro Circati,Parma,0.74,31,2667,8,1,D,6,0
+2025/2026,Álex Valle,Como,0.89,28,2028,11,1,D S,3,0
+2025/2026,Jesper Karlström,Udinese,0.94,36,3164,20,1,M,6,0
+2025/2026,Fisayo Dele-Bashiru,Lazio,0.59,24,1159,9,1,M S,0,0
+2025/2026,Vasilije Adzic,Juventus,0.23,10,142,6,1,M S,0,0
+2025/2026,Mandela Keita,Parma,0.48,37,3016,16,1,M S,1,0
+2025/2026,Adrian Benedyczak,Parma,1.99,14,476,8,1,F S,1,0
+2025/2026,Robinio Vaz,Roma,0.66,12,184,5,1,S,0,0
+2025/2026,Devyne Rensch,Roma,0.57,24,1180,6,1,D M S,1,0
+2025/2026,Idrissa Gueye,Udinese,2.26,19,368,20,1,F S,2,0
+2025/2026,Jamil Siebert,Lecce,0.48,21,1701,6,1,D S,3,0
+2025/2026,Noa Lang,Napoli,1.37,18,645,9,1,F M S,2,0
+2025/2026,Jari Vandeputte,Cremonese,2.11,32,1977,20,1,M S,3,0
+2025/2026,Francesco Folino,Cremonese,0.37,18,690,2,1,D S,0,0
+2025/2026,Nicolas Kühn,Como,0.9,23,643,8,1,M S,0,0
+2025/2026,Idrissa Touré,Pisa,3.0,32,2283,28,1,D M S,4,1
+2025/2026,João Mário,"Bologna,Juventus",0.28,20,1003,7,1,D S,2,0
+2025/2026,Christian Ordóñez,Parma,0.45,28,1076,10,1,M S,3,1
+2025/2026,Oliver Sørensen,Parma,2.05,34,1834,15,1,D M S,2,0
+2025/2026,Jakub Piotrowski,Udinese,3.21,33,1702,36,1,M S,2,0
+2025/2026,Edoardo Iannoni,Sassuolo,0.76,15,230,3,1,M S,3,0
+2025/2026,Mariano Troilo,Parma,0.98,21,1631,9,1,D S,5,2
+2025/2026,Lorran,Pisa,0.71,9,95,3,1,S,0,0
+2025/2026,Juan Rodríguez,Cagliari,1.2,17,1327,3,1,D S,3,0
+2025/2026,Yael Trepy,Cagliari,0.6,8,68,7,1,S,0,0
+2025/2026,Rafiu Durosinmi,Pisa,0.76,12,428,9,1,F S,1,1
+2025/2026,Felipe Loyola,Pisa,0.75,11,541,9,1,M S,0,1
+2025/2026,Yann Sommer,Inter,0.0,33,2962,0,0,GK,0,0
+2025/2026,Sead Kolasinac,Atalanta,0.12,19,1233,3,0,D S,3,0
+2025/2026,David de Gea,Fiorentina,0.0,37,3330,0,0,GK,1,0
+2025/2026,Matteo Darmian,Inter,0.0,6,241,0,0,D S,0,0
+2025/2026,Fikayo Tomori,Milan,0.59,33,2572,9,0,D S,6,1
+2025/2026,Angelino,Roma,0.23,7,427,5,0,D M S,2,0
+2025/2026,Mattia Perin,Juventus,0.0,9,766,0,0,GK,0,0
+2025/2026,Alessio Romagnoli,Lazio,1.54,32,2670,9,0,D S,6,1
+2025/2026,Simone Scuffet,Pisa,0.0,7,630,0,0,GK,0,0
+2025/2026,Cristiano Biraghi,Torino,0.06,14,497,2,0,D M S,0,0
+2025/2026,Lorenzo De Silvestri,Bologna,0.0,12,499,0,0,D S,2,0
+2025/2026,Daniele Padelli,Udinese,0.0,2,180,0,0,GK,0,0
+2025/2026,Patric,Lazio,0.23,14,657,5,0,D M S,2,0
+2025/2026,Ciro Immobile,Bologna,0.06,6,185,2,0,F S,1,0
+2025/2026,Juan Jesus,Napoli,0.21,24,1670,3,0,D S,8,1
+2025/2026,Edin Dzeko,Fiorentina,0.26,11,220,4,0,F S,1,0
+2025/2026,Edoardo Goldaniga,Como,0.0,2,12,0,0,S,0,0
+2025/2026,Giuseppe Pezzella,Cremonese,0.12,31,2599,6,0,D M S,8,1
+2025/2026,Daniele Rugani,"Fiorentina,Juventus",0.27,12,577,1,0,D S,2,0
+2025/2026,Emil Audero,Cremonese,0.0,34,3060,0,0,GK,0,0
+2025/2026,Lukasz Skorupski,Bologna,0.0,19,1594,0,0,GK,1,1
+2025/2026,Federico Ceccherini,Cremonese,0.19,9,475,5,0,D S,1,1
+2025/2026,Elseid Hysaj,Lazio,0.0,5,166,0,0,D S,0,0
+2025/2026,Luca Lezzerini,Fiorentina,0.0,1,3,0,0,S,0,0
+2025/2026,Adam Masina,Torino,0.0,5,224,0,0,D S,0,0
+2025/2026,Pol Lirola,Verona,0.0,6,310,0,0,D S,1,0
+2025/2026,Francesco Acerbi,Inter,0.37,18,1380,3,0,D S,2,0
+2025/2026,Marco Sportiello,Atalanta,0.0,1,90,0,0,GK,0,0
+2025/2026,Alberto Grassi,Cremonese,0.76,30,1758,13,0,M S,4,1
+2025/2026,Stefan de Vrij,Inter,0.36,11,675,6,0,D S,1,0
+2025/2026,Federico Ravaglia,Bologna,0.0,17,1468,0,0,GK S,4,0
+2025/2026,Arkadiusz Milik,Juventus,0.26,2,33,2,0,S,0,0
+2025/2026,Raúl Albiol,Pisa,0.07,8,494,1,0,D S,1,0
+2025/2026,Alessandro Deiola,Cagliari,2.23,20,1444,22,0,D M S,3,0
+2025/2026,Álvaro Morata,Como,4.91,26,917,23,0,F S,2,1
+2025/2026,Matteo Bianchetti,Cremonese,0.75,27,2222,7,0,D S,4,0
+2025/2026,Nicola Leali,Genoa,0.0,22,1843,0,0,GK S,2,1
+2025/2026,Alex Meret,Napoli,0.0,11,982,0,0,GK,1,0
+2025/2026,Stefano Sabelli,Genoa,0.4,16,930,8,0,D M S,0,0
+2025/2026,Daniele Sommariva,Genoa,0.0,2,176,0,0,GK S,0,0
+2025/2026,Berat Gjimshiti,Atalanta,1.69,34,2522,16,0,D S,4,0
+2025/2026,Nicholas Pierini,Sassuolo,0.33,11,116,5,0,S,1,0
+2025/2026,Filippo Romagna,Sassuolo,0.05,5,319,2,0,D S,0,0
+2025/2026,Sergi Roberto,Como,1.08,20,507,6,0,M S,3,0
+2025/2026,Maxwel Cornet,Genoa,1.43,8,110,4,0,M S,0,0
+2025/2026,Benjamin Pavard,Inter,0.05,1,90,1,0,D,0,0
+2025/2026,Hassane Kamara,Udinese,0.89,26,1883,16,0,D M S,5,0
+2025/2026,Mike Maignan,Milan,0.0,37,3296,0,0,GK,4,0
+2025/2026,Milan Djuric,"Cremonese,Parma Calcio 1913",0.81,23,411,14,0,F S,1,0
+2025/2026,Nikita Contini,Napoli,0.0,1,8,0,0,S,0,0
+2025/2026,Arturo Calabresi,Pisa,0.24,26,1536,4,0,D S,8,0
+2025/2026,Alessio Zerbin,Cremonese,1.82,32,1643,21,0,D M S,1,0
+2025/2026,Matteo Gabbia,Milan,1.54,30,2531,19,0,D S,4,0
+2025/2026,Grigoris Kastanos,Verona,0.03,6,31,1,0,S,0,0
+2025/2026,Davide Frattesi,Inter,2.29,22,523,16,0,M S,0,0
+2025/2026,Wladimiro Falcone,Lecce,0.0,38,3420,0,0,GK,2,0
+2025/2026,Marius Marin,Pisa,0.09,23,1307,3,0,M S,7,0
+2025/2026,Alessandro Buongiorno,Napoli,1.64,33,2526,8,0,D S,3,0
+2025/2026,Leon Bailey,Roma,0.13,7,184,3,0,F S,0,0
+2025/2026,Hernani,Parma,0.04,4,58,1,0,S,0,0
+2025/2026,Jean Butez,Como,0.0,38,3420,0,0,GK,3,0
+2025/2026,Adrien Tameze,Torino,0.22,24,1110,5,0,D M S,3,0
+2025/2026,Nícolas,Pisa,0.0,6,540,0,0,GK,0,0
+2025/2026,Marco Silvestri,Cremonese,0.0,4,360,0,0,GK,0,0
+2025/2026,Unai Núñez,Verona,0.3,17,1263,7,0,D S,6,0
+2025/2026,Vanja Milinkovic-Savic,Napoli,0.0,27,2430,0,0,GK,0,0
+2025/2026,Manuel Lazzari,Lazio,0.11,23,917,4,0,D S,2,0
+2025/2026,Abdelhamid Sabiri,Fiorentina,0.01,1,24,1,0,S,0,0
+2025/2026,Valentino Lazaro,Torino,0.42,31,2273,8,0,D M S,4,0
+2025/2026,Mathías Olivera,Napoli,1.79,25,1370,8,0,D S,3,0
+2025/2026,Raoul Bellanova,Atalanta,0.5,24,1374,13,0,D M S,2,0
+2025/2026,Charalampos Lykogiannis,Bologna,0.22,10,627,7,0,D S,3,0
+2025/2026,Adrian Semper,Pisa,0.0,25,2250,0,0,GK,0,0
+2025/2026,Pietro Terracciano,Milan,0.0,2,124,0,0,GK S,0,0
+2025/2026,Ivan Provedel,Lazio,0.0,27,2430,0,0,GK,1,0
+2025/2026,Arijanet Muric,Sassuolo,0.0,32,2880,0,0,GK,4,0
+2025/2026,Nicolás González,Juventus,0.08,2,14,2,0,S,0,0
+2025/2026,Elia Caprile,Cagliari,0.0,38,3420,0,0,GK,2,0
+2025/2026,Christian Kouamé,Fiorentina,0.0,2,16,0,0,S,0,0
+2025/2026,Samuel Chukwueze,Milan,0.0,1,23,0,0,S,0,0
+2025/2026,Nicolo Rovella,Lazio,0.02,11,510,1,0,M S,1,1
+2025/2026,Hans Nicolussi Caviglia,"Fiorentina,Parma Calcio 1913",0.86,26,1456,20,0,M S,4,0
+2025/2026,Alessio Furlanetto,Lazio,0.0,2,180,0,0,GK,0,0
+2025/2026,Andrea Ghion,Sassuolo,0.0,1,7,0,0,S,0,0
+2025/2026,Domagoj Bradaric,Verona,0.6,29,1976,13,0,D M S,2,0
+2025/2026,Cheikh Niasse,Verona,0.18,20,973,6,0,D M S,1,0
+2025/2026,Antonino Gallo,Lecce,0.83,37,3063,6,0,D S,3,0
+2025/2026,Sebastian Walukiewicz,Sassuolo,0.18,34,2871,7,0,D S,7,0
+2025/2026,Stefano Turati,Sassuolo,0.0,6,535,0,0,GK,0,0
+2025/2026,Niels Nkounkou,Torino,0.22,11,340,4,0,D S,3,0
+2025/2026,Tariq Lamptey,Fiorentina,0.0,2,22,0,0,M S,0,0
+2025/2026,Balthazar Pierret,Lecce,0.0,3,20,0,0,S,0,0
+2025/2026,Edoardo Corvi,Parma,0.0,17,1530,0,0,GK,1,0
+2025/2026,Marin Pongracic,Fiorentina,0.59,35,2923,8,0,D S,12,0
+2025/2026,Mitchel Bakker,Atalanta,0.0,1,7,0,0,S,0,0
+2025/2026,Razvan Sava,Udinese,0.0,7,620,0,0,GK S,1,0
+2025/2026,Maduka Okoye,Udinese,0.0,30,2616,0,0,GK,1,1
+2025/2026,Jean Onana,Genoa,0.02,3,36,1,0,S,0,0
+2025/2026,Pablo Marí,Fiorentina,0.05,11,810,2,0,D S,3,0
+2025/2026,Faustino Anjorin,Torino,0.6,15,258,4,0,M S,1,0
+2025/2026,Enzo Ebosse,"Torino,Verona",0.06,17,1342,1,0,D S,4,0
+2025/2026,Oier Zarraga,Udinese,0.6,24,427,4,0,M S,2,0
+2025/2026,Ivan Ilic,Torino,0.0,8,414,0,0,M S,2,0
+2025/2026,Nicolò Casale,Bologna,0.75,12,672,5,0,D S,0,0
+2025/2026,Konstantinos Tsimikas,Roma,0.57,18,617,7,0,D M S,1,0
+2025/2026,Gabriele Zappa,Cagliari,1.13,31,1583,11,0,D S,2,0
+2025/2026,Marco Carnesecchi,Atalanta,0.0,37,3330,0,0,GK,0,0
+2025/2026,Lorenzo Montipò,Verona,0.0,35,3150,0,0,GK,0,0
+2025/2026,Tete Morente,Lecce,0.97,16,859,14,0,F M S,2,0
+2025/2026,Lautaro Valenti,Parma,0.49,27,2255,17,0,D S,7,0
+2025/2026,Simon Sohm,"Bologna,Fiorentina",0.79,28,1447,9,0,M S,3,0
+2025/2026,Filippo Rinaldi,Parma,0.0,1,90,0,0,GK,1,0
+2025/2026,Alberto Paleari,Torino,0.0,29,2610,0,0,GK,1,0
+2025/2026,Josep Martínez,Inter,0.0,5,450,0,0,GK,0,0
+2025/2026,Franco Ezequiel Carboni,Parma,0.0,7,106,0,0,D S,0,0
+2025/2026,Pontus Almqvist,Parma,0.34,13,442,5,0,D M S,0,0
+2025/2026,Nahuel Estévez,Parma,0.63,32,1001,9,0,M S,2,0
+2025/2026,Ardian Ismajli,Torino,0.75,25,1907,6,0,D S,5,0
+2025/2026,Alessandro Di Pardo,Cagliari,0.1,3,50,1,0,S,0,0
+2025/2026,Franco Israel,Torino,0.0,9,810,0,0,GK,1,0
+2025/2026,Niakhate Ndiaye,Parma,0.36,11,786,6,0,D S,3,1
+2025/2026,Nicolò Bertola,Udinese,1.0,28,1756,13,0,D S,3,0
+2025/2026,Nuno Tavares,Lazio,1.13,23,1478,16,0,D S,5,0
+2025/2026,Armel Bella Kotchap,Verona,0.08,19,1347,3,0,D S,3,0
+2025/2026,Kristjan Asllani,Torino,1.16,15,1145,20,0,M S,3,0
+2025/2026,Mattia Viti,Fiorentina,0.0,10,231,0,0,D S,1,1
+2025/2026,Nadir Zortea,Bologna,0.42,32,1776,11,0,D S,2,0
+2025/2026,Nicolò Cavuoti,Cagliari,0.0,4,34,0,0,S,0,0
+2025/2026,Pasquale Mazzocchi,Napoli,0.05,16,288,2,0,D S,0,1
+2025/2026,Calvin Stengs,Pisa,0.05,4,36,2,0,S,0,0
+2025/2026,Aster Vranckx,Sassuolo,0.09,16,693,3,0,M S,2,0
+2025/2026,Teun Koopmeiners,Juventus,1.79,33,1803,28,0,D M S,5,0
+2025/2026,Oliver Christensen,Fiorentina,0.0,1,87,0,0,GK,0,0
+2025/2026,Jeremy Sarmiento,Cremonese,0.06,7,127,2,0,S,0,0
+2025/2026,Adam Obert,Cagliari,1.36,35,2813,10,0,D S,8,1
+2025/2026,Romano Floriani,Cremonese,0.2,28,1156,5,0,D M S,2,0
+2025/2026,Bryan Zaragoza,Roma,0.18,4,140,1,0,M S,1,0
+2025/2026,Gioele Zacchi,Sassuolo,0.0,1,5,0,0,S,0,0
+2025/2026,Sadik Fofana,Lecce,0.1,5,80,2,0,M S,0,0
+2025/2026,Jacopo Fazzini,Fiorentina,0.88,20,562,9,0,F M S,2,0
+2025/2026,Edon Zhegrova,Juventus,0.76,19,330,19,0,S,1,0
+2025/2026,Samuele Angori,Pisa,1.32,35,2619,14,0,D M S,2,0
+2025/2026,Zito,Cagliari,1.15,12,304,12,0,F M S,0,0
+2025/2026,Fali Candé,Sassuolo,0.17,12,509,3,0,D S,2,0
+2025/2026,Giovanni Bonfanti,Pisa,0.29,9,501,6,0,D S,1,0
+2025/2026,Giuseppe Ambrosino,Napoli,0.0,3,31,0,0,S,0,0
+2025/2026,Jesús Santiago,Verona,0.01,2,2,1,0,S,0,0
+2025/2026,Mario Gila,Lazio,1.63,31,2498,12,0,D,4,1
+2025/2026,Samuel Iling-Junior,Pisa,0.0,5,104,0,0,M S,0,0
+2025/2026,Jordan Zemura,Udinese,0.33,17,1119,5,0,D S,3,0
+2025/2026,Zakaria Aboukhlal,Torino,0.41,15,500,7,0,D M S,4,0
+2025/2026,Sandi Lovric,"Udinese,Verona",0.27,14,505,6,0,M S,2,0
+2025/2026,Michele Di Gregorio,Juventus,0.0,30,2654,0,0,GK S,1,0
+2025/2026,Warren Bondo,Cremonese,0.29,27,1788,8,0,M S,5,0
+2025/2026,Thórir Helgason,Lecce,0.28,8,129,3,0,M S,0,0
+2025/2026,Alex Sala,Lecce,0.38,9,148,4,0,M S,0,0
+2025/2026,Mile Svilar,Roma,0.0,38,3420,0,0,GK,0,0
+2025/2026,Simone Perilli,Verona,0.0,3,270,0,0,GK,0,0
+2025/2026,Josh Doig,Sassuolo,0.75,30,1924,11,0,D S,5,0
+2025/2026,Emanuele Valeri,Parma,0.67,34,2637,23,0,D M S,2,0
+2025/2026,Reda Belahyane,Lazio,0.21,13,601,3,0,M S,1,1
+2025/2026,Valentín Carboni,Genoa,0.66,12,345,6,0,M S,2,0
+2025/2026,Tommaso Barbieri,Cremonese,0.99,29,1696,16,0,D M S,8,0
+2025/2026,Gvidas Gineitis,Torino,0.94,29,1778,27,0,M S,5,0
+2025/2026,Ali Dembélé,Torino,0.05,2,15,1,0,S,0,0
+2025/2026,Amin Sarr,Verona,1.62,34,1046,19,0,F M S,0,1
+2025/2026,Lorenzo Bernasconi,Atalanta,0.42,23,1570,9,0,D M S,3,0
+2025/2026,David Odogu,Milan,0.0,2,3,0,0,S,0,0
+2025/2026,Ebenezer Akinsanmiro,Pisa,1.11,24,1441,13,0,M S,2,0
+2025/2026,Amir Richardson,Fiorentina,0.01,2,35,1,0,S,0,0
+2025/2026,Luca Marianucci,"Napoli,Torino",0.03,12,688,2,0,D S,2,0
+2025/2026,Raffaele Di Gennaro,Inter,0.0,1,8,0,0,S,0,0
+2025/2026,Filip Stojilkovic,Pisa,2.33,13,660,10,0,F M S,0,0
+2025/2026,Luca Lipani,Sassuolo,0.92,24,1011,12,0,M S,3,0
+2025/2026,Daniel Boloca,Sassuolo,0.1,2,137,2,0,M,0,0
+2025/2026,Mohamed Kaba,Lecce,0.44,15,614,9,0,M S,1,0
+2025/2026,Alberto Dossena,Cagliari,0.9,12,850,7,0,D S,5,0
+2025/2026,Mateus Lusuardi,Pisa,0.12,3,202,4,0,D,1,0
+2025/2026,Seydou Fini,Genoa,0.0,1,30,0,0,S,0,0
+2025/2026,Tomás Suslov,Verona,0.42,11,441,12,0,F M S,1,1
+2025/2026,Alejandro Jiménez,Milan,0.0,1,42,0,0,S,1,0
+2025/2026,Saba Goglichidze,Udinese,0.55,8,418,3,0,D S,2,0
+2025/2026,Faris Moumbagna,Cremonese,0.45,5,72,2,0,S,0,0
+2025/2026,Mikayil Faye,Cremonese,0.05,8,238,2,0,D M S,1,0
+2025/2026,Darryl Bakola,Sassuolo,0.13,6,116,3,0,M S,0,0
+2025/2026,Niccolò Fortini,Fiorentina,0.23,16,488,8,0,D S,0,0
+2025/2026,Matteo Palma,Udinese,0.0,5,109,0,0,D S,0,0
+2025/2026,Junior Ajayi,Verona,0.0,1,1,0,0,S,0,0
+2025/2026,Gaël Lafont,Genoa,0.0,1,6,0,0,S,0,0
+2025/2026,Patrizio Masini,Genoa,2.03,28,1379,18,0,M S,5,0
+2025/2026,Honest Ahanor,Atalanta,2.38,22,1368,13,0,D S,2,1
+2025/2026,Zion Suzuki,Parma,0.0,20,1800,0,0,GK,1,0
+2025/2026,Woyo Coulibaly,Sassuolo,0.11,20,1023,6,0,D S,2,0
+2025/2026,Daniel Mikolajewski,Parma,0.43,3,68,1,0,F S,0,0
+2025/2026,Daniel Mosquera,Verona,1.1,22,565,16,0,F S,1,0
+2025/2026,Daniele Ghilardi,Roma,0.56,23,1070,3,0,D S,1,0
+2025/2026,Albert Grønbæk,Genoa,0.04,4,96,1,0,M S,1,0
+2025/2026,Kialonda Gaspar,Lecce,0.79,23,1827,9,0,D S,6,1
+2025/2026,Dominic Vavassori,Atalanta,0.0,1,9,0,0,S,0,0
+2025/2026,Alessandro Marcandalli,Genoa,0.27,32,2597,5,0,D S,4,0
+2025/2026,Jay Idzes,Sassuolo,0.2,35,3065,5,0,D,2,0
+2025/2026,Gaby Jean,Lecce,0.0,7,180,0,0,D S,1,0
+2025/2026,Eddy Kouadio,Fiorentina,0.0,3,62,0,0,S,0,0
+2025/2026,Ignace Van der Brempt,Como,0.16,20,915,3,0,D S,2,0
+2025/2026,Benjamín Domínguez,Bologna,0.65,15,553,12,0,M S,1,0
+2025/2026,Rui Modesto,Udinese,0.01,3,113,1,0,S,0,0
+2025/2026,Massimo Pessina,Bologna,0.0,4,353,0,0,GK S,0,0
+2025/2026,Nicolás Valentini,Verona,0.8,21,1400,15,0,D S,6,1
+2025/2026,Mathias Løvik,Parma,0.18,9,480,3,0,D S,0,0
+2025/2026,Luka Topalovic,Inter,0.0,1,7,0,0,S,0,0
+2025/2026,Alessandro Romano,Roma,0.0,2,5,0,0,S,0,0
+2025/2026,Lorenzo Venturino,"Genoa,Roma",0.3,12,224,5,0,M S,0,0
+2025/2026,Jacob Ondrejka,Parma,1.42,16,768,20,0,F M S,2,0
+2025/2026,Danilo Veiga,Lecce,0.26,36,3026,6,0,D S,9,0
+2025/2026,Daniel Oyegoke,Verona,0.08,15,597,3,0,D S,2,0
+2025/2026,Al Musrati,Verona,0.19,18,832,9,0,M S,4,1
+2025/2026,Ivan Smolcic,Como,1.13,28,1685,12,0,D S,8,0
+2025/2026,Oliver Provstgaard,Lazio,0.67,26,1515,6,0,D S,3,0
+2025/2026,Victor Nelsson,Verona,0.47,38,3316,10,0,D S,4,0
+2025/2026,Santiago Giménez,Milan,3.79,16,905,27,0,F S,2,0
+2025/2026,Sebastian Otoa,Genoa,0.08,13,829,3,0,D S,1,0
+2025/2026,Tobias Slotsager,Verona,0.14,8,435,3,0,D S,0,0
+2025/2026,Abdoulaye Camara,Udinese,0.0,1,9,0,0,S,0,0
+2025/2026,Matteo Cocchi,Inter,0.0,1,14,0,0,S,0,0
+2025/2026,Filippo Carbone,Genoa,0.0,1,6,0,0,S,0,0
+2025/2026,Joi Nuredini,Genoa,0.0,1,1,0,0,S,0,0
+2025/2026,Nicolae Stanciu,Genoa,1.1,4,181,5,0,M S,0,0
+2025/2026,Owen Kouassi,Lecce,0.0,4,231,0,0,D S,0,0
+2025/2026,Corrie Ndaba,Lecce,0.13,14,533,2,0,D S,0,0
+2025/2026,Matías Pérez,Lecce,0.0,1,31,0,0,D,0,0
+2025/2026,Olaf Gorter,Lecce,0.0,2,27,0,0,S,0,0
+2025/2026,Luca Moro,Sassuolo,0.83,14,181,6,0,F S,1,0
+2025/2026,Martin Vitík,Bologna,0.74,19,1320,8,0,D S,3,0
+2025/2026,Torbjørn Heggem,Bologna,1.02,27,2109,11,0,D S,0,1
+2025/2026,Ardon Jashari,Milan,0.24,14,703,7,0,M S,0,0
+2025/2026,Michele Collocolo,Cremonese,0.08,8,353,2,0,M S,1,0
+2025/2026,Dachi Lordkipanidze,Cremonese,0.0,1,27,0,0,S,0,0
+2025/2026,Riccardo Braschi,Fiorentina,0.15,2,105,3,0,F S,0,0
+2025/2026,Daniel Denoon,Pisa,0.0,2,126,0,0,D,1,0
+2025/2026,Gabriele Piccinini,Pisa,2.89,25,825,19,0,M S,3,0
+2025/2026,Malthe Højholt,Pisa,0.95,17,857,4,0,M S,2,0
+2025/2026,Louis Buffon,Pisa,0.0,4,24,0,0,S,0,0
+2025/2026,Tjas Begic,Parma,0.0,1,1,0,0,S,0,0
+2025/2026,Vakoun Bayo,Udinese,1.33,15,432,14,0,F S,0,0
+2025/2026,Lennon Miller,Udinese,0.31,24,985,9,0,M S,4,0
+2025/2026,Fallou Cham,Verona,0.34,6,225,5,0,D S,0,0
+2025/2026,Cheveyo Mul,Milan,0.08,2,2,1,0,S,0,0
+2025/2026,Sascha Britschgi,Parma,0.41,29,2103,13,0,D M S,5,1
+2025/2026,Antonio Arena,Roma,0.18,2,19,2,0,S,0,0
+2025/2026,Ioan Vermesan,Verona,0.43,6,66,4,0,S,0,0
+2025/2026,Zé Pedro,Cagliari,0.74,23,1723,7,0,D S,6,0
+2025/2026,Joseph Liteta,Cagliari,0.0,4,277,0,0,M,0,0
+2025/2026,Benjamín Cremaschi,Parma,0.02,8,122,1,0,M S,0,0
+2025/2026,Jan Ziólkowski,Roma,0.14,18,500,2,0,D S,3,0
+2025/2026,Tomás Esteves,Pisa,0.0,1,11,0,0,S,0,0
+2025/2026,Isak Vural,Pisa,0.76,15,752,6,0,M S,4,0
+2025/2026,Cas Odenthal,Sassuolo,0.0,1,1,0,0,S,0,0
+2025/2026,Laurs Skjellerup,Sassuolo,0.02,1,8,1,0,S,0,0
+2025/2026,Pedro Felipe,Sassuolo,0.0,3,125,0,0,D S,0,0
+2025/2026,Francesco Coppola,Pisa,0.09,7,454,2,0,D S,3,0
+2025/2026,Alessandro Cardinali,Parma,0.0,1,42,0,0,S,0,0
+2025/2026,Andréa Le Borgne,Como,0.0,1,1,0,0,S,0,0
+2025/2026,Mattia Mosconi,Inter,0.17,2,24,2,0,S,0,0
+2025/2026,Matteo Lavelli,Inter,0.0,1,6,0,0,S,0,0
+2025/2026,Christian Frangella,Sassuolo,0.0,1,1,0,0,S,0,0
+2025/2026,Tommaso Macchioni,Sassuolo,0.5,1,90,1,0,D,1,0
+2025/2026,Brando Bettazzi,Pisa,0.0,1,12,0,0,S,0,0
+2025/2026,Petar Ratkov,Lazio,0.53,8,228,6,0,F S,0,0
+2025/2026,Oumar Ngom,Lecce,0.24,15,847,5,0,M S,1,0
+2025/2026,Isaac,Verona,0.0,3,31,0,0,S,0,0
+2025/2026,Rosen Bozhinov,Pisa,0.11,9,619,3,0,D S,1,1
+2025/2026,Luís Balbo,Fiorentina,0.0,6,207,0,0,D S,0,0
+2025/2026,Justin Bijlow,Genoa,0.0,16,1399,0,0,GK,1,0
+2025/2026,Nils Zätterström,Genoa,0.0,3,181,0,0,D S,0,0
+2025/2026,Eivind Helland,Bologna,0.1,6,497,1,0,D,2,0
+2025/2026,Juan Arizala,Udinese,0.03,10,173,1,0,D S,0,0
+2025/2026,Edoardo Motta,Lazio,0.0,9,810,0,0,GK,1,0
+2025/2026,Agustín Albarracín,Cagliari,0.0,2,23,0,0,S,0,0
+2025/2026,Sandro Kulenovic,Torino,0.85,13,284,5,0,F S,2,0
+2025/2026,Andrias Edmundsson,Verona,0.16,15,1322,4,0,D,3,0
+2025/2026,Alex Amorim,Genoa,0.13,11,554,2,0,M S,1,0
+2025/2026,Branimir Mlacic,Udinese,0.0,7,159,0,0,D S,2,0
+2025/2026,Adrian Przyborek,Lazio,0.02,1,7,1,0,S,0,0
+2025/2026,Othniël Raterink,Cagliari,0.0,1,4,0,0,S,0,0
+2025/2026,Mamedi Doucouré,Genoa,0.0,1,7,0,0,S,0,0
+2025/2026,Jacopo Grossi,Genoa,0.1,1,20,1,0,S,0,0
+2025/2026,Wedtoin Ouedraogo,Genoa,0.0,2,47,0,0,S,0,0
+2025/2026,Simone Lottici Tessadri,Cremonese,0.02,1,1,1,0,S,0,0
+2026/2027,Gustavo Varela,Monza,4.99,9,765,23,9,F,1,0
+2026/2027,Antonio Raimondo,Frosinone,5.9,9,743,28,8,F,3,0
+2026/2027,Donyell Malen,Roma,9.53,9,584,35,8,F S,1,1
+2026/2027,Nikola Krstovic,Atalanta,5.26,9,536,24,6,F S,1,0
+2026/2027,Adrien Rabiot,Milan,1.83,8,576,11,5,F M S,1,0
+2026/2027,Marcus Thuram,Inter,5.75,9,634,33,5,F S,1,0
+2026/2027,Daniel Maldini,Cagliari,3.17,9,596,13,5,F M S,0,0
+2026/2027,Tasos Douvikas,Como,6.43,10,773,28,5,F S,0,0
+2026/2027,Kevin De Bruyne,Napoli,3.46,9,484,11,4,M S,0,0
+2026/2027,Giacomo Calo,Frosinone,2.04,9,779,20,4,M,0,0
+2026/2027,Lautaro Martínez,Inter,5.35,5,352,25,4,F S,2,0
+2026/2027,Che Adams,Torino,2.41,7,506,12,4,F M S,0,0
+2026/2027,Alphadjo Cissè,Milan,1.61,8,337,12,4,M S,1,0
+2026/2027,Diego Moreira,Milan,1.11,6,397,9,4,D M S,1,0
+2026/2027,Tijjani Noslin,Lazio,2.39,8,492,12,4,F S,0,0
+2026/2027,Hakan Calhanoglu,Inter,1.04,8,403,9,3,M S,1,0
+2026/2027,Federico Bernardeschi,Bologna,2.77,10,697,19,3,F M S,2,0
+2026/2027,Christian Pulisic,Milan,2.06,7,479,10,3,F M S,1,0
+2026/2027,Davide Frattesi,Lazio,2.99,9,718,14,3,M S,0,0
+2026/2027,Milutin Osmajic,Genoa,1.93,8,647,14,3,F S,0,0
+2026/2027,Matìas Soulè Malvano,Roma,3.43,10,671,27,3,F M S,2,0
+2026/2027,Jurgen Ekkelenkamp,Udinese,1.5,10,855,23,3,M,0,0
+2026/2027,Rasmus Højlund,Napoli,3.26,9,645,18,3,F S,0,0
+2026/2027,Niccolò Pisilli,Roma,1.38,9,416,7,3,M S,2,0
+2026/2027,Nico Paz,Como,3.35,9,751,43,3,M,1,0
+2026/2027,Giorgi Kvernadze,Frosinone,2.99,9,767,29,3,M,2,0
+2026/2027,Gustav Isaksen,Lazio,1.65,9,471,16,3,F S,1,0
+2026/2027,Samuel Mbangula,Bologna,2.03,5,123,6,3,M S,0,0
+2026/2027,Vasilije Adzic,Sassuolo,1.74,7,380,12,3,M S,0,0
+2026/2027,Franco Mastantuono,Fiorentina,3.08,9,717,33,3,F M,2,0
+2026/2027,Martin Baturina,Como,1.35,9,457,19,3,M S,2,0
+2026/2027,Rodrigo Mora,Roma,2.12,8,331,14,3,M S,0,0
+2026/2027,Giovanni Simeone,Torino,2.53,9,666,19,2,F S,0,0
+2026/2027,Piotr Zielinski,Inter,1.58,9,556,14,2,M S,0,0
+2026/2027,Matteo Politano,Napoli,1.54,9,511,10,2,F M S,1,0
+2026/2027,Domenico Berardi,Sassuolo,1.89,8,538,13,2,F M S,2,0
+2026/2027,Mattia Zaccagni,Lazio,3.88,9,792,26,2,F,3,0
+2026/2027,Lassana Coulibaly,Lecce,1.64,7,580,9,2,F M,0,0
+2026/2027,Hassane Kamara,Udinese,0.87,10,782,14,2,D,1,0
+2026/2027,Scott McTominay,Napoli,1.66,6,448,17,2,M S,0,0
+2026/2027,Bremer,Juventus,1.23,9,810,8,2,D,0,0
+2026/2027,Kouadio Kone,Roma,1.1,6,419,7,2,M S,2,0
+2026/2027,Leonardo Balerdi,Roma,1.15,6,330,5,2,D S,1,0
+2026/2027,Sebastiano Esposito,Sassuolo,0.66,6,352,5,2,F S,0,0
+2026/2027,Tommaso Pobega,Bologna,2.0,9,659,13,2,M,3,0
+2026/2027,Romano Schmid,Frosinone,0.87,9,720,11,2,M,2,0
+2026/2027,Edon Zhegrova,Juventus,0.8,7,174,14,2,S,1,0
+2026/2027,Éderson,Atalanta,1.7,9,779,12,2,M,2,0
+2026/2027,Carlos Augusto,Inter,1.77,8,526,12,2,D S,2,0
+2026/2027,Gonçalo Ramos,Milan,5.26,10,895,25,2,F,2,0
+2026/2027,Akor Adams,Venezia,2.87,10,861,31,2,F,0,0
+2026/2027,Assane Diao,Como,0.8,6,431,10,2,M S,2,0
+2026/2027,Alejandro Jiménez,Fiorentina,0.57,8,616,9,2,D S,1,0
+2026/2027,Jacobo Ramón,Como,2.4,10,840,11,2,D S,1,0
+2026/2027,Ange-Yoan Bonny,Inter,3.44,9,217,14,2,F S,0,0
+2026/2027,Antoine Hainaut,Venezia,1.95,10,860,11,2,D,0,0
+2026/2027,Tiago Gabriel,Lecce,1.78,8,575,7,2,D S,1,0
+2026/2027,Mateo Pellegrino,Fiorentina,1.2,9,642,11,2,F S,2,0
+2026/2027,Jay Robinson,Monza,1.14,8,524,10,2,M S,0,0
+2026/2027,Francesco Pio Esposito,Inter,3.14,10,517,18,2,F S,1,0
+2026/2027,Cas Odenthal,Sassuolo,1.17,4,335,4,2,D S,0,0
+2026/2027,Emanuele Lulli,Roma,0.98,7,481,4,2,D M S,0,0
+2026/2027,Kenneth Taylor,Lazio,1.07,9,708,10,2,M,2,0
+2026/2027,Sandro Kulenovic,Torino,1.0,7,132,5,2,S,0,0
+2026/2027,Simone Lontani,Parma,0.92,9,436,13,2,F M S,1,0
+2026/2027,David Romero,Parma,1.72,8,423,16,2,F S,0,0
+2026/2027,Daniel Bîrligea,Frosinone,0.51,4,27,3,2,S,0,0
+2026/2027,Bryan Cristante,Roma,0.75,8,695,15,1,M,2,0
+2026/2027,Nicolò Barella,Inter,0.98,9,752,16,1,M S,2,0
+2026/2027,Franck Kessié,Atalanta,0.93,4,247,5,1,M S,1,0
+2026/2027,Rolando Mandragora,"Fiorentina,Torino",0.39,8,501,10,1,M S,0,0
+2026/2027,Andrea Pinamonti,Lazio,0.83,7,151,3,1,F S,0,0
+2026/2027,Alessandro Bastoni,Inter,0.6,9,740,4,1,D,2,0
+2026/2027,Weston McKennie,Juventus,0.69,6,494,5,1,M,1,0
+2026/2027,Randal Kolo Muani,Juventus,2.72,9,790,17,1,F,0,0
+2026/2027,Douglas Luiz,Juventus,0.46,9,748,17,1,M,1,0
+2026/2027,Stanislav Lobotka,Napoli,0.46,9,631,5,1,M S,0,0
+2026/2027,Mario Hermoso,Roma,0.43,9,655,7,1,D S,2,0
+2026/2027,Riccardo Orsolini,Bologna,0.05,4,186,1,1,M S,0,0
+2026/2027,Gianluca Scamacca,Atalanta,0.34,7,286,6,1,F S,0,0
+2026/2027,Nikola Vlasic,Torino,0.55,9,718,10,1,F M S,0,0
+2026/2027,Yann Bisseck,Inter,0.61,9,676,6,1,D S,0,0
+2026/2027,Franck Zambo,Napoli,1.42,6,398,7,1,M S,0,0
+2026/2027,Nicolo Zaniolo,Udinese,0.91,5,314,13,1,M S,2,0
+2026/2027,Andrea Colpani,Monza,1.14,6,308,8,1,F M S,0,0
+2026/2027,Evan Ndicka,Roma,0.94,8,635,6,1,D S,1,0
+2026/2027,Nicolás González,Juventus,0.47,6,357,11,1,D M S,0,0
+2026/2027,John Yeboah,Venezia,4.32,10,683,26,1,F S,0,0
+2026/2027,Roberto Piccoli,Bologna,1.76,7,459,10,1,F,1,0
+2026/2027,Giacomo Raspadori,Atalanta,0.41,4,179,8,1,F S,0,0
+2026/2027,Gianluca Gaetano,Atalanta,0.58,8,451,4,1,M S,0,1
+2026/2027,Kingsley Ehizibue,Genoa,0.19,5,302,5,1,D S,1,0
+2026/2027,Aleksa Terzic,Frosinone,0.18,5,199,6,1,D S,1,0
+2026/2027,Eljif Elmas,Atalanta,0.98,7,352,5,1,F M S,1,1
+2026/2027,Billy Gilmour,Napoli,0.12,6,336,3,1,M S,0,0
+2026/2027,Lucas Da Cunha,Como,1.47,10,751,16,1,M S,0,0
+2026/2027,Marin Pongracic,Fiorentina,0.59,5,210,2,1,D S,0,0
+2026/2027,Lazar Samardzic,Atalanta,0.79,8,376,13,1,M S,0,0
+2026/2027,Nicolò Casale,Bologna,0.43,5,440,2,1,D,0,0
+2026/2027,Junior Messias,Genoa,1.48,9,427,15,1,M S,0,0
+2026/2027,M&#039;Bala Nzola,Cagliari,1.82,3,138,6,1,F S,0,0
+2026/2027,Nicola Zalewski,Atalanta,0.39,7,271,6,1,F M S,0,0
+2026/2027,Pontus Almqvist,Parma,0.41,6,75,1,1,S,1,0
+2026/2027,Matteo Cancellieri,Lazio,1.73,6,320,9,1,F S,1,0
+2026/2027,Nuno Tavares,Lazio,0.75,9,666,12,1,D S,0,0
+2026/2027,Ricardo Mangas,Monza,1.25,10,808,5,1,D F,1,0
+2026/2027,Tommaso Baldanzi,Genoa,0.97,6,407,13,1,M,0,0
+2026/2027,Teun Koopmeiners,Juventus,0.19,8,227,6,1,M S,0,0
+2026/2027,Johan Vásquez,Genoa,0.21,8,708,5,1,D,2,1
+2026/2027,Romano Floriani,Lazio,0.72,9,749,6,1,D S,1,0
+2026/2027,Cristian Volpato,Sassuolo,0.25,5,210,5,1,F S,1,0
+2026/2027,Rafa Marín,Napoli,0.48,8,711,4,1,D,2,0
+2026/2027,Antonio Vergara,Napoli,1.03,5,171,3,1,M S,1,0
+2026/2027,Omari Hutchinson,Milan,0.65,6,181,2,1,M S,0,0
+2026/2027,Albert Gudmundsson,"Fiorentina,Lazio",0.39,4,107,6,1,F S,1,0
+2026/2027,Mario Gila,Milan,1.26,8,703,2,1,D,1,0
+2026/2027,Charles De Ketelaere,Atalanta,1.08,9,675,12,1,F M S,0,0
+2026/2027,James Abankwah,Udinese,0.57,9,772,3,1,D,1,0
+2026/2027,Mikael Ellertsson,Genoa,0.5,9,746,5,1,D M,2,0
+2026/2027,Federico Gatti,Juventus,0.49,3,139,2,1,D S,1,0
+2026/2027,Kristian Thorstvedt,Sassuolo,2.47,8,328,12,1,M S,1,1
+2026/2027,Josh Doig,Sassuolo,0.23,9,693,6,1,D S,0,0
+2026/2027,Amar Ahmed Fatah,Lecce,0.77,8,332,9,1,F S,0,0
+2026/2027,Artem Dovbyk,Bologna,1.03,5,94,4,1,S,1,0
+2026/2027,Pietro Comuzzo,Torino,1.18,8,699,6,1,D,1,0
+2026/2027,Saba Goglichidze,Monza,0.49,5,373,1,1,D S,1,0
+2026/2027,Alieu Njie,"Fiorentina,Torino",2.42,8,553,14,1,F M S,1,0
+2026/2027,Santiago Castro,Roma,2.15,8,307,15,1,F S,0,0
+2026/2027,Matteo Palma,Udinese,0.91,5,362,6,1,D S,0,0
+2026/2027,Jesper Karlström,Udinese,0.47,10,869,7,1,M,4,0
+2026/2027,Daniele Ghilardi,Roma,0.32,7,241,1,1,D S,1,0
+2026/2027,Fisayo Dele-Bashiru,Lazio,0.37,5,161,3,1,M S,0,0
+2026/2027,Richie Sagrado,Venezia,1.06,6,272,5,1,D S,0,0
+2026/2027,Kialonda Gaspar,Lecce,1.34,6,518,5,1,D,2,1
+2026/2027,Eddy Kouadio,Monza,1.25,9,708,3,1,D S,2,0
+2026/2027,Francisco Conceição,Juventus,1.58,7,443,14,1,M S,1,0
+2026/2027,Mattia Liberali,Como,0.86,4,125,6,1,M S,0,0
+2026/2027,Alessandro Romano,Cagliari,0.27,9,783,11,1,M,0,0
+2026/2027,Oliver Provstgaard,Lazio,0.43,8,649,3,1,D,3,0
+2026/2027,Konan N’Dri,Lecce,1.36,9,422,14,1,F S,1,0
+2026/2027,Idrissa Gueye,Udinese,1.36,4,177,10,1,F S,0,0
+2026/2027,Jamil Siebert,Lecce,0.6,9,611,4,1,D S,2,0
+2026/2027,Olaf Gorter,Lecce,0.06,3,143,1,1,M S,0,0
+2026/2027,Noa Lang,Napoli,1.25,7,428,12,1,F M S,0,0
+2026/2027,João Mário,Fiorentina,0.12,5,272,5,1,D S,0,0
+2026/2027,Jakub Piotrowski,Udinese,0.42,7,282,8,1,M S,2,0
+2026/2027,Rafik Belghali,Torino,0.25,7,437,4,1,D M S,2,0
+2026/2027,Petar Sucic,Inter,1.1,9,513,6,1,M S,0,0
+2026/2027,Kieron Bowie,Sassuolo,1.76,9,461,13,1,F S,1,0
+2026/2027,Paul Mendy,Cagliari,2.56,9,646,17,1,F M S,0,0
+2026/2027,Kaiki,Como,1.4,8,430,9,1,D S,1,0
+2026/2027,Gabriele Bracaglia,Frosinone,0.53,8,641,8,1,D,4,0
+2026/2027,Matteo Cichella,Frosinone,0.16,7,240,3,1,M S,0,0
+2026/2027,Kian Fitz-Jim,Torino,0.46,7,518,3,1,M,0,0
+2026/2027,Daniel Bragança,Torino,0.87,7,382,5,1,M S,1,0
+2026/2027,Jay Enem,Bologna,1.29,3,92,3,1,S,0,0
+2026/2027,Joël Monteiro,Lecce,0.37,7,357,8,1,F M S,0,0
+2026/2027,Exequiel Zeballos,Monza,0.19,4,137,4,1,M S,0,0
+2026/2027,Florian Grillitsch,Frosinone,0.0,1,5,0,0,S,0,0
+2026/2027,Ricardo Rodríguez,Torino,0.0,2,64,0,0,D S,0,0
+2026/2027,Henrikh Mkhitaryan,Inter,0.91,5,257,12,0,M S,1,0
+2026/2027,Sead Kolasinac,Atalanta,0.02,6,281,1,0,D S,0,0
+2026/2027,David Alaba,Udinese,0.0,2,63,0,0,D S,0,0
+2026/2027,David de Gea,Fiorentina,0.0,9,810,0,0,GK,1,0
+2026/2027,Matteo Darmian,Bologna,0.08,5,338,2,0,D S,0,0
+2026/2027,John Stones,Inter,0.1,3,97,2,0,D S,0,0
+2026/2027,Ruben Loftus-Cheek,Milan,0.56,7,240,7,0,M S,1,0
+2026/2027,Nemanja Matic,Sassuolo,0.09,8,622,4,0,M,1,0
+2026/2027,Fikayo Tomori,Milan,0.17,3,125,2,0,D S,0,0
+2026/2027,Harry Winks,Cagliari,0.2,8,637,5,0,M,1,0
+2026/2027,Keinan Davis,Udinese,1.66,9,604,16,0,F S,1,0
+2026/2027,Mattia Perin,Juventus,0.0,1,1,0,0,S,0,0
+2026/2027,Manuel Locatelli,Juventus,0.57,3,270,2,0,M,1,0
+2026/2027,Mario Pasalic,Atalanta,0.0,7,296,0,0,M S,0,0
+2026/2027,Duván Zapata,Torino,0.0,3,16,0,0,S,0,0
+2026/2027,Davide Zappacosta,Atalanta,0.57,7,478,7,0,D S,0,0
+2026/2027,Lorenzo De Silvestri,Bologna,0.0,1,30,0,0,S,0,0
+2026/2027,Juan Jesus,Venezia,0.06,7,559,1,0,D S,3,0
+2026/2027,Stephan El Shaarawy,Genoa,0.2,5,240,5,0,M S,0,0
+2026/2027,Paulo Dybala,Roma,2.3,6,503,21,0,F M,0,0
+2026/2027,Moise Kean,"Como,Fiorentina",0.61,4,152,6,0,F S,0,0
+2026/2027,Lukasz Skorupski,Bologna,0.0,8,720,0,0,GK,0,0
+2026/2027,Federico Dimarco,Inter,1.31,10,578,15,0,D M S,0,0
+2026/2027,Lorenzo Pellegrini,Roma,0.09,2,74,2,0,M S,0,0
+2026/2027,Roberto Gagliardini,Cagliari,0.0,3,62,0,0,S,1,0
+2026/2027,Leonardo Spinazzola,Napoli,0.19,7,476,5,0,D S,0,0
+2026/2027,Alessandro Deiola,Cagliari,0.29,9,663,3,0,D M S,4,0
+2026/2027,Marten de Roon,Roma,0.0,7,445,0,0,M S,2,0
+2026/2027,Christian Kabasele,Udinese,0.66,6,485,3,0,D S,0,0
+2026/2027,Pierluigi Gollini,Roma,0.0,5,450,0,0,GK,0,0
+2026/2027,Alex Meret,Napoli,0.0,6,540,0,0,GK,0,0
+2026/2027,Stefano Sabelli,Genoa,0.0,2,54,0,0,M S,1,0
+2026/2027,Luka Modric,Milan,0.02,10,658,1,0,M S,1,0
+2026/2027,Alfonso,Lazio,0.03,8,160,2,0,D S,0,0
+2026/2027,Djibril Sow,Genoa,0.1,5,323,1,0,M S,1,0
+2026/2027,Benjamin Pavard,Inter,0.04,3,207,1,0,D S,0,0
+2026/2027,Jeremie Boga,Juventus,0.11,6,153,3,0,M S,0,0
+2026/2027,Mike Maignan,Milan,0.0,10,900,0,0,GK,0,0
+2026/2027,Marc-Oliver Kempf,Como,0.13,7,472,4,0,D S,0,0
+2026/2027,Alessio Zerbin,Frosinone,0.15,7,119,2,0,S,0,0
+2026/2027,Patrick Cutrone,Monza,1.69,7,226,7,0,M S,0,0
+2026/2027,Matteo Gabbia,Milan,0.0,3,34,0,0,D S,0,0
+2026/2027,Filippo Delli Carri,Monza,0.0,2,28,0,0,S,0,0
+2026/2027,Wladimiro Falcone,Lecce,0.0,9,810,0,0,GK,1,0
+2026/2027,Estupiñán,Milan,0.43,8,405,6,0,D S,2,0
+2026/2027,Vincent Sierro,Parma,0.08,6,391,3,0,M S,1,0
+2026/2027,Jean Butez,Como,0.0,8,720,0,0,GK,0,0
+2026/2027,Diego Carlos,Parma,0.17,6,433,4,0,D,1,0
+2026/2027,Gianluca Mancini,Roma,1.03,9,665,5,0,D S,0,0
+2026/2027,Vanja Milinkovic-Savic,Napoli,0.0,3,270,0,0,GK,0,0
+2026/2027,Adam Marusic,Lazio,0.0,1,18,0,0,D,0,0
+2026/2027,Manuel Lazzari,Lazio,0.02,6,65,1,0,S,0,0
+2026/2027,Willem Geubbels,Lecce,2.86,5,303,11,0,F S,0,0
+2026/2027,Mathías Olivera,Napoli,1.87,7,345,9,0,D S,0,0
+2026/2027,Raoul Bellanova,Atalanta,0.01,7,467,1,0,D S,1,0
+2026/2027,Manuel Akanji,Inter,1.4,9,730,11,0,D S,2,0
+2026/2027,Semuel Pizzignacco,Monza,0.0,1,90,0,0,GK,0,0
+2026/2027,Yerry Mina,Cagliari,0.26,4,360,3,0,D,0,0
+2026/2027,Trevoh Chalobah,Como,0.24,6,463,4,0,D,0,0
+2026/2027,Oumar Solet,Udinese,0.09,5,397,3,0,D,0,0
+2026/2027,Curtis Jones,Inter,0.05,4,147,2,0,M S,0,0
+2026/2027,Enrico Del Prato,Parma,0.64,9,810,8,0,D,2,0
+2026/2027,Luca Ranieri,Fiorentina,0.1,4,313,2,0,D,2,0
+2026/2027,Armand Lauriente,Sassuolo,2.08,9,728,28,0,F M S,1,0
+2026/2027,Ndary Adopo,Cagliari,0.31,9,810,8,0,D M,0,0
+2026/2027,Mehmet Zeki Çelik,Juventus,0.08,7,572,3,0,D,1,0
+2026/2027,Toma Basic,Venezia,0.34,7,432,5,0,M S,1,0
+2026/2027,Demba Thiam,Monza,0.0,3,270,0,0,GK,0,0
+2026/2027,Giovanni Di Lorenzo,Napoli,1.03,9,801,5,0,D,1,0
+2026/2027,Ivan Provedel,Inter,0.0,2,180,0,0,GK,0,0
+2026/2027,Hamed Junior Traore,Genoa,0.03,3,182,1,0,M S,1,0
+2026/2027,Jens Odgaard,Bologna,1.83,8,489,12,0,F M S,2,0
+2026/2027,Duje Caleta-Car,Sassuolo,0.19,6,458,3,0,D S,0,0
+2026/2027,Arijanet Muric,Sassuolo,0.0,7,630,0,0,GK,0,0
+2026/2027,Elia Caprile,Cagliari,0.0,9,810,0,0,GK,0,0
+2026/2027,Samuel Chukwueze,Milan,0.8,7,529,8,0,D M S,0,0
+2026/2027,Boulaye Dia,Lazio,0.0,2,167,0,0,F,1,0
+2026/2027,Benoit Badiashile Mukinayi,Napoli,0.51,4,239,2,0,D S,1,0
+2026/2027,Marco Brescianini,Fiorentina,0.44,7,324,3,0,M S,0,0
+2026/2027,Juan Miranda,Bologna,0.2,9,679,5,0,D S,1,0
+2026/2027,Maxence Caqueret,Como,0.63,9,410,8,0,M S,1,0
+2026/2027,Nicolo Fagioli,Fiorentina,0.79,9,678,11,0,M S,1,0
+2026/2027,Nicolo Rovella,Lazio,0.04,2,126,1,0,M,0,0
+2026/2027,Samuele Ricci,Como,0.18,7,190,3,0,M S,0,0
+2026/2027,Nicolò Cambiaghi,Bologna,0.88,10,739,12,0,F M S,1,0
+2026/2027,Andrea Ghion,Sassuolo,0.0,2,20,0,0,S,0,0
+2026/2027,Amir Rrahmani,Napoli,0.38,8,679,8,0,D,1,0
+2026/2027,Antonino Gallo,Lecce,0.02,8,678,2,0,D,0,0
+2026/2027,Sebastian Walukiewicz,Sassuolo,0.0,1,1,0,0,S,0,0
+2026/2027,Thierry Correia,Venezia,0.56,5,189,5,0,D S,1,0
+2026/2027,Lloyd Kelly,Juventus,0.12,4,146,1,0,D S,0,0
+2026/2027,Stefano Turati,Sassuolo,0.0,2,180,0,0,GK,0,0
+2026/2027,Nick Woltemade,Juventus,1.98,7,248,9,0,F S,0,0
+2026/2027,Ilario Monterisi,Frosinone,0.24,8,445,5,0,D S,0,0
+2026/2027,Andrea Carboni,Monza,0.54,9,710,5,0,D S,1,0
+2026/2027,Edoardo Corvi,Parma,0.0,8,720,0,0,GK,0,0
+2026/2027,El Bilal Touré,Parma,0.87,9,702,12,0,F M,0,0
+2026/2027,Alexis Saelemaekers,Milan,0.16,4,185,2,0,M S,0,0
+2026/2027,Filip Stankovic,Venezia,0.0,10,900,0,0,GK,0,0
+2026/2027,Pierre Kalulu Kyatengwa,Juventus,0.17,9,810,2,0,D M,0,0
+2026/2027,Maduka Okoye,Udinese,0.0,10,900,0,0,GK,0,0
+2026/2027,Kike Pérez,Venezia,0.21,10,789,9,0,M S,3,0
+2026/2027,Lorenzo Colombo,Genoa,0.95,7,356,6,0,F S,0,0
+2026/2027,Filippo Terracciano,Milan,0.0,2,2,0,0,S,0,0
+2026/2027,Giuseppe Aurelio,Cagliari,0.0,2,5,0,0,S,0,0
+2026/2027,Rafael Obrador,Sassuolo,0.0,4,117,0,0,D S,0,0
+2026/2027,Nikola Moro,Bologna,0.0,5,94,0,0,S,0,0
+2026/2027,Enzo Ebosse,Udinese,0.03,8,554,2,0,D S,0,0
+2026/2027,Jonathan Christian David,Juventus,0.0,1,61,2,0,F,0,0
+2026/2027,Strahinja Pavlovic,Milan,1.14,10,900,8,0,D,3,0
+2026/2027,Luis Milla,Como,0.55,10,580,5,0,M S,1,0
+2026/2027,Oier Zarraga,Udinese,0.02,5,160,1,0,M S,0,0
+2026/2027,Kevin Omoruyi,Cagliari,0.79,5,116,2,0,S,1,0
+2026/2027,Yunus Musah,Milan,0.66,10,677,2,0,M S,0,0
+2026/2027,Mergim Vojvoda,Udinese,0.26,10,777,8,0,D S,0,0
+2026/2027,Ivan Ilic,Lecce,0.09,5,256,2,0,M S,2,0
+2026/2027,Gabriele Zappa,Cagliari,0.0,1,21,0,0,S,0,0
+2026/2027,Guglielmo Vicario,Juventus,0.0,9,810,0,0,GK,0,0
+2026/2027,Adrián Bernabé,Parma,0.83,7,403,4,0,M S,0,0
+2026/2027,Marco Carnesecchi,Atalanta,0.04,9,810,1,0,GK,0,0
+2026/2027,Nahuel Molina,Roma,0.17,8,467,5,0,D S,0,0
+2026/2027,Lautaro Valenti,Parma,0.0,1,41,0,0,S,0,0
+2026/2027,Luis Henrique,Inter,0.16,5,207,4,0,D S,0,0
+2026/2027,Pape Sarr,Juventus,0.1,6,306,4,0,M S,0,0
+2026/2027,Simon Sohm,Venezia,0.16,9,658,3,0,M S,3,0
+2026/2027,Josep Martínez,Inter,0.0,8,720,0,0,GK,0,0
+2026/2027,Franco Ezequiel Carboni,Parma,0.04,2,141,1,0,D,0,0
+2026/2027,Ardian Ismajli,Torino,0.05,8,563,2,0,D S,2,0
+2026/2027,Robert Sánchez,Como,0.0,2,180,0,0,GK,0,0
+2026/2027,Radu Dragusin,Fiorentina,0.23,9,810,3,0,D,1,0
+2026/2027,Giorgio Scalvini,Atalanta,0.03,7,605,1,0,D S,0,0
+2026/2027,Riccardo Ciervo,"Cagliari,Sassuolo",0.05,2,6,1,0,S,0,0
+2026/2027,Valentin Antov,Monza,0.0,1,13,0,0,S,0,0
+2026/2027,Niakhate Ndiaye,Parma,0.45,1,90,1,0,D,0,0
+2026/2027,Wisdom Amey,Frosinone,0.0,3,11,0,0,S,0,0
+2026/2027,Andy Diouf,Inter,0.32,9,693,10,0,D M S,0,0
+2026/2027,Nicolò Bertola,Udinese,0.04,5,137,2,0,D S,2,0
+2026/2027,Kamaldeen Sulemana,Atalanta,0.0,1,4,0,0,S,0,0
+2026/2027,Armel Bella Kotchap,Venezia,0.5,3,195,2,0,D,0,0
+2026/2027,Odilon Kossounou,Atalanta,0.04,4,360,1,0,D,0,0
+2026/2027,Andrea Cambiaso,Juventus,0.09,6,199,2,0,D M S,1,0
+2026/2027,Nadir Zortea,Bologna,0.42,8,605,6,0,D S,1,0
+2026/2027,Alessandro Zanoli,Udinese,0.02,2,43,1,0,S,0,0
+2026/2027,Nicolas Galazzi,Monza,0.02,1,19,1,0,S,0,0
+2026/2027,Youssef Maleh,Lecce,0.39,9,560,8,0,M S,1,0
+2026/2027,Pasquale Mazzocchi,Venezia,0.02,4,201,1,0,D S,0,0
+2026/2027,Gianluca Busio,Venezia,0.94,6,399,8,0,M S,1,0
+2026/2027,Ridgeciano Haps,Venezia,0.57,7,421,1,0,D S,1,0
+2026/2027,Koni de Winter,Milan,0.83,10,881,4,0,D S,3,0
+2026/2027,Beto,Fiorentina,0.93,7,172,7,0,F S,0,0
+2026/2027,Arthur Theate,Bologna,0.12,7,586,4,0,D,1,0
+2026/2027,Redouane Halal,Venezia,0.13,7,583,3,0,D S,1,0
+2026/2027,Adam Obert,Cagliari,0.19,9,805,4,0,D,0,0
+2026/2027,Jonathan Rowe,"Atalanta,Bologna",1.33,7,434,13,0,F M S,0,0
+2026/2027,Leo Østigard,Genoa,0.45,9,786,6,0,D,4,0
+2026/2027,Giorgio Cittadini,Frosinone,0.05,8,523,2,0,D S,1,0
+2026/2027,Nathan Patterson,Torino,0.09,4,121,1,0,S,1,0
+2026/2027,Jacopo Fazzini,Cagliari,0.16,5,254,4,0,M S,1,0
+2026/2027,Morten Frendrup,Genoa,0.17,9,742,3,0,M S,0,0
+2026/2027,Enzo Tchato Mbiayi,Frosinone,0.06,1,1,1,0,S,0,0
+2026/2027,Eray Cömert,Torino,0.02,4,320,1,0,D,0,0
+2026/2027,Fali Candé,Sassuolo,0.0,2,110,0,0,D S,0,0
+2026/2027,Cesare Casadei,Torino,0.0,2,86,0,0,M S,0,0
+2026/2027,Diogo Leite,Lazio,0.04,4,172,1,0,D S,1,0
+2026/2027,Danilho Doekhi,Lazio,0.97,4,325,3,0,D,1,0
+2026/2027,Bartol Franjic,Venezia,0.44,2,137,2,0,D,0,0
+2026/2027,Djed Spence,Inter,0.5,3,109,1,0,D S,0,0
+2026/2027,Zakaria Aboukhlal,Torino,0.68,4,43,4,0,S,0,0
+2026/2027,Sandi Lovric,Udinese,0.0,2,14,0,0,S,0,0
+2026/2027,Samuele Birindelli,Monza,0.54,10,896,14,0,D,2,0
+2026/2027,Dany Mota,Monza,1.48,7,361,13,0,F M S,0,0
+2026/2027,Emirhan Ilkhan,Torino,0.04,5,94,1,0,S,0,0
+2026/2027,Thórir Helgason,Venezia,0.07,6,290,3,0,M S,0,0
+2026/2027,Medon Berisha,Lecce,0.03,1,6,1,0,S,0,0
+2026/2027,Dodô,Fiorentina,0.01,4,127,1,0,D S,0,0
+2026/2027,Yan Couto,Como,0.39,9,754,8,0,D,2,0
+2026/2027,Emil Holm,Bologna,0.16,5,274,3,0,D S,1,0
+2026/2027,Mile Svilar,Roma,0.0,5,450,0,0,GK,0,0
+2026/2027,Sulemana,Sassuolo,0.0,2,64,0,0,S,0,0
+2026/2027,Emanuele Valeri,Parma,0.08,9,749,3,0,D S,0,0
+2026/2027,Jhon Lucumí,Juventus,0.11,8,665,3,0,D,2,0
+2026/2027,Lewis Ferguson,Bologna,1.11,10,900,4,0,M,0,0
+2026/2027,Reda Belahyane,Lazio,0.08,8,684,3,0,M S,1,0
+2026/2027,Juan Cabal,Juventus,0.09,2,49,1,0,S,0,0
+2026/2027,Mario Mitaj,Genoa,0.08,2,131,2,0,D S,0,0
+2026/2027,Costantino Favasuli,Napoli,0.58,2,57,3,0,S,0,0
+2026/2027,Aleksandar Stankovic,Inter,0.14,4,86,3,0,M S,0,0
+2026/2027,Wilfried Gnonto,Fiorentina,0.36,7,212,7,0,M S,1,0
+2026/2027,Yanis Massolin,Cagliari,0.0,3,148,0,0,M S,0,0
+2026/2027,Gvidas Gineitis,Torino,0.21,8,387,2,0,M S,1,0
+2026/2027,Leonardo Colombo,Monza,0.04,3,182,1,0,M S,2,0
+2026/2027,Cyril Ngonge,Monza,0.07,4,126,1,0,M S,0,0
+2026/2027,Máximo Perrone,Como,0.69,10,537,6,0,M S,0,0
+2026/2027,Vitinha,Genoa,0.61,8,365,10,0,M S,1,0
+2026/2027,Lorenzo Bernasconi,Atalanta,0.09,7,435,2,0,D S,0,0
+2026/2027,Unai Gómez,Udinese,1.1,9,346,8,0,F M S,1,0
+2026/2027,Ebenezer Akinsanmiro,Monza,0.05,8,557,1,0,M S,0,0
+2026/2027,Saúl Coco,Torino,0.66,9,759,6,0,D,0,0
+2026/2027,Cher Ndour,Fiorentina,0.55,9,758,12,0,M S,1,0
+2026/2027,Arthur Atta,Fiorentina,1.18,5,335,11,0,M S,0,0
+2026/2027,Luca Marianucci,Napoli,0.0,1,41,0,0,S,0,0
+2026/2027,Michael Folorunsho,Monza,0.47,7,385,8,0,M S,2,0
+2026/2027,Anthony Oyono,Frosinone,0.65,9,731,9,0,D S,1,0
+2026/2027,Gennaro Borrelli,Cagliari,0.09,2,31,2,0,S,0,0
+2026/2027,Lorenzo Palmisani,Frosinone,0.0,9,810,0,0,GK,0,0
+2026/2027,Luca Lipani,Sassuolo,0.13,8,285,2,0,M S,2,0
+2026/2027,Lorenzo Lucca,Napoli,0.29,8,165,5,0,F S,0,0
+2026/2027,Kenan Yildiz,Juventus,0.13,1,72,2,0,M,0,0
+2026/2027,Mohamed Kaba,Lecce,0.14,5,126,2,0,M S,0,0
+2026/2027,Gaetano Oristanio,Torino,0.08,3,77,2,0,M S,0,0
+2026/2027,Sam Beukema,Napoli,0.12,2,103,2,0,D S,0,0
+2026/2027,Oussama El Azzouzi,Bologna,0.06,3,124,1,0,M S,2,0
+2026/2027,Giovanni Fabbian,Parma,0.22,7,215,3,0,M S,0,0
+2026/2027,Davide Bartesaghi,Milan,0.87,6,285,3,0,D M S,0,0
+2026/2027,Seydou Fini,Frosinone,0.37,6,231,2,0,M S,0,0
+2026/2027,Marcus Pedersen,Torino,0.0,1,70,0,0,D,0,0
+2026/2027,Thomas Thiesson Kristensen,Atalanta,0.27,5,363,4,0,D,1,0
+2026/2027,Christos Mandas,Lazio,0.0,9,810,0,0,GK,0,0
+2026/2027,Giovanni Daffara,Parma,0.0,1,90,0,0,GK,0,0
+2026/2027,Neil El Aynaoui,Roma,0.0,1,9,0,0,S,0,0
+2026/2027,Francesco Camarda,Milan,0.37,4,33,2,0,S,0,0
+2026/2027,Willy Kambwala,Como,0.0,2,48,0,0,D S,0,0
+2026/2027,Farès Ghedjemis,Frosinone,2.09,7,510,22,0,M S,0,0
+2026/2027,Kingstone Mutandwa,Cagliari,0.0,1,1,0,0,S,0,0
+2026/2027,Omari Forson,Monza,0.14,5,95,2,0,M S,0,0
+2026/2027,Luis Hasa,Frosinone,0.27,3,47,6,0,S,0,0
+2026/2027,Santiago Pierotti,Lecce,0.18,7,457,3,0,F M S,0,0
+2026/2027,Lucas Perri,Torino,0.0,7,630,0,0,GK,0,0
+2026/2027,Darryl Bakola,Sassuolo,0.53,8,622,6,0,M S,0,0
+2026/2027,Niccolò Fortini,Torino,0.05,5,278,1,0,D M S,0,0
+2026/2027,Yukinari Sugawara,Cagliari,0.02,6,227,1,0,D S,0,0
+2026/2027,Patrizio Masini,Frosinone,0.12,8,592,5,0,M S,0,0
+2026/2027,Álex Valle,Como,0.18,7,479,5,0,D S,1,0
+2026/2027,Mattia Felici,Cagliari,0.06,2,34,1,0,S,0,0
+2026/2027,Lorenzo Lucchesi,Monza,0.55,9,688,4,0,D,3,1
+2026/2027,Alessandro Marcandalli,Genoa,0.1,9,665,2,0,D S,1,0
+2026/2027,Jay Idzes,Sassuolo,0.02,3,261,1,0,D,1,0
+2026/2027,David Neres,Napoli,0.91,4,123,5,0,M S,0,0
+2026/2027,Alieu Fadera,Cagliari,0.33,8,246,7,0,M S,1,0
+2026/2027,Joël Schingtienne,Venezia,0.13,7,471,1,0,D S,3,0
+2026/2027,Ignace Van der Brempt,Sassuolo,0.01,3,266,1,0,D,1,0
+2026/2027,Jesús Rodriguez,Como,0.87,4,169,11,0,M S,0,0
+2026/2027,Benjamín Domínguez,Sassuolo,0.12,6,163,3,0,M S,0,0
+2026/2027,Konstantinos Koulierakis,Roma,0.15,5,186,3,0,D S,1,0
+2026/2027,Matías Moreno,Venezia,0.35,8,601,6,0,D S,3,0
+2026/2027,Mandela Keita,Parma,0.07,9,798,4,0,F M,1,0
+2026/2027,Toni Fernández,Venezia,0.0,3,51,0,0,S,1,0
+2026/2027,Brooke Norton-Cuffy,Genoa,0.04,2,180,1,0,D,0,0
+2026/2027,Kerim-Sam Alajbegovic,Juventus,0.4,8,369,15,0,M S,0,0
+2026/2027,Massimo Pessina,Bologna,0.0,2,180,0,0,GK,0,0
+2026/2027,Devyne Rensch,Roma,0.0,7,206,0,0,D S,1,0
+2026/2027,Danilo Veiga,Lecce,0.0,9,810,0,0,D,3,0
+2026/2027,Relja Obric,Atalanta,0.0,3,251,0,0,D S,2,0
+2026/2027,Ivan Smolcic,Como,0.0,6,156,0,0,D S,0,0
+2026/2027,Sebastian Otoa,Genoa,0.0,4,224,0,0,D S,2,0
+2026/2027,Valde,Fiorentina,0.24,7,429,3,0,D S,0,0
+2026/2027,Alessio Cacciamani,Torino,0.13,9,675,1,0,D M S,0,0
+2026/2027,Rahim Alhassane,Bologna,0.36,5,221,2,0,D S,0,0
+2026/2027,Lazar Jovanovic,Udinese,0.0,2,24,0,0,S,0,0
+2026/2027,Corrie Ndaba,Lecce,0.0,4,208,0,0,D S,0,0
+2026/2027,Wesley,Roma,0.31,9,646,6,0,D M S,0,0
+2026/2027,Martin Vitík,Bologna,0.12,3,112,1,0,D S,0,0
+2026/2027,Torbjørn Heggem,Bologna,0.09,7,526,1,0,D S,3,0
+2026/2027,Ardon Jashari,Milan,0.6,8,278,4,0,M S,0,0
+2026/2027,Idrissa Touré,Monza,0.0,1,23,0,0,S,1,0
+2026/2027,Christian Ordóñez,Parma,0.13,6,284,5,0,M S,0,0
+2026/2027,Vakoun Bayo,Udinese,0.9,4,82,4,0,S,1,0
+2026/2027,Lennon Miller,Udinese,0.14,8,390,5,0,M S,2,0
+2026/2027,Giulio Vinciati,Udinese,0.06,1,5,1,0,S,0,0
+2026/2027,Giovane,Napoli,0.02,3,97,1,0,M S,0,0
+2026/2027,Nikola Stulic,Lecce,1.35,7,292,6,0,F S,0,0
+2026/2027,Jayden Addai,Como,0.23,3,64,2,0,S,0,0
+2026/2027,Mariano Troilo,Parma,0.53,9,808,6,0,D,3,0
+2026/2027,Sascha Britschgi,Parma,0.01,7,423,1,0,D M S,1,0
+2026/2027,Zé Pedro,Cagliari,0.53,9,702,4,0,D,2,0
+2026/2027,Joseph Liteta,Cagliari,0.0,2,21,0,0,S,0,0
+2026/2027,Benjamín Cremaschi,Parma,0.0,2,27,0,0,S,0,0
+2026/2027,Juan Rodríguez,Cagliari,0.04,9,715,2,0,D,2,0
+2026/2027,Laurs Skjellerup,Sassuolo,0.0,1,6,0,0,S,0,0
+2026/2027,Matteo Lavelli,Inter,0.21,1,5,2,0,S,0,0
+2026/2027,Abdou-Salam Konate,Parma,0.01,2,93,1,0,M S,1,0
+2026/2027,Tommaso Macchioni,Sassuolo,0.0,1,75,0,0,D,0,0
+2026/2027,Yvan Maye,Monza,0.04,3,49,2,0,S,0,0
+2026/2027,Simone Cinquegrano,Sassuolo,0.46,7,544,6,0,D S,0,0
+2026/2027,Yael Trepy,Cagliari,0.28,1,1,1,0,S,0,0
+2026/2027,Noel Törnqvist,Monza,0.0,6,540,0,0,GK,0,0
+2026/2027,Omri Gandelman,Lecce,0.67,3,70,4,0,M S,0,0
+2026/2027,Dominik Drobnic,Parma,0.0,5,403,0,0,D S,1,0
+2026/2027,Oumar Ngom,Lecce,0.17,9,580,7,0,M S,2,0
+2026/2027,Justin Bijlow,Genoa,0.0,9,810,0,0,GK,0,0
+2026/2027,Eivind Helland,Bologna,0.16,6,308,2,0,D S,0,0
+2026/2027,Juan Arizala,Udinese,0.04,5,85,2,0,S,0,0
+2026/2027,Nesta Elphege,Parma,0.35,5,168,3,0,F S,0,0
+2026/2027,Alex Amorim,Genoa,0.04,7,204,2,0,M S,1,0
+2026/2027,Alisson Santos,Napoli,0.43,4,213,14,0,F S,0,0
+2026/2027,Adrian Lahdo,Como,0.0,1,1,0,0,S,0,0
+2026/2027,Adam Bakoune,Monza,0.05,7,267,1,0,D S,0,0
+2026/2027,Manga Foe Ondoa,Monza,0.21,8,528,7,0,M S,1,0
+2026/2027,Mathis Mout,Monza,0.1,7,169,3,0,M S,0,0
+2026/2027,Rachid Kouda,Parma,0.0,1,12,0,0,S,0,0
+2026/2027,Ousmane Diallo,Parma,0.0,1,12,0,0,S,0,0
+2026/2027,Matija Frigan,Parma,0.21,6,144,2,0,S,0,0
+2026/2027,Raphael Kofler,Cagliari,0.05,3,63,1,0,S,0,0
+2026/2027,Ethan Meichtry,Genoa,0.48,5,58,2,0,S,0,0
+2026/2027,Adam Zulevic,Genoa,0.0,1,3,0,0,S,0,0
+2026/2027,David Puczka,Genoa,0.03,4,134,1,0,D S,0,0
+2026/2027,Samuel Wiafe,Genoa,0.0,4,209,0,0,M S,1,0
+2026/2027,Matteo Dagasso,Venezia,0.06,2,37,3,0,S,1,0
+2026/2027,Albion Rrahmani,Venezia,0.37,8,124,7,0,F S,0,0
+2026/2027,Lion Lauberbach,Venezia,0.66,7,165,3,0,F S,0,0
+2026/2027,Lamine Fanne,Venezia,0.0,2,22,0,0,S,0,0
+2026/2027,Paco Esteban,Lecce,0.63,6,217,6,0,F S,1,0
+2026/2027,Gabriele Calvani,Frosinone,0.2,8,700,5,0,D,2,0
+2026/2027,Anouar El Azzouzi,Frosinone,0.0,2,12,0,0,S,0,0
+2026/2027,Diego Mascardi,Torino,0.0,2,180,0,0,GK,0,0
+2026/2027,Sankhoun Diawara,Milan,0.0,3,205,0,0,D S,0,0
+2026/2027,Christian Comotto,Milan,0.0,2,3,0,0,S,0,0
+2026/2027,Fedde Leysen,Sassuolo,0.08,6,400,2,0,D S,1,0
+2026/2027,Gabriel Kulla,Sassuolo,0.0,1,1,0,0,S,0,0
+2026/2027,Mikel Amondarain,Bologna,0.06,5,114,1,0,M S,2,0
+2026/2027,Marco Libra,Bologna,0.08,3,85,2,0,S,0,0
+2026/2027,Christ Inao Oulaï,Fiorentina,0.16,5,212,3,0,M S,1,0
+2026/2027,Viery,Fiorentina,0.03,8,497,1,0,D S,3,0
+2026/2027,Omar Fayed,Frosinone,0.0,2,22,0,0,S,0,0
+2026/2027,Josip Sutalo,Lazio,0.0,6,474,0,0,D S,0,0
+2026/2027,Pote,Fiorentina,0.64,6,118,5,0,M S,0,0
+2026/2027,Tomás Bobcek,Frosinone,0.29,2,42,4,0,S,0,0
+2026/2027,Alessandro Sugamele,Cagliari,0.26,1,14,1,0,S,0,0
+2026/2027,Giorgi Chakvetadze,Udinese,0.22,7,422,7,0,M S,0,0
+2026/2027,Justin Oboavwoduo,Juventus,0.0,1,3,0,0,S,0,0
+2026/2027,Robinho Júnior,Genoa,0.0,1,6,0,0,S,0,0
+2026/2027,Djibril Diallo,Parma,0.05,1,19,1,0,S,0,0
+2026/2027,Alessandro Di Nunzio,Roma,0.0,1,1,0,0,S,0,0

@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<title>📅 Verifica mensile — Predictor</title><style>
+:root{--bg:#0b1220;--card:#111c33;--txt:#e2e8f0;--sub:#94a3b8;--acc:#2563eb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,sans-serif}
+header{padding:12px 14px;border-bottom:1px solid #1e293b}nav{display:flex;gap:6px;flex-wrap:wrap;padding:8px 14px;background:#0d1526;border-bottom:1px solid #1e293b}
+nav a{color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 10px;border-radius:8px;background:#16233d}nav a.on{background:var(--acc);color:#fff}
+main{max-width:900px;margin:0 auto;padding:12px}h2{font-size:17px;margin:18px 0 8px}h3{font-size:14px;margin:12px 0 6px}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;font-size:13px;margin-bottom:12px}
+td,th{padding:7px 9px;border-bottom:1px solid #1e293b;text-align:left}th{color:var(--sub);font-size:11px;text-transform:uppercase}
+.warn{background:#3b0d0d;border:1px solid #dc2626;border-radius:10px;padding:10px 12px;font-size:13px;margin:10px 0}
+@media (max-width:720px){table{display:block}thead,tr th{display:none}tr{display:block;border:1px solid #1e293b;border-radius:10px;margin-bottom:10px;padding:6px 9px}td{display:flex;justify-content:space-between;border:0;padding:3px 2px}td::before{content:attr(data-label);color:var(--sub);font-size:10px;text-transform:uppercase}}
+</style></head><body>
+<header><b>📅 Verifica mensile</b> <span style="color:var(--sub)">— pronostici vs esiti reali, da eval_day giornaliera</span></header>
+<nav><a href="index.html">Home</a><a href="archivio.html">Archivio+CLV</a><a class="on" href="verifica.html">📅 Verifica</a><a href="ppa.html">⚡ PPA</a><a href="surebets.html">⚖️ Surebets</a><a href="metodo.html">Metodo</a></nav>
+<main>
+<div class="warn">⚠️ Statistiche passate = <b>stime con incertezza</b>, mai garanzia di risultati futuri. 18+ · ADM · autoesclusione.it · 800 558822</div>
+
+<h2>📅 2026-11</h2>
+<table><tr><th>Totale</th><th>Partite</th><th>Acc 1X2</th><th>RPS modello</th><th>RPS mercato</th></tr>
+<tr><td><b>2026-11</b></td><td>43</td><td><b>46.5%</b></td>
+<td>0.2135</td><td>0.1800</td></tr></table>
+<h3>Per lega (≥3 partite)</h3><table><tr><th>Lega</th><th>n</th><th>Acc</th><th>RPS mod</th><th>RPS mkt</th></tr><tr><td>Bundesliga</td><td>8</td><td>75%</td><td>0.1485</td><td>0.0800</td></tr><tr><td>LaLiga</td><td>9</td><td>56%</td><td>0.1864</td><td>0.1293</td></tr><tr><td>Ligue 1</td><td>8</td><td>38%</td><td>0.2520</td><td>0.2180</td></tr><tr><td>Premier League</td><td>9</td><td>44%</td><td>0.2107</td><td>0.2015</td></tr><tr><td>Serie A</td><td>9</td><td>22%</td><td>0.2669</td><td>0.2373</td></tr></table>
+</main></body></html>
