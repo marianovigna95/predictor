@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<title>Glossario — Serie A Predictor</title>
+<style>
+:root { --bg:#0b0f14; --card:#12171e; --line:#242c37; --txt:#e8ecf1; --mut:#8b96a5; --acc:#38bdf8;
+  --btnbg:#171e27; --rowline:#1b222b; --track:#1c232c; --codebg:#1a212b; --termbg:#0a0e13; --scr:#2a333f; --tabon:#141b24; }
+html[data-theme="light"] { --bg:#f4f6f9; --card:#ffffff; --line:#d8dee6; --txt:#182230; --mut:#5c6878; --acc:#0284c7;
+  --btnbg:#edf1f6; --rowline:#e6ebf1; --track:#e6ebf1; --codebg:#edf1f6; --termbg:#edf1f6; --scr:#c3ccd6; --tabon:#e3f2fd; }
+* { box-sizing:border-box; }
+body { font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; background:var(--bg);
+  color:var(--txt); margin:0; padding:14px 14px 96px; line-height:1.45; font-size:14px; }
+::selection { background:rgba(56,189,248,.28); }
+::-webkit-scrollbar { width:10px; height:10px; } ::-webkit-scrollbar-thumb { background:var(--scr); border-radius:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+.wrap { max-width:980px; margin:auto; }
+h1 { font-size:21px; margin:0 0 6px; font-weight:700; }
+h1 .g, .g { color:var(--acc); }
+h2 { font-size:15px; margin:0 0 10px; font-weight:700; }
+h2.day { border-bottom:1px solid var(--line); padding-bottom:6px; }
+p { margin:6px 0; }
+a { color:var(--acc); text-decoration:none; } a:hover { text-decoration:underline; }
+code { background:var(--codebg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:12px; }
+.sub { color:var(--mut); font-size:12.5px; }
+.mut { color:var(--mut); }
+
+/* topbar + tabbar piatte */
+.topbar { position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line);
+  margin:-14px -14px 14px; padding:8px 14px; display:flex; align-items:center; gap:10px; }
+.brand { font-weight:700; font-size:15px; color:var(--txt); } .brand:hover { text-decoration:none; }
+.backbtn { color:var(--mut); font-size:13px; } .backbtn:hover { color:var(--txt); text-decoration:none; }
+.tabbar { position:fixed; bottom:0; left:0; right:0; z-index:50; background:var(--bg);
+  border-top:1px solid var(--line); display:flex; overflow-x:auto; }
+.tabbar a { flex:1; text-align:center; padding:10px 4px; color:var(--mut); font-size:12px; font-weight:600;
+  border-right:1px solid var(--line); } .tabbar a:last-child { border-right:none; }
+.tabbar a.on { color:var(--acc); background:var(--tabon); box-shadow:inset 0 2px 0 var(--acc); }
+.tabbar a:hover { text-decoration:none; color:var(--txt); } .tabbar a.on:hover { color:var(--acc); }
+
+/* card piatte e compatte */
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+.quicklinks { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:4px 0 14px; }
+.ql { display:flex; flex-direction:column; align-items:center; gap:2px; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:12px 6px; text-decoration:none; color:var(--txt); }
+.ql .ic { font-size:20px; } .ql b { font-size:12.5px; } .ql small { color:var(--mut); font-size:10px; }
+.hero { padding:14px 0 10px; } .hero h1 { font-size:24px; } .hero p { color:var(--mut); max-width:640px; }
+.cta { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.btn { display:inline-block; border:1px solid var(--line); background:var(--btnbg); color:var(--txt); border-radius:8px;
+  padding:7px 13px; font-size:13px; font-weight:600; } .btn:hover { border-color:var(--acc); color:var(--acc); text-decoration:none; }
+.btn.on { border-color:var(--acc); color:var(--acc); background:var(--tabon); }
+.btn.ghost { background:transparent; color:var(--mut); }
+
+/* tabelle dense */
+.tablewrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:12.5px; }
+th { text-align:left; color:var(--mut); font-size:11px; text-transform:uppercase; letter-spacing:.4px;
+  padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap; }
+td { padding:6px 8px; border-bottom:1px solid var(--rowline); vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+tr.mrow td { color:var(--mut); font-size:12px; padding:2px 8px 10px; background:transparent; }
+.tb { font-weight:600; } .tb-r { text-align:right; }
+
+/* pill piatte */
+.pill { display:inline-block; border-radius:999px; padding:1px 9px; font-size:11px; font-weight:700;
+  border:1px solid var(--line); background:var(--btnbg); color:var(--txt); white-space:nowrap; }
+.pill.ev-pos { background:rgba(34,197,94,.12); color:#4ade80; border-color:rgba(34,197,94,.35); }
+.pill.ev-neg { background:rgba(248,113,113,.10); color:#f87171; border-color:rgba(248,113,113,.35); }
+.t-singola { background:rgba(251,191,36,.12); color:#fbbf24; border-color:rgba(251,191,36,.4); }
+.t-raddoppio { background:rgba(56,189,248,.12); color:#38bdf8; border-color:rgba(56,189,248,.4); }
+.t-nessuna { background:var(--btnbg); color:var(--mut); }
+.chip { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:1px 9px;
+  font-size:11px; color:var(--mut); background:var(--btnbg); }
+
+/* barra confidenza piatta */
+.cbar { height:5px; background:var(--track); border-radius:3px; overflow:hidden; margin-top:6px; }
+.cbar i { display:block; height:100%; background:var(--acc); border-radius:3px; }
+
+/* match card compatte */
+.mc-grid { display:grid; grid-template-columns:1fr; gap:10px; } /* 🆕 06/11: una card per riga, niente affiancate */
+.mc { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+.mc-h { font-size:11px; color:var(--mut); margin-bottom:4px; display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+.mc-row { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:13px; flex-wrap:wrap; } .mc-row > * { min-width:0; }
+.mc-row b { font-weight:600; }
+.mc-mot { color:var(--mut); font-size:11.5px; margin-top:6px; }
+details { margin-top:4px; font-size:11.5px; color:var(--mut); }
+
+/* stats, verdetto, avvisi, footer */
+.grid { display:flex; flex-wrap:wrap; gap:10px; }
+.stat { border:1px solid var(--line); border-radius:8px; padding:8px 12px; background:var(--card); min-width:110px; }
+.stl { font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }
+.stv { font-size:17px; font-weight:700; }
+.ms { font-size:12px; color:var(--mut); }
+.verdetto { font-weight:600; font-size:12.5px; }
+.v-go  { background:rgba(34,197,94,.10);  color:#4ade80; border:1px solid rgba(34,197,94,.35);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-ok  { background:rgba(163,230,53,.09);  color:#bef264; border:1px solid rgba(163,230,53,.35); border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-bor { background:rgba(251,191,36,.10);  color:#fbbf24; border:1px solid rgba(251,191,36,.4);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-no  { background:rgba(248,113,113,.09); color:#f87171; border:1px solid rgba(248,113,113,.35);border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.warn { border:1px solid rgba(251,191,36,.4); background:rgba(251,191,36,.08); color:#fbbf24;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.okbox { border:1px solid rgba(34,197,94,.35); background:rgba(34,197,94,.08); color:#4ade80;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.legal { font-size:11.5px; color:var(--mut); }
+.term { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11.5px; background:var(--termbg);
+  border:1px solid var(--line); border-radius:8px; padding:8px 10px; white-space:pre-wrap; }
+.ic { font-style:normal; }
+.l, .n { font-size:12.5px; }
+
+@media (max-width:720px) {
+  body { padding:10px 10px 92px; font-size:13.5px; }
+  .topbar { margin:-10px -10px 10px; padding:7px 10px; }
+  .card { padding:11px 12px; }
+  .hero h1 { font-size:20px; }
+  .tabbar a { font-size:11px; padding:9px 2px; }
+  .quicklinks { grid-template-columns:repeat(2,1fr); }
+  .tabbar a { flex:0 0 auto; padding:9px 12px; }
+  /* 🛠 08/11 mobile compatto: tabelle -> card impilate, niente scroll orizzontale */
+  .tablewrap { overflow:visible !important; }
+  table { display:block; font-size:12.5px; }
+  thead, table tr th { display:none !important; }
+  table tr { display:block; border:1px solid var(--line); border-radius:10px; margin:0 0 10px; padding:6px 9px; background:var(--card2, var(--card)); }
+  table td { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border:0 !important; padding:3px 2px !important; font-size:12.5px; text-align:right; }
+  table td::before { content:attr(data-label); color:var(--mut); font-size:10px; text-transform:uppercase; letter-spacing:.04em; text-align:left; }
+  table td[colspan] { display:block; text-align:left; }
+  table td[colspan]::before { content:none; }
+  .mrow td { font-size:11.5px; line-height:1.45; }
+}
+</style></head><body><div class="wrap"><header class="topbar"><div class="wrap tb"><a class="brand" href="index.html">⚽ <span>Predictor</span></a><div class="tb-r"><a class="backbtn" href="index.html" onclick="if(history.length>1){history.back();return false;}else{location.href='index.html';return false;}">← Indietro</a><button id="themeBtn" class="btn ghost" style="cursor:pointer" title="Cambia tema">☀️</button><a class="btn ghost" href="index.html">⌂ Home</a></div></div></header>
+<div class="card">
+  <h1>📚 <span class="g">Glossario</span> & guida alla lettura</h1>
+  <p class="sub">I termini che usiamo nei report, spiegati senza fuorviare. Poi: come riconoscere un sito di pronostici affidabile (dal nostro studio sui competitor).</p>
+  <h2>Termini tecnici</h2>
+  <div class="term"><b>Quota (odds)</b> — Quanto paga il bookmaker: quota 2.00 = 1€ puntato ne rende 2 (1 di vincita + 1 di posta).</div><div class="term"><b>Probabilità implicita</b> — p = (1 / quota) × 100. Quota 2.00 → 50%. È la stima del MERCATO, non la verità.</div><div class="term"><b>Overround / margine</b> — Somma delle probabilità implicite di tutti gli esiti: è >100% (tipicamente 105-108%). La differenza è il guadagno atteso del bookmaker.</div><div class="term"><b>Value bet</b> — Quando la TUA probabilità stimata p è maggiore di quella implicita dalla quota. Esempio: p=60%, quota 2.00 (implicita 50%) → c'è valore.</div><div class="term"><b>EV (valore atteso)</b> — EV = p·(quota−1) − (1−p). EV>0 → nel lungo periodo vinci in media. Buffer ~2% prima di considerare una giocata.</div><div class="term"><b>Kelly frazionario</b> — Puntata ottimale = edge / varianza. Noi usiamo ¼ Kelly per ridurre la varianza: mai puntare più di una piccola % del bankroll.</div><div class="term"><b>CLV (Closing Line Value)</b> — Se la tua quota è migliore della quota di chiusura del mercato, nel lungo periodo sei vincente. È la metrica più onesta per giudicare un modello.</div><div class="term"><b>RPS (Ranked Probability Score)</b> — Misura quanto le tue probabilità (1,X,2) sono vicine al risultato: 0 = perfetto. Meglio dell'accuracy secca perché usa le probabilità, non solo il segno.</div><div class="term"><b>Log-loss / Brier</b> — Altre metriche probabilistiche: penalizzano le certezze sbagliate. Le usiamo nel backtest insieme a RPS.</div><div class="term"><b>Calibrazione / ECE</b> — Una probabilità del 70% dovrebbe verificarsi ~70% delle volte. L'ECE misura questa distanza: senza calibrazione le % sono fuorvianti.</div><div class="term"><b>Walk-forward / backtest</b> — Validazione onesta: prevedi la giornata N usando SOLO i dati disponibili prima di N. Niente leakage (niente dati del futuro).</div><div class="term"><b>xG (expected goals)</b> — Gol attesi dai tiri (posizione, difficoltà). Misura la qualità delle occasioni, non solo i gol segnati. La forma «vera» si legge con l'xG.</div><div class="term"><b>Elo / DC</b> — Elo = forza storica squadra. DC (Dixon-Coles) = modello sui gol con forma pesata sui 180 giorni recenti.</div><div class="term"><b>Edge vs mercato</b> — Differenza tra la probabilità del nostro modello e quella implicita dalla quota: |edge| > 3pp = segnale forte (🚨).</div><div class="term"><b>TiP (tiri in porta) Over 5.5</b> — TiP = Tiri in Porta (shots on target) di TUTTE e due le squadre sommati. O5.5 = Over 5.5, cioè la stima che le due squadre tirino in porta più di 5 volte e mezzo in totale (quindi almeno 6 tiri in porta). Non sono gol: sono i tiri che il portiere ha parato o che sono finiti in porta. È un mercato di volume, più prevedibile dei gol ma con quote più basse.</div><div class="term"><b>Cartellini Over 4.5</b> — Scommessa che nella partita ci siano più di 4.5 cartellini (quindi almeno 5) tra gialli e rossi. Il modello lo stima dalla frequenza storica di squadre e arbitro, ma è un mercato molto volatile: mai una certezza.</div><div class="term"><b>Edge vs quote (pp)</b> — Edge = differenza in punti percentuali (pp) tra la probabilità del NOSTRO modello e la probabilità implicita nella QUOTA del mercato. Esempio: modello 45.6%, quota 2.88 → mercato 34.7% → edge +10.9 pp. Edge positivo grande (🚨 sopra 3 pp) = la quota paga meno di quanto varrebbe secondo noi (c'è valore); edge negativo grande = il mercato la sopravvaluta. La quota da sola non basta mai: conta sempre l'edge.</div><div class="term"><b>Scoreboard pubblico</b> — Archivio di TUTTI i pronostici con esito vinto/perso + metriche. Se un sito non lo pubblica, le sue % non sono verificabili.</div><div class="term"><b>Mercati mostrati vs mercati giocati (regola aggiornata)</b> — Nel report mostriamo le stime di TUTTI i mercati (1X2, doppia chance, GG/NG, Over/Under 2.5, TiP, cartellini, marcatori, TiP 0.5 giocatori): nell'ANALISI si segue il mercato con la % da giocare più alta. La GIOCATA ufficiale (Singola + Raddoppio del giorno) può usare QUALSIASI mercato: Singola = la giocata con probabilità più alta (qualsiasi quota); Raddoppio = 2-3 eventi su partite diverse con quota combinata ≈ 2.00. I TiP 0.5 sui giocatori puntano su difensori/centrocampisti (quota più alta degli attaccanti a parità di rischio). Sempre stime con incertezza + 18+/ADM/autoesclusione.it/800 558822.</div><div class="term"><b>Pronostico modello vs Verdict analista</b> — Il PRONOSTICO DEL MODELLO è la scelta puramente statistica (solo dati: Elo, forma, gol attesi, quote). Il VERDICT DELL'ANALISTA è la scelta finale DOPO il contesto web (indisponibili, news) e il confronto col mercato: può differire dal modello (es. modello «1» → verdict «X2» se mercato e assenze lo suggeriscono). La confidence (alta/media/bassa) dice quanto ci fidiamo del verdict. Nel report mostriamo sempre entrambi, con una nota quando differiscono.</div><div class="term"><b>Confidence alta/media/bassa</b> — Nel nostro report: alta = edge alto + modello e mercato d'accordo; bassa = edge alto ma mercato in disaccordo o molte assenze. Mai «sicuro».</div>
+  <h2>🚩 Red flags: i siti di pronostici da cui stare alla larga</h2>
+  <div class="warn"><ul style="margin:6px 0 6px 18px"><li>'% di vincita' in vetrina senza quota media, ROI o RPS: un 70% a quota 1.20 perde soldi nel lungo periodo.</li><li>'Pronostico sicuro / garantito / 100%': red flag assoluto. Nessun metodo statistico è certo.</li><li>Blog che pubblica solo le vittorie (schedine vincenti, en plein): sélection bias.</li><li>Algoritmi 'matematici/AI' black-box senza pesi, fonti o validazione pubblica.</li><li>Affiliazione ai bookmaker nascosta o banner enormi sopra la prima pagina: l'incentivo è il click, non il valore.</li><li>Multiple/schedine/sistemoni spinti come prodotto principale: alta varianza, difíciles da battere.</li><li>'Affidabilità 4/5' o 'livello affidabilità' subjetivi: non sono probabilità calibrate.</li><li>VIP/canali a pagamento (PayPal/Telegram) con % di un solo mese cherry-picked.</li><li>Nessun disclaimer 18+/ADM/gioco responsabile visibile.</li><li>Siti valutati e NON usati come fonti (06/11/2026): <b>statzone.ai</b> — software 'fatto da tipster' con AI che 'costruisce giocate vincenti in 5 secondi', canale Telegram VIP ('2 mesi gratis' con funnel), 'ritardi statistici' dietro paywall VIP, backend api2.statzone.ai/WhoScored (a pagamento) → red flag: vende tips, non dati grezzi. L'unica idea interessante (impatto dei 22 probabili sulle stats dei mercati, 'TAB 22') la copriamo già noi con la penalità Elo sugli indisponibili. <b>besoccer.com</b> (valutato 06/11): portale livescore/statistiche legittimo (contenuto green flag), MA banner affiliazione bookmaker USA con pixel di tracking (mai cliccarli), API commerciale senza piano free e pagine risultati caricate via JS → non aggiunta alla pipeline; le pagine partita pubbliche restano utili come TERZA verifica manuale di un singolo risultato doute. <b>soccertrade.it</b> (valutato 06/11): non è un sito di statistiche ma un mercato a pagamento dove si comprano/vendono 'quote' di calciatori e allenatori con denaro reale (Ronaldo a 97€, saldo/ricarica/commissioni/recesso) → prodotto tipo gioco d'azzardo su performer, zero valore come fonte dati e red flag etico → NON usato. <b>transfermarkt.it</b> (valutato 06/11): portale dati legittimo e ricco (valori di mercato, calciomercato, infortuni/squalifiche, probabili formazioni) = green flag di CONTENUTO, ma anti-bot per lo scraping (risposte 202 challenge) e API ufficiale a pagamento → non entra nella pipeline automatica; resta utile come fonte MANUALE di contesto (infortuni, mercato). Gli indisponibili li prendiamo già gratis da fantacalcio-online nei motivi. Ricerca web 06/11 — nuove fonti gratis valutate: <b>flashscore.com</b> ✔ (livescore server-rendered 200/497KB con riferimenti xG → candidato 4ª fonte risultati naast FotMob/ESPN/diretta.it); <b>fantacalcio.it EuroLeghe</b> ✔ (probabili formazioni + indisponibili anche per coppe/leghe estere → estende i nostri motivi oltre Serie A); <b>understat.com</b> ✔ xG gratis top-league (SPA: uso manuale/cross-check, scraping via XHR interne); <b>StatsBomb open data</b> (GitHub, event data gratis — opzionale per feature xG); ✘ bloccati da qui: api.sofascore.com (403 Cloudflare), worldfootball.net (403), fbref xG (rimossi da gen 2026). <b>diretta.it</b> (valutato 06/11): portale livescore italiano legittimo e server-rendered (homepage 200 con ~400 punteggi di oggi, niente funnel Telegram/affiliazione) → green flag come TERZA fonte risultati/live neben FotMob+ESPN, utile per un cross-check manuale dei punteggi di oggi. <b>asianbetsoccer.com</b> — comparatore di quote asiatiche (188bet/Pinnacle/Sbobet) + bot Telegram a pagamento + 'bonus 100% prima ricarica' (affiliazione) + video 'resa 80/85%' → red flag come fonte di pronostici; l'unico elemento utile sarebbero le linee Asian/Pinnacle come dato di mercato grezzo (CLV), ma le prendiamo direttamente dai bookmaker sharp, non da loro. <b>topfootballdata.com</b> e <b>linemate.io</b> — già documentati sopra: tips/Telegram/affiliazione, non dati.</li></ul></div>
+  <h2>✅ Green flags: cosa cercare in un sito serio</h2>
+  <div class="okbox"><ul style="margin:6px 0 6px 18px"><li>Scoreboard pubblico completo: ogni pronostico con esito, win% + ROI + RPS insieme, sconfitte incluse.</li><li>Metodologia dichiarata e riproducibile + backtest walk-forward pubblico.</li><li>Probabilità calibrate con incertezza dichiarata.</li><li>Confronto con la linea di chiusura del mercato (CLV) e best-price multi-bookmaker.</li><li>Stake discipline (es. ¼ Kelly) e gestione del bankroll.</li><li>Disclaimer sempre visibili: 18+, solo operatori ADM, autoesclusione.it, disclosure affiliazione.</li><li>Onestà sui periodi negativi (pubblicare anche ROI negativo).</li></ul></div>
+  <h2>Come leggiamo noi una partita (le 4 fasi)</h2>
+  <p class="sub">1) <b>Modello</b> (probabilità 1X2 + mercati) → 2) <b>Contesto web</b> (indisponibili, formazioni, news multi-sorgente) →
+  3) <b>Confronto col mercato</b> (edge vs quota, best-price) → 4) <b>Verdetto con confidence</b> (alta/media/bassa) + rischio.
+  Una sola partita per giornata (mode 1).</p>
+</div>
+<div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · Numero Verde 800 558822</div>
+<div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a></div>
+<footer class="legal">
+  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
+  Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
+  Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>
+  Questo sito pubblica <b>analisi statistiche a scopo informativo</b>: ogni pronostico è una stima con incertezza,
+  mai una certezza o una garanzia. I risultati passati non garantiscono risultati futuri.
+</footer>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}b.textContent=(t==='light')?'🌙':'☀️';}
+b.onclick=function(){var c=document.documentElement.getAttribute('data-theme')||'dark';set(c==='light'?'dark':'light');};
+var t='dark';try{t=localStorage.getItem('theme')||'dark';}catch(e){}set(t);})();
+</script>
+</div></body></html>
