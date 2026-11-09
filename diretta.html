@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
-<meta http-equiv="refresh" content="30">
+<meta http-equiv="refresh" content="300">
 <title>🔴 Diretta — Predictor</title>
 <style>
 :root{--bg:#0b1220;--card:#111c33;--txt:#e2e8f0;--sub:#94a3b8;--acc:#2563eb}
@@ -30,27 +30,66 @@ details.st{margin-top:8px;font-size:12px;color:var(--sub)}
 details.st summary{cursor:pointer;color:#93c5fd}
 table{width:100%;border-collapse:collapse;margin-top:6px} td{padding:3px 6px;border-bottom:1px solid #1e293b;text-align:center} td:first-child{text-align:left;color:var(--txt)}
 </style></head><body>
-<header><b>🔴 Diretta 2026-11-09</b><span class="sub">2 partite · 2 LIVE · auto-refresh 30s · fonte ESPN</span></header>
+<header><b>🔴 Diretta 2026-11-09</b><span class="sub">2 partite · 2 LIVE · live ogni 30s via ESPN dal browser · fonte ESPN</span></header>
 <nav>
 <a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
 </nav>
 <main>
-      <div class="card live">
-        <div class="top"><span class="lg">LaLiga 2 <span class="ours">★ nostra lega</span></span><span class="badge b-live">🔴 LIVE 40'</span></div>
+      <div class="card live" data-eid="401883139">
+        <div class="top"><span class="lg">LaLiga 2 <span class="ours">★ nostra lega</span></span><span class="badge b-live">🔴 LIVE 45'+3'</span></div>
         <details class="m">
         <summary class="teams"><span class="t home">CD Sabadell</span><span class="score">0 - 0</span><span class="t away">Real Sociedad II</span></summary>
         <div class="body"><p class="stt">📜 Ultime azioni (commento live)</p><ul class="ev"><li>{&#x27;value&#x27;: 693.0, &#x27;displayValue&#x27;: &quot;12&#x27;&quot;} Arthur Bonaldo (CD Sabadell) Substitution at 12&#x27;</li></ul><p class="ext">🔗 <a href="https://www.espn.com/soccer/match/_/gameId/401883139" target="_blank">scheda ESPN ↗</a> <span style="color:#475569">(nel browser vero o nel live preview 8002 — nel preview incorporato i link esterni sono bloccati)</span></p></div>
         </details>
       </div>
-      <div class="card live">
-        <div class="top"><span class="lg">LaLiga 2 <span class="ours">★ nostra lega</span></span><span class="badge b-live">🔴 LIVE 41'</span></div>
+      <div class="card live" data-eid="401883140">
+        <div class="top"><span class="lg">LaLiga 2 <span class="ours">★ nostra lega</span></span><span class="badge b-live">🔴 LIVE 45'+1'</span></div>
         <details class="m">
         <summary class="teams"><span class="t home">Las Palmas</span><span class="score">0 - 0</span><span class="t away">Eldense</span></summary>
-        <div class="body"><p class="stt">📜 Ultime azioni (commento live)</p><ul class="ev"><li>{&#x27;value&#x27;: 1774.0, &#x27;displayValue&#x27;: &quot;30&#x27;&quot;} Roberto López (Eldense) Yellow Card at 30&#x27;</li></ul><p class="ext">🔗 <a href="https://www.espn.com/soccer/match/_/gameId/401883140" target="_blank">scheda ESPN ↗</a> <span style="color:#475569">(nel browser vero o nel live preview 8002 — nel preview incorporato i link esterni sono bloccati)</span></p></div>
+        <div class="body"><p class="stt">📜 Ultime azioni (commento live)</p><ul class="ev"><li>{&#x27;value&#x27;: 2051.0, &#x27;displayValue&#x27;: &quot;35&#x27;&quot;} Jesus Clemente (Eldense) Yellow Card at 35&#x27;</li><li>{&#x27;value&#x27;: 1838.0, &#x27;displayValue&#x27;: &quot;31&#x27;&quot;} Justin Smith (Eldense) Yellow Card at 31&#x27;</li><li>{&#x27;value&#x27;: 1774.0, &#x27;displayValue&#x27;: &quot;30&#x27;&quot;} Roberto López (Eldense) Yellow Card at 30&#x27;</li></ul><p class="ext">🔗 <a href="https://www.espn.com/soccer/match/_/gameId/401883140" target="_blank">scheda ESPN ↗</a> <span style="color:#475569">(nel browser vero o nel live preview 8002 — nel preview incorporato i link esterni sono bloccati)</span></p></div>
         </details>
-      </div></main>
+      </div></main><script>
+/* LIVE reale lato client: interroga l'API pubblica ESPN ogni 30s dal browser (gratis, no key, CORS aperto)
+   e aggiorna minuto/risultato in place. Fallback: meta refresh ogni 300s ricarica la pagina statica. */
+(function(){
+  var D='20261109';
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.card[data-eid]'));
+  if(!cards.length||!window.fetch)return;
+  function tick(){
+    fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?dates='+D)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var map={};(d.events||[]).forEach(function(ev){map[ev.id]=ev;});
+        var live=0;
+        cards.forEach(function(c){
+          var ev=map[c.getAttribute('data-eid')];if(!ev)return;
+          var comp=ev.competitions[0];if(!comp)return;
+          var cs=comp.competitors||[];
+          var h=cs.filter(function(x){return x.homeAway==='home';})[0]||cs[0];
+          var aw=cs.filter(function(x){return x.homeAway==='away';})[0]||cs[1];
+          if(!h||!aw)return;
+          var st=comp.status||{type:{}};var tn=(st.type.name||'').toUpperCase();
+          var isLive=st.type.state==='in';
+          var full=st.type.completed||tn.indexOf('FULL')>=0||tn.indexOf('FINAL')>=0||tn.indexOf('FT')>=0;
+          var s=c.querySelector('.score');if(s)s.textContent=(h.score||'0')+' - '+(aw.score||'0');
+          var b=c.querySelector('.badge');
+          if(b){
+            if(isLive){live++;b.className='badge b-live';b.textContent='🔴 LIVE '+(st.displayClock||'');}
+            else if(full){b.className='badge b-ft';b.textContent='FT';}
+            else{b.className='badge b-pre';b.textContent='da giocare';}
+          }
+          c.classList.toggle('live',isLive);c.classList.toggle('ft',full&&!isLive);c.classList.toggle('pre',!isLive&&!full);
+        });
+        var sub=document.querySelector('header .sub');
+        if(sub)sub.textContent=cards.length+' partite · '+live+' LIVE · aggiornate alle '+new Date().toLocaleTimeString('it-IT')+' · fonte ESPN';
+      })
+      .catch(function(){/* rete assente: resta l'ultimo dato */});
+  }
+  tick();setInterval(tick,30000);
+})();
+</script>
 <p style="text-align:center;color:#475569;font-size:12px;padding:14px">⚠️ Solo analisi, mai certezze · 18+ · ADM · autoesclusione.it · 800 558822</p>
-</body><div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a></div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a57f88adb98b526a',t:'MTc5NDI1NTc5Mg=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a57f88adb98b526a',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body><div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a></div>
 <footer class="legal">
   ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
   ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
