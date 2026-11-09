@@ -83,6 +83,48 @@ def stats_for(event_id):
     return out
 
 
+LIVE_JS = """<script>
+/* LIVE reale lato client: interroga l'API pubblica ESPN ogni 30s dal browser (gratis, no key, CORS aperto)
+   e aggiorna minuto/risultato in place. Fallback: meta refresh ogni 300s ricarica la pagina statica. */
+(function(){
+  var D='__DATE__';
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.card[data-eid]'));
+  if(!cards.length||!window.fetch)return;
+  function tick(){
+    fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?dates='+D)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var map={};(d.events||[]).forEach(function(ev){map[ev.id]=ev;});
+        var live=0;
+        cards.forEach(function(c){
+          var ev=map[c.getAttribute('data-eid')];if(!ev)return;
+          var comp=ev.competitions[0];if(!comp)return;
+          var cs=comp.competitors||[];
+          var h=cs.filter(function(x){return x.homeAway==='home';})[0]||cs[0];
+          var aw=cs.filter(function(x){return x.homeAway==='away';})[0]||cs[1];
+          if(!h||!aw)return;
+          var st=comp.status||{type:{}};var tn=(st.type.name||'').toUpperCase();
+          var isLive=st.type.state==='in';
+          var full=st.type.completed||tn.indexOf('FULL')>=0||tn.indexOf('FINAL')>=0||tn.indexOf('FT')>=0;
+          var s=c.querySelector('.score');if(s)s.textContent=(h.score||'0')+' - '+(aw.score||'0');
+          var b=c.querySelector('.badge');
+          if(b){
+            if(isLive){live++;b.className='badge b-live';b.textContent='🔴 LIVE '+(st.displayClock||'');}
+            else if(full){b.className='badge b-ft';b.textContent='FT';}
+            else{b.className='badge b-pre';b.textContent='da giocare';}
+          }
+          c.classList.toggle('live',isLive);c.classList.toggle('ft',full&&!isLive);c.classList.toggle('pre',!isLive&&!full);
+        });
+        var sub=document.querySelector('header .sub');
+        if(sub)sub.textContent=cards.length+' partite \u00B7 '+live+' LIVE \u00B7 aggiornate alle '+new Date().toLocaleTimeString('it-IT')+' \u00B7 fonte ESPN';
+      })
+      .catch(function(){/* rete assente: resta l'ultimo dato */});
+  }
+  tick();setInterval(tick,30000);
+})();
+</script>"""
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=date.today().strftime("%Y-%m-%d"))
@@ -143,7 +185,7 @@ def main():
                 if rows:
                     stats_html = f'<p class="stt">📊 statistiche</p><table>{"".join(rows)}</table>' 
         cards.append(f"""
-      <div class="card {cls}">
+      <div class="card {cls}" data-eid="{e['id']}">
         <div class="top"><span class="lg">{html.escape(league_short(e['lg']))}{ours_tag}</span>{badge}</div>
         <details class="m">
         <summary class="teams"><span class="t home">{html.escape(e['h'])}</span><span class="score">{html.escape(str(e['hs']))} - {html.escape(str(e['as']))}</span><span class="t away">{html.escape(e['a'])}</span></summary>
@@ -152,7 +194,7 @@ def main():
       </div>""")
 
     page = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
-<meta http-equiv="refresh" content="30">
+<meta http-equiv="refresh" content="300">
 <title>🔴 Diretta — Predictor</title>
 <style>
 :root{{--bg:#0b1220;--card:#111c33;--txt:#e2e8f0;--sub:#94a3b8;--acc:#2563eb}}
@@ -183,11 +225,11 @@ details.st{{margin-top:8px;font-size:12px;color:var(--sub)}}
 details.st summary{{cursor:pointer;color:#93c5fd}}
 table{{width:100%;border-collapse:collapse;margin-top:6px}} td{{padding:3px 6px;border-bottom:1px solid #1e293b;text-align:center}} td:first-child{{text-align:left;color:var(--txt)}}
 </style></head><body>
-<header><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · auto-refresh 30s · fonte ESPN</span></header>
+<header><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · live ogni 30s via ESPN dal browser · fonte ESPN</span></header>
 <nav>
 <a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
 </nav>
-<main>{''.join(cards)}</main>
+<main>{''.join(cards)}</main>{LIVE_JS.replace('__DATE__', ds)}
 <p style="text-align:center;color:#475569;font-size:12px;padding:14px">⚠️ Solo analisi, mai certezze · 18+ · ADM · autoesclusione.it · 800 558822</p>
 </body>{footer("")}</html>"""
     SITE.mkdir(exist_ok=True)
