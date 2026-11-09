@@ -1,0 +1,7 @@
+data,ora,lega,partita,mercato,overround,margine%,quote_best,fonte
+2026-11-08,14:00,LaLiga,Elche - Betis,O2.5,0.9951,0.49,"[1.85, 2.2]","wincomparator best-price (multi-book, non filiale per book)"
+2026-11-08,16:15,LaLiga,Sociedad - Vallecano,O2.5,0.9812,1.88,"[1.83, 2.3]","wincomparator best-price (multi-book, non filiale per book)"
+2026-11-08,12:30,Serie A,Napoli - Lazio,O2.5,0.9929,0.71,"[1.98, 2.05]","wincomparator best-price (multi-book, non filiale per book)"
+2026-11-08,18:00,Serie A,Inter - Como,1X2,0.9939,0.61,"[1.83, 4.44, 4.5]","wincomparator best-price (multi-book, non filiale per book)"
+2026-11-08,18:00,Serie A,Inter - Como,GG/NG,0.999,0.1,"[1.62, 2.62]","wincomparator best-price (multi-book, non filiale per book)"
+2026-11-08,20:45,Serie A,Fiorentina - Juventus,O2.5,0.9812,1.88,"[1.98, 2.1]","wincomparator best-price (multi-book, non filiale per book)"

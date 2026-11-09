@@ -1,0 +1,20 @@
+lega,partita,pronostico,reale,hit,p%,quota,rps_mod,rps_mkt,pO25%,ou_reale,ou_hit
+Serie A,Cagliari - Frosinone,1,1,1,37.7,2.8,0.258505,0.2752464979995132,50.1,Under,0
+Serie A,Torino - Lecce,1,X,0,46.1,1.88,0.14546050000000002,0.17103038599960552,43.5,Under,1
+Serie A,Parma - Bologna,1,2,0,42.0,4.5,0.33460199999999996,0.20492131608951694,40.7,Over,0
+Serie A,Roma - Sassuolo,1,2,0,57.6,1.35,0.4899010000000001,0.6625137021601135,44.3,Over,0
+Premier League,Leeds - Tottenham,1,1,1,50.7,2.55,0.157437,0.2395143284330818,52.4,Under,0
+Premier League,Arsenal - Hull,1,1,1,61.8,1.2,0.08497500000000001,0.01619308349494878,34.3,Under,1
+Premier League,Fulham - Newcastle,1,X,0,50.7,2.2,0.162847,0.14547006966548848,52.3,Under,0
+Premier League,Nott'm Forest - Man City,2,1,0,48.3,1.7,0.3658625,0.4662686435157878,53.2,Over,1
+LaLiga,Malaga - Santander,1,2,0,42.9,,0.32869249999999994,,52.6,Over,1
+LaLiga,Espanol - La Coruna,1,X,0,43.6,2.2,0.14278849999999998,0.1479582962072022,54.8,Under,0
+LaLiga,Osasuna - Ath Bilbao,1,X,0,47.4,3.3,0.1538105,0.11849803104248477,57.2,Under,0
+LaLiga,Valencia - Real Madrid,2,2,1,52.1,1.33,0.14800249999999998,0.03971207870718407,56.6,Over,1
+Bundesliga,Dortmund - Elversberg,1,1,1,62.0,1.33,0.08804200000000001,0.03753594072933661,54.7,Over,1
+Bundesliga,Mainz - Bayern Munich,2,2,1,54.0,,0.14045349999999998,,75.1,Over,1
+Bundesliga,Paderborn - Ein Frankfurt,1,X,0,47.0,3.03,0.153668,0.12351980589055601,58.6,Over,1
+Bundesliga,RB Leipzig - Augsburg,1,1,1,67.8,1.5,0.06354700000000002,0.06818440817092068,71.1,Over,1
+Bundesliga,Stuttgart - Werder Bremen,1,1,1,54.2,1.58,0.13588299999999998,0.087364890577387,70.9,Under,0
+Ligue 1,Auxerre - Paris FC,1,2,0,44.1,4.25,0.3183535,0.17411764676322292,57.7,Under,0
+Ligue 1,Paris SG - Troyes,1,1,1,74.6,1.14,0.0363985,0.008508684544101305,54.9,Under,0

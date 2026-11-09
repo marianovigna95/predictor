@@ -1,0 +1,10 @@
+verifica,data,partita,mercato,esito,quota_pick,quota_chiusura,CLV,vinto
+BetArchives-closing,2026-11-06,Dijon - Red Star,GG,GG,1.54,1.53,0.01,
+BetArchives-closing,2026-11-03,Villarreal - Paris SG,O2.5,Over 2.5,1.43,1.44,-0.01,✅
+BetArchives-closing,2026-11-03,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],RADD(combo),GG/Over 2.5,2.0,1.862,0.138,❌
+BetArchives-closing,2026-11-04,Viking - Sabah FK,O2.5,Over 2.5,1.38,1.33,0.05,✅
+BetArchives-closing,2026-11-04,RB Leipzig - Man City [GG GG] + Viking - Sabah FK [O2.5 Over 2.5],RADD(combo),GG/Over 2.5,1.99,1.809,0.181,✅
+BetArchives-closing,2026-11-05,Celtic - Beşiktaş,O2.5,Over 2.5,1.67,1.5,0.17,✅
+BetArchives-closing,2026-11-05,NEC Nijmegen - Omonia Nicosia [GG GG] + Celtic - Beşiktaş [GG GG],RADD(combo),GG/GG,2.39,2.318,0.072,✅
+BetArchives-closing,2026-11-06,Boulogne - Annecy,U2.5,Under 2.5,2.11,1.61,0.5,❌
+BetArchives-closing,2026-11-06,Boulogne - Annecy [NG NG] + Dijon - Red Star [O2.5 Over 2.5],RADD(combo),NG/Over 2.5,3.15,2.941,0.209,❌
