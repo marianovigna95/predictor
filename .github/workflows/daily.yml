@@ -13,11 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Estrai codice sorgente (src/) dallo zip nel repo
+      - name: Prepara layout progetto (src/, data/, site/)
         run: |
           mkdir -p src data site
-          python3 -c "import zipfile; zipfile.ZipFile('predictor-src.zip').extractall('src')"
-          ls src | head
+          # i .py caricati via web sono a root: spostali in src/ (gli script calcolano ROOT = parent di src)
+          mv *.py src/ 2>/dev/null || true
+          # in alternativa, se presente, estrai anche lo zip del codice
+          if [ -f predictor-src.zip ]; then python3 -c "import zipfile; zipfile.ZipFile('predictor-src.zip').extractall('src')"; fi
+          ls src | head -20
       - uses: actions/setup-python@v5
         with: { python-version: "3.13" }
       - run: pip install pandas numpy scikit-learn requests fpdf2 pymupdf
