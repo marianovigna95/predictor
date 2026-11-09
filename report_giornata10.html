@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report Giornata 10 — Serie A 2026/27</title>
+<style>
+ body { font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; padding:24px; }
+ .card { max-width:1200px; margin:auto; background:#1e293b; border-radius:14px; padding:24px; box-shadow:0 8px 30px rgba(0,0,0,.4); }
+ h1 { font-size:22px; margin:0 0 4px; } h1 .g { color:#38bdf8; }
+ .sub { color:#94a3b8; font-size:13px; margin-bottom:18px; }
+ table { width:100%; border-collapse:collapse; font-size:13px; }
+ th { text-align:left; color:#38bdf8; border-bottom:2px solid #334155; padding:8px 6px; font-size:12px; text-transform:uppercase; }
+ td { border-bottom:1px solid #334155; padding:10px 6px; vertical-align:top; }
+ tr:hover { background:#273449; }
+ .when { color:#fbbf24; font-size:11px; }
+ .muted { color:#94a3b8; font-size:11px; display:block; margin-top:4px; }
+ .small { font-size:11px; }
+ /* statistiche impilate dritte in colonna: etichetta sopra, valore sotto */
+ .stl { display:block; font-size:9px; color:#38bdf8; text-transform:uppercase; letter-spacing:.4px; margin-top:4px; }
+ .stv { display:block; font-size:14px; font-weight:700; color:#e2e8f0; }
+ tr.mrow td { background:#0f172a; color:#94a3b8; font-size:11px; line-height:1.5; border-bottom:2px solid #38bdf8; }
+ tr.mrow:hover td { background:#0f172a; }
+ /* SCHEDA PARTITA: titolo in alto, categorie in colonne ORIZZONTALI */
+ .mc-grid { display:grid; gap:12px; grid-template-columns:1fr; }
+ @media (min-width:1000px) { .mc-grid { grid-template-columns:1fr 1fr; } }
+ .mc { background:#0f172a; border:1px solid #334155; border-radius:12px; padding:12px 14px; }
+ .mc-h { font-size:15px; font-weight:700; margin-bottom:8px; }
+ .mc-row { display:flex; flex-wrap:wrap; gap:8px 22px; }
+ .ms { display:flex; flex-direction:column; min-width:58px; }
+ .ms.wide { max-width:230px; }
+ .ms .stv { font-size:13px; }
+ .mc-mot { margin-top:9px; padding-top:7px; border-top:1px dashed #334155; font-size:11px; color:#94a3b8; line-height:1.55; }
+ .mc-sub { margin-top:6px; font-size:11px; color:#94a3b8; line-height:1.5; }
+ .mc-note { margin-top:8px; background:rgba(69,10,10,.35); border:1px solid #7f1d1d; border-radius:8px; padding:7px 9px; font-size:11px; color:#fecaca; line-height:1.5; }
+ .verdict { font-weight:700; } .v-alta { color:#4ade80; } .v-media { color:#fbbf24; } .v-bassa { color:#f87171; }
+ .warn { background:#450a0a; border:1px solid #7f1d1d; border-radius:10px; padding:12px; margin-top:18px; font-size:12px; color:#fecaca; }
+ .foot { margin-top:14px; font-size:11px; color:#64748b; }
+ .tablewrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+ /* MOBILE: la tabella diventa una pila di card, una per partita */
+ @media (max-width:640px){
+   body{padding:10px} .card{padding:14px} h1{font-size:18px} .sub{font-size:12px}
+   .tablewrap{overflow-x:visible}
+   table{font-size:12px}
+   table tr:first-child{display:none}
+   table, tbody, tr, td{display:block; width:100%}
+   tr{background:#0f172a; border:1px solid #334155; border-radius:10px; margin-bottom:12px; padding:6px 10px}
+   tr:hover{background:#0f172a}
+   td{border:none; padding:3px 6px; white-space:normal}
+   td::before{content:attr(data-label) ": "; color:#38bdf8; font-size:10px; font-weight:700; text-transform:uppercase}
+   tr.mrow{background:#0f172a; border:none; border-top:1px dashed #334155; border-radius:0; margin-top:-12px; padding:2px 10px 8px}
+   .hide-m{display:none}
+ }
+</style></head><body><div class="card">
+<h1>⚽ Report <span class="g">Giornata 10</span> — Serie A 2026/27</h1>
+<div class="sub">Modello v4 (xG reali Understat + Elo/Dixon-Coles + motivation + congestione + assenze a xG + quote) · generato il 01/11/2026 · stime con incertezza, mai certezze</div>
+<p class="sub" style="font-size:11px">ℹ️ <b>Come si legge:</b> <b>Pronostico</b> = esito 1X2 più probabile (somma di tutti i punteggi con quell'esito, es. "1" = 1-0 + 2-0 + 2-1 + 3-1...). <b>Punteggio esatto+prob</b> = il singolo punteggio più frequente (qui 1-1 13%): può essere un pareggio anche quando il pronostico è "1", perché la vittoria casa si spartisce su tanti punteggi diversi.</p>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Bologna - Monza <span class="when">domani 02/11 · 31/10 15:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">55.5%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.5%</span><span class="stv">X&nbsp;22.6%</span><span class="stv">2&nbsp;21.9%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">58% / 42%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">54%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">46%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">85%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">22%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+2.5pp su 2</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-media">1</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">—</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Federico Bernardeschi (Bol) 38% anytime / 29% primo | Jay Enem (Bol) 35% anytime / 27% primo | Gustavo Varela (Mon) 47% anytime / 43% primo | Dany Mota (Mon) 28% anytime / 22% primo</span></div>
+  </div>
+  
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Bologna - Monza). Perché: secondo l'Elo Bologna è più forte di circa 195 punti (1567 contro 1372); nelle ultime 5 partite Bologna ha fatto 2.2 gol a partita subendone 1.4, Monza 1.8 fatti e 2.4 subiti; il modello si aspetta più gol per Bologna (1.6 contro 1.3 di Monza); in classifica Bologna è sopra (8° contro 18°). La quota di 1.67 è più alta di quanto il modello reputi giusto (mercato 59.9% vs modello 55.5%, edge -4.4 pp): il mercato la sopravvaluta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo casa +195 (1567 vs 1372) · ultime 5: Bologna 2.2 gol fatti / 1.4 subiti · Monza 1.8 / 2.4 · gol attesi (modello): 1.6 - 1.3 · classifica: 8° Bologna vs 18° Monza · quota 1.67 (mercato 59.9%) vs modello 55.5% → edge -4.4pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: </div>
+</div>
+<div class="mc">
+  <div class="mc-h">Udinese - Roma <span class="when">domani 02/11 · 31/10 18:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">2</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">54.9%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;24.1%</span><span class="stv">X&nbsp;21.0%</span><span class="stv">2&nbsp;54.9%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">70% / 30%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">70%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">30%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">89%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">39%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">1-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+7.2pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-media">2</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">—</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Nicolo Zaniolo (Udi) 27% anytime / 26% primo | Matteo Palma (Udi) 20% anytime / 19% primo | Donyell Malen (Rom) 64% anytime / 52% primo | Paulo Dybala (Rom) 32% anytime / 20% primo</span></div>
+  </div>
+  
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Udinese - Roma). Perché: secondo l'Elo Roma è più forte di circa 291 punti (1664 contro 1373); nelle ultime 5 partite Udinese ha fatto 0.6 gol a partita subendone 2.4, Roma 2.8 fatti e 1.4 subiti; il modello si aspetta più gol per Roma (2.0 contro 1.7 di Udinese); in classifica Roma è sopra (5° contro 11°), e questo pesa a sfavore di Udinese. La quota di 1.53 è più alta di quanto il modello reputi giusto (mercato 65.4% vs modello 54.9%, edge -10.4 pp): il mercato la sopravvaluta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo trasferta -291 (1373 vs 1664) · ultime 5: Udinese 0.6 gol fatti / 2.4 subiti · Roma 2.8 / 1.4 · gol attesi (modello): 1.7 - 2.0 · classifica: 11° Udinese vs 5° Roma · assenze: Udinese −30 Elo, Roma −45 Elo · quota 1.53 (mercato 65.4%) vs modello 54.9% → edge -10.4pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: </div>
+</div>
+<div class="mc">
+  <div class="mc-h">Milan - Inter <span class="when">domani 02/11 · 31/10 20:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">2</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">39.2%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;35.8%</span><span class="stv">X&nbsp;25.0%</span><span class="stv">2&nbsp;39.2%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">69% / 31%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">68%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">32%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">96%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">28%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+4.8pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-media">2</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">—</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Goncalo Ramos (Mil) 51% anytime / 36% primo | Christian Pulisic (Mil) 33% anytime / 20% primo | Marcus Thuram (Int) 41% anytime / 20% primo | Ange-Yoan Bonny (Int) 32% anytime / 15% primo</span></div>
+  </div>
+  
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Milan - Inter). Perché: secondo l'Elo Inter è più forte di circa 58 punti (1659 contro 1601); nelle ultime 5 partite Milan ha fatto 2.2 gol a partita subendone 1.6, Inter 2.2 fatti e 1.0 subiti; gol attesi quasi pari (1.8 - 1.8); in classifica Inter è sopra (1° contro 3°), e questo pesa a sfavore di Milan. La quota di 2.18 è più alta di quanto il modello reputi giusto (mercato 45.9% vs modello 39.2%, edge -6.7 pp): il mercato la sopravvaluta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo trasferta -58 (1601 vs 1659) · ultime 5: Milan 2.2 gol fatti / 1.6 subiti · Inter 2.2 / 1.0 · gol attesi (modello): 1.8 - 1.8 · classifica: 3° Milan vs 1° Inter · assenze: Milan −30 Elo, Inter −70 Elo · quota 2.18 (mercato 45.9%) vs modello 39.2% → edge -6.7pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: </div>
+</div>
+<div class="mc">
+  <div class="mc-h">Como - Venezia <span class="when">OGGI 01/11 · 01/11 12:30</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">68.9%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;68.9%</span><span class="stv">X&nbsp;18.4%</span><span class="stv">2&nbsp;12.6%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">54% / 46%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">57%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">43%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">92%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">36%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">2-0 (11%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">-4.0pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-media">1</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">—</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Tasos Douvikas (Com) 47% anytime / 35% primo | Anastasios Douvikas (Com) 43% anytime / 31% primo | John Yeboah (Ven) 41% anytime / 35% primo | Akor Adams (Ven) 29% anytime / 22% primo</span></div>
+  </div>
+  
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Como - Venezia). Perché: secondo l'Elo Como è più forte di circa 254 punti (1615 contro 1361); nelle ultime 5 partite Como ha fatto 1.8 gol a partita subendone 0.4, Venezia 0.4 fatti e 1.4 subiti; il modello si aspetta più gol per Como (2.1 contro 0.9 di Venezia); in classifica Como è sopra (14° contro 24°). La quota di 1.29 è più alta di quanto il modello reputi giusto (mercato 77.5% vs modello 68.9%, edge -8.6 pp): il mercato la sopravvaluta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo casa +254 (1615 vs 1361) · ultime 5: Como 1.8 gol fatti / 0.4 subiti · Venezia 0.4 / 1.4 · gol attesi (modello): 2.1 - 0.9 · classifica: 14° Como vs 24° Venezia · riposo: 5 gg Como vs 4 gg Venezia · assenze: Como −70 Elo · quota 1.29 (mercato 77.5%) vs modello 68.9% → edge -8.6pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: </div>
+</div>
+<div class="mc">
+  <div class="mc-h">Frosinone - Torino <span class="when">OGGI 01/11 · 01/11 15:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">59.7%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;59.7%</span><span class="stv">X&nbsp;19.4%</span><span class="stv">2&nbsp;20.9%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">71% / 29%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">79%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">21%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">94%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">22%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">2-1 (8%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+15.7pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-media">1</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">—</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Antonio Raimondo (Fro) 49% anytime / 30% primo | Giacomo Calo (Fro) 30% anytime / 16% primo | Che Adams (Tor) 31% anytime / 24% primo | Daniel Braganca (Tor) 27% anytime / 20% primo</span></div>
+  </div>
+  
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Frosinone - Torino). Perché: secondo l'Elo Frosinone è più forte di circa 106 punti (1566 contro 1460); nelle ultime 5 partite Frosinone ha fatto 3.0 gol a partita subendone 2.0, Torino 1.8 fatti e 1.6 subiti; il modello si aspetta più gol per Frosinone (2.9 contro 1.2 di Torino); in classifica Torino è sopra (10° contro 23°), e questo pesa a sfavore di Frosinone. La quota di 2.13 fa sembrare l'esito meno probabile (46.9%) di quanto lo stimi il modello (59.7%): c'è un margine (edge +12.7 punti %) a favore della scelta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo casa +106 (1566 vs 1460) · ultime 5: Frosinone 3.0 gol fatti / 2.0 subiti · Torino 1.8 / 1.6 · gol attesi (modello): 2.9 - 1.2 · classifica: 23° Frosinone vs 10° Torino · riposo: 3 gg Frosinone vs 5 gg Torino · assenze: Torino −30 Elo · quota 2.13 (mercato 46.9%) vs modello 59.7% → edge +12.7pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: </div>
+</div>
+<div class="mc">
+  <div class="mc-h">Lazio - Cagliari <span class="when">OGGI 01/11 · 01/11 15:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">54.1%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;54.1%</span><span class="stv">X&nbsp;23.2%</span><span class="stv">2&nbsp;22.7%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">54% / 46%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">49%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">51%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">83%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">38%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">1-1 (14%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">-11.5pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-media">1</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">—</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Mattia Zaccagni (Laz) 43% anytime / 30% primo | Davide Frattesi (Laz) 38% anytime / 25% primo | M&#039;Bala Nzola (Cag) 45% anytime / 42% primo | Paul Mendy (Cag) 36% anytime / 31% primo</span></div>
+  </div>
+  
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Lazio - Cagliari). Perché: secondo l'Elo Lazio è più forte di circa 146 punti (1641 contro 1494); nelle ultime 5 partite Lazio ha fatto 3.2 gol a partita subendone 1.0, Cagliari 0.8 fatti e 2.6 subiti; il modello si aspetta più gol per Lazio (1.4 contro 1.2 di Cagliari); in classifica Lazio è sopra (6° contro 16°). La quota di 1.43 è più alta di quanto il modello reputi giusto (mercato 69.9% vs modello 54.1%, edge -15.9 pp): il mercato la sopravvaluta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo casa +146 (1641 vs 1494) · ultime 5: Lazio 3.2 gol fatti / 1.0 subiti · Cagliari 0.8 / 2.6 · gol attesi (modello): 1.4 - 1.2 · classifica: 6° Lazio vs 16° Cagliari · assenze: Lazio −45 Elo · quota 1.43 (mercato 69.9%) vs modello 54.1% → edge -15.9pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: </div>
+</div>
+<div class="mc">
+  <div class="mc-h">Lecce - Genoa <span class="when">OGGI 01/11 · 01/11 18:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">40.0%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;40.0%</span><span class="stv">X&nbsp;26.1%</span><span class="stv">2&nbsp;33.9%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">59% / 41%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">57%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">43%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">67%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">26%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+11.2pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-bassa">X2 (doppia chance)</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">bassa</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Konan Ndri (Lec) 29% anytime / 24% primo | Amar Fatah (Lec) 22% anytime / 16% primo | Junior Messias (Gen) 23% anytime / 33% primo | Milutin Osmajic (Gen) 22% anytime / 32% primo</span></div>
+  </div>
+  <div class="mc-note">⚠️ <b>Verdict diverso dal modello</b> (modello: 1 → verdict: X2 (doppia chance), conf. bassa): Modello 1 (40%) vs mercato 2 (2.40): entrambe le squadre con assenze pesanti (Geubbels, Gaspar, Ilic out dal Lecce). Meglio la doppia chance.</div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Lecce - Genoa). Perché: secondo l'Elo Genoa è più forte di circa 78 punti (1457 contro 1379); nelle ultime 5 partite Lecce ha fatto 1.2 gol a partita subendone 2.2, Genoa 1.4 fatti e 0.8 subiti; il modello si aspetta più gol per Lecce (1.9 contro 1.2 di Genoa); in classifica Lecce è sopra (12° contro 13°). La quota di 3.30 fa sembrare l'esito meno probabile (30.3%) di quanto lo stimi il modello (40.0%): c'è un margine (edge +9.7 punti %) a favore della scelta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo trasferta -78 (1379 vs 1457) · ultime 5: Lecce 1.2 gol fatti / 2.2 subiti · Genoa 1.4 / 0.8 · gol attesi (modello): 1.9 - 1.2 · classifica: 12° Lecce vs 13° Genoa · riposo: 3 gg Lecce vs 4 gg Genoa · assenze: Lecce −30 Elo, Genoa −45 Elo · quota 3.30 (mercato 30.3%) vs modello 40.0% → edge +9.7pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: Modello 1 (40%) vs mercato 2 (2.40): entrambe le squadre con assenze pesanti (Geubbels, Gaspar, Ilic out dal Lecce). Meglio la doppia chance.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Juventus - Napoli <span class="when">OGGI 01/11 · 01/11 20:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">46.9%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;46.9%</span><span class="stv">X&nbsp;26.6%</span><span class="stv">2&nbsp;26.5%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">48% / 52%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">43%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">57%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">96%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">9%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">1-1 (14%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+3.9pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-media">1</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">media-bassa</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Randal Kolo Muani (Juv) 38% anytime / 37% primo | Nick Woltemade (Juv) 31% anytime / 30% primo | Kevin De Bruyne (Nap) 32% anytime / 17% primo | Scott Mctominay (Nap) 30% anytime / 16% primo</span></div>
+  </div>
+  <div class="mc-sub">📝 Nota analista: Modello 43% e mercato d'accordo (2.20). Ma Juve in crisi (Yildiz, Locatelli out) e Napoli senza 6 titolari + Allegri squalificato: partita bloccata, Under 2.5 57%.</div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Juventus - Napoli). Perché: secondo l'Elo Juventus è più forte di circa 22 punti (1524 contro 1502); nelle ultime 5 partite Juventus ha fatto 1.0 gol a partita subendone 1.2, Napoli 2.0 fatti e 1.4 subiti; il modello si aspetta più gol per Juventus (1.4 contro 0.9 di Napoli); in classifica Napoli è sopra (2° contro 4°), e questo pesa a sfavore di Juventus. Quota 2.20 (mercato 45.5%) e modello (46.9%) sono in linea (edge +1.5 pp). Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo casa +22 (1524 vs 1502) · ultime 5: Juventus 1.0 gol fatti / 1.2 subiti · Napoli 2.0 / 1.4 · gol attesi (modello): 1.4 - 0.9 · classifica: 4° Juventus vs 2° Napoli · assenze: Juventus −70 Elo, Napoli −70 Elo · quota 2.20 (mercato 45.5%) vs modello 46.9% → edge +1.5pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: Modello 43% e mercato d'accordo (2.20). Ma Juve in crisi (Yildiz, Locatelli out) e Napoli senza 6 titolari + Allegri squalificato: partita bloccata, Under 2.5 57%.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Sassuolo - Fiorentina <span class="when">domani 02/11 · 02/11 18:30</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">45.6%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;45.6%</span><span class="stv">X&nbsp;24.2%</span><span class="stv">2&nbsp;30.1%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">61% / 39%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">58%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">42%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">83%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">41%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+12.6pp su 1 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-bassa">1X</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">bassa</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Domenico Berardi (Sas) 26% anytime / 26% primo | Vasilije Adzic (Sas) 22% anytime / 22% primo | Alieu Njie (Fio) 27% anytime / 27% primo | Franco Mastantuono (Fio) 21% anytime / 20% primo</span></div>
+  </div>
+  <div class="mc-sub">📝 Nota analista: Modello 1 (44%) vs mercato 2 (2.35). Thorstvedt squalificato per il Sassuolo. GG 61%: partita da gol.</div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Sassuolo - Fiorentina). Perché: secondo l'Elo Sassuolo è più forte di circa 26 punti (1437 contro 1410); nelle ultime 5 partite Sassuolo ha fatto 1.2 gol a partita subendone 3.0, Fiorentina 1.2 fatti e 2.0 subiti; il modello si aspetta più gol per Sassuolo (1.8 contro 1.3 di Fiorentina); in classifica Fiorentina è sopra (9° contro 15°), e questo pesa a sfavore di Sassuolo. La quota di 2.88 fa sembrare l'esito meno probabile (34.7%) di quanto lo stimi il modello (45.6%): c'è un margine (edge +10.9 punti %) a favore della scelta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo casa +26 (1437 vs 1410) · ultime 5: Sassuolo 1.2 gol fatti / 3.0 subiti · Fiorentina 1.2 / 2.0 · gol attesi (modello): 1.8 - 1.3 · classifica: 15° Sassuolo vs 9° Fiorentina · riposo: 6 gg Sassuolo vs 4 gg Fiorentina · assenze: Sassuolo −15 Elo, Fiorentina −30 Elo · quota 2.88 (mercato 34.7%) vs modello 45.6% → edge +10.9pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: Modello 1 (44%) vs mercato 2 (2.35). Thorstvedt squalificato per il Sassuolo. GG 61%: partita da gol.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Atalanta - Parma <span class="when">domani 02/11 · 02/11 20:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron. modello</span><span class="stv">1</span></div>
+    <div class="ms"><span class="stl">Confidenza</span><span class="stv">60.8%</span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;60.8%</span><span class="stv">X&nbsp;20.3%</span><span class="stv">2&nbsp;18.9%</span></div>
+    <div class="ms"><span class="stl">GG / NG</span><span class="stv">55% / 45%</span></div>
+    <div class="ms"><span class="stl">Over 2.5</span><span class="stv">64%</span></div>
+    <div class="ms"><span class="stl">Under 2.5</span><span class="stv">36%</span></div>
+    <div class="ms"><span class="stl">TiP O5.5</span><span class="stv">80%</span></div>
+    <div class="ms"><span class="stl">Cart. O4.5</span><span class="stv">9%</span></div>
+    <div class="ms"><span class="stl">Punteggio esatto+prob</span><span class="stv">2-0 (11%)</span></div>
+    <div class="ms"><span class="stl">Edge vs quote</span><span class="stv">+3.0pp su 2 🚨</span></div>
+    <div class="ms"><span class="stl">Verdict analista</span><span class="stv verdict v-alta">1</span></div>
+    <div class="ms"><span class="stl">Conf. verdict</span><span class="stv">ALTA</span></div>
+    <div class="ms wide"><span class="stl">Marcatore</span><span class="stv" style="font-weight:400;font-size:11px">Nikola Krstovic (Ata) 48% anytime / 34% primo | Ederson (Ata) 26% anytime / 16% primo | David Romero (Par) 26% anytime / 33% primo | El Bilal Toure (Par) 12% anytime / 14% primo</span></div>
+  </div>
+  <div class="mc-sub">📝 Nota analista: Modello 62% = mercato (1.53). Unico forte accordo. Parma peggior attacco del campionato. Risultato atteso 2-0.</div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Atalanta - Parma). Perché: secondo l'Elo Atalanta è più forte di circa 50 punti (1471 contro 1421); nelle ultime 5 partite Atalanta ha fatto 2.2 gol a partita subendone 2.4, Parma 0.6 fatti e 1.8 subiti; il modello si aspetta più gol per Atalanta (2.5 contro 0.9 di Parma); in classifica Atalanta è sopra (7° contro 20°). La quota di 1.53 è più alta di quanto il modello reputi giusto (mercato 65.4% vs modello 60.8%, edge -4.6 pp): il mercato la sopravvaluta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici del motivo</summary><span style="font-size:10px">Elo casa +50 (1471 vs 1421) · ultime 5: Atalanta 2.2 gol fatti / 2.4 subiti · Parma 0.6 / 1.8 · gol attesi (modello): 2.5 - 0.9 · classifica: 7° Atalanta vs 20° Parma · riposo: 4 gg Atalanta vs 5 gg Parma · assenze: Atalanta −45 Elo · quota 1.53 (mercato 65.4%) vs modello 60.8% → edge -4.6pp</span></details>
+  </div>
+  <div class="mc-sub hide-m">📝 Nota analista: Modello 62% = mercato (1.53). Unico forte accordo. Parma peggior attacco del campionato. Risultato atteso 2-0.</div>
+</div></div>
+<div class="warn">⚠️ Queste sono <b>stime probabilistiche</b> basate su dati pubblici e news: non sono certezze né consigli di gioco. Gioco responsabile: <b>18+</b>, solo operatori <b>ADM</b> autorizzati — <b>autoesclusione.it</b> · Numero Verde <b>800 558822</b> in caso di difficoltà.</div>
+<div class="foot">Fonte dati: football-data.co.uk · understat.com (API getLeagueData) · fotmob.com · quote da screenshot/oddsportal. File: data/forecast_giornata10.csv, data/markets_giornata10.csv — progetto football-predictor.</div>
+</div><p style="text-align:center;font-size:12px;color:#94a3b8;padding:12px">⬅ <a href="index.html" style="color:#60a5fa">Home</a> · ⚠️ 18+ · ADM · autoesclusione.it · 800 558822</p></body></html>

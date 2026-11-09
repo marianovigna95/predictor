@@ -1,0 +1,1180 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<title>Coppe europee — Serie A Predictor</title>
+<style>
+:root { --bg:#0b0f14; --card:#12171e; --line:#242c37; --txt:#e8ecf1; --mut:#8b96a5; --acc:#38bdf8;
+  --btnbg:#171e27; --rowline:#1b222b; --track:#1c232c; --codebg:#1a212b; --termbg:#0a0e13; --scr:#2a333f; --tabon:#141b24; }
+html[data-theme="light"] { --bg:#f4f6f9; --card:#ffffff; --line:#d8dee6; --txt:#182230; --mut:#5c6878; --acc:#0284c7;
+  --btnbg:#edf1f6; --rowline:#e6ebf1; --track:#e6ebf1; --codebg:#edf1f6; --termbg:#edf1f6; --scr:#c3ccd6; --tabon:#e3f2fd; }
+* { box-sizing:border-box; }
+body { font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; background:var(--bg);
+  color:var(--txt); margin:0; padding:14px 14px 96px; line-height:1.45; font-size:14px; }
+::selection { background:rgba(56,189,248,.28); }
+::-webkit-scrollbar { width:10px; height:10px; } ::-webkit-scrollbar-thumb { background:var(--scr); border-radius:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+.wrap { max-width:980px; margin:auto; }
+h1 { font-size:21px; margin:0 0 6px; font-weight:700; }
+h1 .g, .g { color:var(--acc); }
+h2 { font-size:15px; margin:0 0 10px; font-weight:700; }
+h2.day { border-bottom:1px solid var(--line); padding-bottom:6px; }
+p { margin:6px 0; }
+a { color:var(--acc); text-decoration:none; } a:hover { text-decoration:underline; }
+code { background:var(--codebg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:12px; }
+.sub { color:var(--mut); font-size:12.5px; }
+.mut { color:var(--mut); }
+
+/* topbar + tabbar piatte */
+.topbar { position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line);
+  margin:-14px -14px 14px; padding:8px 14px; display:flex; align-items:center; gap:10px; }
+.brand { font-weight:700; font-size:15px; color:var(--txt); } .brand:hover { text-decoration:none; }
+.backbtn { color:var(--mut); font-size:13px; } .backbtn:hover { color:var(--txt); text-decoration:none; }
+.tabbar { position:fixed; bottom:0; left:0; right:0; z-index:50; background:var(--bg);
+  border-top:1px solid var(--line); display:flex; overflow-x:auto; }
+.tabbar a { flex:1; text-align:center; padding:10px 4px; color:var(--mut); font-size:12px; font-weight:600;
+  border-right:1px solid var(--line); } .tabbar a:last-child { border-right:none; }
+.tabbar a.on { color:var(--acc); background:var(--tabon); box-shadow:inset 0 2px 0 var(--acc); }
+.tabbar a:hover { text-decoration:none; color:var(--txt); } .tabbar a.on:hover { color:var(--acc); }
+
+/* card piatte e compatte */
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+.quicklinks { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:4px 0 14px; }
+.ql { display:flex; flex-direction:column; align-items:center; gap:2px; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:12px 6px; text-decoration:none; color:var(--txt); }
+.ql .ic { font-size:20px; } .ql b { font-size:12.5px; } .ql small { color:var(--mut); font-size:10px; }
+.hero { padding:14px 0 10px; } .hero h1 { font-size:24px; } .hero p { color:var(--mut); max-width:640px; }
+.cta { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.btn { display:inline-block; border:1px solid var(--line); background:var(--btnbg); color:var(--txt); border-radius:8px;
+  padding:7px 13px; font-size:13px; font-weight:600; } .btn:hover { border-color:var(--acc); color:var(--acc); text-decoration:none; }
+.btn.on { border-color:var(--acc); color:var(--acc); background:var(--tabon); }
+.btn.ghost { background:transparent; color:var(--mut); }
+
+/* tabelle dense */
+.tablewrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:12.5px; }
+th { text-align:left; color:var(--mut); font-size:11px; text-transform:uppercase; letter-spacing:.4px;
+  padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap; }
+td { padding:6px 8px; border-bottom:1px solid var(--rowline); vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+tr.mrow td { color:var(--mut); font-size:12px; padding:2px 8px 10px; background:transparent; }
+.tb { font-weight:600; } .tb-r { text-align:right; }
+
+/* pill piatte */
+.pill { display:inline-block; border-radius:999px; padding:1px 9px; font-size:11px; font-weight:700;
+  border:1px solid var(--line); background:var(--btnbg); color:var(--txt); white-space:nowrap; }
+.pill.ev-pos { background:rgba(34,197,94,.12); color:#4ade80; border-color:rgba(34,197,94,.35); }
+.pill.ev-neg { background:rgba(248,113,113,.10); color:#f87171; border-color:rgba(248,113,113,.35); }
+.t-singola { background:rgba(251,191,36,.12); color:#fbbf24; border-color:rgba(251,191,36,.4); }
+.t-raddoppio { background:rgba(56,189,248,.12); color:#38bdf8; border-color:rgba(56,189,248,.4); }
+.t-nessuna { background:var(--btnbg); color:var(--mut); }
+.chip { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:1px 9px;
+  font-size:11px; color:var(--mut); background:var(--btnbg); }
+
+/* barra confidenza piatta */
+.cbar { height:5px; background:var(--track); border-radius:3px; overflow:hidden; margin-top:6px; }
+.cbar i { display:block; height:100%; background:var(--acc); border-radius:3px; }
+
+/* match card compatte */
+.mc-grid { display:grid; grid-template-columns:1fr; gap:10px; } /* 🆕 06/11: una card per riga, niente affiancate */
+.mc { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+.mc-h { font-size:11px; color:var(--mut); margin-bottom:4px; display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+.mc-row { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:13px; flex-wrap:wrap; } .mc-row > * { min-width:0; }
+.mc-row b { font-weight:600; }
+.mc-mot { color:var(--mut); font-size:11.5px; margin-top:6px; }
+details { margin-top:4px; font-size:11.5px; color:var(--mut); }
+
+/* stats, verdetto, avvisi, footer */
+.grid { display:flex; flex-wrap:wrap; gap:10px; }
+.stat { border:1px solid var(--line); border-radius:8px; padding:8px 12px; background:var(--card); min-width:110px; }
+.stl { font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }
+.stv { font-size:17px; font-weight:700; }
+.ms { font-size:12px; color:var(--mut); }
+.verdetto { font-weight:600; font-size:12.5px; }
+.v-go  { background:rgba(34,197,94,.10);  color:#4ade80; border:1px solid rgba(34,197,94,.35);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-ok  { background:rgba(163,230,53,.09);  color:#bef264; border:1px solid rgba(163,230,53,.35); border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-bor { background:rgba(251,191,36,.10);  color:#fbbf24; border:1px solid rgba(251,191,36,.4);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-no  { background:rgba(248,113,113,.09); color:#f87171; border:1px solid rgba(248,113,113,.35);border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.warn { border:1px solid rgba(251,191,36,.4); background:rgba(251,191,36,.08); color:#fbbf24;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.okbox { border:1px solid rgba(34,197,94,.35); background:rgba(34,197,94,.08); color:#4ade80;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.legal { font-size:11.5px; color:var(--mut); }
+.term { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11.5px; background:var(--termbg);
+  border:1px solid var(--line); border-radius:8px; padding:8px 10px; white-space:pre-wrap; }
+.ic { font-style:normal; }
+.l, .n { font-size:12.5px; }
+
+@media (max-width:720px) {
+  body { padding:10px 10px 92px; font-size:13.5px; }
+  .topbar { margin:-10px -10px 10px; padding:7px 10px; }
+  .card { padding:11px 12px; }
+  .hero h1 { font-size:20px; }
+  .tabbar a { font-size:11px; padding:9px 2px; }
+  .quicklinks { grid-template-columns:repeat(2,1fr); }
+  .tabbar a { flex:0 0 auto; padding:9px 12px; }
+  /* 🛠 08/11 mobile compatto: tabelle -> card impilate, niente scroll orizzontale */
+  .tablewrap { overflow:visible !important; }
+  table { display:block; font-size:12.5px; }
+  thead, table tr th { display:none !important; }
+  table tr { display:block; border:1px solid var(--line); border-radius:10px; margin:0 0 10px; padding:6px 9px; background:var(--card2, var(--card)); }
+  table td { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border:0 !important; padding:3px 2px !important; font-size:12.5px; text-align:right; }
+  table td::before { content:attr(data-label); color:var(--mut); font-size:10px; text-transform:uppercase; letter-spacing:.04em; text-align:left; }
+  table td[colspan] { display:block; text-align:left; }
+  table td[colspan]::before { content:none; }
+  .mrow td { font-size:11.5px; line-height:1.45; }
+}
+</style></head><body><div class="wrap"><header class="topbar"><div class="wrap tb"><a class="brand" href="index.html">⚽ <span>Predictor</span></a><div class="tb-r"><a class="backbtn" href="index.html" onclick="if(history.length>1){history.back();return false;}else{location.href='index.html';return false;}">← Indietro</a><button id="themeBtn" class="btn ghost" style="cursor:pointer" title="Cambia tema">☀️</button><a class="btn ghost" href="index.html">⌂ Home</a></div></div></header>
+<div class="card"><h1>🏆 <span class="g">Coppe europee</span> — UCL · UEL · UECL</h1>
+<p class="sub">Champions League · Europa League · Conference League 2026/27. Elo seminato dalle leghe nazionali + Dixon-Coles sui match di coppa già giocati. Stime con incertezza, mai certezze.</p>
+<div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · Numero Verde 800 558822</div>
+</div>
+<div class="card"><h2>🏆 Come è fatto il modello per le coppe</h2>
+<p class="sub">Le coppe non hanno uno storico lungo come i campionati: uso i <b>match già giocati della stagione in corso</b>
+(UCL 54, UEL 54, UECL 36 da FotMob) e semino l'<b>Elo di ogni squadra con il rating della sua lega nazionale</b> (Top 5).
+Per questo le stime delle coppe hanno <b>più incertezza</b> di quelle delle leghe: leggile come indicative, mai come certezze.</p>
+<p class="sub">54 partite non ancora giocate — finestra 24/11–26/11/11/2026 (turno UCL/UEL 4, UECL 3). Quote best-price da wincomparator.</p>
+<p class="sub"><b>📑 Indice sezioni:</b> <a class="btn" href="#champions-league">Champions League</a> <a class="btn" href="#europa-league">Europa League</a> <a class="btn" href="#conference-league">Conference League</a></p></div><div class="card" id="champions-league"><h2>🏴 Champions League <span class="chip">18 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Bodø/Glimt - LASK <span class="sub">giornata 5 · 24/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.3%</span><span class="cbar"><i style="width:55.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.3%</span><span class="stv">X&nbsp;15.6%</span><span class="stv">2&nbsp;29.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">63.0%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">61.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Bodø/Glimt - LASK). Perché: nelle ultime 4 partite Bodø/Glimt ha fatto 1.0 gol a partita subendone 2.2, LASK 2.5 fatti e 2.2 subiti; il modello si aspetta più gol per Bodø/Glimt (2.1 contro 1.2 di LASK); in classifica LASK è sopra (15° contro 25°), e questo pesa a sfavore di Bodø/Glimt.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 4: Bodø/Glimt 1.0 gol fatti / 2.2 subiti · LASK 2.5 / 2.2 · gol attesi (modello): 2.1 - 1.2 · classifica: 25° Bodø/Glimt vs 15° LASK</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Galatasaray - Aston Villa <span class="sub">giornata 5 · 24/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">58.6%</span><span class="cbar"><i style="width:58.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;58.6%</span><span class="stv">X&nbsp;15.3%</span><span class="stv">2&nbsp;26.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">67.0%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">67.9%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Galatasaray - Aston Villa). Perché: secondo l'Elo Galatasaray è più forte di circa 150 punti (1709 contro 1559); nelle ultime 4 partite Galatasaray ha fatto 2.0 gol a partita subendone 2.2, Aston Villa 3.0 fatti e 1.5 subiti; il modello si aspetta più gol per Galatasaray (1.9 contro 1.5 di Aston Villa); in classifica Aston Villa è sopra (5° contro 17°), e questo pesa a sfavore di Galatasaray.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Aston Villa: Cissè M.K. (🤕 infortunato), Onana Am. (🤕 infortunato), Ruggeri (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +150 (1709 vs 1559) · ultime 4: Galatasaray 2.0 gol fatti / 2.2 subiti · Aston Villa 3.0 / 1.5 · gol attesi (modello): 1.9 - 1.5 · classifica: 17° Galatasaray vs 5° Aston Villa · riposo: 21 gg Galatasaray vs 20 gg Aston Villa</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (58.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Real Madrid - PSV Eindhoven <span class="sub">giornata 5 · 24/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">59.8%</span><span class="cbar"><i style="width:59.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;59.8%</span><span class="stv">X&nbsp;14.8%</span><span class="stv">2&nbsp;25.4%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">70.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">70.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Real Madrid - PSV Eindhoven). Perché: secondo l'Elo Real Madrid è più forte di circa 134 punti (1763 contro 1630); nelle ultime 4 partite Real Madrid ha fatto 3.2 gol a partita subendone 1.8, PSV Eindhoven 0.8 fatti e 1.0 subiti; il modello si aspetta più gol per Real Madrid (2.1 contro 1.6 di PSV Eindhoven); in classifica Real Madrid è sopra (1° contro 23°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Real Madrid: Asencio (🤕 infortunato), Rodrygo (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +134 (1763 vs 1630) · ultime 4: Real Madrid 3.2 gol fatti / 1.8 subiti · PSV Eindhoven 0.8 / 1.0 · gol attesi (modello): 2.1 - 1.6 · classifica: 1° Real Madrid vs 23° PSV Eindhoven</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (59.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">RB Leipzig - Lens <span class="sub">giornata 5 · 24/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.6%</span><span class="cbar"><i style="width:55.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.6%</span><span class="stv">X&nbsp;14.2%</span><span class="stv">2&nbsp;30.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">78.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">76.2%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (8%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (RB Leipzig - Lens). Perché: secondo l'Elo RB Leipzig è più forte di circa 47 punti (1569 contro 1523); nelle ultime 4 partite RB Leipzig ha fatto 1.2 gol a partita subendone 2.8, Lens 1.0 fatti e 4.0 subiti; il modello si aspetta più gol per RB Leipzig (2.4 contro 1.8 di Lens); in classifica RB Leipzig è sopra (31° contro 33°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +47 (1569 vs 1523) · ultime 4: RB Leipzig 1.2 gol fatti / 2.8 subiti · Lens 1.0 / 4.0 · gol attesi (modello): 2.4 - 1.8 · classifica: 31° RB Leipzig vs 33° Lens</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Man City - Napoli <span class="sub">giornata 5 · 24/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">68.8%</span><span class="cbar"><i style="width:68.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;68.8%</span><span class="stv">X&nbsp;13.9%</span><span class="stv">2&nbsp;17.4%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">68.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">65.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Man City - Napoli). Perché: secondo l'Elo Man City è più forte di circa 246 punti (1691 contro 1445); nelle ultime 4 partite Man City ha fatto 3.0 gol a partita subendone 1.8, Napoli 1.5 fatti e 2.8 subiti; il modello si aspetta più gol per Man City (2.2 contro 1.3 di Napoli); in classifica Man City è sopra (7° contro 30°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Napoli: Buongiorno (🤕 infortunato), Di Lorenzo (🤕 infortunato), Spinazzola (🤕 infortunato), Lobotka (🤕 infortunato), Santos A. (🤕 infortunato), Neres (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +246 (1691 vs 1445) · ultime 4: Man City 3.0 gol fatti / 1.8 subiti · Napoli 1.5 / 2.8 · gol attesi (modello): 2.2 - 1.3 · classifica: 7° Man City vs 30° Napoli</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf alta (68.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Slovan Bratislava - Betis <span class="sub">giornata 5 · 24/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">44.1%</span><span class="cbar"><i style="width:44.1%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;42.7%</span><span class="stv">X&nbsp;13.2%</span><span class="stv">2&nbsp;44.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">83.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">79.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (7%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Slovan Bratislava - Betis). Perché: secondo l'Elo Betis è più forte di circa 214 punti (1655 contro 1442); nelle ultime 4 partite Slovan Bratislava ha fatto 0.2 gol a partita subendone 4.2, Betis 2.0 fatti e 1.5 subiti; il modello si aspetta più gol per Slovan Bratislava (2.7 contro 1.8 di Betis); in classifica Betis è sopra (8° contro 36°), e questo pesa a sfavore di Slovan Bratislava.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Betis: Hernandez C. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -214 (1442 vs 1655) · ultime 4: Slovan Bratislava 0.2 gol fatti / 4.2 subiti · Betis 2.0 / 1.5 · gol attesi (modello): 2.7 - 1.8 · classifica: 36° Slovan Bratislava vs 8° Betis · riposo: 21 gg Slovan Bratislava vs 20 gg Betis</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (44.1%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Como - AEK Athens <span class="sub">giornata 5 · 24/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">46.6%</span><span class="cbar"><i style="width:46.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;46.6%</span><span class="stv">X&nbsp;18.1%</span><span class="stv">2&nbsp;35.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">50.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Como - AEK Athens). Perché: secondo l'Elo Como è più forte di circa 42 punti (1521 contro 1479); nelle ultime 4 partite Como ha fatto 4.8 gol a partita subendone 1.5, AEK Athens 1.2 fatti e 2.8 subiti; gol attesi quasi pari (1.3 - 1.4); in classifica Como è sopra (12° contro 26°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Como: Addai (🤕 infortunato), Rodriguez Je. (🤕 infortunato), Diao (🤕 infortunato), Chalobah T. (🤕 infortunato), Kean (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +42 (1521 vs 1479) · ultime 4: Como 4.8 gol fatti / 1.5 subiti · AEK Athens 1.2 / 2.8 · gol attesi (modello): 1.3 - 1.4 · classifica: 12° Como vs 26° AEK Athens</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (46.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Arsenal - Dortmund <span class="sub">giornata 5 · 24/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">56.4%</span><span class="cbar"><i style="width:56.4%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;56.4%</span><span class="stv">X&nbsp;16.2%</span><span class="stv">2&nbsp;27.5%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">60.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">62.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Arsenal - Dortmund). Perché: secondo l'Elo Arsenal è più forte di circa 70 punti (1766 contro 1696); nelle ultime 4 partite Arsenal ha fatto 2.0 gol a partita subendone 0.8, Dortmund 1.8 fatti e 1.2 subiti; il modello si aspetta più gol per Arsenal (1.8 contro 1.3 di Dortmund); in classifica Arsenal è sopra (3° contro 6°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Arsenal: Saka (🤕 infortunato) | Dortmund: Can (🤕 infortunato), Konstantelias (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +70 (1766 vs 1696) · ultime 4: Arsenal 2.0 gol fatti / 0.8 subiti · Dortmund 1.8 / 1.2 · gol attesi (modello): 1.8 - 1.3 · classifica: 3° Arsenal vs 6° Dortmund</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (56.4%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Feyenoord - FC Porto <span class="sub">giornata 5 · 24/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.9%</span><span class="cbar"><i style="width:55.9%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.9%</span><span class="stv">X&nbsp;16.1%</span><span class="stv">2&nbsp;28.0%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">61.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">64.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Feyenoord - FC Porto). Perché: secondo l'Elo Feyenoord è più forte di circa 154 punti (1637 contro 1484); nelle ultime 4 partite Feyenoord ha fatto 1.0 gol a partita subendone 2.8, FC Porto 1.5 fatti e 1.8 subiti; gol attesi quasi pari (1.6 - 1.5); in classifica FC Porto è sopra (28° contro 29°), e questo pesa a sfavore di Feyenoord.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +154 (1637 vs 1484) · ultime 4: Feyenoord 1.0 gol fatti / 2.8 subiti · FC Porto 1.5 / 1.8 · gol attesi (modello): 1.6 - 1.5 · classifica: 29° Feyenoord vs 28° FC Porto · riposo: 21 gg Feyenoord vs 20 gg FC Porto</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.9%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Sabah FK - Barcelona <span class="sub">giornata 5 · 25/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">54.3%</span><span class="cbar"><i style="width:54.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;31.8%</span><span class="stv">X&nbsp;13.9%</span><span class="stv">2&nbsp;54.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">77.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">76.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (8%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Sabah FK - Barcelona). Perché: secondo l'Elo Barcelona è più forte di circa 328 punti (1792 contro 1463); nelle ultime 4 partite Sabah FK ha fatto 1.0 gol a partita subendone 2.5, Barcelona 3.5 fatti e 1.5 subiti; il modello si aspetta più gol per Sabah FK (2.2 contro 1.8 di Barcelona); in classifica Barcelona è sopra (9° contro 32°), e questo pesa a sfavore di Sabah FK.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -328 (1463 vs 1792) · ultime 4: Sabah FK 1.0 gol fatti / 2.5 subiti · Barcelona 3.5 / 1.5 · gol attesi (modello): 2.2 - 1.8 · classifica: 32° Sabah FK vs 9° Barcelona · riposo: 20 gg Sabah FK vs 21 gg Barcelona</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (54.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Slavia Prague - Villarreal <span class="sub">giornata 5 · 25/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">46.3%</span><span class="cbar"><i style="width:46.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;46.3%</span><span class="stv">X&nbsp;16.6%</span><span class="stv">2&nbsp;37.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">67.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">68.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Slavia Prague - Villarreal). Perché: secondo l'Elo Villarreal è più forte di circa 44 punti (1499 contro 1455); nelle ultime 4 partite Slavia Prague ha fatto 1.2 gol a partita subendone 2.2, Villarreal 2.0 fatti e 3.5 subiti; il modello si aspetta più gol per Slavia Prague (1.9 contro 1.6 di Villarreal); in classifica Villarreal è sopra (27° contro 35°), e questo pesa a sfavore di Slavia Prague.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -44 (1455 vs 1499) · ultime 4: Slavia Prague 1.2 gol fatti / 2.2 subiti · Villarreal 2.0 / 3.5 · gol attesi (modello): 1.9 - 1.6 · classifica: 35° Slavia Prague vs 27° Villarreal · riposo: 20 gg Slavia Prague vs 21 gg Villarreal</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (46.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Shakhtar Donetsk - Fenerbahçe <span class="sub">giornata 5 · 25/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">44.9%</span><span class="cbar"><i style="width:44.9%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;44.9%</span><span class="stv">X&nbsp;17.2%</span><span class="stv">2&nbsp;37.9%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">61.9%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">64.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Shakhtar Donetsk - Fenerbahçe). Perché: secondo l'Elo Fenerbahçe è più forte di circa 23 punti (1519 contro 1496); nelle ultime 4 partite Shakhtar Donetsk ha fatto 1.0 gol a partita subendone 1.0, Fenerbahçe 1.5 fatti e 2.8 subiti; gol attesi quasi pari (1.6 - 1.5); in classifica Fenerbahçe è sopra (19° contro 24°), e questo pesa a sfavore di Shakhtar Donetsk.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -23 (1496 vs 1519) · ultime 4: Shakhtar Donetsk 1.0 gol fatti / 1.0 subiti · Fenerbahçe 1.5 / 2.8 · gol attesi (modello): 1.6 - 1.5 · classifica: 24° Shakhtar Donetsk vs 19° Fenerbahçe · riposo: 22 gg Shakhtar Donetsk vs 21 gg Fenerbahçe</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (44.9%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Ath Madrid - Viking <span class="sub">giornata 5 · 25/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">58.8%</span><span class="cbar"><i style="width:58.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;58.8%</span><span class="stv">X&nbsp;16.3%</span><span class="stv">2&nbsp;24.9%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.4%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">60.2%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Ath Madrid - Viking). Perché: secondo l'Elo Ath Madrid è più forte di circa 144 punti (1646 contro 1503); nelle ultime 4 partite Ath Madrid ha fatto 1.0 gol a partita subendone 1.2, Viking 2.2 fatti e 2.5 subiti; il modello si aspetta più gol per Ath Madrid (1.7 contro 1.3 di Viking); in classifica Viking è sopra (20° contro 21°), e questo pesa a sfavore di Ath Madrid.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +144 (1646 vs 1503) · ultime 4: Ath Madrid 1.0 gol fatti / 1.2 subiti · Viking 2.2 / 2.5 · gol attesi (modello): 1.7 - 1.3 · classifica: 21° Ath Madrid vs 20° Viking · riposo: 22 gg Ath Madrid vs 21 gg Viking</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (58.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Club Brugge - Liverpool <span class="sub">giornata 5 · 25/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">59.0%</span><span class="cbar"><i style="width:59.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;59.0%</span><span class="stv">X&nbsp;13.5%</span><span class="stv">2&nbsp;27.5%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">80.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">75.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (8%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Club Brugge - Liverpool). Perché: secondo l'Elo Club Brugge è più forte di circa 29 punti (1576 contro 1547); nelle ultime 4 partite Club Brugge ha fatto 2.8 gol a partita subendone 1.8, Liverpool 3.5 fatti e 2.5 subiti; il modello si aspetta più gol per Club Brugge (2.6 contro 1.7 di Liverpool); in classifica Club Brugge è sopra (4° contro 10°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Liverpool: Leoni (🤕 infortunato), Bradley (🤕 infortunato), Frimpong (🤕 infortunato), Ekitike (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +29 (1576 vs 1547) · ultime 4: Club Brugge 2.8 gol fatti / 1.8 subiti · Liverpool 3.5 / 2.5 · gol attesi (modello): 2.6 - 1.7 · classifica: 4° Club Brugge vs 10° Liverpool</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (59.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Inter - Stuttgart <span class="sub">giornata 5 · 25/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.5%</span><span class="cbar"><i style="width:55.5%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.5%</span><span class="stv">X&nbsp;14.8%</span><span class="stv">2&nbsp;29.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">74.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">73.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (8%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Inter - Stuttgart). Perché: secondo l'Elo Inter è più forte di circa 60 punti (1628 contro 1568); nelle ultime 4 partite Inter ha fatto 2.0 gol a partita subendone 1.5, Stuttgart 1.8 fatti e 1.0 subiti; il modello si aspetta più gol per Inter (2.2 contro 1.7 di Stuttgart); in classifica Stuttgart è sopra (14° contro 16°), e questo pesa a sfavore di Inter.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Inter: Luis Henrique (🤕 infortunato), Martinez L. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +60 (1628 vs 1568) · ultime 4: Inter 2.0 gol fatti / 1.5 subiti · Stuttgart 1.8 / 1.0 · gol attesi (modello): 2.2 - 1.7 · classifica: 16° Inter vs 14° Stuttgart</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.5%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Lille - Bayern Munich <span class="sub">giornata 5 · 25/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">50.0%</span><span class="cbar"><i style="width:50.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;34.7%</span><span class="stv">X&nbsp;15.3%</span><span class="stv">2&nbsp;50.0%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">72.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">72.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Lille - Bayern Munich). Perché: secondo l'Elo Bayern Munich è più forte di circa 197 punti (1766 contro 1569); nelle ultime 4 partite Lille ha fatto 1.0 gol a partita subendone 2.5, Bayern Munich 3.0 fatti e 1.2 subiti; gol attesi quasi pari (1.9 - 1.9); in classifica Bayern Munich è sopra (13° contro 34°), e questo pesa a sfavore di Lille.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -197 (1569 vs 1766) · ultime 4: Lille 1.0 gol fatti / 2.5 subiti · Bayern Munich 3.0 / 1.2 · gol attesi (modello): 1.9 - 1.9 · classifica: 34° Lille vs 13° Bayern Munich</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (50.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Paris SG - Roma <span class="sub">giornata 5 · 25/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">72.3%</span><span class="cbar"><i style="width:72.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;72.3%</span><span class="stv">X&nbsp;12.7%</span><span class="stv">2&nbsp;15.0%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">68.4%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">61.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Paris SG - Roma). Perché: secondo l'Elo Paris SG è più forte di circa 205 punti (1776 contro 1572); nelle ultime 4 partite Paris SG ha fatto 5.0 gol a partita subendone 1.2, Roma 2.5 fatti e 2.0 subiti; il modello si aspetta più gol per Paris SG (2.4 contro 1.1 di Roma); in classifica Paris SG è sopra (2° contro 22°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Roma: Svilar (🤕 infortunato), Rensch (🤕 infortunato), Konè M. (🤕 infortunato), Dybala (🤕 infortunato), Pellegrini Lo. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +205 (1776 vs 1572) · ultime 4: Paris SG 5.0 gol fatti / 1.2 subiti · Roma 2.5 / 2.0 · gol attesi (modello): 2.4 - 1.1 · classifica: 2° Paris SG vs 22° Roma</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf alta (72.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Sporting CP - Man United <span class="sub">giornata 5 · 25/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">56.6%</span><span class="cbar"><i style="width:56.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;56.6%</span><span class="stv">X&nbsp;15.3%</span><span class="stv">2&nbsp;28.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">65.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">63.2%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Sporting CP - Man United). Perché: secondo l'Elo Sporting CP è più forte di circa 23 punti (1560 contro 1537); nelle ultime 4 partite Sporting CP ha fatto 2.0 gol a partita subendone 1.0, Man United 2.0 fatti e 2.0 subiti; il modello si aspetta più gol per Sporting CP (2.1 contro 1.2 di Man United); in classifica Sporting CP è sopra (11° contro 18°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +23 (1560 vs 1537) · ultime 4: Sporting CP 2.0 gol fatti / 1.0 subiti · Man United 2.0 / 2.0 · gol attesi (modello): 2.1 - 1.2 · classifica: 11° Sporting CP vs 18° Man United</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (56.6%). Stima, non garanzia.</div>
+</div></div></div><div class="card" id="europa-league"><h2>🏴 Europa League <span class="chip">18 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Beşiktaş - Hapoel Beer Sheva <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">52.0%</span><span class="cbar"><i style="width:52.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;52.0%</span><span class="stv">X&nbsp;20.3%</span><span class="stv">2&nbsp;27.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">49.8%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">54.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Beşiktaş - Hapoel Beer Sheva). Perché: secondo l'Elo Beşiktaş è più forte di circa 76 punti (1512 contro 1435); nelle ultime 4 partite Beşiktaş ha fatto 2.8 gol a partita subendone 2.0, Hapoel Beer Sheva 0.2 fatti e 2.0 subiti; il modello si aspetta più gol per Beşiktaş (1.5 contro 1.1 di Hapoel Beer Sheva); in classifica Beşiktaş è sopra (12° contro 33°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +76 (1512 vs 1435) · ultime 4: Beşiktaş 2.8 gol fatti / 2.0 subiti · Hapoel Beer Sheva 0.2 / 2.0 · gol attesi (modello): 1.5 - 1.1 · classifica: 12° Beşiktaş vs 33° Hapoel Beer Sheva</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (52.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Celta - Bournemouth <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">53.7%</span><span class="cbar"><i style="width:53.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;27.5%</span><span class="stv">X&nbsp;18.8%</span><span class="stv">2&nbsp;53.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">61.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">62.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Celta - Bournemouth). Perché: secondo l'Elo Bournemouth è più forte di circa 164 punti (1627 contro 1463); nelle ultime 4 partite Celta ha fatto 1.0 gol a partita subendone 1.5, Bournemouth 2.8 fatti e 0.5 subiti; il modello si aspetta più gol per Bournemouth (1.9 contro 1.3 di Celta); in classifica Bournemouth è sopra (3° contro 27°), e questo pesa a sfavore di Celta.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Bournemouth: Araujo J. (🤕 infortunato), Toth (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -164 (1463 vs 1627) · ultime 4: Celta 1.0 gol fatti / 1.5 subiti · Bournemouth 2.8 / 0.5 · gol attesi (modello): 1.3 - 1.9 · classifica: 27° Celta vs 3° Bournemouth · riposo: 20 gg Celta vs 21 gg Bournemouth</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (53.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Dinamo Zagreb - Leverkusen <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">40.7%</span><span class="cbar"><i style="width:40.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;39.1%</span><span class="stv">X&nbsp;20.2%</span><span class="stv">2&nbsp;40.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">67.8%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">69.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Dinamo Zagreb - Leverkusen). Perché: secondo l'Elo Leverkusen è più forte di circa 66 punti (1588 contro 1523); nelle ultime 4 partite Dinamo Zagreb ha fatto 1.2 gol a partita subendone 1.0, Leverkusen 2.0 fatti e 0.2 subiti; gol attesi quasi pari (1.7 - 1.8); in classifica Leverkusen è sopra (7° contro 9°), e questo pesa a sfavore di Dinamo Zagreb.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Leverkusen: Douè G. (🤕 infortunato), Eichhorn (🤕 infortunato), Ben Seghir (🤕 infortunato), Terrier (🤕 infortunato), Kofane (🤕 infortunato), Diaby (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -66 (1523 vs 1588) · ultime 4: Dinamo Zagreb 1.2 gol fatti / 1.0 subiti · Leverkusen 2.0 / 0.2 · gol attesi (modello): 1.7 - 1.8 · classifica: 9° Dinamo Zagreb vs 7° Leverkusen</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (40.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Marseille - Levski Sofia <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">46.2%</span><span class="cbar"><i style="width:46.2%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;46.2%</span><span class="stv">X&nbsp;21.0%</span><span class="stv">2&nbsp;32.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">51.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Marseille - Levski Sofia). Perché: nelle ultime 4 partite Marseille ha fatto 0.5 gol a partita subendone 1.5, Levski Sofia 1.0 fatti e 0.8 subiti; il modello si aspetta più gol per Marseille (1.5 contro 1.3 di Levski Sofia); in classifica Levski Sofia è sopra (11° contro 30°), e questo pesa a sfavore di Marseille; Marseille arriva da soli 20 giorni di riposo contro 21 di Levski Sofia (più stanca).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 4: Marseille 0.5 gol fatti / 1.5 subiti · Levski Sofia 1.0 / 0.8 · gol attesi (modello): 1.5 - 1.3 · classifica: 30° Marseille vs 11° Levski Sofia · riposo: 20 gg Marseille vs 21 gg Levski Sofia</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (46.2%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Olympiacos - Milan <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.0%</span><span class="cbar"><i style="width:55.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.0%</span><span class="stv">X&nbsp;20.2%</span><span class="stv">2&nbsp;24.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">46.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">50.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Olympiacos - Milan). Perché: secondo l'Elo Olympiacos è più forte di circa 72 punti (1574 contro 1502); nelle ultime 4 partite Olympiacos ha fatto 1.0 gol a partita subendone 0.2, Milan 1.0 fatti e 1.8 subiti; il modello si aspetta più gol per Olympiacos (1.5 contro 1.0 di Milan); in classifica Olympiacos è sopra (4° contro 28°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Milan: Terracciano (🤕 infortunato), Gabbia (🤕 infortunato), Tomori (🤕 infortunato), Saelemaekers (🤕 infortunato), Loftus-Cheek (🤕 infortunato), Chukwueze (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +72 (1574 vs 1502) · ultime 4: Olympiacos 1.0 gol fatti / 0.2 subiti · Milan 1.0 / 1.8 · gol attesi (modello): 1.5 - 1.0 · classifica: 4° Olympiacos vs 28° Milan · riposo: 22 gg Olympiacos vs 21 gg Milan</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Salzburg - Ararat Armenia <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">46.2%</span><span class="cbar"><i style="width:46.2%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;46.2%</span><span class="stv">X&nbsp;19.3%</span><span class="stv">2&nbsp;34.4%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">61.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">64.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Salzburg - Ararat Armenia). Perché: secondo l'Elo Salzburg è più forte di circa 70 punti (1486 contro 1415); nelle ultime 4 partite Salzburg ha fatto 0.8 gol a partita subendone 2.0, Ararat Armenia 1.0 fatti e 3.5 subiti; gol attesi quasi pari (1.5 - 1.6); in classifica Salzburg è sopra (25° contro 36°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +70 (1486 vs 1415) · ultime 4: Salzburg 0.8 gol fatti / 2.0 subiti · Ararat Armenia 1.0 / 3.5 · gol attesi (modello): 1.5 - 1.6 · classifica: 25° Salzburg vs 36° Ararat Armenia · riposo: 21 gg Salzburg vs 20 gg Ararat Armenia</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (46.2%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Union St.Gilloise - Lech Poznań <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">53.4%</span><span class="cbar"><i style="width:53.4%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;53.4%</span><span class="stv">X&nbsp;20.0%</span><span class="stv">2&nbsp;26.6%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">49.8%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">54.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Union St.Gilloise - Lech Poznań). Perché: secondo l'Elo Union St.Gilloise è più forte di circa 114 punti (1565 contro 1451); nelle ultime 4 partite Union St.Gilloise ha fatto 2.5 gol a partita subendone 0.5, Lech Poznań 0.5 fatti e 3.0 subiti; il modello si aspetta più gol per Union St.Gilloise (1.5 contro 1.2 di Lech Poznań); in classifica Union St.Gilloise è sopra (6° contro 34°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +114 (1565 vs 1451) · ultime 4: Union St.Gilloise 2.5 gol fatti / 0.5 subiti · Lech Poznań 0.5 / 3.0 · gol attesi (modello): 1.5 - 1.2 · classifica: 6° Union St.Gilloise vs 34° Lech Poznań</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (53.4%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Viktoria Plzeň - Benfica <span class="sub">giornata 5 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">59.5%</span><span class="cbar"><i style="width:59.5%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;22.5%</span><span class="stv">X&nbsp;17.9%</span><span class="stv">2&nbsp;59.5%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">60.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">63.2%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Viktoria Plzeň - Benfica). Perché: secondo l'Elo Benfica è più forte di circa 340 punti (1798 contro 1459); nelle ultime 4 partite Viktoria Plzeň ha fatto 0.8 gol a partita subendone 1.8, Benfica 3.2 fatti e 0.8 subiti; il modello si aspetta più gol per Benfica (1.7 contro 1.4 di Viktoria Plzeň); in classifica Benfica è sopra (1° contro 32°), e questo pesa a sfavore di Viktoria Plzeň.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -340 (1459 vs 1798) · ultime 4: Viktoria Plzeň 0.8 gol fatti / 1.8 subiti · Benfica 3.2 / 0.8 · gol attesi (modello): 1.4 - 1.7 · classifica: 32° Viktoria Plzeň vs 1° Benfica · riposo: 21 gg Viktoria Plzeň vs 20 gg Benfica</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (59.5%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Sparta Prague - AZ Alkmaar <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">40.7%</span><span class="cbar"><i style="width:40.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;38.3%</span><span class="stv">X&nbsp;21.0%</span><span class="stv">2&nbsp;40.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">60.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">63.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Sparta Prague - AZ Alkmaar). Perché: secondo l'Elo AZ Alkmaar è più forte di circa 73 punti (1556 contro 1484); nelle ultime 4 partite Sparta Prague ha fatto 1.5 gol a partita subendone 1.5, AZ Alkmaar 1.8 fatti e 1.0 subiti; gol attesi quasi pari (1.5 - 1.6); in classifica AZ Alkmaar è sopra (17° contro 22°), e questo pesa a sfavore di Sparta Prague.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -73 (1484 vs 1556) · ultime 4: Sparta Prague 1.5 gol fatti / 1.5 subiti · AZ Alkmaar 1.8 / 1.0 · gol attesi (modello): 1.5 - 1.6 · classifica: 22° Sparta Prague vs 17° AZ Alkmaar</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (40.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">OFI Crete - Anderlecht <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">41.6%</span><span class="cbar"><i style="width:41.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;41.6%</span><span class="stv">X&nbsp;21.3%</span><span class="stv">2&nbsp;37.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">51.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (OFI Crete - Anderlecht). Perché: nelle ultime 4 partite OFI Crete ha fatto 1.2 gol a partita subendone 1.0, Anderlecht 1.5 fatti e 0.8 subiti; gol attesi quasi pari (1.3 - 1.4); in classifica Anderlecht è sopra (15° contro 18°), e questo pesa a sfavore di OFI Crete.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 4: OFI Crete 1.2 gol fatti / 1.0 subiti · Anderlecht 1.5 / 0.8 · gol attesi (modello): 1.3 - 1.4 · classifica: 18° OFI Crete vs 15° Anderlecht</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (41.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">NEC Nijmegen - Rennes <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">47.5%</span><span class="cbar"><i style="width:47.5%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;47.5%</span><span class="stv">X&nbsp;19.2%</span><span class="stv">2&nbsp;33.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">70.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">68.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (NEC Nijmegen - Rennes). Perché: secondo l'Elo Rennes è più forte di circa 62 punti (1595 contro 1533); nelle ultime 4 partite NEC Nijmegen ha fatto 2.0 gol a partita subendone 2.2, Rennes 1.0 fatti e 0.8 subiti; il modello si aspetta più gol per NEC Nijmegen (2.2 contro 1.4 di Rennes); in classifica NEC Nijmegen è sopra (13° contro 16°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -62 (1533 vs 1595) · ultime 4: NEC Nijmegen 2.0 gol fatti / 2.2 subiti · Rennes 1.0 / 0.8 · gol attesi (modello): 2.2 - 1.4 · classifica: 13° NEC Nijmegen vs 16° Rennes · riposo: 21 gg NEC Nijmegen vs 22 gg Rennes</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (47.5%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Lyon - Lillestrøm <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">56.4%</span><span class="cbar"><i style="width:56.4%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;56.4%</span><span class="stv">X&nbsp;18.6%</span><span class="stv">2&nbsp;25.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">58.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">61.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Lyon - Lillestrøm). Perché: secondo l'Elo Lyon è più forte di circa 173 punti (1598 contro 1425); nelle ultime 4 partite Lyon ha fatto 1.5 gol a partita subendone 1.8, Lillestrøm 0.5 fatti e 2.5 subiti; il modello si aspetta più gol per Lyon (1.7 contro 1.4 di Lillestrøm); in classifica Lyon è sopra (8° contro 35°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +173 (1598 vs 1425) · ultime 4: Lyon 1.5 gol fatti / 1.8 subiti · Lillestrøm 0.5 / 2.5 · gol attesi (modello): 1.7 - 1.4 · classifica: 8° Lyon vs 35° Lillestrøm</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (56.4%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Crystal Palace - Sociedad <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">46.9%</span><span class="cbar"><i style="width:46.9%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;33.7%</span><span class="stv">X&nbsp;19.5%</span><span class="stv">2&nbsp;46.9%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">67.4%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">68.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Crystal Palace - Sociedad). Perché: secondo l'Elo Sociedad è più forte di circa 101 punti (1545 contro 1444); nelle ultime 4 partite Crystal Palace ha fatto 2.2 gol a partita subendone 1.5, Sociedad 2.2 fatti e 1.0 subiti; il modello si aspetta più gol per Sociedad (1.9 contro 1.5 di Crystal Palace); in classifica Crystal Palace è sopra (20° contro 21°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -101 (1444 vs 1545) · ultime 4: Crystal Palace 2.2 gol fatti / 1.5 subiti · Sociedad 2.2 / 1.0 · gol attesi (modello): 1.5 - 1.9 · classifica: 20° Crystal Palace vs 21° Sociedad</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (46.9%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Hoffenheim - Sturm Graz <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">45.8%</span><span class="cbar"><i style="width:45.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;45.8%</span><span class="stv">X&nbsp;20.7%</span><span class="stv">2&nbsp;33.6%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">54.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">59.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Hoffenheim - Sturm Graz). Perché: nelle ultime 4 partite Hoffenheim ha fatto 1.5 gol a partita subendone 1.5, Sturm Graz 0.8 fatti e 1.5 subiti; gol attesi quasi pari (1.5 - 1.4); in classifica Sturm Graz è sopra (24° contro 26°), e questo pesa a sfavore di Hoffenheim.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 4: Hoffenheim 1.5 gol fatti / 1.5 subiti · Sturm Graz 0.8 / 1.5 · gol attesi (modello): 1.5 - 1.4 · classifica: 26° Hoffenheim vs 24° Sturm Graz</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (45.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Ferencváros - NK Celje <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.8%</span><span class="cbar"><i style="width:55.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.8%</span><span class="stv">X&nbsp;19.1%</span><span class="stv">2&nbsp;25.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">54.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">58.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Ferencváros - NK Celje). Perché: secondo l'Elo Ferencváros è più forte di circa 103 punti (1593 contro 1489); nelle ultime 4 partite Ferencváros ha fatto 2.8 gol a partita subendone 0.8, NK Celje 1.2 fatti e 2.2 subiti; il modello si aspetta più gol per Ferencváros (1.7 contro 1.2 di NK Celje); in classifica Ferencváros è sopra (2° contro 23°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +103 (1593 vs 1489) · ultime 4: Ferencváros 2.8 gol fatti / 0.8 subiti · NK Celje 1.2 / 2.2 · gol attesi (modello): 1.7 - 1.2 · classifica: 2° Ferencváros vs 23° NK Celje</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Sunderland - Jagiellonia Białystok <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">51.6%</span><span class="cbar"><i style="width:51.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;51.6%</span><span class="stv">X&nbsp;19.5%</span><span class="stv">2&nbsp;28.9%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">60.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Sunderland - Jagiellonia Białystok). Perché: secondo l'Elo Sunderland è più forte di circa 55 punti (1506 contro 1451); nelle ultime 4 partite Sunderland ha fatto 1.0 gol a partita subendone 1.0, Jagiellonia Białystok 1.0 fatti e 1.8 subiti; il modello si aspetta più gol per Sunderland (1.7 contro 1.3 di Jagiellonia Białystok); in classifica Sunderland è sopra (10° contro 29°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +55 (1506 vs 1451) · ultime 4: Sunderland 1.0 gol fatti / 1.0 subiti · Jagiellonia Białystok 1.0 / 1.8 · gol attesi (modello): 1.7 - 1.3 · classifica: 10° Sunderland vs 29° Jagiellonia Białystok</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (51.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Juventus - Omonia Nicosia <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">54.1%</span><span class="cbar"><i style="width:54.1%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;54.1%</span><span class="stv">X&nbsp;18.2%</span><span class="stv">2&nbsp;27.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">66.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">66.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Juventus - Omonia Nicosia). Perché: secondo l'Elo Juventus è più forte di circa 55 punti (1566 contro 1511); nelle ultime 4 partite Juventus ha fatto 2.8 gol a partita subendone 1.0, Omonia Nicosia 1.5 fatti e 1.8 subiti; il modello si aspetta più gol per Juventus (2.0 contro 1.4 di Omonia Nicosia); in classifica Juventus è sopra (5° contro 14°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Juventus: Celik (🤕 infortunato), Locatelli (🤕 infortunato), Thuram K. (🤕 infortunato), Conceicao (🤕 infortunato), Yildiz (🤕 infortunato), Grabara (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +55 (1566 vs 1511) · ultime 4: Juventus 2.8 gol fatti / 1.0 subiti · Omonia Nicosia 1.5 / 1.8 · gol attesi (modello): 2.0 - 1.4 · classifica: 5° Juventus vs 14° Omonia Nicosia</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (54.1%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Torreense - Celtic <span class="sub">giornata 5 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">47.3%</span><span class="cbar"><i style="width:47.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;47.3%</span><span class="stv">X&nbsp;19.9%</span><span class="stv">2&nbsp;32.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">59.0%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">62.4%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Torreense - Celtic). Perché: secondo l'Elo Torreense è più forte di circa 34 punti (1499 contro 1465); nelle ultime 4 partite Torreense ha fatto 1.8 gol a partita subendone 2.2, Celtic 1.5 fatti e 2.8 subiti; gol attesi quasi pari (1.6 - 1.5); in classifica Torreense è sopra (19° contro 31°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +34 (1499 vs 1465) · ultime 4: Torreense 1.8 gol fatti / 2.2 subiti · Celtic 1.5 / 2.8 · gol attesi (modello): 1.6 - 1.5 · classifica: 19° Torreense vs 31° Celtic</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (47.3%). Stima, non garanzia.</div>
+</div></div></div><div class="card" id="conference-league"><h2>🏴 Conference League <span class="chip">18 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Kairat Almaty - Mjällby <span class="sub">giornata 4 · 26/11 16:30</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">41.4%</span><span class="cbar"><i style="width:41.4%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;41.4%</span><span class="stv">X&nbsp;25.9%</span><span class="stv">2&nbsp;32.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">65.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">66.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Kairat Almaty - Mjällby). Perché: secondo l'Elo Mjällby è più forte di circa 56 punti (1540 contro 1484); nelle ultime 3 partite Kairat Almaty ha fatto 1.0 gol a partita subendone 2.3, Mjällby 1.7 fatti e 0.3 subiti; il modello si aspetta più gol per Kairat Almaty (1.9 contro 1.5 di Mjällby); in classifica Mjällby è sopra (5° contro 25°), e questo pesa a sfavore di Kairat Almaty.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -56 (1484 vs 1540) · ultime 3: Kairat Almaty 1.0 gol fatti / 2.3 subiti · Mjällby 1.7 / 0.3 · gol attesi (modello): 1.9 - 1.5 · classifica: 25° Kairat Almaty vs 5° Mjällby</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (41.4%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Pafos FC - FC Midtjylland <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">52.8%</span><span class="cbar"><i style="width:52.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;52.8%</span><span class="stv">X&nbsp;21.9%</span><span class="stv">2&nbsp;25.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">74.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">69.4%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Pafos FC - FC Midtjylland). Perché: nelle ultime 3 partite Pafos FC ha fatto 1.0 gol a partita subendone 2.3, FC Midtjylland 0.7 fatti e 2.7 subiti; il modello si aspetta più gol per Pafos FC (2.5 contro 1.4 di FC Midtjylland); in classifica FC Midtjylland è sopra (29° contro 32°), e questo pesa a sfavore di Pafos FC; Pafos FC arriva da soli 20 giorni di riposo contro 21 di FC Midtjylland (più stanca).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 3: Pafos FC 1.0 gol fatti / 2.3 subiti · FC Midtjylland 0.7 / 2.7 · gol attesi (modello): 2.5 - 1.4 · classifica: 32° Pafos FC vs 29° FC Midtjylland · riposo: 20 gg Pafos FC vs 21 gg FC Midtjylland</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (52.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Iberia 1999 - Getafe <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">48.7%</span><span class="cbar"><i style="width:48.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;48.7%</span><span class="stv">X&nbsp;23.7%</span><span class="stv">2&nbsp;27.6%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">62.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">63.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Iberia 1999 - Getafe). Perché: nelle ultime 3 partite Iberia 1999 ha fatto 0.7 gol a partita subendone 1.7, Getafe 1.0 fatti e 2.3 subiti; il modello si aspetta più gol per Iberia 1999 (1.9 contro 1.3 di Getafe); in classifica Getafe è sopra (31° contro 34°), e questo pesa a sfavore di Iberia 1999.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 3: Iberia 1999 0.7 gol fatti / 1.7 subiti · Getafe 1.0 / 2.3 · gol attesi (modello): 1.9 - 1.3 · classifica: 34° Iberia 1999 vs 31° Getafe</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (48.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Heart of Midlothian - Monaco <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">42.3%</span><span class="cbar"><i style="width:42.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;42.3%</span><span class="stv">X&nbsp;23.0%</span><span class="stv">2&nbsp;34.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">56.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Heart of Midlothian - Monaco). Perché: secondo l'Elo Monaco è più forte di circa 152 punti (1617 contro 1465); nelle ultime 3 partite Heart of Midlothian ha fatto 0.7 gol a partita subendone 2.0, Monaco 2.3 fatti e 0.3 subiti; il modello si aspetta più gol per Heart of Midlothian (1.9 contro 1.0 di Monaco); in classifica Monaco è sopra (1° contro 33°), e questo pesa a sfavore di Heart of Midlothian.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Monaco: Musiala (🤕 infortunato), Gnabry (🤕 infortunato), Saibari (🤕 infortunato), Luis Diaz (🤕 infortunato), Sapoko Ndiaye (🤕 infortunato) | Monaco: Fati (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -152 (1465 vs 1617) · ultime 3: Heart of Midlothian 0.7 gol fatti / 2.0 subiti · Monaco 2.3 / 0.3 · gol attesi (modello): 1.9 - 1.0 · classifica: 33° Heart of Midlothian vs 1° Monaco · riposo: 21 gg Heart of Midlothian vs 20 gg Monaco</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (42.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">FK Kauno Žalgiris - Riga FC <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">46.3%</span><span class="cbar"><i style="width:46.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;46.3%</span><span class="stv">X&nbsp;23.9%</span><span class="stv">2&nbsp;29.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">72.9%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">71.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (FK Kauno Žalgiris - Riga FC). Perché: secondo l'Elo Riga FC è più forte di circa 47 punti (1494 contro 1447); nelle ultime 3 partite FK Kauno Žalgiris ha fatto 0.3 gol a partita subendone 3.7, Riga FC 1.0 fatti e 1.0 subiti; il modello si aspetta più gol per FK Kauno Žalgiris (2.2 contro 1.5 di Riga FC); in classifica Riga FC è sopra (20° contro 36°), e questo pesa a sfavore di FK Kauno Žalgiris.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -47 (1447 vs 1494) · ultime 3: FK Kauno Žalgiris 0.3 gol fatti / 3.7 subiti · Riga FC 1.0 / 1.0 · gol attesi (modello): 2.2 - 1.5 · classifica: 36° FK Kauno Žalgiris vs 20° Riga FC</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (46.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Jablonec - Lugano <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">40.0%</span><span class="cbar"><i style="width:40.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;40.0%</span><span class="stv">X&nbsp;26.9%</span><span class="stv">2&nbsp;33.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">52.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Jablonec - Lugano). Perché: secondo l'Elo Lugano è più forte di circa 65 punti (1561 contro 1496); nelle ultime 3 partite Jablonec ha fatto 1.0 gol a partita subendone 1.3, Lugano 3.7 fatti e 1.3 subiti; il modello si aspetta più gol per Jablonec (1.6 contro 1.2 di Lugano); in classifica Lugano è sopra (2° contro 26°), e questo pesa a sfavore di Jablonec.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -65 (1496 vs 1561) · ultime 3: Jablonec 1.0 gol fatti / 1.3 subiti · Lugano 3.7 / 1.3 · gol attesi (modello): 1.6 - 1.2 · classifica: 26° Jablonec vs 2° Lugano</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (40.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Brighton - Universitatea Craiova <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">45.8%</span><span class="cbar"><i style="width:45.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;45.8%</span><span class="stv">X&nbsp;25.4%</span><span class="stv">2&nbsp;28.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">50.8%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">55.4%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Brighton - Universitatea Craiova). Perché: secondo l'Elo Brighton è più forte di circa 26 punti (1567 contro 1541); nelle ultime 3 partite Brighton ha fatto 1.7 gol a partita subendone 0.0, Universitatea Craiova 2.0 fatti e 0.7 subiti; il modello si aspetta più gol per Brighton (1.5 contro 1.2 di Universitatea Craiova); in classifica Universitatea Craiova è sopra (6° contro 8°), e questo pesa a sfavore di Brighton.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Brighton: Mitoma (🤕 infortunato), Yohanna (🤕 infortunato), Ferguson E. (🤕 infortunato), Tzimas (🤕 infortunato), Azeez (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +26 (1567 vs 1541) · ultime 3: Brighton 1.7 gol fatti / 0.0 subiti · Universitatea Craiova 2.0 / 0.7 · gol attesi (modello): 1.5 - 1.2 · classifica: 8° Brighton vs 6° Universitatea Craiova</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (45.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Brann - AGF <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.3%</span><span class="cbar"><i style="width:55.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.3%</span><span class="stv">X&nbsp;22.7%</span><span class="stv">2&nbsp;22.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">55.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">55.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Brann - AGF). Perché: secondo l'Elo Brann è più forte di circa 75 punti (1550 contro 1475); nelle ultime 3 partite Brann ha fatto 2.3 gol a partita subendone 1.0, AGF 0.3 fatti e 0.7 subiti; il modello si aspetta più gol per Brann (1.9 contro 1.0 di AGF); in classifica Brann è sopra (7° contro 24°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +75 (1550 vs 1475) · ultime 3: Brann 2.3 gol fatti / 1.0 subiti · AGF 0.3 / 0.7 · gol attesi (modello): 1.9 - 1.0 · classifica: 7° Brann vs 24° AGF · riposo: 20 gg Brann vs 21 gg AGF</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Ajax - Thun <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">61.3%</span><span class="cbar"><i style="width:61.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;61.3%</span><span class="stv">X&nbsp;21.0%</span><span class="stv">2&nbsp;17.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Ajax - Thun). Perché: secondo l'Elo Ajax è più forte di circa 179 punti (1656 contro 1477); nelle ultime 3 partite Ajax ha fatto 3.0 gol a partita subendone 1.0, Thun 1.0 fatti e 1.0 subiti; il modello si aspetta più gol per Ajax (2.0 contro 1.0 di Thun); in classifica Ajax è sopra (12° contro 22°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +179 (1656 vs 1477) · ultime 3: Ajax 3.0 gol fatti / 1.0 subiti · Thun 1.0 / 1.0 · gol attesi (modello): 2.0 - 1.0 · classifica: 12° Ajax vs 22° Thun</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf alta (61.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Egnatia - Lincoln Red Imps FC <span class="sub">giornata 4 · 26/11 18:45</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">47.1%</span><span class="cbar"><i style="width:47.1%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;47.1%</span><span class="stv">X&nbsp;24.8%</span><span class="stv">2&nbsp;28.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">59.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Egnatia - Lincoln Red Imps FC). Perché: nelle ultime 3 partite Egnatia ha fatto 0.7 gol a partita subendone 1.3, Lincoln Red Imps FC 1.0 fatti e 2.0 subiti; il modello si aspetta più gol per Egnatia (1.8 contro 1.2 di Lincoln Red Imps FC); in classifica Lincoln Red Imps FC è sopra (21° contro 23°), e questo pesa a sfavore di Egnatia; Egnatia arriva da soli 20 giorni di riposo contro 21 di Lincoln Red Imps FC (più stanca).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 3: Egnatia 0.7 gol fatti / 1.3 subiti · Lincoln Red Imps FC 1.0 / 2.0 · gol attesi (modello): 1.8 - 1.2 · classifica: 23° Egnatia vs 21° Lincoln Red Imps FC · riposo: 20 gg Egnatia vs 21 gg Lincoln Red Imps FC</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (47.1%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Hajduk Split - St.Truiden <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">42.2%</span><span class="cbar"><i style="width:42.2%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;42.2%</span><span class="stv">X&nbsp;25.7%</span><span class="stv">2&nbsp;32.2%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">61.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Hajduk Split - St.Truiden). Perché: nelle ultime 3 partite Hajduk Split ha fatto 1.0 gol a partita subendone 0.7, St.Truiden 1.3 fatti e 0.3 subiti; il modello si aspetta più gol per Hajduk Split (1.6 contro 1.4 di St.Truiden); in classifica St.Truiden è sopra (10° contro 11°), e questo pesa a sfavore di Hajduk Split.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 3: Hajduk Split 1.0 gol fatti / 0.7 subiti · St.Truiden 1.3 / 0.3 · gol attesi (modello): 1.6 - 1.4 · classifica: 11° Hajduk Split vs 10° St.Truiden</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (42.2%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Borac Banja Luka - Atalanta <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">64.1%</span><span class="cbar"><i style="width:64.1%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;64.1%</span><span class="stv">X&nbsp;19.2%</span><span class="stv">2&nbsp;16.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">55.4%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">38.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-0 (15%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Borac Banja Luka - Atalanta). Perché: secondo l'Elo Borac Banja Luka è più forte di circa 48 punti (1482 contro 1433); nelle ultime 3 partite Borac Banja Luka ha fatto 1.0 gol a partita subendone 1.3, Atalanta 1.3 fatti e 1.3 subiti; il modello si aspetta più gol per Borac Banja Luka (2.4 contro 0.5 di Atalanta); in classifica Atalanta è sopra (17° contro 19°), e questo pesa a sfavore di Borac Banja Luka.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Atalanta: Hien (🤕 infortunato), Kossounou (🤕 infortunato), Bellanova (🤕 infortunato), Gaetano (🤕 infortunato), Raspadori (🤕 infortunato), Kristensen T. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +48 (1482 vs 1433) · ultime 3: Borac Banja Luka 1.0 gol fatti / 1.3 subiti · Atalanta 1.3 / 1.3 · gol attesi (modello): 2.4 - 0.5 · classifica: 19° Borac Banja Luka vs 17° Atalanta</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf alta (64.1%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Braga - KuPS <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">55.2%</span><span class="cbar"><i style="width:55.2%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;55.2%</span><span class="stv">X&nbsp;22.4%</span><span class="stv">2&nbsp;22.4%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">59.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Braga - KuPS). Perché: secondo l'Elo Braga è più forte di circa 44 punti (1505 contro 1462); nelle ultime 3 partite Braga ha fatto 0.7 gol a partita subendone 1.0, KuPS 0.7 fatti e 2.0 subiti; il modello si aspetta più gol per Braga (2.1 contro 1.0 di KuPS); in classifica Braga è sopra (18° contro 30°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +44 (1505 vs 1462) · ultime 3: Braga 0.7 gol fatti / 1.0 subiti · KuPS 0.7 / 2.0 · gol attesi (modello): 2.1 - 1.0 · classifica: 18° Braga vs 30° KuPS</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (55.2%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">CSKA Sofia - Trabzonspor <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">41.8%</span><span class="cbar"><i style="width:41.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;35.7%</span><span class="stv">X&nbsp;22.5%</span><span class="stv">2&nbsp;41.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">67.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">68.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (CSKA Sofia - Trabzonspor). Perché: secondo l'Elo Trabzonspor è più forte di circa 194 punti (1662 contro 1467); nelle ultime 3 partite CSKA Sofia ha fatto 1.3 gol a partita subendone 2.0, Trabzonspor 2.0 fatti e 1.0 subiti; il modello si aspetta più gol per CSKA Sofia (1.9 contro 1.5 di Trabzonspor); in classifica Trabzonspor è sopra (13° contro 28°), e questo pesa a sfavore di CSKA Sofia.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -194 (1467 vs 1662) · ultime 3: CSKA Sofia 1.3 gol fatti / 2.0 subiti · Trabzonspor 2.0 / 1.0 · gol attesi (modello): 1.9 - 1.5 · classifica: 28° CSKA Sofia vs 13° Trabzonspor</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (41.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Nordsjælland - Panathinaikos <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">40.6%</span><span class="cbar"><i style="width:40.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;40.6%</span><span class="stv">X&nbsp;24.6%</span><span class="stv">2&nbsp;34.8%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">68.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">68.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Nordsjælland - Panathinaikos). Perché: secondo l'Elo Panathinaikos è più forte di circa 77 punti (1563 contro 1486); nelle ultime 3 partite Nordsjælland ha fatto 1.0 gol a partita subendone 1.7, Panathinaikos 3.0 fatti e 1.0 subiti; il modello si aspetta più gol per Nordsjælland (2.0 contro 1.5 di Panathinaikos); in classifica Panathinaikos è sopra (3° contro 27°), e questo pesa a sfavore di Nordsjælland.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -77 (1486 vs 1563) · ultime 3: Nordsjælland 1.0 gol fatti / 1.7 subiti · Panathinaikos 3.0 / 1.0 · gol attesi (modello): 2.0 - 1.5 · classifica: 27° Nordsjælland vs 3° Panathinaikos</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (40.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Freiburg - FC Twente <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">43.9%</span><span class="cbar"><i style="width:43.9%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;43.9%</span><span class="stv">X&nbsp;23.4%</span><span class="stv">2&nbsp;32.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">68.9%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">69.9%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Freiburg - FC Twente). Perché: secondo l'Elo Freiburg è più forte di circa 48 punti (1609 contro 1561); nelle ultime 3 partite Freiburg ha fatto 1.3 gol a partita subendone 1.7, FC Twente 2.7 fatti e 0.7 subiti; gol attesi quasi pari (1.8 - 1.7); in classifica FC Twente è sopra (4° contro 14°), e questo pesa a sfavore di Freiburg.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +48 (1609 vs 1561) · ultime 3: Freiburg 1.3 gol fatti / 1.7 subiti · FC Twente 2.7 / 0.7 · gol attesi (modello): 1.8 - 1.7 · classifica: 14° Freiburg vs 4° FC Twente</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (43.9%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Gent - FK Crvena Zvezda <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">49.7%</span><span class="cbar"><i style="width:49.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;49.7%</span><span class="stv">X&nbsp;24.3%</span><span class="stv">2&nbsp;26.0%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">57.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Gent - FK Crvena Zvezda). Perché: nelle ultime 3 partite Gent ha fatto 0.3 gol a partita subendone 0.7, FK Crvena Zvezda 2.0 fatti e 2.0 subiti; il modello si aspetta più gol per Gent (1.9 contro 1.1 di FK Crvena Zvezda); in classifica Gent è sopra (15° contro 16°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 3: Gent 0.3 gol fatti / 0.7 subiti · FK Crvena Zvezda 2.0 / 2.0 · gol attesi (modello): 1.9 - 1.1 · classifica: 15° Gent vs 16° FK Crvena Zvezda</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (49.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Inter Club d'Escaldes - FC København <span class="sub">giornata 4 · 26/11 21:00</span></div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">44.8%</span><span class="cbar"><i style="width:44.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;44.8%</span><span class="stv">X&nbsp;24.9%</span><span class="stv">2&nbsp;30.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">61.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">60.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Inter Club d'Escaldes - FC København). Perché: secondo l'Elo FC København è più forte di circa 104 punti (1538 contro 1435); nelle ultime 3 partite Inter Club d'Escaldes ha fatto 0.7 gol a partita subendone 2.3, FC København 2.3 fatti e 1.0 subiti; il modello si aspetta più gol per Inter Club d'Escaldes (2.0 contro 1.2 di FC København); in classifica FC København è sopra (9° contro 35°), e questo pesa a sfavore di Inter Club d'Escaldes.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Inter Club d'Escaldes: Luis Henrique (🤕 infortunato), Martinez L. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -104 (1435 vs 1538) · ultime 3: Inter Club d'Escaldes 0.7 gol fatti / 2.3 subiti · FC København 2.3 / 1.0 · gol attesi (modello): 2.0 - 1.2 · classifica: 35° Inter Club d'Escaldes vs 9° FC København</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (44.8%). Stima, non garanzia.</div>
+</div></div></div>
+<div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a></div>
+<footer class="legal">
+  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
+  Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
+  Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>
+  Questo sito pubblica <b>analisi statistiche a scopo informativo</b>: ogni pronostico è una stima con incertezza,
+  mai una certezza o una garanzia. I risultati passati non garantiscono risultati futuri.
+</footer>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}b.textContent=(t==='light')?'🌙':'☀️';}
+b.onclick=function(){var c=document.documentElement.getAttribute('data-theme')||'dark';set(c==='light'?'dark':'light');};
+var t='dark';try{t=localStorage.getItem('theme')||'dark';}catch(e){}set(t);})();
+</script>
+</div></body></html>
