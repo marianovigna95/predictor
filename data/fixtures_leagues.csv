@@ -1641,8 +1641,8 @@ Serie A,I1,11,2026-11-08 20:45,Fiorentina,Juventus,True,2,2
 LaLiga,SP1,12,2026-11-08 21:00,Ath Madrid,Barcelona,True,1,2
 Primeira Liga,P1,11,2026-11-08 21:30,Estrela,Benfica,True,2,3
 Primeira Liga,P1,11,2026-11-08 21:30,Rio Ave,Sp Braga,True,0,1
-LaLiga 2,SP2,13,2026-11-09 20:30,Las Palmas,Eldense,False,,
-LaLiga 2,SP2,13,2026-11-09 20:30,Sabadell,Real Sociedad B,False,,
+LaLiga 2,SP2,13,2026-11-09 20:30,Las Palmas,Eldense,True,2,0
+LaLiga 2,SP2,13,2026-11-09 20:30,Sabadell,Real Sociedad B,True,0,0
 LaLiga 2,SP2,14,2026-11-13 20:30,Leganés,Burgos CF,False,,
 LaLiga 2,SP2,14,2026-11-14 14:00,Real Valladolid,Castellón,False,,
 LaLiga 2,SP2,14,2026-11-14 16:15,Real Sociedad B,Sp Gijon,False,,

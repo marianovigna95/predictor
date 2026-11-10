@@ -30,29 +30,15 @@ details.st{margin-top:8px;font-size:12px;color:var(--sub)}
 details.st summary{cursor:pointer;color:#93c5fd}
 table{width:100%;border-collapse:collapse;margin-top:6px} td{padding:3px 6px;border-bottom:1px solid #1e293b;text-align:center} td:first-child{text-align:left;color:var(--txt)}
 </style></head><body>
-<header><b>🔴 Diretta 2026-11-09</b><span class="sub">2 partite · 2 LIVE · live ogni 30s via ESPN dal browser · fonte ESPN</span></header>
+<header><b>🔴 Diretta 2026-11-10</b><span class="sub">0 partite · 0 LIVE · live ogni 30s via ESPN dal browser · fonte ESPN</span></header>
 <nav>
 <a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
 </nav>
-<main>
-      <div class="card live" data-eid="401883139">
-        <div class="top"><span class="lg">LaLiga 2 <span class="ours">★ nostra lega</span></span><span class="badge b-live">🔴 LIVE 90'</span></div>
-        <details class="m">
-        <summary class="teams"><span class="t home">CD Sabadell</span><span class="score">0 - 0</span><span class="t away">Real Sociedad II</span></summary>
-        <div class="body"><p class="stt">📜 Ultime azioni (commento live)</p><ul class="ev"><li>{&#x27;value&#x27;: 2700.0, &#x27;displayValue&#x27;: &quot;45&#x27;+5&#x27;&quot;} Javier Soroeta (Real Sociedad II) Yellow Card at 45&#x27;+5&#x27;</li><li>{&#x27;value&#x27;: 2289.0, &#x27;displayValue&#x27;: &quot;39&#x27;&quot;} Luken Beitia (Real Sociedad II) Yellow Card at 39&#x27;</li><li>{&#x27;value&#x27;: 693.0, &#x27;displayValue&#x27;: &quot;12&#x27;&quot;} Arthur Bonaldo (CD Sabadell) Substitution at 12&#x27;</li></ul><p class="ext">🔗 <a href="https://www.espn.com/soccer/match/_/gameId/401883139" target="_blank">scheda ESPN ↗</a> <span style="color:#475569">(nel browser vero o nel live preview 8002 — nel preview incorporato i link esterni sono bloccati)</span></p></div>
-        </details>
-      </div>
-      <div class="card live" data-eid="401883140">
-        <div class="top"><span class="lg">LaLiga 2 <span class="ours">★ nostra lega</span></span><span class="badge b-live">🔴 LIVE 90'+5'</span></div>
-        <details class="m">
-        <summary class="teams"><span class="t home">Las Palmas</span><span class="score">0 - 0</span><span class="t away">Eldense</span></summary>
-        <div class="body"><p class="stt">📜 Ultime azioni (commento live)</p><ul class="ev"><li>{&#x27;value&#x27;: 2051.0, &#x27;displayValue&#x27;: &quot;35&#x27;&quot;} Jesus Clemente (Eldense) Yellow Card at 35&#x27;</li><li>{&#x27;value&#x27;: 1838.0, &#x27;displayValue&#x27;: &quot;31&#x27;&quot;} Justin Smith (Eldense) Yellow Card at 31&#x27;</li><li>{&#x27;value&#x27;: 1774.0, &#x27;displayValue&#x27;: &quot;30&#x27;&quot;} Roberto López (Eldense) Yellow Card at 30&#x27;</li></ul><p class="ext">🔗 <a href="https://www.espn.com/soccer/match/_/gameId/401883140" target="_blank">scheda ESPN ↗</a> <span style="color:#475569">(nel browser vero o nel live preview 8002 — nel preview incorporato i link esterni sono bloccati)</span></p></div>
-        </details>
-      </div></main><script>
+<main></main><script>
 /* LIVE reale lato client: interroga l'API pubblica ESPN ogni 30s dal browser (gratis, no key, CORS aperto)
    e aggiorna minuto/risultato in place. Fallback: meta refresh ogni 300s ricarica la pagina statica. */
 (function(){
-  var D='20261109';
+  var D='20261110';
   var cards=Array.prototype.slice.call(document.querySelectorAll('.card[data-eid]'));
   if(!cards.length||!window.fetch)return;
   function tick(){
