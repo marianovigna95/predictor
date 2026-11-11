@@ -30,7 +30,9 @@ jobs:
         run: |
           D=$(date +%F)
           python3 src/step1b_fixtures_leagues.py || true
-          python3 src/step22_odds_refresh.py --date $D || true          # quote wincomparator (se finestra esiste)
+          python3 src/step1f_internationals.py || true                  # 🆕 10/11 nazionali: calendario ESPN + storico kaggle
+          python3 src/step22b_window.py --days 7 || true               # 🆕 10/11 quote best-price per TUTTA la finestra mobile oggi→+7 (wincomparator)
+          python3 src/step22_odds_refresh.py --date $D || true          # refresh quote di oggi (file finestra precedente)
           python3 src/step1c_verify_espn.py $D || true                  # verifica esiti ESPN
           python3 src/step20_eval_day.py --date $D || true
           python3 src/step15_betarchives.py --since $(date -d "yesterday" +%F) || true
