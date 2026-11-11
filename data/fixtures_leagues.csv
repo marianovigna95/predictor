@@ -1614,7 +1614,6 @@ Serie B,I2,11,2026-11-08 15:00,Virtus Entella,Modena,True,0,2
 Bundesliga,D1,9,2026-11-08 15:30,FC Koln,Leverkusen,True,1,2
 LaLiga,SP1,12,2026-11-08 16:15,Sociedad,Vallecano,True,1,0
 LaLiga 2,SP2,13,2026-11-08 16:15,Girona,Almería,True,0,1
-Primeira Liga,P1,11,2026-11-08 16:30,Estoril,Maritimo,False,,
 Primeira Liga,P1,11,2026-11-08 16:30,Nacional,Academico Viseu,True,1,0
 Primeira Liga,P1,11,2026-11-08 16:30,Santa Clara,Gil Vicente,True,1,2
 Süper Lig,T1,11,2026-11-08 16:30,Alanyaspor,Trabzonspor,True,0,2
@@ -2565,6 +2564,7 @@ Serie A,I1,17,2027-01-03 18:00,Parma,Napoli,False,,
 Ligue 1,F1,15,2027-01-03 20:45,Lens,Paris SG,False,,
 Serie A,I1,17,2027-01-03 20:45,Bologna,Juventus,False,,
 Ligue 2,F2,16,2027-01-04 20:45,Annecy,St Etienne,False,,
+Primeira Liga,P1,11,2027-01-04 21:15,Estoril,Maritimo,False,,
 Serie A,I1,18,2027-01-05 18:30,Genoa,Monza,False,,
 Serie A,I1,18,2027-01-05 18:30,Venezia,Roma,False,,
 Premier League,E0,20,2027-01-05 20:30,Arsenal,Brentford,False,,
