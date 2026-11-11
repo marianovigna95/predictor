@@ -24,7 +24,8 @@ UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/1
 NOSTRE = {"Italian Serie A", "English Premier League", "Spanish La Liga", "German Bundesliga", "French Ligue 1",
           "Italian Serie B", "English Championship", "Dutch Eredivisie", "Portuguese Primeira Liga",
           "Spanish Segunda Division", "German 2. Bundesliga", "French Ligue 2", "Turkish Super Lig",
-          "UEFA Champions League", "UEFA Europa League", "UEFA Europa Conference League"}
+          "UEFA Champions League", "UEFA Europa League", "UEFA Europa Conference League",
+          "UEFA Nations League", "World Cup Qualifying - Europe", "International Friendlies"}  # 🆕 10/11 nazionali
 
 
 def get(url):
@@ -114,6 +115,7 @@ LIVE_JS = """<script>
             else{b.className='badge b-pre';b.textContent='da giocare';}
           }
           c.classList.toggle('live',isLive);c.classList.toggle('ft',full&&!isLive);c.classList.toggle('pre',!isLive&&!full);
+          var det=c.querySelector('details.m');if(isLive&&det&&!det.open)det.open=true;
         });
         var sub=document.querySelector('header .sub');
         if(sub)sub.textContent=cards.length+' partite \u00B7 '+live+' LIVE \u00B7 aggiornate alle '+new Date().toLocaleTimeString('it-IT')+' \u00B7 fonte ESPN';
@@ -187,9 +189,9 @@ def main():
         cards.append(f"""
       <div class="card {cls}" data-eid="{e['id']}">
         <div class="top"><span class="lg">{html.escape(league_short(e['lg']))}{ours_tag}</span>{badge}</div>
-        <details class="m">
+        <details class="m"{' open' if e['live'] else ''}>
         <summary class="teams"><span class="t home">{html.escape(e['h'])}</span><span class="score">{html.escape(str(e['hs']))} - {html.escape(str(e['as']))}</span><span class="t away">{html.escape(e['a'])}</span></summary>
-        <div class="body">{goals_html}{plays_html}{stats_html}<p class="ext">🔗 <a href="https://www.espn.com/soccer/match/_/gameId/{e['id']}" target="_blank">scheda ESPN ↗</a> <span style="color:#475569">(nel browser vero o nel live preview 8002 — nel preview incorporato i link esterni sono bloccati)</span></p></div>
+        <div class="body">{goals_html}{plays_html}{stats_html}<p class="ext">📊 fonte dati: API pubblica ESPN — nessun reindirizzamento a siti esterni</p></div>
         </details>
       </div>""")
 

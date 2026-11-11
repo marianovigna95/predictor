@@ -30,6 +30,7 @@ ESPN = {
     "Eredivisie": "ned.1", "Primeira Liga": "por.1", "Süper Lig": "tur.1",
     "Champions League": "uefa.champions", "Europa League": "uefa.europa",
     "Conference League": "uefa.europa.conf",
+    "Nations League": "uefa.nations", "WC Qual. UEFA": "fifa.worldq.uefa", "Friendlies": "fifa.friendly",  # 🆕 10/11
 }
 
 

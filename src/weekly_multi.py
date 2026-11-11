@@ -4,7 +4,7 @@ per la prossima finestra temporale (weekend), con giocata unica (Singola + Raddo
 
 Uso:
   python3 src/weekly_multi.py --from 2026-11-06 --to 2026-11-10
-  python3 src/weekly_multi.py            # finestra automatica: prossimi 5 giorni con partite non giocate
+  python3 src/weekly_multi.py            # finestra automatica MOBILE: oggi → +7 giorni (10→17, 11→18, …)
 
 Input:  data/matches.csv (multi-lega, step 1) · data/fixtures_leagues.csv (step 1b)
         data/fixtures_all_2627.csv (quote football-data, tutte le leghe)
@@ -16,6 +16,8 @@ Regole giocata (da README): Singola = partita con p modello più alta; Raddoppio
 distinte, una per match, quota combinata (prodotto best-price) più vicina a 2.00, pareggio → EV maggiore.
 """
 import argparse
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import itertools
 import os
 # 🆕 06/11 pesi ensemble configurabili via env (tuning: step12_tune_weights.py)
@@ -60,6 +62,10 @@ DIV2LEAGUE = {"I1": "Serie A", "E0": "Premier League", "SP1": "LaLiga", "D1": "B
               "I2": "Serie B", "E1": "Championship", "N1": "Eredivisie", "P1": "Primeira Liga",
               "T1": "Süper Lig", "D2": "Bundesliga 2", "SP2": "LaLiga 2", "F2": "Ligue 2"}
 CUPS = {"Champions League", "Europa League", "Conference League"}
+# 🆕 10/11 NAZIONALI (sosta FIFA): storico da kaggle in fixtures_intl.csv, calendario da ESPN
+INTL = ["Nations League", "WC Qual. UEFA", "Friendlies"]
+LEAGUES = LEAGUES + INTL
+DIV2LEAGUE.update({"UNL": "Nations League", "WCQ": "WC Qual. UEFA", "FRD": "Friendlies"})
 
 ELO_K, ELO_HFA, SHRINK = 48.0, 60.0, 0.70
 DC_HALF_LIFE = 180.0
@@ -326,6 +332,10 @@ def main():
                 XG_FOTMOB[(str(r["date"]), r["home"], r["away"])] = (float(r["xgH"]), float(r["xgA"]))
     globals()["XG_FOTMOB"] = XG_FOTMOB
     fx = pd.read_csv(DATA / "fixtures_leagues.csv")
+    fi = DATA / "fixtures_intl.csv"
+    if fi.exists():  # 🆕 10/11 nazionali: calendario+storico da step1f
+        fx = pd.concat([fx, pd.read_csv(fi)], ignore_index=True)
+        print(f"🚩 nazionali: +{len(pd.read_csv(fi))} righe da fixtures_intl.csv")
     fx["Date"] = pd.to_datetime(fx["date"])
     fa = pd.read_csv(DATA / "fixtures_all_2627.csv", encoding="utf-8-sig")
     fa["Date"] = pd.to_datetime(fa["Date"], format="%d/%m/%Y", errors="coerce")
@@ -394,15 +404,15 @@ def main():
             out_counts.pop(r["team"], None)
         print(f"🩹 xG mancante (player-xG) per {len(out_xg)} squadre")
 
-    # finestra: default = dal primo giorno con partite non giocate, per 5 giorni
+    # 🆕 10/11 finestra MOBILE: default = OGGI → +7 giorni (10→17, domani 11→18, …; i giorni giocati vanno in archivio via step20)
     unplayed = fx[~fx["played"]]
     if args.frm:
         frm, to = pd.Timestamp(args.frm), pd.Timestamp(args.to)
     else:
-        frm = unplayed["Date"].min().normalize()
-        to = frm + pd.Timedelta(days=4, hours=23)
+        frm = pd.Timestamp(datetime.now(ZoneInfo("Europe/Rome")).date()).normalize()  # oggi ora italiana
+        to = frm + pd.Timedelta(days=7, hours=23)
     window = unplayed[(unplayed["Date"] >= frm) & (unplayed["Date"] <= to + pd.Timedelta(hours=23, minutes=59))]
-    print(f"🪟 Finestra: {frm.date()} → {(to + pd.Timedelta(days=4)).date()} | partite non giocate: {len(window)}")
+    print(f"🪟 Finestra mobile: {frm.date()} → {(frm + pd.Timedelta(days=7)).date()} | partite non giocate: {len(window)}")
     print(window.groupby("league")["matchday"].agg(["min", "max", "count"]).to_string(), "\n")
 
     absences = load_absences()  # solo squadre Serie A
@@ -437,8 +447,8 @@ def main():
     # pre-addestra le 5 leghe nazionali (servono anche come seed Elo per le coppe)
     domestic = {}
     for league in LEAGUES:
-        if league in CUPS:
-            continue
+        if league in CUPS or league in INTL:
+            continue  # 🆕 10/11: le nazionali non hanno storico in matches.csv
         played = matches[(matches["League"] == league) & (matches["Season"].astype(str).str.contains("2026/2027"))].sort_values("Date")  # 🛠 08/11 solo stagione corrente per standings/Elo
         elo, dc_hist, ad, ahg, aag, draw_base = train_league(played)
         domestic[league] = (elo, dc_hist, ad, ahg, aag, draw_base)
@@ -448,6 +458,9 @@ def main():
             seed[t] = e
 
     fxall = pd.read_csv(DATA / "fixtures_leagues.csv")
+    fi2 = DATA / "fixtures_intl.csv"
+    if fi2.exists():  # 🆕 10/11 storico nazionali per Elo (come le coppe)
+        fxall = pd.concat([fxall, pd.read_csv(fi2)], ignore_index=True)
     fxall["Date"] = pd.to_datetime(fxall["date"])
 
     rows = []
@@ -455,8 +468,8 @@ def main():
         sub = window[window["league"] == league]
         if sub.empty:
             continue
-        if league in CUPS:
-            # 🏆 storico coppe = match già giocati del calendario FotMob; Elo seminato dalle leghe nazionali
+        if league in CUPS or league in INTL:
+            # 🏆 coppe / 🚩 nazionali: storico = match già giocati del calendario (FotMob / ESPN+kaggle); Elo seminato dalle leghe nazionali
             cp = fxall[(fxall["league"] == league) & (fxall["played"]) & (fxall["hg"] != "")]
             prows = []
             for _, m in cp.iterrows():

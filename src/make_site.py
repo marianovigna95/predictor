@@ -197,6 +197,7 @@ NAV_HOME = topbar(False)
 TOP5 = ["Serie A", "Premier League", "LaLiga", "Bundesliga", "Ligue 1"]
 CUPS = ["Champions League", "Europa League", "Conference League"]
 EXTRA = ["Serie B", "Championship", "Eredivisie", "Primeira Liga", "Süper Lig", "Bundesliga 2", "LaLiga 2", "Ligue 2"]  # 🆕 04/11
+INTL = ["Nations League", "WC Qual. UEFA", "Friendlies"]  # 🆕 10/11 nazionali (sosta FIFA)
 
 def slug(l):
     return l.lower().replace(" ", "-")
@@ -283,6 +284,7 @@ def pronostici_finestra_html(frows, today_dm):
     def cat(l):
         if l in TOP5: return "top5"
         if l in CUPS: return "coppe"
+        if l in INTL: return "intl"
         return "extra"
     days = sorted({(r.get("orario") or "").split(" ")[0] for r in frows if (r.get("orario") or "").strip()},
                   key=lambda d: (d[3:5], d[0:2]))
@@ -294,6 +296,7 @@ def pronostici_finestra_html(frows, today_dm):
               "<button class='btn on' data-cat='all' onclick='setCat(this)'>Tutti</button>"
               "<button class='btn' data-cat='top5' onclick='setCat(this)'>🌍 Top 5</button>"
               "<button class='btn' data-cat='coppe' onclick='setCat(this)'>🏆 Coppe</button>"
+              "<button class='btn' data-cat='intl' onclick='setCat(this)'>🚩 Nazionali</button>"
               "<button class='btn' data-cat='extra' onclick='setCat(this)'>➕ Altre leghe</button></p>")
     tr = ""
     for r in sorted(frows, key=lambda x: x.get("orario") or ""):
@@ -326,7 +329,10 @@ def pronostici_finestra_html(frows, today_dm):
           "function applyF(){document.querySelectorAll('#ptable tr[data-day]').forEach(function(r){"
           "r.style.display=((curDay==='all'||r.dataset.day===curDay)&&(curCat==='all'||r.dataset.cat===curCat))?'':'none';});}"
           "</script>")
-    return (f"<div class='card'><h2>📋 Pronostici della finestra ({days[0]}–{days[-1]}/2026, {len(frows)} partite — {n_today} oggi {today_dm})</h2>"
+    from datetime import datetime as _dt, timedelta as _td  # 🆕 10/11 etichetta finestra mobile oggi→+7
+    _d0 = _dt.strptime(today_dm + "/2026", "%d/%m/%Y")
+    _w0, _w1 = _d0.strftime("%d/%m"), (_d0 + _td(days=7)).strftime("%d/%m")
+    return (f"<div class='card'><h2>📋 Pronostici finestra mobile ({_w0}–{_w1}/2026, {len(frows)} partite — {n_today} oggi {today_dm})</h2>"
             f"{daybar}{catbar}"
             f"<table id='ptable'><tr><th>Ora</th><th>Lega</th><th>Partita</th><th>Pron.</th><th>O2.5</th><th>GG</th><th>Quota</th><th>EV</th></tr>{tr}</table>"
             f"<p class='sub' style='margin:8px 0 0'>EV calcolato sul pronostico 1X2 (conf% × quota best). Dettaglio per lega: "
@@ -1052,10 +1058,10 @@ def build_altre():
     if not os.path.exists(fc_p):
         return
     with open(fc_p) as f:
-        frows = [r for r in csv.DictReader(f) if r["lega"] in EXTRA]
+        frows = [r for r in csv.DictReader(f) if r["lega"] in EXTRA + INTL]  # 🆕 10/11 + nazionali
     if not frows:
         return
-    leagues = [l for l in EXTRA if any(r["lega"] == l for r in frows)]
+    leagues = [l for l in EXTRA + INTL if any(r["lega"] == l for r in frows)]
     cards = "".join(league_section(l, frows) for l in leagues)
     body = f"""<div class="card"><h2>➕ Altre leghe — fonti gratis</h2>
 <p class="sub">{len(frows)} partite non ancora giocate — finestra {window_label(frows)}.
@@ -1187,8 +1193,24 @@ ogni pronostico era stato fatto prima del fischio d'inizio (niente dati del futu
         f.write(wrap_tables(html))
 
 
+SW_JS = """const C='predictor-v2';
+self.addEventListener('install',e=>{self.skipWaiting();});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
+self.addEventListener('fetch',e=>{
+  const r=e.request;
+  if(r.mode==='navigate'){
+    e.respondWith(fetch(r).then(res=>{if(res&&res.ok){const cp=res.clone();caches.open(C).then(c=>c.put(r,cp));}return res;}).catch(()=>caches.match(r).then(m=>m||caches.match('index.html'))));
+  }else{
+    e.respondWith(caches.match(r).then(h=>h||fetch(r).then(res=>{if(res&&res.ok){const cp=res.clone();caches.open(C).then(c=>c.put(r,cp));}return res;})));
+  }
+});
+"""
+
+
 def main():
     os.makedirs(SITE, exist_ok=True)
+    with open(os.path.join(SITE, "sw.js"), "w", encoding="utf-8") as f:
+        f.write(SW_JS)  # network-first per le pagine: mai data stantia; v2 invalida la cache v1
     for fp in sorted(glob.glob(os.path.join(DATA, 'forecast_giornata*.csv')), key=gj_num):
         build_giocata(gj_num(fp))
     build_index()

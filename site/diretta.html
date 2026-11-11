@@ -65,6 +65,7 @@ table{width:100%;border-collapse:collapse;margin-top:6px} td{padding:3px 6px;bor
             else{b.className='badge b-pre';b.textContent='da giocare';}
           }
           c.classList.toggle('live',isLive);c.classList.toggle('ft',full&&!isLive);c.classList.toggle('pre',!isLive&&!full);
+          var det=c.querySelector('details.m');if(isLive&&det&&!det.open)det.open=true;
         });
         var sub=document.querySelector('header .sub');
         if(sub)sub.textContent=cards.length+' partite · '+live+' LIVE · aggiornate alle '+new Date().toLocaleTimeString('it-IT')+' · fonte ESPN';
