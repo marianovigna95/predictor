@@ -30,7 +30,7 @@ details.st{margin-top:8px;font-size:12px;color:var(--sub)}
 details.st summary{cursor:pointer;color:#93c5fd}
 table{width:100%;border-collapse:collapse;margin-top:6px} td{padding:3px 6px;border-bottom:1px solid #1e293b;text-align:center} td:first-child{text-align:left;color:var(--txt)}
 </style></head><body>
-<header><b>🔴 Diretta 2026-11-11</b><span class="sub">0 partite · 0 LIVE · live ogni 30s via ESPN dal browser · fonte ESPN</span></header>
+<header><b>🔴 Diretta 2026-11-10</b><span class="sub">0 partite · 0 LIVE · live ogni 30s via ESPN dal browser · fonte ESPN</span></header>
 <nav>
 <a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
 </nav>
@@ -38,7 +38,7 @@ table{width:100%;border-collapse:collapse;margin-top:6px} td{padding:3px 6px;bor
 /* LIVE reale lato client: interroga l'API pubblica ESPN ogni 30s dal browser (gratis, no key, CORS aperto)
    e aggiorna minuto/risultato in place. Fallback: meta refresh ogni 300s ricarica la pagina statica. */
 (function(){
-  var D='20261111';
+  var D='20261110';
   var cards=Array.prototype.slice.call(document.querySelectorAll('.card[data-eid]'));
   if(!cards.length||!window.fetch)return;
   function tick(){
