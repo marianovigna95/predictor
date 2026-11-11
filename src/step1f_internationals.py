@@ -49,11 +49,16 @@ def nrm(s):
 def main():
     # --- nomi canonici da kaggle (storico) ---
     kaggle_names = {}
-    kg = pd.read_csv(DATA / "kaggle_matches.csv", low_memory=False)
-    for t in set(kg["home_team"]) | set(kg["away_team"]):
-        if str(t).endswith(" VI"):
-            continue
-        kaggle_names.setdefault(nrm(t), str(t))
+    kgf = DATA / "kaggle_matches.csv"
+    kg = None
+    if kgf.exists():
+        kg = pd.read_csv(kgf, low_memory=False)
+        for t in set(kg["home_team"]) | set(kg["away_team"]):
+            if str(t).endswith(" VI"):
+                continue
+            kaggle_names.setdefault(nrm(t), str(t))
+    else:
+        print("⚠️ kaggle_matches.csv mancante: solo calendario ESPN (storico nazionale assente)")
 
     def canon(name):
         n = nrm(name)
@@ -62,9 +67,12 @@ def main():
     rows = []
 
     # --- storico kaggle (2023→oggi) ---
-    hist = kg[kg["league_name"].isin(KAGGLE2OURS) & (kg["season"].astype(str) >= "2023") &
-              kg["ft_home"].notna() & kg["ft_away"].notna()].copy()
-    for _, r in hist.iterrows():
+    if kg is not None:
+        hist = kg[kg["league_name"].isin(KAGGLE2OURS) & (kg["season"].astype(str) >= "2023") &
+                  kg["ft_home"].notna() & kg["ft_away"].notna()].copy()
+    else:
+        hist = pd.DataFrame()
+    for _, r in (hist.iterrows() if len(hist) else []):
         if str(r["home_team"]).endswith(" VI") or str(r["away_team"]).endswith(" VI"):
             continue
         dt = pd.to_datetime(r["kickoff_utc"], utc=True).tz_convert(ROME)
