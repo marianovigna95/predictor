@@ -1630,13 +1630,13 @@ Friendlies,FRD,0,2026-11-12 16:00,Uzbekistan,Russia,True,2,3
 Friendlies,FRD,0,2026-11-12 18:00,Lithuania,Suriname,True,0,0
 Nations League,UNL,0,2026-11-12 18:00,Türkiye,Belgium,True,1,2
 Nations League,UNL,0,2026-11-12 18:00,Armenia,Cyprus,True,1,1
-Friendlies,FRD,0,2026-11-12 18:30,Malta,Eswatini,False,,
-Nations League,UNL,0,2026-11-12 20:45,San Marino,Belarus,False,,
-Nations League,UNL,0,2026-11-12 20:45,Montenegro,Latvia,False,,
-Nations League,UNL,0,2026-11-12 20:45,Italy,France,False,,
-Nations League,UNL,0,2026-11-12 20:45,England,Croatia,False,,
-Nations League,UNL,0,2026-11-12 20:45,Czechia,Spain,False,,
-Nations League,UNL,0,2026-11-12 20:45,Albania,Finland,False,,
+Friendlies,FRD,0,2026-11-12 18:30,Malta,Eswatini,True,1,1
+Nations League,UNL,0,2026-11-12 20:45,San Marino,Belarus,True,0,2
+Nations League,UNL,0,2026-11-12 20:45,Montenegro,Latvia,True,2,1
+Nations League,UNL,0,2026-11-12 20:45,Italy,France,True,3,1
+Nations League,UNL,0,2026-11-12 20:45,England,Croatia,True,2,1
+Nations League,UNL,0,2026-11-12 20:45,Czechia,Spain,True,0,2
+Nations League,UNL,0,2026-11-12 20:45,Albania,Finland,True,2,0
 Friendlies,FRD,0,2026-11-13 13:00,Singapore,Paraguay,False,,
 Friendlies,FRD,0,2026-11-13 15:15,United Arab Emirates,Honduras,False,,
 Friendlies,FRD,0,2026-11-13 15:30,Saudi Arabia,South Korea,False,,

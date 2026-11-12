@@ -271,12 +271,25 @@ LIVE_JS = """<script>
     return '<div class="'+cls+'" data-eid="'+e.id+'" onclick="window.__tg(this)">'
       +'<span class="star'+(isFav(e.h)||isFav(e.a)?' on':'')+'" data-h="'+esc(e.h)+'" data-a="'+esc(e.a)+'" onclick="event.stopPropagation();window.__fav(this)">★</span>'
       +'<span class="tm">'+esc(e.hhmm||'')+(cd(e)?' <small>'+cd(e)+'</small>':'')+'</span>'
-      +'<span class="h">'+esc(e.h)+'</span>'
+      +'<span class="h"><img class="lg" loading="lazy" src="'+e.hl+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.h)+'</span>'
       +'<span class="sc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
-      +'<span class="a">'+esc(e.a)+'</span>'
+      +'<span class="a"><img class="lg" loading="lazy" src="'+e.al+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.a)+'</span>'
       +'<span class="od">'+(function(){var q=qkey(e);return q&&q.h?('1 '+q.h+' · X '+(q.x||'–')+' · 2 '+q.a):'';})()+'</span>'
       +badge(e)+'</div>'
       +'<div class="det" id="det-'+e.id+'" style="display:none"></div>';
+  }
+  function heroCard(e){
+    var badge=e.live?'<span class="badge b-live"><i class="dot"></i>LIVE '+esc(e.minute||'')+'</span>'
+      :((''+e.status).toUpperCase().indexOf('FULL')>=0?'<span class="badge b-ft">FT</span>':'<span class="badge b-pre">'+esc(e.hhmm||'')+'</span>');
+    var fl=(e.ev&&e.ev.ev>0)?'<span class="flag">🚩 EV+'+e.ev.ev+'% — '+esc(e.ev.pick)+' @ '+esc(e.ev.odds)+'</span>':(isFav(e.h)||isFav(e.a)?'<span class="flag">⭐ preferita</span>':'');
+    var q=qkey(e);
+    return '<div class="hero" data-eid="'+e.id+'" onclick="window.__tg(this)">'
+      +'<div class="ht"><span>'+esc(e.lg)+' · '+esc(e.hhmm||'')+'</span>'+badge+'</div>'
+      +'<div class="hm"><span class="htn"><img class="lg big" src="'+e.hl+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.h)+'</span>'
+      +'<span class="hsc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
+      +'<span class="htn"><img class="lg big" src="'+e.al+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.a)+'</span></div>'
+      +'<div class="hb">'+fl+(q&&q.h?'<span class="od">1 '+q.h+' · X '+(q.x||'–')+' · 2 '+q.a+'</span>':'')+'</div>'
+      +'</div><div class="det" id="det-'+e.id+'" style="display:none"></div>';
   }
   function render(evs){
     window.__evs=evs;
@@ -291,6 +304,12 @@ LIVE_JS = """<script>
     var liveN=evs.filter(function(e){return e.live;}).length;
     var evN=evs.filter(function(e){return e.ev&&e.ev.ev>0;}).length;
     var out='';
+    if(FILT.mode==='lega'){
+      // 🏆 hero: partita in evidenza (max EV>0, altrimenti prima ⭐)
+      var hero=evs.filter(function(e){return e.ev&&e.ev.ev>0;}).sort(function(a,b){return b.ev.ev-a.ev.ev;})[0]
+            || evs.filter(function(e){return isFav(e.h)||isFav(e.a);})[0];
+      if(hero) out+=heroCard(hero);
+    }
     if(FILT.mode==='orario'){
       f.sort(function(x,y){return (x.live===y.live)?(x.ts-y.ts):(x.live?-1:1);});
       f.forEach(function(e){out+=row(e);});
@@ -404,8 +423,30 @@ LIVE_JS = """<script>
               ?'<p class="sub">Statistiche live in aggiornamento — ESPN le pubblica a intervalli durante la gara e complete a fine partita.</p>'
               :'<p class="sub">Partita non ancora iniziata: le statistiche escono dal fischio di inizio.</p>'))
           +'<p class="sub" style="font-size:11px">fonte dati: API pubblica ESPN — nessun reindirizzamento</p>';
-        openDet[id]=html;
-        d.innerHTML=html;
+        // 📊 confronto stagionale (standings della lega) + 🔗 share
+        var slg=''; for(var k in SLUG2NAME){if(SLUG2NAME[k]===ev.lg){slg=k;break;}}
+        var extra='';
+        if(slg&&(ev.hid||ev.aid)){
+          fetch('https://site.web.api.espn.com/apis/v2/sports/soccer/'+slg+'/standings?season='+new Date().getFullYear())
+            .then(function(r){return r.json();}).then(function(st){
+              var rows='',found=0;
+              (st.children||[]).forEach(function(ch){
+                (ch.standings.entries||[]).forEach(function(en){
+                  if(String(en.team.id)!==String(ev.hid)&&String(en.team.id)!==String(ev.aid))return;
+                  var m={};(en.stats||[]).forEach(function(x){m[x.name]=x.displayValue!=null?x.displayValue:x.value;});
+                  rows+='<tr><td>'+esc(en.team.shortDisplayName||en.team.displayName)+'</td><td>'+esc(m.rank||'')+'</td><td>'+esc(m.gamesPlayed||'')+'</td><td>'+esc(m.wins||'')+'-'+esc(m.ties||'')+'-'+esc(m.losses||'')+'</td><td>'+esc(m.pointsFor||'')+':'+esc(m.pointsAgainst||'')+'</td><td><b>'+esc(m.points||'')+'</b></td></tr>';
+                  found++;
+                });
+              });
+              if(found){
+                extra='<p class="stt">📊 Stagione in corso ('+esc(ev.lg)+')</p><table><tr><th>Squadra</th><th>#</th><th>G</th><th>V-N-P</th><th>Gol</th><th>Pt</th></tr>'+rows+'</table>';
+                d.innerHTML=html+extra;
+              }
+            }).catch(function(){});
+        }
+        extra='<p class="sub" style="margin-top:8px"><a href="#" data-share="'+id+'" style="color:#93c5fd">🔗 copia link partita</a></p>';
+        openDet[id]=html+extra;
+        d.innerHTML=html+extra;
       }).catch(function(){d.innerHTML='<p class="sub">dettaglio non disponibile</p>';});
   };
   function norm(t){return (t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
@@ -453,6 +494,9 @@ LIVE_JS = """<script>
       if(h&&x&&a) od={h:h.toFixed(2), x:x.toFixed(2), a:a.toFixed(2)};
     });
     return {id:ev.id, lg:lg, h:h.team.displayName, a:a.team.displayName,
+            hid:h.team.id||'', aid:a.team.id||'',
+            hl:'https://a.espncdn.com/i/teamlogos/soccer/500/'+(h.team.id||'')+'.png',
+            al:'https://a.espncdn.com/i/teamlogos/soccer/500/'+(a.team.id||'')+'.png',
             hs:h.score||'0', as:a.score||'0', live:st.type.state==='in', status:st.type.name||'',
             minute:st.displayClock||'', hhmm:new Date(ev.date||0).toLocaleTimeString('it-IT',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit'}), odds:od, ts:Date.parse(ev.date||'')};
   }
@@ -522,10 +566,10 @@ LIVE_JS = """<script>
       if(s&&s.children){
         s.children.forEach(function(ch){
           if(s.children.length>1) html+='<p class="stt">'+esc(ch.name||'Girone')+'</p>';
-          html+='<table><tr><th>#</th><th style="text-align:left">Squadra</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>Pt</th></tr>';
+          html+='<table><tr><th>#</th><th style="text-align:left">Squadra</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>Pt</th><th>Serie</th></tr>';
           (ch.standings.entries||[]).forEach(function(en){
             var m={}; (en.stats||[]).forEach(function(x){m[x.name]=x.displayValue!=null?x.displayValue:x.value;});
-            html+='<tr><td>'+esc(m.rank||'')+'</td><td>'+esc((en.team.shortDisplayName||en.team.displayName||''))+'</td><td>'+esc(m.gamesPlayed||'')+'</td><td>'+esc(m.wins||'')+'</td><td>'+esc(m.ties||'')+'</td><td>'+esc(m.losses||'')+'</td><td>'+esc(m.pointsFor||'')+'</td><td>'+esc(m.pointsAgainst||'')+'</td><td><b>'+esc(m.points||'')+'</b></td></tr>';
+            html+='<tr><td>'+esc(m.rank||'')+'</td><td>'+esc((en.team.shortDisplayName||en.team.displayName||''))+'</td><td>'+esc(m.gamesPlayed||'')+'</td><td>'+esc(m.wins||'')+'</td><td>'+esc(m.ties||'')+'</td><td>'+esc(m.losses||'')+'</td><td>'+esc(m.pointsFor||'')+'</td><td>'+esc(m.pointsAgainst||'')+'</td><td><b>'+esc(m.points||'')+'</b></td><td>'+esc(m.overall||'')+'</td></tr>';
           });
           html+='</table>';
         });
@@ -543,6 +587,20 @@ LIVE_JS = """<script>
       d.innerHTML=html||'<p class="sub" style="padding:8px">Classifica non disponibile per questa lega.</p>';
     });
   };
+  window.__share=function(id){
+    var url=location.origin+location.pathname+'?d='+D+'#'+id;
+    if(navigator.share){navigator.share({title:document.title,url:url}).catch(function(){});}
+    else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){alert('Link copiato: '+url);});}
+  };
+  // apri dettaglio da hash (#eventId)
+  if(location.hash.length>1){
+    var hid2=location.hash.slice(1);
+    setTimeout(function(){var el=document.querySelector('[data-eid="'+hid2+'"]'); if(el)window.__tg(el);},1500);
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('[data-share]'):null;
+    if(a){e.preventDefault(); window.__share(a.getAttribute('data-share'));}
+  });
   window.__F=FILT; window.__R=render;
   tick();setInterval(tick,30000);
 })();
@@ -656,6 +714,17 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .chev{{font-size:10.5px;color:#64748b;font-weight:400}}
 .lgdet{{background:#0d1526;border:1px solid #1e293b;border-radius:8px;margin:2px 8px 8px;padding:8px 10px;font-size:12px;color:var(--sub)}}
 .star{{color:#334155;cursor:pointer;font-size:13px;text-align:center}}
+.lg{{width:16px;height:16px;vertical-align:-3px;margin-right:5px;border-radius:50%}}
+.lg.big{{width:34px;height:34px}}
+.h a,.a{{display:flex;align-items:center;gap:2px}}
+.hero{{background:linear-gradient(135deg,#1e293b,#0f1a30);border:1px solid #b91c1c;border-radius:12px;padding:12px 14px;margin:10px 0;cursor:pointer}}
+.hero:hover{{border-color:#ef4444}}
+.ht{{display:flex;justify-content:space-between;font-size:11px;color:#8ea3c8;margin-bottom:6px}}
+.hm{{display:flex;align-items:center;justify-content:space-between;gap:8px}}
+.htn{{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;flex:1}}
+.htn:last-child{{justify-content:flex-end}}
+.hsc{{font-size:22px;font-weight:800;color:#fff;background:#0b1220;border:1px solid #22345a;border-radius:8px;padding:4px 12px}}
+.hb{{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}}
 .star.on{{color:#fbbf24}}
 .flag{{font-size:10px;background:#3b2f0b;color:#fbbf24;border-radius:8px;padding:2px 5px;margin-left:4px;white-space:nowrap}}
 .badge small{{color:#64748b;font-size:9.5px}}
