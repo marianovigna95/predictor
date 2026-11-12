@@ -15,7 +15,7 @@ nav a.on{background:var(--acc);color:#fff} nav a:hover{background:#1e3a8a}
 main{max-width:860px;margin:0 auto;padding:10px 12px}
 .lgh{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;padding:12px 4px 4px;border-bottom:1px solid #1e293b;position:sticky;top:96px;background:var(--bg);z-index:3}
 .ours{color:#fbbf24}
-.mrow{display:grid;grid-template-columns:44px 1fr 64px 1fr auto;gap:8px;align-items:center;padding:7px 8px;border-bottom:1px solid #16233d;cursor:pointer;border-radius:6px}
+.mrow{display:grid;grid-template-columns:40px 1fr 56px 1fr 128px auto;gap:6px;align-items:center;padding:7px 8px;border-bottom:1px solid #16233d;cursor:pointer;border-radius:6px}
 .mrow:hover{background:#16233d}
 .mrow.live{background:#2a1215;border-left:3px solid var(--red)}
 .tm{color:var(--sub);font-size:12px;font-variant-numeric:tabular-nums}
@@ -23,6 +23,14 @@ main{max-width:860px;margin:0 auto;padding:10px 12px}
 .a{text-align:left;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sc{text-align:center;font-weight:800;font-size:15px;background:#0b1220;border:1px solid #1e293b;border-radius:6px;padding:2px 0;font-variant-numeric:tabular-nums}
 .mrow.live .sc{border-color:var(--red);color:#fecaca}
+.od{font-size:10.5px;color:#8ea3c8;white-space:nowrap}
+.q3{display:flex;gap:8px}
+.q3 span{flex:1;background:#0f1a30;border:1px solid #22345a;border-radius:6px;padding:6px;text-align:center;font-size:11px;color:#8ea3c8}
+.q3 b{display:block;color:#fff;font-size:15px}
+.frm{display:flex;align-items:center;gap:5px;margin:3px 0;font-size:12px}
+.frm i{font-style:normal;width:16px;height:16px;border-radius:50%;font-size:9px;display:inline-flex;align-items:center;justify-content:center;color:#04101f;font-weight:700}
+.frm i.g{background:#34d399}.frm i.y{background:#fbbf24}.frm i.r{background:#f87171}
+.stt{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8ea3c8}
 .badge{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}
 .b-live{background:var(--red);color:#fff} .b-ft{background:#334155;color:#cbd5e1} .b-pre{background:#14532d;color:#86efac}
 .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#fff;margin-right:4px;animation:blink 1s infinite}
@@ -60,6 +68,7 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
 (function(){
   var TODAY='20261112';
   var SLUG2NAME={"ita.1": "Italian Serie A", "ita.2": "Italian Serie B", "eng.1": "English Premier League", "eng.2": "English Championship", "esp.1": "Spanish La Liga", "esp.2": "Spanish Segunda Division", "ger.1": "German Bundesliga", "ger.2": "German 2. Bundesliga", "fra.1": "French Ligue 1", "fra.2": "French Ligue 2", "ned.1": "Dutch Eredivisie", "por.1": "Portuguese Primeira Liga", "tur.1": "Turkish Super Lig", "uefa.champions": "UEFA Champions League", "uefa.europa": "UEFA Europa League", "uefa.europa.conf": "UEFA Europa Conference League", "uefa.nations": "UEFA Nations League", "fifa.worldq.uefa": "World Cup Qualifying - Europe", "fifa.friendly": "International Friendlies"};  // slug ESPN -> nome nostra lega
+  var QMAP={"2026-11-13|leganes|burgos cf": {"h": "2.22", "x": "3.3", "a": "3.47"}, "2026-11-14|almeria|fc andorra": {"h": "1.72", "x": "4.23", "a": "4.59"}, "2026-11-14|mallorca|cordoba": {"h": "1.7", "x": "4.28", "a": "4.6"}, "2026-11-14|real oviedo|girona": {"h": "2.47", "x": "3.42", "a": "2.97"}, "2026-11-15|tenerife|ad ceuta fc": {"h": "1.92", "x": "3.57", "a": "4.14"}, "2026-11-15|granada|las palmas": {"h": "1.75", "x": "3.92", "a": "4.9"}, "2026-11-15|eibar|cadiz": {"h": "1.67", "x": "4.23", "a": "5.21"}, "2026-11-15|eldense|sabadell": {"h": "2.47", "x": "3.27", "a": "3.01"}, "2026-11-12|new zealand|india": {"h": "1.38", "x": "5.0", "a": "7.8"}, "2026-11-12|uzbekistan|russia": {"h": "4.22", "x": "3.52", "a": "2.0"}, "2026-11-12|lithuania|suriname": {"h": "2.06", "x": "3.31", "a": "3.11"}, "2026-11-12|armenia|cyprus": {"h": "2.3", "x": "3.48", "a": "3.35"}, "2026-11-12|turkiye|belgium": {"h": "4.24", "x": "4.14", "a": "1.95"}, "2026-11-12|san marino|belarus": {"h": "31.0", "x": "10.0", "a": "1.15"}, "2026-11-12|montenegro|latvia": {"h": "1.37", "x": "5.25", "a": "9.7"}, "2026-11-12|italy|france": {"h": "4.3", "x": "4.0", "a": "1.93"}, "2026-11-12|england|croatia": {"h": "1.28", "x": "7.0", "a": "12.0"}, "2026-11-12|czechia|spain": {"h": "19.5", "x": "8.5", "a": "1.17"}, "2026-11-12|albania|finland": {"h": "2.07", "x": "3.38", "a": "4.71"}, "2026-11-13|singapore|paraguay": {"h": "17.0", "x": "8.6", "a": "1.11"}, "2026-11-13|saudi arabia|south korea": {"h": "4.61", "x": "3.54", "a": "1.64"}, "2026-11-13|qatar|australia": {"h": "3.39", "x": "3.75", "a": "1.91"}, "2026-11-13|moldova|kazakhstan": {"h": "2.75", "x": "3.11", "a": "2.91"}, "2026-11-13|bulgaria|iceland": {"h": "4.39", "x": "3.75", "a": "1.95"}, "2026-11-13|andorra|gibraltar": {"h": "1.95", "x": "3.29", "a": "5.91"}, "2026-11-13|liechtenstein|azerbaijan": {"h": "17.5", "x": "5.76", "a": "1.27"}, "2026-11-13|luxembourg|estonia": {"h": "2.2", "x": "3.48", "a": "4.64"}, "2026-11-13|netherlands|greece": {"h": "1.47", "x": "5.0", "a": "7.08"}, "2026-11-13|slovenia|switzerland": {"h": "5.82", "x": "3.79", "a": "1.7"}, "2026-11-13|slovakia|faroe islands": {"h": "1.37", "x": "5.46", "a": "11.6"}, "2026-11-13|serbia|germany": {"h": "9.9", "x": "6.5", "a": "1.31"}, "2026-11-14|japan|brazil": {"h": "3.87", "x": "3.94", "a": "1.67"}, "2026-11-14|china|malaysia": {"h": "1.61", "x": "3.83", "a": "4.41"}, "2026-11-14|kosovo|israel": {"h": "1.96", "x": "3.71", "a": "4.2"}, "2026-11-14|norway|wales": {"h": "1.27", "x": "6.73", "a": "11.6"}, "2026-11-14|georgia|hungary": {"h": "3.28", "x": "3.2", "a": "2.89"}, "2026-11-14|sweden|bosnia herzegovina": {"h": "1.55", "x": "4.55", "a": "6.06"}, "2026-11-14|romania|poland": {"h": "3.8", "x": "3.81", "a": "2.02"}, "2026-11-14|portugal|denmark": {"h": "1.51", "x": "4.94", "a": "7.4"}, "2026-11-14|northern ireland|ukraine": {"h": "2.39", "x": "3.22", "a": "3.32"}, "2026-11-15|spain|england": {"h": "1.63", "x": "4.57", "a": "5.3"}, "2026-11-15|france|turkiye": {"h": "1.13", "x": "8.5", "a": "15.0"}, "2026-11-15|croatia|czechia": {"h": "1.33", "x": "5.0", "a": "7.6"}, "2026-11-15|belgium|italy": {"h": "2.18", "x": "3.8", "a": "2.78"}, "2026-11-16|switzerland|scotland": {"h": "1.41", "x": "4.37", "a": "6.87"}, "2026-11-16|greece|serbia": {"h": "1.34", "x": "4.98", "a": "7.34"}, "2026-11-16|germany|netherlands": {"h": "1.8", "x": "4.12", "a": "3.49"}, "2026-11-17|japan|paraguay": {"h": "1.5", "x": "3.95", "a": "5.24"}, "2026-11-17|russia|venezuela": {"h": "1.84", "x": "3.94", "a": "4.47"}, "2026-11-17|wales|portugal": {"h": "8.15", "x": "5.59", "a": "1.28"}, "2026-11-17|ukraine|georgia": {"h": "2.39", "x": "3.49", "a": "2.58"}, "2026-11-17|poland|sweden": {"h": "2.28", "x": "3.74", "a": "2.59"}, "2026-11-17|israel|austria": {"h": "4.26", "x": "4.11", "a": "1.65"}, "2026-11-17|hungary|northern ireland": {"h": "1.83", "x": "3.38", "a": "4.11"}, "2026-11-17|denmark|norway": {"h": "2.39", "x": "3.92", "a": "2.39"}, "2026-11-17|bosnia herzegovina|romania": {"h": "1.72", "x": "3.71", "a": "4.27"}};               // data|home|away -> quote 1X2 best-price (nostra finestra)
   var q=new URLSearchParams(location.search);
   var D=(q.get('d')||TODAY).replace(/-/g,'');
   var list=document.getElementById('lg-list');
@@ -79,10 +88,12 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
       +'<span class="h">'+esc(e.h)+'</span>'
       +'<span class="sc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
       +'<span class="a">'+esc(e.a)+'</span>'
+      +'<span class="od">'+(function(){var q=qkey(e);return q&&q.h?('1 '+q.h+' · X '+(q.x||'–')+' · 2 '+q.a):'';})()+'</span>'
       +badge(e)+'</div>'
       +'<div class="det" id="det-'+e.id+'" style="display:none"></div>';
   }
   function render(evs){
+    window.__evs=evs;
     var bylg={};
     evs.forEach(function(e){(bylg[e.lg]=bylg[e.lg]||[]).push(e);});
     var lgs=Object.keys(bylg).sort();
@@ -99,6 +110,7 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
   }
   window.__tg=function(el){
     var id=el.getAttribute('data-eid');
+    var ev=((window.__evs||[]).filter(function(e){return e.id===id;})[0])||{};
     var d=document.getElementById('det-'+id);
     if(!d)return;
     if(openDet[id]){openDet[id]=false;d.style.display='none';return;}
@@ -115,13 +127,45 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
         W.forEach(function(nm){var v=map[nm]; if(v&&(v[0]||v[1])) rows+='<tr><td>'+esc(nm)+'</td><td>'+esc(v[0]||'')+'</td><td>'+esc(v[1]||'')+'</td></tr>';});
         var h0=teams[0]&&teams[0].team?esc(teams[0].team.displayName):'';
         var h1=teams[1]&&teams[1].team?esc(teams[1].team.displayName):'';
-        var html=(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
+        // QUOTE 1X2 (dagli odds dello scoreboard ESPN)
+        var qq=qkey(ev);
+        var q=(qq&&qq.h?'<p class="stt">Quote 1X2 (miglior prezzo finestra)</p><div class="q3"><span>1<b>'+qq.h+'</b></span><span>X<b>'+(qq.x||'–')+'</b></span><span>2<b>'+qq.a+'</b></span></div>':'');
+        // FORMA ultime 5 (lastFiveGames ESPN)
+        function forma(t){
+          var evs=(t.events||[]).slice(0,5);
+          if(!evs.length)return '';
+          var dot=evs.map(function(g){
+            var r=g.gameResult||'';
+            var c=r==='W'?'g':(r==='D'?'y':'r');
+            return '<i class="'+c+'" title="'+(g.score||'')+' vs '+esc((g.opponent&&g.opponent.abbreviation)||'')+'">'+r+'</i>';
+          }).join('');
+          return '<div class="frm"><b>'+esc((t.team&&t.team.abbreviation)||'')+'</b> '+dot+'</div>';
+        }
+        var lfg=j.lastFiveGames||[];
+        var fhtml=(lfg.length?'<p class="stt">Forma — ultime 5</p>'+lfg.map(forma).join(''):'<p class="sub">forma non disponibile</p>');
+        var html=q+fhtml+(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
           +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>':'<p class="sub">Partita non ancora iniziata: statistiche live durante la gara e a fine partita.</p>')
           +'<p class="sub" style="font-size:11px">fonte dati: API pubblica ESPN — nessun reindirizzamento</p>';
         openDet[id]=html;
         d.innerHTML=html;
       }).catch(function(){d.innerHTML='<p class="sub">dettaglio non disponibile</p>';});
   };
+  function norm(t){return (t||'').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+  function qkey(e){
+    var dk=D.substr(0,4)+'-'+D.substr(4,2)+'-'+D.substr(6,2);
+    var h=norm(e.h), a=norm(e.a);
+    var q=QMAP[dk+'|'+h+'|'+a];
+    if(!q && QMAP[dk+'|'+a+'|'+h]){var s2=QMAP[dk+'|'+a+'|'+h]; q={h:s2.a, x:s2.x, a:s2.h};}
+    if(!q){
+      // fuzzy: stessa data, nomi simili
+      var pre=dk+'|';
+      for(var k in QMAP){ if(k.indexOf(pre)!==0) continue;
+        var p=k.slice(pre.length).split('|');
+        if((p[0].indexOf(h)>=0||h.indexOf(p[0])>=0)&&(p[1].indexOf(a)>=0||a.indexOf(p[1])>=0)){q=QMAP[k];break;}
+      }
+    }
+    return q;
+  }
   function evOf(ev, lg){
     var c=ev.competitions[0];if(!c)return null;
     var cs=c.competitors||[];
@@ -129,9 +173,16 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
     var a=cs.filter(function(x){return x.homeAway==='away';})[0]||cs[1];
     if(!h||!a)return null;
     var st=c.status||{type:{}};
+    function am(m){if(m==null)return null; m=+m; return m>0?(1+m/100):(1+100/(-m));}
+    var od=null;
+    (c.odds||[]).forEach(function(o){
+      if(od||!o)return;
+      var h=am(o.homeTeamOdds&&o.homeTeamOdds.moneyLine), x=am(o.drawOdds&&o.drawOdds.moneyLine), a=am(o.awayTeamOdds&&o.awayTeamOdds.moneyLine);
+      if(h&&x&&a) od={h:h.toFixed(2), x:x.toFixed(2), a:a.toFixed(2)};
+    });
     return {id:ev.id, lg:lg, h:h.team.displayName, a:a.team.displayName,
             hs:h.score||'0', as:a.score||'0', live:st.type.state==='in', status:st.type.name||'',
-            minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5)};
+            minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5), odds:od};
   }
   function tick(){
     // scoreboard PER SLUG delle nostre leghe (l'endpoint 'all' non porta lo slug sull'evento)

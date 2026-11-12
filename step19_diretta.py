@@ -10,7 +10,9 @@ Output: site/diretta.html
 Uso: python3 src/step19_diretta.py [--date 2026-11-12]
 """
 import argparse
+import glob
 import html
+import os
 import json
 import re
 import sys
@@ -119,6 +121,29 @@ def fetch_events(ds):
     return evs
 
 
+def _norm(t):
+    import unicodedata, re
+    t = unicodedata.normalize("NFKD", t)
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    t = re.sub(r"[^a-z0-9 ]", " ", t.lower())
+    return re.sub(r"\s+", " ", t).strip()
+
+def build_qmap():
+    """Mappa data|home|away (nomi normalizzati) -> quote 1X2 best-price dal CSV finestra."""
+    import csv, glob, os
+    qmap = {}
+    base = os.path.dirname(os.path.abspath(__file__))
+    files = sorted(glob.glob(os.path.join(base, "..", "data", "odds_window_*.csv")))
+    if not files:
+        return qmap
+    with open(files[-1], encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            d = (r.get("data") or "").strip()
+            h, a = _norm(r.get("home") or ""), _norm(r.get("away") or "")
+            if d and h and a and r.get("best_1"):
+                qmap[f"{d}|{h}|{a}"] = {"h": r["best_1"], "x": r.get("best_X") or "", "a": r.get("best_2") or ""}
+    return qmap
+
 LIVE_JS = """<script>
 /* DIREtta stile diretta.it: lista per lega, render client-side da ESPN (gratis, CORS aperto).
    - ?d=YYYY-MM-DD seleziona la data (barra in alto: oggi-2 … oggi+7)
@@ -126,6 +151,7 @@ LIVE_JS = """<script>
 (function(){
   var TODAY='__DATE__';
   var SLUG2NAME=__SLUG2NAME__;  // slug ESPN -> nome nostra lega
+  var QMAP=__QMAP__;               // data|home|away -> quote 1X2 best-price (nostra finestra)
   var q=new URLSearchParams(location.search);
   var D=(q.get('d')||TODAY).replace(/-/g,'');
   var list=document.getElementById('lg-list');
@@ -145,10 +171,12 @@ LIVE_JS = """<script>
       +'<span class="h">'+esc(e.h)+'</span>'
       +'<span class="sc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
       +'<span class="a">'+esc(e.a)+'</span>'
+      +'<span class="od">'+(function(){var q=qkey(e);return q&&q.h?('1 '+q.h+' · X '+(q.x||'–')+' · 2 '+q.a):'';})()+'</span>'
       +badge(e)+'</div>'
       +'<div class="det" id="det-'+e.id+'" style="display:none"></div>';
   }
   function render(evs){
+    window.__evs=evs;
     var bylg={};
     evs.forEach(function(e){(bylg[e.lg]=bylg[e.lg]||[]).push(e);});
     var lgs=Object.keys(bylg).sort();
@@ -165,6 +193,7 @@ LIVE_JS = """<script>
   }
   window.__tg=function(el){
     var id=el.getAttribute('data-eid');
+    var ev=((window.__evs||[]).filter(function(e){return e.id===id;})[0])||{};
     var d=document.getElementById('det-'+id);
     if(!d)return;
     if(openDet[id]){openDet[id]=false;d.style.display='none';return;}
@@ -181,13 +210,45 @@ LIVE_JS = """<script>
         W.forEach(function(nm){var v=map[nm]; if(v&&(v[0]||v[1])) rows+='<tr><td>'+esc(nm)+'</td><td>'+esc(v[0]||'')+'</td><td>'+esc(v[1]||'')+'</td></tr>';});
         var h0=teams[0]&&teams[0].team?esc(teams[0].team.displayName):'';
         var h1=teams[1]&&teams[1].team?esc(teams[1].team.displayName):'';
-        var html=(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
+        // QUOTE 1X2 (dagli odds dello scoreboard ESPN)
+        var qq=qkey(ev);
+        var q=(qq&&qq.h?'<p class="stt">Quote 1X2 (miglior prezzo finestra)</p><div class="q3"><span>1<b>'+qq.h+'</b></span><span>X<b>'+(qq.x||'–')+'</b></span><span>2<b>'+qq.a+'</b></span></div>':'');
+        // FORMA ultime 5 (lastFiveGames ESPN)
+        function forma(t){
+          var evs=(t.events||[]).slice(0,5);
+          if(!evs.length)return '';
+          var dot=evs.map(function(g){
+            var r=g.gameResult||'';
+            var c=r==='W'?'g':(r==='D'?'y':'r');
+            return '<i class="'+c+'" title="'+(g.score||'')+' vs '+esc((g.opponent&&g.opponent.abbreviation)||'')+'">'+r+'</i>';
+          }).join('');
+          return '<div class="frm"><b>'+esc((t.team&&t.team.abbreviation)||'')+'</b> '+dot+'</div>';
+        }
+        var lfg=j.lastFiveGames||[];
+        var fhtml=(lfg.length?'<p class="stt">Forma — ultime 5</p>'+lfg.map(forma).join(''):'<p class="sub">forma non disponibile</p>');
+        var html=q+fhtml+(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
           +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>':'<p class="sub">Partita non ancora iniziata: statistiche live durante la gara e a fine partita.</p>')
           +'<p class="sub" style="font-size:11px">fonte dati: API pubblica ESPN — nessun reindirizzamento</p>';
         openDet[id]=html;
         d.innerHTML=html;
       }).catch(function(){d.innerHTML='<p class="sub">dettaglio non disponibile</p>';});
   };
+  function norm(t){return (t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+  function qkey(e){
+    var dk=D.substr(0,4)+'-'+D.substr(4,2)+'-'+D.substr(6,2);
+    var h=norm(e.h), a=norm(e.a);
+    var q=QMAP[dk+'|'+h+'|'+a];
+    if(!q && QMAP[dk+'|'+a+'|'+h]){var s2=QMAP[dk+'|'+a+'|'+h]; q={h:s2.a, x:s2.x, a:s2.h};}
+    if(!q){
+      // fuzzy: stessa data, nomi simili
+      var pre=dk+'|';
+      for(var k in QMAP){ if(k.indexOf(pre)!==0) continue;
+        var p=k.slice(pre.length).split('|');
+        if((p[0].indexOf(h)>=0||h.indexOf(p[0])>=0)&&(p[1].indexOf(a)>=0||a.indexOf(p[1])>=0)){q=QMAP[k];break;}
+      }
+    }
+    return q;
+  }
   function evOf(ev, lg){
     var c=ev.competitions[0];if(!c)return null;
     var cs=c.competitors||[];
@@ -195,9 +256,16 @@ LIVE_JS = """<script>
     var a=cs.filter(function(x){return x.homeAway==='away';})[0]||cs[1];
     if(!h||!a)return null;
     var st=c.status||{type:{}};
+    function am(m){if(m==null)return null; m=+m; return m>0?(1+m/100):(1+100/(-m));}
+    var od=null;
+    (c.odds||[]).forEach(function(o){
+      if(od||!o)return;
+      var h=am(o.homeTeamOdds&&o.homeTeamOdds.moneyLine), x=am(o.drawOdds&&o.drawOdds.moneyLine), a=am(o.awayTeamOdds&&o.awayTeamOdds.moneyLine);
+      if(h&&x&&a) od={h:h.toFixed(2), x:x.toFixed(2), a:a.toFixed(2)};
+    });
     return {id:ev.id, lg:lg, h:h.team.displayName, a:a.team.displayName,
             hs:h.score||'0', as:a.score||'0', live:st.type.state==='in', status:st.type.name||'',
-            minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5)};
+            minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5), odds:od};
   }
   function tick(){
     // scoreboard PER SLUG delle nostre leghe (l'endpoint 'all' non porta lo slug sull'evento)
@@ -295,7 +363,7 @@ nav a.on{{background:var(--acc);color:#fff}} nav a:hover{{background:#1e3a8a}}
 main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .lgh{{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;padding:12px 4px 4px;border-bottom:1px solid #1e293b;position:sticky;top:96px;background:var(--bg);z-index:3}}
 .ours{{color:#fbbf24}}
-.mrow{{display:grid;grid-template-columns:44px 1fr 64px 1fr auto;gap:8px;align-items:center;padding:7px 8px;border-bottom:1px solid #16233d;cursor:pointer;border-radius:6px}}
+.mrow{{display:grid;grid-template-columns:40px 1fr 56px 1fr 128px auto;gap:6px;align-items:center;padding:7px 8px;border-bottom:1px solid #16233d;cursor:pointer;border-radius:6px}}
 .mrow:hover{{background:#16233d}}
 .mrow.live{{background:#2a1215;border-left:3px solid var(--red)}}
 .tm{{color:var(--sub);font-size:12px;font-variant-numeric:tabular-nums}}
@@ -303,6 +371,14 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .a{{text-align:left;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
 .sc{{text-align:center;font-weight:800;font-size:15px;background:#0b1220;border:1px solid #1e293b;border-radius:6px;padding:2px 0;font-variant-numeric:tabular-nums}}
 .mrow.live .sc{{border-color:var(--red);color:#fecaca}}
+.od{{font-size:10.5px;color:#8ea3c8;white-space:nowrap}}
+.q3{{display:flex;gap:8px}}
+.q3 span{{flex:1;background:#0f1a30;border:1px solid #22345a;border-radius:6px;padding:6px;text-align:center;font-size:11px;color:#8ea3c8}}
+.q3 b{{display:block;color:#fff;font-size:15px}}
+.frm{{display:flex;align-items:center;gap:5px;margin:3px 0;font-size:12px}}
+.frm i{{font-style:normal;width:16px;height:16px;border-radius:50%;font-size:9px;display:inline-flex;align-items:center;justify-content:center;color:#04101f;font-weight:700}}
+.frm i.g{{background:#34d399}}.frm i.y{{background:#fbbf24}}.frm i.r{{background:#f87171}}
+.stt{{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8ea3c8}}
 .badge{{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}}
 .b-live{{background:var(--red);color:#fff}} .b-ft{{background:#334155;color:#cbd5e1}} .b-pre{{background:#14532d;color:#86efac}}
 .dot{{display:inline-block;width:7px;height:7px;border-radius:50%;background:#fff;margin-right:4px;animation:blink 1s infinite}}
@@ -320,7 +396,7 @@ ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
 {rows_html(evs)}
 </main>
 <p style="text-align:center;color:#475569;font-size:12px;padding:14px">⚠️ Solo analisi, mai certezze · 18+ · ADM · autoesclusione.it · 800 558822</p>
-</body>{LIVE_JS.replace('__DATE__', ds).replace('__SLUG2NAME__', json.dumps(SLUGS, ensure_ascii=False))}{footer("")}</html>"""
+</body>{LIVE_JS.replace('__DATE__', ds).replace('__SLUG2NAME__', json.dumps(SLUGS, ensure_ascii=False)).replace('__QMAP__', json.dumps(build_qmap(), ensure_ascii=False))}{footer("")}</html>"""
     SITE.mkdir(exist_ok=True)
     (SITE / "diretta.html").write_text(page, encoding="utf-8")
     print(f"🔴 site/diretta.html: {len(evs)} partite ({live_n} live) — {a.date}")
