@@ -293,7 +293,10 @@ LIVE_JS = """<script>
         var lfg=j.lastFiveGames||[];
         var fhtml=(lfg.length?'<p class="stt">Forma — ultime 5</p>'+lfg.map(forma).join(''):'<p class="sub">forma non disponibile</p>');
         var html=q+fhtml+(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
-          +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>':'<p class="sub">Partita non ancora iniziata: statistiche live durante la gara e a fine partita.</p>')
+          +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>'
+            :(ev.live||/FULL|FINAL|POST/i.test(ev.status||'')
+              ?'<p class="sub">Statistiche live in aggiornamento — ESPN le pubblica a intervalli durante la gara e complete a fine partita.</p>'
+              :'<p class="sub">Partita non ancora iniziata: le statistiche escono dal fischio di inizio.</p>'))
           +'<p class="sub" style="font-size:11px">fonte dati: API pubblica ESPN — nessun reindirizzamento</p>';
         openDet[id]=html;
         d.innerHTML=html;
@@ -536,7 +539,7 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .tm small{{color:#64748b;font-size:9.5px}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid #16233d;text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
 ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
 </style></head><body>
-<header><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
+<header><a href="index.html" style="color:#93c5fd;text-decoration:none;margin-right:8px">‹ Indietro</a><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
 {daybar_html(today)}
 <div id="fbar"><button data-f="all" class="on">Tutte</button><button data-f="live">🔴 LIVE</button><button data-f="ev">🚩 EV&gt;0</button><input id="fq" type="search" placeholder="cerca squadra o lega…"><button data-m="lega" class="on">per lega</button><button data-m="orario">per orario</button></div>
 <span id="sub" class="sub" style="display:block;padding:4px 14px"></span>
