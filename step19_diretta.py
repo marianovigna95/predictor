@@ -125,6 +125,7 @@ LIVE_JS = """<script>
    - refresh live ogni 30s; clic su riga = dettaglio statistiche/gol (solo nostre leghe) */
 (function(){
   var TODAY='__DATE__';
+  var OURS=__OURS__;
   var q=new URLSearchParams(location.search);
   var D=(q.get('d')||TODAY).replace(/-/g,'');
   var list=document.getElementById('lg-list');
@@ -198,8 +199,9 @@ LIVE_JS = """<script>
           return {id:ev.id, lg:(ev.league&&ev.league.name)||'Altro', h:h.team.displayName, a:a.team.displayName,
                   hs:h.score||'0', as:a.score||'0', live:st.type.state==='in', status:st.type.name||'',
                   minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5)};
-        }).filter(Boolean);
-        evs.sort(function(x,y){return (x.live===y.live)?((x.lg<x.lg?-1:1)):(x.live?-1:1);});
+        }).filter(Boolean)
+          .filter(function(e){return OURS.indexOf(e.lg)>=0;});  // solo nostre leghe (come diretta.it filtrata)
+        evs.sort(function(x,y){if(x.live!==y.live)return x.live?-1:1; if(x.lg!==y.lg)return x.lg<x.lg?-1:1; return (x.hhmm<x.hhmm?-1:1);});
         render(evs);
       })
       .catch(function(){});
@@ -310,7 +312,7 @@ ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
 {rows_html(evs)}
 </main>
 <p style="text-align:center;color:#475569;font-size:12px;padding:14px">⚠️ Solo analisi, mai certezze · 18+ · ADM · autoesclusione.it · 800 558822</p>
-</body>{LIVE_JS.replace('__DATE__', ds)}{footer("")}</html>"""
+</body>{LIVE_JS.replace('__DATE__', ds).replace('__OURS__', json.dumps(sorted(NOSTRE), ensure_ascii=False))}{footer("")}</html>"""
     SITE.mkdir(exist_ok=True)
     (SITE / "diretta.html").write_text(page, encoding="utf-8")
     print(f"🔴 site/diretta.html: {len(evs)} partite ({live_n} live) — {a.date}")

@@ -59,6 +59,7 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
    - refresh live ogni 30s; clic su riga = dettaglio statistiche/gol (solo nostre leghe) */
 (function(){
   var TODAY='20261112';
+  var OURS=["Dutch Eredivisie", "English Championship", "English Premier League", "French Ligue 1", "French Ligue 2", "German 2. Bundesliga", "German Bundesliga", "International Friendlies", "Italian Serie A", "Italian Serie B", "Portuguese Primeira Liga", "Spanish La Liga", "Spanish Segunda Division", "Turkish Super Lig", "UEFA Champions League", "UEFA Europa Conference League", "UEFA Europa League", "UEFA Nations League", "World Cup Qualifying - Europe"];
   var q=new URLSearchParams(location.search);
   var D=(q.get('d')||TODAY).replace(/-/g,'');
   var list=document.getElementById('lg-list');
@@ -132,8 +133,9 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
           return {id:ev.id, lg:(ev.league&&ev.league.name)||'Altro', h:h.team.displayName, a:a.team.displayName,
                   hs:h.score||'0', as:a.score||'0', live:st.type.state==='in', status:st.type.name||'',
                   minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5)};
-        }).filter(Boolean);
-        evs.sort(function(x,y){return (x.live===y.live)?((x.lg<x.lg?-1:1)):(x.live?-1:1);});
+        }).filter(Boolean)
+          .filter(function(e){return OURS.indexOf(e.lg)>=0;});  // solo nostre leghe (come diretta.it filtrata)
+        evs.sort(function(x,y){if(x.live!==y.live)return x.live?-1:1; if(x.lg!==y.lg)return x.lg<x.lg?-1:1; return (x.hhmm<x.hhmm?-1:1);});
         render(evs);
       })
       .catch(function(){});
