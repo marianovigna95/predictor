@@ -94,29 +94,32 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
     });
     list.innerHTML=out||'<p class="sub" style="padding:14px">Nessuna partita in programma per questa data.</p>';
     if(sub)sub.textContent=evs.length+' partite · '+liveN+' LIVE · aggiornate '+new Date().toLocaleTimeString('it-IT')+' · fonte ESPN';
-    // riapplica dettagli aperti
-    Object.keys(openDet).forEach(function(id){var d=document.getElementById('det-'+id);if(d&&openDet[id]){d.style.display='block';}});
+    // riapplica dettagli aperti (con html già caricato)
+    Object.keys(openDet).forEach(function(id){var d=document.getElementById('det-'+id);if(d&&openDet[id]){d.style.display='block';d.innerHTML=openDet[id];}});
   }
   window.__tg=function(el){
     var id=el.getAttribute('data-eid');
     var d=document.getElementById('det-'+id);
     if(!d)return;
-    if(openDet[id]){openDet[id]=false;d.style.display='none';d.innerHTML='';return;}
-    openDet[id]=true;d.style.display='block';d.innerHTML='<p class="sub" style="padding:6px 10px">caricamento…</p>';
+    if(openDet[id]){openDet[id]=false;d.style.display='none';return;}
+    d.style.display='block';d.innerHTML='<p class="sub" style="padding:6px 10px">caricamento…</p>';
     fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/all/summary?event='+id+'&lang=it&region=it')
       .then(function(r){return r.json();}).then(function(j){
-        var goals=(j.keyEvents||[]).filter(function(k){return ['70','80','75'].indexOf(String(k.type&&k.type.id))>=0;})
-          .map(function(k){return (k.clock&&k.clock.displayValue||'')+' '+esc(k.text||'');});
-        var rows=[];
-        (j.boxscore&&j.boxscore.teams||[]).forEach(function(t){
-          (t.statistics||[]).forEach(function(s){
-            var nm=s.name; if(['possession','shots','shotsOnTarget','expectedGoals','cornerKicks','foulsCommitted','offsides','yellowCards'].indexOf(nm)<0)return;
-            rows.push('<tr><td>'+esc(nm)+'</td><td>'+esc(s.displayValue||'')+'</td></tr>');
-          });
-        });
-        d.innerHTML=(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
-          +(rows.length?'<table>'+rows.join('')+'</table>':'<p class="sub">statistiche non disponibili</p>')
+        var goals=(j.keyEvents||[]).filter(function(k){return /goal/i.test(k.text||'');})
+          .map(function(k){return esc((k.clock&&k.clock.displayValue)||'')+' '+esc(k.text||'');});
+        var W=['possessionPct','totalShots','shotsOnTarget','wonCorners','foulsCommitted','offsides','yellowCards','redCards','saves','accuratePasses','totalPasses','passPct'];
+        var teams=(j.boxscore&&j.boxscore.teams)||[];
+        var map={};
+        teams.forEach(function(t,i){(t.statistics||[]).forEach(function(st){(map[st.name]=map[st.name]||[null,null])[i]=st.displayValue;});});
+        var rows='';
+        W.forEach(function(nm){var v=map[nm]; if(v&&(v[0]||v[1])) rows+='<tr><td>'+esc(nm)+'</td><td>'+esc(v[0]||'')+'</td><td>'+esc(v[1]||'')+'</td></tr>';});
+        var h0=teams[0]&&teams[0].team?esc(teams[0].team.displayName):'';
+        var h1=teams[1]&&teams[1].team?esc(teams[1].team.displayName):'';
+        var html=(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
+          +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>':'<p class="sub">Partita non ancora iniziata: statistiche live durante la gara e a fine partita.</p>')
           +'<p class="sub" style="font-size:11px">fonte dati: API pubblica ESPN — nessun reindirizzamento</p>';
+        openDet[id]=html;
+        d.innerHTML=html;
       }).catch(function(){d.innerHTML='<p class="sub">dettaglio non disponibile</p>';});
   };
   function evOf(ev, lg){
@@ -148,12 +151,13 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
   function dstr(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
   var bar=document.getElementById('daybar');
   if(bar){
-    var dd0=new Date(D.slice(0,4), D.slice(4,6)-1, D.slice(6,8));
+    var now=new Date();           // OGGI reale (browser in Italia) — la barra non slitta mai
+    var todayStr=dstr(now);
     var html='';
     for(var i=-2;i<=7;i++){
-      var dd=new Date(dd0); dd.setDate(dd0.getDate()+i);
-      var lab=(i===0?'Oggi ':(dd.getDate()+'/'+(dd.getMonth()+1)));
-      html+='<button class="dbtn" data-d="'+dstr(dd)+'">'+lab+'</button>';
+      var dd=new Date(now); dd.setDate(now.getDate()+i);
+      var lab=(dstr(dd)===todayStr?'Oggi ':(dd.getDate()+'/'+(dd.getMonth()+1)));
+      html+='<button class="dbtn'+(dstr(dd)===D?' on':'')+'" data-d="'+dstr(dd)+'">'+lab+'</button>';
     }
     bar.innerHTML=html;
     bar.addEventListener('click',function(e){
