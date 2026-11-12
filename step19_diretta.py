@@ -17,7 +17,7 @@ import json
 import re
 import sys
 import urllib.request
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -112,7 +112,12 @@ def fetch_events(ds):
             st = comp["status"]
             live = st["type"]["state"] == "in"
             minute = st.get("displayClock", "")
-            hhmm = ev.get("date", "")[11:16]
+            try:
+                from zoneinfo import ZoneInfo
+                _dt = datetime.fromisoformat(ev.get("date", "").replace("Z", "+00:00"))
+                hhmm = _dt.astimezone(ZoneInfo("Europe/Rome")).strftime("%H:%M")
+            except Exception:
+                hhmm = ev.get("date", "")[11:16]
             evs.append({"id": ev["id"], "lg": lg, "h": h["team"]["displayName"], "a": aw["team"]["displayName"],
                         "hs": h.get("score", "0"), "as": aw.get("score", "0"), "live": live,
                         "status": st["type"]["name"], "minute": minute, "ours": True,
@@ -340,7 +345,7 @@ LIVE_JS = """<script>
     });
     return {id:ev.id, lg:lg, h:h.team.displayName, a:a.team.displayName,
             hs:h.score||'0', as:a.score||'0', live:st.type.state==='in', status:st.type.name||'',
-            minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5), odds:od, ts:Date.parse(ev.date||'')};
+            minute:st.displayClock||'', hhmm:new Date(ev.date||0).toLocaleTimeString('it-IT',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit'}), odds:od, ts:Date.parse(ev.date||'')};
   }
   function tick(){
     // scoreboard PER SLUG delle nostre leghe (l'endpoint 'all' non porta lo slug sull'evento)
