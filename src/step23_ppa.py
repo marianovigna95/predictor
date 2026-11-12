@@ -39,7 +39,8 @@ def main():
     fo["giornata"] = fo["giornata"].astype(int)
 
     by_date = {}
-    for _, o in od.sort_values(["data", "orario"]).iterrows():
+    od["_hhmm"] = od["orario"].astype(str).str[-5:]
+    for _, o in od.sort_values(["data", "_hhmm"]).iterrows():
         f = fo[(fo["lega"] == o["lega"]) & (fo["giornata"] == int(o["giornata"]))]
         f = f[f["partita"].str.lower().str.contains(str(o["home"]).split()[0].lower()[:6], na=False)]
         if len(f) == 0:
@@ -74,7 +75,7 @@ def main():
                     want = "Over" if label == "O2.5" else "Under"
                     esito = "✅" if ou == want else f"❌ ({ou})"
             by_date.setdefault(o["data"], []).append({
-                "ora": str(o["orario"])[-5:], "lega": o["lega"], "partita": o["partita"],
+                "ora": str(r["orario"])[-5:] if pd.notna(r.get("orario")) else str(o["orario"])[-5:], "lega": o["lega"], "partita": o["partita"],
                 "pick": label, "p%": round(p, 1), "quota": round(float(q), 2), "EV%": ev,
                 "esito": esito, "done": bool(esito),
                 "motivo": str(r.get("motivo_verbale") or r.get("motivo") or "")})

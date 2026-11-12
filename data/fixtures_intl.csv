@@ -1626,10 +1626,10 @@ Friendlies,FRD,0,2026-10-07 02:00,United States,Canada,True,1,0
 Friendlies,FRD,0,2026-10-07 04:30,Mexico,Chile,True,0,2
 Friendlies,FRD,0,2026-11-11 13:00,Vietnam,Chinese Taipei,True,2,0
 Friendlies,FRD,0,2026-11-12 07:00,New Zealand,India,True,5,0
-Friendlies,FRD,0,2026-11-12 16:00,Uzbekistan,Russia,False,,
-Friendlies,FRD,0,2026-11-12 18:00,Lithuania,Suriname,False,,
-Nations League,UNL,0,2026-11-12 18:00,Türkiye,Belgium,False,,
-Nations League,UNL,0,2026-11-12 18:00,Armenia,Cyprus,False,,
+Friendlies,FRD,0,2026-11-12 16:00,Uzbekistan,Russia,True,2,3
+Friendlies,FRD,0,2026-11-12 18:00,Lithuania,Suriname,True,0,0
+Nations League,UNL,0,2026-11-12 18:00,Türkiye,Belgium,True,1,2
+Nations League,UNL,0,2026-11-12 18:00,Armenia,Cyprus,True,1,1
 Friendlies,FRD,0,2026-11-12 18:30,Malta,Eswatini,False,,
 Nations League,UNL,0,2026-11-12 20:45,San Marino,Belarus,False,,
 Nations League,UNL,0,2026-11-12 20:45,Montenegro,Latvia,False,,

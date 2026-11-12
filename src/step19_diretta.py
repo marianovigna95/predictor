@@ -17,7 +17,7 @@ import json
 import re
 import sys
 import urllib.request
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -112,7 +112,12 @@ def fetch_events(ds):
             st = comp["status"]
             live = st["type"]["state"] == "in"
             minute = st.get("displayClock", "")
-            hhmm = ev.get("date", "")[11:16]
+            try:
+                from zoneinfo import ZoneInfo
+                _dt = datetime.fromisoformat(ev.get("date", "").replace("Z", "+00:00"))
+                hhmm = _dt.astimezone(ZoneInfo("Europe/Rome")).strftime("%H:%M")
+            except Exception:
+                hhmm = ev.get("date", "")[11:16]
             evs.append({"id": ev["id"], "lg": lg, "h": h["team"]["displayName"], "a": aw["team"]["displayName"],
                         "hs": h.get("score", "0"), "as": aw.get("score", "0"), "live": live,
                         "status": st["type"]["name"], "minute": minute, "ours": True,
@@ -144,6 +149,84 @@ def build_qmap():
                 qmap[f"{d}|{h}|{a}"] = {"h": r["best_1"], "x": r.get("best_X") or "", "a": r.get("best_2") or ""}
     return qmap
 
+def build_evmap():
+    """EV>0 dalla finestra: chiave data|home|away -> {ev, pick, prob, odds}. EV=p*(O-1)-(1-p)."""
+    import csv, glob, os, datetime
+    base = os.path.dirname(os.path.abspath(__file__))
+    files = sorted(glob.glob(os.path.join(base, "..", "data", "forecast_multi.csv")))
+    out = {}
+    if not files:
+        return out
+    year = datetime.date.today().year
+    with open(files[-1], encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            try:
+                o = (r.get("orario") or "").strip()          # "13/11 20:30"
+                dmy = o.split(" ")[0]
+                dd, mm = dmy.split("/")
+                d = f"{year}-{int(mm):02d}-{int(dd):02d}"
+                part = (r.get("partita") or "")
+                if " - " not in part:
+                    continue
+                h, a = part.split(" - ", 1)
+                pick = (r.get("pronostico") or "").strip()
+                pcol = {"1": "p1%", "X": "pX%", "2": "p2%"}.get(pick)
+                if not pcol or not r.get(pcol) or not r.get("quota_best"):
+                    continue
+                p = float(r[pcol]) / 100.0
+                O = float(r["quota_best"])
+                ev = p * (O - 1) - (1 - p)
+                if ev > 0:
+                    out[f"{d}|{_norm(h)}|{_norm(a)}"] = {
+                        "ev": round(ev * 100, 1), "pick": pick,
+                        "prob": r[pcol], "odds": r["quota_best"]}
+            except Exception:
+                continue
+    return out
+
+def build_h2hmap():
+    """H2H ultime 5 per le coppie della finestra (forecast_multi) usando kaggle_matches.csv.
+    Chiave norm(home)|norm(away) -> [{d, vs, s, w, lg}] (w dal punto di vista della chiave)."""
+    import csv, os
+    base = os.path.dirname(os.path.abspath(__file__))
+    tg = set()
+    f = os.path.join(base, "..", "data", "forecast_multi.csv")
+    if os.path.exists(f):
+        with open(f, encoding="utf-8") as fh:
+            for r in csv.DictReader(fh):
+                part = r.get("partita", "")
+                if " - " in part:
+                    h, a = part.split(" - ", 1)
+                    tg.add((_norm(h), _norm(a)))
+    out = {}
+    if not tg:
+        return out
+    kg = os.path.join(base, "..", "data", "kaggle_matches.csv")
+    if not os.path.exists(kg):
+        return out
+    rows = []
+    with open(kg, encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            h, a = _norm(r.get("home_team", "")), _norm(r.get("away_team", ""))
+            if (h, a) in tg or (a, h) in tg:
+                rows.append((r.get("kickoff_utc", "")[:10], h, a,
+                             r.get("ft_home", ""), r.get("ft_away", ""), r.get("league_name", "")))
+    rows.sort(reverse=True)
+    cnt = {}
+    for d, h, a, fh_, fa, lg in rows:
+        key = f"{h}|{a}"
+        if cnt.get(key, 0) >= 5:
+            continue
+        cnt[key] = cnt.get(key, 0) + 1
+        try:
+            w = "H" if int(fh_) > int(fa) else ("A" if int(fh_) < int(fa) else "D")
+        except Exception:
+            w = "?"
+        out.setdefault(key, []).append({"d": d, "vs": a, "s": f"{fh_}-{fa}", "w": w, "lg": lg})
+        wi = {"H": "A", "A": "H", "D": "D"}.get(w, "?")
+        out.setdefault(f"{a}|{h}", []).append({"d": d, "vs": h, "s": f"{fh_}-{fa}", "w": wi, "lg": lg})
+    return out
+
 LIVE_JS = """<script>
 /* DIREtta stile diretta.it: lista per lega, render client-side da ESPN (gratis, CORS aperto).
    - ?d=YYYY-MM-DD seleziona la data (barra in alto: oggi-2 … oggi+7)
@@ -152,22 +235,42 @@ LIVE_JS = """<script>
   var TODAY='__DATE__';
   var SLUG2NAME=__SLUG2NAME__;  // slug ESPN -> nome nostra lega
   var QMAP=__QMAP__;               // data|home|away -> quote 1X2 best-price (nostra finestra)
+  var EVMAP=__EVMAP__;               // data|home|away -> pronostico EV>0 (nostra finestra)
+  var H2H=__H2H__;                   // norm(h)|norm(a) -> ultimi H2H (kaggle)
+  var FAV=JSON.parse(localStorage.getItem('favt')||'[]');
+  function isFav(t){return FAV.indexOf(norm(t))>=0;}
+  window.__fav=function(el){
+    var h=el.getAttribute('data-h'), a=el.getAttribute('data-a');
+    [h,a].forEach(function(t){var n=norm(t), i=FAV.indexOf(n); if(i>=0)FAV.splice(i,1); else FAV.push(n);});
+    localStorage.setItem('favt', JSON.stringify(FAV));
+    render(window.__evs||[]);
+  };
+  var FILT={live:false, ev:false, fav:false, q:'', mode:'lega'};
+  var OPENLG={};                     // slug lega -> aperto pannello classifica
   var q=new URLSearchParams(location.search);
   var D=(q.get('d')||TODAY).replace(/-/g,'');
   var list=document.getElementById('lg-list');
-  var sub=document.querySelector('header .sub');
+  var sub=document.getElementById('sub')||document.querySelector('header .sub');
   var openDet={};
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function cd(e){
+    if(!e.ts||e.live)return '';
+    var ms=e.ts-Date.now(); if(ms<0)return '';
+    var m=Math.floor(ms/60000), h=Math.floor(m/60);
+    return 'tra '+(h>0?(h+'h '+(m%60)+'m'):(m+'m'));
+  }
   function badge(e){
     var tn=(e.status||'').toUpperCase();
-    if(e.live)return '<span class="badge b-live"><i class="dot"></i>LIVE '+esc(e.minute||'')+'</span>';
-    if(tn.indexOf('FULL')>=0||tn.indexOf('FINAL')>=0)return '<span class="badge b-ft">FT</span>';
-    return '<span class="badge b-pre">'+esc(e.hhmm||'')+'</span>';
+    var fl=(e.ev&&e.ev.ev>0)?'<span class="flag" title="Pronostico EV+'+e.ev.ev+'% — '+esc(e.ev.pick)+' @ '+esc(e.ev.odds)+' (p '+esc(e.ev.prob)+'%)">🚩'+e.ev.ev+'%</span>':'';
+    if(e.live)return '<span class="badge b-live"><i class="dot"></i>LIVE '+esc(e.minute||'')+'</span>'+fl;
+    if(tn.indexOf('FULL')>=0||tn.indexOf('FINAL')>=0)return '<span class="badge b-ft">FT</span>'+fl;
+    return fl||'<span class="badge b-pre">·</span>';
   }
   function row(e){
     var cls=e.live?'mrow live':((''+e.status).toUpperCase().indexOf('FULL')>=0?'mrow ft':'mrow');
     return '<div class="'+cls+'" data-eid="'+e.id+'" onclick="window.__tg(this)">'
-      +'<span class="tm">'+esc(e.hhmm||'')+'</span>'
+      +'<span class="star'+(isFav(e.h)||isFav(e.a)?' on':'')+'" data-h="'+esc(e.h)+'" data-a="'+esc(e.a)+'" onclick="event.stopPropagation();window.__fav(this)">★</span>'
+      +'<span class="tm">'+esc(e.hhmm||'')+(cd(e)?' <small>'+cd(e)+'</small>':'')+'</span>'
       +'<span class="h">'+esc(e.h)+'</span>'
       +'<span class="sc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
       +'<span class="a">'+esc(e.a)+'</span>'
@@ -177,17 +280,34 @@ LIVE_JS = """<script>
   }
   function render(evs){
     window.__evs=evs;
-    var bylg={};
-    evs.forEach(function(e){(bylg[e.lg]=bylg[e.lg]||[]).push(e);});
-    var lgs=Object.keys(bylg).sort();
-    var liveN=evs.filter(function(e){return e.live;}).length;
-    var out='';
-    lgs.forEach(function(lg){
-      out+='<div class="lgh">'+esc(lg.replace(/^.*\\s/,'').length?lg:lg)+'</div>';
-      bylg[lg].forEach(function(e){out+=row(e);});
+    evs.forEach(function(e){e.ev=evkey(e);});
+    var f=evs.filter(function(e){
+      if(FILT.live&&!e.live)return false;
+      if(FILT.ev&&!(e.ev&&e.ev.ev>0))return false;
+      if(FILT.fav&&!(isFav(e.h)||isFav(e.a)))return false;
+      if(FILT.q){var q=norm(FILT.q); if(norm(e.h+' '+e.a+' '+e.lg).indexOf(q)<0)return false;}
+      return true;
     });
-    list.innerHTML=out||'<p class="sub" style="padding:14px">Nessuna partita in programma per questa data.</p>';
-    if(sub)sub.textContent=evs.length+' partite · '+liveN+' LIVE · aggiornate '+new Date().toLocaleTimeString('it-IT')+' · fonte ESPN';
+    var liveN=evs.filter(function(e){return e.live;}).length;
+    var evN=evs.filter(function(e){return e.ev&&e.ev.ev>0;}).length;
+    var out='';
+    if(FILT.mode==='orario'){
+      f.sort(function(x,y){return (x.live===y.live)?(x.ts-y.ts):(x.live?-1:1);});
+      f.forEach(function(e){out+=row(e);});
+    }else{
+      var bylg={};
+      f.forEach(function(e){(bylg[e.lg]=bylg[e.lg]||[]).push(e);});
+      Object.keys(bylg).sort().forEach(function(lg){
+        var slg='';
+        for(var k in SLUG2NAME){if(SLUG2NAME[k]===lg){slg=k;break;}}
+        out+='<div class="lgh'+(slg?' lgc':'')+'"'+(slg?' data-slg="'+slg+'" onclick="window.__tl(this)"':'')+'>'
+          +'<span>'+esc(lg)+'</span>'+(slg?'<span class="chev">'+(OPENLG[slg]?'▾':'▸')+' classifica</span>':'')+'</div>';
+        bylg[lg].forEach(function(e){out+=row(e);});
+        if(slg&&OPENLG[slg]) out+='<div class="lgdet" id="lgd-'+slg+'"><p class="sub" style="padding:8px">caricamento classifica…</p></div>';
+      });
+    }
+    list.innerHTML=out||'<p class="sub" style="padding:14px">Nessuna partita corrisponde ai filtri.</p>';
+    if(sub)sub.textContent=f.length+' partite · '+liveN+' LIVE · 🚩 '+evN+' con pronostico EV>0 · aggiornate '+new Date().toLocaleTimeString('it-IT')+' · fonte ESPN';
     // riapplica dettagli aperti (con html già caricato)
     Object.keys(openDet).forEach(function(id){var d=document.getElementById('det-'+id);if(d&&openDet[id]){d.style.display='block';d.innerHTML=openDet[id];}});
   }
@@ -200,14 +320,29 @@ LIVE_JS = """<script>
     d.style.display='block';d.innerHTML='<p class="sub" style="padding:6px 10px">caricamento…</p>';
     fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/all/summary?event='+id+'&lang=it&region=it')
       .then(function(r){return r.json();}).then(function(j){
-        var goals=(j.keyEvents||[]).filter(function(k){return /goal/i.test(k.text||'');})
-          .map(function(k){return esc((k.clock&&k.clock.displayValue)||'')+' '+esc(k.text||'');});
-        var W=['possessionPct','totalShots','shotsOnTarget','wonCorners','foulsCommitted','offsides','yellowCards','redCards','saves','accuratePasses','totalPasses','passPct'];
+        function iconFor(t){t=(t||'').toLowerCase();if(/goal/.test(t))return'⚽';if(/red card/.test(t))return'🟥';if(/yellow/.test(t))return'🟨';if(/substitut/.test(t))return'🔁';if(/var|video/.test(t))return'🎥';if(/penalt/.test(t))return'🅿️';return'•';}
+        var evs2=(j.keyEvents||[]).slice().sort(function(a,b){var ca=parseFloat((a.clock&&a.clock.value)||0),cb=parseFloat((b.clock&&b.clock.value)||0);return cb-ca;});
+        var goals=evs2.slice(0,20).map(function(k){return esc((k.clock&&k.clock.displayValue)||'')+' '+iconFor(k.text)+' '+esc(k.text||'');});
+        var W=['expectedGoals','possessionPct','totalShots','shotsOnTarget','bigChances','wonCorners','foulsCommitted','offsides','yellowCards','redCards','saves','accuratePasses','totalPasses','passPct'];
         var teams=(j.boxscore&&j.boxscore.teams)||[];
         var map={};
         teams.forEach(function(t,i){(t.statistics||[]).forEach(function(st){(map[st.name]=map[st.name]||[null,null])[i]=st.displayValue;});});
         var rows='';
         W.forEach(function(nm){var v=map[nm]; if(v&&(v[0]||v[1])) rows+='<tr><td>'+esc(nm)+'</td><td>'+esc(v[0]||'')+'</td><td>'+esc(v[1]||'')+'</td></tr>';});
+        // 📊 barre comparative stile diretta.it
+        function bar(lab,v0,v1,raw){
+          v0=parseFloat(v0)||0; v1=parseFloat(v1)||0;
+          var p0,p1;
+          if(raw){p0=v0; p1=v1;} else {var m=Math.max(v0,v1,0.001); p0=v0/m*100; p1=v1/m*100;}
+          return '<div class="bst"><span class="bl">'+lab+'</span><div class="bt"><i class="bh" style="width:'+Math.min(100,p0)+'%"></i><i class="ba" style="width:'+Math.min(100,p1)+'%"></i></div><span class="bv">'+esc(v0)+' · '+esc(v1)+'</span></div>';
+        }
+        var bars='';
+        if(map['expectedGoals']) bars+=bar('xG',map['expectedGoals'][0],map['expectedGoals'][1]);
+        if(map['possessionPct']) bars+=bar('Possesso %',map['possessionPct'][0],map['possessionPct'][1],true);
+        if(map['totalShots']) bars+=bar('Tiri',map['totalShots'][0],map['totalShots'][1]);
+        if(map['shotsOnTarget']) bars+=bar('Tiri in porta',map['shotsOnTarget'][0],map['shotsOnTarget'][1]);
+        if(map['bigChances']) bars+=bar('Pal. grosse',map['bigChances'][0],map['bigChances'][1]);
+        if(bars) bars='<p class="stt">📊 Live — '+h0+' vs '+h1+'</p><div class="bars2">'+bars+'</div>';
         var h0=teams[0]&&teams[0].team?esc(teams[0].team.displayName):'';
         var h1=teams[1]&&teams[1].team?esc(teams[1].team.displayName):'';
         // QUOTE 1X2 (dagli odds dello scoreboard ESPN)
@@ -215,19 +350,59 @@ LIVE_JS = """<script>
         var q=(qq&&qq.h?'<p class="stt">Quote 1X2 (miglior prezzo finestra)</p><div class="q3"><span>1<b>'+qq.h+'</b></span><span>X<b>'+(qq.x||'–')+'</b></span><span>2<b>'+qq.a+'</b></span></div>':'');
         // FORMA ultime 5 (lastFiveGames ESPN)
         function forma(t){
-          var evs=(t.events||[]).slice(0,5);
+          var evs=(t.events||[]).slice(0,10);
           if(!evs.length)return '';
+          var tid=(t.team&&t.team.id)||null;
           var dot=evs.map(function(g){
             var r=g.gameResult||'';
             var c=r==='W'?'g':(r==='D'?'y':'r');
             return '<i class="'+c+'" title="'+(g.score||'')+' vs '+esc((g.opponent&&g.opponent.abbreviation)||'')+'">'+r+'</i>';
           }).join('');
-          return '<div class="frm"><b>'+esc((t.team&&t.team.abbreviation)||'')+'</b> '+dot+'</div>';
+          var bars=evs.map(function(g){
+            var gf=0;
+            try{ gf=(tid&&String(g.homeTeamId)===String(tid))?(parseInt(g.homeTeamScore)||0):(parseInt(g.awayTeamScore)||0); }catch(e){}
+            var r=g.gameResult||'';
+            var c=r==='W'?'#34d399':(r==='D'?'#fbbf24':'#f87171');
+            var h=Math.min(28,6+gf*6);
+            return '<i class="bar" title="gol fatti: '+gf+' ('+(g.score||'')+')" style="height:'+h+'px;background:'+c+'"></i>';
+          }).join('');
+          return '<div class="frm"><b>'+esc((t.team&&t.team.abbreviation)||'')+'</b> '+dot+'</div><div class="bars">'+bars+'</div>';
         }
         var lfg=j.lastFiveGames||[];
-        var fhtml=(lfg.length?'<p class="stt">Forma — ultime 5</p>'+lfg.map(forma).join(''):'<p class="sub">forma non disponibile</p>');
-        var html=q+fhtml+(goals.length?'<p class="stt">⚽ Marcatori</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
-          +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>':'<p class="sub">Partita non ancora iniziata: statistiche live durante la gara e a fine partita.</p>')
+        var fhtml=(lfg.length?'<p class="stt">Forma — ultime '+(lfg[0].events||[]).length+'</p>'+lfg.map(forma).join(''):'<p class="sub">forma non disponibile</p>');
+        // 🤝 H2H (kaggle)
+        var hk=norm(ev.h)+'|'+norm(ev.a);
+        var hh=H2H[hk]||H2H[norm(ev.a)+'|'+norm(ev.h)];
+        var h2hhtml='';
+        if(hh&&hh.length){
+          h2hhtml='<p class="stt">🤝 Ultimi H2H (kaggle)</p><table><tr><th>Data</th><th>Avversario</th><th>Ris</th><th>Esito</th></tr>';
+          hh.slice(0,5).forEach(function(g){
+            var es=g.w==='H'?'V':(g.w==='A'?'P':'N');
+            var c=g.w==='H'?'g':(g.w==='A'?'r':'y');
+            h2hhtml+='<tr><td>'+esc(g.d)+'</td><td>'+esc(g.vs)+'</td><td><b>'+esc(g.s)+'</b></td><td><i class="'+c+'" style="font-style:normal;width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#04101f">'+es+'</i></td></tr>';
+          });
+          h2hhtml+='</table>';
+        }
+        // ⚽ formazioni + titolari (ESPN rosters, gratis)
+        var lin='';
+        var ros=j.rosters||[];
+        if(ros.length===2){
+          function lineup(t){
+            var st=(t.roster||[]).filter(function(a){return a.starter;});
+            var h='<div class="lin"><b>'+esc((t.team.shortDisplayName||t.team.displayName||''))+'</b> <span class="fmt">'+esc(t.formation||'')+'</span><ul>';
+            st.forEach(function(a){
+              var nm=(a.athlete&&(a.athlete.shortName||a.athlete.displayName))||'';
+              h+='<li><i>'+esc(a.jersey||'')+'</i> '+esc(nm)+' <em>'+esc((a.position&&a.position.abbreviation)||'')+'</em></li>';
+            });
+            return h+'</ul></div>';
+          }
+          lin='<p class="stt">⚽ Formazioni</p><div class="lins">'+lineup(ros[0])+lineup(ros[1])+'</div>';
+        }
+        var html=q+fhtml+h2hhtml+lin+bars+(goals.length?'<p class="stt">🕐 Timeline (eventi recenti in cima)</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
+          +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>'
+            :(ev.live||/FULL|FINAL|POST/i.test(ev.status||'')
+              ?'<p class="sub">Statistiche live in aggiornamento — ESPN le pubblica a intervalli durante la gara e complete a fine partita.</p>'
+              :'<p class="sub">Partita non ancora iniziata: le statistiche escono dal fischio di inizio.</p>'))
           +'<p class="sub" style="font-size:11px">fonte dati: API pubblica ESPN — nessun reindirizzamento</p>';
         openDet[id]=html;
         d.innerHTML=html;
@@ -249,6 +424,20 @@ LIVE_JS = """<script>
     }
     return q;
   }
+  function evkey(e){
+    var dk=D.substr(0,4)+'-'+D.substr(4,2)+'-'+D.substr(6,2);
+    var h=norm(e.h), a=norm(e.a);
+    var q=EVMAP[dk+'|'+h+'|'+a];
+    if(!q && EVMAP[dk+'|'+a+'|'+h]){var s2=EVMAP[dk+'|'+a+'|'+h]; q={ev:s2.ev, pick:s2.pick==='1'?'2':(s2.pick==='2'?'1':s2.pick), prob:s2.prob, odds:s2.odds};}
+    if(!q){
+      var pre=dk+'|';
+      for(var k in EVMAP){ if(k.indexOf(pre)!==0) continue;
+        var p=k.slice(pre.length).split('|');
+        if((p[0].indexOf(h)>=0||h.indexOf(p[0])>=0)&&(p[1].indexOf(a)>=0||a.indexOf(p[1])>=0)){q=EVMAP[k];break;}
+      }
+    }
+    return q;
+  }
   function evOf(ev, lg){
     var c=ev.competitions[0];if(!c)return null;
     var cs=c.competitors||[];
@@ -265,7 +454,7 @@ LIVE_JS = """<script>
     });
     return {id:ev.id, lg:lg, h:h.team.displayName, a:a.team.displayName,
             hs:h.score||'0', as:a.score||'0', live:st.type.state==='in', status:st.type.name||'',
-            minute:st.displayClock||'', hhmm:(ev.date||'').substr(11,5), odds:od};
+            minute:st.displayClock||'', hhmm:new Date(ev.date||0).toLocaleTimeString('it-IT',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit'}), odds:od, ts:Date.parse(ev.date||'')};
   }
   function tick(){
     // scoreboard PER SLUG delle nostre leghe (l'endpoint 'all' non porta lo slug sull'evento)
@@ -298,6 +487,63 @@ LIVE_JS = """<script>
       var b=e.target.closest('.dbtn'); if(b) location.search='?d='+b.getAttribute('data-d');
     });
   }
+  // ---- barra filtri ----
+  var fbar=document.getElementById('fbar');
+  if(fbar){
+    fbar.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b)return;
+      if(b.getAttribute('data-f')){
+        var fv=b.getAttribute('data-f'); FILT.live=fv==='live'; FILT.ev=fv==='ev'; FILT.fav=fv==='fav';
+        fbar.querySelectorAll('button[data-f]').forEach(function(x){x.classList.toggle('on',x===b);});
+      }else{
+        FILT.mode=b.getAttribute('data-m');
+        fbar.querySelectorAll('button[data-m]').forEach(function(x){x.classList.toggle('on',x===b);});
+      }
+      render(window.__evs||[]);
+    });
+    var fq=document.getElementById('fq');
+    if(fq) fq.addEventListener('input',function(){FILT.q=fq.value; render(window.__evs||[]);});
+  }
+  // ---- classifica + capocannonieri per lega ----
+  window.__tl=function(el){
+    var slg=el.getAttribute('data-slg'); if(!slg)return;
+    var d=document.getElementById('lgd-'+slg);
+    if(OPENLG[slg]){OPENLG[slg]=false; render(window.__evs||[]); return;}
+    OPENLG[slg]=true; render(window.__evs||[]);
+    d=document.getElementById('lgd-'+slg); if(!d)return;
+    var yr=new Date().getFullYear();
+    var st=fetch('https://site.web.api.espn.com/apis/v2/sports/soccer/'+slg+'/standings?season='+yr)
+      .then(function(r){return r.json();}).catch(function(){return null;});
+    var ld=fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/'+slg+'/statistics?season='+yr)
+      .then(function(r){return r.json();}).catch(function(){return null;});
+    Promise.all([st,ld]).then(function(res){
+      var html='';
+      var s=res[0];
+      if(s&&s.children){
+        s.children.forEach(function(ch){
+          if(s.children.length>1) html+='<p class="stt">'+esc(ch.name||'Girone')+'</p>';
+          html+='<table><tr><th>#</th><th style="text-align:left">Squadra</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>Pt</th></tr>';
+          (ch.standings.entries||[]).forEach(function(en){
+            var m={}; (en.stats||[]).forEach(function(x){m[x.name]=x.displayValue!=null?x.displayValue:x.value;});
+            html+='<tr><td>'+esc(m.rank||'')+'</td><td>'+esc((en.team.shortDisplayName||en.team.displayName||''))+'</td><td>'+esc(m.gamesPlayed||'')+'</td><td>'+esc(m.wins||'')+'</td><td>'+esc(m.ties||'')+'</td><td>'+esc(m.losses||'')+'</td><td>'+esc(m.pointsFor||'')+'</td><td>'+esc(m.pointsAgainst||'')+'</td><td><b>'+esc(m.points||'')+'</b></td></tr>';
+          });
+          html+='</table>';
+        });
+      }
+      var l=res[1], goals=null;
+      if(l&&l.stats){ (l.stats||[]).forEach(function(c){ if(c.name==='goalsLeaders') goals=c; }); }
+      if(goals&&goals.leaders&&goals.leaders.length){
+        html+='<p class="stt">🥅 Capocannonieri</p><table><tr><th>#</th><th style="text-align:left">Giocatore</th><th>G</th><th>Partite</th></tr>';
+        goals.leaders.slice(0,5).forEach(function(g,i){
+          var dv=g.displayValue||''; var gm=(dv.match(/Matches:\s*(\d+)/)||[])[1]||''; var gg=(dv.match(/Goals:\s*(\d+)/)||[])[1]||g.displayValue;
+          html+='<tr><td>'+(i+1)+'</td><td>'+esc((g.athlete&&g.athlete.displayName)||'')+'</td><td><b>'+esc(gg)+'</b></td><td>'+esc(gm)+'</td></tr>';
+        });
+        html+='</table>';
+      }
+      d.innerHTML=html||'<p class="sub" style="padding:8px">Classifica non disponibile per questa lega.</p>';
+    });
+  };
+  window.__F=FILT; window.__R=render;
   tick();setInterval(tick,30000);
 })();
 </script>"""
@@ -363,7 +609,7 @@ nav a.on{{background:var(--acc);color:#fff}} nav a:hover{{background:#1e3a8a}}
 main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .lgh{{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;padding:12px 4px 4px;border-bottom:1px solid #1e293b;position:sticky;top:96px;background:var(--bg);z-index:3}}
 .ours{{color:#fbbf24}}
-.mrow{{display:grid;grid-template-columns:40px 1fr 56px 1fr 128px auto;gap:6px;align-items:center;padding:7px 8px;border-bottom:1px solid #16233d;cursor:pointer;border-radius:6px}}
+.mrow{{display:grid;grid-template-columns:20px 40px 1fr 56px 1fr 128px auto;gap:6px;align-items:center;padding:7px 8px;border-bottom:1px solid #16233d;cursor:pointer;border-radius:6px}}
 .mrow:hover{{background:#16233d}}
 .mrow.live{{background:#2a1215;border-left:3px solid var(--red)}}
 .tm{{color:var(--sub);font-size:12px;font-variant-numeric:tabular-nums}}
@@ -378,25 +624,57 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .frm{{display:flex;align-items:center;gap:5px;margin:3px 0;font-size:12px}}
 .frm i{{font-style:normal;width:16px;height:16px;border-radius:50%;font-size:9px;display:inline-flex;align-items:center;justify-content:center;color:#04101f;font-weight:700}}
 .frm i.g{{background:#34d399}}.frm i.y{{background:#fbbf24}}.frm i.r{{background:#f87171}}
+.bars{{display:flex;gap:3px;align-items:flex-end;height:30px;margin:2px 0 6px 26px}}
+.bars .bar{{display:block;width:10px;border-radius:2px 2px 0 0}}
+.bars2{{margin:4px 0 8px}}
+.bst{{display:flex;align-items:center;gap:8px;margin:3px 0;font-size:11px}}
+.bl{{width:76px;color:#8ea3c8;text-align:right}}
+.bt{{flex:1;display:flex;flex-direction:column;gap:2px}}
+.bt i{{display:block;height:6px;border-radius:3px}}
+.bh{{background:#3b82f6}} .ba{{background:#f59e0b}}
+.bv{{width:64px;color:#e2e8f0;font-size:10.5px}}
+.lins{{display:flex;gap:10px;flex-wrap:wrap}}
+.lin{{flex:1;min-width:180px;background:#0b1220;border:1px solid #16233d;border-radius:8px;padding:6px 8px}}
+.lin b{{font-size:12px}} .fmt{{color:#8ea3c8;font-size:11px;margin-left:6px}}
+.lin ul{{list-style:none;margin:6px 0 0;padding:0;columns:1}}
+.lin li{{font-size:11.5px;padding:1.5px 0;color:#cbd5e1}}
+.lin li i{{font-style:normal;color:#64748b;display:inline-block;width:18px}}
+.lin li em{{font-style:normal;color:#64748b;font-size:10px}}
 .stt{{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8ea3c8}}
 .badge{{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}}
 .b-live{{background:var(--red);color:#fff}} .b-ft{{background:#334155;color:#cbd5e1}} .b-pre{{background:#14532d;color:#86efac}}
 .dot{{display:inline-block;width:7px;height:7px;border-radius:50%;background:#fff;margin-right:4px;animation:blink 1s infinite}}
 @keyframes blink{{50%{{opacity:.25}}}}
 .det{{background:#0d1526;border:1px solid #1e293b;border-radius:8px;margin:2px 0 8px;padding:8px 10px;font-size:13px;color:var(--sub)}}
-.stt{{margin:4px 0;color:#93c5fd;font-weight:700}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid #16233d;text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
+.stt{{margin:4px 0;color:#93c5fd;font-weight:700}}
+#fbar{{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:7px 14px;background:#0d1526;border-bottom:1px solid #1e293b;position:sticky;top:96px;z-index:3}}
+#fbar button{{background:#16233d;color:var(--sub);border:1px solid #22345a;border-radius:14px;padding:4px 10px;font-size:12px;cursor:pointer}}
+#fbar button.on{{background:var(--red);color:#fff;border-color:var(--red)}}
+#fbar input{{background:#0f1a30;border:1px solid #22345a;color:#fff;border-radius:14px;padding:4px 10px;font-size:12px;width:150px}}
+.lgh{{display:flex;justify-content:space-between;align-items:center}}
+.lgc{{cursor:pointer}}
+.chev{{font-size:10.5px;color:#64748b;font-weight:400}}
+.lgdet{{background:#0d1526;border:1px solid #1e293b;border-radius:8px;margin:2px 8px 8px;padding:8px 10px;font-size:12px;color:var(--sub)}}
+.star{{color:#334155;cursor:pointer;font-size:13px;text-align:center}}
+.star.on{{color:#fbbf24}}
+.flag{{font-size:10px;background:#3b2f0b;color:#fbbf24;border-radius:8px;padding:2px 5px;margin-left:4px;white-space:nowrap}}
+.badge small{{color:#64748b;font-size:9.5px}}
+.b-pre{{line-height:1.1}}
+.tm small{{color:#64748b;font-size:9.5px}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid #16233d;text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
 ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
 </style></head><body>
-<header><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
+<header><a href="index.html" style="color:#93c5fd;text-decoration:none;margin-right:8px">‹ Indietro</a><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
 {daybar_html(today)}
+<div id="fbar"><button data-f="all" class="on">Tutte</button><button data-f="live">🔴 LIVE</button><button data-f="ev">🚩 EV&gt;0</button><button data-f="fav">⭐ mie</button><input id="fq" type="search" placeholder="cerca squadra o lega…"><button data-m="lega" class="on">per lega</button><button data-m="orario">per orario</button></div>
+<span id="sub" class="sub" style="display:block;padding:4px 14px"></span>
 <nav>
-<a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
+<a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="schedina.html">🧾 Schedina</a><a href="bankroll.html">💰 Bankroll</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
 </nav>
 <main id="lg-list">
 {rows_html(evs)}
 </main>
 <p style="text-align:center;color:#475569;font-size:12px;padding:14px">⚠️ Solo analisi, mai certezze · 18+ · ADM · autoesclusione.it · 800 558822</p>
-</body>{LIVE_JS.replace('__DATE__', ds).replace('__SLUG2NAME__', json.dumps(SLUGS, ensure_ascii=False)).replace('__QMAP__', json.dumps(build_qmap(), ensure_ascii=False))}{footer("")}</html>"""
+</body>{LIVE_JS.replace('__DATE__', ds).replace('__SLUG2NAME__', json.dumps(SLUGS, ensure_ascii=False)).replace('__QMAP__', json.dumps(build_qmap(), ensure_ascii=False)).replace('__EVMAP__', json.dumps(build_evmap(), ensure_ascii=False)).replace('__H2H__', json.dumps(build_h2hmap(), ensure_ascii=False))}{footer("")}</html>"""
     SITE.mkdir(exist_ok=True)
     (SITE / "diretta.html").write_text(page, encoding="utf-8")
     print(f"🔴 site/diretta.html: {len(evs)} partite ({live_n} live) — {a.date}")

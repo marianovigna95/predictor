@@ -95,12 +95,168 @@ def digest(a):
     send_channel("\n".join(lines))
 
 
+def _norm(t):
+    import re, unicodedata
+    t = unicodedata.normalize("NFKD", str(t))
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", " ", t.lower())).strip()
+
+
+def alert_live(date_str):
+    """🔴 Avvisa (chat privata) quando una partita con pronostico EV>0 entra in LIVE oggi."""
+    import json
+    try:
+        fc = pd.read_csv(DATA / "forecast_multi.csv", dtype=str).fillna("")
+    except Exception as e:
+        print(f"alert_live forecast: {e}")
+        return
+    today_dm = f"{date_str[8:10]}/{date_str[5:7]}"
+    cand = []
+    for _, r in fc.iterrows():
+        if not str(r.get("orario", "")).startswith(today_dm):
+            continue
+        pick = str(r.get("pronostico", "")).strip()
+        pcol = {"1": "p1%", "X": "pX%", "2": "p2%"}.get(pick)
+        if not pcol or not r.get(pcol) or not r.get("quota_best") or " - " not in r.get("partita", ""):
+            continue
+        p = float(r[pcol]) / 100.0
+        O = float(r["quota_best"])
+        ev = p * (O - 1) - (1 - p)
+        if ev > 0:
+            h, a = r["partita"].split(" - ", 1)
+            cand.append({"h": _norm(h), "a": _norm(a), "partita": r["partita"],
+                         "pick": pick, "ev": round(ev * 100, 1), "odds": r["quota_best"],
+                         "lega": r.get("lega", ""), "ora": str(r.get("orario", ""))[-5:]})
+    # ⭐ squadre preferite (file fav_teams.txt a root repo, un nome per riga)
+    fav = set()
+    ff = ROOT / "fav_teams.txt"
+    if ff.exists():
+        fav = {_norm(x) for x in ff.read_text(encoding="utf-8").splitlines() if x.strip()}
+    if fav:
+        for _, r in fc.iterrows():
+            if not str(r.get("orario", "")).startswith(today_dm) or " - " not in r.get("partita", ""):
+                continue
+            h, a = r["partita"].split(" - ", 1)
+            hn, an = _norm(h), _norm(a)
+            if hn in fav or an in fav:
+                if not any(c["h"] == hn and c["a"] == an for c in cand):
+                    cand.append({"h": hn, "a": an, "partita": r["partita"], "pick": "⭐", "ev": 0,
+                                 "odds": "", "lega": r.get("lega", ""), "ora": str(r.get("orario", ""))[-5:], "fav": True})
+    if not cand:
+        print(f"alert_live: nessuna partita EV>0/⭐ oggi ({date_str})")
+        return
+    ds = date_str.replace("-", "")
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?dates={ds}"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    j = json.load(urllib.request.urlopen(req, timeout=30))
+    live = []
+    for ev_ in j.get("events", []):
+        c = (ev_.get("competitions") or [{}])[0]
+        st = (c.get("status") or {}).get("type") or {}
+        if st.get("state") != "in":
+            continue
+        cs = c.get("competitors") or []
+        h = next((x for x in cs if x.get("homeAway") == "home"), cs[0] if cs else {})
+        a = next((x for x in cs if x.get("homeAway") == "away"), cs[1] if len(cs) > 1 else {})
+        hn, an = _norm(h.get("team", {}).get("displayName", "")), _norm(a.get("team", {}).get("displayName", ""))
+        for cd in cand:
+            if (cd["h"] == hn and cd["a"] == an) or (cd["h"] == an and cd["a"] == hn):
+                live.append((ev_["id"], cd, st.get("name", ""), c.get("status", {}).get("displayClock", "")))
+    if not live:
+        print(f"alert_live: nessuna delle EV>0 in live ora ({date_str})")
+        return
+    sent_file = DATA / f"live_alerted_{date_str}.txt"
+    done = set(sent_file.read_text().split()) if sent_file.exists() else set()
+    for eid, cd, stname, clk in live:
+        if eid in done:
+            continue
+        if cd.get("fav"):
+            txt = (f"🔴 <b>LIVE ora</b> — {cd['partita']} ({cd['lega']}, ore {cd['ora']}) ⭐ la tua squadra\n"
+                   f"minuto {clk} · fonte ESPN\n{FOOTER}")
+        else:
+            txt = (f"🔴 <b>LIVE ora</b> — {cd['partita']} ({cd['lega']}, ore {cd['ora']})\n"
+                   f"🚩 Pronostico EV+{cd['ev']}%: <b>{cd['pick']} @ {cd['odds']}</b>\n"
+                   f"minuto {clk} · fonte ESPN\n{FOOTER}")
+        if send_alert(txt):
+            done.add(eid)
+            sent_file.write_text(" ".join(sorted(done)))
+            print(f"alert_live inviato: {cd['partita']} ({eid})")
+
+
+def alert_clv(date_str, drop_pct=5.0):
+    """📉 Avvisa (chat privata) se la quota ADM di una giocata EV>0 di oggi è calata
+    di oltre drop_pct% rispetto alla quota registrata nella schedina (giocata_multi.csv)."""
+    import glob
+    try:
+        gj = pd.read_csv(DATA / "giocata_multi.csv", dtype=str).fillna("")
+        gj = gj[gj["data"] == date_str]
+    except Exception as e:
+        print(f"alert_clv giocata: {e}")
+        return
+    if not len(gj):
+        return
+    files = sorted(glob.glob(str(DATA / "odds_window_*_bestprice.csv")))
+    if not files:
+        return
+    od = pd.read_csv(files[-1], dtype=str).fillna("")
+    od = od[od["data"] == date_str]
+    if not len(od):
+        return
+    sent_file = DATA / f"clv_alerted_{date_str}.txt"
+    done = set(sent_file.read_text().split()) if sent_file.exists() else set()
+    for _, g in gj.iterrows():
+        key = (g.get("partita", "") or "").strip().lower()
+        if not key or key in done:
+            continue
+        try:
+            ev0 = float(g.get("EV%") or 0)
+        except Exception:
+            ev0 = 0.0
+        if ev0 <= 2:  # solo giocate con stake (EV>+2%)
+            continue
+        try:
+            q0 = float(g.get("quota_best") or 0)
+        except Exception:
+            continue
+        # stessa partita nel best-price attuale
+        m = od[od["partita"].str.lower().str.strip() == key]
+        if not len(m):
+            continue
+        r = m.iloc[0]
+        pick = str(g.get("mercato", "")).strip()
+        col = {"1": "best_1", "X": "best_X", "2": "best_2", "Over 2.5": "best_O25", "Under 2.5": "best_U25",
+               "GG": "best_GG", "NG": "best_NG"}.get(pick)
+        if not col or not r.get(col):
+            continue
+        q1 = float(r[col])
+        if q0 > 0 and q1 < q0 * (1 - drop_pct / 100.0):
+            txt = (f"📉 <b>Quota in calo</b> — {g.get('partita','')}\n"
+                   f"mercato {pick}: schedina {q0:.2f} → ora {q1:.2f} (-{100*(q0-q1)/q0:.1f}%)\n"
+                   f"EV era +{ev0:.1f}% · controlla CLV prima di puntare (ADM)\n{FOOTER}")
+            if send_alert(txt):
+                done.add(key)
+                sent_file.write_text(" ".join(sorted(done)))
+                print(f"alert_clv inviato: {g.get('partita')} {pick} {q0}->{q1}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--min", type=float, default=1.0, help="soglia margine %")
     ap.add_argument("--date", default=datetime.date.today().isoformat())
     ap.add_argument("--digest", action="store_true", help="forza invio digest")
     a = ap.parse_args()
+
+    # 🔴 alert LIVE per partite con pronostico EV>0 (chat privata)
+    try:
+        alert_live(a.date)
+    except Exception as e:
+        print(f"alert_live: {e}")
+
+    # 📉 alert CLV: quota giocata EV>+2% scesa >5% (chat privata)
+    try:
+        alert_clv(a.date)
+    except Exception as e:
+        print(f"alert_clv: {e}")
 
     # ⚖️ alert surebet (chat privata)
     try:
