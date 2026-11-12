@@ -4,7 +4,9 @@ name: daily-predictor
 on:
   schedule:
     - cron: "30 6 * * *"    # 07:30 IT — refresh quote + forecast + pagine
-    - cron: "30 20 * * *"   # 21:30 IT — verifica esiti + CLV + surebets + alert
+    - cron: "30 12 * * *"   # 🆕 11/11 13:30 IT — refresh quote finestra (sosta FIFA: più update diurni)
+    - cron: "30 18 * * *"   # 🆕 11/11 19:30 IT — refresh pre-sera (partite 20:30-21:00)
+    - cron: "0 22 * * *"    # 🆕 11/11 23:00 IT — verifica esiti (partite 20:30-21:00 finite ~22:45) + CLV + surebets + alert
   workflow_dispatch:
 permissions:
   contents: write
