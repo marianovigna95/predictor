@@ -337,12 +337,21 @@ LIVE_JS = """<script>
         function forma(t){
           var evs=(t.events||[]).slice(0,10);
           if(!evs.length)return '';
+          var tid=(t.team&&t.team.id)||null;
           var dot=evs.map(function(g){
             var r=g.gameResult||'';
             var c=r==='W'?'g':(r==='D'?'y':'r');
             return '<i class="'+c+'" title="'+(g.score||'')+' vs '+esc((g.opponent&&g.opponent.abbreviation)||'')+'">'+r+'</i>';
           }).join('');
-          return '<div class="frm"><b>'+esc((t.team&&t.team.abbreviation)||'')+'</b> '+dot+'</div>';
+          var bars=evs.map(function(g){
+            var gf=0;
+            try{ gf=(tid&&String(g.homeTeamId)===String(tid))?(parseInt(g.homeTeamScore)||0):(parseInt(g.awayTeamScore)||0); }catch(e){}
+            var r=g.gameResult||'';
+            var c=r==='W'?'#34d399':(r==='D'?'#fbbf24':'#f87171');
+            var h=Math.min(28,6+gf*6);
+            return '<i class="bar" title="gol fatti: '+gf+' ('+(g.score||'')+')" style="height:'+h+'px;background:'+c+'"></i>';
+          }).join('');
+          return '<div class="frm"><b>'+esc((t.team&&t.team.abbreviation)||'')+'</b> '+dot+'</div><div class="bars">'+bars+'</div>';
         }
         var lfg=j.lastFiveGames||[];
         var fhtml=(lfg.length?'<p class="stt">Forma — ultime '+(lfg[0].events||[]).length+'</p>'+lfg.map(forma).join(''):'<p class="sub">forma non disponibile</p>');
@@ -585,6 +594,8 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .frm{{display:flex;align-items:center;gap:5px;margin:3px 0;font-size:12px}}
 .frm i{{font-style:normal;width:16px;height:16px;border-radius:50%;font-size:9px;display:inline-flex;align-items:center;justify-content:center;color:#04101f;font-weight:700}}
 .frm i.g{{background:#34d399}}.frm i.y{{background:#fbbf24}}.frm i.r{{background:#f87171}}
+.bars{{display:flex;gap:3px;align-items:flex-end;height:30px;margin:2px 0 6px 26px}}
+.bars .bar{{display:block;width:10px;border-radius:2px 2px 0 0}}
 .stt{{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8ea3c8}}
 .badge{{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}}
 .b-live{{background:var(--red);color:#fff}} .b-ft{{background:#334155;color:#cbd5e1}} .b-pre{{background:#14532d;color:#86efac}}
@@ -613,7 +624,7 @@ ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
 <div id="fbar"><button data-f="all" class="on">Tutte</button><button data-f="live">🔴 LIVE</button><button data-f="ev">🚩 EV&gt;0</button><button data-f="fav">⭐ mie</button><input id="fq" type="search" placeholder="cerca squadra o lega…"><button data-m="lega" class="on">per lega</button><button data-m="orario">per orario</button></div>
 <span id="sub" class="sub" style="display:block;padding:4px 14px"></span>
 <nav>
-<a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
+<a href="index.html">Home</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="altre-leghe.html">Altre leghe</a><a href="giocata_multi.html">Giocate</a><a href="schedina.html">🧾 Schedina</a><a href="bankroll.html">💰 Bankroll</a><a href="quote_giornata10.html">Quote</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a><a class="on" href="diretta.html">🔴 Diretta</a>
 </nav>
 <main id="lg-list">
 {rows_html(evs)}

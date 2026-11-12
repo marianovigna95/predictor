@@ -164,6 +164,62 @@ def alert_live(date_str):
             print(f"alert_live inviato: {cd['partita']} ({eid})")
 
 
+def alert_clv(date_str, drop_pct=5.0):
+    """📉 Avvisa (chat privata) se la quota ADM di una giocata EV>0 di oggi è calata
+    di oltre drop_pct% rispetto alla quota registrata nella schedina (giocata_multi.csv)."""
+    import glob
+    try:
+        gj = pd.read_csv(DATA / "giocata_multi.csv", dtype=str).fillna("")
+        gj = gj[gj["data"] == date_str]
+    except Exception as e:
+        print(f"alert_clv giocata: {e}")
+        return
+    if not len(gj):
+        return
+    files = sorted(glob.glob(str(DATA / "odds_window_*_bestprice.csv")))
+    if not files:
+        return
+    od = pd.read_csv(files[-1], dtype=str).fillna("")
+    od = od[od["data"] == date_str]
+    if not len(od):
+        return
+    sent_file = DATA / f"clv_alerted_{date_str}.txt"
+    done = set(sent_file.read_text().split()) if sent_file.exists() else set()
+    for _, g in gj.iterrows():
+        key = (g.get("partita", "") or "").strip().lower()
+        if not key or key in done:
+            continue
+        try:
+            ev0 = float(g.get("EV%") or 0)
+        except Exception:
+            ev0 = 0.0
+        if ev0 <= 2:  # solo giocate con stake (EV>+2%)
+            continue
+        try:
+            q0 = float(g.get("quota_best") or 0)
+        except Exception:
+            continue
+        # stessa partita nel best-price attuale
+        m = od[od["partita"].str.lower().str.strip() == key]
+        if not len(m):
+            continue
+        r = m.iloc[0]
+        pick = str(g.get("mercato", "")).strip()
+        col = {"1": "best_1", "X": "best_X", "2": "best_2", "Over 2.5": "best_O25", "Under 2.5": "best_U25",
+               "GG": "best_GG", "NG": "best_NG"}.get(pick)
+        if not col or not r.get(col):
+            continue
+        q1 = float(r[col])
+        if q0 > 0 and q1 < q0 * (1 - drop_pct / 100.0):
+            txt = (f"📉 <b>Quota in calo</b> — {g.get('partita','')}\n"
+                   f"mercato {pick}: schedina {q0:.2f} → ora {q1:.2f} (-{100*(q0-q1)/q0:.1f}%)\n"
+                   f"EV era +{ev0:.1f}% · controlla CLV prima di puntare (ADM)\n{FOOTER}")
+            if send_alert(txt):
+                done.add(key)
+                sent_file.write_text(" ".join(sorted(done)))
+                print(f"alert_clv inviato: {g.get('partita')} {pick} {q0}->{q1}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--min", type=float, default=1.0, help="soglia margine %")
@@ -176,6 +232,12 @@ def main():
         alert_live(a.date)
     except Exception as e:
         print(f"alert_live: {e}")
+
+    # 📉 alert CLV: quota giocata EV>+2% scesa >5% (chat privata)
+    try:
+        alert_clv(a.date)
+    except Exception as e:
+        print(f"alert_clv: {e}")
 
     # ⚖️ alert surebet (chat privata)
     try:
