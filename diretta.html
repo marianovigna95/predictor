@@ -39,6 +39,13 @@ main{max-width:860px;margin:0 auto;padding:10px 12px}
 .bt i{display:block;height:6px;border-radius:3px}
 .bh{background:#3b82f6} .ba{background:#f59e0b}
 .bv{width:64px;color:#e2e8f0;font-size:10.5px}
+.lins{display:flex;gap:10px;flex-wrap:wrap}
+.lin{flex:1;min-width:180px;background:#0b1220;border:1px solid #16233d;border-radius:8px;padding:6px 8px}
+.lin b{font-size:12px} .fmt{color:#8ea3c8;font-size:11px;margin-left:6px}
+.lin ul{list-style:none;margin:6px 0 0;padding:0;columns:1}
+.lin li{font-size:11.5px;padding:1.5px 0;color:#cbd5e1}
+.lin li i{font-style:normal;color:#64748b;display:inline-block;width:18px}
+.lin li em{font-style:normal;color:#64748b;font-size:10px}
 .stt{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8ea3c8}
 .badge{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}
 .b-live{background:var(--red);color:#fff} .b-ft{background:#334155;color:#cbd5e1} .b-pre{background:#14532d;color:#86efac}
@@ -71,7 +78,7 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
 </nav>
 <main id="lg-list">
 <div class="lgh">Amichevoli <span class="ours">★</span></div>
-<div class="mrow live" data-eid="401931296"><span class="tm">18:30</span><span class="h">Malta</span><span class="sc">1 - 1</span><span class="a">Eswatini</span><span class="badge b-live"><i class="dot"></i>LIVE 81&#x27;</span></div>
+<div class="mrow live" data-eid="401931296"><span class="tm">18:30</span><span class="h">Malta</span><span class="sc">1 - 1</span><span class="a">Eswatini</span><span class="badge b-live"><i class="dot"></i>LIVE 85&#x27;</span></div>
 <div class="mrow ft" data-eid="401906458"><span class="tm">07:00</span><span class="h">New Zealand</span><span class="sc">5 - 0</span><span class="a">India</span><span class="badge b-ft">FT</span></div>
 <div class="mrow ft" data-eid="401930962"><span class="tm">16:00</span><span class="h">Uzbekistan</span><span class="sc">2 - 3</span><span class="a">Russia</span><span class="badge b-ft">FT</span></div>
 <div class="mrow ft" data-eid="401933115"><span class="tm">18:00</span><span class="h">Lithuania</span><span class="sc">0 - 0</span><span class="a">Suriname</span><span class="badge b-ft">FT</span></div>
@@ -242,7 +249,22 @@ ul.ev{margin:4px 0;padding-left:18px} ul.ev li{margin-bottom:2px}
           });
           h2hhtml+='</table>';
         }
-        var html=q+fhtml+h2hhtml+bars+(goals.length?'<p class="stt">🕐 Timeline (eventi recenti in cima)</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
+        // ⚽ formazioni + titolari (ESPN rosters, gratis)
+        var lin='';
+        var ros=j.rosters||[];
+        if(ros.length===2){
+          function lineup(t){
+            var st=(t.roster||[]).filter(function(a){return a.starter;});
+            var h='<div class="lin"><b>'+esc((t.team.shortDisplayName||t.team.displayName||''))+'</b> <span class="fmt">'+esc(t.formation||'')+'</span><ul>';
+            st.forEach(function(a){
+              var nm=(a.athlete&&(a.athlete.shortName||a.athlete.displayName))||'';
+              h+='<li><i>'+esc(a.jersey||'')+'</i> '+esc(nm)+' <em>'+esc((a.position&&a.position.abbreviation)||'')+'</em></li>';
+            });
+            return h+'</ul></div>';
+          }
+          lin='<p class="stt">⚽ Formazioni</p><div class="lins">'+lineup(ros[0])+lineup(ros[1])+'</div>';
+        }
+        var html=q+fhtml+h2hhtml+lin+bars+(goals.length?'<p class="stt">🕐 Timeline (eventi recenti in cima)</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
           +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>'
             :(ev.live||/FULL|FINAL|POST/i.test(ev.status||'')
               ?'<p class="sub">Statistiche live in aggiornamento — ESPN le pubblica a intervalli durante la gara e complete a fine partita.</p>'
