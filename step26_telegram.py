@@ -127,8 +127,23 @@ def alert_live(date_str):
             cand.append({"h": _norm(h), "a": _norm(a), "partita": r["partita"],
                          "pick": pick, "ev": round(ev * 100, 1), "odds": r["quota_best"],
                          "lega": r.get("lega", ""), "ora": str(r.get("orario", ""))[-5:]})
+    # ⭐ squadre preferite (file fav_teams.txt a root repo, un nome per riga)
+    fav = set()
+    ff = ROOT / "fav_teams.txt"
+    if ff.exists():
+        fav = {_norm(x) for x in ff.read_text(encoding="utf-8").splitlines() if x.strip()}
+    if fav:
+        for _, r in fc.iterrows():
+            if not str(r.get("orario", "")).startswith(today_dm) or " - " not in r.get("partita", ""):
+                continue
+            h, a = r["partita"].split(" - ", 1)
+            hn, an = _norm(h), _norm(a)
+            if hn in fav or an in fav:
+                if not any(c["h"] == hn and c["a"] == an for c in cand):
+                    cand.append({"h": hn, "a": an, "partita": r["partita"], "pick": "⭐", "ev": 0,
+                                 "odds": "", "lega": r.get("lega", ""), "ora": str(r.get("orario", ""))[-5:], "fav": True})
     if not cand:
-        print(f"alert_live: nessuna partita EV>0 oggi ({date_str})")
+        print(f"alert_live: nessuna partita EV>0/⭐ oggi ({date_str})")
         return
     ds = date_str.replace("-", "")
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?dates={ds}"
@@ -155,9 +170,13 @@ def alert_live(date_str):
     for eid, cd, stname, clk in live:
         if eid in done:
             continue
-        txt = (f"🔴 <b>LIVE ora</b> — {cd['partita']} ({cd['lega']}, ore {cd['ora']})\n"
-               f"🚩 Pronostico EV+{cd['ev']}%: <b>{cd['pick']} @ {cd['odds']}</b>\n"
-               f"minuto {clk} · fonte ESPN\n{FOOTER}")
+        if cd.get("fav"):
+            txt = (f"🔴 <b>LIVE ora</b> — {cd['partita']} ({cd['lega']}, ore {cd['ora']}) ⭐ la tua squadra\n"
+                   f"minuto {clk} · fonte ESPN\n{FOOTER}")
+        else:
+            txt = (f"🔴 <b>LIVE ora</b> — {cd['partita']} ({cd['lega']}, ore {cd['ora']})\n"
+                   f"🚩 Pronostico EV+{cd['ev']}%: <b>{cd['pick']} @ {cd['odds']}</b>\n"
+                   f"minuto {clk} · fonte ESPN\n{FOOTER}")
         if send_alert(txt):
             done.add(eid)
             sent_file.write_text(" ".join(sorted(done)))
