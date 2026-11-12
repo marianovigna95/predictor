@@ -207,12 +207,12 @@ LIVE_JS = """<script>
     var fl=(e.ev&&e.ev.ev>0)?'<span class="flag" title="Pronostico EV+'+e.ev.ev+'% — '+esc(e.ev.pick)+' @ '+esc(e.ev.odds)+' (p '+esc(e.ev.prob)+'%)">🚩'+e.ev.ev+'%</span>':'';
     if(e.live)return '<span class="badge b-live"><i class="dot"></i>LIVE '+esc(e.minute||'')+'</span>'+fl;
     if(tn.indexOf('FULL')>=0||tn.indexOf('FINAL')>=0)return '<span class="badge b-ft">FT</span>'+fl;
-    return '<span class="badge b-pre">'+esc(e.hhmm||'')+' <small>'+cd(e)+'</small></span>'+fl;
+    return fl||'<span class="badge b-pre">·</span>';
   }
   function row(e){
     var cls=e.live?'mrow live':((''+e.status).toUpperCase().indexOf('FULL')>=0?'mrow ft':'mrow');
     return '<div class="'+cls+'" data-eid="'+e.id+'" onclick="window.__tg(this)">'
-      +'<span class="tm">'+esc(e.hhmm||'')+'</span>'
+      +'<span class="tm">'+esc(e.hhmm||'')+(cd(e)?' <small>'+cd(e)+'</small>':'')+'</span>'
       +'<span class="h">'+esc(e.h)+'</span>'
       +'<span class="sc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
       +'<span class="a">'+esc(e.a)+'</span>'
@@ -527,7 +527,8 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .lgdet{{background:#0d1526;border:1px solid #1e293b;border-radius:8px;margin:2px 8px 8px;padding:8px 10px;font-size:12px;color:var(--sub)}}
 .flag{{font-size:10px;background:#3b2f0b;color:#fbbf24;border-radius:8px;padding:2px 5px;margin-left:4px;white-space:nowrap}}
 .badge small{{color:#64748b;font-size:9.5px}}
-.b-pre{{line-height:1.1}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid #16233d;text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
+.b-pre{{line-height:1.1}}
+.tm small{{color:#64748b;font-size:9.5px}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid #16233d;text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
 ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
 </style></head><body>
 <header><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
