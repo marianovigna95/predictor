@@ -45,6 +45,27 @@ def _send(chat, text):
     return True
 
 
+def _send_file(chat, path, caption=""):
+    """📎 Invia un file (PDF) via Bot API sendDocument (multipart)."""
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN")
+    if not tok or not chat or not os.path.exists(path):
+        print(f"⚠️ send_file saltato: token/chat/file mancanti ({path})")
+        return False
+    import uuid
+    boundary = "----" + uuid.uuid4().hex
+    with open(path, "rb") as f:
+        payload = f.read()
+    body = ((f"--{boundary}\r\nContent-Disposition: form-data; name=\"chat_id\"\r\n\r\n{chat}\r\n"
+             f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n{caption}\r\n"
+             f"--{boundary}\r\nContent-Disposition: form-data; name=\"document\"; filename=\"{os.path.basename(path)}\"\r\n"
+             f"Content-Type: application/pdf\r\n\r\n").encode() + payload + f"\r\n--{boundary}--\r\n".encode())
+    req = urllib.request.Request(f"https://api.telegram.org/bot{tok}/sendDocument", data=body,
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}", "User-Agent": "Mozilla/5.0"})
+    urllib.request.urlopen(req, timeout=60).read()
+    print(f"📎 Telegram file inviato a {chat}: {os.path.basename(path)}")
+    return True
+
+
 def send_alert(text):
     return _send(os.environ.get("TELEGRAM_CHAT_ID"), text)
 
@@ -93,6 +114,16 @@ def digest(a):
     lines.append("\n🌐 " + "https://marianovigna95.github.io/predictor/")
     lines.append(FOOTER)
     send_channel("\n".join(lines))
+    # 📎 allega PDF schedina del giorno se esiste
+    pdf = ROOT / "site" / f"schedina_{a.date}.pdf"
+    if not pdf.exists():
+        pdf = SITE_FALLBACK / f"schedina_{a.date}.pdf" if (SITE_FALLBACK := ROOT / "site").exists() else pdf
+    if pdf.exists():
+        try:
+            _send_file(os.environ.get("TELEGRAM_CHANNEL_ID") or os.environ.get("TELEGRAM_CHAT_ID"),
+                       str(pdf), f"🧾 Schedina {a.date} (EV>+2%, ¼ Kelly) — solo analisi · 18+ ADM")
+        except Exception as e:
+            print(f"send_file schedina: {e}")
 
 
 def _norm(t):

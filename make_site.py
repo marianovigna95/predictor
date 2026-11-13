@@ -216,6 +216,29 @@ def scoreboard_rows():
         return list(csv.DictReader(f))
 
 
+def perf_chart(rows):
+    """📈 SVG cumulativo: acc% modello e RPS modello per giornata (da scoreboard.csv)."""
+    pts_acc, pts_rps = [], []
+    for r in rows:
+        try:
+            if r.get("acc%"): pts_acc.append(float(r["acc%"]))
+            if r.get("RPS modello"): pts_rps.append(float(r["RPS modello"]))
+        except Exception:
+            pass
+    def svg(pts, color, lab, ref50=False):
+        if not pts:
+            return ""
+        w, h = 560, 110
+        mn, mx = min(pts + ([50] if ref50 else [])), max(pts + ([50] if ref50 else []))
+        rng = (mx - mn) or 1
+        step = w / (len(pts) - 1) if len(pts) > 1 else w
+        d = " ".join(f"{'M' if i==0 else 'L'}{(i*step):.1f},{(h-8-((v-mn)/rng)*(h-16)):.1f}" for i, v in enumerate(pts))
+        line50 = f'<line x1="0" y1="{h-8-((50-mn)/rng)*(h-16):.1f}" x2="{w}" y2="{h-8-((50-mn)/rng)*(h-16):.1f}" stroke="#334155" stroke-dasharray="3 3"/><text x="4" y="12" fill="#64748b" font-size="10">50%</text>' if ref50 else ""
+        return (f'<svg viewBox="0 0 {w} {h}" style="width:100%;max-width:560px" role="img" aria-label="{lab}">{line50}'
+                f'<path d="{d}" fill="none" stroke="{color}" stroke-width="2"/></svg><p class="sub" style="margin:2px 0 10px">{lab}</p>')
+    return svg(pts_acc, "#34d399", "📈 Accuratezza modello per giornata (%) — linea tratteggiata = 50%", True) + svg(pts_rps, "#38bdf8", "📉 RPS modello per giornata (più basso = meglio)")
+
+
 def bestprice_files():
     return sorted(glob.glob(os.path.join(DATA, "odds_giornata*_bestprice.csv")), key=gj_num)
 
@@ -474,7 +497,7 @@ function exportArchivio(){{
   a.download='archivio_scoreboard.csv'; a.click();
 }}
 </script>
-{vcard}"""
+{perf_chart(rows)}{vcard}"""
     html = page("Archivio", '🗂 <span class="g">Archivio</span>',
                 "Scoreboard pubblico e tutto ciò che viene archiviato man mano: report, quote best-price e giocate delle giornate chiuse. Stime con incertezza, mai certezze.",
                 body, active="archivio")

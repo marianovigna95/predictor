@@ -16,5 +16,51 @@
    "sizes": "512x512",
    "type": "image/png"
   }
+ ],
+ "shortcuts": [
+  {
+   "name": "🔴 Diretta live",
+   "short_name": "Diretta",
+   "url": "diretta.html",
+   "icons": [
+    {
+     "src": "icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "🧾 Schedina del giorno",
+   "short_name": "Schedina",
+   "url": "schedina.html",
+   "icons": [
+    {
+     "src": "icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "🔎 Cerca squadra",
+   "short_name": "Squadra",
+   "url": "squadra.html",
+   "icons": [
+    {
+     "src": "icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "💰 Bankroll",
+   "short_name": "Bankroll",
+   "url": "bankroll.html",
+   "icons": [
+    {
+     "src": "icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
  ]
 }

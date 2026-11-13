@@ -269,7 +269,7 @@ LIVE_JS = """<script>
   function row(e){
     var cls=e.live?'mrow live':((''+e.status).toUpperCase().indexOf('FULL')>=0?'mrow ft':'mrow');
     return '<div class="'+cls+'" data-eid="'+e.id+'" onclick="window.__tg(this)">'
-      +'<span class="star'+(isFav(e.h)||isFav(e.a)?' on':'')+'" data-h="'+esc(e.h)+'" data-a="'+esc(e.a)+'" onclick="event.stopPropagation();window.__fav(this)">★</span>'
+      +'<span class="star'+(isFav(e.h)||isFav(e.a)?' on':'')+'" data-h="'+esc(e.h)+'" data-a="'+esc(e.a)+'" onclick="event.stopPropagation();window.__fav(this)" aria-label="preferito">★</span>'
       +'<span class="tm">'+esc(e.hhmm||'')+(cd(e)?' <small>'+cd(e)+'</small>':'')+'</span>'
       +'<span class="h"><img class="lg" loading="lazy" src="'+e.hl+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.h)+'</span>'
       +'<span class="sc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
@@ -514,9 +514,23 @@ function matchQ(q,nn){var nq=norm(q);if(!nq)return false;if(nn.indexOf(nq)>=0||n
         .catch(function(){return [];});
     })).then(function(groups){
       var evs=[]; groups.forEach(function(g){evs=evs.concat(g);});
+      if(!evs.length){ tryFix(); return; }   // 🚨 ESPN giù → fallback calendario nostro
       evs.sort(function(x,y){if(x.live!==y.live)return x.live?-1:1; if(x.lg!==y.lg)return x.lg<x.lg?-1:1; return (x.hhmm<x.hhmm?-1:1);});
       render(evs);
     });
+  }
+  var FIX=null;
+  function tryFix(){
+    fetch('fixtures.json').then(function(r){return r.json();}).then(function(fx){
+      FIX=fx;
+      var dk=D.substr(0,4)+'-'+D.substr(4,2)+'-'+D.substr(6,2);
+      var evs=fx.filter(function(f){return f[0]===dk;}).map(function(f,i){
+        return {id:'fix-'+i, lg:f[4]||'Altro', h:f[2], a:f[3], hid:'', aid:'', hl:'', al:'',
+                hs:'', as:'', live:false, status:'', minute:'', hhmm:'', odds:null, ts:Date.parse(f[0]+'T12:00:00Z')};
+      });
+      render(evs);
+      if(sub)sub.textContent='⚠️ ESPN non risponde — calendario da fixtures.json (aggiorna tra 30s) · '+evs.length+' partite';
+    }).catch(function(){render([]);});
   }
   // barra date: oggi-2 … oggi+7 (click delegato, niente onclick inline)
   function dstr(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
@@ -610,6 +624,13 @@ function matchQ(q,nn){var nq=norm(q);if(!nq)return false;if(nn.indexOf(nq)>=0||n
   function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);th.textContent=t==='light'?'🌙':'☀️';}
   setTheme(localStorage.getItem('theme')||'dark');
   if(th)th.addEventListener('click',function(){setTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');});
+  var fz=document.getElementById('fsz');
+  if(localStorage.getItem('bigfont')==='1')document.documentElement.classList.add('big');
+  if(fz)fz.addEventListener('click',function(){
+    var on=document.documentElement.classList.toggle('big');
+    localStorage.setItem('bigfont',on?'1':'0'); fz.textContent=on?'A−':'A+';
+  });
+  if(localStorage.getItem('bigfont')==='1'&&fz)fz.textContent='A−';
   // 📲 installa PWA
   var dp=null,ib=document.getElementById('inst');
   window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;if(ib)ib.style.display='inline-block';});
@@ -746,8 +767,9 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
 [data-theme="light"] body{{filter:invert(1) hue-rotate(180deg)}}
 [data-theme="light"] img,[data-theme="light"] .dot{{filter:invert(1) hue-rotate(180deg)}}
+html.big{{font-size:118%}}
 </style></head><body>
-<header><a href="index.html" style="color:#93c5fd;text-decoration:none;margin-right:8px">‹ Indietro</a><button id="th" title="tema chiaro/scuro" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-right:6px">☀️</button><button id="inst" style="display:none;background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:3px 9px;cursor:pointer;font-size:12px">📲 Installa app</button><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
+<header><a href="index.html" style="color:#93c5fd;text-decoration:none;margin-right:8px">‹ Indietro</a><button id="th" title="tema chiaro/scuro" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-right:6px">☀️</button><button id="inst" style="display:none;background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:3px 9px;cursor:pointer;font-size:12px">📲 Installa app</button><button id="fsz" aria-label="font grande" title="font grande" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-left:6px">A+</button><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
 {daybar_html(today)}
 <div id="fbar"><button data-f="all" class="on">Tutte</button><button data-f="live">🔴 LIVE</button><button data-f="ev">🚩 EV&gt;0</button><button data-f="fav">⭐ mie</button><input id="fq" type="search" placeholder="cerca squadra o lega…"><button data-m="lega" class="on">per lega</button><button data-m="orario">per orario</button></div>
 <span id="sub" class="sub" style="display:block;padding:4px 14px"></span>

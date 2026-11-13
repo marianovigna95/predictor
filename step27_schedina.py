@@ -108,7 +108,14 @@ def page_html(date_str, rows):
 <p class="sub">Max 1 SINGOLA + 1 RADDOPPIO · stake solo se EV &gt; +2% · ¼ Kelly · puntare SOLO su ADM · fonte: modello walk-forward (nessuna certezza)</p>
 {NAV}
 {body}
-<p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF.</p>
+<p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF · <a href="#" id="share" style="color:#93c5fd">🔗 condividi schedina</a></p>
+<script>
+document.getElementById('share').addEventListener('click',function(e){{e.preventDefault();
+  var url=location.origin+location.pathname;
+  if(navigator.share){{navigator.share({{title:'Schedina',url:url}}).catch(function(){{}});}}
+  else if(navigator.clipboard){{navigator.clipboard.writeText(url).then(function(){{alert('Link copiato');}});}}
+}});
+</script>
 </div>
 <footer>{FOOTER}</footer>
 </body></html>"""

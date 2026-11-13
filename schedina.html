@@ -44,7 +44,14 @@ nav,footer .no{display:none}.sub,.meta{color:#333}k b{color:#000}.k{background:#
     <div class="k"><b>+4.88%</b><span>vincita se entra (su bankroll)</span></div>
   </div>
 </div>
-<p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF.</p>
+<p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF · <a href="#" id="share" style="color:#93c5fd">🔗 condividi schedina</a></p>
+<script>
+document.getElementById('share').addEventListener('click',function(e){e.preventDefault();
+  var url=location.origin+location.pathname;
+  if(navigator.share){navigator.share({title:'Schedina',url:url}).catch(function(){});}
+  else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){alert('Link copiato');});}
+});
+</script>
 </div>
 <footer>⚠️ Solo analisi, mai certezze · 18+ · puntare SOLO su ADM · autoesclusione.it · 800 558822</footer>
 </body></html>
