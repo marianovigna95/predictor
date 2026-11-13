@@ -262,13 +262,14 @@ LIVE_JS = """<script>
   function badge(e){
     var tn=(e.status||'').toUpperCase();
     if(!e.live&&e.ts&&e.ts<Date.now())tn='FULL_TIME';
+    if(tn.indexOf('CANCEL')>=0||tn.indexOf('POSTPONE')>=0)return '<span class="badge b-canc">❌ Annullata</span>';
     var fl=(e.ev&&e.ev.ev>0)?'<span class="flag" title="Pronostico EV+'+e.ev.ev+'% — '+esc(e.ev.pick)+' @ '+esc(e.ev.odds)+' (p '+esc(e.ev.prob)+'%)">🚩'+e.ev.ev+'%</span>':'';
     if(e.live)return '<span class="badge b-live"><i class="dot"></i>LIVE '+esc(e.minute||'')+'</span>'+fl;
     if(tn.indexOf('FULL')>=0||tn.indexOf('FINAL')>=0)return '<span class="badge b-ft">FT</span>'+fl;
     return fl||'<span class="badge b-pre">·</span>';
   }
   function row(e){
-    var cls=e.live?'mrow live':(((''+e.status).toUpperCase().indexOf('FULL')>=0||(e.ts&&e.ts<Date.now()))?'mrow ft':'mrow');
+    var st2=(''+e.status).toUpperCase(); var cls=e.live?'mrow live':((st2.indexOf('CANCEL')>=0||st2.indexOf('POSTPONE')>=0)?'mrow canc':((st2.indexOf('FULL')>=0||(e.ts&&e.ts<Date.now()))?'mrow ft':'mrow'));
     return '<div class="'+cls+'" data-eid="'+e.id+'" onclick="window.__tg(this)">'
       +'<span class="star'+(isFav(e.h)||isFav(e.a)?' on':'')+'" data-h="'+esc(e.h)+'" data-a="'+esc(e.a)+'" onclick="event.stopPropagation();window.__fav(this)" aria-label="preferito">★</span>'
       +'<span class="tm">'+esc(e.hhmm||'')+(cd(e)?' <small>'+cd(e)+'</small>':'')+'</span>'
@@ -804,7 +805,7 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .lin li em{{font-style:normal;color:var(--mut);font-size:10px}}
 .stt{{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub)}}
 .badge{{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}}
-.b-live{{background:var(--red);color:var(--txt)}} .b-ft{{background:#334155;color:var(--txt)}} .b-pre{{background:#14532d;color:#86efac}}
+.b-live{{background:var(--red);color:var(--txt)}} .b-canc{{background:#3f3f46;color:#e4e4e7}} .mrow.canc{{opacity:.55}} .b-ft{{background:#334155;color:var(--txt)}} .b-pre{{background:#14532d;color:#86efac}}
 .dot{{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--txt);margin-right:4px;animation:blink 1s infinite}}
 @keyframes blink{{50%{{opacity:.25}}}}
 .det{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:2px 0 8px;padding:8px 10px;font-size:13px;color:var(--sub)}}
