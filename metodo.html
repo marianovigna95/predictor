@@ -139,48 +139,11 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   Metriche: <b>RPS, log-loss, Brier, ECE</b>. V7 stacker: RPS <b>0.1918</b> (LOO 535 match) — meglio del mercato (0.1963);
   v6: 0.2008 grezzo → 0.1988 calibrato. Il mercato resta il benchmark (~RPS 0.19-0.20): il nostro edge non è "battere il mercato"
   in RPS, ma le <b>quote ADM specifiche</b> + segnali extra (forma, H2H, arbitro, assenze-xG) che il mercato medio non pesa.</p>
-  <h2>Fonti dati (dettaglio)</h2>
-  <p class="sub">Ogni dato entra nel modello da una fonte pubblica e verificabile; i file locali sono nel workspace (<code>data/</code>).</p>
-  <div class="tablewrap"><table>
-  <tr><th>Fonte</th><th>Cosa fornisce</th><th>URL / file locale</th></tr>
-  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — storico risultati Top 5 2022/23→2026/27</td>
-      <td data-label='Cosa'>gol, tiri, cartellini, quote medie/max (Avg/Max, B365, PS), xG per partita</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/mmz4281/2627/I1.csv · E0.csv · SP1.csv · D1.csv · F1.csv (stagioni precedenti: cartella 2526, 2425, …) → <code>data/{I1,E0,SP1,D1,F1}_*.csv</code> → <code>data/matches.csv</code> (7531 righe)</td></tr>
-  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — fixtures e quote del weekend corrente</td>
-      <td data-label='Cosa'>calendario partite non giocate + quote di chiusura per la finestra</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/fixtures.csv → <code>data/fixtures_all_2627.csv</code></td></tr>
-  <tr><td data-label='Fonte'><b>FotMob</b> — calendario TUTTE le leghe + coppe europee, risultati coppe, xG/tiri giocatori</td>
-      <td data-label='Cosa'>fixtures per lega (id 55 Serie A, 47 PL, 87 LaLiga, 54 Bundesliga, 53 Ligue 1, <b>42 UCL, 73 UEL, 10216 UECL</b>), risultati già giocati, SoT/90 per i TiP 0.5</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.fotmob.com/leagues/<built-in function id>/fixtures → <code>data/fixtures_leagues.csv</code>, <code>data/xg_fotmob_2627.csv</code> (src/step1b_fixtures_leagues.py)</td></tr>
-  <tr><td data-label='Fonte'><b>Understat</b> — xG storici leghe nazionali 2022→2026</td>
-      <td data-label='Cosa'>xG per partita (API getLeagueData), nomi mappati su football-data</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>understat.com (API) → <code>data/understat_xg.csv</code> (src/step12_understat_xg.py)</td></tr>
-  <tr><td data-label='Fonte'><b>Wincomparator</b> — best-price per partita della finestra</td>
-      <td data-label='Cosa'>migliore quota disponibile 1X2, Over/Under 2.5, GG/NG (pagine prediction per lega e per match)</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.wincomparator.com/predictions/football/... → <code>data/odds_window_*_bestprice.csv</code>, <code>data/odds_giornata10_bestprice.csv</code></td></tr>
-  <tr><td data-label='Fonte'><b>Fantacalcio-online</b> — probabili formazioni Serie A</td>
-      <td data-label='Cosa'>modulo, XI probable, indisponibili per giornata</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>fantacalcio-online.com → <code>data/lineups_giornata*.csv</code></td></tr>
-  <tr><td data-label='Fonte'><b>BetExplorer</b> — coppe europee (fonte alternativa)</td>
-      <td data-label='Cosa'>risultati e calendario UCL/UEL/UECL 2026/27 quando FotMob è in ritardo</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.betexplorer.com/football/europe/...</td></tr>
-  <tr><td data-label='Fonte'><b>ESPN scoreboard API</b> — seconda fonte per VERIFICARE i risultati (gratis, senza chiave)</td>
-      <td data-label='Cosa'>confronta ogni risultato di FotMob con ESPN (129/149 OK, 0 discordanze al 04/11); le discordanze vengono segnalate prima di archiviare</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://site.api.espn.com/apis/site/v2/sports/soccer/{lega}/scoreboard?dates=YYYYMMDD → <code>data/espn_check.csv</code> (src/step1c_verify_espn.py)</td></tr>
-  <tr><td data-label='Fonte'><b>TheStatsAPI</b> — API a pagamento (da 50 $/mese): <b>valutata e NON adottata</b></td>
-      <td data-label='Cosa'>offrirebbe 1000+ competizioni, quote live di bookmaker specifici, xG per tiro, stats giocatori via JSON — ma per le nostre 8 leghe le fonti gratis coprono già tutto; link ricevuti con codici affiliazione (<code>via=</code>/<code>affonso_id=</code>) non vengono usati</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>thestatsapi.com (valutazione 04/11/2026)</td></tr>
-  </table></div>
-  <h2>Espandere con le fonti gratis attuali</h2>
-  <p class="sub"><b>Altri campionati:</b> sì — football-data.co.uk pubblica CSV storici gratis per molte altre leghe
-  (Serie B <code>I2</code>, Championship <code>E1</code>, D2/F2/SP2, Eredivisie, MLS, Argentina, Brasile…): basta aggiungere il codice
-  div in <code>step1</code> e l'id lega in <code>step1b</code>. <b>Altri mercati:</b> i CSV football-data includono già
-  tiri, angoli, cartellini e arbitro → O/U angoli, cartellini, tiri squadra, handicap asiatici (colonne AH) sono già fattibili;
-  i prop giocatore (TiP, gol) arrivano da FotMob (SoT/90, già usati). Quello che le fonti gratis <b>non</b> danno:
-  quote live in-play e linee "sharp" di chiusura (Pinnacle) utili solo per la ricerca CLV — e non per giocare su operatori ADM.</p>
-  <p class="sub">Nota onesta: più leghe/mercati = più opportunità di trovare EV, ma anche più test statistici e più varianza.
-  Il vero collo di bottiglia non è la quantità di dati: è la <b>linea di chiusura del mercato</b> (lo scoreboard lo misura: modello ≈ mercato, RPS ~0.19).</p>
-  <p class="sub">Le quote mostrate sono sempre <b>best-price da comparatore</b> (non un singolo bookmaker) e il benchmark del mercato è la <b>quota media di chiusura</b> (Avg di football-data).</p>
+  <h2>📚 Fonti dati</h2>
+  <p class="sub">Tutte le fonti (gratis, verificabili, con URL/file locali) sono collected in una pagina unica:
+  👉 <a href="fonti.html"><b>📚 Fonti dati →</b></a>. In breve: football-data.co.uk (storico+quote+xG), ESPN API pubblica (live/verifica),
+  FotMob (calendari/xG), Understat (xG), wincomparator (best-price), open-meteo (meteo), Nominatim (coordinate).
+  Nessuna API a pagamento; siti tips/affiliate = 🚩 (documentati in fonti.html).</p>
   <h2>Le nostre regole</h2>
   <p class="sub">✅ tutti i pronostici pubblicati con esito (vinti e persi) · ✅ win% sempre con RPS/ROI ·
   ✅ probabilità con incertezza, mai "sicuro" · ✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b>, stake solo se <b>EV &gt; +2%</b>, dimensionato <b>¼ Kelly con margine di incertezza</b> (p − IC 68%) ·
@@ -203,6 +166,7 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <tr><td data-label='Pagina'>💰 <b>Bankroll</b></td><td>tracker personale (salvato solo nel tuo browser): ROI, winrate, drawdown, verifica esiti ESPN automatica, export CSV</td></tr>
   <tr><td data-label='Pagina'>🎯 <b>Giocate</b> · ⚡ <b>PPA</b> · ⚖️ <b>Surebets</b></td><td>giocate EV&gt;0 della finestra · PPA p≥60% (html+PDF) · surebet best-price ≥+1%</td></tr>
   <tr><td data-label='Pagina'>📅 <b>Verifica</b> · 🗂 <b>Archivio+CLV</b> · 📊 <b>Report weekend</b></td><td>esiti verificati (FotMob+ESPN incrociati), CLV, report</td></tr>
+  <tr><td data-label='Pagina'>📚 <b>Fonti</b></td><td>tutte le fonti dati (gratis, verificabili) + siti valutati/non usati 🚩</td></tr>
   <tr><td data-label='Pagina'>🏆 <b>Benchmark</b></td><td>RPS modello vs mercato per lega (walk-forward) + <b>storico pubblico scaricabile JSON/CSV</b> (archivio_giocate) — dati aperti verificabili esternamente</td></tr>
   <tr><td data-label='Pagina'>🤖 <b>Telegram</b></td><td>digest giornaliero sul canale (giocate EV&gt;0, verifica, top PPA) + alert in privado: surebet, 🔴 LIVE di partite 🚩/⭐, 📉 quota in calo (CLV)</td></tr>
   </table></div>
@@ -230,7 +194,7 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   li intercettiamo con validazione walk-forward (no leakage), metriche RPS/log-loss/Brier e controllo incrociato dei risultati.</p>
 </div>
 <div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · 800 558822</div>
-<div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a><a href="benchmark.html" class=""><span class="ic">🏆</span>BENCHMARK</a></div>
+<div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a><a href="benchmark.html" class=""><span class="ic">🏆</span>BENCHMARK</a><a href="fonti.html" class=""><span class="ic">📚</span>FONTI</a></div>
 <footer class="legal">
   ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
   ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.

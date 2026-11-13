@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<title>Fonti dati — Serie A Predictor</title>
+<style>
+:root { --bg:#0b0f14; --card:#12171e; --line:#242c37; --txt:#e8ecf1; --mut:#8b96a5; --acc:#38bdf8;
+  --btnbg:#171e27; --rowline:#1b222b; --track:#1c232c; --codebg:#1a212b; --termbg:#0a0e13; --scr:#2a333f; --tabon:#141b24; }
+html[data-theme="light"] { --bg:#f4f6f9; --card:#ffffff; --line:#d8dee6; --txt:#182230; --mut:#5c6878; --acc:#0284c7;
+  --btnbg:#edf1f6; --rowline:#e6ebf1; --track:#e6ebf1; --codebg:#edf1f6; --termbg:#edf1f6; --scr:#c3ccd6; --tabon:#e3f2fd; }
+* { box-sizing:border-box; }
+body { font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; background:var(--bg);
+  color:var(--txt); margin:0; padding:14px 14px 96px; line-height:1.45; font-size:14px; }
+::selection { background:rgba(56,189,248,.28); }
+::-webkit-scrollbar { width:10px; height:10px; } ::-webkit-scrollbar-thumb { background:var(--scr); border-radius:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+.wrap { max-width:980px; margin:auto; }
+h1 { font-size:21px; margin:0 0 6px; font-weight:700; }
+h1 .g, .g { color:var(--acc); }
+h2 { font-size:15px; margin:0 0 10px; font-weight:700; }
+h2.day { border-bottom:1px solid var(--line); padding-bottom:6px; }
+p { margin:6px 0; }
+a { color:var(--acc); text-decoration:none; } a:hover { text-decoration:underline; }
+code { background:var(--codebg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:12px; }
+.sub { color:var(--mut); font-size:12.5px; }
+.mut { color:var(--mut); }
+
+/* topbar + tabbar piatte */
+.topbar { position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line);
+  margin:-14px -14px 14px; padding:8px 14px; display:flex; align-items:center; gap:10px; }
+.brand { font-weight:700; font-size:15px; color:var(--txt); } .brand:hover { text-decoration:none; }
+.backbtn { color:var(--mut); font-size:13px; } .backbtn:hover { color:var(--txt); text-decoration:none; }
+.tabbar { position:fixed; bottom:0; left:0; right:0; z-index:50; background:var(--bg);
+  border-top:1px solid var(--line); display:flex; overflow-x:auto; }
+.tabbar a { flex:1; text-align:center; padding:10px 4px; color:var(--mut); font-size:12px; font-weight:600;
+  border-right:1px solid var(--line); } .tabbar a:last-child { border-right:none; }
+.tabbar a.on { color:var(--acc); background:var(--tabon); box-shadow:inset 0 2px 0 var(--acc); }
+.tabbar a:hover { text-decoration:none; color:var(--txt); } .tabbar a.on:hover { color:var(--acc); }
+
+/* card piatte e compatte */
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+.quicklinks { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:4px 0 14px; }
+.ql { display:flex; flex-direction:column; align-items:center; gap:2px; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:12px 6px; text-decoration:none; color:var(--txt); }
+.ql .ic { font-size:20px; } .ql b { font-size:12.5px; } .ql small { color:var(--mut); font-size:10px; }
+.hero { padding:14px 0 10px; } .hero h1 { font-size:24px; } .hero p { color:var(--mut); max-width:640px; }
+.cta { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.btn { display:inline-block; border:1px solid var(--line); background:var(--btnbg); color:var(--txt); border-radius:8px;
+  padding:7px 13px; font-size:13px; font-weight:600; } .btn:hover { border-color:var(--acc); color:var(--acc); text-decoration:none; }
+.btn.on { border-color:var(--acc); color:var(--acc); background:var(--tabon); }
+.btn.ghost { background:transparent; color:var(--mut); }
+
+/* tabelle dense */
+.tablewrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:12.5px; }
+th { text-align:left; color:var(--mut); font-size:11px; text-transform:uppercase; letter-spacing:.4px;
+  padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap; }
+td { padding:6px 8px; border-bottom:1px solid var(--rowline); vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+tr.mrow td { color:var(--mut); font-size:12px; padding:2px 8px 10px; background:transparent; }
+.tb { font-weight:600; } .tb-r { text-align:right; }
+
+/* pill piatte */
+.pill { display:inline-block; border-radius:999px; padding:1px 9px; font-size:11px; font-weight:700;
+  border:1px solid var(--line); background:var(--btnbg); color:var(--txt); white-space:nowrap; }
+.pill.ev-pos { background:rgba(34,197,94,.12); color:#4ade80; border-color:rgba(34,197,94,.35); }
+.pill.ev-neg { background:rgba(248,113,113,.10); color:#f87171; border-color:rgba(248,113,113,.35); }
+.t-singola { background:rgba(251,191,36,.12); color:#fbbf24; border-color:rgba(251,191,36,.4); }
+.t-raddoppio { background:rgba(56,189,248,.12); color:#38bdf8; border-color:rgba(56,189,248,.4); }
+.t-nessuna { background:var(--btnbg); color:var(--mut); }
+.chip { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:1px 9px;
+  font-size:11px; color:var(--mut); background:var(--btnbg); }
+
+/* barra confidenza piatta */
+.cbar { height:5px; background:var(--track); border-radius:3px; overflow:hidden; margin-top:6px; }
+.cbar i { display:block; height:100%; background:var(--acc); border-radius:3px; }
+
+/* match card compatte */
+.mc-grid { display:grid; grid-template-columns:1fr; gap:10px; } /* 🆕 06/11: una card per riga, niente affiancate */
+.mc { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+.mc-h { font-size:11px; color:var(--mut); margin-bottom:4px; display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+.mc-row { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:13px; flex-wrap:wrap; } .mc-row > * { min-width:0; }
+.mc-row b { font-weight:600; }
+.mc-mot { color:var(--mut); font-size:11.5px; margin-top:6px; }
+details { margin-top:4px; font-size:11.5px; color:var(--mut); }
+
+/* stats, verdetto, avvisi, footer */
+.grid { display:flex; flex-wrap:wrap; gap:10px; }
+.stat { border:1px solid var(--line); border-radius:8px; padding:8px 12px; background:var(--card); min-width:110px; }
+.stl { font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }
+.stv { font-size:17px; font-weight:700; }
+.ms { font-size:12px; color:var(--mut); }
+.verdetto { font-weight:600; font-size:12.5px; }
+.v-go  { background:rgba(34,197,94,.10);  color:#4ade80; border:1px solid rgba(34,197,94,.35);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-ok  { background:rgba(163,230,53,.09);  color:#bef264; border:1px solid rgba(163,230,53,.35); border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-bor { background:rgba(251,191,36,.10);  color:#fbbf24; border:1px solid rgba(251,191,36,.4);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-no  { background:rgba(248,113,113,.09); color:#f87171; border:1px solid rgba(248,113,113,.35);border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.warn { border:1px solid rgba(251,191,36,.4); background:rgba(251,191,36,.08); color:#fbbf24;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.okbox { border:1px solid rgba(34,197,94,.35); background:rgba(34,197,94,.08); color:#4ade80;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.legal { font-size:11.5px; color:var(--mut); }
+.term { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11.5px; background:var(--termbg);
+  border:1px solid var(--line); border-radius:8px; padding:8px 10px; white-space:pre-wrap; }
+.ic { font-style:normal; }
+.l, .n { font-size:12.5px; }
+
+@media (max-width:720px) {
+  body { padding:10px 10px 92px; font-size:13.5px; }
+  .topbar { margin:-10px -10px 10px; padding:7px 10px; }
+  .card { padding:11px 12px; }
+  .hero h1 { font-size:20px; }
+  .tabbar a { font-size:11px; padding:9px 2px; }
+  .quicklinks { grid-template-columns:repeat(2,1fr); }
+  .tabbar a { flex:0 0 auto; padding:9px 12px; }
+  /* 🛠 08/11 mobile compatto: tabelle -> card impilate, niente scroll orizzontale */
+  .tablewrap { overflow:visible !important; }
+  table { display:block; font-size:12.5px; }
+  thead, table tr th { display:none !important; }
+  table tr { display:block; border:1px solid var(--line); border-radius:10px; margin:0 0 10px; padding:6px 9px; background:var(--card2, var(--card)); }
+  table td { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border:0 !important; padding:3px 2px !important; font-size:12.5px; text-align:right; }
+  table td::before { content:attr(data-label); color:var(--mut); font-size:10px; text-transform:uppercase; letter-spacing:.04em; text-align:left; }
+  table td[colspan] { display:block; text-align:left; }
+  table td[colspan]::before { content:none; }
+  .mrow td { font-size:11.5px; line-height:1.45; }
+}
+</style></head><body><div class="wrap"><header class="topbar"><div class="wrap tb"><a class="brand" href="index.html">⚽ <span>Predictor</span></a><div class="tb-r"><a class="backbtn" href="index.html" onclick="if(history.length>1){history.back();return false;}else{location.href='index.html';return false;}">← Indietro</a><button id="themeBtn" class="btn ghost" style="cursor:pointer" title="Cambia tema">☀️</button><a class="btn ghost" href="index.html">⌂ Home</a></div></div></header>
+<div class="card"><h1>📚 <span class="g">Fonti</span></h1>
+<p class="sub">Tutte le fonti dati (gratis, verificabili) in un posto solo + report siti valutati e non usati.</p>
+<div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · Numero Verde 800 558822</div>
+</div>
+<div class="card">
+  <h2>📚 Fonti dati (dettaglio completo)</h2>
+  <p class="sub">Ogni dato entra nel modello da una fonte pubblica e verificabile; i file locali sono nel workspace (<code>data/</code>).
+  Nessuna API a pagamento (ESPN pubblica gratis, CORS *). Siti tips/affiliate = 🚩.</p>
+  <div class="tablewrap"><table>
+  <tr><th>Fonte</th><th>Cosa fornisce</th><th>URL / file locale</th></tr>
+  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — storico résultats Top 5 2022/23→2026/27</td>
+      <td data-label='Cosa'>gol, tiri, cartellini, quote medie/max (Avg/Max, B365, PS), xG per partita, chiusure per CLV</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/mmz4281/2627/I1.csv · E0.csv · SP1.csv · D1.csv · F1.csv (stagioni precedenti: 2526, 2425, …) → <code>data/{I1,E0,SP1,D1,F1}_*.csv</code> → <code>data/matches.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — fixtures e quote del weekend corrente</td>
+      <td data-label='Cosa'>calendario partite non giocate + quote di chiusura per la finestra</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/fixtures.csv → <code>data/fixtures_all_2627.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>ESPN API pubblica</b> (CORS *, gratis, no key) — diretta live + verifica esiti</td>
+      <td data-label='Cosa'>scoreboard (stato, score, minuto, quote live), summary (boxscore xG/tiri/possesso, keyEvents timeline, formazioni), standings, loghi squadre</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard?dates=YYYYMMDD · .../summary?event={id} · site.web.api.espn.com .../standings · loghi: a.espncdn.com/i/teamlogos/soccer/500/{teamId}.png</td></tr>
+  <tr><td data-label='Fonte'><b>FotMob</b> — calendario TUTTE le leghe + coppe, risultati, xG giocatori</td>
+      <td data-label='Cosa'>fixtures per lega (id 55 Serie A, 47 PL, 87 LaLiga, 54 Bundesliga, 53 Ligue 1, 42 UCL, 73 UEL, 10216 UECL), risultati già giocati, SoT/90</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>fotmob.com/leagues/{id}/fixtures → <code>data/fixtures_leagues.csv</code>, <code>data/xg_fotmob_2627.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Understat</b> — xG storici leghe nazionali 2022→2026</td>
+      <td data-label='Cosa'>xG per partita (API getLeagueData), nomi mappati su football-data</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>understat.com → <code>data/understat_xg.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Wincomparator</b> — best-price per partita della finestra</td>
+      <td data-label='Cosa'>migliore quota 1X2, O/U 2.5, GG/NG, angoli O/U 9.5</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>wincomparator.com/predictions/football/... → <code>data/odds_window_*_bestprice.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Fantacalcio-online</b> — probabili formazioni Serie A</td>
+      <td data-label='Cosa'>modulo, XI probable, indisponibili per giornata (penalità Elo/xG)</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>fantacalcio-online.com → <code>data/lineups_giornata*.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Open-Meteo</b> (gratis, no key) + <b>Nominatim/OSM</b> — meteo e coordinate</td>
+      <td data-label='Cosa'>pioggia/vento/temperatura per città (storico + forecast 15gg) → fattore gol; coordinate squadre (da ESPN venue) → derby, distanza trasferta</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>api.open-meteo.com / archive-api.open-meteo.com · nominatim.openstreetmap.org → <code>data/weather_*.csv</code>, <code>data/team_coords.csv</code> (src/step30_weather.py)</td></tr>
+  <tr><td data-label='Fonte'><b>Kaggle</b> — H2H internazionali (nazionali 🚩)</td>
+      <td data-label='Cosa'>storico partite nazionali per H2H ed Elo seed</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>kaggle → <code>data/kaggle_matches.csv</code>, <code>data/fixtures_intl.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>TheStatsAPI</b> — API a pagamento (da 50 $/mese): <b>valutata e NON adottata</b></td>
+      <td data-label='Cosa'>le nostre 8 leghe sono già coperte dalle fonti gratis; link affiliazione (<code>via=</code>/<code>affonso_id=</code>) mai usati</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>thestatsapi.com (valutazione 04/11/2026)</td></tr>
+  </table></div>
+  <h2>Espandere con le fonti gratis attuali</h2>
+  <p class="sub"><b>Altri campionati:</b> football-data pubblica CSV storici gratis per molte altre leghe (già aggiunte: Serie B, Championship, Eredivisie, Süper Lig, ecc.).
+  <b>Altri mercati:</b> i CSV includono tiri, angoli, cartellini, arbitro → angoli/cartellini/tiri sono già nel modello (O/U angoli 9.5 in schedina).
+  Quello che le fonti gratis <b>non</b> danno: quote live in-play sharp e linea di chiusura Pinnacle utili per CLV avanzato.</p>
+  <p class="sub">Nota onesta: il collo di bottiglia non è la quantità di dati ma la <b>linea di chiusura del mercato</b> (benchmark.html lo misura: modello ≈ mercato, RPS ~0.19).</p>
+  <h2>Aggiornamento fonti e cosa non copriamo</h2>
+  <p class="sub">Fonti gratis aggiornate fino all'ultima giornata completata; le partite in corso/odierne possono essere in ritardo di qualche ora (le verifichiamo a mano da più fonti: FotMob + ESPN + diretta.it manuale).</p>
+</div>
+<div class="card">
+  <h2>🧪 Siti valutati e NON usati (report completo)</h2>
+  <p class="sub">REVIEW_SITI.md — tutti i siti analizzati con verdetto 🚩/⚠️/✔ e motivi.</p>
+  <pre style='white-space:pre-wrap;font-size:12px;background:var(--card);padding:10px;border-radius:10px'># 🔍 Analisi siti di diretta (12/11/2026) — cosa copiare e come
+
+Siti analizzati: livescore.com, diretta.it, gazzetta.it/risultati-live, tutttosport.com/live, sofascore.com (+repubblica/virgilio diretta per la cronaca).
+
+## Cosa offrono loro vs cosa abbiamo noi
+
+| Feature | Loro | Noi ora | Fonte gratis per noi |
+|---|---|---|---|
+| Score live + minuto | sì | ✅ sì | ESPN |
+| Filtro leghe / tutte le leghe | tutte | ✅ solo nostre (meglio per noi) | ESPN per-slug |
+| Barra date ← oggi → | sì | ✅ daybar oggi-2…+7 | ESPN dates |
+| Preferiti ⭐ | per match | ✅ per squadre (localStorage) | — |
+| Timeline eventi (gol, cartellini, sub) | sì | ✅ fatta (keyEvents) | ESPN summary keyEvents |
+| Formazioni + schema | sì (probabili pre-match) | ✅ fatta (rosters+formation) | ESPN summary rosters |
+| Statistiche live (possesso, tiri, xG) | sì | ✅ tabella + barre comparative | ESPN boxscore |
+| Classifica per lega | sì | ✅ espandibile | ESPN standings |
+| Capocannonieri | sì | ✅ | ESPN statistics |
+| H2H | sì | ✅ (kaggle, finestra) | kaggle nostro |
+| Quote 1X2 | sì (multi-book) | ✅ best-price nostra finestra | wincomparator nostro |
+| Pronostici/EV sul match | no | ✅ 🚩 EV>0 (nostro plus) | nostro modello |
+| **Loghi/bandierine squadre** | sì | ❌ no | ESPN `team.logos[].href` ✅ gratis |
+| **Hero card "partita in evidenza"** | sì (gazzetta "In evidenza") | ❌ no | nostra: prima 🚩 EV>0 o ⭐ del giorno |
+| **Confronto stagionale pre-match** (gol, punti, forma nel campionato) | sì (repubblica) | ❌ no | ESPN standings entries (points, goalsFor/Against, wins…) ✅ |
+| **Forma (W/D/L) dentro la classifica** | sofascore/livescore | ❌ no | ESPN standings entries a volte hanno `form` — da verificare |
+| Cronaca testuale minuto-per-minuto | sì (repubblica/virgilio) | ⚠️ timeline eventi sì, prosa no | ESPN keyEvents (no prosa) |
+| Momentum graph / xG timeline | sofascore | ❌ no | non disponibile gratis affidabile (sofascore API non ufficiale + Cloudflare) |
+| Player ratings | sofascore | ❌ no | solo sofascore (API non ufficiale) — NIENTE |
+| Heatmap / shotmap | sofascore | ❌ no | idem — NIENTE |
+| Multi-sport | sì | no (fuori scope, calcio solo) | — |
+| Condivisione match (share link) | sì | ❌ no | Web Share API / copia link ✅ gratis |
+| Notifiche push browser | sì | ⚠️ Telegram sì (alert LIVE ⭐/🚩) | Telegram ✅ già |
+
+## Nota su Sofascore
+API non ufficiale (api.sofascore.com), Cloudflare blocca senza header, ToS vietano scraping → **non la usiamo**. xG lo abbiamo già da ESPN; ratings/heatmap/momentum restano esclusi (nessuna fonte gratis affidabile).
+
+## 🎨 Idee grafiche (gratis)
+1. Loghi squadre nelle righe della diretta (ESPN logos)
+2. Hero card in cima: partita top del giorno (🚩 EV>0 max o ⭐)
+3. Tema: dark attuale ok; aggiungere contrasto LIVE più forte (bordo rosso pulsante già c'è)
+
+## 📋 Proposte implementabili (priorità)
+1. 🏳️ Loghi squadre nelle righe + nel dettaglio (ESPN logos) — grafica subito più "vera"
+2. 🏆 Hero card partita in evidenza (max EV>0 oggi, o ⭐) in cima alla diretta
+3. 📊 Confronto stagionale pre-match nel dettaglio (punti, gol, V/N/P dal campionato — da standings della lega del match)
+4. 🔗 Pulsante "condividi/copia link" partita (?d=...#eid) — Web Share API
+5. ⭐ Colonna forma (ultime 5 W/D/L) nella tabella classifica se ESPN la fornisce
+
+## Da NON fare
+- Sofascore API (non ufficiale, blocchi, ToS)
+- API a pagamento (regola fissa)
+- Link esterni dalle card (regola fissa: analysis-only, niente reindirizzamenti)
+
+## ✅ Implementato 12/11 (da questa review)
+1. 🏳️ Loghi squadre nelle righe + hero (ESPN teamlogos da team.id)
+2. 🏆 Hero card partita in evidenza (max EV>0 oggi, fallback ⭐)
+3. 📊 Confronto stagionale nel dettaglio (standings lega: #, G, V-N-P, Gol, Pt)
+4. 🔗 "copia link partita" (?d=...#eventId, Web Share API + clipboard, apertura da hash)
+5. 📋 Colonna "Serie" (record overall) in classifica
+Nota: colonna forma W/D/L in classifica NON disponibile gratis da ESPN standings → usata colonna Serie (overall).
+
+## 🚩 13/11/2026 — scoore.ai ("AI Football Predictions with 79% Accuracy")
+- **Title SEO promete 79% accuracy**, ma nella pagina stessa "In numbers" mostra "9% AI Average accuracy" (numero vago, non verificabile, nessun backtest pubblicato, nessun archivio picks con esito)
+- Recensioni anonime generiche ripetute ("paid for itself in the first week") — pattern classico tipster
+- Modello a pagamento (Plans + app + login), Telegram/IG/TikTok/X per acquiring — **non ADM, non lo usiamo, non lo linkiamo dal sito**
+- 79% su 1X2 è statisticamente impossibile: tetto reale ~55-60% (nostro modello validato: ~53% acc, RPS 0.1918 vs mercato 0.1963)
+- Regola kita: siti tips/affiliate = 🚩, puntare SOLO book ADM, mai reindirizzamenti esterni dalle card
+
+## 🚩⚠️ 13/11/2026 — aiscore.com (AiScore)
+- Parte **livescore legit** (app store, live scores gratis, stats) → come aggregatore di consultazione OK (tipo livescore), MA noi usiamo ESPN (API pubblica CORS*, gratis, verificabile) per live/diretta → AiScore non serve
+- Ha sezione **tips a pagamento**: marketplace tipster (m.aiscore.com/become-a-tipster "bettors buy from you"), pagine "predictions" per match, premium subscription → 🚩 per la parte tips/premium
+- Nessun track record verificabile sulle predictions → non seguirle; mai linkarlo dalle card del sito; puntare SOLO ADM
+
+## 📋 13/11/2026 — valutazione nuovi siti (tutti gratis, no API a pagamento)
+- **Oddsportal**: archivio quote storiche esiste ma la pagina è piena di banner bookmaker USA (BetMGM/FanDuel/bet365.us) → 🚩 come fonte "dove puntare"; per il CLV usiamo già le chiusure AvgC/MaxC di football-data → non serve
+- **Flashscore**: ótima grafica (ispirazione presa: card compatte, tab, pill — già applicate a diretta.html) MA Cloudflare/ToS + link streaming esterni (FuboTV...) → 🚩 API/scrape/link, solo ispirazione visiva. Noi usiamo ESPN (API pubblica CORS*)
+- **FBref**: stats gratis complete (Poss%, G/90, xG, cartellini per squadra, stagioni storiche) — valutato: marginale oltre a Elo+Understat-xG che già usiamo; 403 dal sandbox (Cloudflare) → non integrato automaticamente, consultabile a mano gratis
+- **Transfermarkt**: valori rosa utili ma anti-bot pesante + ToS scrape → solo consultazione manuale, non integrato
+- **AiScore/Scoore.ai**: vedi sopra 🚩 (tips a pagamento, track record non verificabile)
+
+## 🚩⚠️ 13/11/2026 — gambeta.ai ("Pronostici IA · 38 campionati")
+- **Punti a favore rari**: storico pubblico verificabile (Serie A: 29 pick risolti, 59% win, 68% su 1X2 — numeri realistici), pick gratis prima del fischio, dati aperti (JSON/CSV)
+- **Ma**: finanziato da sponsor bookmaker BC.GAME + affiliate links + "High Stake"/VIP a pagamento → 🚩 conflitto di interesse (guadagna se giochi, e NON è ADM)
+- Per noi resta 🚩: mai linkarlo dalle card, mai puntare lì — puntare SOLO ADM. Può servire solo come confronto/consultazione gratuita del proprio storico
+
+## 🚩 13/11/2026 — footballaiapp.com e scoregpt.app
+- **footballaiapp.com ("Football AI")**: app con abbonamento a pagamento ("tutti i pronostici del weekend", free = 1 previsione/giorno, pagamento via Apple) → 🚩 app tips a pagamento; mai link/puntare
+- **scoregpt.app ("ScoreGPT")**: ha leaderboard pubblico con pick graded (wins+losses, onesto: 1797/3387 = 53% outcomes = realistico, MA non è edge vs mercato) MA è un **consensus di LLM generici** (GPT/Claude/Grok...) su calcio — senza dati reali è inaffidabile — e ha Pro a pagamento → 🚩 per noi; mai linkarlo dalle card, puntare SOLO ADM
+- Nota: il 53% "correct outcomes" del consensus LLM è paragonabile al nostro modello (RPS 0.1918 &lt; mercato 0.1963) ma il nostro usa DATI reali (Elo+DC+mercato+xG+meteo) e pubblica archivio con CLV
+
+## 🚩 13/11/2026 — livetipsportal.com / one-versus-one.com / tipspro.ai
+- **livetipsportal.com**: sito editoriale tips con claim "schedine infallibili" + recensioni/affiliazione bookmaker AAMS → 🚩 claim ingannevoli + conflitto affiliazione
+- **one-versus-one.com**: previsioni "IA" per 5 leghe top, pattern standard tips → 🚩
+- **tipspro.ai**: app con **abbonamento premium 9,99-79,99€/anno + acquisti in-app** e classificazione età **16+** (🚩 grave: minorenni) → 🚩 mai
+- Tutti: mai link dalle card, mai puntare lì — SOLO book ADM, 18+
+
+## 🚩 13/11/2026 — pronext-app.com ("Pronext")
+- Claim "**over 78% success rate**" → 🚩 statisticamente impossibile (tetto reale ~55-60%)
+- Trial "30 giorni a 1€" poi **29,99€/mese** (Pro settimanale/mensile in-app), app con "Simulated Gambling" frequente → 🚩 app tips a pagamento
+- Mai linkarlo dalle card, mai puntare lì — SOLO ADM 18+
+
+## 🚩 13/11/2026 — futbol24.com / aipredict.io / bettingexchange.net
+- **futbol24.com/pronostici-ia**: sezione "pronostici IA + value bet" con pattern affiliazione bookmaker → 🚩
+- **aipredict.io**: premium **$29.99/mese** ("$0.97/giorno"), claim "**81% successo** Over 1.5" (🚩 impossibile), 500+ leghe → 🚩 app tips a pagamento
+- **bettingexchange.net**: blog con affiliazione bookmaker e "pronostici AI" → 🚩
+- Tutti: mai link dalle card, mai puntare — SOLO ADM 18+
+
+## 🚩 13/11/2026 — tipsgenerator.com / blablive.com
+- **tipsgenerator.com**: premium a pagamento (1,49$ one-time / 29,99$/mese crypto) con claim "**70%+ hit rate**" 🚩 + tips su Telegram → 🚩
+- **blablive.com**: "dritte" e "variazioni quota Blab Index" da influencer (#Pasto22) + affiliazione bookmaker/exchange, free bet → 🚩 (le "variazioni quota" come sistema è un mito: il movimento quota riflette il mercato, non un edge)
+- Mai link dalle card, mai puntare — SOLO ADM 18+
+
+## 🚩 13/11/2026 — xscores.com / mondopengwin.it (Pengwin)
+- **xscores.com/scommesse/pronostici-IA**: sezione scommesse "IA" con pattern tips/affiliazione → 🚩
+- **mondopengwin.it**: sito Pengwin — claim tipo "NON POSSONO PERDERE" 🚩, canali Telegram/IG con storico non verificabile esternamente, storicamente affiliazione/canali a pagamento → 🚩
+- Mai link dalle card, mai puntare — SOLO ADM 18+
+
+## 🚩 13/11/2026 — ebook Amazon "Pronostici Vincenti con IA" / 1x2.tv
+- **Ebook Amazon (Marchil) "Pronostici Vincenti con Intelligenza Artificiale"**: 🚩 pattern classico "metodo infallibile a pagamento" —nessun sistema garantisce vincite; i libri che promettono sistemi vincenti vendono il libro, non l'edge
+- **1x2.tv**: pick "per membri Premium" (🔒 bloccati), app con abbonamento, confronta quote di bet365/betfair/betway (🚩 non-ADM) → 🚩
+- Mai link, mai puntare — SOLO ADM 18+
+
+## 🚩 13/11/2026 — stats4bets.it "SuperFoglio"
+- Software "IA scommesse calcio" a pagamento: **99€ (3 mesi) / 149€ (12 mesi) / 187€ (15 mesi PLUS)** + Area VIP, "certificato 4.9/5 Trustpilot" (recensioni pagate/promozionali pattern) → 🚩 software a pagamento che promette "percorso vincente"
+- Mai link, mai acquistare — le nostre analisi sono gratis nel sito (EV>0, archivio+CLV) e si punta SOLO su ADM 18+
+</pre>
+</div>
+<div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a><a href="benchmark.html" class=""><span class="ic">🏆</span>BENCHMARK</a><a href="fonti.html" class="on"><span class="ic">📚</span>FONTI</a></div>
+<footer class="legal">
+  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
+  Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
+  Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>
+  Questo sito pubblica <b>analisi statistiche a scopo informativo</b>: ogni pronostico è una stima con incertezza,
+  mai una certezza o una garanzia. I risultati passati non garantiscono risultati futuri.
+</footer>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}b.textContent=(t==='light')?'🌙':'☀️';}
+b.onclick=function(){var c=document.documentElement.getAttribute('data-theme')||'dark';set(c==='light'?'dark':'light');};
+var t='dark';try{t=localStorage.getItem('theme')||'dark';}catch(e){}set(t);})();
+</script>
+</div></body></html>
