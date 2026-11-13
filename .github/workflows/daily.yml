@@ -52,11 +52,15 @@ jobs:
           python3 src/step23_ppa.py --minp 60 --topn 30 || true
           python3 src/step24_ppa_pdf.py --minp 60 || true
           python3 src/step25_verifica_mensile.py || true
+          python3 src/step29_bench_pinnacle.py || true                # 🆕 13/11-b bench vs quota sharp -> data/bench_pinnacle.csv
+          python3 src/step30_meta.py || true                          # 🆕 13/11-b meta description/OG + anonimizzatore fonti (ULTIMO passo, tocca tutte le pagine)
       - name: Pubblica su GitHub Pages (root del repo)
         run: |
           cp site/*.html site/manifest.webmanifest site/sw.js site/icon-*.png . 2>/dev/null || true
           cp site/fixtures.json . 2>/dev/null || true
           cp site/ppa_*.pdf . 2>/dev/null || true
+          # 🆕 13/11-b anti-doppioni: i .py in root sono solo la copia di lavoro, la fonte è src/
+          printf '%s\n' '# copie di lavoro dei .py in root (la fonte è src/): non versionare' '*.py' '!src/**' '!*/*.py' > .gitignore
           git config user.email "bot@arena.ai" && git config user.name "predictor-bot"
           git add -A && git commit -m "auto-update $(date -u +%F_%H:%M)" || echo "nessuna modifica"
           git push
