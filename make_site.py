@@ -24,8 +24,7 @@ TABS = [("index.html", "⌂", "HOME", "home"),
         ("ppa.html", "⚡", "PPA", "ppa"),
         ("surebets.html", "⚖️", "SUREBETS", "surebets"),
         ("archivio.html", "🗂", "ARCHIVIO", "archivio"),
-        ("benchmark.html", "🏆", "BENCHMARK", "benchmark"),
-        ("fonti.html", "📚", "FONTI", "fonti")]
+        ("benchmark.html", "🏆", "BENCHMARK", "benchmark")]
 
 
 THEME_JS = """
@@ -667,10 +666,8 @@ def build_metodo():
   v6: 0.2008 grezzo → 0.1988 calibrato. Il mercato resta il benchmark (~RPS 0.19-0.20): il nostro edge non è "battere il mercato"
   in RPS, ma le <b>quote ADM specifiche</b> + segnali extra (forma, H2H, arbitro, assenze-xG) che il mercato medio non pesa.</p>
   <h2>📚 Fonti dati</h2>
-  <p class="sub">Tutte le fonti (gratis, verificabili, con URL/file locali) sono collected in una pagina unica:
-  👉 <a href="fonti.html"><b>📚 Fonti dati →</b></a>. In breve: football-data.co.uk (storico+quote+xG), ESPN API pubblica (live/verifica),
-  FotMob (calendari/xG), Understat (xG), wincomparator (best-price), open-meteo (meteo), Nominatim (coordinate).
-  Nessuna API a pagamento; siti tips/affiliate = 🚩 (documentati in fonti.html).</p>
+  <p class="sub">Tutti i dati arrivano da <b>fonti pubbliche e gratuite</b>, senza API a pagamento e senza affiliazioni a bookmaker:
+  il codice e i file sono nel repository pubblico. Siti di tips/affiliate non vengono mai usati (🚩).</p>
   <h2>Le nostre regole</h2>
   <p class="sub">✅ tutti i pronostici pubblicati con esito (vinti e persi) · ✅ win% sempre con RPS/ROI ·
   ✅ probabilità con incertezza, mai "sicuro" · ✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b>, stake solo se <b>EV &gt; +2%</b>, dimensionato <b>¼ Kelly con margine di incertezza</b> (p − IC 68%) ·
@@ -693,7 +690,6 @@ def build_metodo():
   <tr><td data-label='Pagina'>💰 <b>Bankroll</b></td><td>tracker personale (salvato solo nel tuo browser): ROI, winrate, drawdown, verifica esiti ESPN automatica, export CSV</td></tr>
   <tr><td data-label='Pagina'>🎯 <b>Giocate</b> · ⚡ <b>PPA</b> · ⚖️ <b>Surebets</b></td><td>giocate EV&gt;0 della finestra · PPA p≥60% (html+PDF) · surebet best-price ≥+1%</td></tr>
   <tr><td data-label='Pagina'>📅 <b>Verifica</b> · 🗂 <b>Archivio+CLV</b> · 📊 <b>Report weekend</b></td><td>esiti verificati (FotMob+ESPN incrociati), CLV, report</td></tr>
-  <tr><td data-label='Pagina'>📚 <b>Fonti</b></td><td>tutte le fonti dati (gratis, verificabili) + siti valutati/non usati 🚩</td></tr>
   <tr><td data-label='Pagina'>🏆 <b>Benchmark</b></td><td>RPS modello vs mercato per lega (walk-forward) + <b>storico pubblico scaricabile JSON/CSV</b> (archivio_giocate) — dati aperti verificabili esternamente</td></tr>
   <tr><td data-label='Pagina'>🤖 <b>Telegram</b></td><td>digest giornaliero sul canale (giocate EV&gt;0, verifica, top PPA) + alert in privado: surebet, 🔴 LIVE di partite 🚩/⭐, 📉 quota in calo (CLV)</td></tr>
   </table>
@@ -761,7 +757,7 @@ RED_FLAGS = [
     "'Affidabilità 4/5' o 'livello affidabilità' subjetivi: non sono probabilità calibrate.",
     "VIP/canali a pagamento (PayPal/Telegram) con % di un solo mese cherry-picked.",
     "Nessun disclaimer 18+/ADM/gioco responsabile visibile.",
-    'Siti valutati e NON usati: vedi il report completo in <a href="fonti.html">📚 Fonti → 🧪 siti valutati</a>.',
+    'Siti di tips/affiliate valutati e non usati (🚩): mai linkati né usati come fonte.',
 ]
 
 GREEN_FLAGS = [
@@ -1407,7 +1403,6 @@ def main():
     build_giocata_multi()
     build_archivio()
     build_benchmark()
-    build_fonti()
     build_report_weekend()
     nq = 0
     for bp in bestprice_files():

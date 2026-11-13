@@ -106,7 +106,7 @@ def page_html(date_str, rows):
 </style></head><body>
 <div class="wrap">
 <h1>🧾 Schedina del giorno — {date_str}</h1>
-<p class="sub">Max 1 SINGOLA + 1 RADDOPPIO · stake solo se EV &gt; +2% · ¼ Kelly · puntare SOLO su ADM · modello walk-forward, <a href="fonti.html">📚 fonti</a> (nessuna certezza)</p>
+<p class="sub">Max 1 SINGOLA + 1 RADDOPPIO · stake solo se EV &gt; +2% · ¼ Kelly · puntare SOLO su ADM · modello walk-forward (nessuna certezza)</p>
 {NAV}
 {body}
 <p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF · <a href="#" id="share" style="color:#93c5fd">🔗 condividi schedina</a></p>

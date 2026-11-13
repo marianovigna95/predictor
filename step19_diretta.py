@@ -471,7 +471,7 @@ LIVE_JS = """<script>
             :(ev.live||/FULL|FINAL|POST/i.test(ev.status||'')
               ?'<p class="sub">Statistiche live in aggiornamento — ESPN le pubblica a intervalli durante la gara e complete a fine partita.</p>'
               :'<p class="sub">Partita non ancora iniziata: le statistiche escono dal fischio di inizio.</p>'))
-          +'<p class="sub" style="font-size:11px">fonte: ESPN (API pubblica) — vedi <a href="fonti.html" style="color:#93c5fd">📚 fonti</a> · nessun reindirizzamento</p>';
+          +'<p class="sub" style="font-size:11px">dati da fonti pubbliche gratuite · nessun reindirizzamento</p>';
         // 📊 confronto stagionale (standings della lega) + 🔗 share
         var slg=''; for(var k in SLUG2NAME){if(SLUG2NAME[k]===ev.lg){slg=k;break;}}
         var extra='';
