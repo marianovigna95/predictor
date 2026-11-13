@@ -688,30 +688,30 @@ def main():
 <meta http-equiv="refresh" content="300">
 <title>🔴 Diretta — Predictor</title>
 <style>
-:root{{--bg:#0b1220;--card:#111c33;--txt:#e2e8f0;--sub:#94a3b8;--acc:#2563eb;--red:#dc2626}}
+:root{{--bg:var(--bg);--card:#111c33;--txt:var(--txt);--sub:#94a3b8;--acc:#2563eb;--red:#dc2626}}
 *{{box-sizing:border-box}} body{{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}}
-header{{position:sticky;top:0;background:rgba(11,18,32,.94);backdrop-filter:blur(6px);padding:10px 14px;border-bottom:1px solid #1e293b;z-index:5}}
+header{{position:sticky;top:0;background:rgba(11,18,32,.94);backdrop-filter:blur(6px);padding:10px 14px;border-bottom:1px solid var(--line);z-index:5}}
 header b{{font-size:18px}} header .sub{{color:var(--sub);font-size:12px;margin-left:8px}}
-#daybar{{display:flex;gap:6px;overflow-x:auto;padding:8px 14px;background:#0d1526;border-bottom:1px solid #1e293b;position:sticky;top:49px;z-index:4}}
-.dbtn{{flex:0 0 auto;background:#16233d;color:#cbd5e1;border:1px solid #1e293b;border-radius:8px;padding:5px 12px;font-size:12px;cursor:pointer}}
+#daybar{{display:flex;gap:6px;overflow-x:auto;padding:8px 14px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:49px;z-index:4}}
+.dbtn{{flex:0 0 auto;background:var(--row);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:12px;cursor:pointer}}
 .dbtn.on{{background:var(--acc);color:#fff;border-color:var(--acc)}}
-nav{{display:flex;gap:6px;flex-wrap:wrap;padding:8px 14px;background:#0d1526;border-bottom:1px solid #1e293b}}
-nav a{{color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 10px;border-radius:8px;background:#16233d}}
+nav{{display:flex;gap:6px;flex-wrap:wrap;padding:8px 14px;background:var(--card);border-bottom:1px solid var(--line)}}
+nav a{{color:var(--txt);text-decoration:none;font-size:12px;padding:5px 10px;border-radius:8px;background:var(--row)}}
 nav a.on{{background:var(--acc);color:#fff}} nav a:hover{{background:#1e3a8a}}
 main{{max-width:860px;margin:0 auto;padding:10px 12px}}
-.lgh{{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748b;padding:12px 4px 4px;border-bottom:1px solid #1e293b;position:sticky;top:96px;background:var(--bg);z-index:3}}
+.lgh{{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);padding:12px 4px 4px;border-bottom:1px solid var(--line);position:sticky;top:96px;background:var(--bg);z-index:3}}
 .ours{{color:#fbbf24}}
-.mrow{{display:grid;grid-template-columns:20px 40px 1fr 56px 1fr 128px auto;gap:6px;align-items:center;padding:7px 8px;border-bottom:1px solid #16233d;cursor:pointer;border-radius:6px}}
-.mrow:hover{{background:#16233d}}
+.mrow{{display:grid;grid-template-columns:20px 40px 1fr 56px 1fr 128px auto;gap:6px;align-items:center;padding:7px 8px;border-bottom:1px solid var(--row);cursor:pointer;border-radius:6px}}
+.mrow:hover{{background:var(--row)}}
 .mrow.live{{background:#2a1215;border-left:3px solid var(--red)}}
 .tm{{color:var(--sub);font-size:12px;font-variant-numeric:tabular-nums}}
 .h{{text-align:right;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
 .a{{text-align:left;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
-.sc{{text-align:center;font-weight:800;font-size:15px;background:#0b1220;border:1px solid #1e293b;border-radius:6px;padding:2px 0;font-variant-numeric:tabular-nums}}
+.sc{{text-align:center;font-weight:800;font-size:15px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 0;font-variant-numeric:tabular-nums}}
 .mrow.live .sc{{border-color:var(--red);color:#fecaca}}
-.od{{font-size:10.5px;color:#8ea3c8;white-space:nowrap}}
+.od{{font-size:10.5px;color:var(--sub);white-space:nowrap}}
 .q3{{display:flex;gap:8px}}
-.q3 span{{flex:1;background:#0f1a30;border:1px solid #22345a;border-radius:6px;padding:6px;text-align:center;font-size:11px;color:#8ea3c8}}
+.q3 span{{flex:1;background:var(--card3);border:1px solid var(--line2);border-radius:6px;padding:6px;text-align:center;font-size:11px;color:var(--sub)}}
 .q3 b{{display:block;color:#fff;font-size:15px}}
 .frm{{display:flex;align-items:center;gap:5px;margin:3px 0;font-size:12px}}
 .frm i{{font-style:normal;width:16px;height:16px;border-radius:50%;font-size:9px;display:inline-flex;align-items:center;justify-content:center;color:#04101f;font-weight:700}}
@@ -720,56 +720,56 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .bars .bar{{display:block;width:10px;border-radius:2px 2px 0 0}}
 .bars2{{margin:4px 0 8px}}
 .bst{{display:flex;align-items:center;gap:8px;margin:3px 0;font-size:11px}}
-.bl{{width:76px;color:#8ea3c8;text-align:right}}
+.bl{{width:76px;color:var(--sub);text-align:right}}
 .bt{{flex:1;display:flex;flex-direction:column;gap:2px}}
 .bt i{{display:block;height:6px;border-radius:3px}}
 .bh{{background:#3b82f6}} .ba{{background:#f59e0b}}
-.bv{{width:64px;color:#e2e8f0;font-size:10.5px}}
+.bv{{width:64px;color:var(--txt);font-size:10.5px}}
 .lins{{display:flex;gap:10px;flex-wrap:wrap}}
-.lin{{flex:1;min-width:180px;background:#0b1220;border:1px solid #16233d;border-radius:8px;padding:6px 8px}}
-.lin b{{font-size:12px}} .fmt{{color:#8ea3c8;font-size:11px;margin-left:6px}}
+.lin{{flex:1;min-width:180px;background:var(--bg);border:1px solid var(--row);border-radius:8px;padding:6px 8px}}
+.lin b{{font-size:12px}} .fmt{{color:var(--sub);font-size:11px;margin-left:6px}}
 .lin ul{{list-style:none;margin:6px 0 0;padding:0;columns:1}}
-.lin li{{font-size:11.5px;padding:1.5px 0;color:#cbd5e1}}
-.lin li i{{font-style:normal;color:#64748b;display:inline-block;width:18px}}
-.lin li em{{font-style:normal;color:#64748b;font-size:10px}}
-.stt{{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8ea3c8}}
+.lin li{{font-size:11.5px;padding:1.5px 0;color:var(--txt)}}
+.lin li i{{font-style:normal;color:var(--mut);display:inline-block;width:18px}}
+.lin li em{{font-style:normal;color:var(--mut);font-size:10px}}
+.stt{{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub)}}
 .badge{{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}}
-.b-live{{background:var(--red);color:#fff}} .b-ft{{background:#334155;color:#cbd5e1}} .b-pre{{background:#14532d;color:#86efac}}
+.b-live{{background:var(--red);color:#fff}} .b-ft{{background:#334155;color:var(--txt)}} .b-pre{{background:#14532d;color:#86efac}}
 .dot{{display:inline-block;width:7px;height:7px;border-radius:50%;background:#fff;margin-right:4px;animation:blink 1s infinite}}
 @keyframes blink{{50%{{opacity:.25}}}}
-.det{{background:#0d1526;border:1px solid #1e293b;border-radius:8px;margin:2px 0 8px;padding:8px 10px;font-size:13px;color:var(--sub)}}
-.stt{{margin:4px 0;color:#93c5fd;font-weight:700}}
-#fbar{{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:7px 14px;background:#0d1526;border-bottom:1px solid #1e293b;position:sticky;top:96px;z-index:3}}
-#fbar button{{background:#16233d;color:var(--sub);border:1px solid #22345a;border-radius:14px;padding:4px 10px;font-size:12px;cursor:pointer}}
+.det{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:2px 0 8px;padding:8px 10px;font-size:13px;color:var(--sub)}}
+.stt{{margin:4px 0;color:var(--acc);font-weight:700}}
+#fbar{{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:7px 14px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:96px;z-index:3}}
+#fbar button{{background:var(--row);color:var(--sub);border:1px solid var(--line2);border-radius:14px;padding:4px 10px;font-size:12px;cursor:pointer}}
 #fbar button.on{{background:var(--red);color:#fff;border-color:var(--red)}}
-#fbar input{{background:#0f1a30;border:1px solid #22345a;color:#fff;border-radius:14px;padding:4px 10px;font-size:12px;width:150px}}
+#fbar input{{background:var(--card3);border:1px solid var(--line2);color:#fff;border-radius:14px;padding:4px 10px;font-size:12px;width:150px}}
 .lgh{{display:flex;justify-content:space-between;align-items:center}}
 .lgc{{cursor:pointer}}
-.chev{{font-size:10.5px;color:#64748b;font-weight:400}}
-.lgdet{{background:#0d1526;border:1px solid #1e293b;border-radius:8px;margin:2px 8px 8px;padding:8px 10px;font-size:12px;color:var(--sub)}}
+.chev{{font-size:10.5px;color:var(--mut);font-weight:400}}
+.lgdet{{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:2px 8px 8px;padding:8px 10px;font-size:12px;color:var(--sub)}}
 .star{{color:#334155;cursor:pointer;font-size:13px;text-align:center}}
 .lg{{width:16px;height:16px;vertical-align:-3px;margin-right:5px;border-radius:50%}}
 .lg.big{{width:34px;height:34px}}
 .h a,.a{{display:flex;align-items:center;gap:2px}}
-.hero{{background:linear-gradient(135deg,#1e293b,#0f1a30);border:1px solid #b91c1c;border-radius:12px;padding:12px 14px;margin:10px 0;cursor:pointer}}
+.hero{{background:linear-gradient(135deg,var(--line),var(--card3));border:1px solid #b91c1c;border-radius:12px;padding:12px 14px;margin:10px 0;cursor:pointer}}
 .hero:hover{{border-color:#ef4444}}
-.ht{{display:flex;justify-content:space-between;font-size:11px;color:#8ea3c8;margin-bottom:6px}}
+.ht{{display:flex;justify-content:space-between;font-size:11px;color:var(--sub);margin-bottom:6px}}
 .hm{{display:flex;align-items:center;justify-content:space-between;gap:8px}}
 .htn{{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;flex:1}}
 .htn:last-child{{justify-content:flex-end}}
-.hsc{{font-size:22px;font-weight:800;color:#fff;background:#0b1220;border:1px solid #22345a;border-radius:8px;padding:4px 12px}}
+.hsc{{font-size:22px;font-weight:800;color:#fff;background:var(--bg);border:1px solid var(--line2);border-radius:8px;padding:4px 12px}}
 .hb{{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}}
 .star.on{{color:#fbbf24}}
 .flag{{font-size:10px;background:#3b2f0b;color:#fbbf24;border-radius:8px;padding:2px 5px;margin-left:4px;white-space:nowrap}}
-.badge small{{color:#64748b;font-size:9.5px}}
+.badge small{{color:var(--mut);font-size:9.5px}}
 .b-pre{{line-height:1.1}}
-.tm small{{color:#64748b;font-size:9.5px}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid #16233d;text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
+.tm small{{color:var(--mut);font-size:9.5px}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid var(--row);text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
 ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
-[data-theme="light"] body{{filter:invert(1) hue-rotate(180deg)}}
-[data-theme="light"] img,[data-theme="light"] .dot{{filter:invert(1) hue-rotate(180deg)}}
+:root{{--bg:var(--bg);--card:var(--card);--card2:var(--card2);--card3:var(--card3);--line:var(--line);--line2:var(--line2);--row:var(--row);--txt:var(--txt);--sub:var(--sub);--mut:var(--mut);--acc:var(--acc);--red:#b91c1c}}
+[data-theme="light"]{{--bg:#f4f6f9;--card:#ffffff;--card2:#eef2f7;--card3:#e6ebf1;--line:#d8dee6;--line2:#c3ccd6;--row:#e6ebf1;--txt:#182230;--sub:#4a5a70;--mut:#7b8794;--acc:#0284c7;--red:#b91c1c}}
 html.big{{font-size:118%}}
 </style></head><body>
-<header><a href="index.html" style="color:#93c5fd;text-decoration:none;margin-right:8px">‹ Indietro</a><button id="th" title="tema chiaro/scuro" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-right:6px">☀️</button><button id="inst" style="display:none;background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:3px 9px;cursor:pointer;font-size:12px">📲 Installa app</button><button id="fsz" aria-label="font grande" title="font grande" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-left:6px">A+</button><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
+<header><a href="index.html" onclick="if(history.length>1){{history.back();return false;}}" style="color:#93c5fd;text-decoration:none;margin-right:8px" aria-label="torna indietro">‹ Indietro</a><button id="th" title="tema chiaro/scuro" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-right:6px">☀️</button><button id="inst" style="display:none;background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:3px 9px;cursor:pointer;font-size:12px">📲 Installa app</button><button id="fsz" aria-label="font grande" title="font grande" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-left:6px">A+</button><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
 {daybar_html(today)}
 <div id="fbar"><button data-f="all" class="on">Tutte</button><button data-f="live">🔴 LIVE</button><button data-f="ev">🚩 EV&gt;0</button><button data-f="fav">⭐ mie</button><input id="fq" type="search" placeholder="cerca squadra o lega…"><button data-m="lega" class="on">per lega</button><button data-m="orario">per orario</button></div>
 <span id="sub" class="sub" style="display:block;padding:4px 14px"></span>

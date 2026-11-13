@@ -14,7 +14,7 @@ SITE = ROOT / "site"
 SITE.mkdir(exist_ok=True)
 
 FOOTER = "⚠️ Solo analisi, mai certezze · 18+ · puntare SOLO su ADM · autoesclusione.it · 800 558822"
-NAV = ('<nav><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
+NAV = ('<nav><a href="index.html" onclick="if(history.length>1){history.back();return false;}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
        '<a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a>'
        '<a href="giocata_multi.html">Giocate</a><a href="ppa.html">⚡ PPA</a>'
        '<a href="surebets.html">⚖️ Surebets</a><a href="schedina.html">🧾 Schedina</a>'
