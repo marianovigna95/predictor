@@ -1,0 +1,4 @@
+# copie di lavoro dei .py in root (la fonte è src/): non versionare
+*.py
+!src/**
+!*/*.py
