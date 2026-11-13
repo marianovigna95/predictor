@@ -64,7 +64,7 @@ def main():
         if sub.empty:
             continue
         played = matches[(matches["League"] == league) & (matches["Date"] < frm)].sort_values("Date")
-        elo, dc_hist, ad, ahg, aag, draw_base = train_league(played)
+        elo, dc_hist, ad, ahg, aag, draw_base, hfa_l = train_league(played)
         stand = standings(played)
         last = last_match(played, sub["Date"].min())
         div = next(d for d, l in DIV2LEAGUE.items() if l == league)

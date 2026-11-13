@@ -20,7 +20,7 @@ SITE = ROOT / "site"
 SITE.mkdir(exist_ok=True)
 
 FOOTER = "⚠️ Solo analisi, mai certezze · 18+ · puntare SOLO su ADM · autoesclusione.it · 800 558822"
-NAV = ('<nav><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
+NAV = ('<nav><button id="themeBtn" title="tema chiaro/scuro" style="background:none;border:1px solid var(--line,#22345a);color:inherit;border-radius:8px;padding:3px 8px;cursor:pointer">☀️</button><a href="index.html" onclick="if(history.length>1){history.back();return false;}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
        '<a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a>'
        '<a href="giocata_multi.html">Giocate</a><a href="ppa.html">⚡ PPA</a>'
        '<a href="surebets.html">⚖️ Surebets</a><a class="on" href="schedina.html">🧾 Schedina</a>'
@@ -28,16 +28,13 @@ NAV = ('<nav><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a
        '<a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a></nav>')
 
 
-def kelly_quarter(p, o):
-    """¼ Kelly: f*=(p*O-1)/(O-1); stake% = f*/4 (in % del bankroll)."""
-    try:
-        p, o = float(p) / 100.0, float(o)
-        if o <= 1:
-            return 0.0
-        f = (p * o - 1) / (o - 1)
-        return max(0.0, f / 4.0) * 100.0
-    except Exception:
-        return 0.0
+def kelly_quarter(p, o, n_eff=50):
+    """🆕 13/11 ¼ Kelly con incertezza: p_low = p - sqrt(p(1-p)/n_eff) (IC ~68%), poi f*=(p_low*O-1)/(O-1), stake=f*/4."""
+    import math
+    se = math.sqrt(max(p*(1-p), 1e-9) / n_eff)
+    pl = max(0.0, p - se)
+    f = (pl * o - 1.0) / (o - 1.0) if o > 1.0 else 0.0
+    return max(0.0, f) / 4.0
 
 
 def load_day(date_str, min_ev=2.0):
@@ -102,15 +99,29 @@ def page_html(date_str, rows):
     body = "".join(cards) if cards else '<p class="empty">Oggi nessuna schedina: nessuna giocata con EV &gt; +2% (regola del sito: stake 0).</p>'
     return f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>🧾 Schedina {date_str} — Predictor</title><style>{CSS}</style></head><body>
+<title>🧾 Schedina {date_str} — Predictor</title><style>{CSS}[data-theme="light"] body{{filter:invert(1) hue-rotate(180deg)}}
+</style></head><body>
 <div class="wrap">
 <h1>🧾 Schedina del giorno — {date_str}</h1>
 <p class="sub">Max 1 SINGOLA + 1 RADDOPPIO · stake solo se EV &gt; +2% · ¼ Kelly · puntare SOLO su ADM · fonte: modello walk-forward (nessuna certezza)</p>
 {NAV}
 {body}
-<p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF.</p>
+<p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF · <a href="#" id="share" style="color:#93c5fd">🔗 condividi schedina</a></p>
+<script>
+document.getElementById('share').addEventListener('click',function(e){{e.preventDefault();
+  var url=location.origin+location.pathname;
+  if(navigator.share){{navigator.share({{title:'Schedina',url:url}}).catch(function(){{}});}}
+  else if(navigator.clipboard){{navigator.clipboard.writeText(url).then(function(){{alert('Link copiato');}});}}
+}});
+</script>
 </div>
 <footer>{FOOTER}</footer>
+<script>
+(function(){{var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){{document.documentElement.setAttribute('data-theme',t);try{{localStorage.setItem('theme',t);}}catch(e){{}}b.textContent=t==='light'?'🌙':'☀️';}}
+var t='dark';try{{t=localStorage.getItem('theme')||'dark';}}catch(e){{}}
+set(t);b.onclick=function(){{set(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');}};}})();
+</script>
 </body></html>"""
 
 

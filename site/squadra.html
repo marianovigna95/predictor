@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="manifest.webmanifest"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<title>🔎 Squadra — Predictor</title>
+<style>
+body{background:#0b1220;color:#e2e8f0;font-family:system-ui,sans-serif;margin:0}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+h1{font-size:20px} h3{font-size:15px} .sub{color:#8ea3c8;font-size:12px}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:8px 0;border-bottom:1px solid #1e293b;margin-bottom:12px}
+nav a{color:#8ea3c8;text-decoration:none;font-size:12px;background:#16233d;padding:5px 9px;border-radius:12px}
+nav a.on{background:#b91c1c;color:#fff}
+#q{width:100%;background:#0f1a30;border:1px solid #22345a;color:#fff;border-radius:10px;padding:10px 12px;font-size:15px;margin:10px 0}
+.mrow{display:grid;grid-template-columns:70px 1fr 40px 1fr 190px;gap:6px;align-items:center;padding:6px 8px;border-bottom:1px solid #16233d;border-radius:6px}
+.mrow.head{color:#64748b;font-size:10.5px;text-transform:uppercase}
+.tm{color:#8ea3c8;font-size:12px} .sc{text-align:center;color:#64748b} .h,.a{font-size:13px}
+.od{font-size:10.5px;color:#8ea3c8}
+.flag{font-size:10px;background:#3b2f0b;color:#fbbf24;border-radius:8px;padding:2px 5px}
+footer{color:#475569;font-size:11px;text-align:center;padding:14px}
+[data-theme="light"] body{filter:invert(1) hue-rotate(180deg)}
+</style></head><body><div class="wrap">
+<h1>🔎 Cerca squadra — calendario completo</h1>
+<p class="sub">Tutte le partite della stagione dal calendario (tutte le nostre leghe + nazionali), con quote e 🚩 EV&gt;0 quando la partita è nella finestra 7 giorni. Nomi italiani ok (psg, bayern, juve…).</p>
+<nav><button id="themeBtn" title="tema chiaro/scuro" style="background:none;border:1px solid var(--line,#22345a);color:inherit;border-radius:8px;padding:3px 8px;cursor:pointer">☀️</button><a href="index.html" onclick="if(history.length>1){{history.back();return false;}}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="giocata_multi.html">Giocate</a><a href="ppa.html">⚡ PPA</a><a href="surebets.html">⚖️ Surebets</a><a href="schedina.html">🧾 Schedina</a><a href="bankroll.html">💰 Bankroll</a><a class="on" href="squadra.html">🔎 Squadra</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a></nav>
+<input id="q" placeholder="Nome squadra (es. Inter, PSG, Bayern, Juve, Atletico…)" autofocus>
+<div id="res"></div>
+</div>
+<footer>⚠️ Solo analisi, mai certezze · 18+ · puntare SOLO su ADM · autoesclusione.it · 800 558822</footer>
+<script>
+var FIX=null; var QMAP={"2026-11-13|leganes|burgos cf": {"h": "2.5", "x": "3.23", "a": "3.18"}, "2026-11-14|almeria|fc andorra": {"h": "1.64", "x": "4.44", "a": "5.0"}, "2026-11-14|mallorca|cordoba": {"h": "1.98", "x": "4.05", "a": "3.7"}, "2026-11-14|real oviedo|girona": {"h": "2.4", "x": "3.4", "a": "3.08"}, "2026-11-15|tenerife|ad ceuta fc": {"h": "1.92", "x": "3.57", "a": "4.15"}, "2026-11-15|granada|las palmas": {"h": "1.85", "x": "3.77", "a": "4.5"}, "2026-11-15|eibar|cadiz": {"h": "1.65", "x": "4.23", "a": "5.5"}, "2026-11-15|eldense|sabadell": {"h": "2.45", "x": "3.15", "a": "3.16"}, "2026-11-20|bielefeld|magdeburg": {"h": "2.32", "x": "3.75", "a": "2.95"}, "2026-11-20|darmstadt|heidenheim": {"h": "3.55", "x": "3.9", "a": "2.0"}, "2026-11-20|annecy|clermont": {"h": "2.2", "x": "3.35", "a": "3.45"}, "2026-11-20|guingamp|rodez": {"h": "2.1", "x": "3.7", "a": "3.45"}, "2026-11-20|metz|boulogne": {"h": "2.15", "x": "3.42", "a": "3.5"}, "2026-11-20|nancy|dijon": {"h": "1.84", "x": "3.8", "a": "4.2"}, "2026-11-20|red star|pau fc": {"h": "2.15", "x": "3.42", "a": "3.64"}, "2026-11-20|bayern munich|fc koln": {"h": "1.11", "x": "13.5", "a": "27.0"}, "2026-11-20|verona|cesena": {"h": "1.75", "x": "3.8", "a": "4.7"}, "2026-11-20|troyes|le havre": {"h": "2.1", "x": "3.84", "a": "3.64"}, "2026-11-13|singapore|paraguay": {"h": "351.0", "x": "91.0", "a": "2.71"}, "2026-11-13|united arab emirates|honduras": {"h": "2.22", "x": "3.49", "a": "3.6"}, "2026-11-13|saudi arabia|south korea": {"h": "4.79", "x": "3.74", "a": "1.86"}, "2026-11-13|qatar|australia": {"h": "3.95", "x": "3.7", "a": "2.04"}, "2026-11-13|kuwait|syria": {"h": "3.36", "x": "3.55", "a": "2.27"}, "2026-11-13|moldova|kazakhstan": {"h": "2.7", "x": "3.11", "a": "3.1"}, "2026-11-13|bulgaria|iceland": {"h": "5.0", "x": "3.8", "a": "1.79"}, "2026-11-13|liechtenstein|azerbaijan": {"h": "22.0", "x": "6.25", "a": "1.23"}, "2026-11-13|luxembourg|estonia": {"h": "2.62", "x": "3.48", "a": "4.64"}, "2026-11-13|netherlands|greece": {"h": "1.62", "x": "4.8", "a": "6.9"}, "2026-11-13|serbia|germany": {"h": "11.5", "x": "6.94", "a": "1.31"}, "2026-11-13|slovakia|faroe islands": {"h": "1.39", "x": "5.46", "a": "11.6"}, "2026-11-13|slovenia|switzerland": {"h": "6.25", "x": "3.7", "a": "1.75"}, "2026-11-13|andorra|gibraltar": {"h": "1.72", "x": "3.38", "a": "7.0"}, "2026-11-14|japan|brazil": {"h": "4.0", "x": "3.94", "a": "1.98"}, "2026-11-14|china|malaysia": {"h": "1.73", "x": "5.25", "a": "7.5"}, "2026-11-14|kosovo|israel": {"h": "1.93", "x": "3.76", "a": "4.3"}, "2026-11-14|georgia|hungary": {"h": "3.15", "x": "3.2", "a": "2.89"}, "2026-11-14|norway|wales": {"h": "1.26", "x": "7.0", "a": "12.5"}, "2026-11-14|northern ireland|ukraine": {"h": "2.57", "x": "3.19", "a": "3.17"}, "2026-11-14|portugal|denmark": {"h": "1.53", "x": "4.94", "a": "6.4"}, "2026-11-14|romania|poland": {"h": "4.1", "x": "4.0", "a": "2.02"}, "2026-11-14|sweden|bosnia herzegovina": {"h": "1.55", "x": "4.55", "a": "6.06"}, "2026-11-15|belarus|albania": {"h": "3.97", "x": "3.47", "a": "2.04"}, "2026-11-15|france|turkiye": {"h": "1.21", "x": "8.5", "a": "15.0"}, "2026-11-15|croatia|czechia": {"h": "1.41", "x": "5.0", "a": "8.0"}, "2026-11-15|belgium|italy": {"h": "2.18", "x": "3.8", "a": "3.3"}, "2026-11-15|spain|england": {"h": "1.62", "x": "4.56", "a": "5.4"}, "2026-11-16|germany|netherlands": {"h": "1.82", "x": "4.12", "a": "4.0"}, "2026-11-16|greece|serbia": {"h": "1.4", "x": "5.0", "a": "7.5"}, "2026-11-16|switzerland|scotland": {"h": "1.5", "x": "4.37", "a": "6.87"}, "2026-11-17|japan|paraguay": {"h": "1.5", "x": "3.95", "a": "5.24"}, "2026-11-17|russia|venezuela": {"h": "1.81", "x": "3.89", "a": "4.74"}, "2026-11-17|bosnia herzegovina|romania": {"h": "1.75", "x": "3.71", "a": "4.65"}, "2026-11-17|wales|portugal": {"h": "9.3", "x": "5.59", "a": "1.33"}, "2026-11-17|poland|sweden": {"h": "2.32", "x": "3.74", "a": "2.85"}, "2026-11-17|israel|austria": {"h": "5.4", "x": "4.3", "a": "1.65"}, "2026-11-17|hungary|northern ireland": {"h": "1.9", "x": "3.38", "a": "4.6"}, "2026-11-17|denmark|norway": {"h": "2.55", "x": "3.92", "a": "2.63"}, "2026-11-17|ukraine|georgia": {"h": "2.52", "x": "3.49", "a": "2.8"}}; var EVMAP={"2026-11-20|troyes|le havre": {"ev": 8.6, "pick": "1", "prob": "51.7", "odds": "2.1"}, "2026-11-20|bielefeld|magdeburg": {"ev": 10.2, "pick": "1", "prob": "47.5", "odds": "2.32"}, "2026-11-20|darmstadt|heidenheim": {"ev": 38.8, "pick": "1", "prob": "39.1", "odds": "3.55"}, "2026-11-13|leganes|burgos cf": {"ev": 25.3, "pick": "1", "prob": "50.1", "odds": "2.5"}, "2026-11-14|mallorca|cordoba": {"ev": 62.2, "pick": "1", "prob": "81.9", "odds": "1.98"}, "2026-11-14|real oviedo|girona": {"ev": 20.2, "pick": "1", "prob": "50.1", "odds": "2.4"}, "2026-11-15|granada|las palmas": {"ev": 50.6, "pick": "1", "prob": "81.4", "odds": "1.85"}, "2026-11-15|eibar|cadiz": {"ev": 26.2, "pick": "1", "prob": "76.5", "odds": "1.65"}, "2026-11-15|eldense|sabadell": {"ev": 29.1, "pick": "1", "prob": "52.7", "odds": "2.45"}, "2026-11-20|annecy|clermont": {"ev": 5.2, "pick": "1", "prob": "47.8", "odds": "2.2"}, "2026-11-20|red star|pau fc": {"ev": 44.9, "pick": "2", "prob": "39.8", "odds": "3.64"}, "2026-11-13|moldova|kazakhstan": {"ev": 27.7, "pick": "1", "prob": "47.3", "odds": "2.7"}, "2026-11-13|slovenia|switzerland": {"ev": 207.5, "pick": "1", "prob": "49.2", "odds": "6.25"}, "2026-11-13|serbia|germany": {"ev": 424.4, "pick": "1", "prob": "45.6", "odds": "11.5"}, "2026-11-13|luxembourg|estonia": {"ev": 17.4, "pick": "1", "prob": "44.8", "odds": "2.62"}, "2026-11-13|liechtenstein|azerbaijan": {"ev": 918.6, "pick": "1", "prob": "46.3", "odds": "22.0"}, "2026-11-13|bulgaria|iceland": {"ev": 138.5, "pick": "1", "prob": "47.7", "odds": "5.0"}, "2026-11-14|kosovo|israel": {"ev": 1.5, "pick": "1", "prob": "52.6", "odds": "1.93"}, "2026-11-14|georgia|hungary": {"ev": 41.4, "pick": "1", "prob": "44.9", "odds": "3.15"}, "2026-11-14|northern ireland|ukraine": {"ev": 26.4, "pick": "1", "prob": "49.2", "odds": "2.57"}, "2026-11-14|romania|poland": {"ev": 129.6, "pick": "1", "prob": "56.0", "odds": "4.1"}, "2026-11-15|belarus|albania": {"ev": 71.9, "pick": "1", "prob": "43.3", "odds": "3.97"}, "2026-11-17|israel|austria": {"ev": 117.1, "pick": "1", "prob": "40.2", "odds": "5.4"}, "2026-11-17|poland|sweden": {"ev": 31.1, "pick": "2", "prob": "46.0", "odds": "2.85"}, "2026-11-17|denmark|norway": {"ev": 5.1, "pick": "1", "prob": "41.2", "odds": "2.55"}, "2026-11-17|ukraine|georgia": {"ev": 15.9, "pick": "1", "prob": "46.0", "odds": "2.52"}, "2026-11-13|singapore|paraguay": {"ev": 17309.6, "pick": "1", "prob": "49.6", "odds": "351.0"}, "2026-11-13|united arab emirates|honduras": {"ev": 38.3, "pick": "1", "prob": "62.3", "odds": "2.22"}, "2026-11-13|saudi arabia|south korea": {"ev": 98.8, "pick": "1", "prob": "41.5", "odds": "4.79"}, "2026-11-13|qatar|australia": {"ev": 69.1, "pick": "1", "prob": "42.8", "odds": "3.95"}, "2026-11-13|kuwait|syria": {"ev": 60.9, "pick": "1", "prob": "47.9", "odds": "3.36"}, "2026-11-14|japan|brazil": {"ev": 95.2, "pick": "1", "prob": "48.8", "odds": "4.0"}, "2026-11-17|russia|venezuela": {"ev": 26.5, "pick": "1", "prob": "69.9", "odds": "1.81"}};
+var ALIAS={"psg":"paris saint","bayern":"bayern munchen","milan":"ac milan","inter":"inter","napoli":"napoli","juve":"juventus","roma":"as roma","lazio":"lazio","atalanta":"atalanta","fiorentina":"fiorentina","toro":"torino","bologna":"bologna","udinese":"udinese","monza":"monza","verona":"hellas","empoli":"empoli","parma":"parma","genoa":"genoa","cagliari":"cagliari","lecce":"lecce","venezia":"venezia","como":"como","barcellona":"barcelona","barca":"barcelona","atletico":"atletico madrid","betis":"betis","sevilla":"sevilla","valencia":"valencia","villareal":"villarreal","arsenal":"arsenal","chelsea":"chelsea","liverpool":"liverpool","city":"manchester city","united":"manchester united","spurs":"tottenham","newcastle":"newcastle","villa":"aston villa","wolves":"wolverhampton","everton":"everton","brighton":"brighton","palace":"crystal palace","fulham":"fulham","brentford":"brentford","dortmund":"dortmund","leverkusen":"leverkusen","leipzig":"leipzig","frankfurt":"frankfurt","stuttgart":"stuttgart","gladbach":"monchengladbach","monaco":"monaco","marsiglia":"marseille","lille":"lille","nice":"nice","rennes":"rennes","benfica":"benfica","porto":"porto","sporting":"sporting","ajax":"ajax","psv":"psv","feyenoord":"feyenoord","galata":"galatasaray","fener":"fenerbahce","besiktas":"besiktas","celtic":"celtic","rangers":"rangers"};
+function norm(t){return (t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+function matchQ(q,nn){var nq=norm(q);if(!nq)return false;if(nn.indexOf(nq)>=0||nq.indexOf(nn)>=0)return true;
+  for(var k in ALIAS){if(nq.indexOf(k)>=0||k.indexOf(nq)>=0){if(nn.indexOf(ALIAS[k])>=0)return true;}}
+  return false;}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function qk(dk,h,a){var q=QMAP[dk+'|'+norm(h)+'|'+norm(a)];if(!q&&QMAP[dk+'|'+norm(a)+'|'+norm(h)]){var s2=QMAP[dk+'|'+norm(a)+'|'+norm(h)];q={h:s2.a,x:s2.x,a:s2.h};}return q;}
+function evk(dk,h,a){var q=EVMAP[dk+'|'+norm(h)+'|'+norm(a)];if(!q&&EVMAP[dk+'|'+norm(a)+'|'+norm(h)]){var s2=EVMAP[dk+'|'+norm(a)+'|'+norm(h)];q={ev:s2.ev,pick:s2.pick==='1'?'2':(s2.pick==='2'?'1':'X'),odds:s2.odds};}return q;}
+async function cerca(){
+  var q=document.getElementById('q').value.trim();
+  var out=document.getElementById('res');
+  if(!FIX){out.innerHTML='<p class="sub">carico calendario…</p>';try{FIX=await (await fetch('fixtures.json')).json();}catch(e){out.innerHTML='<p class="sub">calendario non disponibile</p>';return;}}
+  if(q.length<3){out.innerHTML='<p class="sub">Scrivi almeno 3 lettere (es. "inter", "psg", "bayern")…</p>';return;}
+  var nq=norm(q);
+  // trova squadre che matchano
+  var teams={};
+  FIX.forEach(function(f){[f[2],f[3]].forEach(function(t){var nn=norm(t); if(matchQ(q,nn))teams[nn]=(teams[nn]||{name:t,n:0}); teams[nn].n++;});});
+  var tlist=Object.keys(teams).sort(function(a,b){return teams[b].n-teams[a].n;});
+  if(!tlist.length){out.innerHTML='<p class="sub">Nessuna squadra trovata per "'+esc(q)+'".</p>';return;}
+  out.innerHTML='<p class="sub">Squadre: '+tlist.slice(0,6).map(function(t){return '<b>'+esc(teams[t].name)+'</b> ('+teams[t].n+' partite)';}).join(' · ')+'</p>';
+  // calendario completo della prima squadra (o di tutte le trovate, max 2)
+  var html='';
+  tlist.slice(0,2).forEach(function(tn){
+    var matches=FIX.filter(function(f){return norm(f[2])===tn||norm(f[3])===tn;});
+    matches.sort(function(a,b){return a[0]<b[0]?-1:1;});
+    html+='<h3 style="margin:14px 0 6px">📅 '+esc(teams[tn].name)+' — '+matches.length+' partite dal calendario ('+esc(matches[0][4]||'')+')</h3>';
+    html+='<div class="mrow head"><span class="tm">Data</span><span class="h">Casa</span><span class="sc">vs</span><span class="a">Trasferta</span><span class="od">Quote/🚩</span></div>';
+    matches.forEach(function(f){
+      var dk=f[0], h=f[2], a=f[3];
+      var qq=qk(dk,h,a), vv=evk(dk,h,a);
+      var extra=(qq&&qq.h?('1 '+qq.h+' · X '+(qq.x||'–')+' · 2 '+qq.a):'')+((vv&&vv.ev>0)?(' <span class="flag">🚩 EV+'+vv.ev+'% '+esc(vv.pick)+' @ '+esc(vv.odds)+'</span>'):'');
+      if(!extra)extra='<span class="od">—</span>';
+      var dstr=dk.slice(8,10)+'/'+dk.slice(5,7);
+      html+='<div class="mrow"><span class="tm">'+dstr+'</span><span class="h">'+esc(h)+'</span><span class="sc">-</span><span class="a">'+esc(a)+'</span><span class="od">'+extra+'</span></div>';
+    });
+  });
+  out.innerHTML+=html;
+}
+document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter')cerca();});
+</script>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}b.textContent=t==='light'?'🌙':'☀️';}
+var t='dark';try{t=localStorage.getItem('theme')||'dark';}catch(e){}
+set(t);b.onclick=function(){set(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');};})();
+</script>
+</body></html>

@@ -45,6 +45,27 @@ def _send(chat, text):
     return True
 
 
+def _send_file(chat, path, caption=""):
+    """📎 Invia un file (PDF) via Bot API sendDocument (multipart)."""
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN")
+    if not tok or not chat or not os.path.exists(path):
+        print(f"⚠️ send_file saltato: token/chat/file mancanti ({path})")
+        return False
+    import uuid
+    boundary = "----" + uuid.uuid4().hex
+    with open(path, "rb") as f:
+        payload = f.read()
+    body = ((f"--{boundary}\r\nContent-Disposition: form-data; name=\"chat_id\"\r\n\r\n{chat}\r\n"
+             f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n{caption}\r\n"
+             f"--{boundary}\r\nContent-Disposition: form-data; name=\"document\"; filename=\"{os.path.basename(path)}\"\r\n"
+             f"Content-Type: application/pdf\r\n\r\n").encode() + payload + f"\r\n--{boundary}--\r\n".encode())
+    req = urllib.request.Request(f"https://api.telegram.org/bot{tok}/sendDocument", data=body,
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}", "User-Agent": "Mozilla/5.0"})
+    urllib.request.urlopen(req, timeout=60).read()
+    print(f"📎 Telegram file inviato a {chat}: {os.path.basename(path)}")
+    return True
+
+
 def send_alert(text):
     return _send(os.environ.get("TELEGRAM_CHAT_ID"), text)
 
@@ -93,6 +114,16 @@ def digest(a):
     lines.append("\n🌐 " + "https://marianovigna95.github.io/predictor/")
     lines.append(FOOTER)
     send_channel("\n".join(lines))
+    # 📎 allega PDF schedina del giorno se esiste
+    pdf = ROOT / "site" / f"schedina_{a.date}.pdf"
+    if not pdf.exists():
+        pdf = SITE_FALLBACK / f"schedina_{a.date}.pdf" if (SITE_FALLBACK := ROOT / "site").exists() else pdf
+    if pdf.exists():
+        try:
+            _send_file(os.environ.get("TELEGRAM_CHANNEL_ID") or os.environ.get("TELEGRAM_CHAT_ID"),
+                       str(pdf), f"🧾 Schedina {a.date} (EV>+2%, ¼ Kelly) — solo analisi · 18+ ADM")
+        except Exception as e:
+            print(f"send_file schedina: {e}")
 
 
 def _norm(t):
@@ -239,6 +270,140 @@ def alert_clv(date_str, drop_pct=5.0):
                 print(f"alert_clv inviato: {g.get('partita')} {pick} {q0}->{q1}")
 
 
+def alert_ft(date_str):
+    """🏁 Avvisa (chat privata) quando una partita EV>0/⭐ di oggi è FINITA (FT) con il risultato."""
+    import json
+    try:
+        fc = pd.read_csv(DATA / "forecast_multi.csv", dtype=str).fillna("")
+    except Exception:
+        return
+    today_dm = f"{date_str[8:10]}/{date_str[5:7]}"
+    cand = []
+    for _, r in fc.iterrows():
+        if not str(r.get("orario", "")).startswith(today_dm) or " - " not in r.get("partita", ""):
+            continue
+        try:
+            ev = float(r.get("EV%") or 0)
+        except Exception:
+            ev = 0.0
+        if ev > 0:
+            h, a = r["partita"].split(" - ", 1)
+            cand.append({"h": _norm(h), "a": _norm(a), "partita": r["partita"], "ev": round(ev * 100, 1),
+                         "pick": r.get("pronostico", ""), "odds": r.get("quota_best", ""), "lega": r.get("lega", "")})
+    ff = ROOT / "fav_teams.txt"
+    if ff.exists():
+        fav = {_norm(x) for x in ff.read_text(encoding="utf-8").splitlines() if x.strip()}
+        for _, r in fc.iterrows():
+            if not str(r.get("orario", "")).startswith(today_dm) or " - " not in r.get("partita", ""):
+                continue
+            h, a = r["partita"].split(" - ", 1)
+            if _norm(h) in fav or _norm(a) in fav:
+                if not any(c["partita"] == r["partita"] for c in cand):
+                    cand.append({"h": _norm(h), "a": _norm(a), "partita": r["partita"], "ev": 0,
+                                 "pick": "⭐", "odds": "", "lega": r.get("lega", "")})
+    if not cand:
+        return
+    ds = date_str.replace("-", "")
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?dates={ds}"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    j = json.load(urllib.request.urlopen(req, timeout=30))
+    sent_file = DATA / f"ft_alerted_{date_str}.txt"
+    done = set(sent_file.read_text().split()) if sent_file.exists() else set()
+    for ev_ in j.get("events", []):
+        c = (ev_.get("competitions") or [{}])[0]
+        st = (c.get("status") or {}).get("type") or {}
+        if st.get("state") != "post":
+            continue
+        cs = c.get("competitors") or []
+        h = next((x for x in cs if x.get("homeAway") == "home"), {})
+        a = next((x for x in cs if x.get("homeAway") == "away"), {})
+        hn, an = _norm(h.get("team", {}).get("displayName", "")), _norm(a.get("team", {}).get("displayName", ""))
+        for cd in cand:
+            if (cd["h"] == hn and cd["a"] == an) and ev_["id"] not in done:
+                res = f"{h.get('score','?')} - {a.get('score','?')}"
+                if cd["ev"] > 0:
+                    txt = (f"🏁 <b>FT</b> — {cd['partita']} ({cd['lega']}): <b>{res}</b>\n"
+                           f"🚩 era EV+{cd['ev']}%: {cd['pick']} @ {cd['odds']} · verifica esito a fine giornata\n{FOOTER}")
+                else:
+                    txt = f"🏁 <b>FT</b> — {cd['partita']} ({cd['lega']}): <b>{res}</b> ⭐\n{FOOTER}"
+                if send_alert(txt):
+                    done.add(ev_["id"])
+                    sent_file.write_text(" ".join(sorted(done)))
+                    print(f"alert_ft inviato: {cd['partita']} {res}")
+
+
+def comandi():
+    """🤖 Comandi Telegram in chat privata: /oggi /ppa /surebets /verifica /diretta /start."""
+    import json
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat = os.environ.get("TELEGRAM_CHAT_ID")
+    if not tok or not chat:
+        return
+    base = f"https://api.telegram.org/bot{tok}"
+    try:
+        up = json.load(urllib.request.urlopen(urllib.request.Request(base + "/getUpdates?offset=-100&timeout=0", headers={"User-Agent": "Mozilla/5.0"}), timeout=15))
+    except Exception as e:
+        print(f"comandi getUpdates: {e}")
+        return
+    today = datetime.date.today().isoformat()
+    for u in up.get("result", []):
+        msg = u.get("message") or {}
+        txt = (msg.get("text") or "").strip()
+        cid = str((msg.get("chat") or {}).get("id", ""))
+        if not txt.startswith("/") or cid != str(chat):
+            continue
+        cmd = txt.split()[0].split("@")[0].lower()
+        try:
+            if cmd in ("/start", "/help"):
+                ans = ("🤖 Comandi: /oggi (giocate EV>0 di oggi) · /ppa (top p≥60%) · /surebets · /verifica (esiti ieri) · /diretta (partite LIVE ora) · /schedina\n" + FOOTER)
+            elif cmd == "/oggi":
+                gj = pd.read_csv(DATA / "giocata_multi.csv", dtype=str).fillna("")
+                day = gj[gj["data"] == today] if "data" in gj.columns else gj
+                ans = "🎯 Giocate di oggi (EV>0):\n" + ("\n".join(
+                    f"• {r.get('tipo','')} — {r.get('partita','')} — {r.get('mercato','')} @ {r.get('quota_best','')} (EV +{r.get('EV%','')}%)" for _, r in day.iterrows()) if len(day) else "nessuna (stake 0)") + f"\n{FOOTER}"
+            elif cmd == "/schedina":
+                ans = f"🧾 Schedina di oggi: https://marianovigna95.github.io/predictor/schedina.html\n{FOOTER}"
+            elif cmd == "/ppa":
+                fc = pd.read_csv(DATA / "forecast_multi.csv", dtype=str).fillna("")
+                fc["conf"] = pd.to_numeric(fc.get("conf%"), errors="coerce")
+                top = fc[fc["conf"] >= 60].sort_values("conf", ascending=False).head(5)
+                ans = "⚡ Top PPA (p≥60%):\n" + ("\n".join(f"• {r.get('orario','')} {r.get('partita','')} — {r.get('pronostico','')} {r['conf']}% @ {r.get('quota_best','')}" for _, r in top.iterrows()) if len(top) else "nessuna") + f"\n{FOOTER}"
+            elif cmd == "/surebets":
+                bp = bestprice_surebets(today)
+                hot = [r for r in bp if float(r.get("margine%") or 0) >= 1.0]
+                ans = "⚖️ Surebets ≥+1%:\n" + ("\n".join(f"• {r['ora']} {r['partita']} — {r['mercato']} +{r['margine%']}%" for r in hot) if hot else "nessuna oggi") + f"\n{FOOTER}"
+            elif cmd == "/verifica":
+                y = (datetime.date.fromisoformat(today) - datetime.timedelta(days=1)).isoformat()
+                evf = DATA / f"eval_day_{y}.csv"
+                if evf.exists():
+                    ev = pd.read_csv(evf)
+                    ok = int((ev["esito"] == "✅").sum()) if "esito" in ev.columns else 0
+                    ko = int((ev["esito"] == "❌").sum()) if "esito" in ev.columns else 0
+                    ans = f"✅ Verifica {y}: {ok} vincenti / {ko} perdenti su {len(ev)} giocate\n{FOOTER}"
+                else:
+                    ans = f"Verifica {y} non ancora disponibile.\n{FOOTER}"
+            elif cmd == "/diretta":
+                ds = today.replace("-", "")
+                url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?dates={ds}"
+                j = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=20))
+                live = []
+                for e in j.get("events", []):
+                    c = (e.get("competitions") or [{}])[0]
+                    st = (c.get("status") or {}).get("type") or {}
+                    if st.get("state") == "in":
+                        cs = c.get("competitors") or []
+                        h = next((x for x in cs if x.get("homeAway") == "home"), {})
+                        a = next((x for x in cs if x.get("homeAway") == "away"), {})
+                        live.append(f"• {h.get('team',{}).get('displayName','?')} {h.get('score','0')} - {a.get('score','0')} {a.get('team',{}).get('displayName','?')} ({(c.get('status') or {}).get('displayClock','')})")
+                ans = "🔴 LIVE ora:\n" + ("\n".join(live[:15]) if live else "nessuna partita in corso ora") + f"\n{FOOTER}"
+            else:
+                continue
+            _send(chat, ans)
+            print(f"comando {cmd} → risposto")
+        except Exception as e:
+            print(f"comando {cmd}: {e}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--min", type=float, default=1.0, help="soglia margine %")
@@ -251,6 +416,18 @@ def main():
         alert_live(a.date)
     except Exception as e:
         print(f"alert_live: {e}")
+
+    # 🏁 alert FT (risultato) per partite EV>0/⭐ finite
+    try:
+        alert_ft(a.date)
+    except Exception as e:
+        print(f"alert_ft: {e}")
+
+    # 🤖 comandi Telegram (/oggi /ppa /surebets /verifica /diretta)
+    try:
+        comandi()
+    except Exception as e:
+        print(f"comandi: {e}")
 
     # 📉 alert CLV: quota giocata EV>+2% scesa >5% (chat privata)
     try:

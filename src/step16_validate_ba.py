@@ -75,7 +75,7 @@ def main():
             continue
         key = (lg, d.normalize())
         if key not in cache:
-            elo, dc_hist, ad, ahg, aag, draw_base = train_league(played)
+            elo, dc_hist, ad, ahg, aag, draw_base, hfa_l = train_league(played)
             cache[key] = (elo, dc_hist, ad, ahg, aag, draw_base, standings(played), last_match(played, d.normalize()))
         elo, dc_hist, ad, ahg, aag, draw_base, stand, last = cache[key]
         P, p_over, p_btts, *_ = predict_match(elo, dc_hist, ad, ahg, aag, draw_base, d, home, away, stand=stand, last=last, odds=None)

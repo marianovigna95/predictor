@@ -125,13 +125,20 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
 </style></head><body><div class="wrap"><header class="topbar"><div class="wrap tb"><a class="brand" href="index.html">⚽ <span>Predictor</span></a><div class="tb-r"><a class="backbtn" href="index.html" onclick="if(history.length>1){history.back();return false;}else{location.href='index.html';return false;}">← Indietro</a><button id="themeBtn" class="btn ghost" style="cursor:pointer" title="Cambia tema">☀️</button><a class="btn ghost" href="index.html">⌂ Home</a></div></div></header>
 <div class="card">
   <h1>📖 Metodo &amp; <span class="g">trasparenza</span></h1>
-  <h2>Il modello (v4)</h2>
-  <p class="sub">Ensemble pesato: <b>Elo</b>, <b>DC 180 giorni</b> (forma recente), <b>quote di mercato</b> come input,
-  <b>motivazione/classifica</b>, <b>congestione calendario</b>, <b>assenze</b> con impatto xG
-  (FotMob 45gg + Understat stagione), <b>xG</b> come dato prioritario.</p>
+  <h2>Il modello (v7)</h2>
+  <p class="sub">Ensemble pesato <b>Elo 0.50 + Dixon-Coles 0.30 + mercato 0.20</b> (pesi ri-tunati il 13/11 su 535 match g6-g38).
+  Il DC usa <b>xG per partita</b> (HxG/AxG football-data) come gol, con proxy tiri calibrato dove manca.
+  <b>Home advantage stimato per lega</b> dai dati (share vittorie casa, convertita in punti Elo, clip 15-110) invece che fisso.
+  <b>Stacking con meta-learner</b>: regressione logistica sui 3 membri (Elo, DC, mercato) fittata walk-forward sulle ultime 60 partite
+  (stato a -45gg, no leakage) — <b>RPS 0.1918</b> vs 0.2008 pesi fissi e 0.1963 del mercato (LOO su 535 match g6-g38).
+  <b>Calibrazione isotonic</b> sopra lo stacking (0.1988 su pesi fissi).
+  A queste: <b>motivazione/classifica</b>, <b>congestione calendario</b>, <b>forma pesata per Elo avversario</b>,
+  <b>H2H</b>, <b>bias arbitro</b>, <b>assenze</b> con impatto xG (FotMob 45gg + Understat stagione).</p>
   <h2>Validazione walk-forward</h2>
-  <p class="sub">Backtest g8-g10: ogni partita prevista usando SOLO dati precedenti (no leakage).
-  Metriche: <b>RPS, log-loss, Brier, ECE</b>. V4: RPS 0.1898 / 53.3% acc. Il mercato resta il benchmark (~RPS 0.19).</p>
+  <p class="sub">Backtest g6-g38 (535 match, train solo su dati precedenti, no leakage).
+  Metriche: <b>RPS, log-loss, Brier, ECE</b>. V7 stacker: RPS <b>0.1918</b> (LOO 535 match) — meglio del mercato (0.1963);
+  v6: 0.2008 grezzo → 0.1988 calibrato. Il mercato resta il benchmark (~RPS 0.19-0.20): il nostro edge non è "battere il mercato"
+  in RPS, ma le <b>quote ADM specifiche</b> + segnali extra (forma, H2H, arbitro, assenze-xG) che il mercato medio non pesa.</p>
   <h2>Fonti dati (dettaglio)</h2>
   <p class="sub">Ogni dato entra nel modello da una fonte pubblica e verificabile; i file locali sono nel workspace (<code>data/</code>).</p>
   <div class="tablewrap"><table>
@@ -176,9 +183,37 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <p class="sub">Le quote mostrate sono sempre <b>best-price da comparatore</b> (non un singolo bookmaker) e il benchmark del mercato è la <b>quota media di chiusura</b> (Avg di football-data).</p>
   <h2>Le nostre regole</h2>
   <p class="sub">✅ tutti i pronostici pubblicati con esito (vinti e persi) · ✅ win% sempre con RPS/ROI ·
-  ✅ probabilità con incertezza, mai "sicuro" · ✅ 1 sola partita per giornata (mode 1) con edge vs quota ·
+  ✅ probabilità con incertezza, mai "sicuro" · ✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b>, stake solo se <b>EV &gt; +2%</b>, dimensionato <b>¼ Kelly con margine di incertezza</b> (p − IC 68%) ·
   ✅ 18+/ADM/autoesclusione.it ovunque · ❌ niente multiple/schedine · ❌ niente % in vetrina senza contesto ·
   ❌ niente black-box: il codice è nel workspace.</p>
+  <h2>🧮 Le formule (quelle che usiamo davvero)</h2>
+  <div class="tablewrap"><table>
+  <tr><th>Concetto</th><th>Formula</th><th>Uso</th></tr>
+  <tr><td data-label='Concetto'><b>EV (valore atteso)</b></td><td data-label='Formula'><code>EV = p·(O−1) − (1−p)</code> = <code>p·O − 1</code></td><td data-label='Uso'>si pubblica/gioca solo se EV &gt; 0; lo stake parte solo se EV &gt; +2%</td></tr>
+  <tr><td data-label='Concetto'><b>Kelly frazionario</b></td><td data-label='Formula'><code>f* = (p·O−1)/(O−1)</code>, stake = <code>f*/4</code> (¼ Kelly)</td><td data-label='Uso'>% del bankroll da puntare su Singola/Raddoppio</td></tr>
+  <tr><td data-label='Concetto'><b>CLV</b></td><td data-label='Formula'>quota giocata vs quota di chiusura mercato (Avg football-data)</td><td data-label='Uso'>misura se la nostra lettura ha battuto il mercato (archivio+CLV)</td></tr>
+  <tr><td data-label='Concetto'><b>RPS</b></td><td data-label='Formula'>ranked probability score vs esito reale</td><td data-label='Uso'>metrica principale di validazione (benchmark mercato ~0.19)</td></tr>
+  </table></div>
+  <h2>🗺️ Mappa del sito (cosa c'è ora)</h2>
+  <div class="tablewrap"><table>
+  <tr><th>Pagina</th><th>Cosa fa</th></tr>
+  <tr><td data-label='Pagina'>🏠 <b>Home / finestra mobile</b></td><td>partite oggi→+7 giorni, 🚩 Nazionali, quote best-price, pronostici EV&gt;0</td></tr>
+  <tr><td data-label='Pagina'>🔴 <b>Diretta</b></td><td>live 30s (ESPN): loghi, hero card, quote 1X2, ⭐ preferiti, filtri LIVE/EV/⭐, barra date, dettaglio con timeline, barre xG/possesso, formazioni, H2H, confronto stagionale, classifica+capocannonieri, copia link</td></tr>
+  <tr><td data-label='Pagina'>🧾 <b>Schedina del giorno</b></td><td>Singola+Raddoppio con EV&gt;+2%, stake ¼ Kelly — stampabile/PDF</td></tr>
+  <tr><td data-label='Pagina'>💰 <b>Bankroll</b></td><td>tracker personale (salvato solo nel tuo browser): ROI, winrate, drawdown, verifica esiti ESPN automatica, export CSV</td></tr>
+  <tr><td data-label='Pagina'>🎯 <b>Giocate</b> · ⚡ <b>PPA</b> · ⚖️ <b>Surebets</b></td><td>giocate EV&gt;0 della finestra · PPA p≥60% (html+PDF) · surebet best-price ≥+1%</td></tr>
+  <tr><td data-label='Pagina'>📅 <b>Verifica</b> · 🗂 <b>Archivio+CLV</b> · 📊 <b>Report weekend</b></td><td>esiti verificati (FotMob+ESPN incrociati), CLV, report</td></tr>
+  <tr><td data-label='Pagina'>🤖 <b>Telegram</b></td><td>digest giornaliero sul canale (giocate EV&gt;0, verifica, top PPA) + alert in privado: surebet, 🔴 LIVE di partite 🚩/⭐, 📉 quota in calo (CLV)</td></tr>
+  </table></div>
+  <h2>📅 Ultimo aggiornamento &amp; storico versioni</h2>
+  <p class="sub">Pagina aggiornata il <b>2026-11-13</b>. Pipeline automatica 4×/giorno (07:30 / 13:30 / 19:30 / 23:00 IT) su GitHub Actions gratis.</p>
+  <div class="tablewrap"><table>
+  <tr><th>Versione</th><th>Novità</th><th>Metriche (walk-forward)</th></tr>
+  <tr><td data-label='Versione'>v4</td><td>ensemble Elo+DC180+mercato+xG</td><td>RPS 0.1898 · 53.3% acc. (g8-g10)</td></tr>
+  <tr><td data-label='Versione'>v5 (dal 10/11/2026)</td><td>finestra mobile 7gg, Nazionali 🚩, diretta live ESPN, PPA, schedina, bankroll, Telegram</td><td>in validazione continua (archivio+CLV)</td></tr>
+  <tr><td data-label='Versione'>v6 (dal 13/11/2026)</td><td>🏟️ HFA stimato per lega · 📊 xG nel DC · 🎯 calibrazione isotonic walk-forward · ⚖️ pesi ri-tunati su 535 match (g6-g38)</td><td>RPS 0.2008 → <b>0.1988 calibrato</b> (LOO); pesi 0.50/0.30/0.20 confermati</td></tr>
+  <tr><td data-label='Versione'>v7 (dal 13/11/2026)</td><td>🧠 <b>stacking meta-learner</b> (logistic sui 3 membri) · 🔗 <b>correlazione raddoppio</b> (rho −0.26 stimato dai dati, EV più onesto) · 🎲 <b>¼ Kelly con incertezza</b> (IC 68% su p) · 📈 <b>forma-xG ultime 5</b> per tutte le leghe</td><td>Stacker RPS <b>0.1918</b> LOO (mercato 0.1963) — primo modello sotto il mercato</td></tr>
+  </table></div>
   <h2>Limiti onesti</h2>
   <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis. La varianza del calcio è alta: anche il modello
   migliore perde journées intere (campioni piccoli: un weekend = 5-9 partite). Per questo pubblichiamo le sconfitte.</p>
@@ -193,7 +228,7 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
 <div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · 800 558822</div>
 <div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a></div>
 <footer class="legal">
-  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
   ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
   Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
   Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>

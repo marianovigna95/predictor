@@ -54,7 +54,7 @@ def main():
             played = m_all[m_all["Date"] < day0]
             if len(played) < 300:
                 continue
-            elo, dc_hist, ad, ahg, aag, draw_base = train_league(played)
+            elo, dc_hist, ad, ahg, aag, draw_base, hfa_l = train_league(played)
             stand = standings(played)
             last = last_match(played, day0)
             # risultati reali dalla lega 2627 (matches.csv ha FTR)
