@@ -1082,6 +1082,13 @@ Edge positivo = il modello batte il mercato su quella lega. Campioni piccoli: da
 
 def giocata_card_html():
     """Card giocata RAGGRUPPATE PER GIORNO: per ogni data della finestra, Singola del giorno + Raddoppio del giorno."""
+    # 🆕 13/11 esito reale sulle giocate dei giorni passati (da verifica_*.csv)
+    _nn = lambda t: "".join(ch for ch in str(t).lower() if ch.isalnum())
+    ver_map = {}
+    for vf in sorted(glob.glob(os.path.join(DATA, "verifica_*.csv"))):
+        with open(vf) as f:
+            for r in csv.DictReader(f):
+                ver_map[(_nn(r["data"])[:10], r["tipo"], _nn(str(r["partita"]).split("[")[0].strip()))] = r.get("vinto", "")
     gj_p = os.path.join(DATA, "giocata_multi.csv")
     if not os.path.exists(gj_p):
         return ""
@@ -1102,7 +1109,7 @@ def giocata_card_html():
             vd = (r.get("verdetto") or "").replace("<", "&lt;")
             vc = 'v-no' if vd.startswith('⛔') else ('v-bor' if vd.startswith('⚠️') else ('v-go' if vd.startswith('✅') else 'v-ok'))
             gtr += (f"<tr><td data-label='Tipo'><span class='pill t-{r['tipo'].lower()}'>{r['tipo']}</span></td><td data-label='Lega'>{r['lega']}</td>"
-                    f"<td data-label='Partita'>{r['partita']}</td><td data-label='Mercato'>{mc}</td>"
+                    f"<td data-label='Partita'>{r['partita']}{(' <b>' + ver_map.get((_nn(r.get('data','')), r['tipo'], _nn(str(r['partita']).split('[')[0].strip())), '') + '</b>') if ver_map.get((_nn(r.get('data','')), r['tipo'], _nn(str(r['partita']).split('[')[0].strip()))) else ''}</td><td data-label='Mercato'>{mc}</td>"
                     f"<td data-label='Esito'><b>{r['esito']}</b></td>"
                     f"<td data-label='p modello'>{r['p_modello%']}%</td><td data-label='Quota best'>{r['quota_best']}</td>"
                     f"<td data-label='EV'><span class='pill {evc}'>{r['EV%']}%</span></td></tr>"

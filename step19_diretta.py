@@ -261,13 +261,14 @@ LIVE_JS = """<script>
   }
   function badge(e){
     var tn=(e.status||'').toUpperCase();
+    if(!e.live&&e.ts&&e.ts<Date.now())tn='FULL_TIME';
     var fl=(e.ev&&e.ev.ev>0)?'<span class="flag" title="Pronostico EV+'+e.ev.ev+'% — '+esc(e.ev.pick)+' @ '+esc(e.ev.odds)+' (p '+esc(e.ev.prob)+'%)">🚩'+e.ev.ev+'%</span>':'';
     if(e.live)return '<span class="badge b-live"><i class="dot"></i>LIVE '+esc(e.minute||'')+'</span>'+fl;
     if(tn.indexOf('FULL')>=0||tn.indexOf('FINAL')>=0)return '<span class="badge b-ft">FT</span>'+fl;
     return fl||'<span class="badge b-pre">·</span>';
   }
   function row(e){
-    var cls=e.live?'mrow live':((''+e.status).toUpperCase().indexOf('FULL')>=0?'mrow ft':'mrow');
+    var cls=e.live?'mrow live':(((''+e.status).toUpperCase().indexOf('FULL')>=0||(e.ts&&e.ts<Date.now()))?'mrow ft':'mrow');
     return '<div class="'+cls+'" data-eid="'+e.id+'" onclick="window.__tg(this)">'
       +'<span class="star'+(isFav(e.h)||isFav(e.a)?' on':'')+'" data-h="'+esc(e.h)+'" data-a="'+esc(e.a)+'" onclick="event.stopPropagation();window.__fav(this)" aria-label="preferito">★</span>'
       +'<span class="tm">'+esc(e.hhmm||'')+(cd(e)?' <small>'+cd(e)+'</small>':'')+'</span>'
@@ -744,7 +745,7 @@ def main():
 <meta http-equiv="refresh" content="300">
 <title>🔴 Diretta — Predictor</title>
 <style>
-:root{{--bg:var(--bg);--card:#101a30;--txt:var(--txt);--sub:#94a3b8;--acc:#3b82f6;--red:#ef4444;--gr1:#1d4ed8;--gr2:#7c3aed}}
+:root{{--bg:#0b1220;--card:#101a30;--txt:#e2e8f0;--sub:#94a3b8;--acc:#3b82f6;--red:#ef4444;--gr1:#1d4ed8;--gr2:#7c3aed}}
 .mrow.live{{background:linear-gradient(90deg,rgba(239,68,68,.14),transparent 60%);border-left:3px solid var(--red)}}
 .mrow:hover{{background:var(--card2)}}
 .mrow.live:hover{{background:linear-gradient(90deg,rgba(239,68,68,.2),var(--card2) 70%)}}
@@ -834,7 +835,7 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .b-pre{{line-height:1.1}}
 .tm small{{color:var(--mut);font-size:9.5px}} table{{width:100%;border-collapse:collapse;margin-top:4px}} td{{padding:3px 6px;border-bottom:1px solid var(--row);text-align:center;font-size:12px}} td:first-child{{text-align:left;color:var(--txt)}}
 ul.ev{{margin:4px 0;padding-left:18px}} ul.ev li{{margin-bottom:2px}}
-:root{{--bg:var(--bg);--card:var(--card);--card2:var(--card2);--card3:var(--card3);--line:var(--line);--line2:var(--line2);--row:var(--row);--txt:var(--txt);--sub:var(--sub);--mut:var(--mut);--acc:var(--acc);--red:#b91c1c}}
+:root{{--bg:#0b1220;--card:#111c33;--card2:#16233d;--card3:#0f1a30;--line:#1e293b;--line2:#243b5e;--row:#16233d;--txt:#e2e8f0;--sub:#94a3b8;--mut:#7b8794;--acc:#3b82f6;--red:#ef4444}}
 [data-theme="light"]{{--bg:#f4f6f9;--card:var(--txt)fff;--card2:#eef2f7;--card3:#e6ebf1;--line:#d8dee6;--line2:#c3ccd6;--row:#e6ebf1;--txt:#182230;--sub:#4a5a70;--mut:#7b8794;--acc:#0284c7;--red:#b91c1c}}
 html.big{{font-size:118%}}
 
