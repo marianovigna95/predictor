@@ -298,7 +298,7 @@ LIVE_JS = """<script>
       if(FILT.live&&!e.live)return false;
       if(FILT.ev&&!(e.ev&&e.ev.ev>0))return false;
       if(FILT.fav&&!(isFav(e.h)||isFav(e.a)))return false;
-      if(FILT.q){var q=norm(FILT.q); if(norm(e.h+' '+e.a+' '+e.lg).indexOf(q)<0)return false;}
+      if(FILT.q){var q=norm(FILT.q); var hay=norm(e.h+' '+e.a+' '+e.lg); if(hay.indexOf(q)<0 && !(matchQ(FILT.q,norm(e.h))||matchQ(FILT.q,norm(e.a))))return false;}
       return true;
     });
     var liveN=evs.filter(function(e){return e.live;}).length;
@@ -450,6 +450,10 @@ LIVE_JS = """<script>
       }).catch(function(){d.innerHTML='<p class="sub">dettaglio non disponibile</p>';});
   };
   function norm(t){return (t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+var ALIAS={"psg":"paris saint","bayern":"bayern munchen","milan":"ac milan","inter":"inter","napoli":"napoli","juve":"juventus","roma":"as roma","lazio":"ss lazio","atalanta":"atalanta","fiorentina":"fiorentina","toro":"torino","bologna":"bologna","sassuolo":"sassuolo","udinese":"udinese","monza":"monza","verona":"hellas verona","empoli":"empoli","parma":"parma","genoa":"genoa","cagliari":"cagliari","lecce":"lecce","venezia":"venezia","cremonese":"cremonese","como":"como","barcellona":"barcelona","barca":"barcelona","atletico":"atletico madrid","real sociedad":"real sociedad","betis":"real betis","sevilla":"sevilla","valencia":"valencia","villareal":"villarreal","girona":"girona","arsenal":"arsenal","chelsea":"chelsea","liverpool":"liverpool","city":"manchester city","united":"manchester united","spurs":"tottenham","newcastle":"newcastle","villa":"aston villa","west ham":"west ham","wolves":"wolverhampton","everton":"everton","brighton":"brighton","palace":"crystal palace","fulham":"fulham","brentford":"brentford","bayern":"bayern","dortmund":"borussia dortmund","leverkusen":"bayer leverkusen","leipzig":"rb leipzig","frankfurt":"eintracht frankfurt","stuttgart":"stuttgart","wolfsburg":"wolfsburg","gladbach":"borussia monchengladbach","psg":"paris saint","monaco":"as monaco","lyon":"lyon","marsiglia":"marseille","lille":"lille","nice":"nice","rennes":"rennes","strasburgo":"strasbourg","benfica":"benfica","porto":"fc porto","sporting":"sporting","ajax":"ajax","psv":"psv","feyenoord":"feyenoord","galata":"galatasaray","fener":"fenerbahce","besiktas":"besiktas","olympiakos":"olympiacos","panathinaikos":"panathinaikos","celtic":"celtic","rangers":"rangers"};
+function matchQ(q,nn){var nq=norm(q);if(!nq)return false;if(nn.indexOf(nq)>=0||nq.indexOf(nn)>=0)return true;
+  for(var k in ALIAS){if(nq.indexOf(k)>=0||k.indexOf(nq)>=0){if(nn.indexOf(ALIAS[k])>=0)return true;}}
+  return false;}
   function qkey(e){
     var dk=D.substr(0,4)+'-'+D.substr(4,2)+'-'+D.substr(6,2);
     var h=norm(e.h), a=norm(e.a);
