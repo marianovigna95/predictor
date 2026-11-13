@@ -42,7 +42,7 @@ def footer(active=""):
         for h, ic, lb, key in TABS)
     return f"""<div class="tabbar">{bar}</div>
 <footer class="legal">
-  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
   ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
   Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
   Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>
@@ -462,6 +462,18 @@ una singola vincita non prova nulla, servono serie lunghe con RPS/ROI. Stime con
   <h2>🗂 Archivio per giornata (man mano che le giornate si chiudono)</h2>
   <table><tr><th>Giornata</th><th>Report</th><th>Quote</th><th>Giocata</th></tr>{arch}</table>
 </div>
+<p><button onclick="exportArchivio()">📤 Esporta scoreboard come CSV</button></p>
+<script>
+function exportArchivio(){{
+  var t=document.querySelector('.card table'); if(!t)return;
+  var rows=Array.from(t.querySelectorAll('tr')).map(function(tr){{
+    return Array.from(tr.querySelectorAll('th,td')).map(function(c){{return '"'+c.textContent.replace(/"/g,'""')+'"';}}).join(',');
+  }}).join('\n');
+  var a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(rows);
+  a.download='archivio_scoreboard.csv'; a.click();
+}}
+</script>
 {vcard}"""
     html = page("Archivio", '🗂 <span class="g">Archivio</span>',
                 "Scoreboard pubblico e tutto ciò che viene archiviato man mano: report, quote best-price e giocate delle giornate chiuse. Stime con incertezza, mai certezze.",
