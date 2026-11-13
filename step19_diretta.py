@@ -454,7 +454,12 @@ LIVE_JS = """<script>
               var PH=0,PD=0,PA=0;
               for(var i=0;i<=8;i++){for(var j=0;j<=8;j++){var pr=pois(i,lamH)*pois(j,lamA);if(i>j)PH+=pr;else if(i<j)PA+=pr;else PD+=pr;}}
               liveev='<p class="stt">🔴 Proiezione live 1X2 (min '+Math.round(min)+') — da xG live '+xgt.toFixed(2)+' + gol '+gol+'</p><p class="sub"><b>1 '+(PH*100).toFixed(0)+'% · X '+(PD*100).toFixed(0)+'% · 2 '+(PA*100).toFixed(0)+'%</b> · EV live Over 2.5: λ residuo '+lamRem.toFixed(2)+' → <b>p '+(pOver*100).toFixed(1)+'%</b>';
-              if(oq&&oq>1.01){var evv=(pOver*(oq-1)-(1-pOver))*100;liveev+=' · quota live '+oq.toFixed(2)+' → <b>EV '+(evv>=0?'+':'')+evv.toFixed(1)+'%</b>'+(evv>2?' 🚩':'');}
+              if(oq&&oq>1.01){var evv=(pOver*(oq-1)-(1-pOver))*100;liveev+=' · quota live O2.5 '+oq.toFixed(2)+' → <b>EV '+(evv>=0?'+':'')+evv.toFixed(1)+'%</b>'+(evv>2?' 🚩':'');}
+              // 🆕 13/11 EV live su 1X2: pick con p live max vs quota live moneyline ESPN
+              var q12={};(ev.odds||[]).forEach(function(o){var lbl=String(o.name||'')+' '+String(o.label||'');if(/moneyline|1x2|match result|h2h/i.test(lbl)||(o.outcomes&&o.outcomes.length===3)){(o.outcomes||[]).forEach(function(oc){var nm=String(oc.name||oc.description||'');var pr=parseFloat(oc.price||oc.odds)||0;if(/home|casa|1\b/i.test(nm))q12.h=pr;else if(/away|trasferta|2\b/i.test(nm))q12.a=pr;else if(/draw|pareggio|x\b/i.test(nm))q12.x=pr;});}});
+              var pl=[[PH,q12.h],[PD,q12.x],[PA,q12.a]], pk=pl[0];
+              pl.forEach(function(z){if(z[0]>pk[0])pk=z;});
+              if(pk[1]&&pk[1]>1.01){var ev12=(pk[0]*(pk[1]-1)-(1-pk[0]))*100;liveev+=' · 1X2 live <b>'+['1','X','2'][pl.indexOf(pk)]+'</b> p '+(pk[0]*100).toFixed(0)+'% @ '+pk[1].toFixed(2)+' → <b>EV '+(ev12>=0?'+':'')+ev12.toFixed(1)+'%</b>'+(ev12>2?' 🚩':'');}
               liveev+='</p><p class="sub" style="font-size:10px">stima da xG live (ESPN) + Poisson minuti rimanenti — solo analisi, puntare SOLO su ADM · 18+ · autoesclusione.it · 800 558822</p>';
             }
           }

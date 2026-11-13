@@ -216,8 +216,11 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <tr><td data-label='Versione'>v7 (dal 13/11/2026)</td><td>🧠 <b>stacking meta-learner</b> (logistic sui 3 membri) · 🔗 <b>correlazione raddoppio</b> (rho −0.26 stimato dai dati, EV più onesto) · 🎲 <b>¼ Kelly con incertezza</b> (IC 68% su p) · 📈 <b>forma-xG ultime 5</b> tutte le leghe · 🌦️ <b>meteo</b> (open-meteo) + <b>derby</b> (coordinate) come contesto · ✈️ <b>trasferta &gt;1000 km</b> (fatigue) · 🧊 <b>ensemble temporale</b> (media 0.65/0.35 con run precedente) · 📊 <b>stacker O/U 2.5 e GG/NG</b> · 🔴 <b>EV live O2.5</b> da xG live (min≥30) in diretta</td><td>Stacker RPS <b>0.1918</b> LOO (mercato 0.1963). Onesto: meteo/derby/GBM testati, non migliorano RPS (GBM off); stacker O/U 0.4871 vs 0.4889; 1X2 stacker 0.1918</td></tr>
   </table></div>
   <h2>Limiti onesti</h2>
-  <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis. La varianza del calcio è alta: anche il modello
-  migliore perde journées intere (campioni piccoli: un weekend = 5-9 partite). Per questo pubblichiamo le sconfitte.</p>
+  <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis (vedi 🏆 benchmark.html: RPS modello ~0.19 vs mercato ~0.19-0.20;
+  stacker v7 su 535 match LOO g6-g38: <b>RPS 0.1918 vs mercato 0.1963</b>). La varianza del calcio è alta: anche il modello
+  migliore perde journées intere (campioni piccoli: un weekend = 5-9 partite). Testati e <b>scartati</b> per nessun guadagno misurabile:
+  GBM come 4° membro, meteo/derby sul RPS, consensus di LLM generici. Non disponibili gratis: linea di chiusura sharp (Pinnacle),
+  quote in-play di qualità, indisponibili-xG per tutte le leghe. Per questo pubblichiamo le sconfitte e il CLV, e lo stake resta ¼ Kelly solo su EV&gt;+2%.</p>
   <h2>Aggiornamento fonti e cosa non copriamo</h2>
   <p class="sub">Fonti gratis aggiornate fino all'ultima giornata completata (lunedì mattina); le partite in corso/odierne
   possono essere in ritardo di qualche ora (le verifichiamo a mano da più fonti prima di segnare il risultato).
