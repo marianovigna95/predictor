@@ -512,13 +512,19 @@ def build_metodo():
 <style>{CSS}</style></head><body><div class="wrap">{NAV}
 <div class="card">
   <h1>📖 Metodo &amp; <span class="g">trasparenza</span></h1>
-  <h2>Il modello (v4)</h2>
-  <p class="sub">Ensemble pesato: <b>Elo</b>, <b>DC 180 giorni</b> (forma recente), <b>quote di mercato</b> come input,
-  <b>motivazione/classifica</b>, <b>congestione calendario</b>, <b>assenze</b> con impatto xG
-  (FotMob 45gg + Understat stagione), <b>xG</b> come dato prioritario.</p>
+  <h2>Il modello (v6)</h2>
+  <p class="sub">Ensemble pesato <b>Elo 0.50 + Dixon-Coles 0.30 + mercato 0.20</b> (pesi ri-tunati il 13/11 su 535 match g6-g38).
+  Il DC usa <b>xG per partita</b> (HxG/AxG football-data) come gol, con proxy tiri calibrato dove manca.
+  <b>Home advantage stimato per lega</b> dai dati (share vittorie casa, convertita in punti Elo, clip 15-110) invece che fisso.
+  <b>Calibrazione isotonic</b> (sklearn) delle probabilità finali, fittata walk-forward sulle ultime 60 partite con stato a -45gg (no leakage):
+  corregge over/under-confidence e rende EV/¼Kelly onesti.
+  A queste: <b>motivazione/classifica</b>, <b>congestione calendario</b>, <b>forma pesata per Elo avversario</b>,
+  <b>H2H</b>, <b>bias arbitro</b>, <b>assenze</b> con impatto xG (FotMob 45gg + Understat stagione).</p>
   <h2>Validazione walk-forward</h2>
-  <p class="sub">Backtest g8-g10: ogni partita prevista usando SOLO dati precedenti (no leakage).
-  Metriche: <b>RPS, log-loss, Brier, ECE</b>. V4: RPS 0.1898 / 53.3% acc. Il mercato resta il benchmark (~RPS 0.19).</p>
+  <p class="sub">Backtest g6-g38 (535 match, train solo su dati precedenti, no leakage).
+  Metriche: <b>RPS, log-loss, Brier, ECE</b>. V6: RPS <b>0.2008</b> grezzo → <b>0.1988 calibrato</b> (isotonic leave-one-giornata-out);
+  v4 era 0.1898 su g8-g10. Il mercato resta il benchmark (~RPS 0.19-0.20): il nostro edge non è "battere il mercato"
+  in RPS, ma le <b>quote ADM specifiche</b> + segnali extra (forma, H2H, arbitro, assenze-xG) che il mercato medio non pesa.</p>
   <h2>Fonti dati (dettaglio)</h2>
   <p class="sub">Ogni dato entra nel modello da una fonte pubblica e verificabile; i file locali sono nel workspace (<code>data/</code>).</p>
   <table>
@@ -591,6 +597,7 @@ def build_metodo():
   <tr><th>Versione</th><th>Novità</th><th>Metriche (walk-forward)</th></tr>
   <tr><td data-label='Versione'>v4</td><td>ensemble Elo+DC180+mercato+xG</td><td>RPS 0.1898 · 53.3% acc. (g8-g10)</td></tr>
   <tr><td data-label='Versione'>v5 (dal 10/11/2026)</td><td>finestra mobile 7gg, Nazionali 🚩, diretta live ESPN, PPA, schedina, bankroll, Telegram</td><td>in validazione continua (archivio+CLV)</td></tr>
+  <tr><td data-label='Versione'>v6 (dal 13/11/2026)</td><td>🏟️ HFA stimato per lega · 📊 xG nel DC · 🎯 calibrazione isotonic walk-forward · ⚖️ pesi ri-tunati su 535 match (g6-g38)</td><td>RPS 0.2008 → <b>0.1988 calibrato</b> (LOO); pesi 0.50/0.30/0.20 confermati</td></tr>
   </table>
   <h2>Limiti onesti</h2>
   <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis. La varianza del calcio è alta: anche il modello
