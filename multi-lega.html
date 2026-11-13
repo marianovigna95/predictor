@@ -132,13 +132,575 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
 <p class="sub">RPS modello vs mercato (quote di chiusura) addestrando solo sulle partite precedenti a ogni giornata.
 Edge positivo = il modello batte il mercato su quella lega. Campioni piccoli: da leggere con cautela.</p>
 <div class="tablewrap"><table><tr><th>Lega</th><th>Partite</th><th>Acc. modello</th><th>Acc. mercato</th><th>RPS modello</th><th>RPS mercato</th><th>Edge RPS</th></tr>
-<tr><td data-label='Lega'><b>Bundesliga</b></td><td data-label='Partite'>27</td><td data-label='Acc. modello'>44.4%</td><td data-label='Acc. mercato'>51.8%</td><td data-label='RPS modello'>0.2226</td><td data-label='RPS mercato'>0.2261</td><td data-label='Edge RPS'>+0.0035</td></tr><tr><td data-label='Lega'><b>Bundesliga 2</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>51.1%</td><td data-label='Acc. mercato'>53.3%</td><td data-label='RPS modello'>0.1939</td><td data-label='RPS mercato'>0.1946</td><td data-label='Edge RPS'>+0.0007</td></tr><tr><td data-label='Lega'><b>Championship</b></td><td data-label='Partite'>18</td><td data-label='Acc. modello'>60.4%</td><td data-label='Acc. mercato'>70.8%</td><td data-label='RPS modello'>0.1961</td><td data-label='RPS mercato'>0.2008</td><td data-label='Edge RPS'>+0.0047</td></tr><tr><td data-label='Lega'><b>Eredivisie</b></td><td data-label='Partite'>54</td><td data-label='Acc. modello'>42.6%</td><td data-label='Acc. mercato'>46.3%</td><td data-label='RPS modello'>0.2062</td><td data-label='RPS mercato'>0.2092</td><td data-label='Edge RPS'>+0.0029</td></tr><tr><td data-label='Lega'><b>LaLiga</b></td><td data-label='Partite'>58</td><td data-label='Acc. modello'>58.9%</td><td data-label='Acc. mercato'>58.7%</td><td data-label='RPS modello'>0.1875</td><td data-label='RPS mercato'>0.1704</td><td data-label='Edge RPS'>-0.0170</td></tr><tr><td data-label='Lega'><b>LaLiga 2</b></td><td data-label='Partite'>17</td><td data-label='Acc. modello'>61.9%</td><td data-label='Acc. mercato'>57.1%</td><td data-label='RPS modello'>0.1849</td><td data-label='RPS mercato'>0.1766</td><td data-label='Edge RPS'>-0.0084</td></tr><tr><td data-label='Lega'><b>Ligue 1</b></td><td data-label='Partite'>35</td><td data-label='Acc. modello'>66.3%</td><td data-label='Acc. mercato'>69.1%</td><td data-label='RPS modello'>0.1868</td><td data-label='RPS mercato'>0.1747</td><td data-label='Edge RPS'>-0.0121</td></tr><tr><td data-label='Lega'><b>Ligue 2</b></td><td data-label='Partite'>54</td><td data-label='Acc. modello'>46.3%</td><td data-label='Acc. mercato'>51.9%</td><td data-label='RPS modello'>0.2235</td><td data-label='RPS mercato'>0.2219</td><td data-label='Edge RPS'>-0.0016</td></tr><tr><td data-label='Lega'><b>Premier League</b></td><td data-label='Partite'>39</td><td data-label='Acc. modello'>51.7%</td><td data-label='Acc. mercato'>51.4%</td><td data-label='RPS modello'>0.2045</td><td data-label='RPS mercato'>0.2022</td><td data-label='Edge RPS'>-0.0023</td></tr><tr><td data-label='Lega'><b>Primeira Liga</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>60.0%</td><td data-label='Acc. mercato'>55.5%</td><td data-label='RPS modello'>0.1992</td><td data-label='RPS mercato'>0.2111</td><td data-label='Edge RPS'>+0.0118</td></tr><tr><td data-label='Lega'><b>Serie A</b></td><td data-label='Partite'>48</td><td data-label='Acc. modello'>65.5%</td><td data-label='Acc. mercato'>71.5%</td><td data-label='RPS modello'>0.1823</td><td data-label='RPS mercato'>0.1803</td><td data-label='Edge RPS'>-0.0019</td></tr><tr><td data-label='Lega'><b>Serie B</b></td><td data-label='Partite'>50</td><td data-label='Acc. modello'>38.0%</td><td data-label='Acc. mercato'>40.0%</td><td data-label='RPS modello'>0.2120</td><td data-label='RPS mercato'>0.2076</td><td data-label='Edge RPS'>-0.0044</td></tr><tr><td data-label='Lega'><b>Süper Lig</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>64.5%</td><td data-label='Acc. mercato'>66.7%</td><td data-label='RPS modello'>0.1848</td><td data-label='RPS mercato'>0.1801</td><td data-label='Edge RPS'>-0.0047</td></tr></table></div></div><div class="card" style="border:1px solid #f59e0b"><h2>📋 Probabili formazioni — Serie A g11 (squadre tipo + indisponibili)</h2>
+<tr><td data-label='Lega'><b>Bundesliga</b></td><td data-label='Partite'>27</td><td data-label='Acc. modello'>44.4%</td><td data-label='Acc. mercato'>51.8%</td><td data-label='RPS modello'>0.2226</td><td data-label='RPS mercato'>0.2261</td><td data-label='Edge RPS'>+0.0035</td></tr><tr><td data-label='Lega'><b>Bundesliga 2</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>51.1%</td><td data-label='Acc. mercato'>53.3%</td><td data-label='RPS modello'>0.1939</td><td data-label='RPS mercato'>0.1946</td><td data-label='Edge RPS'>+0.0006</td></tr><tr><td data-label='Lega'><b>Championship</b></td><td data-label='Partite'>11</td><td data-label='Acc. modello'>53.3%</td><td data-label='Acc. mercato'>70.0%</td><td data-label='RPS modello'>0.1928</td><td data-label='RPS mercato'>0.1918</td><td data-label='Edge RPS'>-0.0010</td></tr><tr><td data-label='Lega'><b>Eredivisie</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>37.7%</td><td data-label='Acc. mercato'>42.2%</td><td data-label='RPS modello'>0.2067</td><td data-label='RPS mercato'>0.2047</td><td data-label='Edge RPS'>-0.0020</td></tr><tr><td data-label='Lega'><b>LaLiga</b></td><td data-label='Partite'>49</td><td data-label='Acc. modello'>55.1%</td><td data-label='Acc. mercato'>57.1%</td><td data-label='RPS modello'>0.1809</td><td data-label='RPS mercato'>0.1633</td><td data-label='Edge RPS'>-0.0175</td></tr><tr><td data-label='Lega'><b>LaLiga 2</b></td><td data-label='Partite'>12</td><td data-label='Acc. modello'>63.3%</td><td data-label='Acc. mercato'>56.7%</td><td data-label='RPS modello'>0.1662</td><td data-label='RPS mercato'>0.1623</td><td data-label='Edge RPS'>-0.0039</td></tr><tr><td data-label='Lega'><b>Ligue 1</b></td><td data-label='Partite'>35</td><td data-label='Acc. modello'>66.3%</td><td data-label='Acc. mercato'>69.1%</td><td data-label='RPS modello'>0.1867</td><td data-label='RPS mercato'>0.1747</td><td data-label='Edge RPS'>-0.0120</td></tr><tr><td data-label='Lega'><b>Ligue 2</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>44.5%</td><td data-label='Acc. mercato'>51.1%</td><td data-label='RPS modello'>0.2213</td><td data-label='RPS mercato'>0.2158</td><td data-label='Edge RPS'>-0.0055</td></tr><tr><td data-label='Lega'><b>Premier League</b></td><td data-label='Partite'>39</td><td data-label='Acc. modello'>51.7%</td><td data-label='Acc. mercato'>51.4%</td><td data-label='RPS modello'>0.2045</td><td data-label='RPS mercato'>0.2022</td><td data-label='Edge RPS'>-0.0023</td></tr><tr><td data-label='Lega'><b>Primeira Liga</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>60.0%</td><td data-label='Acc. mercato'>55.5%</td><td data-label='RPS modello'>0.1993</td><td data-label='RPS mercato'>0.2111</td><td data-label='Edge RPS'>+0.0118</td></tr><tr><td data-label='Lega'><b>Serie A</b></td><td data-label='Partite'>48</td><td data-label='Acc. modello'>65.5%</td><td data-label='Acc. mercato'>71.5%</td><td data-label='RPS modello'>0.1822</td><td data-label='RPS mercato'>0.1803</td><td data-label='Edge RPS'>-0.0019</td></tr><tr><td data-label='Lega'><b>Serie B</b></td><td data-label='Partite'>50</td><td data-label='Acc. modello'>38.0%</td><td data-label='Acc. mercato'>40.0%</td><td data-label='RPS modello'>0.2119</td><td data-label='RPS mercato'>0.2076</td><td data-label='Edge RPS'>-0.0043</td></tr><tr><td data-label='Lega'><b>Süper Lig</b></td><td data-label='Partite'>45</td><td data-label='Acc. modello'>64.5%</td><td data-label='Acc. mercato'>66.7%</td><td data-label='RPS modello'>0.1849</td><td data-label='RPS mercato'>0.1801</td><td data-label='Edge RPS'>-0.0048</td></tr></table></div></div><div class="card" style="border:1px solid #f59e0b"><h2>📋 Probabili formazioni — Serie A g11 (squadre tipo + indisponibili)</h2>
 <p class="sub">Modulo e XI probabili per squadra tipo + indisponibili della giornata. Nel modello gli indisponibili generano una <b>penalità di rotazione Elo</b>.
 Stime con incertezza: le formazioni possono cambiare fino all'ultimo. 18+ · ADM · autoesclusione.it · 800 558822.</p>
 <div class="tablewrap"><table><tr><th>Squadra</th><th>Modulo</th><th>Allenatore</th><th>XI probabile</th><th>Indisponibili</th></tr><tr><td data-label='Squadra'><b>Atalanta</b></td><td data-label='Modulo'>4-3-3</td><td data-label='Allenatore'>Sarri</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Carnesecchi; Bernasconi, Scalvini, Kristensen, Zappacosta; Ederson, Kessie, Samardzic; De Ketelaere, Scamacca, Raspadori</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Pompei(22/11), Hien(09/11), Kolasinac(03/11), Kossounou, Bellanova(10/11), Gaetano</td></tr><tr><td data-label='Squadra'><b>Bologna</b></td><td data-label='Modulo'>4-2-3-1</td><td data-label='Allenatore'>Palladino</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Skorupski; Miranda, Theate, Heggem, Zortea; Pobega, Moro, Ferguson; Orsolini, Bernardeschi, Dovbyk</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>De Silvestri,  Holm(29/01),  Enem,  Piccoli(07/11)</td></tr><tr><td data-label='Squadra'><b>Cagliari</b></td><td data-label='Modulo'>4-3-2-1</td><td data-label='Allenatore'>Pisacane</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Caprile; Rodriguez, Mina, Obert, Sugawara; Winks, Adopo, Romano; Maldini, Fazzini, Kevin Carlos</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Felici(09/02),  Idrissi</td></tr><tr><td data-label='Squadra'><b>Como</b></td><td data-label='Modulo'>4-2-3-1</td><td data-label='Allenatore'>Fabregas</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Butez; Valle, Ramon, Chalobah, Couto; Perrone, Da Cunha; Paz, Baturina, Douvikas; Kean</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Addai, Diao(08/11)</td></tr><tr><td data-label='Squadra'><b>Fiorentina</b></td><td data-label='Modulo'>4-3-3</td><td data-label='Allenatore'>Vanoli</td><td data-label='XI probabile' class='sub' style='font-size:11px'>De Gea; Jimenez, Dragusin, Pongracic, Valdepenas; Mastantuono, Atta, Fagioli; Pellegrino, Beto, Goncalves</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Ranieri, Parisi</td></tr><tr><td data-label='Squadra'><b>Frosinone</b></td><td data-label='Modulo'>4-2-3-1</td><td data-label='Allenatore'>Alvini</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Palmisani; Bracaglia, Monterisi, Akpoguma, Oyono; Calo, Grillitsch; Ghedjemis, Schmid, Bobcek; Raimondo</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>nessuno segnalato</td></tr><tr><td data-label='Squadra'><b>Genoa</b></td><td data-label='Modulo'>3-4-1-2</td><td data-label='Allenatore'>De Rossi</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Bijlow; Ostigard, Vasquez, Marcandalli, Ellertsson; Frendrup, Sow, Ehizibue; Baldanzi; Colombo, Vitinha</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>nessuno segnalato</td></tr><tr><td data-label='Squadra'><b>Inter</b></td><td data-label='Modulo'>3-5-2</td><td data-label='Allenatore'>Chivu</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Martinez J.; Bastoni, Akanji, Stones, Dimarco; Barella, Calhanoglu, Zielinski, Spence; Martinez L., Thuram</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Jones, Luis Henrique(22/11), Lautaro Martinez(22/11)</td></tr><tr><td data-label='Squadra'><b>Juventus</b></td><td data-label='Modulo'>4-2-3-1</td><td data-label='Allenatore'>Spalletti</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Vicario; Cambiaso, Bremer, Kalulu, Celik; McKennie, Locatelli; Yildiz, Woltemade, Alajbegovic, Kolo Muani</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Grabara(31/07), Conceicao(22/11), Gonzalez(24/11)</td></tr><tr><td data-label='Squadra'><b>Lazio</b></td><td data-label='Modulo'>4-3-3</td><td data-label='Allenatore'>Gattuso</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Mandas; Pedraza, Doekhi, Monteiro Pinto Leite, Marusic; Frattesi, Taylor, Rovella; Zaccagni, Pinamonti, Gudmundsson</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>nessuno segnalato</td></tr><tr><td data-label='Squadra'><b>Lecce</b></td><td data-label='Modulo'>4-3-3</td><td data-label='Allenatore'>Di Francesco</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Falcone; Gallo, Tiago Gabriel, Gaspar, Veiga; Coulibaly, Ilic, Gandelman; Stulic, Geubbels, Pierotti</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Berisha(03/11)</td></tr><tr><td data-label='Squadra'><b>Milan</b></td><td data-label='Modulo'>3-4-2-1</td><td data-label='Allenatore'>Amorim</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Maignan; Gila, Pavlovic, Gabbia, Bartesaghi; Rabiot, Modric; Saelemaekers, Pulisic, Da Silva Moreira, Ramos</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Terracciano, Tomori, Chukwueze, Loftus-Cheek(24/11)</td></tr><tr><td data-label='Squadra'><b>Monza</b></td><td data-label='Modulo'>3-4-2-1</td><td data-label='Allenatore'>Juric</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Thiam; Carboni, Ziolkowski, Kouadio, Mangas; Colpani, Pessina, Birindelli; Folorunsho, Robinson, Cutrone</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>nessuno segnalato</td></tr><tr><td data-label='Squadra'><b>Napoli</b></td><td data-label='Modulo'>4-3-3</td><td data-label='Allenatore'>Allegri</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Meret; Spinazzola, Rrahmani, Buongiorno, Di Lorenzo; De Bruyne, McTominay, Lobotka; Santos, Hojlund, Politano</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Badiashile, Favasuli(30/11), Neres(10/11)</td></tr><tr><td data-label='Squadra'><b>Parma</b></td><td data-label='Modulo'>4-3-3</td><td data-label='Allenatore'>Gilardino</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Corvi; Valeri, Diego Carlos, Troilo, Del Prato; Keita, Bernabe, Nicolussi Caviglia; Romero, Toure, Frigan</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>nessuno segnalato</td></tr><tr><td data-label='Squadra'><b>Roma</b></td><td data-label='Modulo'>3-4-2-1</td><td data-label='Allenatore'>Gasperini</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Svilar; Mancini, Hermoso, Ndicka, Molina; Kone, Cristante, Wesley; Dybala, Mora Carvalho, Malen</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Pellegrini</td></tr><tr><td data-label='Squadra'><b>Sassuolo</b></td><td data-label='Modulo'>4-3-3</td><td data-label='Allenatore'>Aquilani</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Muric; Doig, Idzes, Leysen, Van der Brempt; Thorstvedt, Kone, Matic; Lauriente, Esposito S, Berardi</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Pazy, Pieragnolo, Boloca</td></tr><tr><td data-label='Squadra'><b>Torino</b></td><td data-label='Modulo'>3-4-2-1</td><td data-label='Allenatore'>Abate</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Perri; Comuzzo, Coco, Comert, Cacciamani; Mandragora, Casadei; Belghali, Vlasic, Oristanio, Simeone</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>nessuno segnalato</td></tr><tr><td data-label='Squadra'><b>Udinese</b></td><td data-label='Modulo'>3-4-2-1</td><td data-label='Allenatore'>Runjaic</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Okoye; Solet, Alaba, Kabasele, Kamara; Karlstrom, Piotrowski, Vojvoda; Zaniolo, Ekkelenkamp, Davis</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Alabad(22/11), Bayo(15/11), Gueye(05/01)</td></tr><tr><td data-label='Squadra'><b>Venezia</b></td><td data-label='Modulo'>3-5-2</td><td data-label='Allenatore'>Stroppa</td><td data-label='XI probabile' class='sub' style='font-size:11px'>Stankovic; Bella-Kotchap, Moreno, Schingtienne, Haps; Busio, Basic, Sohm; Mazzocchi, Adams, Rrahmani</td><td data-label='Indisponibili' class='sub' style='font-size:11px;color:#f87171'>Correia,  Franjic(10/12),  Sverkom,  Adorantea</td></tr></table></div></div><div class="card" style="border:1px solid #a855f7"><h2>🎯 TiP 0.5 GIOCATORI — difensori/centrocampisti (Serie A g11)</h2>
 <p class="sub">P(almeno 1 tiro in porta) dal modello sui dati FotMob (SoT ogni 90', half-life 30 gg). Su D/M la quota TiP O0.5 è più alta che sugli attaccanti:
 best-price su comparatore ADM. Analisi educativa solo: stime con incertezza, mai certezze. 18+ · ADM · autoesclusione.it · 800 558822.</p>
-<div class="tablewrap"><table><tr><th>Giocatore</th><th>Squadra</th><th>Ruolo</th><th>P(TiP O0.5)</th><th>SoT/90</th><th>Min medi</th><th>Quota</th><th>Motivo (in parole)</th></tr><tr><td data-label='Giocatore'><b>Franck Kessié</b></td><td data-label='Squadra'>Atalanta</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>81.8%</b></td><td data-label='SoT/90'>1.89</td><td data-label='Minuti medi'>81.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Franck Kessié (Atalanta, ruolo M S): nelle ultime 2 partite ha tirato in porta 3 volte (1.89 ogni 90'), giocando in media 81' a partita → il modello stima il 81.8% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Patrick Cutrone</b></td><td data-label='Squadra'>Monza</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>81.6%</b></td><td data-label='SoT/90'>3.8</td><td data-label='Minuti medi'>40.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Patrick Cutrone (Monza, ruolo M S): nelle ultime 4 partite ha tirato in porta 3 volte (3.80 ogni 90'), giocando in media 40' a partita → il modello stima il 81.6% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Rafik Belghali</b></td><td data-label='Squadra'>Torino</td><td data-label='Ruolo'>D M S</td><td data-label='P(TiP O0.5)'><b>77.1%</b></td><td data-label='SoT/90'>1.53</td><td data-label='Minuti medi'>86.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Rafik Belghali (Torino, ruolo D M S): nelle ultime 2 partite ha tirato in porta 3 volte (1.53 ogni 90'), giocando in media 86' a partita → il modello stima il 77.1% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Nico Paz</b></td><td data-label='Squadra'>Como</td><td data-label='Ruolo'>M</td><td data-label='P(TiP O0.5)'><b>77.0%</b></td><td data-label='SoT/90'>1.64</td><td data-label='Minuti medi'>81.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Nico Paz (Como, ruolo M): nelle ultime 7 partite ha tirato in porta 11 volte (1.64 ogni 90'), giocando in media 81' a partita → il modello stima il 77.0% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Diego Carlos</b></td><td data-label='Squadra'>Parma</td><td data-label='Ruolo'>D</td><td data-label='P(TiP O0.5)'><b>76.8%</b></td><td data-label='SoT/90'>2.92</td><td data-label='Minuti medi'>45.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Diego Carlos (Parma, ruolo D): nelle ultime 2 partite ha tirato in porta 2 volte (2.92 ogni 90'), giocando in media 45' a partita → il modello stima il 76.8% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Scott McTominay</b></td><td data-label='Squadra'>Napoli</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>75.5%</b></td><td data-label='SoT/90'>1.78</td><td data-label='Minuti medi'>71.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Scott McTominay (Napoli, ruolo M S): nelle ultime 4 partite ha tirato in porta 6 volte (1.78 ogni 90'), giocando in media 71' a partita → il modello stima il 75.5% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Davide Zappacosta</b></td><td data-label='Squadra'>Atalanta</td><td data-label='Ruolo'>D S</td><td data-label='P(TiP O0.5)'><b>75.2%</b></td><td data-label='SoT/90'>1.93</td><td data-label='Minuti medi'>65.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Davide Zappacosta (Atalanta, ruolo D S): nelle ultime 2 partite ha tirato in porta 2 volte (1.93 ogni 90'), giocando in media 65' a partita → il modello stima il 75.2% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Farès Ghedjemis</b></td><td data-label='Squadra'>Frosinone</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>73.6%</b></td><td data-label='SoT/90'>1.5</td><td data-label='Minuti medi'>80.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Farès Ghedjemis (Frosinone, ruolo M S): nelle ultime 7 partite ha tirato in porta 8 volte (1.50 ogni 90'), giocando in media 80' a partita → il modello stima il 73.6% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Alphadjo Cissè</b></td><td data-label='Squadra'>Milan</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>72.7%</b></td><td data-label='SoT/90'>2.8</td><td data-label='Minuti medi'>42.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Alphadjo Cissè (Milan, ruolo M S): nelle ultime 5 partite ha tirato in porta 5 volte (2.80 ogni 90'), giocando in media 42' a partita → il modello stima il 72.7% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Giacomo Calò</b></td><td data-label='Squadra'>Frosinone</td><td data-label='Ruolo'>M</td><td data-label='P(TiP O0.5)'><b>71.0%</b></td><td data-label='SoT/90'>1.34</td><td data-label='Minuti medi'>83.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Giacomo Calò (Frosinone, ruolo M): nelle ultime 7 partite ha tirato in porta 8 volte (1.34 ogni 90'), giocando in media 83' a partita → il modello stima il 71.0% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr></table></div></div>
+<div class="tablewrap"><table><tr><th>Giocatore</th><th>Squadra</th><th>Ruolo</th><th>P(TiP O0.5)</th><th>SoT/90</th><th>Min medi</th><th>Quota</th><th>Motivo (in parole)</th></tr><tr><td data-label='Giocatore'><b>Franck Kessié</b></td><td data-label='Squadra'>Atalanta</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>81.8%</b></td><td data-label='SoT/90'>1.89</td><td data-label='Minuti medi'>81.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Franck Kessié (Atalanta, ruolo M S): nelle ultime 2 partite ha tirato in porta 3 volte (1.89 ogni 90'), giocando in media 81' a partita → il modello stima il 81.8% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Patrick Cutrone</b></td><td data-label='Squadra'>Monza</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>81.6%</b></td><td data-label='SoT/90'>3.8</td><td data-label='Minuti medi'>40.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Patrick Cutrone (Monza, ruolo M S): nelle ultime 4 partite ha tirato in porta 3 volte (3.80 ogni 90'), giocando in media 40' a partita → il modello stima il 81.6% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Rafik Belghali</b></td><td data-label='Squadra'>Torino</td><td data-label='Ruolo'>D M S</td><td data-label='P(TiP O0.5)'><b>77.1%</b></td><td data-label='SoT/90'>1.53</td><td data-label='Minuti medi'>86.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Rafik Belghali (Torino, ruolo D M S): nelle ultime 2 partite ha tirato in porta 3 volte (1.53 ogni 90'), giocando in media 86' a partita → il modello stima il 77.1% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Nico Paz</b></td><td data-label='Squadra'>Como</td><td data-label='Ruolo'>M</td><td data-label='P(TiP O0.5)'><b>77.0%</b></td><td data-label='SoT/90'>1.64</td><td data-label='Minuti medi'>81.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Nico Paz (Como, ruolo M): nelle ultime 7 partite ha tirato in porta 11 volte (1.64 ogni 90'), giocando in media 81' a partita → il modello stima il 77.0% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Diego Carlos</b></td><td data-label='Squadra'>Parma</td><td data-label='Ruolo'>D</td><td data-label='P(TiP O0.5)'><b>76.8%</b></td><td data-label='SoT/90'>2.92</td><td data-label='Minuti medi'>45.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Diego Carlos (Parma, ruolo D): nelle ultime 2 partite ha tirato in porta 2 volte (2.92 ogni 90'), giocando in media 45' a partita → il modello stima il 76.8% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Scott McTominay</b></td><td data-label='Squadra'>Napoli</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>75.5%</b></td><td data-label='SoT/90'>1.78</td><td data-label='Minuti medi'>71.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Scott McTominay (Napoli, ruolo M S): nelle ultime 4 partite ha tirato in porta 6 volte (1.78 ogni 90'), giocando in media 71' a partita → il modello stima il 75.5% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Davide Zappacosta</b></td><td data-label='Squadra'>Atalanta</td><td data-label='Ruolo'>D S</td><td data-label='P(TiP O0.5)'><b>75.2%</b></td><td data-label='SoT/90'>1.93</td><td data-label='Minuti medi'>65.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Davide Zappacosta (Atalanta, ruolo D S): nelle ultime 2 partite ha tirato in porta 2 volte (1.93 ogni 90'), giocando in media 65' a partita → il modello stima il 75.2% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Farès Ghedjemis</b></td><td data-label='Squadra'>Frosinone</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>73.6%</b></td><td data-label='SoT/90'>1.5</td><td data-label='Minuti medi'>80.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Farès Ghedjemis (Frosinone, ruolo M S): nelle ultime 7 partite ha tirato in porta 8 volte (1.50 ogni 90'), giocando in media 80' a partita → il modello stima il 73.6% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Alphadjo Cissè</b></td><td data-label='Squadra'>Milan</td><td data-label='Ruolo'>M S</td><td data-label='P(TiP O0.5)'><b>72.7%</b></td><td data-label='SoT/90'>2.8</td><td data-label='Minuti medi'>42.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Alphadjo Cissè (Milan, ruolo M S): nelle ultime 5 partite ha tirato in porta 5 volte (2.80 ogni 90'), giocando in media 42' a partita → il modello stima il 72.7% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr><tr><td data-label='Giocatore'><b>Giacomo Calò</b></td><td data-label='Squadra'>Frosinone</td><td data-label='Ruolo'>M</td><td data-label='P(TiP O0.5)'><b>71.0%</b></td><td data-label='SoT/90'>1.34</td><td data-label='Minuti medi'>83.0</td><td data-label='Quota best'>best-price ADM</td><td data-label='Motivo (in parole)' class='sub' style='font-size:11px'>Giacomo Calò (Frosinone, ruolo M): nelle ultime 7 partite ha tirato in porta 8 volte (1.34 ogni 90'), giocando in media 83' a partita → il modello stima il 71.0% che faccia almeno 1 tiro in porta (TiP O0.5). Quota tipica su D/M più alta che sugli attaccanti: prendi la best-price sul comparatore ADM. Stima con incertezza, non una certezza.</td></tr></table></div></div><div class="card"><h2>🌍 Previsioni Top 5 — finestra 20/11–21/11/11/2026</h2>
+<p class="sub">29 partite non ancora giocate su 5 campionati. Ogni lega è addestrata separatamente (Elo + Dixon-Coles su quella lega).</p>
+<p><a class="btn" href="altre-leghe.html">➕ Altre leghe (Serie B, Championship, Eredivisie, …) →</a></p>
+<p class="sub"><b>📑 Indice sezioni:</b> <a class="btn" href="#serie-a">Serie A</a> <a class="btn" href="#premier-league">Premier League</a> <a class="btn" href="#laliga">LaLiga</a> <a class="btn" href="#bundesliga">Bundesliga</a> <a class="btn" href="#ligue-1">Ligue 1</a></p>
+<p class="sub" style="font-size:11px">ℹ️ <b>Pron.</b> = esito 1X2 più probabile (somma di tutti i punteggi con quell'esito). <b>Punt. esatto+prob</b> = singolo punteggio più frequente (es. 1-1 13%):
+può essere un pareggio anche se il pronostico è «1», perché la «1» si spartisce su tanti punteggi (1-0, 2-1, 3-0...).</p>
+<p class="sub" style="font-size:11px">Le quote best-price sono recuperate da wincomparator (🚨 = edge &gt; 3pp vs mercato medio).</p></div><div class="card" id="serie-a"><h2>🏴 Serie A <span class="chip">4 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Como - Cagliari <span class="sub">giornata 12 · 21/11 15:00</span> · ⚽ corner attesi 10.2</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">48.4%</span><span class="cbar"><i style="width:48.4%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;48.4%</span><span class="stv">X&nbsp;21.4%</span><span class="stv">2&nbsp;30.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">39.1%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">46.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (15%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Como - Cagliari). Perché: secondo l'Elo Como è più forte di circa 37 punti (1491 contro 1453); nelle ultime 5 partite Como ha fatto 1.8 gol a partita subendone 0.4, Cagliari 0.8 fatti e 2.6 subiti; gol attesi quasi pari (1.1 - 1.2); in classifica Como è sopra (4° contro 12°).  Resta una stima con incertezza, non una certezza. Contesto formazione (fantacalcio-online): Como scenderà con modulo 4-2-3-1 e senza Addai,  Diao(08/11); Cagliari scenderà con modulo 4-3-2-1 e senza Felici(09/02),   Idrissi. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Como: Addai (🤕 infortunato), Rodriguez Je. (🤕 infortunato), Diao (🤕 infortunato), Chalobah T. (🤕 infortunato), Kean (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +37 (1491 vs 1453) · ultime 5: Como 1.8 gol fatti / 0.4 subiti · Cagliari 0.8 / 2.6 · gol attesi (modello): 1.1 - 1.2 · classifica: 4° Como vs 12° Cagliari · assenze: Como −40 Elo</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (48.4%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Lazio - Lecce <span class="sub">giornata 12 · 21/11 15:00</span> · ⚽ corner attesi 8.4</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">52.0%</span><span class="cbar"><i style="width:52.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;52.0%</span><span class="stv">X&nbsp;19.8%</span><span class="stv">2&nbsp;28.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">43.1%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">49.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (14%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Lazio - Lecce). Perché: secondo l'Elo Lazio è più forte di circa 164 punti (1564 contro 1400); nelle ultime 5 partite Lazio ha fatto 3.2 gol a partita subendone 1.0, Lecce 1.2 fatti e 2.2 subiti; il modello si aspetta più gol per Lecce (1.4 contro 1.0 di Lazio); in classifica Lazio è sopra (1° contro 14°).  Resta una stima con incertezza, non una certezza. Contesto formazione (fantacalcio-online): Lazio scenderà con modulo 4-3-3 senza indisponibili segnalati; Lecce scenderà con modulo 4-3-3 e senza Berisha(03/11). ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Lazio: Zaccagni (🤕 infortunato), Gudmundsson A. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +164 (1564 vs 1400) · ultime 5: Lazio 3.2 gol fatti / 1.0 subiti · Lecce 1.2 / 2.2 · gol attesi (modello): 1.0 - 1.4 · classifica: 1° Lazio vs 14° Lecce · assenze: Lazio −20 Elo</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (52.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Parma - Roma <span class="sub">giornata 12 · 21/11 18:00</span> · ⚽ corner attesi 10.0</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">44.1%</span><span class="cbar"><i style="width:44.1%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;35.8%</span><span class="stv">X&nbsp;20.1%</span><span class="stv">2&nbsp;44.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">52.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Parma - Roma). Perché: secondo l'Elo Roma è più forte di circa 111 punti (1518 contro 1407); nelle ultime 5 partite Parma ha fatto 0.6 gol a partita subendone 1.8, Roma 2.8 fatti e 1.4 subiti; il modello si aspetta più gol per Parma (1.5 contro 1.2 di Roma); in classifica Roma è sopra (3° contro 18°), e questo pesa a sfavore di Parma.  Resta una stima con incertezza, non una certezza. Contesto formazione (fantacalcio-online): Parma scenderà con modulo 4-3-3 senza indisponibili segnalati; Roma scenderà con modulo 3-4-2-1 e senza Pellegrini. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Roma: Svilar (🤕 infortunato), Rensch (🤕 infortunato), Konè M. (🤕 infortunato), Dybala (🤕 infortunato), Pellegrini Lo. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -111 (1407 vs 1518) · ultime 5: Parma 0.6 gol fatti / 1.8 subiti · Roma 2.8 / 1.4 · gol attesi (modello): 1.5 - 1.2 · classifica: 18° Parma vs 3° Roma · riposo: 24 gg Parma vs 21 gg Roma · assenze: Roma −25 Elo</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (44.1%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Napoli - Torino <span class="sub">giornata 12 · 21/11 20:45</span> · ⚽ corner attesi 10.6</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">44.9%</span><span class="cbar"><i style="width:44.9%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;44.9%</span><span class="stv">X&nbsp;23.0%</span><span class="stv">2&nbsp;32.2%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">38.4%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">45.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (14%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Napoli - Torino). Perché: secondo l'Elo Torino è più forte di circa 23 punti (1394 contro 1371); nelle ultime 5 partite Napoli ha fatto 2.0 gol a partita subendone 1.4, Torino 1.8 fatti e 1.6 subiti; il modello si aspetta più gol per Napoli (1.3 contro 1.0 di Torino); in classifica Napoli è sopra (8° contro 10°).  Resta una stima con incertezza, non una certezza. Contesto formazione (fantacalcio-online): Napoli scenderà con modulo 4-3-3 e senza Badiashile,  Favasuli(30/11),  Neres(10/11); Torino scenderà con modulo 3-4-2-1 senza indisponibili segnalati. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Napoli: Buongiorno (🤕 infortunato), Di Lorenzo (🤕 infortunato), Spinazzola (🤕 infortunato), Lobotka (🤕 infortunato), Santos A. (🤕 infortunato), Neres (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -23 (1371 vs 1394) · ultime 5: Napoli 2.0 gol fatti / 1.4 subiti · Torino 1.8 / 1.6 · gol attesi (modello): 1.3 - 1.0 · classifica: 8° Napoli vs 10° Torino · assenze: Napoli −50 Elo, Torino −30 Elo</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (44.9%). Stima, non garanzia.</div>
+</div></div></div><div class="card" id="premier-league"><h2>🏴 Premier League <span class="chip">7 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Man City - Fulham <span class="sub">giornata 11 · 21/11 13:30</span> · ⚽ corner attesi 10.9</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">50.9%</span><span class="cbar"><i style="width:50.9%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;50.9%</span><span class="stv">X&nbsp;23.1%</span><span class="stv">2&nbsp;26.0%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">61.0%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Man City - Fulham). Perché: secondo l'Elo Man City è più forte di circa 95 punti (1574 contro 1479); nelle ultime 5 partite Man City ha fatto 2.4 gol a partita subendone 1.6, Fulham 1.0 fatti e 0.8 subiti; il modello si aspetta più gol per Man City (1.7 contro 1.3 di Fulham); in classifica Man City è sopra (2° contro 15°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +95 (1574 vs 1479) · ultime 5: Man City 2.4 gol fatti / 1.6 subiti · Fulham 1.0 / 0.8 · gol attesi (modello): 1.7 - 1.3 · classifica: 2° Man City vs 15° Fulham</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (50.9%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Bournemouth - Nott'm Forest <span class="sub">giornata 11 · 21/11 16:00</span> · ⚽ corner attesi 8.1</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">48.7%</span><span class="cbar"><i style="width:48.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;48.7%</span><span class="stv">X&nbsp;23.5%</span><span class="stv">2&nbsp;27.9%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">61.3%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">63.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Bournemouth - Nott'm Forest). Perché: secondo l'Elo Bournemouth è più forte di circa 62 punti (1481 contro 1419); nelle ultime 5 partite Bournemouth ha fatto 1.6 gol a partita subendone 1.2, Nott'm Forest 0.4 fatti e 1.6 subiti; il modello si aspetta più gol per Bournemouth (1.8 contro 1.4 di Nott'm Forest); in classifica Bournemouth è sopra (7° contro 19°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Bournemouth: Araujo J. (🤕 infortunato), Toth (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +62 (1481 vs 1419) · ultime 5: Bournemouth 1.6 gol fatti / 1.2 subiti · Nott'm Forest 0.4 / 1.6 · gol attesi (modello): 1.8 - 1.4 · classifica: 7° Bournemouth vs 19° Nott'm Forest</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (48.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Aston Villa - Sunderland <span class="sub">giornata 11 · 21/11 16:00</span> · ⚽ corner attesi 9.6</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">45.2%</span><span class="cbar"><i style="width:45.2%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;45.2%</span><span class="stv">X&nbsp;24.0%</span><span class="stv">2&nbsp;30.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">57.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">61.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Aston Villa - Sunderland). Perché: secondo l'Elo Aston Villa è più forte di circa 66 punti (1472 contro 1406); nelle ultime 5 partite Aston Villa ha fatto 1.8 gol a partita subendone 1.2, Sunderland 0.8 fatti e 2.4 subiti; gol attesi quasi pari (1.5 - 1.5); in classifica Aston Villa è sopra (9° contro 20°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Aston Villa: Cissè M.K. (🤕 infortunato), Onana Am. (🤕 infortunato), Ruggeri (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +66 (1472 vs 1406) · ultime 5: Aston Villa 1.8 gol fatti / 1.2 subiti · Sunderland 0.8 / 2.4 · gol attesi (modello): 1.5 - 1.5 · classifica: 9° Aston Villa vs 20° Sunderland</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (45.2%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Chelsea - Leeds <span class="sub">giornata 11 · 21/11 16:00</span> · ⚽ corner attesi 10.0</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">42.0%</span><span class="cbar"><i style="width:42.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;42.0%</span><span class="stv">X&nbsp;27.5%</span><span class="stv">2&nbsp;30.5%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">39.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">47.3%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (15%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Chelsea - Leeds). Perché: nelle ultime 5 partite Chelsea ha fatto 1.8 gol a partita subendone 1.2, Leeds 0.4 fatti e 1.0 subiti; gol attesi quasi pari (1.2 - 1.1); in classifica Chelsea è sopra (4° contro 11°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Chelsea: Lacroix (🤕 infortunato), James R. (🤕 infortunato), Gittens (🤕 infortunato), Joao Pedro J. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 5: Chelsea 1.8 gol fatti / 1.2 subiti · Leeds 0.4 / 1.0 · gol attesi (modello): 1.2 - 1.1 · classifica: 4° Chelsea vs 11° Leeds</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (42.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Coventry - Crystal Palace <span class="sub">giornata 11 · 21/11 16:00</span> · ⚽ corner attesi 10.8</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">42.3%</span><span class="cbar"><i style="width:42.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;42.3%</span><span class="stv">X&nbsp;26.3%</span><span class="stv">2&nbsp;31.4%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">47.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">53.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (14%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Coventry - Crystal Palace). Perché: secondo l'Elo Coventry è più forte di circa 21 punti (1445 contro 1424); nelle ultime 5 partite Coventry ha fatto 1.8 gol a partita subendone 1.2, Crystal Palace 0.6 fatti e 2.0 subiti; gol attesi quasi pari (1.3 - 1.2); in classifica Coventry è sopra (16° contro 18°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +21 (1445 vs 1424) · ultime 5: Coventry 1.8 gol fatti / 1.2 subiti · Crystal Palace 0.6 / 2.0 · gol attesi (modello): 1.3 - 1.2 · classifica: 16° Coventry vs 18° Crystal Palace</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (42.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Tottenham - Ipswich <span class="sub">giornata 11 · 21/11 16:00</span> · ⚽ corner attesi 9.6</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">43.8%</span><span class="cbar"><i style="width:43.8%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;43.8%</span><span class="stv">X&nbsp;26.7%</span><span class="stv">2&nbsp;29.5%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">50.7%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">54.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Tottenham - Ipswich). Perché: secondo l'Elo Ipswich è più forte di circa 49 punti (1480 contro 1431); nelle ultime 5 partite Tottenham ha fatto 2.0 gol a partita subendone 1.0, Ipswich 1.4 fatti e 1.6 subiti; il modello si aspetta più gol per Tottenham (1.6 contro 1.1 di Ipswich); in classifica Tottenham è sopra (8° contro 13°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Tottenham: Savinho (🤕 infortunato), Udogie (🤕 infortunato), Simons (🤕 infortunato), Odobert (🤕 infortunato), Mudryk (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -49 (1431 vs 1480) · ultime 5: Tottenham 2.0 gol fatti / 1.0 subiti · Ipswich 1.4 / 1.6 · gol attesi (modello): 1.6 - 1.1 · classifica: 8° Tottenham vs 13° Ipswich</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (43.8%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Newcastle - Arsenal <span class="sub">giornata 11 · 21/11 18:30</span> · ⚽ corner attesi 10.4</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">47.2%</span><span class="cbar"><i style="width:47.2%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;29.3%</span><span class="stv">X&nbsp;23.4%</span><span class="stv">2&nbsp;47.2%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">52.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">57.1%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Newcastle - Arsenal). Perché: secondo l'Elo Arsenal è più forte di circa 178 punti (1623 contro 1445); nelle ultime 5 partite Newcastle ha fatto 1.2 gol a partita subendone 2.0, Arsenal 1.2 fatti e 0.8 subiti; il modello si aspetta più gol per Newcastle (1.5 contro 1.3 di Arsenal); in classifica Arsenal è sopra (1° contro 12°), e questo pesa a sfavore di Newcastle.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Newcastle: Jaouen (🤕 infortunato), Livramento (🤕 infortunato), Joelinton (🤕 infortunato) | Arsenal: Saka (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -178 (1445 vs 1623) · ultime 5: Newcastle 1.2 gol fatti / 2.0 subiti · Arsenal 1.2 / 0.8 · gol attesi (modello): 1.5 - 1.3 · classifica: 12° Newcastle vs 1° Arsenal · riposo: 27 gg Newcastle vs 20 gg Arsenal</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (47.2%). Stima, non garanzia.</div>
+</div></div></div><div class="card" id="laliga"><h2>🏴 LaLiga <span class="chip">5 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Ath Bilbao - Espanol <span class="sub">giornata 13 · 20/11 21:00</span> · ⚽ corner attesi 10.2</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">62.3%</span><span class="cbar"><i style="width:62.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;62.3%</span><span class="stv">X&nbsp;20.2%</span><span class="stv">2&nbsp;17.5%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">52.1%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">48.2%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-0 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Ath Bilbao - Espanol). Perché: secondo l'Elo Ath Bilbao è più forte di circa 71 punti (1517 contro 1446); nelle ultime 5 partite Ath Bilbao ha fatto 1.4 gol a partita subendone 0.8, Espanol 0.8 fatti e 1.4 subiti; il modello si aspetta più gol per Ath Bilbao (2.0 contro 0.8 di Espanol); in classifica Ath Bilbao è sopra (7° contro 14°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +71 (1517 vs 1446) · ultime 5: Ath Bilbao 1.4 gol fatti / 0.8 subiti · Espanol 0.8 / 1.4 · gol attesi (modello): 2.0 - 0.8 · classifica: 7° Ath Bilbao vs 14° Espanol · riposo: 19 gg Ath Bilbao vs 21 gg Espanol</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf alta (62.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Alaves - La Coruna <span class="sub">giornata 13 · 21/11 14:00</span> · ⚽ corner attesi 8.8</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">45.1%</span><span class="cbar"><i style="width:45.1%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;45.1%</span><span class="stv">X&nbsp;24.8%</span><span class="stv">2&nbsp;30.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">53.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Alaves - La Coruna). Perché: secondo l'Elo La Coruna è più forte di circa 34 punti (1476 contro 1443); nelle ultime 5 partite Alaves ha fatto 0.8 gol a partita subendone 2.2, La Coruna 0.8 fatti e 1.4 subiti; il modello si aspetta più gol per Alaves (1.7 contro 1.2 di La Coruna); in classifica Alaves è sopra (10° contro 13°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -34 (1443 vs 1476) · ultime 5: Alaves 0.8 gol fatti / 2.2 subiti · La Coruna 0.8 / 1.4 · gol attesi (modello): 1.7 - 1.2 · classifica: 10° Alaves vs 13° La Coruna · riposo: 21 gg Alaves vs 28 gg La Coruna</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (45.1%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Vallecano - Valencia <span class="sub">giornata 13 · 21/11 16:15</span> · ⚽ corner attesi 9.8</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">49.7%</span><span class="cbar"><i style="width:49.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;49.7%</span><span class="stv">X&nbsp;23.2%</span><span class="stv">2&nbsp;27.1%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">53.1%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">56.9%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Vallecano - Valencia). Perché: secondo l'Elo Vallecano è più forte di circa 48 punti (1487 contro 1439); nelle ultime 5 partite Vallecano ha fatto 1.4 gol a partita subendone 1.2, Valencia 1.2 fatti e 1.4 subiti; il modello si aspetta più gol per Vallecano (1.6 contro 1.2 di Valencia); in classifica Vallecano è sopra (11° contro 19°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +48 (1487 vs 1439) · ultime 5: Vallecano 1.4 gol fatti / 1.2 subiti · Valencia 1.2 / 1.4 · gol attesi (modello): 1.6 - 1.2 · classifica: 11° Vallecano vs 19° Valencia · riposo: 21 gg Vallecano vs 20 gg Valencia</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (49.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Sevilla - Betis <span class="sub">giornata 13 · 21/11 18:30</span> · ⚽ corner attesi 8.2</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">36.7%</span><span class="cbar"><i style="width:36.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;36.4%</span><span class="stv">X&nbsp;26.9%</span><span class="stv">2&nbsp;36.7%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">45.9%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">52.4%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (14%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Sevilla - Betis). Perché: secondo l'Elo Betis è più forte di circa 53 punti (1563 contro 1511); nelle ultime 5 partite Sevilla ha fatto 1.6 gol a partita subendone 2.6, Betis 2.0 fatti e 1.8 subiti; gol attesi quasi pari (1.3 - 1.2); in classifica Betis è sopra (4° contro 6°), e questo pesa a sfavore di Sevilla.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Betis: Hernandez C. (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -53 (1511 vs 1563) · ultime 5: Sevilla 1.6 gol fatti / 2.6 subiti · Betis 2.0 / 1.8 · gol attesi (modello): 1.3 - 1.2 · classifica: 6° Sevilla vs 4° Betis · riposo: 20 gg Sevilla vs 21 gg Betis</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (36.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Real Madrid - Celta <span class="sub">giornata 13 · 21/11 21:00</span> · ⚽ corner attesi 7.4</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">64.0%</span><span class="cbar"><i style="width:64.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;64.0%</span><span class="stv">X&nbsp;20.7%</span><span class="stv">2&nbsp;15.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">46.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">46.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-0 (13%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Real Madrid - Celta). Perché: secondo l'Elo Real Madrid è più forte di circa 131 punti (1608 contro 1477); nelle ultime 5 partite Real Madrid ha fatto 2.2 gol a partita subendone 0.8, Celta 1.4 fatti e 0.8 subiti; il modello si aspetta più gol per Real Madrid (1.7 contro 0.8 di Celta); in classifica Real Madrid è sopra (3° contro 9°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Real Madrid: Asencio (🤕 infortunato), Rodrygo (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +131 (1608 vs 1477) · ultime 5: Real Madrid 2.2 gol fatti / 0.8 subiti · Celta 1.4 / 0.8 · gol attesi (modello): 1.7 - 0.8 · classifica: 3° Real Madrid vs 9° Celta · riposo: 20 gg Real Madrid vs 21 gg Celta</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf alta (64.0%). Stima, non garanzia.</div>
+</div></div></div><div class="card" id="bundesliga"><h2>🏴 Bundesliga <span class="chip">7 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Bayern Munich - FC Koln <span class="sub">giornata 10 · 20/11 20:30</span> · ⚽ corner attesi 10.5</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">69.0%</span><span class="cbar"><i style="width:69.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;69.0%</span><span class="stv">X&nbsp;16.9%</span><span class="stv">2&nbsp;14.0%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">66.1%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">60.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">1.11</span></div>
+    <div class="ms"><span class="stl">Quota GG</span><span class="stv">1.95</span></div>
+    <div class="ms"><span class="stl">Quota O2.5</span><span class="stv">5.14</span></div>
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill ev-neg">-23.4%</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Bayern Munich - FC Koln). Perché: secondo l'Elo Bayern Munich è più forte di circa 136 punti (1603 contro 1467); nelle ultime 5 partite Bayern Munich ha fatto 4.0 gol a partita subendone 1.2, FC Koln 0.8 fatti e 1.0 subiti; il modello si aspetta più gol per Bayern Munich (2.3 contro 1.1 di FC Koln); in classifica Bayern Munich è sopra (1° contro 13°). La quota di 1.11 è più alta di quanto il modello reputi giusto (mercato 90.1% vs modello 69.0%, edge -21.1 pp): il mercato la sopravvaluta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +136 (1603 vs 1467) · ultime 5: Bayern Munich 4.0 gol fatti / 1.2 subiti · FC Koln 0.8 / 1.0 · gol attesi (modello): 2.3 - 1.1 · classifica: 1° Bayern Munich vs 13° FC Koln · riposo: 20 gg Bayern Munich vs 19 gg FC Koln · quota 1.11 (mercato 90.1%) vs modello 69.0% → edge -21.1pp</span></details>
+  </div>
+  <div class="verdetto v-no">🧑‍⚖️ Verdetto dell'analista: ⛔ NO — EV -23.4% negativo: nessuna giocata — conf alta (69.0%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Leverkusen - Paderborn <span class="sub">giornata 10 · 21/11 15:30</span> · ⚽ corner attesi 10.6</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">61.1%</span><span class="cbar"><i style="width:61.1%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;61.1%</span><span class="stv">X&nbsp;18.3%</span><span class="stv">2&nbsp;20.6%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">67.8%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">62.2%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Leverkusen - Paderborn). Perché: secondo l'Elo Leverkusen è più forte di circa 30 punti (1514 contro 1483); nelle ultime 5 partite Leverkusen ha fatto 2.0 gol a partita subendone 2.2, Paderborn 1.2 fatti e 1.0 subiti; il modello si aspetta più gol per Leverkusen (2.4 contro 1.1 di Paderborn); in classifica Leverkusen è sopra (6° contro 14°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Leverkusen: Douè G. (🤕 infortunato), Eichhorn (🤕 infortunato), Ben Seghir (🤕 infortunato), Terrier (🤕 infortunato), Kofane (🤕 infortunato), Diaby (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +30 (1514 vs 1483) · ultime 5: Leverkusen 2.0 gol fatti / 2.2 subiti · Paderborn 1.2 / 1.0 · gol attesi (modello): 2.4 - 1.1 · classifica: 6° Leverkusen vs 14° Paderborn</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf alta (61.1%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">M'gladbach - Dortmund <span class="sub">giornata 10 · 21/11 15:30</span> · ⚽ corner attesi 10.3</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">40.5%</span><span class="cbar"><i style="width:40.5%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;40.1%</span><span class="stv">X&nbsp;19.5%</span><span class="stv">2&nbsp;40.5%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">70.4%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">68.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (M'gladbach - Dortmund). Perché: secondo l'Elo Dortmund è più forte di circa 187 punti (1594 contro 1407); nelle ultime 5 partite M'gladbach ha fatto 1.6 gol a partita subendone 2.0, Dortmund 1.2 fatti e 0.8 subiti; il modello si aspetta più gol per M'gladbach (2.2 contro 1.4 di Dortmund); in classifica Dortmund è sopra (2° contro 18°), e questo pesa a sfavore di M'gladbach.  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Dortmund: Can (🤕 infortunato), Konstantelias (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -187 (1407 vs 1594) · ultime 5: M'gladbach 1.6 gol fatti / 2.0 subiti · Dortmund 1.2 / 0.8 · gol attesi (modello): 2.2 - 1.4 · classifica: 18° M'gladbach vs 2° Dortmund</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (40.5%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Ein Frankfurt - Hoffenheim <span class="sub">giornata 10 · 21/11 15:30</span> · ⚽ corner attesi 10.6</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">56.3%</span><span class="cbar"><i style="width:56.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;56.3%</span><span class="stv">X&nbsp;19.1%</span><span class="stv">2&nbsp;24.6%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">72.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">69.2%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Ein Frankfurt - Hoffenheim). Perché: secondo l'Elo Ein Frankfurt è più forte di circa 42 punti (1510 contro 1468); nelle ultime 5 partite Ein Frankfurt ha fatto 1.2 gol a partita subendone 2.0, Hoffenheim 1.6 fatti e 1.8 subiti; il modello si aspetta più gol per Ein Frankfurt (2.4 contro 1.4 di Hoffenheim); in classifica Ein Frankfurt è sopra (8° contro 12°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +42 (1510 vs 1468) · ultime 5: Ein Frankfurt 1.2 gol fatti / 2.0 subiti · Hoffenheim 1.6 / 1.8 · gol attesi (modello): 2.4 - 1.4 · classifica: 8° Ein Frankfurt vs 12° Hoffenheim · riposo: 20 gg Ein Frankfurt vs 21 gg Hoffenheim</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (56.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Elversberg - Freiburg <span class="sub">giornata 10 · 21/11 15:30</span> · ⚽ corner attesi 9.9</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">41.4%</span><span class="cbar"><i style="width:41.4%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;41.4%</span><span class="stv">X&nbsp;22.4%</span><span class="stv">2&nbsp;36.2%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">72.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">72.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (9%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Elversberg - Freiburg). Perché: secondo l'Elo Freiburg è più forte di circa 43 punti (1556 contro 1514); nelle ultime 5 partite Elversberg ha fatto 1.6 gol a partita subendone 1.8, Freiburg 1.6 fatti e 1.8 subiti; il modello si aspetta più gol per Elversberg (2.0 contro 1.8 di Freiburg); in classifica Freiburg è sopra (3° contro 7°), e questo pesa a sfavore di Elversberg.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -43 (1514 vs 1556) · ultime 5: Elversberg 1.6 gol fatti / 1.8 subiti · Freiburg 1.6 / 1.8 · gol attesi (modello): 2.0 - 1.8 · classifica: 7° Elversberg vs 3° Freiburg · riposo: 22 gg Elversberg vs 21 gg Freiburg</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (41.4%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Union Berlin - RB Leipzig <span class="sub">giornata 10 · 21/11 15:30</span> · ⚽ corner attesi 10.0</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">43.2%</span><span class="cbar"><i style="width:43.2%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;43.2%</span><span class="stv">X&nbsp;21.6%</span><span class="stv">2&nbsp;35.2%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">66.9%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">66.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Union Berlin - RB Leipzig). Perché: secondo l'Elo RB Leipzig è più forte di circa 83 punti (1544 contro 1461); nelle ultime 5 partite Union Berlin ha fatto 0.6 gol a partita subendone 1.8, RB Leipzig 2.6 fatti e 1.6 subiti; il modello si aspetta più gol per Union Berlin (2.0 contro 1.4 di RB Leipzig); in classifica RB Leipzig è sopra (4° contro 16°), e questo pesa a sfavore di Union Berlin.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -83 (1461 vs 1544) · ultime 5: Union Berlin 0.6 gol fatti / 1.8 subiti · RB Leipzig 2.6 / 1.6 · gol attesi (modello): 2.0 - 1.4 · classifica: 16° Union Berlin vs 4° RB Leipzig · riposo: 20 gg Union Berlin vs 21 gg RB Leipzig</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (43.2%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Schalke 04 - Stuttgart <span class="sub">giornata 10 · 21/11 18:30</span> · ⚽ corner attesi 10.7</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">41.0%</span><span class="cbar"><i style="width:41.0%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;36.9%</span><span class="stv">X&nbsp;22.1%</span><span class="stv">2&nbsp;41.0%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">65.8%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">66.7%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Schalke 04 - Stuttgart). Perché: secondo l'Elo Stuttgart è più forte di circa 33 punti (1471 contro 1438); nelle ultime 5 partite Schalke 04 ha fatto 0.2 gol a partita subendone 1.0, Stuttgart 1.6 fatti e 1.4 subiti; il modello si aspetta più gol per Stuttgart (1.9 contro 1.5 di Schalke 04); in classifica Stuttgart è sopra (11° contro 17°), e questo pesa a sfavore di Schalke 04.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -33 (1438 vs 1471) · ultime 5: Schalke 04 0.2 gol fatti / 1.0 subiti · Stuttgart 1.6 / 1.4 · gol attesi (modello): 1.5 - 1.9 · classifica: 17° Schalke 04 vs 11° Stuttgart</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (41.0%). Stima, non garanzia.</div>
+</div></div></div><div class="card" id="ligue-1"><h2>🏴 Ligue 1 <span class="chip">6 partite</span></h2>
+<div class="mc-grid">
+<div class="mc">
+  <div class="mc-h">Troyes - Le Havre <span class="sub">giornata 11 · 20/11 20:45</span> · ⚽ corner attesi 8.6</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">51.7%</span><span class="cbar"><i style="width:51.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;51.7%</span><span class="stv">X&nbsp;21.1%</span><span class="stv">2&nbsp;27.2%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">61.1%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">63.9%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">2.1</span></div>
+    <div class="ms"><span class="stl">Quota GG</span><span class="stv">1.67</span></div>
+    <div class="ms"><span class="stl">Quota O2.5</span><span class="stv">2.13</span></div>
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill ev-pos">+8.6%</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Troyes - Le Havre). Perché: secondo l'Elo Troyes è più forte di circa 73 punti (1435 contro 1363); nelle ultime 5 partite Troyes ha fatto 0.6 gol a partita subendone 1.4, Le Havre 1.4 fatti e 3.2 subiti; il modello si aspetta più gol per Troyes (1.7 contro 1.5 di Le Havre); in classifica Troyes è sopra (16° contro 18°). La quota di 2.10 fa sembrare l'esito meno probabile (47.6%) di quanto lo stimi il modello (51.7%): c'è un margine (edge +4.1 punti %) a favore della scelta. Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +73 (1435 vs 1363) · ultime 5: Troyes 0.6 gol fatti / 1.4 subiti · Le Havre 1.4 / 3.2 · gol attesi (modello): 1.7 - 1.5 · classifica: 16° Troyes vs 18° Le Havre · riposo: 20 gg Troyes vs 21 gg Le Havre · quota 2.10 (mercato 47.6%) vs modello 51.7% → edge +4.1pp</span></details>
+  </div>
+  <div class="verdetto v-go">🧑‍⚖️ Verdetto dell'analista: 👍 VAI — edge buono (EV +8.6%) — conf media (51.7%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Nice - Paris SG <span class="sub">giornata 11 · 21/11 17:15</span> · ⚽ corner attesi 9.2</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p2">2</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">41.3%</span><span class="cbar"><i style="width:41.3%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;37.3%</span><span class="stv">X&nbsp;21.4%</span><span class="stv">2&nbsp;41.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">77.5%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">76.5%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (8%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria in trasferta» (Nice - Paris SG). Perché: secondo l'Elo Paris SG è più forte di circa 85 punti (1617 contro 1532); nelle ultime 5 partite Nice ha fatto 2.4 gol a partita subendone 1.4, Paris SG 3.0 fatti e 0.8 subiti; gol attesi quasi pari (2.1 - 2.0); in classifica Paris SG è sopra (1° contro 8°), e questo pesa a sfavore di Nice.  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo trasferta -85 (1532 vs 1617) · ultime 5: Nice 2.4 gol fatti / 1.4 subiti · Paris SG 3.0 / 0.8 · gol attesi (modello): 2.1 - 2.0 · classifica: 8° Nice vs 1° Paris SG</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (41.3%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Lens - Toulouse <span class="sub">giornata 11 · 21/11 20:45</span> · ⚽ corner attesi 8.6</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">53.6%</span><span class="cbar"><i style="width:53.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;53.6%</span><span class="stv">X&nbsp;21.0%</span><span class="stv">2&nbsp;25.4%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">63.8%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">63.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Lens - Toulouse). Perché: secondo l'Elo Lens è più forte di circa 27 punti (1517 contro 1489); nelle ultime 5 partite Lens ha fatto 1.6 gol a partita subendone 1.2, Toulouse 1.6 fatti e 1.2 subiti; il modello si aspetta più gol per Lens (2.0 contro 1.3 di Toulouse); in classifica Lens è sopra (9° contro 11°).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +27 (1517 vs 1489) · ultime 5: Lens 1.6 gol fatti / 1.2 subiti · Toulouse 1.6 / 1.2 · gol attesi (modello): 2.0 - 1.3 · classifica: 9° Lens vs 11° Toulouse · riposo: 22 gg Lens vs 20 gg Toulouse</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (53.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Lille - Lyon <span class="sub">giornata 11 · 21/11 20:45</span> · ⚽ corner attesi 9.2</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">58.4%</span><span class="cbar"><i style="width:58.4%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;58.4%</span><span class="stv">X&nbsp;20.4%</span><span class="stv">2&nbsp;21.3%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">56.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">51.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">2-0 (11%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Lille - Lyon). Perché: nelle ultime 5 partite Lille ha fatto 1.0 gol a partita subendone 0.8, Lyon 1.8 fatti e 1.0 subiti; il modello si aspetta più gol per Lille (2.1 contro 0.9 di Lyon); in classifica Lille è sopra (2° contro 3°); Lyon arriva da soli 20 giorni di riposo contro 22 di Lille (più stanca).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 5: Lille 1.0 gol fatti / 0.8 subiti · Lyon 1.8 / 1.0 · gol attesi (modello): 2.1 - 0.9 · classifica: 2° Lille vs 3° Lyon · riposo: 22 gg Lille vs 20 gg Lyon</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (58.4%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Monaco - Auxerre <span class="sub">giornata 11 · 21/11 20:45</span> · ⚽ corner attesi 8.3</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">52.6%</span><span class="cbar"><i style="width:52.6%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;52.6%</span><span class="stv">X&nbsp;21.8%</span><span class="stv">2&nbsp;25.6%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">55.6%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">58.8%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (12%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Monaco - Auxerre). Perché: secondo l'Elo Monaco è più forte di circa 51 punti (1514 contro 1463); nelle ultime 5 partite Monaco ha fatto 1.2 gol a partita subendone 1.6, Auxerre 1.6 fatti e 2.4 subiti; il modello si aspetta più gol per Monaco (1.7 contro 1.2 di Auxerre); in classifica Monaco è sopra (7° contro 13°).  Resta una stima con incertezza, non una certezza. ⚠️ Indisponibili EuroLeghe (fantacalcio.it): Monaco: Musiala (🤕 infortunato), Gnabry (🤕 infortunato), Saibari (🤕 infortunato), Luis Diaz (🤕 infortunato), Sapoko Ndiaye (🤕 infortunato) | Monaco: Fati (🤕 infortunato)
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">Elo casa +51 (1514 vs 1463) · ultime 5: Monaco 1.2 gol fatti / 1.6 subiti · Auxerre 1.6 / 2.4 · gol attesi (modello): 1.7 - 1.2 · classifica: 7° Monaco vs 13° Auxerre</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf media (52.6%). Stima, non garanzia.</div>
+</div>
+<div class="mc">
+  <div class="mc-h">Strasbourg - Brest <span class="sub">giornata 11 · 21/11 20:45</span> · ⚽ corner attesi 7.4</div>
+  <div class="mc-row">
+    <div class="ms"><span class="stl">Pron.</span><span class="stv"><span class="pill p1">1</span> </span></div>
+    <div class="ms"><span class="stl">Conf.</span><span class="stv">48.7%</span><span class="cbar"><i style="width:48.7%"></i></span></div>
+    <div class="ms"><span class="stl">1X2</span><span class="stv">1&nbsp;48.7%</span><span class="stv">X&nbsp;21.9%</span><span class="stv">2&nbsp;29.4%</span></div>
+    <div class="ms"><span class="stl">O2.5</span><span class="stv">66.2%</span></div>
+    <div class="ms"><span class="stl">GG</span><span class="stv">66.6%</span></div>
+    <div class="ms"><span class="stl">Punt. esatto+prob</span><span class="stv">1-1 (10%)</span></div>
+    <div class="ms"><span class="stl">Quota best 1X2</span><span class="stv">—</span></div>
+    
+    
+    <div class="ms"><span class="stl">Edge</span><span class="stv"><span class="pill mut">—</span></span></div>
+  </div>
+  <div class="mc-mot">🔍 <b>Motivo (in parole):</b> Il modello punta su «vittoria della casa» (Strasbourg - Brest). Perché: nelle ultime 5 partite Strasbourg ha fatto 1.6 gol a partita subendone 2.2, Brest 1.6 fatti e 1.4 subiti; il modello si aspetta più gol per Strasbourg (2.0 contro 1.4 di Brest); in classifica Strasbourg è sopra (12° contro 14°); Strasbourg arriva da soli 20 giorni di riposo contro 29 di Brest (più stanca).  Resta una stima con incertezza, non una certezza.
+    <details style="margin-top:4px;color:#64748b"><summary style="cursor:pointer;font-size:10px">dati numerici</summary><span style="font-size:10px">ultime 5: Strasbourg 1.6 gol fatti / 2.2 subiti · Brest 1.6 / 1.4 · gol attesi (modello): 2.0 - 1.4 · classifica: 12° Strasbourg vs 14° Brest · riposo: 20 gg Strasbourg vs 29 gg Brest</span></details>
+  </div>
+  <div class="verdetto v-ok">🧑‍⚖️ Verdetto dell'analista: ❔ senza quota → solo analisi, nessuna giocata — conf bassa (48.7%). Stima, non garanzia.</div>
+</div></div></div>
 <div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class="on"><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a><a href="benchmark.html" class=""><span class="ic">🏆</span>BENCHMARK</a><a href="guida.html" class=""><span class="ic">📖</span>GUIDA</a></div>
 <footer class="legal">
   ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>

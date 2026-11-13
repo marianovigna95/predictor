@@ -1,0 +1,23 @@
+sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
+giocata,2026-11-13,SINGOLA,Nations League,Bulgaria - Iceland,U2.5,Under 2.5,65.6,2.01,31.86,4.54,,
+giocata,2026-11-13,RADDOPPIO,Nations League,Bulgaria - Iceland [NG NG] + Slovakia - Faroe Islands [U2.5 Under 2.5],NG/U2.5,NG/Under 2.5,28.8,3.84,10.68,0.0,,
+giocata,2026-11-14,SINGOLA,LaLiga 2,Mallorca - Córdoba,1X2,1,74.0,1.98,46.52,0.0,,
+giocata,2026-11-14,RADDOPPIO,Friendlies + Nations League,Sweden - Bosnia-Herzegovina [U2.5 Under 2.5] + China - Malaysia [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,31.9,3.2,2.28,0.0,,
+giocata,2026-11-15,SINGOLA,LaLiga 2,Granada - Las Palmas,1X2,1,72.1,1.85,33.38,0.0,,
+giocata,2026-11-15,RADDOPPIO,LaLiga 2 + Nations League,Eibar - Cádiz [1X2 1] + Belarus - Albania [NG NG],1X2/NG,1/NG,36.2,3.04,9.89,0.0,,
+giocata,2026-11-16,SINGOLA,Nations League,Greece - Serbia,U2.5,Under 2.5,68.3,1.88,28.4,4.55,,
+giocata,2026-11-16,RADDOPPIO,Nations League,Greece - Serbia [U2.5 Under 2.5] + Switzerland - Scotland [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,29.4,3.65,7.13,0.0,,
+giocata,2026-11-17,SINGOLA,Friendlies,Russia - Venezuela,1X2,1,69.8,1.81,26.34,4.5,,
+giocata,2026-11-17,RADDOPPIO,Friendlies + Nations League,Wales - Portugal [U2.5 Under 2.5] + Russia - Venezuela [1X2 1],U2.5/1X2,Under 2.5/1,38.2,2.91,11.22,0.32,,
+giocata,2026-11-20,SINGOLA,Ligue 1,Troyes - Le Havre,GG,GG,63.9,1.67,6.71,0.0,,
+giocata,2026-11-20,RADDOPPIO,Bundesliga + Ligue 1,Bayern Munich - FC Koln [GG GG] + Troyes - Le Havre [GG GG],GG/GG,GG/GG,33.3,3.26,8.31,0.0,,
+verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
+verifica,2026-11-03,RADDOPPIO,Champions League,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,63.9,2.0,,,Barcelona - Aston Villa 3-0 (GG no) | Bodø/Glimt - Lille 0-0 (Under 2.5),❌
+verifica,2026-11-04,SINGOLA,Champions League,Viking - Sabah FK,O2.5,Over 2.5,81.6,1.38,,,4-1 (5 gol),✅
+verifica,2026-11-04,RADDOPPIO,Champions League,RB Leipzig - Man City [GG GG] + Viking - Sabah FK [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,58.9,1.99,,,RB Leipzig - Man City 2-3 (GG ✅) | Viking - Sabah FK 4-1 (O2.5 ✅),✅
+verifica,2026-11-05,SINGOLA,Europa League,Celtic - Beşiktaş,O2.5,Over 2.5,72.7,1.67,,,3-2 (5 gol),✅
+verifica,2026-11-05,RADDOPPIO,Europa League,NEC Nijmegen - Omonia Nicosia [GG GG] + Celtic - Beşiktaş [GG GG],GG/GG,GG/GG,50.1,2.39,,,NEC Nijmegen - Omonia Nicosia 3-1 ✅ | Celtic - Beşiktaş 3-2 ✅,✅
+verifica,2026-11-06,SINGOLA,Ligue 2,Boulogne - Annecy,U2.5,Under 2.5,65.0,2.11,,,3-0 (3 gol),❌
+verifica,2026-11-06,RADDOPPIO,Ligue 2,Boulogne - Annecy [NG NG] + Dijon - Red Star [O2.5 Over 2.5],NG/O2.5,NG/Over 2.5,35.3,3.15,,,Boulogne - Annecy 3-0 (NG no) | Dijon - Red Star 1-0 (Under 2.5),❌
+verifica,2026-11-07,SINGOLA,LaLiga 2,Granada - Tenerife,NG,NG,71.6,1.85,,,POSTICIPATA (0-0 non giocata),➖
+verifica,2026-11-07,RADDOPPIO,Bundesliga/Eredivisie,RB Leipzig - Augsburg [1X2 1] + Den Haag - Sparta Rotterdam [GG GG],1/GG,1/GG,46.4,2.25,,,RB Leipzig - Augsburg 5-2 (1 sì) | Den Haag - Sparta 3-1 (GG sì),✅

@@ -173,3 +173,78 @@ def frase_motivo(home, away, date, played, rh, ra, lh, la, stand=None, last=None
     corpo = "; ".join(frasi[:4]) if frasi else "i dati disponibili sono pochi"
     return (f"Il modello punta su «{label}» ({home} - {away}). Perché: {corpo}. {edge_txt} "
             f"Resta una stima con incertezza, non una certezza.")
+
+
+PICK_SHORT = ["la vittoria della casa", "il pareggio", "la vittoria in trasferta"]
+
+
+def perche_breve(home, away, date, played, lh, la, stand=None, last=None,
+                 P=None, pick=None, quota_best=None, elo_raw=None):
+    """🆕 13/11 — UNA frase diretta sul PERCHÉ del pronostico (max ~170 caratteri).
+    Prende i 2 fattori più parlanti + il margine vs quota, in italiano semplice."""
+    if pick is None:
+        pick = int(np.argmax(P)) if P is not None else 0
+    factors = []
+    # forma: chi sta meglio in gol fatti/subiti
+    nH, gfH, gaH = form_last(played, home, date)
+    nA, gfA, gaA = form_last(played, away, date)
+    if nH and nA:
+        fh, fa = gfH / nH, gfA / nA
+        sh, sa = gaH / nH, gaA / nA
+        best = home if (fh - sh) > (fa - sa) else away
+        worst = away if best == home else home
+        diff = abs((fh - sh) - (fa - sa))
+        if diff >= 0.6:
+            bf, bs = (fh, sh) if best == home else (fa, sa)
+            factors.append(f"{best} è in forma ({bf:.1f} gol/partita, solo {bs:.1f} subiti) contro {worst}")
+    # gol attesi
+    if lh > la + 0.25:
+        factors.append(f"si aspettano più gol per {home} ({lh:.1f}-{la:.1f})")
+    elif la > lh + 0.25:
+        factors.append(f"si aspettano più gol per {away} ({la:.1f}-{lh:.1f})")
+    # classifica
+    pH, pA = _pos(stand, home), _pos(stand, away)
+    if pH and pA and pH != pA:
+        top, bp = (home, pH) if pH < pA else (away, pA)
+        factors.append(f"in classifica {top} è {bp}°")
+    # elo
+    if elo_raw:
+        eh, ea = elo_raw.get(home, 1500.0), elo_raw.get(away, 1500.0)
+        if abs(eh - ea) >= 25:
+            forte = home if eh > ea else away
+            factors.append(f"{forte} parte favorita (forza Elo {abs(eh-ea):.0f} punti in più)")
+    corpo = "; ".join(factors[:2]) if factors else "dati simili per le due squadre"
+    # margine quota in parole semplici
+    margine = ""
+    if quota_best and P is not None:
+        q = float(quota_best); p_mod = float(P[pick]); p_impl = 1.0 / q
+        e = (p_mod - p_impl) * 100
+        if e >= 2:
+            margine = f" La quota {q:.2f} paga come se valesse {p_impl*100:.0f}%, il modello invece lo dà al {p_mod*100:.0f}%: c'è margine."
+        elif e <= -2:
+            margine = f" Attenzione: la quota {q:.2f} sembra alta rispetto al modello ({p_mod*100:.0f}%)."
+    return f"Perché {PICK_SHORT[pick]}: {corpo}.{margine}"
+
+
+
+def perche_mercato(mercato, esito, lh, la, q=None, p=None):
+    """🆕 13/11 — frase breve "perché" per mercati O/U 2.5 e GG/NG (basata sui gol attesi)."""
+    tot = lh + la
+    if mercato in ("O2.5", "U2.5"):
+        label = "Over 2.5" if mercato == "O2.5" else "Under 2.5"
+        base = f"si aspettano {tot:.1f} gol in totale" + (", sopra la media delle leghe (~2.6)" if tot > 2.6 else ", sotto la media (~2.6)")
+    elif mercato in ("GG", "NG"):
+        label = esito
+        if mercato == "GG":
+            base = f"gol attesi per entrambe ({lh:.1f} e {la:.1f}): è plausibile che segnino tutte e due"
+        else:
+            base = f"gol attesi {lh:.1f} - {la:.1f}: difficile che segnino entrambe"
+    else:
+        label = esito
+        base = f"gol attesi {lh:.1f} - {la:.1f}"
+    margine = ""
+    if q and p:
+        impl = 100.0 / float(q)
+        if p * 100 - impl >= 2:
+            margine = f" La quota {float(q):.2f} paga come se valesse {impl:.0f}%, il modello invece dà {p*100:.0f}%: c'è margine."
+    return f"Perché {label}: {base}.{margine}"

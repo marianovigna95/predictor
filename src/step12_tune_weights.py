@@ -12,6 +12,7 @@ import argparse
 import sys
 from pathlib import Path
 
+import os
 import numpy as np
 import pandas as pd
 
@@ -39,7 +40,9 @@ def main():
     ap.add_argument("--to-md", type=int, default=40)
     args = ap.parse_args()
 
-    matches = pd.read_csv(DATA / "matches.csv", parse_dates=["Date"])
+    matches = pd.read_csv(DATA / "matches.csv", parse_dates=["Date"], low_memory=False)
+    if os.environ.get("USE_WX", "1") == "1":
+        W.load_weather()  # 🆕 13/11 meteo+derby in validazione
     fx = pd.read_csv(DATA / "fixtures_leagues.csv")
     fx["Date"] = pd.to_datetime(fx["date"])
 
@@ -89,17 +92,24 @@ def main():
         rps_1x2, rps_ou, rps_mkt, rps_ou_mkt, n = [], [], [], [], 0
         allP = []
         allX = []
+        allF = []
+        allOU = []
         for league, md, state, items in cache:
             elo, dc_hist, ad, ahg, aag, draw_base, stand, last, hfa_l = state
             for f, y, yo, odds, oo in items:
                 r = predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, f["Date"], f["home"], f["away"],
-                                       stand=stand, last=last, odds=odds, hfa=hfa_l)
+                                       stand=stand, last=last, odds=odds, hfa=hfa_l,
+                                       wx=W.WX.get((f["home"], f["Date"].date().isoformat()), 1.0),
+                                       derby=frozenset((f["home"], f["away"])) in W.DERBY)
                 P, p_over = r[0], r[1]
                 rps_1x2.append(rps3(P, y))
                 allP.append((P, y, (league, md)))
                 pmk = r[11] if r[11] is not None else (r[9] + r[10]) / 2.0
                 allX.append((np.concatenate([r[9], r[10], pmk]), y, (league, md)))
+                allF.append((r[12], y, (league, md)))
                 rps_ou.append(rps2(p_over, yo))
+                pm_ou = (1.0/float(oo)) if (oo is not None and pd.notna(oo) and float(oo) > 1.05) else p_over
+                allOU.append((p_over, pm_ou, yo, (league, md)))
                 n += 1
                 if odds is not None:
                     inv = 1 / np.array(odds, float)
@@ -151,6 +161,52 @@ def main():
         print(f"\n🧠 RPS 1X2 STACKER (logistic LOO): {sum(rps_st)/len(rps_st):.4f}  n={len(rps_st)}")
     except Exception as e:
         print("stacker saltato:", e)
+
+    # 🆕 13/11 RPS del 4° membro GBM (feature tabellari) + stacker a 4 membri, LOO
+    try:
+        from sklearn.ensemble import HistGradientBoostingClassifier
+        groups = sorted({g for _, _, g in allF})
+        rps_gbm, rps_st4 = [], []
+        for g in groups:
+            tr = [(x, y) for x, y, gg in allF if gg != g]
+            te = [(x, y) for x, y, gg in allF if gg == g]
+            trX = [(x, y) for x, y, gg in allX if gg != g]
+            teX = [(x, y) for x, y, gg in allX if gg == g]
+            if len(tr) < 80 or not te:
+                continue
+            gbm = HistGradientBoostingClassifier(max_iter=120, learning_rate=0.06, max_leaf_nodes=15, random_state=7).fit(
+                _np.array([x for x, _ in tr]), _np.array([y for _, y in tr]))
+            clf4 = LogisticRegression(max_iter=2000).fit(
+                _np.array([_np.concatenate([x, gbm.predict_proba(f.reshape(1,-1))[0]]) for (x, _), (f, _) in zip(trX, tr)]),
+                _np.array([y for _, y in trX]))
+            for (x, y), (f, _) in zip(teX, te):
+                pg = gbm.predict_proba(f.reshape(1, -1))[0]
+                Qg = gbm.predict_proba(f.reshape(1, -1))[0]
+                rps_gbm.append(rps3(Qg, y))
+                Q4 = clf4.predict_proba(_np.concatenate([x, pg]).reshape(1, -1))[0]
+                rps_st4.append(rps3(Q4, y))
+        print(f"\n🌲 RPS GBM solo (LOO): {sum(rps_gbm)/len(rps_gbm):.4f}  n={len(rps_gbm)}")
+        print(f"🧠 RPS STACKER 4 membri (LOO): {sum(rps_st4)/len(rps_st4):.4f}  n={len(rps_st4)}")
+    except Exception as e:
+        print("gbm saltato:", e)
+
+    # 🆕 13/11 RPS O/U con stacker binario LOO (DC + mercato)
+    try:
+        from sklearn.linear_model import LogisticRegression as _LR2
+        groups = sorted({g for *_, g in allOU})
+        rps_ou_st = []
+        for g in groups:
+            tr = [(a, b, y) for a, b, y, gg in allOU if gg != g]
+            te = [(a, b, y) for a, b, y, gg in allOU if gg == g]
+            if len(tr) < 80 or not te:
+                continue
+            cl = _LR2(max_iter=1000).fit(_np.array([[a, b] for a, b, _ in tr]), _np.array([y for _, _, y in tr]))
+            for a, b, y in te:
+                p = cl.predict_proba(_np.array([[a, b]]))[0][1]
+                rps_ou_st.append(rps2(p, y))
+        print(f"\n📊 RPS O2.5 STACKER binario (LOO): {sum(rps_ou_st)/len(rps_ou_st):.4f}  n={len(rps_ou_st)}")
+    except Exception as e:
+        print("ou stacker saltato:", e)
 
     df = pd.DataFrame(rows).sort_values("RPS_1X2")
     out = DATA / "weights_tuning_0611.csv"

@@ -23,7 +23,9 @@ TABS = [("index.html", "⌂", "HOME", "home"),
         ("giocata_multi.html", "🎯", "GIOCATE", "giocate"),
         ("ppa.html", "⚡", "PPA", "ppa"),
         ("surebets.html", "⚖️", "SUREBETS", "surebets"),
-        ("archivio.html", "🗂", "ARCHIVIO", "archivio")]
+        ("archivio.html", "🗂", "ARCHIVIO", "archivio"),
+        ("benchmark.html", "🏆", "BENCHMARK", "benchmark"),
+        ("guida.html", "📖", "GUIDA", "guida")]
 
 
 THEME_JS = """
@@ -112,6 +114,7 @@ tr.mrow td { color:var(--mut); font-size:12px; padding:2px 8px 10px; background:
 .pill { display:inline-block; border-radius:999px; padding:1px 9px; font-size:11px; font-weight:700;
   border:1px solid var(--line); background:var(--btnbg); color:var(--txt); white-space:nowrap; }
 .pill.ev-pos { background:rgba(34,197,94,.12); color:#4ade80; border-color:rgba(34,197,94,.35); }
+.perche { color:var(--acc); font-size:12.5px; font-weight:600; background:rgba(56,189,248,.07); }
 .pill.ev-neg { background:rgba(248,113,113,.10); color:#f87171; border-color:rgba(248,113,113,.35); }
 .t-singola { background:rgba(251,191,36,.12); color:#fbbf24; border-color:rgba(251,191,36,.4); }
 .t-raddoppio { background:rgba(56,189,248,.12); color:#38bdf8; border-color:rgba(56,189,248,.4); }
@@ -262,6 +265,7 @@ def giocata_oggi_html(today_iso):
     tr = ""
     for r in rows:
         mot = (r.get("motivo") or "—").replace("<", "&lt;")
+        per = (r.get("perche") or "").replace("<", "&lt;")
         evv = str(r.get("EV%") or "")
         try:
             evc = "ev-pos" if float(evv) > 0 else "ev-neg"
@@ -274,8 +278,9 @@ def giocata_oggi_html(today_iso):
                f"<td data-label='Mercato'>{r.get('mercato')}</td><td data-label='Esito'><b>{r.get('esito')}</b></td>"
                f"<td data-label='p modello'>{r.get('p_modello%')}%</td><td data-label='Quota'>{r.get('quota_best')}</td>"
                f"<td data-label='EV'><span class='pill {evc}'>{r.get('EV%')}%</span></td></tr>"
-               f"<tr class='mrow'><td colspan='8' data-label='Motivo'>{mot}</td></tr>"
-               f"<tr class='mrow'><td colspan='8'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto: {vd}</div></td></tr>")
+               + (f"<tr class='mrow'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+               + f"<tr class='mrow'><td colspan='8' data-label='Motivo'>{mot}</td></tr>"
+               + f"<tr class='mrow'><td colspan='8'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto: {vd}</div></td></tr>")
     return (f"<div class='card' style='border-color:#0ea5e9'><h2>🎯 Giocate — {label}</h2>"
             f"<div class='tablewrap'><table><tr><th>Tipo</th><th>Lega</th><th>Partita</th><th>Mercato</th><th>Esito</th><th>p modello</th><th>Quota best</th><th>EV</th></tr>{tr}</table></div>"
             f"<p class='sub' style='margin:8px 0 0'>Regola EV&gt;0-only: se nessuna giocata ha EV positiva esce la riga ⛔ NESSUNA (stake 0). "
@@ -337,6 +342,7 @@ def pronostici_finestra_html(frows, today_dm):
         except (ValueError, TypeError):
             evc, evs = "mut", "—"
         mot = (r.get("motivo_verbale") or "").replace("<", "&lt;")
+        per = (r.get("perche") or "").replace("<", "&lt;")
         tr += (f"<tr data-day='{day}' data-cat='{c}'><td data-label='Ora' class='tb-r'>{r.get('orario','')}</td>"
                f"<td data-label='Lega' class='sub'>{r.get('lega')}</td>"
                f"<td data-label='Partita'><b>{r.get('partita')}</b></td>"
@@ -344,7 +350,8 @@ def pronostici_finestra_html(frows, today_dm):
                f"<td data-label='O2.5'>{r.get('Over2.5%')}%</td><td data-label='GG'>{r.get('BTTS%')}%</td>"
                f"<td data-label='Quota best'>{r.get('quota_best')}</td>"
                f"<td data-label='EV'><span class='pill {evc}'>{evs}</span></td></tr>"
-               f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8'><details><summary>motivo</summary>{mot}</details></td></tr>")
+               + (f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+               + f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8'><details><summary>motivo dettagliato</summary>{mot}</details></td></tr>")
     n_today = sum(1 for r in frows if (r.get("orario") or "").split(" ")[0] == today_dm)
     js = ("<script>var curDay='" + today_dm + "',curCat='all';"
           "function setDay(b){curDay=b.dataset.day;document.querySelectorAll('#daybtns .btn').forEach(function(x){x.classList.toggle('on',x===b);});applyF();}"
@@ -409,6 +416,211 @@ def build_index():
 {footer("home")}
 </div></body></html>"""
     with open(os.path.join(SITE, "index.html"), "w") as f:
+        f.write(wrap_tables(html))
+
+
+def build_guida():
+    """📖 GUIDA/FAQ: onboarding — cosa sono EV/RPS/CLV/Kelly, come leggere le pagine, regole e limiti."""
+    body = """<div class="card">
+  <h2>👋 Benvenuto — come si usa questo sito</h2>
+  <p class="sub">Questo sito pubblica <b>analisi statistiche</b> su partite di calcio: nulla è una certezza, nulla è un consiglio di gioco.
+  Si gioca (se si decide di farlo) <b>solo su bookmaker ADM autorizzati, 18+</b>. 18+ · ADM · autoesclusione.it · 800 558822.</p>
+</div>
+<div class="card">
+  <h2>🧭 Le pagine</h2>
+  <table>
+  <tr><th>Pagina</th><th>Cosa trovi</th><th>Quando usarla</th></tr>
+  <tr><td>⌂ <b>Home</b></td><td>finestra mobile 7 giorni: partite, quote best-price, pronostici EV&gt;0</td><td>panoramica del giorno</td></tr>
+  <tr><td>🔴 <b>Diretta</b></td><td>live ogni 30s: score, quote live, xG, timeline, formazioni, proiezione 1X2 live ed EV live (min≥30)</td><td>durante le partite</td></tr>
+  <tr><td>🎯 <b>Giocate</b></td><td>per ogni giorno: Singola + Raddoppio (quota≈2.00) solo se EV&gt;0, con p, quota, EV%, stake ¼ Kelly</td><td>la schedina del giorno</td></tr>
+  <tr><td>⚡ <b>PPA</b></td><td>pronostici con p modello ≥ 60%, per giorno (clicca le date in cima), con esito ✅/❌ quando verificati</td><td>idee ad alta probabilità</td></tr>
+  <tr><td>🧾 <b>Schedina</b></td><td>la schedina di oggi (stampabile/PDF)</td><td>riepilogo rapido</td></tr>
+  <tr><td>💰 <b>Bankroll</b></td><td>traccia le tue puntate nel browser: ROI, winrate, drawdown, equity curve, confronto flat-stake vs ¼ Kelly, export CSV</td><td>se tieni il conto</td></tr>
+  <tr><td>🗂 <b>Archivio</b></td><td>scoreboard pubblico per giornata (acc%, RPS modello vs mercato), verifica giocate con CLV, export JSON/CSV</td><td>trasparenza: vinti E persi</td></tr>
+  <tr><td>🏆 <b>Benchmark</b></td><td>RPS del modello vs mercato per lega (walk-forward), sempre aggiornato</td><td>quanto vale davvero il modello</td></tr>
+  <tr><td>🔎 <b>Squadra</b></td><td>cerca una squadra: calendario 8 giorni, EV, dettaglio</td><td>follow di una squadra</td></tr>
+  <tr><td>📖 <b>Metodo / Glossario</b></td><td>regole, formule (EV, Kelly, CLV, RPS), definizioni</td><td>capire il metodo</td></tr>
+  </table>
+</div>
+<div class="card">
+  <h2>🧮 Le 4 cose da sapere</h2>
+  <table>
+  <tr><th>Concetto</th><th>Significato</th></tr>
+  <tr><td><b>EV (valore atteso)</b></td><td>EV = p·quota − 1. Se &gt; 0 il prezzo "vale" la nostra probabilità. Si pubblica/gioca solo EV&gt;0; stake solo se EV&gt;+2%</td></tr>
+  <tr><td><b>RPS</b></td><td>metrica di errore delle probabilità (0=perfetto). benchmark.html confronta modello vs mercato</td></tr>
+  <tr><td><b>CLV</b></td><td>quota giocata vs quota di chiusura del mercato: CLV&gt;0 = battuto il mercato a fine giornata</td></tr>
+  <tr><td><b>¼ Kelly</b></td><td>stake =¼ della Kelly frazionaria, con margine di incertezza su p: mai puntare più di quanto si può perdere</td></tr>
+  </table>
+</div>
+<div class="card">
+  <h2>⚠️ Regole e limiti (leggere prima)</h2>
+  <p class="sub">✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b> · ✅ stake solo EV&gt;+2% · ✅ pubblichiamo vinti e persi ·
+  ❌ niente multiple/schedine lunghe · ❌ niente "sicuri" · ❌ niente siti tips/affiliate (🚩) · ❌ niente book non-ADM.
+  Tetto realistico ~53-56% acc. 1X2: la varianza è alta, anche il modello migliore perde journées intere.
+  Se il gioco rischia di sfuggire: <b>autoesclusione.it</b> · <b>800 558822</b> (gratis).</p>
+</div>"""
+    html = page("Guida", '📖 <span class="g">Guida</span>', "Come si usa il sito: pagine, EV/RPS/CLV/Kelly, regole e limiti. Onboarding in 2 minuti.", body, active="guida")
+    with open(os.path.join(SITE, "guida.html"), "w", encoding="utf-8") as f:
+        f.write(wrap_tables(html))
+
+
+def build_benchmark():
+    """🏆 BENCHMARK: RPS modello vs mercato per lega (walk-forward g6-g10, da data/validation_multi.csv)."""
+    import json
+    vf = os.path.join(DATA, "validation_multi.csv")
+    rows = ""
+    if os.path.exists(vf):
+        with open(vf) as f:
+            rd = list(csv.DictReader(f))
+        for r in rd:
+            try:
+                rm = float(r.get("RPS_modello") or 0); rk = float(r.get("RPS_mercato") or 0)
+                edge = rk - rm
+                cls = "ev-pos" if edge > 0 else ("ev-neg" if edge < 0 else "sub")
+                rows += (f"<tr><td data-label='Lega'><b>{r['lega']}</b></td><td data-label='Partite'>{r['partite']}</td>"
+                         f"<td data-label='Acc modello'>{r['acc_modello']}%</td><td data-label='Acc mercato'>{r['acc_mercato']}%</td>"
+                         f"<td data-label='RPS modello'>{rm:.3f}</td><td data-label='RPS mercato'>{rk:.3f}</td>"
+                         f"<td data-label='Edge' class='{cls}'>{edge:+.3f}</td></tr>")
+            except Exception:
+                pass
+    if not rows:
+        rows = "<tr><td colspan=7>Validazione non ancora eseguita (data/validation_multi.csv mancante).</td></tr>"
+    # export giocate (JSON+CSV) — idea presa da gambeta/scoregpt: storico pubblico scaricabile
+    gj = []
+    gjf = os.path.join(DATA, "giocata_multi.csv")
+    if os.path.exists(gjf):
+        with open(gjf) as f:
+            gj = list(csv.DictReader(f))
+    ver = []
+    for vfile in sorted(glob.glob(os.path.join(DATA, "verifica_*.csv"))):
+        with open(vfile) as f:
+            for r in csv.DictReader(f):
+                ver.append(r)
+    export = {"giocate": gj, "verifiche": ver,
+              "nota": "Storico pubblico del predictor: giocate (EV>0) e verifiche con esito reale + CLV. Dati aperti, verificabili esternamente. Analisi-only, 18+, solo ADM, autoesclusione.it, 800 558822."}
+    with open(os.path.join(SITE, "archivio_giocate.json"), "w", encoding="utf-8") as f:
+        json.dump(export, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(SITE, "archivio_giocate.csv"), "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["sezione", "data", "tipo", "lega", "partita", "mercato", "esito", "p_modello%", "quota_best", "EV%", "stake%", "risultato", "vinto"])
+        for r in gj:
+            w.writerow(["giocata", r.get("data",""), r.get("tipo",""), r.get("lega",""), r.get("partita",""),
+                        r.get("mercato",""), r.get("esito",""), r.get("p_modello%",""), r.get("quota_best",""),
+                        r.get("EV%",""), r.get("stake%",""), "", ""])
+        for r in ver:
+            w.writerow(["verifica", r.get("data",""), r.get("tipo",""), r.get("lega",""), r.get("partita",""),
+                        r.get("mercato",""), r.get("esito",""), r.get("p_modello%",""), r.get("quota_best",""),
+                        "", "", r.get("risultato",""), r.get("vinto","")])
+    # 🆕 13/11 ROI reale della schedina storica (da verifica_*.csv): Singola/Raddoppio archiviati, flat 1u
+    roi_rows = ""
+    agg = {}
+    for r in ver:
+        t = r.get("tipo", "")
+        if t not in ("SINGOLA", "RADDOPPIO"):
+            continue
+        q = float(r.get("quota_best") or 0); v = str(r.get("vinto") or "")
+        a = agg.setdefault(t, {"n": 0, "win": 0, "roi": 0.0})
+        if not q or q <= 1:
+            continue
+        a["n"] += 1
+        win = "✅" in v
+        a["win"] += int(win)
+        a["roi"] += (q - 1) if win else -1.0
+    if agg:
+        for t, a in agg.items():
+            if a["n"]:
+                roi_rows += (f"<tr><td data-label='Tipo'><b>{t}</b></td><td data-label='Giocate'>{a['n']}</td>"
+                             f"<td data-label='Win%'>{100*a['win']/a['n']:.1f}%</td>"
+                             f"<td data-label='ROI (flat 1u)' class='{'ev-pos' if a['roi']>=0 else 'ev-neg'}>{100*a['roi']/a['n']:+.1f}%</td></tr>")
+    roi_card = ('<div class="card"><h2>🧾 ROI reale della schedina (archiviata)</h2>'
+                '<p class="sub">Singola+Raddoppio dei giorni passati, verificati con esito reale, a flat 1 unità: win% e ROI. Campione piccolo → tendance, non garanties.</p>'
+                f"<table><tr><th>Tipo</th><th>Giocate</th><th>Win%</th><th>ROI (flat 1u)</th></tr>{roi_rows or '<tr><td colspan=4>ancora nessuna giocata verificata</td></tr>'}</table></div>") if roi_rows else ""
+    body = f"""<div class="card">
+  <h2>🏆 Benchmark: modello vs mercato (walk-forward)</h2>
+  <p class="sub">Validazione g6-g10 2026/27: ogni partita prevista usando SOLO dati precedenti (no leakage).
+  <b>RPS</b> (0 = perfetto, più basso = meglio): edge positivo = il nostro modello ha RPS più basso del mercato (quote di chiusura).
+  Il mercato resta il benchmark reale; l'obiettivo onesto non è "batterlo sempre" ma trovare i pochi casi con EV&gt;0 su ADM.</p>
+  <table><tr><th>Lega</th><th>Partite</th><th>Acc modello</th><th>Acc mercato</th><th>RPS modello</th><th>RPS mercato</th><th>Edge (mkt−modello)</th></tr>{rows}</table>
+  <p class="sub">🧠 Stacker v7 (LOO su 535 match g6-g38): RPS 1X2 <b>0.1918</b> vs mercato <b>0.1963</b> — sotto il mercato in RPS grezzo,
+  oltre ai segnali extra (forma-xG, H2H, arbitro, meteo, assenze) che la media mercato non pesa.</p>
+</div>
+{roi_card}
+<div class="card">
+  <h2>📂 Storico pubblico scaricabile (dati aperti)</h2>
+  <p class="sub">Come il principio di trasparenza di gambeta/scoregpt: tutto lo storico delle nostre giocate e verifiche è esportabile e verificabile esternamente.</p>
+  <p><a class="btn" href="archivio_giocate.json" download>⬇ archivio_giocate.json</a>
+     <a class="btn" href="archivio_giocate.csv" download>⬇ archivio_giocate.csv</a></p>
+  <p class="sub">Contenuto: giocate (Singola/Raddoppio con p, quota, EV%, stake%) + verifiche con esito reale e CLV. Analisi-only: mai certezze, 18+, puntare SOLO su ADM, autoesclusione.it · 800 558822.</p>
+</div>"""
+    html = page("Benchmark", '🏆 <span class="g">Benchmark</span>',
+                "Confronto onesto modello vs mercato (RPS walk-forward per lega) + storico pubblico scaricabile in JSON/CSV.",
+                body, active="benchmark")
+    with open(os.path.join(SITE, "benchmark.html"), "w", encoding="utf-8") as f:
+        f.write(wrap_tables(html))
+
+
+def build_fonti():
+    """📚 FONTI: pagina unica con tutte le fonti dati + siti valutati/non usati (spostato da metodo/glossario)."""
+    siti = ""
+    gf = os.path.join(ROOT, "REVIEW_SITI.md")
+    if os.path.exists(gf):
+        with open(gf, encoding="utf-8") as f:
+            md = f.read()
+        siti = "<pre style='white-space:pre-wrap;font-size:12px;background:var(--card);padding:10px;border-radius:10px'>" + md.replace("&","&amp;").replace("<","&lt;") + "</pre>"
+    body = f"""<div class="card">
+  <h2>📚 Fonti dati (dettaglio completo)</h2>
+  <p class="sub">Ogni dato entra nel modello da una fonte pubblica e verificabile; i file locali sono nel workspace (<code>data/</code>).
+  Nessuna API a pagamento (ESPN pubblica gratis, CORS *). Siti tips/affiliate = 🚩.</p>
+  <table>
+  <tr><th>Fonte</th><th>Cosa fornisce</th><th>URL / file locale</th></tr>
+  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — storico résultats Top 5 2022/23→2026/27</td>
+      <td data-label='Cosa'>gol, tiri, cartellini, quote medie/max (Avg/Max, B365, PS), xG per partita, chiusure per CLV</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/mmz4281/2627/I1.csv · E0.csv · SP1.csv · D1.csv · F1.csv (stagioni precedenti: 2526, 2425, …) → <code>data/{{I1,E0,SP1,D1,F1}}_*.csv</code> → <code>data/matches.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — fixtures e quote del weekend corrente</td>
+      <td data-label='Cosa'>calendario partite non giocate + quote di chiusura per la finestra</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/fixtures.csv → <code>data/fixtures_all_2627.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>ESPN API pubblica</b> (CORS *, gratis, no key) — diretta live + verifica esiti</td>
+      <td data-label='Cosa'>scoreboard (stato, score, minuto, quote live), summary (boxscore xG/tiri/possesso, keyEvents timeline, formazioni), standings, loghi squadre</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>site.api.espn.com/apis/site/v2/sports/soccer/{{slug}}/scoreboard?dates=YYYYMMDD · .../summary?event={{id}} · site.web.api.espn.com .../standings · loghi: a.espncdn.com/i/teamlogos/soccer/500/{{teamId}}.png</td></tr>
+  <tr><td data-label='Fonte'><b>FotMob</b> — calendario TUTTE le leghe + coppe, risultati, xG giocatori</td>
+      <td data-label='Cosa'>fixtures per lega (id 55 Serie A, 47 PL, 87 LaLiga, 54 Bundesliga, 53 Ligue 1, 42 UCL, 73 UEL, 10216 UECL), risultati già giocati, SoT/90</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>fotmob.com/leagues/{{id}}/fixtures → <code>data/fixtures_leagues.csv</code>, <code>data/xg_fotmob_2627.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Understat</b> — xG storici leghe nazionali 2022→2026</td>
+      <td data-label='Cosa'>xG per partita (API getLeagueData), nomi mappati su football-data</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>understat.com → <code>data/understat_xg.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Wincomparator</b> — best-price per partita della finestra</td>
+      <td data-label='Cosa'>migliore quota 1X2, O/U 2.5, GG/NG, angoli O/U 9.5</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>wincomparator.com/predictions/football/... → <code>data/odds_window_*_bestprice.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Fantacalcio-online</b> — probabili formazioni Serie A</td>
+      <td data-label='Cosa'>modulo, XI probable, indisponibili per giornata (penalità Elo/xG)</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>fantacalcio-online.com → <code>data/lineups_giornata*.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>Open-Meteo</b> (gratis, no key) + <b>Nominatim/OSM</b> — meteo e coordinate</td>
+      <td data-label='Cosa'>pioggia/vento/temperatura per città (storico + forecast 15gg) → fattore gol; coordinate squadre (da ESPN venue) → derby, distanza trasferta</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>api.open-meteo.com / archive-api.open-meteo.com · nominatim.openstreetmap.org → <code>data/weather_*.csv</code>, <code>data/team_coords.csv</code> (src/step30_weather.py)</td></tr>
+  <tr><td data-label='Fonte'><b>Kaggle</b> — H2H internazionali (nazionali 🚩)</td>
+      <td data-label='Cosa'>storico partite nazionali per H2H ed Elo seed</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>kaggle → <code>data/kaggle_matches.csv</code>, <code>data/fixtures_intl.csv</code></td></tr>
+  <tr><td data-label='Fonte'><b>TheStatsAPI</b> — API a pagamento (da 50 $/mese): <b>valutata e NON adottata</b></td>
+      <td data-label='Cosa'>le nostre 8 leghe sono già coperte dalle fonti gratis; link affiliazione (<code>via=</code>/<code>affonso_id=</code>) mai usati</td>
+      <td data-label='URL' class='sub' style='font-size:11px'>thestatsapi.com (valutazione 04/11/2026)</td></tr>
+  </table>
+  <h2>Espandere con le fonti gratis attuali</h2>
+  <p class="sub"><b>Altri campionati:</b> football-data pubblica CSV storici gratis per molte altre leghe (già aggiunte: Serie B, Championship, Eredivisie, Süper Lig, ecc.).
+  <b>Altri mercati:</b> i CSV includono tiri, angoli, cartellini, arbitro → angoli/cartellini/tiri sono già nel modello (O/U angoli 9.5 in schedina).
+  Quello che le fonti gratis <b>non</b> danno: quote live in-play sharp e linea di chiusura Pinnacle utili per CLV avanzato.</p>
+  <p class="sub">Nota onesta: il collo di bottiglia non è la quantità di dati ma la <b>linea di chiusura del mercato</b> (benchmark.html lo misura: modello ≈ mercato, RPS ~0.19).</p>
+  <h2>Aggiornamento fonti e cosa non copriamo</h2>
+  <p class="sub">Fonti gratis aggiornate fino all'ultima giornata completata; le partite in corso/odierne possono essere in ritardo di qualche ora (le verifichiamo a mano da più fonti: FotMob + ESPN + diretta.it manuale).</p>
+</div>
+<div class="card">
+  <h2>🧪 Siti valutati e NON usati (report completo)</h2>
+  <p class="sub">REVIEW_SITI.md — tutti i siti analizzati con verdetto 🚩/⚠️/✔ e motivi.</p>
+  {siti}
+</div>"""
+    html = page("Fonti dati", '📚 <span class="g">Fonti</span>',
+                "Tutte le fonti dati (gratis, verificabili) in un posto solo + report siti valutati e non usati.",
+                body, active="fonti")
+    with open(os.path.join(SITE, "fonti.html"), "w", encoding="utf-8") as f:
         f.write(wrap_tables(html))
 
 
@@ -485,7 +697,10 @@ una singola vincita non prova nulla, servono serie lunghe con RPS/ROI. Stime con
   <h2>🗂 Archivio per giornata (man mano che le giornate si chiudono)</h2>
   <table><tr><th>Giornata</th><th>Report</th><th>Quote</th><th>Giocata</th></tr>{arch}</table>
 </div>
-<p><button onclick="exportArchivio()">📤 Esporta scoreboard come CSV</button></p>
+<p><button onclick="exportArchivio()">📤 Esporta scoreboard come CSV</button>
+  <a class="btn" href="archivio_giocate.json" download>⬇ storico giocate JSON</a>
+  <a class="btn" href="archivio_giocate.csv" download>⬇ storico giocate CSV</a>
+  <a class="btn" href="benchmark.html">🏆 Benchmark modello vs mercato →</a></p>
 <script>
 function exportArchivio(){{
   var t=document.querySelector('.card table'); if(!t)return;
@@ -526,48 +741,9 @@ def build_metodo():
   Metriche: <b>RPS, log-loss, Brier, ECE</b>. V7 stacker: RPS <b>0.1918</b> (LOO 535 match) — meglio del mercato (0.1963);
   v6: 0.2008 grezzo → 0.1988 calibrato. Il mercato resta il benchmark (~RPS 0.19-0.20): il nostro edge non è "battere il mercato"
   in RPS, ma le <b>quote ADM specifiche</b> + segnali extra (forma, H2H, arbitro, assenze-xG) che il mercato medio non pesa.</p>
-  <h2>Fonti dati (dettaglio)</h2>
-  <p class="sub">Ogni dato entra nel modello da una fonte pubblica e verificabile; i file locali sono nel workspace (<code>data/</code>).</p>
-  <table>
-  <tr><th>Fonte</th><th>Cosa fornisce</th><th>URL / file locale</th></tr>
-  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — storico risultati Top 5 2022/23→2026/27</td>
-      <td data-label='Cosa'>gol, tiri, cartellini, quote medie/max (Avg/Max, B365, PS), xG per partita</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/mmz4281/2627/I1.csv · E0.csv · SP1.csv · D1.csv · F1.csv (stagioni precedenti: cartella 2526, 2425, …) → <code>data/{{I1,E0,SP1,D1,F1}}_*.csv</code> → <code>data/matches.csv</code> (7531 righe)</td></tr>
-  <tr><td data-label='Fonte'><b>football-data.co.uk</b> — fixtures e quote del weekend corrente</td>
-      <td data-label='Cosa'>calendario partite non giocate + quote di chiusura per la finestra</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.football-data.co.uk/fixtures.csv → <code>data/fixtures_all_2627.csv</code></td></tr>
-  <tr><td data-label='Fonte'><b>FotMob</b> — calendario TUTTE le leghe + coppe europee, risultati coppe, xG/tiri giocatori</td>
-      <td data-label='Cosa'>fixtures per lega (id 55 Serie A, 47 PL, 87 LaLiga, 54 Bundesliga, 53 Ligue 1, <b>42 UCL, 73 UEL, 10216 UECL</b>), risultati già giocati, SoT/90 per i TiP 0.5</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.fotmob.com/leagues/{id}/fixtures → <code>data/fixtures_leagues.csv</code>, <code>data/xg_fotmob_2627.csv</code> (src/step1b_fixtures_leagues.py)</td></tr>
-  <tr><td data-label='Fonte'><b>Understat</b> — xG storici leghe nazionali 2022→2026</td>
-      <td data-label='Cosa'>xG per partita (API getLeagueData), nomi mappati su football-data</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>understat.com (API) → <code>data/understat_xg.csv</code> (src/step12_understat_xg.py)</td></tr>
-  <tr><td data-label='Fonte'><b>Wincomparator</b> — best-price per partita della finestra</td>
-      <td data-label='Cosa'>migliore quota disponibile 1X2, Over/Under 2.5, GG/NG (pagine prediction per lega e per match)</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.wincomparator.com/predictions/football/... → <code>data/odds_window_*_bestprice.csv</code>, <code>data/odds_giornata10_bestprice.csv</code></td></tr>
-  <tr><td data-label='Fonte'><b>Fantacalcio-online</b> — probabili formazioni Serie A</td>
-      <td data-label='Cosa'>modulo, XI probable, indisponibili per giornata</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>fantacalcio-online.com → <code>data/lineups_giornata*.csv</code></td></tr>
-  <tr><td data-label='Fonte'><b>BetExplorer</b> — coppe europee (fonte alternativa)</td>
-      <td data-label='Cosa'>risultati e calendario UCL/UEL/UECL 2026/27 quando FotMob è in ritardo</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://www.betexplorer.com/football/europe/...</td></tr>
-  <tr><td data-label='Fonte'><b>ESPN scoreboard API</b> — seconda fonte per VERIFICARE i risultati (gratis, senza chiave)</td>
-      <td data-label='Cosa'>confronta ogni risultato di FotMob con ESPN (129/149 OK, 0 discordanze al 04/11); le discordanze vengono segnalate prima di archiviare</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>https://site.api.espn.com/apis/site/v2/sports/soccer/{{lega}}/scoreboard?dates=YYYYMMDD → <code>data/espn_check.csv</code> (src/step1c_verify_espn.py)</td></tr>
-  <tr><td data-label='Fonte'><b>TheStatsAPI</b> — API a pagamento (da 50 $/mese): <b>valutata e NON adottata</b></td>
-      <td data-label='Cosa'>offrirebbe 1000+ competizioni, quote live di bookmaker specifici, xG per tiro, stats giocatori via JSON — ma per le nostre 8 leghe le fonti gratis coprono già tutto; link ricevuti con codici affiliazione (<code>via=</code>/<code>affonso_id=</code>) non vengono usati</td>
-      <td data-label='URL' class='sub' style='font-size:11px'>thestatsapi.com (valutazione 04/11/2026)</td></tr>
-  </table>
-  <h2>Espandere con le fonti gratis attuali</h2>
-  <p class="sub"><b>Altri campionati:</b> sì — football-data.co.uk pubblica CSV storici gratis per molte altre leghe
-  (Serie B <code>I2</code>, Championship <code>E1</code>, D2/F2/SP2, Eredivisie, MLS, Argentina, Brasile…): basta aggiungere il codice
-  div in <code>step1</code> e l'id lega in <code>step1b</code>. <b>Altri mercati:</b> i CSV football-data includono già
-  tiri, angoli, cartellini e arbitro → O/U angoli, cartellini, tiri squadra, handicap asiatici (colonne AH) sono già fattibili;
-  i prop giocatore (TiP, gol) arrivano da FotMob (SoT/90, già usati). Quello che le fonti gratis <b>non</b> danno:
-  quote live in-play e linee "sharp" di chiusura (Pinnacle) utili solo per la ricerca CLV — e non per giocare su operatori ADM.</p>
-  <p class="sub">Nota onesta: più leghe/mercati = più opportunità di trovare EV, ma anche più test statistici e più varianza.
-  Il vero collo di bottiglia non è la quantità di dati: è la <b>linea di chiusura del mercato</b> (lo scoreboard lo misura: modello ≈ mercato, RPS ~0.19).</p>
-  <p class="sub">Le quote mostrate sono sempre <b>best-price da comparatore</b> (non un singolo bookmaker) e il benchmark del mercato è la <b>quota media di chiusura</b> (Avg di football-data).</p>
+  <h2>📚 Fonti dati</h2>
+  <p class="sub">Tutti i dati arrivano da <b>fonti pubbliche e gratuite</b>, senza API a pagamento e senza affiliazioni a bookmaker:
+  il codice e i file sono nel repository pubblico. Siti di tips/affiliate non vengono mai usati (🚩).</p>
   <h2>Le nostre regole</h2>
   <p class="sub">✅ tutti i pronostici pubblicati con esito (vinti e persi) · ✅ win% sempre con RPS/ROI ·
   ✅ probabilità con incertezza, mai "sicuro" · ✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b>, stake solo se <b>EV &gt; +2%</b>, dimensionato <b>¼ Kelly con margine di incertezza</b> (p − IC 68%) ·
@@ -590,6 +766,7 @@ def build_metodo():
   <tr><td data-label='Pagina'>💰 <b>Bankroll</b></td><td>tracker personale (salvato solo nel tuo browser): ROI, winrate, drawdown, verifica esiti ESPN automatica, export CSV</td></tr>
   <tr><td data-label='Pagina'>🎯 <b>Giocate</b> · ⚡ <b>PPA</b> · ⚖️ <b>Surebets</b></td><td>giocate EV&gt;0 della finestra · PPA p≥60% (html+PDF) · surebet best-price ≥+1%</td></tr>
   <tr><td data-label='Pagina'>📅 <b>Verifica</b> · 🗂 <b>Archivio+CLV</b> · 📊 <b>Report weekend</b></td><td>esiti verificati (FotMob+ESPN incrociati), CLV, report</td></tr>
+  <tr><td data-label='Pagina'>🏆 <b>Benchmark</b></td><td>RPS modello vs mercato per lega (walk-forward) + <b>storico pubblico scaricabile JSON/CSV</b> (archivio_giocate) — dati aperti verificabili esternamente</td></tr>
   <tr><td data-label='Pagina'>🤖 <b>Telegram</b></td><td>digest giornaliero sul canale (giocate EV&gt;0, verifica, top PPA) + alert in privado: surebet, 🔴 LIVE di partite 🚩/⭐, 📉 quota in calo (CLV)</td></tr>
   </table>
   <h2>📅 Ultimo aggiornamento &amp; storico versioni</h2>
@@ -599,11 +776,14 @@ def build_metodo():
   <tr><td data-label='Versione'>v4</td><td>ensemble Elo+DC180+mercato+xG</td><td>RPS 0.1898 · 53.3% acc. (g8-g10)</td></tr>
   <tr><td data-label='Versione'>v5 (dal 10/11/2026)</td><td>finestra mobile 7gg, Nazionali 🚩, diretta live ESPN, PPA, schedina, bankroll, Telegram</td><td>in validazione continua (archivio+CLV)</td></tr>
   <tr><td data-label='Versione'>v6 (dal 13/11/2026)</td><td>🏟️ HFA stimato per lega · 📊 xG nel DC · 🎯 calibrazione isotonic walk-forward · ⚖️ pesi ri-tunati su 535 match (g6-g38)</td><td>RPS 0.2008 → <b>0.1988 calibrato</b> (LOO); pesi 0.50/0.30/0.20 confermati</td></tr>
-  <tr><td data-label='Versione'>v7 (dal 13/11/2026)</td><td>🧠 <b>stacking meta-learner</b> (logistic sui 3 membri) · 🔗 <b>correlazione raddoppio</b> (rho −0.26 stimato dai dati, EV più onesto) · 🎲 <b>¼ Kelly con incertezza</b> (IC 68% su p) · 📈 <b>forma-xG ultime 5</b> per tutte le leghe</td><td>Stacker RPS <b>0.1918</b> LOO (mercato 0.1963) — primo modello sotto il mercato</td></tr>
+  <tr><td data-label='Versione'>v7 (dal 13/11/2026)</td><td>🧠 <b>stacking meta-learner</b> (logistic sui 3 membri) · 🔗 <b>correlazione raddoppio</b> (rho −0.26 stimato dai dati, EV più onesto) · 🎲 <b>¼ Kelly con incertezza</b> (IC 68% su p) · 📈 <b>forma-xG ultime 5</b> tutte le leghe · 🌦️ <b>meteo</b> (open-meteo) + <b>derby</b> (coordinate) come contesto · ✈️ <b>trasferta &gt;1000 km</b> (fatigue) · 🧊 <b>ensemble temporale</b> (media 0.65/0.35 con run precedente) · 📊 <b>stacker O/U 2.5 e GG/NG</b> · 🔴 <b>EV live O2.5</b> da xG live (min≥30) in diretta</td><td>Stacker RPS <b>0.1918</b> LOO (mercato 0.1963). Onesto: meteo/derby/GBM testati, non migliorano RPS (GBM off); stacker O/U 0.4871 vs 0.4889; 1X2 stacker 0.1918</td></tr>
   </table>
   <h2>Limiti onesti</h2>
-  <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis. La varianza del calcio è alta: anche il modello
-  migliore perde journées intere (campioni piccoli: un weekend = 5-9 partite). Per questo pubblichiamo le sconfitte.</p>
+  <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis (vedi 🏆 benchmark.html: RPS modello ~0.19 vs mercato ~0.19-0.20;
+  stacker v7 su 535 match LOO g6-g38: <b>RPS 0.1918 vs mercato 0.1963</b>). La varianza del calcio è alta: anche il modello
+  migliore perde journées intere (campioni piccoli: un weekend = 5-9 partite). Testati e <b>scartati</b> per nessun guadagno misurabile:
+  GBM come 4° membro, meteo/derby sul RPS, consensus di LLM generici. Non disponibili gratis: linea di chiusura sharp (Pinnacle),
+  quote in-play di qualità, indisponibili-xG per tutte le leghe. Per questo pubblichiamo le sconfitte e il CLV, e lo stake resta ¼ Kelly solo su EV&gt;+2%.</p>
   <h2>Aggiornamento fonti e cosa non copriamo</h2>
   <p class="sub">Fonti gratis aggiornate fino all'ultima giornata completata (lunedì mattina); le partite in corso/odierne
   possono essere in ritardo di qualche ora (le verifichiamo a mano da più fonti prima di segnare il risultato).
@@ -653,7 +833,7 @@ RED_FLAGS = [
     "'Affidabilità 4/5' o 'livello affidabilità' subjetivi: non sono probabilità calibrate.",
     "VIP/canali a pagamento (PayPal/Telegram) con % di un solo mese cherry-picked.",
     "Nessun disclaimer 18+/ADM/gioco responsabile visibile.",
-    "Siti valutati e NON usati come fonti (06/11/2026): <b>statzone.ai</b> — software 'fatto da tipster' con AI che 'costruisce giocate vincenti in 5 secondi', canale Telegram VIP ('2 mesi gratis' con funnel), 'ritardi statistici' dietro paywall VIP, backend api2.statzone.ai/WhoScored (a pagamento) → red flag: vende tips, non dati grezzi. L'unica idea interessante (impatto dei 22 probabili sulle stats dei mercati, 'TAB 22') la copriamo già noi con la penalità Elo sugli indisponibili. <b>besoccer.com</b> (valutato 06/11): portale livescore/statistiche legittimo (contenuto green flag), MA banner affiliazione bookmaker USA con pixel di tracking (mai cliccarli), API commerciale senza piano free e pagine risultati caricate via JS → non aggiunta alla pipeline; le pagine partita pubbliche restano utili come TERZA verifica manuale di un singolo risultato doute. <b>soccertrade.it</b> (valutato 06/11): non è un sito di statistiche ma un mercato a pagamento dove si comprano/vendono 'quote' di calciatori e allenatori con denaro reale (Ronaldo a 97€, saldo/ricarica/commissioni/recesso) → prodotto tipo gioco d'azzardo su performer, zero valore come fonte dati e red flag etico → NON usato. <b>transfermarkt.it</b> (valutato 06/11): portale dati legittimo e ricco (valori di mercato, calciomercato, infortuni/squalifiche, probabili formazioni) = green flag di CONTENUTO, ma anti-bot per lo scraping (risposte 202 challenge) e API ufficiale a pagamento → non entra nella pipeline automatica; resta utile come fonte MANUALE di contesto (infortuni, mercato). Gli indisponibili li prendiamo già gratis da fantacalcio-online nei motivi. Ricerca web 06/11 — nuove fonti gratis valutate: <b>flashscore.com</b> ✔ (livescore server-rendered 200/497KB con riferimenti xG → candidato 4ª fonte risultati naast FotMob/ESPN/diretta.it); <b>fantacalcio.it EuroLeghe</b> ✔ (probabili formazioni + indisponibili anche per coppe/leghe estere → estende i nostri motivi oltre Serie A); <b>understat.com</b> ✔ xG gratis top-league (SPA: uso manuale/cross-check, scraping via XHR interne); <b>StatsBomb open data</b> (GitHub, event data gratis — opzionale per feature xG); ✘ bloccati da qui: api.sofascore.com (403 Cloudflare), worldfootball.net (403), fbref xG (rimossi da gen 2026). <b>diretta.it</b> (valutato 06/11): portale livescore italiano legittimo e server-rendered (homepage 200 con ~400 punteggi di oggi, niente funnel Telegram/affiliazione) → green flag come TERZA fonte risultati/live neben FotMob+ESPN, utile per un cross-check manuale dei punteggi di oggi. <b>asianbetsoccer.com</b> — comparatore di quote asiatiche (188bet/Pinnacle/Sbobet) + bot Telegram a pagamento + 'bonus 100% prima ricarica' (affiliazione) + video 'resa 80/85%' → red flag come fonte di pronostici; l'unico elemento utile sarebbero le linee Asian/Pinnacle come dato di mercato grezzo (CLV), ma le prendiamo direttamente dai bookmaker sharp, non da loro. <b>topfootballdata.com</b> e <b>linemate.io</b> — già documentati sopra: tips/Telegram/affiliazione, non dati.",
+    'Siti di tips/affiliate valutati e non usati (🚩): mai linkati né usati come fonte.',
 ]
 
 GREEN_FLAGS = [
@@ -761,7 +941,8 @@ def build_giocata(g):
         cands.append(dict(partita=r["partita"], data=r["data"], esito=r["esito"], q=q,
                           book=r["bookmaker"], p=p * 100, ev=ev * 100, edge=edge_pp,
                           stake=stake, conf=fc[key].get("conf%", ""), orario=fc[key].get("orario", ""),
-                          motivo=(fc[key].get("motivo_verbale") or fc[key].get("motivo") or "—").replace("<", "&lt;")))
+                          motivo=(fc[key].get("motivo_verbale") or fc[key].get("motivo") or "—").replace("<", "&lt;"),
+                          perche=(fc[key].get("perche") or "").replace("<", "&lt;")))
     if not cands:
         return
     # SINGOLA DEL GIORNO = miglior percentuale di riuscita del modello
@@ -794,7 +975,8 @@ def build_giocata(g):
                 f"<td data-label='Edge'>{c['edge']:+.1f} pp</td>"
                 f"<td data-label='EV'>{c['ev']:+.2f}%</td>"
                 f"<td data-label='Stake 1/4 Kelly'>{c['stake']:.2f}% bankroll</td></tr>"
-                f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{c.get('motivo','—')}</td></tr>")
+                + (f"<tr class='mrow'><td colspan='8' class='perche'>{c.get('perche')}</td></tr>" if c.get('perche') else "")
+                + f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{c.get('motivo','—')}</td></tr>")
 
     if len(double) >= 2:
         q2 = 1.0
@@ -1004,6 +1186,13 @@ Edge positivo = il modello batte il mercato su quella lega. Campioni piccoli: da
 
 def giocata_card_html():
     """Card giocata RAGGRUPPATE PER GIORNO: per ogni data della finestra, Singola del giorno + Raddoppio del giorno."""
+    # 🆕 13/11 esito reale sulle giocate dei giorni passati (da verifica_*.csv)
+    _nn = lambda t: "".join(ch for ch in str(t).lower() if ch.isalnum())
+    ver_map = {}
+    for vf in sorted(glob.glob(os.path.join(DATA, "verifica_*.csv"))):
+        with open(vf) as f:
+            for r in csv.DictReader(f):
+                ver_map[(_nn(r["data"])[:10], r["tipo"], _nn(str(r["partita"]).split("[")[0].strip()))] = r.get("vinto", "")
     gj_p = os.path.join(DATA, "giocata_multi.csv")
     if not os.path.exists(gj_p):
         return ""
@@ -1018,18 +1207,20 @@ def giocata_card_html():
         gtr = ""
         for r in days[d]:
             mot = (r.get("motivo") or "—").replace("<", "&lt;")
+            per = (r.get("perche") or "").replace("<", "&lt;")
             mc = r.get("mercato") or "1X2"
             evv = str(r.get('EV%') or '')
             evc = 'ev-pos' if evv.startswith('+') or (evv and float(evv) > 0) else ('ev-neg' if evv else 'mut')
             vd = (r.get("verdetto") or "").replace("<", "&lt;")
             vc = 'v-no' if vd.startswith('⛔') else ('v-bor' if vd.startswith('⚠️') else ('v-go' if vd.startswith('✅') else 'v-ok'))
             gtr += (f"<tr><td data-label='Tipo'><span class='pill t-{r['tipo'].lower()}'>{r['tipo']}</span></td><td data-label='Lega'>{r['lega']}</td>"
-                    f"<td data-label='Partita'>{r['partita']}</td><td data-label='Mercato'>{mc}</td>"
+                    f"<td data-label='Partita'>{r['partita']}{(' <b>' + ver_map.get((_nn(r.get('data','')), r['tipo'], _nn(str(r['partita']).split('[')[0].strip())), '') + '</b>') if ver_map.get((_nn(r.get('data','')), r['tipo'], _nn(str(r['partita']).split('[')[0].strip()))) else ''}</td><td data-label='Mercato'>{mc}</td>"
                     f"<td data-label='Esito'><b>{r['esito']}</b></td>"
                     f"<td data-label='p modello'>{r['p_modello%']}%</td><td data-label='Quota best'>{r['quota_best']}</td>"
                     f"<td data-label='EV'><span class='pill {evc}'>{r['EV%']}%</span></td></tr>"
-                    f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{mot}</td></tr>"
-                    f"<tr class='mrow'><td colspan='8' data-label='Verdetto'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto dell'analista: {vd}</div></td></tr>")
+                    + (f"<tr class='mrow'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+                    + f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{mot}</td></tr>"
+                    + f"<tr class='mrow'><td colspan='8' data-label='Verdetto'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto dell'analista: {vd}</div></td></tr>")
         parts.append(f"""<div class="card" style="border:1px solid #0ea5e9" id="g{label.replace('/', '')}">
 <h2 class="day">📅 {label} — Singola + Raddoppio del giorno</h2>
 <table><tr><th>Tipo</th><th>Lega</th><th>Partita</th><th>Mercato</th><th>Esito</th><th>p modello</th><th>Quota best</th><th>EV</th></tr>{gtr}</table></div>""")
@@ -1291,6 +1482,8 @@ def main():
     build_coppe()
     build_giocata_multi()
     build_archivio()
+    build_benchmark()
+    build_guida()
     build_report_weekend()
     nq = 0
     for bp in bestprice_files():

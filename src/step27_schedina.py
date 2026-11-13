@@ -70,6 +70,7 @@ h1{font-size:20px;margin:8px 0}
 .k{flex:1;background:#0b1220;border:1px solid #22345a;border-radius:8px;padding:8px;text-align:center}
 .k b{display:block;font-size:15px;color:#93c5fd}
 .k span{font-size:10px;color:#8ea3c8;text-transform:uppercase;letter-spacing:.05em}
+.perche{color:#7dd3fc;font-size:12.5px;font-weight:600;margin-top:6px;background:rgba(56,189,248,.08);border-radius:6px;padding:6px 8px}
 .empty{color:#8ea3c8;padding:20px;text-align:center}
 footer{color:#475569;font-size:11px;text-align:center;padding:14px}
 @media print{body{background:#fff;color:#000}.card{background:#fff;border:1px solid #ccc}
@@ -80,15 +81,19 @@ nav,footer .no{display:none}.sub,.meta{color:#333}k b{color:#000}.k{background:#
 def page_html(date_str, rows):
     cards = []
     for r in rows:
-        p = r.get("p_modello%", "")
-        q = r.get("quota_best", "")
-        k = kelly_quarter(p, q)
+        p = float(r.get("p_modello%", 0) or 0) / 100.0
+        q = float(r.get("quota_best", 0) or 0)
+        k = kelly_quarter(p, q) if q > 1 else 0.0
+        _st = r.get("stake%") if hasattr(r, "get") else None
+        if _st not in (None, "", "nan") and str(_st).replace(".","",1).isdigit():
+            k = float(_st) / 100.0  # 🆕 13/11 stake con incertezza (Brier) da weekly_multi
         stake100 = round(k, 2)  # % bankroll
         win100 = round(stake100 * (float(q) - 1), 2) if q else 0
         cards.append(f"""<div class="card">
-  <div class="top"><b>{r.get('tipo','')}</b><span class="badge">EV +{r['ev']:.1f}%</span></div>
+  <div class="top"><b>{r.get('tipo','')}</b><span class="badge">EV +{float(r.get('ev',0) or 0):.1f}%</span></div>
   <div class="pick">{r.get('partita','')}</div>
   <div class="meta">🏆 {r.get('lega','')} · 🕐 {r.get('data','')} · mercato: <b>{r.get('mercato','')}</b> — esito <b>{r.get('esito','')}</b></div>
+  {"<div class='perche'>"+r.get('perche','').replace('<','&lt;')+"</div>" if r.get('perche') else ""}
   <div class="kelly">
     <div class="k"><b>{q}</b><span>quota ADM</span></div>
     <div class="k"><b>{p}%</b><span>p modello</span></div>
@@ -103,7 +108,7 @@ def page_html(date_str, rows):
 </style></head><body>
 <div class="wrap">
 <h1>🧾 Schedina del giorno — {date_str}</h1>
-<p class="sub">Max 1 SINGOLA + 1 RADDOPPIO · stake solo se EV &gt; +2% · ¼ Kelly · puntare SOLO su ADM · fonte: modello walk-forward (nessuna certezza)</p>
+<p class="sub">Max 1 SINGOLA + 1 RADDOPPIO · stake solo se EV &gt; +2% · ¼ Kelly · puntare SOLO su ADM · modello walk-forward (nessuna certezza)</p>
 {NAV}
 {body}
 <p class="sub">Stampa o salva PDF: Ctrl+P → Salva come PDF · <a href="#" id="share" style="color:#93c5fd">🔗 condividi schedina</a></p>
@@ -138,10 +143,13 @@ def make_pdf(date_str, rows, path):
         pdf.set_font("helvetica", "", 12)
         pdf.multi_cell(0, 7, "Oggi nessuna schedina: nessuna giocata con EV > +2% (stake 0).")
     for r in rows:
-        p, q = r.get("p_modello%", ""), r.get("quota_best", "")
-        k = kelly_quarter(p, q)
+        p, q = float(r.get("p_modello%", 0) or 0) / 100.0, float(r.get("quota_best", 0) or 0)
+        k = kelly_quarter(p, q) if q > 1 else 0.0
+        _st = r.get("stake%") if hasattr(r, "get") else None
+        if _st not in (None, "", "nan") and str(_st).replace(".","",1).isdigit():
+            k = float(_st) / 100.0  # 🆕 13/11 stake con incertezza (Brier) da weekly_multi
         pdf.set_font("helvetica", "B", 12)
-        pdf.cell(0, 8, f"{r.get('tipo','')} — EV +{r['ev']:.1f}%", new_x="LMARGIN", new_y="NEXT")
+        pdf.cell(0, 8, f"{r.get('tipo','')} — EV +{float(r.get('ev',0) or 0):.1f}%", new_x="LMARGIN", new_y="NEXT")
         pdf.set_font("helvetica", "", 11)
         pdf.multi_cell(0, 6, f"{r.get('partita','')}  ({r.get('lega','')})")
         pdf.multi_cell(0, 6, f"Mercato: {r.get('mercato','')}  |  Esito: {r.get('esito','')}  |  Quota ADM: {q}  |  p modello: {p}%")

@@ -1,0 +1,309 @@
+team,city,lat,lon
+AC Milan,Milano,45.4641943,9.1896346
+AS Roma,Roma,41.8933203,12.4829321
+Atalanta,Bergamo,45.7566557,9.7542192
+Bologna,Bologna,44.4938203,11.3426327
+Fiorentina,Firenze,43.7697955,11.2556404
+Internazionale,Milano,45.4641943,9.1896346
+Juventus,Torino,45.0677551,7.6824892
+Lazio,Roma,41.8933203,12.4829321
+Lecce,Lecce,40.1522173,18.2260628
+Napoli,Napoli,40.8358846,14.2487679
+Parma,Parma,44.6952006,10.0979869
+Udinese,Udine,46.0634632,13.2358377
+Torino,Torino,45.0677551,7.6824892
+Como,Como,45.9395857,9.1493609
+Cagliari,Cagliari,39.2171994,9.113311
+Genoa,Genova,44.40726,8.9338624
+Sassuolo,Reggio Emilia,44.6086674,10.5940667
+Monza,Monza,45.5844865,9.2749057
+Frosinone,Frosinone,41.6285468,13.5758498
+Venezia,Venezia,45.4371908,12.3345898
+Hull City,Hull,53.7623863,-0.3301214
+Brighton & Hove Albion,Falmer,50.8687985,-0.0688139
+Brentford,Brentford,51.4863958,-0.3216623
+AFC Bournemouth,Bournemouth,50.7446718,-1.8579514
+Leeds United,Leeds,53.7974185,-1.5437941
+Arsenal,London,51.5074456,-0.1277653
+Manchester United,Manchester,53.4424618,-2.2324547
+Newcastle United,Newcastle-upon-Tyne,54.9738474,-1.6131572
+Aston Villa,Birmingham,52.4948994,-1.8518439
+Chelsea,London,51.5074456,-0.1277653
+Liverpool,Liverpool,53.3933411,-2.9166389
+Sunderland,Sunderland,54.9058512,-1.3828727
+Tottenham Hotspur,London,51.5074456,-0.1277653
+Everton,Liverpool,53.3933411,-2.9166389
+Fulham,London,51.5074456,-0.1277653
+Ipswich Town,Ipswich,52.0579324,1.1528095
+Manchester City,Manchester,53.4424618,-2.2324547
+Crystal Palace,London,51.5074456,-0.1277653
+Coventry City,Coventry,52.4081812,-1.510477
+Nottingham Forest,Nottingham,52.9534193,-1.1496461
+Barcelona,Barcelona,41.3825802,2.177073
+Celta Vigo,Vigo,42.1986395,-8.727956
+Real Madrid,Madrid,40.416782,-3.703507
+Racing Santander,Santander,43.4618932,-3.8100255
+Espanyol,Barcelona,41.3825802,2.177073
+Real Sociedad,San Sebastian,43.3224219,-1.9838889
+Deportivo,La Coruña,43.3454621,-8.4138519
+Athletic Club,Bilbao,43.2630018,-2.9350039
+Valencia,Manises,39.492989,-0.4621429
+Alavés,Vitoria-Gasteiz,42.8505845,-2.66145
+Osasuna,Pamplona,42.815686,-1.6522353
+Málaga,Malaga,36.7647913,-4.4422005
+Rayo Vallecano,Madrid,40.416782,-3.703507
+Villarreal,Villarreal,39.9372616,-0.1004465
+Sevilla,Sevilla,37.3886303,-5.9953403
+Real Betis,Sevilla,37.3886303,-5.9953403
+Atlético Madrid,Madrid,40.416782,-3.703507
+Levante,Manises,39.492989,-0.4621429
+Getafe,Getafe,40.3070639,-3.7331808
+Elche,Elche,38.2653307,-0.6988391
+FC Cologne,Cologne,50.938361,6.959974
+Borussia Dortmund,Aue,50.586993,12.6992687
+Eintracht Frankfurt,Frankfurt,50.1106444,8.6820917
+SC Freiburg,Freiburg im Breisgau,47.9960901,7.8494005
+Hamburg SV,Hamburg Norderstedt,53.7341679,10.02115
+Bayer Leverkusen,Leverkusen,51.0324743,6.9881194
+Bayern Munich,München,48.1371079,11.5753822
+Schalke 04,Gelsenkirchen,51.5110321,7.0960124
+VfB Stuttgart,Stuttgart,48.7784485,9.1800132
+Werder Bremen,Bremen,53.0758196,8.8071646
+Borussia Mönchengladbach,Borussia Mönchengladbach,51.1746249,6.3854094
+1. FC Union Berlin,Berlin,52.5173885,13.3951309
+Mainz,Mainz,49.9995205,8.2736253
+SC Paderborn 07,SC Paderborn 07,,
+FC Augsburg,Augsburg,48.3690341,10.8979522
+TSG Hoffenheim,Sinsheim,49.2344637,8.8989482
+SV Elversberg,Spiesen-Elversberg,49.3145046,7.1369778
+RB Leipzig,RB Leipzig,51.3443163,12.3403113
+Paris Saint-Germain,Paris,48.8534951,2.3483915
+Lille,Lille,50.6365654,3.0635282
+Lyon,Lyon,45.7578137,4.8320114
+Stade Rennais,Rennes,48.1113387,-1.6800198
+Troyes,Paris,48.8534951,2.3483915
+AJ Auxerre,Auxerre,47.7961287,3.570579
+AS Monaco,Monaco,43.7323492,7.4276832
+Lens,Lens,50.4291723,2.8319805
+Marseille,Marseille,43.2963986,5.3777888
+Toulouse,Toulouse,43.6044638,1.4442433
+Strasbourg,Strasbourg,48.584614,7.7507127
+Lorient,Lorient,47.7477336,-3.3660907
+Nice,Nice,43.7009358,7.2683912
+Le Mans,Le Mans,48.0073849,0.1967849
+Le Havre AC,Le Havre,49.4938975,0.1079732
+Paris FC,Paris,48.8534951,2.3483915
+Brest,Brest,48.3912324,-4.4851141
+Angers,Angers,47.4739884,-0.5515588
+Hellas Verona,Verona,45.4424977,10.9857377
+Vicenza,Vicenza,45.6348591,11.4063543
+Modena,Modena,44.5384728,10.9359609
+Empoli,Empoli,43.7194884,10.9458556
+Sampdoria,Genova,44.40726,8.9338624
+Palermo,Palermo,38.1112268,13.3524434
+Catanzaro,Catanzaro,38.8299603,16.4315569
+Cesena,Cesena,44.136352,12.2422442
+Arezzo,Arezzo,43.5171442,11.7639282
+Ascoli,Ascoli Piceno,42.8834204,13.539593
+Padova,Padova,45.391408,11.8058487
+Pisa,Pisa,43.4714722,10.6797912
+Juve Stabia,Castellammare di Stabia,40.6943046,14.4804813
+Carrarese,Carrara,44.0796519,10.0977529
+Mantova,Mantova,45.1692628,10.6708365
+Cremonese,Cremona,45.2208641,10.037038
+US Avellino,Avellino,40.9965446,15.140569
+Benevento,Benevento,41.2476307,14.7057054
+Virtus Entella,Chiavari,44.3175701,9.3244561
+Sudtirol,Bolzano,46.6559296,11.2301833
+Lincoln City,Lincoln,40.8088861,-96.7077751
+Swansea City,Swansea,51.6195955,-3.9459248
+Bristol City,Bristol,51.4430141,-2.5816622
+Queens Park Rangers,London,51.5074456,-0.1277653
+Stoke City,Stoke-on-Trent,53.0162014,-2.1812607
+Cardiff City,Cardiff,51.4816546,-3.1791934
+Wrexham,Wrexham,53.0465084,-2.9937869
+Bolton Wanderers,Bolton,53.5782863,-2.4300367
+Blackburn Rovers,Blackburn,53.749326,-2.4840566
+Middlesbrough,Middlesbrough,54.5760419,-1.2344047
+West Ham United,London,51.5074456,-0.1277653
+Charlton Athletic,London,51.5074456,-0.1277653
+Derby County,Derby,52.9142235,-1.4719885
+Southampton,Southampton,50.9025349,-1.404189
+Burnley,Burnley,53.7907262,-2.2439196
+Wolverhampton Wanderers,Wolverhampton,52.5847651,-2.127567
+Norwich City,Norwich,52.6285576,1.2923954
+West Bromwich Albion,West Bromwich,52.5186579,-1.9923114
+Portsmouth,Portsmouth,50.800031,-1.0906023
+Millwall,London,51.5074456,-0.1277653
+Birmingham City,Birmingham,52.4948994,-1.8518439
+Preston North End,Preston,53.7593363,-2.6992717
+Watford,Watford,51.6553875,-0.3957425
+Sheffield United,Sheffield,53.3806626,-1.4702278
+Mallorca,Palma de Mallorca,39.5695818,2.6500745
+Real Oviedo,Oviedo,43.3533452,-5.8795096
+Real Valladolid,Valladolid,41.6200024,-4.7259906
+Las Palmas,Las Palmas de Gran Canaria,28.1288694,-15.4349015
+Tenerife,Santa Cruz de Tenerife,28.467178,-16.2507843
+Albacete,Albacete,38.9950921,-1.8559154
+Granada,Granada,37.1734995,-3.5995337
+Eibar,Eibar,43.1842839,-2.4732748
+Sporting Gijón,Gijón,43.5449422,-5.66275
+Cádiz,La Línea de la Concepción,36.1677899,-5.3482396
+Castellón,Castellón,40.2518568,-0.0615052
+Ceuta,Ceuta,35.888361,-5.304138
+Almería,Almería,36.8685739,-2.3120282
+Eldense,Elda,38.4789671,-0.7956759
+Córdoba,Córdoba,37.8845813,-4.7760138
+Girona,Girona,41.9793006,2.8199439
+CD Sabadell,Sabadell,41.5460801,2.1083214
+Burgos,Burgos,42.3448498,-3.6812477
+Leganés,"Leganés, Madrid",40.3281942,-3.76527
+FC Andorra,Encamp,42.5360425,1.5836096
+Real Sociedad II,San Sebastian,43.3224219,-1.9838889
+RC Celta Fortuna,Vigo,42.1986395,-8.727956
+VfL Bochum,Bochum,51.4818111,7.2196635
+Energie Cottbus,Cottbus,51.7567447,14.3357307
+Hertha Berlin,Berlin,52.5173885,13.3951309
+Kaiserslautern,Kaiserslautern,49.4432174,7.7689951
+VfL Wolfsburg,Wolfsburg,52.4205588,10.7861682
+1. FC Nürnberg,Nürnberg,49.453872,11.077298
+St. Pauli,Hamburg Norderstedt,53.7341679,10.02115
+Hannover 96,Hannover,52.3744779,9.7385532
+Arminia Bielefeld,Bielefeld,52.0191005,8.531007
+TSV Eintracht Braunschweig,Braunschweig,52.2646577,10.5236066
+SpVgg Greuther Fürth,Fürth,49.4885711,10.9587203
+SV Darmstadt 98,Darmstadt,49.872775,8.651177
+Karlsruher SC,Karlsruhe,49.0068705,8.4034195
+1. FC Heidenheim 1846,Heidenheim,48.6767637,10.152923
+VfL Osnabruck,VfL Osnabruck,52.280351,8.0707633
+Dynamo Dresden,Dresden,51.0493286,13.7381437
+Holstein Kiel,Holstein Kiel,54.3227085,10.135555
+1. FC Magdeburg,Magdeburg,52.1314783,11.6400789
+Nantes,Nantes,47.2186371,-1.5541362
+Guingamp,Guingamp,48.5618483,-3.1502007
+Metz,Metz,49.1196964,6.1763552
+Saint-Étienne,Saint-Etienne,45.4401467,4.3873058
+Sochaux,Montbéliard,47.5102368,6.7977564
+Montpellier,Montpellier,43.6112422,3.8767337
+Dijon FCO,Dijon,47.3215806,5.0414701
+Clermont Foot,Clermont,49.3780921,2.4141907
+Stade de Reims,Reims,49.2577886,4.031926
+Stade Laval,Laval,48.0706687,-0.7734022
+AS Nancy Lorraine,Nancy,48.6937223,6.1834097
+Grenoble,Grenoble,45.1875602,5.7357819
+Rodez Aveyron,Rodez,44.3511408,2.5728493
+Dunkerque,Dunkerque,51.0347708,2.3772525
+Boulogne,Boulogne,46.7947224,-1.3210389
+Pau,Pau,43.2957547,-0.3685668
+Red Star FC 93,"Saint-Ouen, Paris",48.9199485,2.3327844
+Annecy,Annecy,45.8992348,6.1288847
+Ajax Amsterdam,Amsterdam,52.3730796,4.8924534
+AZ Alkmaar,Alkmaar,52.6008538,4.8170994
+Feyenoord Rotterdam,Rotterdam,51.9244424,4.47775
+Fortuna Sittard,Sittard,50.9974235,5.8666627
+FC Groningen,Groningen,53.2190652,6.5680077
+Heerenveen,Heerenveen,52.9984742,5.9231488
+NEC Nijmegen,Nijmegen,51.8425749,5.8389606
+PSV Eindhoven,Eindhoven,51.4485569,5.4501225
+Sparta Rotterdam,Rotterdam,51.9244424,4.47775
+FC Twente,Enschede,52.2233633,6.8705957
+FC Utrecht,Utrecht,52.0841923,5.0988034
+Willem II,Tilburg,51.5856185,5.0660616
+PEC Zwolle,Zwolle,52.5145653,6.0977204
+Excelsior,Rotterdam,51.9244424,4.47775
+ADO Den Haag,Den Haag,52.0799838,4.3113461
+Go Ahead Eagles,Deventer,52.2694897,6.2364886
+Telstar,Velsen-Zuid,52.4600386,4.6514217
+SC Cambuur,Leeuwarden,53.2005936,5.7918548
+FC Porto,Porto,41.1502195,-8.6103497
+Maritimo,Funchal,32.6496497,-16.9086783
+Benfica,Lisbon,38.7077507,-9.1365919
+Sporting CP,Lisbon,38.7077507,-9.1365919
+Braga,Braga,41.5510583,-8.4280045
+C.D. Nacional,Funchal,32.6496497,-16.9086783
+Moreirense,Moreira de Conegos,41.3814913,-8.3361532
+Gil Vicente,Barcelos,41.5314496,-8.6192306
+Rio Ave,Vila do Conde,41.3540398,-8.7435403
+Vitória de Guimaraes,Guimarães,41.4417677,-8.2955712
+Santa Clara,Ponta Delgada,37.7393398,-25.6689503
+Estoril,Estoril,38.7095707,-9.3901368
+FC Famalicao,Vila Nova de Famalicão,41.4087313,-8.4927761
+Arouca,Arouca,40.9289214,-8.2441746
+Casa Pia,Rio Maior,39.3365387,-8.9364098
+Académico de Viseu,Viseu,40.6574713,-7.9138664
+Estrela,Amadora,38.758959,-9.2365233
+Alverca,Alverca do Ribatejo,38.8935253,-9.0396136
+Galatasaray,Istanbul,41.006381,28.9758715
+Fenerbahce,Istanbul,41.006381,28.9758715
+Goztepe,Izmir,38.4192537,27.128469
+Kocaelispor,Kocaeli,40.8216536,29.9507184
+Genclerbirligi,Ankara,39.9207759,32.8540497
+Trabzonspor,Trabzon,41.0054605,39.7301463
+Besiktas,Istanbul,41.006381,28.9758715
+Kasimpasa,Istanbul,41.006381,28.9758715
+Konyaspor,Konya,37.872734,32.4924376
+Caykur Rizespor,Rize,40.9569617,40.884428
+Istanbul Basaksehir,Istanbul,41.006381,28.9758715
+Alanyaspor,Antalya,36.8865728,30.7030242
+Samsunspor,Samsun,41.2303557,35.9683338
+Erzurum BB,Erzurum,39.90632,41.2727715
+Gaziantep FK,Gaziantep,37.0628317,37.3792617
+Eyupspor,Istanbul,41.006381,28.9758715
+Çorum FK,Çorum,40.5698389,34.7269292
+Amed SFK,Diyarbakir,37.9162222,40.2363542
+Shakhtar Donetsk,Shakhtar Donetsk,47.9945773,37.7858077
+Slavia Prague,Slavia Prague,50.069258,14.4789416
+Viking FK,Stavanger,58.9699675,5.7318101
+Slovan Bratislava,Slovan Bratislava,48.1628446,17.1380053
+Club Brugge,Brugge,51.2085526,3.226772
+AEK Athens,Athens,33.9597677,-83.376398
+Bodo/Glimt,Bodø/Glimt,67.2828485,14.4196331
+LASK Linz,Linz,48.3059078,14.286198
+Sabah FK,Sabah FK,,
+Celtic,Glasgow,55.861155,-4.2501687
+Sparta Prague,Praha,50.0874654,14.4212535
+Olympiacos,Piraeus,37.9431594,23.6470593
+Anderlecht,Brussels,50.8467372,4.352493
+Levski Sofia,Levski Sofia,42.6701008,23.6056079
+Dinamo Zagreb,Dinamo Zagreb,45.8186879,16.0179376
+Omonia Nicosia,Nicosia,35.1746503,33.3638783
+Ferencvaros,Budapest,47.4978789,19.0402383
+Lillestrom,Lillestrøm,59.9155396,11.2170354
+OFI Crete,Crete,35.3084952,24.4633423
+RB Salzburg,Salzburg,47.7981346,13.0464806
+Lech Poznan,Poznan,52.4082663,16.9335199
+NK Celje,Ljubljana,46.0500268,14.5069289
+SK Sturm Graz,Graz,47.0708678,15.4382786
+Union St.-Gilloise,"Saint-Gilles, Brussels",50.8357755,4.3360541
+Jagiellonia Bialystok,Jagiellonia Bialystok,53.1398608,23.1593289
+Viktoria Plzen,Viktoria Plzen,49.7546704,13.3892259
+Hapoel Be'er,Be'er Sheva,31.2457442,34.7925181
+Ararat-Armenia,Ararat-Armenia,40.0053589,44.7315157
+Torreense,Torreense,39.190739,-9.1845599
+Heart of Midlothian,Edinburgh,55.9533456,-3.1883749
+Panathinaikos,Athens,33.9597677,-83.376398
+Hajduk Split,Hajduk Split,-33.8032438,151.2867422
+FC Midtjylland,Herning,56.1379757,8.9746623
+SK Brann,Bergen,60.3943055,5.3259192
+F.C. København,Copenhagen,55.6867243,12.5700724
+Sint-Truidense,Sint-Truiden,50.8152784,5.1858896
+Red Star Belgrade,Red Star Belgrade,44.7835912,20.4632228
+Kairat Almaty,Kairat Almaty,43.3145234,76.98973
+FC Thun,Thun,46.7582827,7.628086
+FC Nordsjælland,Farum,55.8101232,12.3702505
+KAA Gent,Ghent,51.0538286,3.7250121
+FC Lugano,Lugano,46.0038007,8.9512275
+AGF,Risskov,56.2017679,10.2419582
+Jablonec,Jablonec,48.3333333,17.45
+CSU Craiova,CSU Craiova,,
+KuPS Kuopio,KuPS Kuopio,,
+CSKA Sofia,CSKA Sofia,42.6114478,23.3935342
+Lincoln Red Imps,Lincoln Red Imps,,
+Riga FC,Riga FC,56.950818,24.109241
+Iberia 1999,Iberia 1999,37.3886858,-86.1490921
+Kauno Zalgiris,Kauno Zalgiris,54.8904082,23.9144444
+Mjällby AIF,Sölvesborg,56.0506535,14.5871906
+Inter D'Escaldes,Inter D'Escaldes,,
+Borac Banja Luka,Borac Banja Luka,44.7730909,17.2036099
+Egnatia,Egnatia,40.6348514,22.9461418
+Pafos,Paphos,34.7743988,32.4231586

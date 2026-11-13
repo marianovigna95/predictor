@@ -48,7 +48,7 @@ def pois_cdf(k, lam):
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from step3_elo import update_elo
 from step4_dixon_coles import TeamHistory, score_matrix, matrix_to_markets, dc_weights
-from motivi import motivo_match, frase_motivo
+from motivi import motivo_match, frase_motivo, perche_breve, perche_mercato
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -62,6 +62,57 @@ DIV2LEAGUE = {"I1": "Serie A", "E0": "Premier League", "SP1": "LaLiga", "D1": "B
               "I2": "Serie B", "E1": "Championship", "N1": "Eredivisie", "P1": "Primeira Liga",
               "T1": "Süper Lig", "D2": "Bundesliga 2", "SP2": "LaLiga 2", "F2": "Ligue 2"}
 CUPS = {"Champions League", "Europa League", "Conference League"}
+
+# 🆕 13/11 meteo (open-meteo) + derby via coordinate —uckland popolate da load_weather() (storico+forecast)
+WX = {}       # (team, "YYYY-MM-DD") -> factor (<1 = meteo avverso, meno gol)
+CITY = {}     # team -> city
+DERBY = set() # frozenset({home, away}) con distanza < 100 km
+COORD = {}    # team -> (lat, lon)
+
+def travel_km(home, away):
+    """🆕 13/11 distanza trasferta (km) dalle coordinate; 0 se mancante."""
+    a, b = COORD.get(home), COORD.get(away)
+    if not a or not b:
+        return 0.0
+    return haversine_km(a[0], a[1], b[0], b[1])
+
+def haversine_km(lat1, lon1, lat2, lon2):
+    import math
+    R = 6371.0
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    dp, dl = math.radians(lat2 - lat1), math.radians(lon2 - lon1)
+    a = math.sin(dp/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dl/2)**2
+    return 2 * R * math.asin(math.sqrt(a))
+
+def load_weather():
+    """Carica team_coords.csv + weather_hist/fore.csv in WX/CITY/DERBY (se presenti)."""
+    global WX, CITY, DERBY
+    try:
+        cd = pd.read_csv(DATA / "team_coords.csv")
+        for _, r in cd.iterrows():
+            CITY[r["team"]] = r["city"]
+        coord = {(r["team"]): (r["lat"], r["lon"]) for _, r in cd.iterrows() if pd.notna(r.get("lat"))}
+        COORD.update(coord)
+        for fn in ("weather_hist.csv", "weather_fore.csv"):
+            fp = DATA / fn
+            if not fp.exists():
+                continue
+            w = pd.read_csv(fp)
+            for _, r in w.iterrows():
+                city = r["city"]; d = str(r["date"])
+                for t, c in CITY.items():
+                    if c == city:
+                        WX[(t, d)] = float(r["factor"])
+        # derby: coppie di squadre con stade a < 100 km
+        teams = list(coord.items())
+        for i in range(len(teams)):
+            for j in range(i+1, len(teams)):
+                (t1, (la1, lo1)), (t2, (la2, lo2)) = teams[i], teams[j]
+                if haversine_km(la1, lo1, la2, lo2) < 100:
+                    DERBY.add(frozenset((t1, t2)))
+        print(f"🌦️ meteo caricato: {len(WX)} (team,giorno), derby: {len(DERBY)} coppie")
+    except Exception as e:
+        print(" meteo non disponibile:", e)
 # 🆕 10/11 NAZIONALI (sosta FIFA): storico da kaggle in fixtures_intl.csv, calendario da ESPN
 INTL = ["Nations League", "WC Qual. UEFA", "Friendlies"]
 LEAGUES = LEAGUES + INTL
@@ -93,11 +144,15 @@ try:
     class Calib:
         def __init__(self):
             self.irs = None
+            self.se = None
         def fit(self, Ps, ys, min_n=60):
             Ps = np.asarray(Ps, float); ys = np.asarray(ys, int)
             if len(Ps) < min_n:
                 return
             self.irs = [_IR(out_of_bounds="clip", y_min=0.02, y_max=0.98).fit(Ps[:, k], (ys == k).astype(float)) for k in range(3)]
+            # 🆕 13/11 incertezza di p via Brier del tail (se_k = sqrt(MSE_k)) → Kelly/EV più onesti
+            Y = np.eye(3)[ys]
+            self.se = np.sqrt(np.mean((Ps - Y) ** 2, axis=0))
         def apply(self, P):
             if not self.irs:
                 return P
@@ -125,10 +180,14 @@ class Stacker:
     def apply(self, members):
         if self.clf is None:
             return None
-        pe, pdc, pm = members
-        if pm is None:
-            pm = (pe + pdc) / 2.0
-        x = np.concatenate([pe, pdc, pm]).reshape(1, -1)
+        parts = []
+        for m in members:
+            if m is None:
+                continue
+            parts.append(np.asarray(m, float))
+        pe, pdc = members[0], members[1]
+        pm = members[2] if members[2] is not None else (pe + pdc) / 2.0
+        x = np.concatenate([pe, pdc, pm] + parts[3:]).reshape(1, -1)
         return self.clf.predict_proba(x)[0]
 
 def fit_calibrator(m_all, n=60, gap=45):
@@ -145,20 +204,64 @@ def fit_calibrator(m_all, n=60, gap=45):
         elo, dc_hist, ad, ahg, aag, draw_base, hfa = train_league(tr)
         stand = standings(tr); last = last_match(tr, mx)
         tail = pa[pa["Date"] >= cut].tail(n)
-        Ps, ys, Xs = [], [], []
+        Ps, ys, Xs, Fs, r_po, r_pg = [], [], [], [], [], []
         for _, m in tail.iterrows():
             y = 0 if m["FTHG"] > m["FTAG"] else (2 if m["FTHG"] < m["FTAG"] else 1)
             odds = (m["AvgCH"], m["AvgCD"], m["AvgCA"]) if "AvgCH" in m.index and pd.notna(m.get("AvgCH")) else None
             r = predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, m["Date"] + pd.Timedelta(days=1),
-                                   m["HomeTeam"], m["AwayTeam"], stand=stand, last=last, odds=odds, hfa=hfa)
+                                   m["HomeTeam"], m["AwayTeam"], stand=stand, last=last, odds=odds, hfa=hfa,
+                                   wx=WX.get((m["HomeTeam"], m["Date"].date().isoformat()), 1.0),
+                                   derby=frozenset((m["HomeTeam"], m["AwayTeam"])) in DERBY)
             P = r[0]; Ps.append(P); ys.append(y)
+            r_po.append(float(r[1])); r_pg.append(float(r[2]))
             pmk = r[11] if r[11] is not None else (r[9] + r[10]) / 2.0
             Xs.append(np.concatenate([r[9], r[10], pmk]))
+            Fs.append(r[12])
+        # 🆕 13/11 stacker binari per O/U 2.5 e GG/NG (membri: DC + mercato)
+        Xou, You, Xgg, Ygg = [], [], [], []
+        for i, (_, m) in enumerate(tail.iterrows()):
+            yo = 1 if (m["FTHG"] + m["FTAG"]) > 2.5 else 0
+            yg = 1 if (m["FTHG"] > 0 and m["FTAG"] > 0) else 0
+            pm_ou = None
+            if "AvgC>2.5" in m.index and pd.notna(m.get("AvgC>2.5")) and m["AvgC>2.5"] > 1.05:
+                pm_ou = 1.0 / float(m["AvgC>2.5"])
+            pm_gg = None
+            if "AvgCBTTS" in m.index and pd.notna(m.get("AvgCBTTS")) and m["AvgCBTTS"] > 1.05:
+                pm_gg = 1.0 / float(m["AvgCBTTS"])
+            po_dc = float(r_po[i]) if False else None
+            Xou.append([r_po[i], pm_ou if pm_ou is not None else r_po[i]]); You.append(yo)
+            Xgg.append([r_pg[i], pm_gg if pm_gg is not None else r_pg[i]]); Ygg.append(yg)
+        st_ou = st_gg = None
+        try:
+            from sklearn.linear_model import LogisticRegression as _LR
+            if len(Xou) >= 80:
+                st_ou = _LR(max_iter=1000).fit(np.array(Xou), np.array(You))
+                st_gg = _LR(max_iter=1000).fit(np.array(Xgg), np.array(Ygg))
+        except Exception:
+            pass
         c = Calib(); c.fit(Ps, ys)
-        st = Stacker(); st.fit(Xs, ys)
-        return (c if c.irs else None), (st if st.clf is not None else None)
+        # 🆕 13/11 4° membro: GBM su feature tabellari (elo diff, lambda diff, log-ratio)
+        gbm = None
+        try:
+            from sklearn.ensemble import HistGradientBoostingClassifier
+            F = np.array(Fs); Y = np.array(ys)
+            if len(F) >= 80:
+                gbm = HistGradientBoostingClassifier(max_iter=120, learning_rate=0.06, max_leaf_nodes=15,
+                                                     random_state=7).fit(F, Y)
+        except Exception:
+            gbm = None
+        # stacker sui membri + P_gbm (12 input)
+        Xs2 = []
+        for i, x in enumerate(Xs):
+            pg = gbm.predict_proba(Fs[i].reshape(1, -1))[0] if gbm is not None else None
+            if pg is None:
+                Xs2.append(np.concatenate([x, (np.array([1/3,1/3,1/3]))]))
+            else:
+                Xs2.append(np.concatenate([x, pg]))
+        st = Stacker(); st.fit(Xs2, ys)
+        return (c if c.irs else None), (st if st.clf is not None else None), gbm, st_ou, st_gg
     except Exception:
-        return None, None
+        return None, None, None, None, None
 
 
 def train_league(played: pd.DataFrame, elo0=None):
@@ -263,7 +366,7 @@ def last_match(played, before):
 def predict_match(*a, **k):
     return predict_match_full(*a, **k)[:9]
 
-def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, stand=None, last=None, odds=None, h2h=None, ref_factor=1.0, out_counts=None, out_xg=None, form=None, hfa=ELO_HFA, xgf=None):
+def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, stand=None, last=None, odds=None, h2h=None, ref_factor=1.0, out_counts=None, out_xg=None, form=None, hfa=ELO_HFA, xgf=None, wx=1.0, derby=False, travel=0.0):
     w = dc_weights((date - pd.DatetimeIndex(ad)).total_seconds() / 86400.0, DC_HALF_LIFE)
     mu_h = (w * np.array(ahg)).sum() / w.sum()
     mu_a = (w * np.array(aag)).sum() / w.sum()
@@ -289,7 +392,8 @@ def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, 
             adj = 20.0 * max(0, 4 - d) if d < 4 else 0.0
             if t == home: rh -= adj
             else: ra -= adj
-    P_elo = elo_to_probs_draw(rh, ra, draw_base, hfa=hfa)
+    db = min(0.45, draw_base + (0.03 if derby else 0.0))  # 🆕 13/11 derby: più pareggio atteso
+    P_elo = elo_to_probs_draw(rh, ra, db, hfa=hfa)
     TH = dc_hist.get(home, TeamHistory()); TA = dc_hist.get(away, TeamHistory())
     ohH, dhH, _, daH = TH.rates(date, mu_h, mu_a, DC_HALF_LIFE)
     _, dhA, oaA, _ = TA.rates(date, mu_h, mu_a, DC_HALF_LIFE)
@@ -312,6 +416,10 @@ def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, 
     if out_xg:  # 🆕 06/11 xG vero mancante (step13_player_xg.py → missing_xg.csv)
         lh -= out_xg.get(home, 0.0)
         la -= out_xg.get(away, 0.0)
+    if wx != 1.0:  # 🆕 13/11 meteo avverso: scala i gol attesi di entrambe
+        lh *= wx; la *= wx
+    if travel >= 1000:  # 🆕 13/11 trasferta lunga (>1000 km): fatigue -> meno gol in trasferta
+        la *= 0.97
     M = score_matrix(lh, la)
     pH, pD, pA, p_over, p_btts = matrix_to_markets(M)
     P_dc = np.array([pH, pD, pA])
@@ -324,8 +432,9 @@ def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, 
         P = 0.5 * P_elo + 0.5 * P_dc
     P = P / P.sum()
     idx = np.unravel_index(np.argmax(M), M.shape)
-    # 🆕 13/11 membri separati per lo stacking (meta-learner)
-    return P, p_over, p_btts, f"{idx[0]}-{idx[1]}", M[idx], rh, ra, lh, la, P_elo, P_dc, P_mkt
+    # 🆕 13/11 membri separati per lo stacking (meta-learner) + feature tabellari per il 4° membro (GBM)
+    feat = np.array([rh - ra, lh - la, lh + la, float(np.log(max(lh, 1e-3) / max(la, 1e-3)))])
+    return P, p_over, p_btts, f"{idx[0]}-{idx[1]}", M[idx], rh, ra, lh, la, P_elo, P_dc, P_mkt, feat
 
 
 def load_absences():
@@ -546,8 +655,11 @@ def main():
             continue  # 🆕 10/11: le nazionali non hanno storico in matches.csv
         played = matches[(matches["League"] == league) & (matches["Season"].astype(str).str.contains("2026/2027"))].sort_values("Date")  # 🛠 08/11 solo stagione corrente per standings/Elo
         elo, dc_hist, ad, ahg, aag, draw_base, hfa_l = train_league(played)
-        cal, st = fit_calibrator(matches[matches["League"] == league])  # 🆕 13/11 isotonic + stacker (cut a -45gg, no leakage)
-        domestic[league] = (elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st)
+        _use_gbm = os.environ.get("USE_GBM", "0") == "1"  # 🆕 13/11 GBM validato: non migliora (0.2915 vs 0.1918) → default OFF
+        cal, st, gbm, st_ou, st_gg = fit_calibrator(matches[matches["League"] == league])  # isotonic + stacker + O/U + GG
+        if not _use_gbm:
+            gbm = None
+        domestic[league] = (elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st, gbm, st_ou, st_gg)
     seed = {}
     for le, (elo, *_rest) in domestic.items():
         for t, e in elo.items():
@@ -559,6 +671,17 @@ def main():
         fxall = pd.concat([fxall, pd.read_csv(fi2)], ignore_index=True)
     fxall["Date"] = pd.to_datetime(fxall["date"])
 
+    load_weather()  # 🆕 13/11 meteo + derby
+    # 🆕 13/11 ensemble temporale: media con la previsione precedente (0.65新/0.35旧) -> meno varianza
+    PREV = {}
+    try:
+        pf = DATA / "forecast_multi.csv"
+        if pf.exists():
+            pv = pd.read_csv(pf)
+            for _, r in pv.iterrows():
+                PREV[(r["lega"], r["partita"], r["orario"])] = np.array([float(r["p1%"]), float(r["pX%"]), float(r["p2%"])]) / 100.0
+    except Exception:
+        pass
     rows = []
     for league in LEAGUES:
         sub = window[window["league"] == league]
@@ -579,10 +702,10 @@ def main():
                     pr["HxG"], pr["AxG"] = xgf[kk]
             played = pd.DataFrame(prows)
             elo, dc_hist, ad, ahg, aag, draw_base, hfa_l = train_league(played, elo0=seed)
-            cal, st = None, None
+            cal, st, gbm, st_ou, st_gg = None, None, None, None, None
             print(f"  🏆 {league}: {len(played)} match storici (Elo seminato da leghe nazionali)")
         else:
-            elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st = domestic[league]
+            elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st, gbm, st_ou, st_gg = domestic[league]
             played = matches[(matches["League"] == league) & (matches["Season"].astype(str).str.contains("2026/2027"))].sort_values("Date")  # 🛠 08/11 solo stagione corrente per standings/Elo
         if league == "Serie A":
             for t, pen in absences.items():
@@ -647,14 +770,29 @@ def main():
                 stand=stand, last=last, odds=o_avg,
                 h2h=h2h_map.get((f["home"], f["away"])), ref_factor=rf, out_counts=out_counts, out_xg=out_xg,
                 form={f["home"]: form.get(f["home"], 0.0), f["away"]: form.get(f["away"], 0.0)}, hfa=hfa_l,
-                xgf={f["home"]: xgf_map.get(f["home"], 0.0), f["away"]: xgf_map.get(f["away"], 0.0)})
+                xgf={f["home"]: xgf_map.get(f["home"], 0.0), f["away"]: xgf_map.get(f["away"], 0.0)},
+                wx=WX.get((f["home"], f["Date"].date().isoformat()), 1.0),
+                derby=frozenset((f["home"], f["away"])) in DERBY,
+                travel=travel_km(f["home"], f["away"]))
             P, p_over, p_btts, top, top_p, rh, ra, lh, la = r[:9]
-            if st is not None:  # 🆕 13/11 stacking: meta-learner sui 3 membri
-                Ps = st.apply((r[9], r[10], r[11]))
+            if st is not None:  # 🆕 13/11 stacking: meta-learner su membri + GBM (4° membro)
+                pg = gbm.predict_proba(r[12].reshape(1, -1))[0] if gbm is not None else None
+                Ps = st.apply((r[9], r[10], r[11], pg))
                 if Ps is not None:
                     P = Ps
             if cal is not None:  # 🆕 13/11 calibrazione isotonic sulle P finali
                 P = cal.apply(P)
+            _pv = PREV.get((league, f"{f['home']} - {f['away']}", f["Date"].strftime("%d/%m %H:%M")))
+            if _pv is not None:  # 🆕 13/11 ensemble temporale con run precedente
+                P = 0.65 * P + 0.35 * _pv
+                P = P / P.sum()
+            # 🆕 13/11 stacker binari O/U 2.5 e GG/NG (membri: DC + mercato)
+            pm_ou = (1.0 / float(o_ex["O2.5"]) if o_ex.get("O2.5") not in ("", None) and float(o_ex.get("O2.5") or 0) > 1.05 else None)
+            if st_ou is not None:
+                p_over = float(st_ou.predict_proba(np.array([[p_over, pm_ou if pm_ou is not None else p_over]]))[0][1])
+            pm_gg = (1.0 / float(o_ex["GG"]) if o_ex.get("GG") not in ("", None) and float(o_ex.get("GG") or 0) > 1.05 else None)
+            if st_gg is not None:
+                p_btts = float(st_gg.predict_proba(np.array([[p_btts, pm_gg if pm_gg is not None else p_btts]]))[0][1])
             pick = int(P.argmax())
             row = {
                 "lega": league, "giornata": int(f["matchday"]),
@@ -676,6 +814,10 @@ def main():
                                        quota_best=(o_max[pick] if o_max else None),
                                        absences=(absences if league == "Serie A" else None),
                                        elo_raw=elo),
+                "xg_h": round(float(lh), 3), "xg_a": round(float(la), 3),
+                "perche": perche_breve(f["home"], f["away"], f["Date"], played, lh, la,
+                                       stand=stand, last=last, P=P, pick=pick,
+                                       quota_best=(o_max[pick] if o_max else None), elo_raw=elo),
                 "motivo_verbale": _verbale_con_formazione(f, league, lineups, frase_motivo(
                                                f["home"], f["away"], f["Date"], played, rh, ra, lh, la,
                                                stand=stand, last=last, P=P, pick=pick,
@@ -738,12 +880,27 @@ def main():
                 legs.append(("C_U9.5", "Corner Under 9.5", 1 - float(r["CornersO95%"]) / 100.0, float(r["quota_C_U95_best"]), mv + f" · corner attesi {r.get('corners_attesi')}"))
             for mercato, esito, p_leg, q_leg, mot in legs:
                 ev = (p_leg * (q_leg - 1) - (1 - p_leg)) * 100
+                # 🆕 13/11 "perché" parlante anche per O/U e GG/NG (dai gol attesi), non solo 1X2
+                if mercato == "1X2":
+                    p_leg_breve = (r.get("perche") or "")
+                else:
+                    p_leg_breve = "💬 " + perche_mercato(mercato, str(esito), float(r.get("xg_h") or 1.3), float(r.get("xg_a") or 1.3), q=q_leg, p=p_leg)
                 if ev > 50:  # 🚨 quota anomala (es. 10.60 su un favorito): EV irrealistico → fuori dal pool
                     print(f"     🚨 quota anomala ignorata: {r['partita']} {mercato} {esito} @ {q_leg} (EV {ev:+.0f}%)")
                     continue
                 pool.append({"lega": r["lega"], "partita": r["partita"], "mercato": mercato,
-                             "esito": esito, "p": p_leg, "q": q_leg, "EV%": ev, "motivo": mot})
+                             "esito": esito, "p": p_leg, "q": q_leg, "EV%": ev, "motivo": mot,
+                             "perche": p_leg_breve})
         return pool
+
+    # 🆕 13/11 se (incertezza p) dalla calibrazione Brier per lega
+    CALSE = {}
+    try:
+        for le, tup in domestic.items():
+            c = tup[7]
+            CALSE[le] = float(np.mean(c.se)) if (c is not None and getattr(c, "se", None) is not None) else None
+    except Exception:
+        pass
 
     # 🆕 13/11 correlazione esiti stessa giornata (stimata dai dati, anti-correlata ~ -0.26):
     # EV del raddoppio usa p_eff = prod(p) + rho*... invece di prod(p) ingenua
@@ -767,9 +924,10 @@ def main():
         t = [np.sqrt(x*(1-x)) for x in ps]
         return pr + r * (t[0]*t[1]*ps[2] + t[0]*t[2]*ps[1] + t[1]*t[2]*ps[0])
 
-    def kelly_stake(p, O, n_eff=50):
-        """🆕 13/11 ¼ Kelly con incertezza di p: p_low = p - sqrt(p(1-p)/n_eff) (IC ~68%)."""
-        se = np.sqrt(max(p*(1-p), 1e-9) / n_eff)
+    def kelly_stake(p, O, se=None, n_eff=50):
+        """🆕 13/11 ¼ Kelly con incertezza di p: se da Brier (bootstrap) se disponibile, altrimenti sqrt(p(1-p)/n_eff)."""
+        if se is None:
+            se = np.sqrt(max(p*(1-p), 1e-9) / n_eff)
         pl = max(0.0, p - se)
         f = (pl * O - 1.0) / (O - 1.0) if O > 1.0 else 0.0
         return max(0.0, f) / 4.0
@@ -815,10 +973,13 @@ def main():
         print(f"\n📅 {giorno} — {len(sub)} partite con quote")
         if singola is not None:
             print(f"  🎯 SINGOLA: {singola['partita']} ({singola['lega']}) → {singola['mercato']} {singola['esito']} p={singola['p']*100:.1f}% @ {singola['q']} EV {singola['EV%']:+.2f}%")
+            se1 = CALSE.get(singola["lega"])
             rows.append({"data": data, "tipo": "SINGOLA", "lega": singola["lega"], "partita": singola["partita"],
                          "mercato": singola["mercato"], "esito": str(singola["esito"]),
                          "p_modello%": round(singola["p"] * 100, 1), "quota_best": round(singola["q"], 2),
                          "EV%": round(singola["EV%"], 2), "motivo": singola["motivo"],
+                         "perche": "💬 " + (singola.get("perche") or ""),
+                         "stake%": round(kelly_stake(singola["p"], singola["q"], se=se1) * 100, 2),
                          "verdetto": verdetto(singola["EV%"])})
         if singola is None and combo is None:
             print("  ⛔ NESSUNA giocata con EV > 0: stake 0 (assenza di valore atteso, non un consiglio)")
@@ -831,11 +992,14 @@ def main():
             print(f"  🎯 RADDOPPIO: quota {q:.2f}, p {p*100:.1f}%, EV {ev:+.2f}%")
             for c in combo:
                 print(f"     - {c['partita']} ({c['lega']}) → {c['mercato']} {c['esito']} p={c['p']*100:.1f}% @ {c['q']}")
+            sem = float(np.mean([CALSE.get(c["lega"]) or 0.03 for c in combo]))
             rows.append({"data": data, "tipo": "RADDOPPIO", "lega": " + ".join(sorted({c["lega"] for c in combo})),
                          "partita": " + ".join(f"{c['partita']} [{c['mercato']} {c['esito']}]" for c in combo),
                          "mercato": "/".join(c["mercato"] for c in combo), "esito": "/".join(str(c["esito"]) for c in combo),
                          "p_modello%": round(p * 100, 1), "quota_best": round(q, 2), "EV%": round(ev, 2),
+                         "stake%": round(kelly_stake(p, q, se=sem) * 100, 2),
                          "motivo": " | ".join((f"{c['partita']} [{c['mercato']} {c['esito']}] p={c['p']*100:.1f}% @ {c['q']} — " + (c["motivo"][:240] + "…" if len(c["motivo"]) > 240 else c["motivo"])) for c in combo),
+                         "perche": "💬 " + " · ".join((c.get("perche") or "").replace("💬 ","") for c in combo),
                          "verdetto": verdetto(ev)})
 
     gj = pd.DataFrame(rows)
