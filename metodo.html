@@ -212,7 +212,7 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <tr><td data-label='Versione'>v4</td><td>ensemble Elo+DC180+mercato+xG</td><td>RPS 0.1898 · 53.3% acc. (g8-g10)</td></tr>
   <tr><td data-label='Versione'>v5 (dal 10/11/2026)</td><td>finestra mobile 7gg, Nazionali 🚩, diretta live ESPN, PPA, schedina, bankroll, Telegram</td><td>in validazione continua (archivio+CLV)</td></tr>
   <tr><td data-label='Versione'>v6 (dal 13/11/2026)</td><td>🏟️ HFA stimato per lega · 📊 xG nel DC · 🎯 calibrazione isotonic walk-forward · ⚖️ pesi ri-tunati su 535 match (g6-g38)</td><td>RPS 0.2008 → <b>0.1988 calibrato</b> (LOO); pesi 0.50/0.30/0.20 confermati</td></tr>
-  <tr><td data-label='Versione'>v7 (dal 13/11/2026)</td><td>🧠 <b>stacking meta-learner</b> (logistic sui 3 membri) · 🔗 <b>correlazione raddoppio</b> (rho −0.26 stimato dai dati, EV più onesto) · 🎲 <b>¼ Kelly con incertezza</b> (IC 68% su p) · 📈 <b>forma-xG ultime 5</b> per tutte le leghe</td><td>Stacker RPS <b>0.1918</b> LOO (mercato 0.1963) — primo modello sotto il mercato</td></tr>
+  <tr><td data-label='Versione'>v7 (dal 13/11/2026)</td><td>🧠 <b>stacking meta-learner</b> (logistic sui 3 membri) · 🔗 <b>correlazione raddoppio</b> (rho −0.26 stimato dai dati, EV più onesto) · 🎲 <b>¼ Kelly con incertezza</b> (IC 68% su p) · 📈 <b>forma-xG ultime 5</b> tutte le leghe · 🌦️ <b>meteo</b> (open-meteo) + <b>derby</b> (coordinate) come contesto</td><td>Stacker RPS <b>0.1918</b> LOO (mercato 0.1963). Onesto: meteo/derby/GBM testati, <b>non migliorano</b> RPS su 535 match (GBM off)</td></tr>
   </table></div>
   <h2>Limiti onesti</h2>
   <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis. La varianza del calcio è alta: anche il modello
