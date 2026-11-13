@@ -117,3 +117,14 @@ def main_sources():
 if __name__ == "__main__":
     main()
     main_sources()
+    # 📄 copia in ROOT: GitHub Pages serve la root, non site/. Senza questa copia il fix
+    #    resterebbe invisibile online (era esattamente il bug del run #25).
+    import shutil as _sh
+    copiati = 0
+    for _p in glob.glob(os.path.join(SITE, "*.html")):
+        try:
+            _sh.copy2(_p, os.path.join(ROOT, os.path.basename(_p)))
+            copiati += 1
+        except Exception as _e:
+            print("  ⚠️ copia fallita:", _p, _e)
+    print(f"📄 copiate {copiati} pagine da site/ alla root (GitHub Pages)")
