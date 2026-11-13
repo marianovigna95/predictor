@@ -39,6 +39,7 @@ jobs:
           python3 src/step20_eval_day.py --date $D || true
           python3 src/step15_betarchives.py --since $(date -d "yesterday" +%F) || true
           python3 src/step11_clv.py || true
+          python3 src/step30_weather.py || true   # 🆕 13/11 meteo+coordinate (open-meteo, gratis)
           python3 src/weekly_multi.py || true
           python3 src/step19_diretta.py || true
           python3 src/step21_surebets.py $D || true
