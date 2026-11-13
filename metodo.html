@@ -176,9 +176,35 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <p class="sub">Le quote mostrate sono sempre <b>best-price da comparatore</b> (non un singolo bookmaker) e il benchmark del mercato è la <b>quota media di chiusura</b> (Avg di football-data).</p>
   <h2>Le nostre regole</h2>
   <p class="sub">✅ tutti i pronostici pubblicati con esito (vinti e persi) · ✅ win% sempre con RPS/ROI ·
-  ✅ probabilità con incertezza, mai "sicuro" · ✅ 1 sola partita per giornata (mode 1) con edge vs quota ·
+  ✅ probabilità con incertezza, mai "sicuro" · ✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b>, stake solo se <b>EV &gt; +2%</b>, dimensionato <b>¼ Kelly</b> ·
   ✅ 18+/ADM/autoesclusione.it ovunque · ❌ niente multiple/schedine · ❌ niente % in vetrina senza contesto ·
   ❌ niente black-box: il codice è nel workspace.</p>
+  <h2>🧮 Le formule (quelle che usiamo davvero)</h2>
+  <div class="tablewrap"><table>
+  <tr><th>Concetto</th><th>Formula</th><th>Uso</th></tr>
+  <tr><td data-label='Concetto'><b>EV (valore atteso)</b></td><td data-label='Formula'><code>EV = p·(O−1) − (1−p)</code> = <code>p·O − 1</code></td><td data-label='Uso'>si pubblica/gioca solo se EV &gt; 0; lo stake parte solo se EV &gt; +2%</td></tr>
+  <tr><td data-label='Concetto'><b>Kelly frazionario</b></td><td data-label='Formula'><code>f* = (p·O−1)/(O−1)</code>, stake = <code>f*/4</code> (¼ Kelly)</td><td data-label='Uso'>% del bankroll da puntare su Singola/Raddoppio</td></tr>
+  <tr><td data-label='Concetto'><b>CLV</b></td><td data-label='Formula'>quota giocata vs quota di chiusura mercato (Avg football-data)</td><td data-label='Uso'>misura se la nostra lettura ha battuto il mercato (archivio+CLV)</td></tr>
+  <tr><td data-label='Concetto'><b>RPS</b></td><td data-label='Formula'>ranked probability score vs esito reale</td><td data-label='Uso'>metrica principale di validazione (benchmark mercato ~0.19)</td></tr>
+  </table></div>
+  <h2>🗺️ Mappa del sito (cosa c'è ora)</h2>
+  <div class="tablewrap"><table>
+  <tr><th>Pagina</th><th>Cosa fa</th></tr>
+  <tr><td data-label='Pagina'>🏠 <b>Home / finestra mobile</b></td><td>partite oggi→+7 giorni, 🚩 Nazionali, quote best-price, pronostici EV&gt;0</td></tr>
+  <tr><td data-label='Pagina'>🔴 <b>Diretta</b></td><td>live 30s (ESPN): loghi, hero card, quote 1X2, ⭐ preferiti, filtri LIVE/EV/⭐, barra date, dettaglio con timeline, barre xG/possesso, formazioni, H2H, confronto stagionale, classifica+capocannonieri, copia link</td></tr>
+  <tr><td data-label='Pagina'>🧾 <b>Schedina del giorno</b></td><td>Singola+Raddoppio con EV&gt;+2%, stake ¼ Kelly — stampabile/PDF</td></tr>
+  <tr><td data-label='Pagina'>💰 <b>Bankroll</b></td><td>tracker personale (salvato solo nel tuo browser): ROI, winrate, drawdown, verifica esiti ESPN automatica, export CSV</td></tr>
+  <tr><td data-label='Pagina'>🎯 <b>Giocate</b> · ⚡ <b>PPA</b> · ⚖️ <b>Surebets</b></td><td>giocate EV&gt;0 della finestra · PPA p≥60% (html+PDF) · surebet best-price ≥+1%</td></tr>
+  <tr><td data-label='Pagina'>📅 <b>Verifica</b> · 🗂 <b>Archivio+CLV</b> · 📊 <b>Report weekend</b></td><td>esiti verificati (FotMob+ESPN incrociati), CLV, report</td></tr>
+  <tr><td data-label='Pagina'>🤖 <b>Telegram</b></td><td>digest giornaliero sul canale (giocate EV&gt;0, verifica, top PPA) + alert in privado: surebet, 🔴 LIVE di partite 🚩/⭐, 📉 quota in calo (CLV)</td></tr>
+  </table></div>
+  <h2>📅 Ultimo aggiornamento &amp; storico versioni</h2>
+  <p class="sub">Pagina aggiornata il <b>2026-11-13</b>. Pipeline automatica 4×/giorno (07:30 / 13:30 / 19:30 / 23:00 IT) su GitHub Actions gratis.</p>
+  <div class="tablewrap"><table>
+  <tr><th>Versione</th><th>Novità</th><th>Metriche (walk-forward)</th></tr>
+  <tr><td data-label='Versione'>v4</td><td>ensemble Elo+DC180+mercato+xG</td><td>RPS 0.1898 · 53.3% acc. (g8-g10)</td></tr>
+  <tr><td data-label='Versione'>v5 (dal 10/11/2026)</td><td>finestra mobile 7gg, Nazionali 🚩, diretta live ESPN, PPA, schedina, bankroll, Telegram</td><td>in validazione continua (archivio+CLV)</td></tr>
+  </table></div>
   <h2>Limiti onesti</h2>
   <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis. La varianza del calcio è alta: anche il modello
   migliore perde journées intere (campioni piccoli: un weekend = 5-9 partite). Per questo pubblichiamo le sconfitte.</p>
@@ -193,7 +219,7 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
 <div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · 800 558822</div>
 <div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a></div>
 <footer class="legal">
-  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
   ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
   Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
   Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>
