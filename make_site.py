@@ -23,7 +23,8 @@ TABS = [("index.html", "⌂", "HOME", "home"),
         ("giocata_multi.html", "🎯", "GIOCATE", "giocate"),
         ("ppa.html", "⚡", "PPA", "ppa"),
         ("surebets.html", "⚖️", "SUREBETS", "surebets"),
-        ("archivio.html", "🗂", "ARCHIVIO", "archivio")]
+        ("archivio.html", "🗂", "ARCHIVIO", "archivio"),
+        ("benchmark.html", "🏆", "BENCHMARK", "benchmark")]
 
 
 THEME_JS = """
@@ -412,6 +413,76 @@ def build_index():
         f.write(wrap_tables(html))
 
 
+def build_benchmark():
+    """🏆 BENCHMARK: RPS modello vs mercato per lega (walk-forward g6-g10, da data/validation_multi.csv)."""
+    import json
+    vf = os.path.join(DATA, "validation_multi.csv")
+    rows = ""
+    if os.path.exists(vf):
+        with open(vf) as f:
+            rd = list(csv.DictReader(f))
+        for r in rd:
+            try:
+                rm = float(r.get("RPS_modello") or 0); rk = float(r.get("RPS_mercato") or 0)
+                edge = rk - rm
+                cls = "ev-pos" if edge > 0 else ("ev-neg" if edge < 0 else "sub")
+                rows += (f"<tr><td data-label='Lega'><b>{r['lega']}</b></td><td data-label='Partite'>{r['partite']}</td>"
+                         f"<td data-label='Acc modello'>{r['acc_modello']}%</td><td data-label='Acc mercato'>{r['acc_mercato']}%</td>"
+                         f"<td data-label='RPS modello'>{rm:.3f}</td><td data-label='RPS mercato'>{rk:.3f}</td>"
+                         f"<td data-label='Edge' class='{cls}'>{edge:+.3f}</td></tr>")
+            except Exception:
+                pass
+    if not rows:
+        rows = "<tr><td colspan=7>Validazione non ancora eseguita (data/validation_multi.csv mancante).</td></tr>"
+    # export giocate (JSON+CSV) — idea presa da gambeta/scoregpt: storico pubblico scaricabile
+    gj = []
+    gjf = os.path.join(DATA, "giocata_multi.csv")
+    if os.path.exists(gjf):
+        with open(gjf) as f:
+            gj = list(csv.DictReader(f))
+    ver = []
+    for vfile in sorted(glob.glob(os.path.join(DATA, "verifica_*.csv"))):
+        with open(vfile) as f:
+            for r in csv.DictReader(f):
+                ver.append(r)
+    export = {"giocate": gj, "verifiche": ver,
+              "nota": "Storico pubblico del predictor: giocate (EV>0) e verifiche con esito reale + CLV. Dati aperti, verificabili esternamente. Analisi-only, 18+, solo ADM, autoesclusione.it, 800 558822."}
+    with open(os.path.join(SITE, "archivio_giocate.json"), "w", encoding="utf-8") as f:
+        json.dump(export, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(SITE, "archivio_giocate.csv"), "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["sezione", "data", "tipo", "lega", "partita", "mercato", "esito", "p_modello%", "quota_best", "EV%", "stake%", "risultato", "vinto"])
+        for r in gj:
+            w.writerow(["giocata", r.get("data",""), r.get("tipo",""), r.get("lega",""), r.get("partita",""),
+                        r.get("mercato",""), r.get("esito",""), r.get("p_modello%",""), r.get("quota_best",""),
+                        r.get("EV%",""), r.get("stake%",""), "", ""])
+        for r in ver:
+            w.writerow(["verifica", r.get("data",""), r.get("tipo",""), r.get("lega",""), r.get("partita",""),
+                        r.get("mercato",""), r.get("esito",""), r.get("p_modello%",""), r.get("quota_best",""),
+                        "", "", r.get("risultato",""), r.get("vinto","")])
+    body = f"""<div class="card">
+  <h2>🏆 Benchmark: modello vs mercato (walk-forward)</h2>
+  <p class="sub">Validazione g6-g10 2026/27: ogni partita prevista usando SOLO dati precedenti (no leakage).
+  <b>RPS</b> (0 = perfetto, più basso = meglio): edge positivo = il nostro modello ha RPS più basso del mercato (quote di chiusura).
+  Il mercato resta il benchmark reale; l'obiettivo onesto non è "batterlo sempre" ma trovare i pochi casi con EV&gt;0 su ADM.</p>
+  <table><tr><th>Lega</th><th>Partite</th><th>Acc modello</th><th>Acc mercato</th><th>RPS modello</th><th>RPS mercato</th><th>Edge (mkt−modello)</th></tr>{rows}</table>
+  <p class="sub">🧠 Stacker v7 (LOO su 535 match g6-g38): RPS 1X2 <b>0.1918</b> vs mercato <b>0.1963</b> — sotto il mercato in RPS grezzo,
+  oltre ai segnali extra (forma-xG, H2H, arbitro, meteo, assenze) che la media mercato non pesa.</p>
+</div>
+<div class="card">
+  <h2>📂 Storico pubblico scaricabile (dati aperti)</h2>
+  <p class="sub">Come il principio di trasparenza di gambeta/scoregpt: tutto lo storico delle nostre giocate e verifiche è esportabile e verificabile esternamente.</p>
+  <p><a class="btn" href="archivio_giocate.json" download>⬇ archivio_giocate.json</a>
+     <a class="btn" href="archivio_giocate.csv" download>⬇ archivio_giocate.csv</a></p>
+  <p class="sub">Contenuto: giocate (Singola/Raddoppio con p, quota, EV%, stake%) + verifiche con esito reale e CLV. Analisi-only: mai certezze, 18+, puntare SOLO su ADM, autoesclusione.it · 800 558822.</p>
+</div>"""
+    html = page("Benchmark", '🏆 <span class="g">Benchmark</span>',
+                "Confronto onesto modello vs mercato (RPS walk-forward per lega) + storico pubblico scaricabile in JSON/CSV.",
+                body, active="benchmark")
+    with open(os.path.join(SITE, "benchmark.html"), "w", encoding="utf-8") as f:
+        f.write(wrap_tables(html))
+
+
 def build_archivio():
     """ARCHIVIO: scoreboard pubblico + report/quote/giocata per giornata + report weekend, man mano archiviati."""
     rows = scoreboard_rows()
@@ -485,7 +556,10 @@ una singola vincita non prova nulla, servono serie lunghe con RPS/ROI. Stime con
   <h2>🗂 Archivio per giornata (man mano che le giornate si chiudono)</h2>
   <table><tr><th>Giornata</th><th>Report</th><th>Quote</th><th>Giocata</th></tr>{arch}</table>
 </div>
-<p><button onclick="exportArchivio()">📤 Esporta scoreboard come CSV</button></p>
+<p><button onclick="exportArchivio()">📤 Esporta scoreboard come CSV</button>
+  <a class="btn" href="archivio_giocate.json" download>⬇ storico giocate JSON</a>
+  <a class="btn" href="archivio_giocate.csv" download>⬇ storico giocate CSV</a>
+  <a class="btn" href="benchmark.html">🏆 Benchmark modello vs mercato →</a></p>
 <script>
 function exportArchivio(){{
   var t=document.querySelector('.card table'); if(!t)return;
@@ -590,6 +664,7 @@ def build_metodo():
   <tr><td data-label='Pagina'>💰 <b>Bankroll</b></td><td>tracker personale (salvato solo nel tuo browser): ROI, winrate, drawdown, verifica esiti ESPN automatica, export CSV</td></tr>
   <tr><td data-label='Pagina'>🎯 <b>Giocate</b> · ⚡ <b>PPA</b> · ⚖️ <b>Surebets</b></td><td>giocate EV&gt;0 della finestra · PPA p≥60% (html+PDF) · surebet best-price ≥+1%</td></tr>
   <tr><td data-label='Pagina'>📅 <b>Verifica</b> · 🗂 <b>Archivio+CLV</b> · 📊 <b>Report weekend</b></td><td>esiti verificati (FotMob+ESPN incrociati), CLV, report</td></tr>
+  <tr><td data-label='Pagina'>🏆 <b>Benchmark</b></td><td>RPS modello vs mercato per lega (walk-forward) + <b>storico pubblico scaricabile JSON/CSV</b> (archivio_giocate) — dati aperti verificabili esternamente</td></tr>
   <tr><td data-label='Pagina'>🤖 <b>Telegram</b></td><td>digest giornaliero sul canale (giocate EV&gt;0, verifica, top PPA) + alert in privado: surebet, 🔴 LIVE di partite 🚩/⭐, 📉 quota in calo (CLV)</td></tr>
   </table>
   <h2>📅 Ultimo aggiornamento &amp; storico versioni</h2>
@@ -1291,6 +1366,7 @@ def main():
     build_coppe()
     build_giocata_multi()
     build_archivio()
+    build_benchmark()
     build_report_weekend()
     nq = 0
     for bp in bestprice_files():

@@ -447,7 +447,13 @@ LIVE_JS = """<script>
               var pOver=need<=0?1:1-poisCDF(need-1,lamRem);
               var oq=null;
               (ev.odds||[]).forEach(function(o){var lbl=String(o.name||'')+' '+String(o.label||'');if(/2\.5|over|under/i.test(lbl)){(o.outcomes||[]).forEach(function(oc){if(/over/i.test(String(oc.name||oc.description||'')))oq=parseFloat(oc.price||oc.odds)||oq;});}});
-              liveev='<p class="stt">🔴 EV live Over 2.5 (min '+Math.round(min)+')</p><p class="sub">gol '+gol+' · xG live '+xgt.toFixed(2)+' → λ residuo '+lamRem.toFixed(2)+' → <b>p Over 2.5 '+(pOver*100).toFixed(1)+'%</b>';
+              // 🆕 13/11 proiezione live 1X2 da xG live (Poisson sui gol attesi finali)
+              var xgh=parseFloat((map['expectedGoals']||[])[0])||0, xga=parseFloat((map['expectedGoals']||[])[1])||0;
+              var lamH=gol>0?(parseInt(ev.hs||0)+xgh*(90-min)/Math.max(min,1)):xgh, lamA=(parseInt(ev.as||0))+xga*(90-min)/Math.max(min,1);
+              function pois(k,l){var p=Math.exp(-l),s=0;for(var i=0;i<=k;i++){s+=p;p*=l/(i+1);}return s;}
+              var PH=0,PD=0,PA=0;
+              for(var i=0;i<=8;i++){for(var j=0;j<=8;j++){var pr=pois(i,lamH)*pois(j,lamA);if(i>j)PH+=pr;else if(i<j)PA+=pr;else PD+=pr;}}
+              liveev='<p class="stt">🔴 Proiezione live 1X2 (min '+Math.round(min)+') — da xG live '+xgt.toFixed(2)+' + gol '+gol+'</p><p class="sub"><b>1 '+(PH*100).toFixed(0)+'% · X '+(PD*100).toFixed(0)+'% · 2 '+(PA*100).toFixed(0)+'%</b> · EV live Over 2.5: λ residuo '+lamRem.toFixed(2)+' → <b>p '+(pOver*100).toFixed(1)+'%</b>';
               if(oq&&oq>1.01){var evv=(pOver*(oq-1)-(1-pOver))*100;liveev+=' · quota live '+oq.toFixed(2)+' → <b>EV '+(evv>=0?'+':'')+evv.toFixed(1)+'%</b>'+(evv>2?' 🚩':'');}
               liveev+='</p><p class="sub" style="font-size:10px">stima da xG live (ESPN) + Poisson minuti rimanenti — solo analisi, puntare SOLO su ADM · 18+ · autoesclusione.it · 800 558822</p>';
             }

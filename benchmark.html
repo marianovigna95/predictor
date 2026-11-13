@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<title>Benchmark — Serie A Predictor</title>
+<style>
+:root { --bg:#0b0f14; --card:#12171e; --line:#242c37; --txt:#e8ecf1; --mut:#8b96a5; --acc:#38bdf8;
+  --btnbg:#171e27; --rowline:#1b222b; --track:#1c232c; --codebg:#1a212b; --termbg:#0a0e13; --scr:#2a333f; --tabon:#141b24; }
+html[data-theme="light"] { --bg:#f4f6f9; --card:#ffffff; --line:#d8dee6; --txt:#182230; --mut:#5c6878; --acc:#0284c7;
+  --btnbg:#edf1f6; --rowline:#e6ebf1; --track:#e6ebf1; --codebg:#edf1f6; --termbg:#edf1f6; --scr:#c3ccd6; --tabon:#e3f2fd; }
+* { box-sizing:border-box; }
+body { font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; background:var(--bg);
+  color:var(--txt); margin:0; padding:14px 14px 96px; line-height:1.45; font-size:14px; }
+::selection { background:rgba(56,189,248,.28); }
+::-webkit-scrollbar { width:10px; height:10px; } ::-webkit-scrollbar-thumb { background:var(--scr); border-radius:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+.wrap { max-width:980px; margin:auto; }
+h1 { font-size:21px; margin:0 0 6px; font-weight:700; }
+h1 .g, .g { color:var(--acc); }
+h2 { font-size:15px; margin:0 0 10px; font-weight:700; }
+h2.day { border-bottom:1px solid var(--line); padding-bottom:6px; }
+p { margin:6px 0; }
+a { color:var(--acc); text-decoration:none; } a:hover { text-decoration:underline; }
+code { background:var(--codebg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:12px; }
+.sub { color:var(--mut); font-size:12.5px; }
+.mut { color:var(--mut); }
+
+/* topbar + tabbar piatte */
+.topbar { position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line);
+  margin:-14px -14px 14px; padding:8px 14px; display:flex; align-items:center; gap:10px; }
+.brand { font-weight:700; font-size:15px; color:var(--txt); } .brand:hover { text-decoration:none; }
+.backbtn { color:var(--mut); font-size:13px; } .backbtn:hover { color:var(--txt); text-decoration:none; }
+.tabbar { position:fixed; bottom:0; left:0; right:0; z-index:50; background:var(--bg);
+  border-top:1px solid var(--line); display:flex; overflow-x:auto; }
+.tabbar a { flex:1; text-align:center; padding:10px 4px; color:var(--mut); font-size:12px; font-weight:600;
+  border-right:1px solid var(--line); } .tabbar a:last-child { border-right:none; }
+.tabbar a.on { color:var(--acc); background:var(--tabon); box-shadow:inset 0 2px 0 var(--acc); }
+.tabbar a:hover { text-decoration:none; color:var(--txt); } .tabbar a.on:hover { color:var(--acc); }
+
+/* card piatte e compatte */
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+.quicklinks { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:4px 0 14px; }
+.ql { display:flex; flex-direction:column; align-items:center; gap:2px; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:12px 6px; text-decoration:none; color:var(--txt); }
+.ql .ic { font-size:20px; } .ql b { font-size:12.5px; } .ql small { color:var(--mut); font-size:10px; }
+.hero { padding:14px 0 10px; } .hero h1 { font-size:24px; } .hero p { color:var(--mut); max-width:640px; }
+.cta { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.btn { display:inline-block; border:1px solid var(--line); background:var(--btnbg); color:var(--txt); border-radius:8px;
+  padding:7px 13px; font-size:13px; font-weight:600; } .btn:hover { border-color:var(--acc); color:var(--acc); text-decoration:none; }
+.btn.on { border-color:var(--acc); color:var(--acc); background:var(--tabon); }
+.btn.ghost { background:transparent; color:var(--mut); }
+
+/* tabelle dense */
+.tablewrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:12.5px; }
+th { text-align:left; color:var(--mut); font-size:11px; text-transform:uppercase; letter-spacing:.4px;
+  padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap; }
+td { padding:6px 8px; border-bottom:1px solid var(--rowline); vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+tr.mrow td { color:var(--mut); font-size:12px; padding:2px 8px 10px; background:transparent; }
+.tb { font-weight:600; } .tb-r { text-align:right; }
+
+/* pill piatte */
+.pill { display:inline-block; border-radius:999px; padding:1px 9px; font-size:11px; font-weight:700;
+  border:1px solid var(--line); background:var(--btnbg); color:var(--txt); white-space:nowrap; }
+.pill.ev-pos { background:rgba(34,197,94,.12); color:#4ade80; border-color:rgba(34,197,94,.35); }
+.pill.ev-neg { background:rgba(248,113,113,.10); color:#f87171; border-color:rgba(248,113,113,.35); }
+.t-singola { background:rgba(251,191,36,.12); color:#fbbf24; border-color:rgba(251,191,36,.4); }
+.t-raddoppio { background:rgba(56,189,248,.12); color:#38bdf8; border-color:rgba(56,189,248,.4); }
+.t-nessuna { background:var(--btnbg); color:var(--mut); }
+.chip { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:1px 9px;
+  font-size:11px; color:var(--mut); background:var(--btnbg); }
+
+/* barra confidenza piatta */
+.cbar { height:5px; background:var(--track); border-radius:3px; overflow:hidden; margin-top:6px; }
+.cbar i { display:block; height:100%; background:var(--acc); border-radius:3px; }
+
+/* match card compatte */
+.mc-grid { display:grid; grid-template-columns:1fr; gap:10px; } /* 🆕 06/11: una card per riga, niente affiancate */
+.mc { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; }
+.mc-h { font-size:11px; color:var(--mut); margin-bottom:4px; display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+.mc-row { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:13px; flex-wrap:wrap; } .mc-row > * { min-width:0; }
+.mc-row b { font-weight:600; }
+.mc-mot { color:var(--mut); font-size:11.5px; margin-top:6px; }
+details { margin-top:4px; font-size:11.5px; color:var(--mut); }
+
+/* stats, verdetto, avvisi, footer */
+.grid { display:flex; flex-wrap:wrap; gap:10px; }
+.stat { border:1px solid var(--line); border-radius:8px; padding:8px 12px; background:var(--card); min-width:110px; }
+.stl { font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }
+.stv { font-size:17px; font-weight:700; }
+.ms { font-size:12px; color:var(--mut); }
+.verdetto { font-weight:600; font-size:12.5px; }
+.v-go  { background:rgba(34,197,94,.10);  color:#4ade80; border:1px solid rgba(34,197,94,.35);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-ok  { background:rgba(163,230,53,.09);  color:#bef264; border:1px solid rgba(163,230,53,.35); border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-bor { background:rgba(251,191,36,.10);  color:#fbbf24; border:1px solid rgba(251,191,36,.4);  border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.v-no  { background:rgba(248,113,113,.09); color:#f87171; border:1px solid rgba(248,113,113,.35);border-radius:8px; padding:6px 10px; margin:6px 0 0; }
+.warn { border:1px solid rgba(251,191,36,.4); background:rgba(251,191,36,.08); color:#fbbf24;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.okbox { border:1px solid rgba(34,197,94,.35); background:rgba(34,197,94,.08); color:#4ade80;
+  border-radius:8px; padding:8px 12px; font-size:12.5px; margin:10px 0; }
+.legal { font-size:11.5px; color:var(--mut); }
+.term { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11.5px; background:var(--termbg);
+  border:1px solid var(--line); border-radius:8px; padding:8px 10px; white-space:pre-wrap; }
+.ic { font-style:normal; }
+.l, .n { font-size:12.5px; }
+
+@media (max-width:720px) {
+  body { padding:10px 10px 92px; font-size:13.5px; }
+  .topbar { margin:-10px -10px 10px; padding:7px 10px; }
+  .card { padding:11px 12px; }
+  .hero h1 { font-size:20px; }
+  .tabbar a { font-size:11px; padding:9px 2px; }
+  .quicklinks { grid-template-columns:repeat(2,1fr); }
+  .tabbar a { flex:0 0 auto; padding:9px 12px; }
+  /* 🛠 08/11 mobile compatto: tabelle -> card impilate, niente scroll orizzontale */
+  .tablewrap { overflow:visible !important; }
+  table { display:block; font-size:12.5px; }
+  thead, table tr th { display:none !important; }
+  table tr { display:block; border:1px solid var(--line); border-radius:10px; margin:0 0 10px; padding:6px 9px; background:var(--card2, var(--card)); }
+  table td { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border:0 !important; padding:3px 2px !important; font-size:12.5px; text-align:right; }
+  table td::before { content:attr(data-label); color:var(--mut); font-size:10px; text-transform:uppercase; letter-spacing:.04em; text-align:left; }
+  table td[colspan] { display:block; text-align:left; }
+  table td[colspan]::before { content:none; }
+  .mrow td { font-size:11.5px; line-height:1.45; }
+}
+</style></head><body><div class="wrap"><header class="topbar"><div class="wrap tb"><a class="brand" href="index.html">⚽ <span>Predictor</span></a><div class="tb-r"><a class="backbtn" href="index.html" onclick="if(history.length>1){history.back();return false;}else{location.href='index.html';return false;}">← Indietro</a><button id="themeBtn" class="btn ghost" style="cursor:pointer" title="Cambia tema">☀️</button><a class="btn ghost" href="index.html">⌂ Home</a></div></div></header>
+<div class="card"><h1>🏆 <span class="g">Benchmark</span></h1>
+<p class="sub">Confronto onesto modello vs mercato (RPS walk-forward per lega) + storico pubblico scaricabile in JSON/CSV.</p>
+<div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · Numero Verde 800 558822</div>
+</div>
+<div class="card">
+  <h2>🏆 Benchmark: modello vs mercato (walk-forward)</h2>
+  <p class="sub">Validazione g6-g10 2026/27: ogni partita prevista usando SOLO dati precedenti (no leakage).
+  <b>RPS</b> (0 = perfetto, più basso = meglio): edge positivo = il nostro modello ha RPS più basso del mercato (quote di chiusura).
+  Il mercato resta il benchmark reale; l'obiettivo onesto non è "batterlo sempre" ma trovare i pochi casi con EV&gt;0 su ADM.</p>
+  <div class="tablewrap"><table><tr><th>Lega</th><th>Partite</th><th>Acc modello</th><th>Acc mercato</th><th>RPS modello</th><th>RPS mercato</th><th>Edge (mkt−modello)</th></tr><tr><td colspan=7>Validazione non ancora eseguita (data/validation_multi.csv mancante).</td></tr></table></div>
+  <p class="sub">🧠 Stacker v7 (LOO su 535 match g6-g38): RPS 1X2 <b>0.1918</b> vs mercato <b>0.1963</b> — sotto il mercato in RPS grezzo,
+  oltre ai segnali extra (forma-xG, H2H, arbitro, meteo, assenze) che la media mercato non pesa.</p>
+</div>
+<div class="card">
+  <h2>📂 Storico pubblico scaricabile (dati aperti)</h2>
+  <p class="sub">Come il principio di trasparenza di gambeta/scoregpt: tutto lo storico delle nostre giocate e verifiche è esportabile e verificabile esternamente.</p>
+  <p><a class="btn" href="archivio_giocate.json" download>⬇ archivio_giocate.json</a>
+     <a class="btn" href="archivio_giocate.csv" download>⬇ archivio_giocate.csv</a></p>
+  <p class="sub">Contenuto: giocate (Singola/Raddoppio con p, quota, EV%, stake%) + verifiche con esito reale e CLV. Analisi-only: mai certezze, 18+, puntare SOLO su ADM, autoesclusione.it · 800 558822.</p>
+</div>
+<div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a><a href="benchmark.html" class="on"><span class="ic">🏆</span>BENCHMARK</a></div>
+<footer class="legal">
+  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
+  Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
+  Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>
+  Questo sito pubblica <b>analisi statistiche a scopo informativo</b>: ogni pronostico è una stima con incertezza,
+  mai una certezza o una garanzia. I risultati passati non garantiscono risultati futuri.
+</footer>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}b.textContent=(t==='light')?'🌙':'☀️';}
+b.onclick=function(){var c=document.documentElement.getAttribute('data-theme')||'dark';set(c==='light'?'dark':'light');};
+var t='dark';try{t=localStorage.getItem('theme')||'dark';}catch(e){}set(t);})();
+</script>
+</div></body></html>

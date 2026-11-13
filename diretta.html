@@ -113,9 +113,9 @@ html.big{font-size:118%}
 </nav>
 <main id="lg-list">
 <div class="lgh">Amichevoli <span class="ours">★</span></div>
-<div class="mrow live" data-eid="401931957"><span class="tm">15:10</span><span class="h">United Arab Emirates</span><span class="sc">2 - 1</span><span class="a">Honduras</span><span class="badge b-live"><i class="dot"></i>LIVE 65&#x27;</span></div>
-<div class="mrow live" data-eid="401931476"><span class="tm">15:30</span><span class="h">Saudi Arabia</span><span class="sc">1 - 0</span><span class="a">South Korea</span><span class="badge b-live"><i class="dot"></i>LIVE 45&#x27;+3&#x27;</span></div>
-<div class="mrow live" data-eid="401919978"><span class="tm">15:45</span><span class="h">Qatar</span><span class="sc">0 - 3</span><span class="a">Australia</span><span class="badge b-live"><i class="dot"></i>LIVE 45&#x27;+1&#x27;</span></div>
+<div class="mrow live" data-eid="401931957"><span class="tm">15:10</span><span class="h">United Arab Emirates</span><span class="sc">2 - 1</span><span class="a">Honduras</span><span class="badge b-live"><i class="dot"></i>LIVE 85&#x27;</span></div>
+<div class="mrow live" data-eid="401931476"><span class="tm">15:30</span><span class="h">Saudi Arabia</span><span class="sc">3 - 1</span><span class="a">South Korea</span><span class="badge b-live"><i class="dot"></i>LIVE 61&#x27;</span></div>
+<div class="mrow live" data-eid="401919978"><span class="tm">15:45</span><span class="h">Qatar</span><span class="sc">0 - 3</span><span class="a">Australia</span><span class="badge b-live"><i class="dot"></i>LIVE 54&#x27;</span></div>
 <div class="mrow ft" data-eid="401916338"><span class="tm">13:00</span><span class="h">Singapore</span><span class="sc">1 - 4</span><span class="a">Paraguay</span><span class="badge b-ft">FT</span></div>
 <div class="mrow" data-eid="401933636"><span class="tm">16:00</span><span class="h">Iraq</span><span class="sc">0 - 0</span><span class="a">Lebanon</span><span class="badge b-pre">16:00</span></div>
 <div class="mrow" data-eid="401931978"><span class="tm">17:30</span><span class="h">Kuwait</span><span class="sc">0 - 0</span><span class="a">Syria</span><span class="badge b-pre">17:30</span></div>
@@ -359,7 +359,13 @@ html.big{font-size:118%}
               var pOver=need<=0?1:1-poisCDF(need-1,lamRem);
               var oq=null;
               (ev.odds||[]).forEach(function(o){var lbl=String(o.name||'')+' '+String(o.label||'');if(/2\.5|over|under/i.test(lbl)){(o.outcomes||[]).forEach(function(oc){if(/over/i.test(String(oc.name||oc.description||'')))oq=parseFloat(oc.price||oc.odds)||oq;});}});
-              liveev='<p class="stt">🔴 EV live Over 2.5 (min '+Math.round(min)+')</p><p class="sub">gol '+gol+' · xG live '+xgt.toFixed(2)+' → λ residuo '+lamRem.toFixed(2)+' → <b>p Over 2.5 '+(pOver*100).toFixed(1)+'%</b>';
+              // 🆕 13/11 proiezione live 1X2 da xG live (Poisson sui gol attesi finali)
+              var xgh=parseFloat((map['expectedGoals']||[])[0])||0, xga=parseFloat((map['expectedGoals']||[])[1])||0;
+              var lamH=gol>0?(parseInt(ev.hs||0)+xgh*(90-min)/Math.max(min,1)):xgh, lamA=(parseInt(ev.as||0))+xga*(90-min)/Math.max(min,1);
+              function pois(k,l){var p=Math.exp(-l),s=0;for(var i=0;i<=k;i++){s+=p;p*=l/(i+1);}return s;}
+              var PH=0,PD=0,PA=0;
+              for(var i=0;i<=8;i++){for(var j=0;j<=8;j++){var pr=pois(i,lamH)*pois(j,lamA);if(i>j)PH+=pr;else if(i<j)PA+=pr;else PD+=pr;}}
+              liveev='<p class="stt">🔴 Proiezione live 1X2 (min '+Math.round(min)+') — da xG live '+xgt.toFixed(2)+' + gol '+gol+'</p><p class="sub"><b>1 '+(PH*100).toFixed(0)+'% · X '+(PD*100).toFixed(0)+'% · 2 '+(PA*100).toFixed(0)+'%</b> · EV live Over 2.5: λ residuo '+lamRem.toFixed(2)+' → <b>p '+(pOver*100).toFixed(1)+'%</b>';
               if(oq&&oq>1.01){var evv=(pOver*(oq-1)-(1-pOver))*100;liveev+=' · quota live '+oq.toFixed(2)+' → <b>EV '+(evv>=0?'+':'')+evv.toFixed(1)+'%</b>'+(evv>2?' 🚩':'');}
               liveev+='</p><p class="sub" style="font-size:10px">stima da xG live (ESPN) + Poisson minuti rimanenti — solo analisi, puntare SOLO su ADM · 18+ · autoesclusione.it · 800 558822</p>';
             }
@@ -595,7 +601,7 @@ function matchQ(q,nn){var nq=norm(q);if(!nq)return false;if(nn.indexOf(nq)>=0||n
   window.__F=FILT; window.__R=render;
   tick();setInterval(tick,30000);
 })();
-</script><div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a></div>
+</script><div class="tabbar"><a href="index.html" class=""><span class="ic">⌂</span>HOME</a><a href="multi-lega.html" class=""><span class="ic">🌍</span>TOP 5</a><a href="giocata_multi.html" class=""><span class="ic">🎯</span>GIOCATE</a><a href="ppa.html" class=""><span class="ic">⚡</span>PPA</a><a href="surebets.html" class=""><span class="ic">⚖️</span>SUREBETS</a><a href="archivio.html" class=""><span class="ic">🗂</span>ARCHIVIO</a><a href="benchmark.html" class=""><span class="ic">🏆</span>BENCHMARK</a></div>
 <footer class="legal">
   ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
   ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
