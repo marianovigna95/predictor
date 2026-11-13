@@ -53,6 +53,7 @@ jobs:
       - name: Pubblica su GitHub Pages (root del repo)
         run: |
           cp site/*.html site/manifest.webmanifest site/sw.js site/icon-*.png . 2>/dev/null || true
+          cp site/fixtures.json . 2>/dev/null || true
           cp site/ppa_*.pdf . 2>/dev/null || true
           git config user.email "bot@arena.ai" && git config user.name "predictor-bot"
           git add -A && git commit -m "auto-update $(date -u +%F_%H:%M)" || echo "nessuna modifica"
