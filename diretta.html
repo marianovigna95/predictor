@@ -2,7 +2,20 @@
 <meta http-equiv="refresh" content="300">
 <title>🔴 Diretta — Predictor</title>
 <style>
-:root{--bg:var(--bg);--card:#111c33;--txt:var(--txt);--sub:#94a3b8;--acc:#2563eb;--red:#dc2626}
+:root{--bg:var(--bg);--card:#101a30;--txt:var(--txt);--sub:#94a3b8;--acc:#3b82f6;--red:#ef4444;--gr1:#1d4ed8;--gr2:#7c3aed}
+.mrow.live{background:linear-gradient(90deg,rgba(239,68,68,.14),transparent 60%);border-left:3px solid var(--red)}
+.mrow:hover{background:var(--card2)}
+.mrow.live:hover{background:linear-gradient(90deg,rgba(239,68,68,.2),var(--card2) 70%)}
+.sc{font-weight:800;font-size:15px}
+.dot{animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero{background:linear-gradient(135deg,var(--gr1),var(--gr2));border-radius:14px}
+.ev li{border-left:3px solid var(--acc);padding-left:8px;margin-left:4px}
+.tabs{display:flex;gap:6px;margin:6px 0;flex-wrap:wrap}
+.tab{background:var(--row);color:var(--sub);border:1px solid var(--line2);border-radius:10px;padding:3px 10px;font-size:12px;cursor:pointer}
+.tab.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.tpane table{width:100%}
+#fbar button.on{background:linear-gradient(135deg,var(--red),#f97316);color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(239,68,68,.35)}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 header{position:sticky;top:0;background:rgba(11,18,32,.94);backdrop-filter:blur(6px);padding:10px 14px;border-bottom:1px solid var(--line);z-index:5}
 header b{font-size:18px} header .sub{color:var(--sub);font-size:12px;margin-left:8px}
@@ -15,7 +28,7 @@ nav a.on{background:var(--acc);color:var(--txt)} nav a:hover{background:#1e3a8a}
 main{max-width:860px;margin:0 auto;padding:10px 12px}
 .lgh{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);padding:12px 4px 4px;border-bottom:1px solid var(--line);position:sticky;top:96px;background:var(--bg);z-index:3}
 .ours{color:#fbbf24}
-.mrow{display:grid;grid-template-columns:20px 40px 1fr 56px 1fr 128px auto;gap:6px;align-items:center;padding:7px 8px;border-bottom:1px solid var(--row);cursor:pointer;border-radius:6px}
+.mrow{display:grid;grid-template-columns:18px 44px 1fr 52px 1fr 120px auto;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--row);cursor:pointer;border-radius:10px;margin:2px 4px;transition:background .15s}
 .mrow:hover{background:var(--row)}
 .mrow.live{background:#2a1215;border-left:3px solid var(--red)}
 .tm{color:var(--sub);font-size:12px;font-variant-numeric:tabular-nums}
@@ -100,9 +113,9 @@ html.big{font-size:118%}
 </nav>
 <main id="lg-list">
 <div class="lgh">Amichevoli <span class="ours">★</span></div>
-<div class="mrow live" data-eid="401931957"><span class="tm">15:10</span><span class="h">United Arab Emirates</span><span class="sc">2 - 1</span><span class="a">Honduras</span><span class="badge b-live"><i class="dot"></i>LIVE 53&#x27;</span></div>
+<div class="mrow live" data-eid="401931957"><span class="tm">15:10</span><span class="h">United Arab Emirates</span><span class="sc">2 - 1</span><span class="a">Honduras</span><span class="badge b-live"><i class="dot"></i>LIVE 65&#x27;</span></div>
 <div class="mrow live" data-eid="401931476"><span class="tm">15:30</span><span class="h">Saudi Arabia</span><span class="sc">1 - 0</span><span class="a">South Korea</span><span class="badge b-live"><i class="dot"></i>LIVE 45&#x27;+3&#x27;</span></div>
-<div class="mrow live" data-eid="401919978"><span class="tm">15:45</span><span class="h">Qatar</span><span class="sc">0 - 2</span><span class="a">Australia</span><span class="badge b-live"><i class="dot"></i>LIVE 38&#x27;</span></div>
+<div class="mrow live" data-eid="401919978"><span class="tm">15:45</span><span class="h">Qatar</span><span class="sc">0 - 3</span><span class="a">Australia</span><span class="badge b-live"><i class="dot"></i>LIVE 45&#x27;+1&#x27;</span></div>
 <div class="mrow ft" data-eid="401916338"><span class="tm">13:00</span><span class="h">Singapore</span><span class="sc">1 - 4</span><span class="a">Paraguay</span><span class="badge b-ft">FT</span></div>
 <div class="mrow" data-eid="401933636"><span class="tm">16:00</span><span class="h">Iraq</span><span class="sc">0 - 0</span><span class="a">Lebanon</span><span class="badge b-pre">16:00</span></div>
 <div class="mrow" data-eid="401931978"><span class="tm">17:30</span><span class="h">Kuwait</span><span class="sc">0 - 0</span><span class="a">Syria</span><span class="badge b-pre">17:30</span></div>
@@ -202,6 +215,11 @@ html.big{font-size:118%}
     });
     var liveN=evs.filter(function(e){return e.live;}).length;
     var evN=evs.filter(function(e){return e.ev&&e.ev.ev>0;}).length;
+    var favN=evs.filter(function(e){return isFav(e.h)||isFav(e.a);}).length;
+    fbar.querySelectorAll('button[data-f]').forEach(function(b){
+      var k=b.getAttribute('data-f'), n=k==='live'?liveN:(k==='ev'?evN:(k==='fav'?favN:0));
+      if(n>0){var sp=b.querySelector('i.n'); if(!sp){sp=document.createElement('i');sp.className='n';sp.style.cssText='font-style:normal;background:rgba(255,255,255,.25);border-radius:8px;padding:0 5px;margin-left:4px;font-size:10px';b.appendChild(sp);} sp.textContent=n;}
+    });
     var out='';
     if(FILT.mode==='lega'){
       // 🏆 hero: partita in evidenza (max EV>0, altrimenti prima ⭐)
@@ -245,8 +263,6 @@ html.big{font-size:118%}
         var teams=(j.boxscore&&j.boxscore.teams)||[];
         var map={};
         teams.forEach(function(t,i){(t.statistics||[]).forEach(function(st){(map[st.name]=map[st.name]||[null,null])[i]=st.displayValue;});});
-        var rows='';
-        W.forEach(function(nm){var v=map[nm]; if(v&&(v[0]||v[1])) rows+='<tr><td>'+esc(nm)+'</td><td>'+esc(v[0]||'')+'</td><td>'+esc(v[1]||'')+'</td></tr>';});
         // 📊 barre comparative stile diretta.it
         function bar(lab,v0,v1,raw){
           v0=parseFloat(v0)||0; v1=parseFloat(v1)||0;
@@ -263,6 +279,19 @@ html.big{font-size:118%}
         if(bars) bars='<p class="stt">📊 Live — '+h0+' vs '+h1+'</p><div class="bars2">'+bars+'</div>';
         var h0=teams[0]&&teams[0].team?esc(teams[0].team.displayName):'';
         var h1=teams[1]&&teams[1].team?esc(teams[1].team.displayName):'';
+        var WGRP=[['📊 Panoramica',['expectedGoals','possessionPct','totalShots','shotsOnTarget','bigChances','saves']],['⚽ Gioco',['wonCorners','foulsCommitted','offsides','accuratePasses','totalPasses','passPct']],['🟨 Cartellini',['yellowCards','redCards']]];
+        var rows='';
+        W.forEach(function(nm){var v=map[nm]; if(v&&(v[0]||v[1])) rows+='<tr><td>'+esc(nm)+'</td><td>'+esc(v[0]||'')+'</td><td>'+esc(v[1]||'')+'</td></tr>';});
+        var tabsHtml='';
+        if(rows){
+          tabsHtml='<div class="tabs">'+WGRP.map(function(g,i){return '<button class="tab'+(i===0?' on':'')+'" data-t="'+i+'">'+g[0]+'</button>';}).join('')+'</div><div class="tpanes">';
+          WGRP.forEach(function(g,i){
+            var rr='';
+            g[1].forEach(function(nm){var v=map[nm]; if(v&&(v[0]||v[1])) rr+='<tr><td>'+esc(nm)+'</td><td>'+esc(v[0]||'')+'</td><td>'+esc(v[1]||'')+'</td></tr>';});
+            tabsHtml+='<div class="tpane" data-p="'+i+'" style="'+(i===0?'':'display:none')+'">'+(rr?'<table><tr><th>'+esc(h0)+'</th><th></th><th>'+esc(h1)+'</th></tr>'+rr+'</table>':'<p class="sub">nessun dato</p>')+'</div>';
+          });
+          tabsHtml+='</div>';
+        }
         // QUOTE 1X2 (dagli odds dello scoreboard ESPN)
         var qq=qkey(ev);
         var q=(qq&&qq.h?'<p class="stt">Quote 1X2 (miglior prezzo finestra)</p><div class="q3"><span>1<b>'+qq.h+'</b></span><span>X<b>'+(qq.x||'–')+'</b></span><span>2<b>'+qq.a+'</b></span></div>':'');
@@ -337,7 +366,7 @@ html.big{font-size:118%}
           }
         }catch(e){}
         var html=q+fhtml+h2hhtml+lin+bars+liveev+(goals.length?'<p class="stt">🕐 Timeline (eventi recenti in cima)</p><ul class="ev">'+goals.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul>':'')
-          +(rows.length?'<table><tr><th>'+h0+'</th><th></th><th>'+h1+'</th></tr>'+rows+'</table>'
+          +(rows.length?tabsHtml
             :(ev.live||/FULL|FINAL|POST/i.test(ev.status||'')
               ?'<p class="sub">Statistiche live in aggiornamento — ESPN le pubblica a intervalli durante la gara e complete a fine partita.</p>'
               :'<p class="sub">Partita non ancora iniziata: le statistiche escono dal fischio di inizio.</p>'))
@@ -468,6 +497,15 @@ function matchQ(q,nn){var nq=norm(q);if(!nq)return false;if(nn.indexOf(nq)>=0||n
       var b=e.target.closest('.dbtn'); if(b) location.search='?d='+b.getAttribute('data-d');
     });
   }
+  // 🆕 13/11 tab statistiche nel dettaglio (delegato)
+  document.addEventListener('click',function(e){
+    var t=e.target.closest?e.target.closest('.tab'):null;
+    if(!t)return;
+    var tabs=t.parentElement.querySelectorAll('.tab');
+    tabs.forEach(function(x){x.classList.toggle('on',x===t);});
+    var panes=t.parentElement.parentElement.querySelectorAll('.tpane');
+    panes.forEach(function(p){p.style.display=(p.getAttribute('data-p')===t.getAttribute('data-t'))?'':'none';});
+  });
   // ---- barra filtri ----
   var fbar=document.getElementById('fbar');
   if(fbar){
