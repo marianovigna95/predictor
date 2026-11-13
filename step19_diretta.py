@@ -467,6 +467,17 @@ LIVE_JS = """<script>
               var pl=[[PH,q12.h],[PD,q12.x],[PA,q12.a]], pk=pl[0];
               pl.forEach(function(z){if(z[0]>pk[0])pk=z;});
               if(pk[1]&&pk[1]>1.01){var ev12=(pk[0]*(pk[1]-1)-(1-pk[0]))*100;liveev+=' · 1X2 live <b>'+['1','X','2'][pl.indexOf(pk)]+'</b> p '+(pk[0]*100).toFixed(0)+'% @ '+pk[1].toFixed(2)+' → <b>EV '+(ev12>=0?'+':'')+ev12.toFixed(1)+'%</b>'+(ev12>2?' 🚩':'');}
+              // 🆕 13/11 💬 perché in parole semplici (xG live + margine quota)
+              var pwhy='';
+              if(xgt>0.05){
+                var teamLead=xgh>xga?ev.h:ev.a, other=xgh>xga?ev.a:ev.h;
+                var lead=xgh>xga?(xgh-xga):(xga-xgh);
+                if(lead>=0.5)pwhy='💬 Perché: xG live a favore di <b>'+esc(teamLead)+'</b> ('+xgt.toFixed(1)+' contro '+(xgh>xga?(xga).toFixed(1):(xgh).toFixed(1))+' di '+esc(other)+') — il modello vede più gioco offensivo di chi conduce.';
+                else pwhy='💬 Perché: xG live quasi pari ('+xgh.toFixed(1)+' - '+xga.toFixed(1)+'), partita ancora aperta.';
+              }
+              if(pk&&pk[1]>1.01&&pk[0]>0.5){var impl=(100/pk[1]).toFixed(0);pwhy+=' La quota live '+pk[1].toFixed(2)+' paga come se valesse '+impl+'%, il modello dà '+(pk[0]*100).toFixed(0)+'%'+(pk[0]*100-parseFloat(impl)>=2?': c’è margine.':'.');}
+              else if(oq&&oq>1.01&&pOver>0.5){var implO=(100/oq).toFixed(0);pwhy+=' Over 2.5: restano ~'+Math.max(0,3-gol)+' gol da fare, quota '+oq.toFixed(2)+' (mercato '+implO+'%) vs modello '+(pOver*100).toFixed(0)+'%'+(pOver*100-parseFloat(implO)>=2?': c’è margine.':'.');}
+              if(pwhy)liveev+='<p class="perche">'+pwhy+'</p>';
               liveev+='</p><p class="sub" style="font-size:10px">stima da xG live (ESPN) + Poisson minuti rimanenti — solo analisi, puntare SOLO su ADM · 18+ · autoesclusione.it · 800 558822</p>';
             }
           }
@@ -810,6 +821,7 @@ main{{max-width:860px;margin:0 auto;padding:10px 12px}}
 .lin li{{font-size:11.5px;padding:1.5px 0;color:var(--txt)}}
 .lin li i{{font-style:normal;color:var(--mut);display:inline-block;width:18px}}
 .lin li em{{font-style:normal;color:var(--mut);font-size:10px}}
+.perche{{color:#7dd3fc;font-weight:600;font-size:12.5px;background:rgba(56,189,248,.08);border-radius:6px;padding:6px 8px;margin:6px 0}}
 .stt{{margin:10px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub)}}
 .badge{{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}}
 .b-live{{background:var(--red);color:var(--txt)}} .b-canc{{background:#3f3f46;color:#e4e4e7}} .mrow.canc{{opacity:.55}} .b-ft{{background:#334155;color:var(--txt)}} .b-pre{{background:#14532d;color:#86efac}}

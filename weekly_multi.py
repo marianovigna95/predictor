@@ -48,7 +48,7 @@ def pois_cdf(k, lam):
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from step3_elo import update_elo
 from step4_dixon_coles import TeamHistory, score_matrix, matrix_to_markets, dc_weights
-from motivi import motivo_match, frase_motivo
+from motivi import motivo_match, frase_motivo, perche_breve, perche_mercato
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -814,6 +814,10 @@ def main():
                                        quota_best=(o_max[pick] if o_max else None),
                                        absences=(absences if league == "Serie A" else None),
                                        elo_raw=elo),
+                "xg_h": round(float(lh), 3), "xg_a": round(float(la), 3),
+                "perche": perche_breve(f["home"], f["away"], f["Date"], played, lh, la,
+                                       stand=stand, last=last, P=P, pick=pick,
+                                       quota_best=(o_max[pick] if o_max else None), elo_raw=elo),
                 "motivo_verbale": _verbale_con_formazione(f, league, lineups, frase_motivo(
                                                f["home"], f["away"], f["Date"], played, rh, ra, lh, la,
                                                stand=stand, last=last, P=P, pick=pick,
@@ -876,11 +880,17 @@ def main():
                 legs.append(("C_U9.5", "Corner Under 9.5", 1 - float(r["CornersO95%"]) / 100.0, float(r["quota_C_U95_best"]), mv + f" · corner attesi {r.get('corners_attesi')}"))
             for mercato, esito, p_leg, q_leg, mot in legs:
                 ev = (p_leg * (q_leg - 1) - (1 - p_leg)) * 100
+                # 🆕 13/11 "perché" parlante anche per O/U e GG/NG (dai gol attesi), non solo 1X2
+                if mercato == "1X2":
+                    p_leg_breve = (r.get("perche") or "")
+                else:
+                    p_leg_breve = "💬 " + perche_mercato(mercato, str(esito), float(r.get("xg_h") or 1.3), float(r.get("xg_a") or 1.3), q=q_leg, p=p_leg)
                 if ev > 50:  # 🚨 quota anomala (es. 10.60 su un favorito): EV irrealistico → fuori dal pool
                     print(f"     🚨 quota anomala ignorata: {r['partita']} {mercato} {esito} @ {q_leg} (EV {ev:+.0f}%)")
                     continue
                 pool.append({"lega": r["lega"], "partita": r["partita"], "mercato": mercato,
-                             "esito": esito, "p": p_leg, "q": q_leg, "EV%": ev, "motivo": mot})
+                             "esito": esito, "p": p_leg, "q": q_leg, "EV%": ev, "motivo": mot,
+                             "perche": p_leg_breve})
         return pool
 
     # 🆕 13/11 se (incertezza p) dalla calibrazione Brier per lega
@@ -968,6 +978,7 @@ def main():
                          "mercato": singola["mercato"], "esito": str(singola["esito"]),
                          "p_modello%": round(singola["p"] * 100, 1), "quota_best": round(singola["q"], 2),
                          "EV%": round(singola["EV%"], 2), "motivo": singola["motivo"],
+                         "perche": "💬 " + (singola.get("perche") or ""),
                          "stake%": round(kelly_stake(singola["p"], singola["q"], se=se1) * 100, 2),
                          "verdetto": verdetto(singola["EV%"])})
         if singola is None and combo is None:
@@ -988,6 +999,7 @@ def main():
                          "p_modello%": round(p * 100, 1), "quota_best": round(q, 2), "EV%": round(ev, 2),
                          "stake%": round(kelly_stake(p, q, se=sem) * 100, 2),
                          "motivo": " | ".join((f"{c['partita']} [{c['mercato']} {c['esito']}] p={c['p']*100:.1f}% @ {c['q']} — " + (c["motivo"][:240] + "…" if len(c["motivo"]) > 240 else c["motivo"])) for c in combo),
+                         "perche": "💬 " + " · ".join((c.get("perche") or "").replace("💬 ","") for c in combo),
                          "verdetto": verdetto(ev)})
 
     gj = pd.DataFrame(rows)

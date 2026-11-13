@@ -70,6 +70,7 @@ h1{font-size:20px;margin:8px 0}
 .k{flex:1;background:#0b1220;border:1px solid #22345a;border-radius:8px;padding:8px;text-align:center}
 .k b{display:block;font-size:15px;color:#93c5fd}
 .k span{font-size:10px;color:#8ea3c8;text-transform:uppercase;letter-spacing:.05em}
+.perche{color:#7dd3fc;font-size:12.5px;font-weight:600;margin-top:6px;background:rgba(56,189,248,.08);border-radius:6px;padding:6px 8px}
 .empty{color:#8ea3c8;padding:20px;text-align:center}
 footer{color:#475569;font-size:11px;text-align:center;padding:14px}
 @media print{body{background:#fff;color:#000}.card{background:#fff;border:1px solid #ccc}
@@ -92,6 +93,7 @@ def page_html(date_str, rows):
   <div class="top"><b>{r.get('tipo','')}</b><span class="badge">EV +{float(r.get('ev',0) or 0):.1f}%</span></div>
   <div class="pick">{r.get('partita','')}</div>
   <div class="meta">🏆 {r.get('lega','')} · 🕐 {r.get('data','')} · mercato: <b>{r.get('mercato','')}</b> — esito <b>{r.get('esito','')}</b></div>
+  {"<div class='perche'>"+r.get('perche','').replace('<','&lt;')+"</div>" if r.get('perche') else ""}
   <div class="kelly">
     <div class="k"><b>{q}</b><span>quota ADM</span></div>
     <div class="k"><b>{p}%</b><span>p modello</span></div>

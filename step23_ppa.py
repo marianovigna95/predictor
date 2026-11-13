@@ -78,7 +78,8 @@ def main():
                 "ora": str(r["orario"])[-5:] if pd.notna(r.get("orario")) else str(o["orario"])[-5:], "lega": o["lega"], "partita": o["partita"],
                 "pick": label, "p%": round(p, 1), "quota": round(float(q), 2), "EV%": ev,
                 "esito": esito, "done": bool(esito),
-                "motivo": str(r.get("motivo_verbale") or r.get("motivo") or "")})
+                "motivo": str(r.get("motivo_verbale") or r.get("motivo") or ""),
+                "perche": str(r.get("perche") or r.get("motivo_verbale") or "")})
 
     sections = []
     for d in sorted(by_date):
@@ -102,10 +103,12 @@ def main():
             ev_txt = f'<span class="{ev_cls}">{r["EV%"]:+.1f}%</span>' if r["EV%"] is not None else "—"
             q_txt = f"{r['quota']:.2f}" if r["quota"] else "—"
             mot = html.escape(str(r.get("motivo") or ""))  # testo completo, senza taglio
+            per = html.escape(str(r.get("perche") or ""))  # 🆕 13/11 frase breve "perché"
             es = f" <b>{r['esito']}</b>" if r.get("esito") else (" <b class='sub'>⏳ in verifica</b>" if o["data"] < today else "")
             trs += (f"<tr><td data-label='Ora'>{r['ora']}</td><td data-label='Lega'>{html.escape(r['lega'])}</td><td data-label='Partita'>{html.escape(r['partita'])}{es}</td>"
                     f"<td data-label='Mercato'><b>{r['pick']}</b></td><td data-label='p modello'><b>{r['p%']}%</b></td><td data-label='Quota'>{q_txt}</td><td data-label='EV'>{ev_txt}</td></tr>")
-            trs += (f"<tr class='motrow'><td colspan='7'><details><summary>💬 perché questo pick?</summary>"
+            trs += ((f"<tr class='motrow'><td colspan='7' class='perche'>{per}</td></tr>") if per else "")
+            trs += (f"<tr class='motrow'><td colspan='7'><details><summary>💬 perché questo pick? (dettaglio)</summary>"
                     f"<div class='mot'>{mot}</div></details></td></tr>")
         is_past = d < today
         sec = f"""
@@ -125,7 +128,7 @@ nav a{{color:#cbd5e1;text-decoration:none;font-size:12px;padding:5px 10px;border
 main{{max-width:920px;margin:0 auto;padding:12px}}h2{{font-size:16px;margin:16px 0 8px}}
 table{{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;font-size:13px;margin-bottom:14px}}
 td,th{{padding:7px 9px;border-bottom:1px solid #1e293b;text-align:left}}th{{color:var(--sub);font-size:11px;text-transform:uppercase}}
-.pos{{color:var(--pos);font-weight:700}}.neg{{color:var(--neg)}}.sub{{color:var(--sub);font-size:11px}} tr.motrow td{{padding:0 9px 8px 9px;background:#0e1830}} details{{font-size:12px;color:#94a3b8}} summary{{cursor:pointer;font-size:12px;color:#60a5fa;padding:2px 0}} .mot{{color:#cbd5e1;font-size:12.5px;line-height:1.45;padding:6px 0 2px 12px;border-left:2px solid #2563eb}}
+.pos{{color:var(--pos);font-weight:700}}.neg{{color:var(--neg)}}.sub{{color:var(--sub);font-size:11px}} tr.motrow td{{padding:0 9px 8px 9px;background:#0e1830}} details{{font-size:12px;color:#94a3b8}} summary{{cursor:pointer;font-size:12px;color:#60a5fa;padding:2px 0}} .mot{{color:#cbd5e1;font-size:12.5px;line-height:1.45;padding:6px 0 2px 12px;border-left:2px solid #2563eb}}.perche{{color:#7dd3fc;font-weight:600;font-size:12.5px;background:rgba(56,189,248,.08)}}
 details{{margin:0 0 8px;background:var(--card);border-radius:10px;padding:6px 10px}} details summary{{cursor:pointer;font-size:14px}} .warn{{background:#3b0d0d;border:1px solid #dc2626;border-radius:10px;padding:10px 12px;font-size:13px;margin:10px 0}}
 @media (max-width:720px){{
 main{{padding:8px}} table{{display:block}} table tr th{{display:none}}

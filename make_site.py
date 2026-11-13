@@ -114,6 +114,7 @@ tr.mrow td { color:var(--mut); font-size:12px; padding:2px 8px 10px; background:
 .pill { display:inline-block; border-radius:999px; padding:1px 9px; font-size:11px; font-weight:700;
   border:1px solid var(--line); background:var(--btnbg); color:var(--txt); white-space:nowrap; }
 .pill.ev-pos { background:rgba(34,197,94,.12); color:#4ade80; border-color:rgba(34,197,94,.35); }
+.perche { color:var(--acc); font-size:12.5px; font-weight:600; background:rgba(56,189,248,.07); }
 .pill.ev-neg { background:rgba(248,113,113,.10); color:#f87171; border-color:rgba(248,113,113,.35); }
 .t-singola { background:rgba(251,191,36,.12); color:#fbbf24; border-color:rgba(251,191,36,.4); }
 .t-raddoppio { background:rgba(56,189,248,.12); color:#38bdf8; border-color:rgba(56,189,248,.4); }
@@ -264,6 +265,7 @@ def giocata_oggi_html(today_iso):
     tr = ""
     for r in rows:
         mot = (r.get("motivo") or "—").replace("<", "&lt;")
+        per = (r.get("perche") or "").replace("<", "&lt;")
         evv = str(r.get("EV%") or "")
         try:
             evc = "ev-pos" if float(evv) > 0 else "ev-neg"
@@ -276,8 +278,9 @@ def giocata_oggi_html(today_iso):
                f"<td data-label='Mercato'>{r.get('mercato')}</td><td data-label='Esito'><b>{r.get('esito')}</b></td>"
                f"<td data-label='p modello'>{r.get('p_modello%')}%</td><td data-label='Quota'>{r.get('quota_best')}</td>"
                f"<td data-label='EV'><span class='pill {evc}'>{r.get('EV%')}%</span></td></tr>"
-               f"<tr class='mrow'><td colspan='8' data-label='Motivo'>{mot}</td></tr>"
-               f"<tr class='mrow'><td colspan='8'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto: {vd}</div></td></tr>")
+               + (f"<tr class='mrow'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+               + f"<tr class='mrow'><td colspan='8' data-label='Motivo'>{mot}</td></tr>"
+               + f"<tr class='mrow'><td colspan='8'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto: {vd}</div></td></tr>")
     return (f"<div class='card' style='border-color:#0ea5e9'><h2>🎯 Giocate — {label}</h2>"
             f"<div class='tablewrap'><table><tr><th>Tipo</th><th>Lega</th><th>Partita</th><th>Mercato</th><th>Esito</th><th>p modello</th><th>Quota best</th><th>EV</th></tr>{tr}</table></div>"
             f"<p class='sub' style='margin:8px 0 0'>Regola EV&gt;0-only: se nessuna giocata ha EV positiva esce la riga ⛔ NESSUNA (stake 0). "
@@ -339,6 +342,7 @@ def pronostici_finestra_html(frows, today_dm):
         except (ValueError, TypeError):
             evc, evs = "mut", "—"
         mot = (r.get("motivo_verbale") or "").replace("<", "&lt;")
+        per = (r.get("perche") or "").replace("<", "&lt;")
         tr += (f"<tr data-day='{day}' data-cat='{c}'><td data-label='Ora' class='tb-r'>{r.get('orario','')}</td>"
                f"<td data-label='Lega' class='sub'>{r.get('lega')}</td>"
                f"<td data-label='Partita'><b>{r.get('partita')}</b></td>"
@@ -346,7 +350,8 @@ def pronostici_finestra_html(frows, today_dm):
                f"<td data-label='O2.5'>{r.get('Over2.5%')}%</td><td data-label='GG'>{r.get('BTTS%')}%</td>"
                f"<td data-label='Quota best'>{r.get('quota_best')}</td>"
                f"<td data-label='EV'><span class='pill {evc}'>{evs}</span></td></tr>"
-               f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8'><details><summary>motivo</summary>{mot}</details></td></tr>")
+               + (f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+               + f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8'><details><summary>motivo dettagliato</summary>{mot}</details></td></tr>")
     n_today = sum(1 for r in frows if (r.get("orario") or "").split(" ")[0] == today_dm)
     js = ("<script>var curDay='" + today_dm + "',curCat='all';"
           "function setDay(b){curDay=b.dataset.day;document.querySelectorAll('#daybtns .btn').forEach(function(x){x.classList.toggle('on',x===b);});applyF();}"
@@ -936,7 +941,8 @@ def build_giocata(g):
         cands.append(dict(partita=r["partita"], data=r["data"], esito=r["esito"], q=q,
                           book=r["bookmaker"], p=p * 100, ev=ev * 100, edge=edge_pp,
                           stake=stake, conf=fc[key].get("conf%", ""), orario=fc[key].get("orario", ""),
-                          motivo=(fc[key].get("motivo_verbale") or fc[key].get("motivo") or "—").replace("<", "&lt;")))
+                          motivo=(fc[key].get("motivo_verbale") or fc[key].get("motivo") or "—").replace("<", "&lt;"),
+                          perche=(fc[key].get("perche") or "").replace("<", "&lt;")))
     if not cands:
         return
     # SINGOLA DEL GIORNO = miglior percentuale di riuscita del modello
@@ -969,7 +975,8 @@ def build_giocata(g):
                 f"<td data-label='Edge'>{c['edge']:+.1f} pp</td>"
                 f"<td data-label='EV'>{c['ev']:+.2f}%</td>"
                 f"<td data-label='Stake 1/4 Kelly'>{c['stake']:.2f}% bankroll</td></tr>"
-                f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{c.get('motivo','—')}</td></tr>")
+                + (f"<tr class='mrow'><td colspan='8' class='perche'>{c.get('perche')}</td></tr>" if c.get('perche') else "")
+                + f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{c.get('motivo','—')}</td></tr>")
 
     if len(double) >= 2:
         q2 = 1.0
@@ -1200,6 +1207,7 @@ def giocata_card_html():
         gtr = ""
         for r in days[d]:
             mot = (r.get("motivo") or "—").replace("<", "&lt;")
+            per = (r.get("perche") or "").replace("<", "&lt;")
             mc = r.get("mercato") or "1X2"
             evv = str(r.get('EV%') or '')
             evc = 'ev-pos' if evv.startswith('+') or (evv and float(evv) > 0) else ('ev-neg' if evv else 'mut')
@@ -1210,8 +1218,9 @@ def giocata_card_html():
                     f"<td data-label='Esito'><b>{r['esito']}</b></td>"
                     f"<td data-label='p modello'>{r['p_modello%']}%</td><td data-label='Quota best'>{r['quota_best']}</td>"
                     f"<td data-label='EV'><span class='pill {evc}'>{r['EV%']}%</span></td></tr>"
-                    f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{mot}</td></tr>"
-                    f"<tr class='mrow'><td colspan='8' data-label='Verdetto'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto dell'analista: {vd}</div></td></tr>")
+                    + (f"<tr class='mrow'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+                    + f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{mot}</td></tr>"
+                    + f"<tr class='mrow'><td colspan='8' data-label='Verdetto'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto dell'analista: {vd}</div></td></tr>")
         parts.append(f"""<div class="card" style="border:1px solid #0ea5e9" id="g{label.replace('/', '')}">
 <h2 class="day">📅 {label} — Singola + Raddoppio del giorno</h2>
 <table><tr><th>Tipo</th><th>Lega</th><th>Partita</th><th>Mercato</th><th>Esito</th><th>p modello</th><th>Quota best</th><th>EV</th></tr>{gtr}</table></div>""")
