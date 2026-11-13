@@ -125,18 +125,19 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
 </style></head><body><div class="wrap"><header class="topbar"><div class="wrap tb"><a class="brand" href="index.html">⚽ <span>Predictor</span></a><div class="tb-r"><a class="backbtn" href="index.html" onclick="if(history.length>1){history.back();return false;}else{location.href='index.html';return false;}">← Indietro</a><button id="themeBtn" class="btn ghost" style="cursor:pointer" title="Cambia tema">☀️</button><a class="btn ghost" href="index.html">⌂ Home</a></div></div></header>
 <div class="card">
   <h1>📖 Metodo &amp; <span class="g">trasparenza</span></h1>
-  <h2>Il modello (v6)</h2>
+  <h2>Il modello (v7)</h2>
   <p class="sub">Ensemble pesato <b>Elo 0.50 + Dixon-Coles 0.30 + mercato 0.20</b> (pesi ri-tunati il 13/11 su 535 match g6-g38).
   Il DC usa <b>xG per partita</b> (HxG/AxG football-data) come gol, con proxy tiri calibrato dove manca.
   <b>Home advantage stimato per lega</b> dai dati (share vittorie casa, convertita in punti Elo, clip 15-110) invece che fisso.
-  <b>Calibrazione isotonic</b> (sklearn) delle probabilità finali, fittata walk-forward sulle ultime 60 partite con stato a -45gg (no leakage):
-  corregge over/under-confidence e rende EV/¼Kelly onesti.
+  <b>Stacking con meta-learner</b>: regressione logistica sui 3 membri (Elo, DC, mercato) fittata walk-forward sulle ultime 60 partite
+  (stato a -45gg, no leakage) — <b>RPS 0.1918</b> vs 0.2008 pesi fissi e 0.1963 del mercato (LOO su 535 match g6-g38).
+  <b>Calibrazione isotonic</b> sopra lo stacking (0.1988 su pesi fissi).
   A queste: <b>motivazione/classifica</b>, <b>congestione calendario</b>, <b>forma pesata per Elo avversario</b>,
   <b>H2H</b>, <b>bias arbitro</b>, <b>assenze</b> con impatto xG (FotMob 45gg + Understat stagione).</p>
   <h2>Validazione walk-forward</h2>
   <p class="sub">Backtest g6-g38 (535 match, train solo su dati precedenti, no leakage).
-  Metriche: <b>RPS, log-loss, Brier, ECE</b>. V6: RPS <b>0.2008</b> grezzo → <b>0.1988 calibrato</b> (isotonic leave-one-giornata-out);
-  v4 era 0.1898 su g8-g10. Il mercato resta il benchmark (~RPS 0.19-0.20): il nostro edge non è "battere il mercato"
+  Metriche: <b>RPS, log-loss, Brier, ECE</b>. V7 stacker: RPS <b>0.1918</b> (LOO 535 match) — meglio del mercato (0.1963);
+  v6: 0.2008 grezzo → 0.1988 calibrato. Il mercato resta il benchmark (~RPS 0.19-0.20): il nostro edge non è "battere il mercato"
   in RPS, ma le <b>quote ADM specifiche</b> + segnali extra (forma, H2H, arbitro, assenze-xG) che il mercato medio non pesa.</p>
   <h2>Fonti dati (dettaglio)</h2>
   <p class="sub">Ogni dato entra nel modello da una fonte pubblica e verificabile; i file locali sono nel workspace (<code>data/</code>).</p>
@@ -182,7 +183,7 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <p class="sub">Le quote mostrate sono sempre <b>best-price da comparatore</b> (non un singolo bookmaker) e il benchmark del mercato è la <b>quota media di chiusura</b> (Avg di football-data).</p>
   <h2>Le nostre regole</h2>
   <p class="sub">✅ tutti i pronostici pubblicati con esito (vinti e persi) · ✅ win% sempre con RPS/ROI ·
-  ✅ probabilità con incertezza, mai "sicuro" · ✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b>, stake solo se <b>EV &gt; +2%</b>, dimensionato <b>¼ Kelly</b> ·
+  ✅ probabilità con incertezza, mai "sicuro" · ✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b>, stake solo se <b>EV &gt; +2%</b>, dimensionato <b>¼ Kelly con margine di incertezza</b> (p − IC 68%) ·
   ✅ 18+/ADM/autoesclusione.it ovunque · ❌ niente multiple/schedine · ❌ niente % in vetrina senza contesto ·
   ❌ niente black-box: il codice è nel workspace.</p>
   <h2>🧮 Le formule (quelle che usiamo davvero)</h2>
@@ -211,6 +212,7 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <tr><td data-label='Versione'>v4</td><td>ensemble Elo+DC180+mercato+xG</td><td>RPS 0.1898 · 53.3% acc. (g8-g10)</td></tr>
   <tr><td data-label='Versione'>v5 (dal 10/11/2026)</td><td>finestra mobile 7gg, Nazionali 🚩, diretta live ESPN, PPA, schedina, bankroll, Telegram</td><td>in validazione continua (archivio+CLV)</td></tr>
   <tr><td data-label='Versione'>v6 (dal 13/11/2026)</td><td>🏟️ HFA stimato per lega · 📊 xG nel DC · 🎯 calibrazione isotonic walk-forward · ⚖️ pesi ri-tunati su 535 match (g6-g38)</td><td>RPS 0.2008 → <b>0.1988 calibrato</b> (LOO); pesi 0.50/0.30/0.20 confermati</td></tr>
+  <tr><td data-label='Versione'>v7 (dal 13/11/2026)</td><td>🧠 <b>stacking meta-learner</b> (logistic sui 3 membri) · 🔗 <b>correlazione raddoppio</b> (rho −0.26 stimato dai dati, EV più onesto) · 🎲 <b>¼ Kelly con incertezza</b> (IC 68% su p) · 📈 <b>forma-xG ultime 5</b> per tutte le leghe</td><td>Stacker RPS <b>0.1918</b> LOO (mercato 0.1963) — primo modello sotto il mercato</td></tr>
   </table></div>
   <h2>Limiti onesti</h2>
   <p class="sub">Tetto ~53-56% acc. 1X2 per modelli a dati gratis. La varianza del calcio è alta: anche il modello

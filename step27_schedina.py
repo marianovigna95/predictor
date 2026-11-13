@@ -28,16 +28,13 @@ NAV = ('<nav><button id="themeBtn" title="tema chiaro/scuro" style="background:n
        '<a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a></nav>')
 
 
-def kelly_quarter(p, o):
-    """¼ Kelly: f*=(p*O-1)/(O-1); stake% = f*/4 (in % del bankroll)."""
-    try:
-        p, o = float(p) / 100.0, float(o)
-        if o <= 1:
-            return 0.0
-        f = (p * o - 1) / (o - 1)
-        return max(0.0, f / 4.0) * 100.0
-    except Exception:
-        return 0.0
+def kelly_quarter(p, o, n_eff=50):
+    """🆕 13/11 ¼ Kelly con incertezza: p_low = p - sqrt(p(1-p)/n_eff) (IC ~68%), poi f*=(p_low*O-1)/(O-1), stake=f*/4."""
+    import math
+    se = math.sqrt(max(p*(1-p), 1e-9) / n_eff)
+    pl = max(0.0, p - se)
+    f = (pl * o - 1.0) / (o - 1.0) if o > 1.0 else 0.0
+    return max(0.0, f) / 4.0
 
 
 def load_day(date_str, min_ev=2.0):

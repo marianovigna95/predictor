@@ -17,7 +17,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import weekly_multi as W
-from weekly_multi import LEAGUES, train_league, predict_match, standings, last_match
+from weekly_multi import LEAGUES, train_league, predict_match, predict_match_full, standings, last_match
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -88,13 +88,17 @@ def main():
         W.W_ELO, W.W_DC, W.W_MKT = we, wd, wm
         rps_1x2, rps_ou, rps_mkt, rps_ou_mkt, n = [], [], [], [], 0
         allP = []
+        allX = []
         for league, md, state, items in cache:
             elo, dc_hist, ad, ahg, aag, draw_base, stand, last, hfa_l = state
             for f, y, yo, odds, oo in items:
-                P, p_over, *_ = predict_match(elo, dc_hist, ad, ahg, aag, draw_base, f["Date"], f["home"], f["away"],
-                                              stand=stand, last=last, odds=odds, hfa=hfa_l)
+                r = predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, f["Date"], f["home"], f["away"],
+                                       stand=stand, last=last, odds=odds, hfa=hfa_l)
+                P, p_over = r[0], r[1]
                 rps_1x2.append(rps3(P, y))
                 allP.append((P, y, (league, md)))
+                pmk = r[11] if r[11] is not None else (r[9] + r[10]) / 2.0
+                allX.append((np.concatenate([r[9], r[10], pmk]), y, (league, md)))
                 rps_ou.append(rps2(p_over, yo))
                 n += 1
                 if odds is not None:
@@ -129,6 +133,24 @@ def main():
         print(f"\n🎯 RPS 1X2 CALIBRATO (isotonic LOO): {sum(rps_cal)/len(rps_cal):.4f}  vs non calibrato (best pesi sotto)  n={len(rps_cal)}")
     except Exception as e:
         print("calibrazione saltata:", e)
+
+    # 🆕 13/11 RPS dello STACKER (logistic sui 3 membri) leave-one-group-out
+    try:
+        from sklearn.linear_model import LogisticRegression
+        groups = sorted({g for _, _, g in allX})
+        rps_st = []
+        for g in groups:
+            tr = [(x, y) for x, y, gg in allX if gg != g]
+            te = [(x, y) for x, y, gg in allX if gg == g]
+            if len(tr) < 80 or not te:
+                continue
+            clf = LogisticRegression(max_iter=2000).fit(_np.array([x for x, _ in tr]), _np.array([y for _, y in tr]))
+            for x, y in te:
+                Q = clf.predict_proba(x.reshape(1, -1))[0]
+                rps_st.append(rps3(Q, y))
+        print(f"\n🧠 RPS 1X2 STACKER (logistic LOO): {sum(rps_st)/len(rps_st):.4f}  n={len(rps_st)}")
+    except Exception as e:
+        print("stacker saltato:", e)
 
     df = pd.DataFrame(rows).sort_values("RPS_1X2")
     out = DATA / "weights_tuning_0611.csv"
