@@ -14,7 +14,7 @@ SITE = ROOT / "site"
 SITE.mkdir(exist_ok=True)
 
 FOOTER = "⚠️ Solo analisi, mai certezze · 18+ · puntare SOLO su ADM · autoesclusione.it · 800 558822"
-NAV = ('<nav><a href="index.html" onclick="if(history.length>1){history.back();return false;}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
+NAV = ('<nav><button id="themeBtn" title="tema chiaro/scuro" style="background:none;border:1px solid var(--line,#22345a);color:inherit;border-radius:8px;padding:3px 8px;cursor:pointer">☀️</button><a href="index.html" onclick="if(history.length>1){history.back();return false;}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
        '<a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a>'
        '<a href="giocata_multi.html">Giocate</a><a href="ppa.html">⚡ PPA</a>'
        '<a href="surebets.html">⚖️ Surebets</a><a href="schedina.html">🧾 Schedina</a>'
@@ -138,6 +138,7 @@ input,select{{background:#0b1220;color:#e2e8f0;border:1px solid #22345a;border-r
 button{{background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:7px 12px;font-size:12.5px;cursor:pointer}}
 button.ghost{{background:#16233d;border:1px solid #22345a}}
 footer{{color:#475569;font-size:11px;text-align:center;padding:14px}}
+[data-theme="light"] body{{filter:invert(1) hue-rotate(180deg)}}
 </style></head><body><div class="wrap">
 <h1>💰 Bankroll personale</h1>
 <p class="sub">Le giocate restano solo nel TUO browser (localStorage) — analysis-only. Verifica esiti automatica via API pubblica ESPN. Stake consigliato: ¼ Kelly, solo EV&gt;+2%.</p>
@@ -169,6 +170,12 @@ footer{{color:#475569;font-size:11px;text-align:center;padding:14px}}
 </div>
 <footer>{FOOTER}</footer>
 <script>{JS}</script>
+<script>
+(function(){{var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){{document.documentElement.setAttribute('data-theme',t);try{{localStorage.setItem('theme',t);}}catch(e){{}}b.textContent=t==='light'?'🌙':'☀️';}}
+var t='dark';try{{t=localStorage.getItem('theme')||'dark';}}catch(e){{}}
+set(t);b.onclick=function(){{set(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');}};}})();
+</script>
 </body></html>"""
 
 (SITE / "bankroll.html").write_text(PAGE, encoding="utf-8")

@@ -20,7 +20,7 @@ SITE = ROOT / "site"
 SITE.mkdir(exist_ok=True)
 
 FOOTER = "⚠️ Solo analisi, mai certezze · 18+ · puntare SOLO su ADM · autoesclusione.it · 800 558822"
-NAV = ('<nav><a href="index.html" onclick="if(history.length>1){history.back();return false;}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
+NAV = ('<nav><button id="themeBtn" title="tema chiaro/scuro" style="background:none;border:1px solid var(--line,#22345a);color:inherit;border-radius:8px;padding:3px 8px;cursor:pointer">☀️</button><a href="index.html" onclick="if(history.length>1){history.back();return false;}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a>'
        '<a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a>'
        '<a href="giocata_multi.html">Giocate</a><a href="ppa.html">⚡ PPA</a>'
        '<a href="surebets.html">⚖️ Surebets</a><a class="on" href="schedina.html">🧾 Schedina</a>'
@@ -102,7 +102,8 @@ def page_html(date_str, rows):
     body = "".join(cards) if cards else '<p class="empty">Oggi nessuna schedina: nessuna giocata con EV &gt; +2% (regola del sito: stake 0).</p>'
     return f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>🧾 Schedina {date_str} — Predictor</title><style>{CSS}</style></head><body>
+<title>🧾 Schedina {date_str} — Predictor</title><style>{CSS}[data-theme="light"] body{{filter:invert(1) hue-rotate(180deg)}}
+</style></head><body>
 <div class="wrap">
 <h1>🧾 Schedina del giorno — {date_str}</h1>
 <p class="sub">Max 1 SINGOLA + 1 RADDOPPIO · stake solo se EV &gt; +2% · ¼ Kelly · puntare SOLO su ADM · fonte: modello walk-forward (nessuna certezza)</p>
@@ -118,6 +119,12 @@ document.getElementById('share').addEventListener('click',function(e){{e.prevent
 </script>
 </div>
 <footer>{FOOTER}</footer>
+<script>
+(function(){{var b=document.getElementById('themeBtn');if(!b)return;
+function set(t){{document.documentElement.setAttribute('data-theme',t);try{{localStorage.setItem('theme',t);}}catch(e){{}}b.textContent=t==='light'?'🌙':'☀️';}}
+var t='dark';try{{t=localStorage.getItem('theme')||'dark';}}catch(e){{}}
+set(t);b.onclick=function(){{set(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');}};}})();
+</script>
 </body></html>"""
 
 
