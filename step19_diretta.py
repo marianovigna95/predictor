@@ -251,6 +251,7 @@ LIVE_JS = """<script>
   var D=(q.get('d')||TODAY).replace(/-/g,'');
   var list=document.getElementById('lg-list');
   var sub=document.getElementById('sub')||document.querySelector('header .sub');
+  if(!document.getElementById('favsug')){var _s=document.createElement('div');_s.id='favsug';_s.style.display='none';_s.style.marginTop='4px';var _h=document.querySelector('header');if(_h)_h.appendChild(_s);}
   var openDet={};
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
   function cd(e){
@@ -304,6 +305,10 @@ LIVE_JS = """<script>
       return true;
     });
     var liveN=evs.filter(function(e){return e.live;}).length;
+  // 🆕 13/11 suggerimento filtro ⭐ se ci sono preferite e il filtro non è attivo
+  var favN0=evs.filter(function(e){return isFav(e.h)||isFav(e.a);}).length;
+  var sug=document.getElementById('favsug');
+  if(sug){sug.style.display=(favN0>0&&!FILT.fav)?'block':'none';sug.innerHTML='<a href="#" id="favsug-a" style="color:#fbbf24;font-size:12px">⭐ hai <b>'+favN0+'</b> partite preferite — filtra solo ⭐</a>';}
     var evN=evs.filter(function(e){return e.ev&&e.ev.ev>0;}).length;
     var favN=evs.filter(function(e){return isFav(e.h)||isFav(e.a);}).length;
     fbar.querySelectorAll('button[data-f]').forEach(function(b){
@@ -607,6 +612,8 @@ function matchQ(q,nn){var nq=norm(q);if(!nq)return false;if(nn.indexOf(nq)>=0||n
     var panes=t.parentElement.parentElement.querySelectorAll('.tpane');
     panes.forEach(function(p){p.style.display=(p.getAttribute('data-p')===t.getAttribute('data-t'))?'':'none';});
   });
+  // 🆕 13/11 click sul suggerimento ⭐ -> attiva filtro fav
+  document.addEventListener('click',function(e){if(e.target&&e.target.id==='favsug-a'){e.preventDefault();var b=document.querySelector('button[data-f=fav]');if(b)b.click();}});
   // ---- barra filtri ----
   var fbar=document.getElementById('fbar');
   if(fbar){

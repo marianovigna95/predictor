@@ -24,7 +24,8 @@ TABS = [("index.html", "⌂", "HOME", "home"),
         ("ppa.html", "⚡", "PPA", "ppa"),
         ("surebets.html", "⚖️", "SUREBETS", "surebets"),
         ("archivio.html", "🗂", "ARCHIVIO", "archivio"),
-        ("benchmark.html", "🏆", "BENCHMARK", "benchmark")]
+        ("benchmark.html", "🏆", "BENCHMARK", "benchmark"),
+        ("guida.html", "📖", "GUIDA", "guida")]
 
 
 THEME_JS = """
@@ -413,6 +414,51 @@ def build_index():
         f.write(wrap_tables(html))
 
 
+def build_guida():
+    """📖 GUIDA/FAQ: onboarding — cosa sono EV/RPS/CLV/Kelly, come leggere le pagine, regole e limiti."""
+    body = """<div class="card">
+  <h2>👋 Benvenuto — come si usa questo sito</h2>
+  <p class="sub">Questo sito pubblica <b>analisi statistiche</b> su partite di calcio: nulla è una certezza, nulla è un consiglio di gioco.
+  Si gioca (se si decide di farlo) <b>solo su bookmaker ADM autorizzati, 18+</b>. 18+ · ADM · autoesclusione.it · 800 558822.</p>
+</div>
+<div class="card">
+  <h2>🧭 Le pagine</h2>
+  <table>
+  <tr><th>Pagina</th><th>Cosa trovi</th><th>Quando usarla</th></tr>
+  <tr><td>⌂ <b>Home</b></td><td>finestra mobile 7 giorni: partite, quote best-price, pronostici EV&gt;0</td><td>panoramica del giorno</td></tr>
+  <tr><td>🔴 <b>Diretta</b></td><td>live ogni 30s: score, quote live, xG, timeline, formazioni, proiezione 1X2 live ed EV live (min≥30)</td><td>durante le partite</td></tr>
+  <tr><td>🎯 <b>Giocate</b></td><td>per ogni giorno: Singola + Raddoppio (quota≈2.00) solo se EV&gt;0, con p, quota, EV%, stake ¼ Kelly</td><td>la schedina del giorno</td></tr>
+  <tr><td>⚡ <b>PPA</b></td><td>pronostici con p modello ≥ 60%, per giorno (clicca le date in cima), con esito ✅/❌ quando verificati</td><td>idee ad alta probabilità</td></tr>
+  <tr><td>🧾 <b>Schedina</b></td><td>la schedina di oggi (stampabile/PDF)</td><td>riepilogo rapido</td></tr>
+  <tr><td>💰 <b>Bankroll</b></td><td>traccia le tue puntate nel browser: ROI, winrate, drawdown, equity curve, confronto flat-stake vs ¼ Kelly, export CSV</td><td>se tieni il conto</td></tr>
+  <tr><td>🗂 <b>Archivio</b></td><td>scoreboard pubblico per giornata (acc%, RPS modello vs mercato), verifica giocate con CLV, export JSON/CSV</td><td>trasparenza: vinti E persi</td></tr>
+  <tr><td>🏆 <b>Benchmark</b></td><td>RPS del modello vs mercato per lega (walk-forward), sempre aggiornato</td><td>quanto vale davvero il modello</td></tr>
+  <tr><td>🔎 <b>Squadra</b></td><td>cerca una squadra: calendario 8 giorni, EV, dettaglio</td><td>follow di una squadra</td></tr>
+  <tr><td>📖 <b>Metodo / Glossario</b></td><td>regole, formule (EV, Kelly, CLV, RPS), definizioni</td><td>capire il metodo</td></tr>
+  </table>
+</div>
+<div class="card">
+  <h2>🧮 Le 4 cose da sapere</h2>
+  <table>
+  <tr><th>Concetto</th><th>Significato</th></tr>
+  <tr><td><b>EV (valore atteso)</b></td><td>EV = p·quota − 1. Se &gt; 0 il prezzo "vale" la nostra probabilità. Si pubblica/gioca solo EV&gt;0; stake solo se EV&gt;+2%</td></tr>
+  <tr><td><b>RPS</b></td><td>metrica di errore delle probabilità (0=perfetto). benchmark.html confronta modello vs mercato</td></tr>
+  <tr><td><b>CLV</b></td><td>quota giocata vs quota di chiusura del mercato: CLV&gt;0 = battuto il mercato a fine giornata</td></tr>
+  <tr><td><b>¼ Kelly</b></td><td>stake =¼ della Kelly frazionaria, con margine di incertezza su p: mai puntare più di quanto si può perdere</td></tr>
+  </table>
+</div>
+<div class="card">
+  <h2>⚠️ Regole e limiti (leggere prima)</h2>
+  <p class="sub">✅ max <b>1 SINGOLA + 1 RADDOPPIO al giorno</b> · ✅ stake solo EV&gt;+2% · ✅ pubblichiamo vinti e persi ·
+  ❌ niente multiple/schedine lunghe · ❌ niente "sicuri" · ❌ niente siti tips/affiliate (🚩) · ❌ niente book non-ADM.
+  Tetto realistico ~53-56% acc. 1X2: la varianza è alta, anche il modello migliore perde journées intere.
+  Se il gioco rischia di sfuggire: <b>autoesclusione.it</b> · <b>800 558822</b> (gratis).</p>
+</div>"""
+    html = page("Guida", '📖 <span class="g">Guida</span>', "Come si usa il sito: pagine, EV/RPS/CLV/Kelly, regole e limiti. Onboarding in 2 minuti.", body, active="guida")
+    with open(os.path.join(SITE, "guida.html"), "w", encoding="utf-8") as f:
+        f.write(wrap_tables(html))
+
+
 def build_benchmark():
     """🏆 BENCHMARK: RPS modello vs mercato per lega (walk-forward g6-g10, da data/validation_multi.csv)."""
     import json
@@ -460,6 +506,30 @@ def build_benchmark():
             w.writerow(["verifica", r.get("data",""), r.get("tipo",""), r.get("lega",""), r.get("partita",""),
                         r.get("mercato",""), r.get("esito",""), r.get("p_modello%",""), r.get("quota_best",""),
                         "", "", r.get("risultato",""), r.get("vinto","")])
+    # 🆕 13/11 ROI reale della schedina storica (da verifica_*.csv): Singola/Raddoppio archiviati, flat 1u
+    roi_rows = ""
+    agg = {}
+    for r in ver:
+        t = r.get("tipo", "")
+        if t not in ("SINGOLA", "RADDOPPIO"):
+            continue
+        q = float(r.get("quota_best") or 0); v = str(r.get("vinto") or "")
+        a = agg.setdefault(t, {"n": 0, "win": 0, "roi": 0.0})
+        if not q or q <= 1:
+            continue
+        a["n"] += 1
+        win = "✅" in v
+        a["win"] += int(win)
+        a["roi"] += (q - 1) if win else -1.0
+    if agg:
+        for t, a in agg.items():
+            if a["n"]:
+                roi_rows += (f"<tr><td data-label='Tipo'><b>{t}</b></td><td data-label='Giocate'>{a['n']}</td>"
+                             f"<td data-label='Win%'>{100*a['win']/a['n']:.1f}%</td>"
+                             f"<td data-label='ROI (flat 1u)' class='{'ev-pos' if a['roi']>=0 else 'ev-neg'}>{100*a['roi']/a['n']:+.1f}%</td></tr>")
+    roi_card = ('<div class="card"><h2>🧾 ROI reale della schedina (archiviata)</h2>'
+                '<p class="sub">Singola+Raddoppio dei giorni passati, verificati con esito reale, a flat 1 unità: win% e ROI. Campione piccolo → tendance, non garanties.</p>'
+                f"<table><tr><th>Tipo</th><th>Giocate</th><th>Win%</th><th>ROI (flat 1u)</th></tr>{roi_rows or '<tr><td colspan=4>ancora nessuna giocata verificata</td></tr>'}</table></div>") if roi_rows else ""
     body = f"""<div class="card">
   <h2>🏆 Benchmark: modello vs mercato (walk-forward)</h2>
   <p class="sub">Validazione g6-g10 2026/27: ogni partita prevista usando SOLO dati precedenti (no leakage).
@@ -469,6 +539,7 @@ def build_benchmark():
   <p class="sub">🧠 Stacker v7 (LOO su 535 match g6-g38): RPS 1X2 <b>0.1918</b> vs mercato <b>0.1963</b> — sotto il mercato in RPS grezzo,
   oltre ai segnali extra (forma-xG, H2H, arbitro, meteo, assenze) che la media mercato non pesa.</p>
 </div>
+{roi_card}
 <div class="card">
   <h2>📂 Storico pubblico scaricabile (dati aperti)</h2>
   <p class="sub">Come il principio di trasparenza di gambeta/scoregpt: tutto lo storico delle nostre giocate e verifiche è esportabile e verificabile esternamente.</p>
@@ -1403,6 +1474,7 @@ def main():
     build_giocata_multi()
     build_archivio()
     build_benchmark()
+    build_guida()
     build_report_weekend()
     nq = 0
     for bp in bestprice_files():
