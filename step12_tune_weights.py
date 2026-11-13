@@ -93,6 +93,7 @@ def main():
         allP = []
         allX = []
         allF = []
+        allOU = []
         for league, md, state, items in cache:
             elo, dc_hist, ad, ahg, aag, draw_base, stand, last, hfa_l = state
             for f, y, yo, odds, oo in items:
@@ -107,6 +108,8 @@ def main():
                 allX.append((np.concatenate([r[9], r[10], pmk]), y, (league, md)))
                 allF.append((r[12], y, (league, md)))
                 rps_ou.append(rps2(p_over, yo))
+                pm_ou = (1.0/float(oo)) if (oo is not None and pd.notna(oo) and float(oo) > 1.05) else p_over
+                allOU.append((p_over, pm_ou, yo, (league, md)))
                 n += 1
                 if odds is not None:
                     inv = 1 / np.array(odds, float)
@@ -186,6 +189,24 @@ def main():
         print(f"🧠 RPS STACKER 4 membri (LOO): {sum(rps_st4)/len(rps_st4):.4f}  n={len(rps_st4)}")
     except Exception as e:
         print("gbm saltato:", e)
+
+    # 🆕 13/11 RPS O/U con stacker binario LOO (DC + mercato)
+    try:
+        from sklearn.linear_model import LogisticRegression as _LR2
+        groups = sorted({g for *_, g in allOU})
+        rps_ou_st = []
+        for g in groups:
+            tr = [(a, b, y) for a, b, y, gg in allOU if gg != g]
+            te = [(a, b, y) for a, b, y, gg in allOU if gg == g]
+            if len(tr) < 80 or not te:
+                continue
+            cl = _LR2(max_iter=1000).fit(_np.array([[a, b] for a, b, _ in tr]), _np.array([y for _, _, y in tr]))
+            for a, b, y in te:
+                p = cl.predict_proba(_np.array([[a, b]]))[0][1]
+                rps_ou_st.append(rps2(p, y))
+        print(f"\n📊 RPS O2.5 STACKER binario (LOO): {sum(rps_ou_st)/len(rps_ou_st):.4f}  n={len(rps_ou_st)}")
+    except Exception as e:
+        print("ou stacker saltato:", e)
 
     df = pd.DataFrame(rows).sort_values("RPS_1X2")
     out = DATA / "weights_tuning_0611.csv"

@@ -67,6 +67,14 @@ CUPS = {"Champions League", "Europa League", "Conference League"}
 WX = {}       # (team, "YYYY-MM-DD") -> factor (<1 = meteo avverso, meno gol)
 CITY = {}     # team -> city
 DERBY = set() # frozenset({home, away}) con distanza < 100 km
+COORD = {}    # team -> (lat, lon)
+
+def travel_km(home, away):
+    """🆕 13/11 distanza trasferta (km) dalle coordinate; 0 se mancante."""
+    a, b = COORD.get(home), COORD.get(away)
+    if not a or not b:
+        return 0.0
+    return haversine_km(a[0], a[1], b[0], b[1])
 
 def haversine_km(lat1, lon1, lat2, lon2):
     import math
@@ -84,6 +92,7 @@ def load_weather():
         for _, r in cd.iterrows():
             CITY[r["team"]] = r["city"]
         coord = {(r["team"]): (r["lat"], r["lon"]) for _, r in cd.iterrows() if pd.notna(r.get("lat"))}
+        COORD.update(coord)
         for fn in ("weather_hist.csv", "weather_fore.csv"):
             fp = DATA / fn
             if not fp.exists():
@@ -195,7 +204,7 @@ def fit_calibrator(m_all, n=60, gap=45):
         elo, dc_hist, ad, ahg, aag, draw_base, hfa = train_league(tr)
         stand = standings(tr); last = last_match(tr, mx)
         tail = pa[pa["Date"] >= cut].tail(n)
-        Ps, ys, Xs, Fs = [], [], [], []
+        Ps, ys, Xs, Fs, r_po, r_pg = [], [], [], [], [], []
         for _, m in tail.iterrows():
             y = 0 if m["FTHG"] > m["FTAG"] else (2 if m["FTHG"] < m["FTAG"] else 1)
             odds = (m["AvgCH"], m["AvgCD"], m["AvgCA"]) if "AvgCH" in m.index and pd.notna(m.get("AvgCH")) else None
@@ -204,9 +213,32 @@ def fit_calibrator(m_all, n=60, gap=45):
                                    wx=WX.get((m["HomeTeam"], m["Date"].date().isoformat()), 1.0),
                                    derby=frozenset((m["HomeTeam"], m["AwayTeam"])) in DERBY)
             P = r[0]; Ps.append(P); ys.append(y)
+            r_po.append(float(r[1])); r_pg.append(float(r[2]))
             pmk = r[11] if r[11] is not None else (r[9] + r[10]) / 2.0
             Xs.append(np.concatenate([r[9], r[10], pmk]))
             Fs.append(r[12])
+        # 🆕 13/11 stacker binari per O/U 2.5 e GG/NG (membri: DC + mercato)
+        Xou, You, Xgg, Ygg = [], [], [], []
+        for i, (_, m) in enumerate(tail.iterrows()):
+            yo = 1 if (m["FTHG"] + m["FTAG"]) > 2.5 else 0
+            yg = 1 if (m["FTHG"] > 0 and m["FTAG"] > 0) else 0
+            pm_ou = None
+            if "AvgC>2.5" in m.index and pd.notna(m.get("AvgC>2.5")) and m["AvgC>2.5"] > 1.05:
+                pm_ou = 1.0 / float(m["AvgC>2.5"])
+            pm_gg = None
+            if "AvgCBTTS" in m.index and pd.notna(m.get("AvgCBTTS")) and m["AvgCBTTS"] > 1.05:
+                pm_gg = 1.0 / float(m["AvgCBTTS"])
+            po_dc = float(r_po[i]) if False else None
+            Xou.append([r_po[i], pm_ou if pm_ou is not None else r_po[i]]); You.append(yo)
+            Xgg.append([r_pg[i], pm_gg if pm_gg is not None else r_pg[i]]); Ygg.append(yg)
+        st_ou = st_gg = None
+        try:
+            from sklearn.linear_model import LogisticRegression as _LR
+            if len(Xou) >= 80:
+                st_ou = _LR(max_iter=1000).fit(np.array(Xou), np.array(You))
+                st_gg = _LR(max_iter=1000).fit(np.array(Xgg), np.array(Ygg))
+        except Exception:
+            pass
         c = Calib(); c.fit(Ps, ys)
         # 🆕 13/11 4° membro: GBM su feature tabellari (elo diff, lambda diff, log-ratio)
         gbm = None
@@ -227,9 +259,9 @@ def fit_calibrator(m_all, n=60, gap=45):
             else:
                 Xs2.append(np.concatenate([x, pg]))
         st = Stacker(); st.fit(Xs2, ys)
-        return (c if c.irs else None), (st if st.clf is not None else None), gbm
+        return (c if c.irs else None), (st if st.clf is not None else None), gbm, st_ou, st_gg
     except Exception:
-        return None, None, None
+        return None, None, None, None, None
 
 
 def train_league(played: pd.DataFrame, elo0=None):
@@ -334,7 +366,7 @@ def last_match(played, before):
 def predict_match(*a, **k):
     return predict_match_full(*a, **k)[:9]
 
-def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, stand=None, last=None, odds=None, h2h=None, ref_factor=1.0, out_counts=None, out_xg=None, form=None, hfa=ELO_HFA, xgf=None, wx=1.0, derby=False):
+def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, stand=None, last=None, odds=None, h2h=None, ref_factor=1.0, out_counts=None, out_xg=None, form=None, hfa=ELO_HFA, xgf=None, wx=1.0, derby=False, travel=0.0):
     w = dc_weights((date - pd.DatetimeIndex(ad)).total_seconds() / 86400.0, DC_HALF_LIFE)
     mu_h = (w * np.array(ahg)).sum() / w.sum()
     mu_a = (w * np.array(aag)).sum() / w.sum()
@@ -386,6 +418,8 @@ def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, 
         la -= out_xg.get(away, 0.0)
     if wx != 1.0:  # 🆕 13/11 meteo avverso: scala i gol attesi di entrambe
         lh *= wx; la *= wx
+    if travel >= 1000:  # 🆕 13/11 trasferta lunga (>1000 km): fatigue -> meno gol in trasferta
+        la *= 0.97
     M = score_matrix(lh, la)
     pH, pD, pA, p_over, p_btts = matrix_to_markets(M)
     P_dc = np.array([pH, pD, pA])
@@ -622,10 +656,10 @@ def main():
         played = matches[(matches["League"] == league) & (matches["Season"].astype(str).str.contains("2026/2027"))].sort_values("Date")  # 🛠 08/11 solo stagione corrente per standings/Elo
         elo, dc_hist, ad, ahg, aag, draw_base, hfa_l = train_league(played)
         _use_gbm = os.environ.get("USE_GBM", "0") == "1"  # 🆕 13/11 GBM validato: non migliora (0.2915 vs 0.1918) → default OFF
-        cal, st, gbm = fit_calibrator(matches[matches["League"] == league])  # isotonic + stacker (+GBM off)
+        cal, st, gbm, st_ou, st_gg = fit_calibrator(matches[matches["League"] == league])  # isotonic + stacker + O/U + GG
         if not _use_gbm:
             gbm = None
-        domestic[league] = (elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st, gbm)
+        domestic[league] = (elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st, gbm, st_ou, st_gg)
     seed = {}
     for le, (elo, *_rest) in domestic.items():
         for t, e in elo.items():
@@ -638,6 +672,16 @@ def main():
     fxall["Date"] = pd.to_datetime(fxall["date"])
 
     load_weather()  # 🆕 13/11 meteo + derby
+    # 🆕 13/11 ensemble temporale: media con la previsione precedente (0.65新/0.35旧) -> meno varianza
+    PREV = {}
+    try:
+        pf = DATA / "forecast_multi.csv"
+        if pf.exists():
+            pv = pd.read_csv(pf)
+            for _, r in pv.iterrows():
+                PREV[(r["lega"], r["partita"], r["orario"])] = np.array([float(r["p1%"]), float(r["pX%"]), float(r["p2%"])]) / 100.0
+    except Exception:
+        pass
     rows = []
     for league in LEAGUES:
         sub = window[window["league"] == league]
@@ -658,10 +702,10 @@ def main():
                     pr["HxG"], pr["AxG"] = xgf[kk]
             played = pd.DataFrame(prows)
             elo, dc_hist, ad, ahg, aag, draw_base, hfa_l = train_league(played, elo0=seed)
-            cal, st, gbm = None, None, None
+            cal, st, gbm, st_ou, st_gg = None, None, None, None, None
             print(f"  🏆 {league}: {len(played)} match storici (Elo seminato da leghe nazionali)")
         else:
-            elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st, gbm = domestic[league]
+            elo, dc_hist, ad, ahg, aag, draw_base, hfa_l, cal, st, gbm, st_ou, st_gg = domestic[league]
             played = matches[(matches["League"] == league) & (matches["Season"].astype(str).str.contains("2026/2027"))].sort_values("Date")  # 🛠 08/11 solo stagione corrente per standings/Elo
         if league == "Serie A":
             for t, pen in absences.items():
@@ -728,7 +772,8 @@ def main():
                 form={f["home"]: form.get(f["home"], 0.0), f["away"]: form.get(f["away"], 0.0)}, hfa=hfa_l,
                 xgf={f["home"]: xgf_map.get(f["home"], 0.0), f["away"]: xgf_map.get(f["away"], 0.0)},
                 wx=WX.get((f["home"], f["Date"].date().isoformat()), 1.0),
-                derby=frozenset((f["home"], f["away"])) in DERBY)
+                derby=frozenset((f["home"], f["away"])) in DERBY,
+                travel=travel_km(f["home"], f["away"]))
             P, p_over, p_btts, top, top_p, rh, ra, lh, la = r[:9]
             if st is not None:  # 🆕 13/11 stacking: meta-learner su membri + GBM (4° membro)
                 pg = gbm.predict_proba(r[12].reshape(1, -1))[0] if gbm is not None else None
@@ -737,6 +782,17 @@ def main():
                     P = Ps
             if cal is not None:  # 🆕 13/11 calibrazione isotonic sulle P finali
                 P = cal.apply(P)
+            _pv = PREV.get((league, f"{f['home']} - {f['away']}", f["Date"].strftime("%d/%m %H:%M")))
+            if _pv is not None:  # 🆕 13/11 ensemble temporale con run precedente
+                P = 0.65 * P + 0.35 * _pv
+                P = P / P.sum()
+            # 🆕 13/11 stacker binari O/U 2.5 e GG/NG (membri: DC + mercato)
+            pm_ou = (1.0 / float(o_ex["O2.5"]) if o_ex.get("O2.5") not in ("", None) and float(o_ex.get("O2.5") or 0) > 1.05 else None)
+            if st_ou is not None:
+                p_over = float(st_ou.predict_proba(np.array([[p_over, pm_ou if pm_ou is not None else p_over]]))[0][1])
+            pm_gg = (1.0 / float(o_ex["GG"]) if o_ex.get("GG") not in ("", None) and float(o_ex.get("GG") or 0) > 1.05 else None)
+            if st_gg is not None:
+                p_btts = float(st_gg.predict_proba(np.array([[p_btts, pm_gg if pm_gg is not None else p_btts]]))[0][1])
             pick = int(P.argmax())
             row = {
                 "lega": league, "giornata": int(f["matchday"]),
