@@ -309,7 +309,7 @@ td,th{{padding:7px 9px;border-bottom:1px solid #1e293b;text-align:left}}th{{colo
 <div class="warn">🚩 <b>In Italia si può scommettere SOLO su opérateurs con licenza ADM.</b> Le surebet su book esteri/non-ADM sono <b>illegali</b> per i residenti IT e senza alcuna tutela. Questa pagina è <b>solo analisi</b>: non pratichiamo arbitraggio (il nostro metodo è EV del modello + ¼ Kelly). Rischi reali: slippage quote, gubbing (limitazione conto), errori operativi. 18+ · ADM · autoesclusione.it · 800 558822</div>
 <h2>🚩 Book NON-ADM citati su CentroQuote /sure-bets/ (solo informativi — NON giocabili legalmente in Italia)</h2>
 <table><tr><th>Bookmaker</th><th>Classificazione</th></tr>{na}</table>
-<p class="sub">Profitti indicati da CentroQuote: {', '.join(profits) if profits else 'n/d'} — fonte centroquote.it/sure-bets (429 allo scraping diretto, pagina con ads a book USA)</p>
+<p class="sub">Profitti indicati dalla fonte: {', '.join(profits) if profits else 'n/d'} — fonte pubblica di comparazione (accesso diretto limitato: 429; pagina con ads a book non-ADM)</p>
 <h2>⚪ Surebet best-price dai nostri odds (wincomparator, {date_str}) — book misti, da verificare su ADM</h2>
 <div class="note">Overround &lt; 100% usando le MIGLIORI quote di mercato (multi-book). Per giocarla legalmente in Italia andrebbe replicata SOLO su book ADM: le nostre dati non separano il book, quindi da verificare manualmente sulle schedine ADM.</div>
 <table><tr><th>Ora</th><th>Lega</th><th>Partita</th><th>Mercato</th><th>Margine</th><th>Quote best</th></tr>{bp}</table>

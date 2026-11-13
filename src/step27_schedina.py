@@ -144,7 +144,8 @@ def make_pdf(date_str, rows, path):
         pdf.multi_cell(0, 7, "Oggi nessuna schedina: nessuna giocata con EV > +2% (stake 0).")
     for r in rows:
         p, q = float(r.get("p_modello%", 0) or 0) / 100.0, float(r.get("quota_best", 0) or 0)
-        k = kelly_quarter(p, q) if q > 1 else 0.0
+        _ev = float(r.get("ev", 0) or 0)
+        k = (kelly_quarter(p, q) if q > 1 else 0.0) if _ev > 2.0 else 0.0   # 🆕 13/11-b solo EV>+2%
         _st = r.get("stake%") if hasattr(r, "get") else None
         if _st not in (None, "", "nan") and str(_st).replace(".","",1).isdigit():
             k = float(_st) / 100.0  # 🆕 13/11 stake con incertezza (Brier) da weekly_multi

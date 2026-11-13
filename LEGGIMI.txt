@@ -1,0 +1,28 @@
+UPLOAD CORRETTO — Audit 360° 13/11/2026 (sera).  SOSTITUISCE upload-audit-13nov.zip
+==============================================================================
+⚠️ IL PRECEDENTE ZIP ERA SBAGLIATO: aveva i .py nella ROOT. In questo repo i .py
+   devono stare in src/, altrimenti il workflow daily.yml li sposta lui sopra src/
+   e crea doppioni nella root (era già successo: make_site.py e motivi.py cancellati
+   dalla root dal bot il 13/11 alle 19:41).
+
+CARICA COSÌ (GitHub web, un trascinamento):
+ 1. Apri github.com/marianovigna95/predictor/upload/main
+ 2. TRASCINA TUTTO IL CONTENUTO di questo zip (NON lo zip stesso):
+      src/            -> i 10 .py modificati/nuovi
+      .github/workflows/daily.yml
+      data/           -> giocata_multi.csv, forecast_multi.csv, bench_pinnacle.csv
+      *.html          -> le pagine aggiornate
+      *.md            -> i due report
+ 3. Commit.
+
+DA CANCELLARE A MANO (dalla root del repo, se ci sono):
+  step19_diretta.py, step21_surebets.py, step23_ppa.py, step27_schedina.py,
+  step28_bankroll.py, weekly_multi.py, step30_meta.py, step29_bench_pinnacle.py,
+  make_site.py, motivi.py   <-- copie vecchie/sbagliate: la fonte è src/
+  upload-audit-13nov.zip    <-- non serve
+
+NOVITÀ DI QUESTO UPLOAD:
+ - daily.yml: aggiunti step29_bench_pinnacle.py e step30_meta.py (ULTIMO passo:
+   meta description + OpenGraph + rimozione nomi fonti). Senza questo, i fix non
+   sarebbero mai pubblicati dalle run automatiche.
+ - daily.yml: .gitignore generato per non versionare i .py duplicati in root.

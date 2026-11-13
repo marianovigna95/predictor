@@ -144,15 +144,25 @@ try:
     class Calib:
         def __init__(self):
             self.irs = None
-            self.se = None
+            self.se = None          # ⚠️ DEPRECATO: era il Brier, NON un errore standard (bug 13/11-b)
+            self.brier_k = None     # Brier per classe: solo diagnostica
+            self.n = 0              # partite usate per fittare la calibrazione
         def fit(self, Ps, ys, min_n=60):
             Ps = np.asarray(Ps, float); ys = np.asarray(ys, int)
             if len(Ps) < min_n:
                 return
             self.irs = [_IR(out_of_bounds="clip", y_min=0.02, y_max=0.98).fit(Ps[:, k], (ys == k).astype(float)) for k in range(3)]
-            # 🆕 13/11 incertezza di p via Brier del tail (se_k = sqrt(MSE_k)) → Kelly/EV più onesti
             Y = np.eye(3)[ys]
-            self.se = np.sqrt(np.mean((Ps - Y) ** 2, axis=0))
+            self.brier_k = np.sqrt(np.mean((Ps - Y) ** 2, axis=0))  # 🆕 13/11-b diagnostica, mai usato come se
+            self.n = int(len(Ps))
+        def se_for(self, p, n_eff=None):
+            """🆕 13/11-b errore standard della probabilità p (≈ IC 68%): binomiale con n_eff = coda di
+            calibrazione (clamp 30…250). Prima qui si usava il Brier (0.2-0.5) come se: margine enorme,
+            stake azzerato sempre. Ora il margine è 2-7 punti percentuali, come deve essere."""
+            n = int(n_eff or self.n or 50)
+            n = max(30, min(n, 250))
+            se = float(np.sqrt(max(p * (1 - p), 1e-9) / n))
+            return float(min(0.10, max(0.02, se)))
         def apply(self, P):
             if not self.irs:
                 return P
@@ -787,12 +797,25 @@ def main():
                 P = 0.65 * P + 0.35 * _pv
                 P = P / P.sum()
             # 🆕 13/11 stacker binari O/U 2.5 e GG/NG (membri: DC + mercato)
-            pm_ou = (1.0 / float(o_ex["O2.5"]) if o_ex.get("O2.5") not in ("", None) and float(o_ex.get("O2.5") or 0) > 1.05 else None)
+            # 🆕 13/11-b niente NaN nelle feature dello stacker: se la quota mercato manca o è NaN,
+            #    si passa il modello DC come fallback (prima NaN → stacker in errore o p_ou/p_gg NaN → stake 0)
+            def _num(x):
+                try:
+                    v = float(x)
+                    return v if np.isfinite(v) and v > 1.05 else None
+                except Exception:
+                    return None
+            _qou, _qgg = _num(o_ex.get("O2.5")), _num(o_ex.get("GG"))
+            pm_ou = (1.0 / _qou) if _qou else None
+            p_over = float(p_over) if np.isfinite(float(p_over)) else 0.5
             if st_ou is not None:
-                p_over = float(st_ou.predict_proba(np.array([[p_over, pm_ou if pm_ou is not None else p_over]]))[0][1])
-            pm_gg = (1.0 / float(o_ex["GG"]) if o_ex.get("GG") not in ("", None) and float(o_ex.get("GG") or 0) > 1.05 else None)
+                _x1 = pm_ou if pm_ou is not None else p_over
+                p_over = float(st_ou.predict_proba(np.array([[p_over, _x1]]))[0][1])
+            pm_gg = (1.0 / _qgg) if _qgg else None
+            p_btts = float(p_btts) if np.isfinite(float(p_btts)) else 0.5
             if st_gg is not None:
-                p_btts = float(st_gg.predict_proba(np.array([[p_btts, pm_gg if pm_gg is not None else p_btts]]))[0][1])
+                _x2 = pm_gg if pm_gg is not None else p_btts
+                p_btts = float(st_gg.predict_proba(np.array([[p_btts, _x2]]))[0][1])
             pick = int(P.argmax())
             row = {
                 "lega": league, "giornata": int(f["matchday"]),
@@ -893,14 +916,22 @@ def main():
                              "perche": p_leg_breve})
         return pool
 
-    # 🆕 13/11 se (incertezza p) dalla calibrazione Brier per lega
+    # 🆕 13/11-b incertezza di p: oggetto Calib per lega → Calib.se_for(p)
     CALSE = {}
     try:
         for le, tup in domestic.items():
             c = tup[7]
-            CALSE[le] = float(np.mean(c.se)) if (c is not None and getattr(c, "se", None) is not None) else None
+            CALSE[le] = c if (c is not None and getattr(c, "irs", None)) else None
     except Exception:
         pass
+
+    def se_pick(lega, p):
+        """errore standard di p per la lega (None → fallback binomiale n_eff=50 dentro kelly_stake)."""
+        c = CALSE.get(lega)
+        try:
+            return c.se_for(p) if c is not None else None
+        except Exception:
+            return None
 
     # 🆕 13/11 correlazione esiti stessa giornata (stimata dai dati, anti-correlata ~ -0.26):
     # EV del raddoppio usa p_eff = prod(p) + rho*... invece di prod(p) ingenua
@@ -924,17 +955,36 @@ def main():
         t = [np.sqrt(x*(1-x)) for x in ps]
         return pr + r * (t[0]*t[1]*ps[2] + t[0]*t[2]*ps[1] + t[1]*t[2]*ps[0])
 
-    def kelly_stake(p, O, se=None, n_eff=50):
-        """🆕 13/11 ¼ Kelly con incertezza di p: se da Brier (bootstrap) se disponibile, altrimenti sqrt(p(1-p)/n_eff)."""
-        if se is None:
-            se = np.sqrt(max(p*(1-p), 1e-9) / n_eff)
+    def kelly_stake(p, O, se=None, n_eff=50, ev=None):
+        """🆕 13/11 ¼ Kelly con incertezza di p (se da Brier/bootstrap, altrimenti sqrt(p(1-p)/n_eff)).
+        🆕 13/11-b REGOLA D'ORDINE: lo stake parte SOLO se EV > +2% (prima bastava EV>0, quindi
+        uno stake positivo poteva comparire sotto la soglia dichiarata sul sito)."""
+        if ev is not None and ev <= 2.0:
+            return 0.0                      # sotto +2% di EV: stake 0 per regola
+        if se is None or (isinstance(se, float) and np.isnan(se)):
+            se = np.sqrt(max(p*(1-p), 1e-9) / n_eff)   # 🆕 13/11-b NaN-safe (prima NaN azzerava lo stake)
         pl = max(0.0, p - se)
         f = (pl * O - 1.0) / (O - 1.0) if O > 1.0 else 0.0
-        return max(0.0, f) / 4.0
+        return min(max(0.0, f) / 4.0, 0.05)   # 🆕 13/11-b tetto 5% bankroll per voce (sanity cap)
 
     def pick(pool):
         # 🎯 regola utente 04/11: SOLO giocate con EV > 0 nei consigli del giorno
         #    (niente pronostici con EV negativa: se non ci sono, riga NESSUNA e stake 0)
+        # 🆕 13/11-b FILTRO CALIBRAZIONE: se il modello è più "sicuro" del mercato di oltre
+        #    10 punti percentuali, nella pratica è più spesso errore del modello che valore
+        #    (misurato: 42% dei pick 1X2 della finestra superava i 10pp, con casi a +40pp).
+        #    Le giocate pubblicate hanno ora gap 0-10pp → probabilità credibili.
+        GAP_MAX = 10.0
+        _gapped = []
+        for c in pool:
+            try:
+                gap = c["p"] * 100.0 - (100.0 / float(c["q"]))
+            except Exception:
+                gap = 0.0
+            c["gap_pp"] = round(gap, 1)
+            if gap <= GAP_MAX:
+                _gapped.append(c)
+        pool = _gapped
         pos = [c for c in pool if c["EV%"] > 0]
         if not pos:
             return None, None, None, None, None
@@ -973,13 +1023,14 @@ def main():
         print(f"\n📅 {giorno} — {len(sub)} partite con quote")
         if singola is not None:
             print(f"  🎯 SINGOLA: {singola['partita']} ({singola['lega']}) → {singola['mercato']} {singola['esito']} p={singola['p']*100:.1f}% @ {singola['q']} EV {singola['EV%']:+.2f}%")
-            se1 = CALSE.get(singola["lega"])
+            se1 = se_pick(singola["lega"], singola["p"])
             rows.append({"data": data, "tipo": "SINGOLA", "lega": singola["lega"], "partita": singola["partita"],
                          "mercato": singola["mercato"], "esito": str(singola["esito"]),
                          "p_modello%": round(singola["p"] * 100, 1), "quota_best": round(singola["q"], 2),
                          "EV%": round(singola["EV%"], 2), "motivo": singola["motivo"],
                          "perche": "💬 " + (singola.get("perche") or ""),
-                         "stake%": round(kelly_stake(singola["p"], singola["q"], se=se1) * 100, 2),
+                         "gap_pp": singola.get("gap_pp", ""),
+                         "stake%": round(kelly_stake(singola["p"], singola["q"], se=se1, ev=singola["EV%"]) * 100, 2),
                          "verdetto": verdetto(singola["EV%"])})
         if singola is None and combo is None:
             print("  ⛔ NESSUNA giocata con EV > 0: stake 0 (assenza di valore atteso, non un consiglio)")
@@ -992,12 +1043,12 @@ def main():
             print(f"  🎯 RADDOPPIO: quota {q:.2f}, p {p*100:.1f}%, EV {ev:+.2f}%")
             for c in combo:
                 print(f"     - {c['partita']} ({c['lega']}) → {c['mercato']} {c['esito']} p={c['p']*100:.1f}% @ {c['q']}")
-            sem = float(np.mean([CALSE.get(c["lega"]) or 0.03 for c in combo]))
+            sem = float(np.mean([se_pick(c["lega"], c["p"]) or 0.03 for c in combo]))
             rows.append({"data": data, "tipo": "RADDOPPIO", "lega": " + ".join(sorted({c["lega"] for c in combo})),
                          "partita": " + ".join(f"{c['partita']} [{c['mercato']} {c['esito']}]" for c in combo),
                          "mercato": "/".join(c["mercato"] for c in combo), "esito": "/".join(str(c["esito"]) for c in combo),
                          "p_modello%": round(p * 100, 1), "quota_best": round(q, 2), "EV%": round(ev, 2),
-                         "stake%": round(kelly_stake(p, q, se=sem) * 100, 2),
+                         "stake%": round(kelly_stake(p, q, se=sem, ev=ev) * 100, 2),
                          "motivo": " | ".join((f"{c['partita']} [{c['mercato']} {c['esito']}] p={c['p']*100:.1f}% @ {c['q']} — " + (c["motivo"][:240] + "…" if len(c["motivo"]) > 240 else c["motivo"])) for c in combo),
                          "perche": "💬 " + " · ".join((c.get("perche") or "").replace("💬 ","") for c in combo),
                          "verdetto": verdetto(ev)})

@@ -1,6 +1,11 @@
 <!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
 <title>Benchmark — Serie A Predictor</title>
+<meta name="description" content="Benchmark: Confronto onesto modello vs mercato (RPS walk-forward per lega) + storico pubblico scaricabile in JSON/CSV">
+<meta property="og:title" content="Benchmark — Serie A Predictor">
+<meta property="og:description" content="Benchmark: Confronto onesto modello vs mercato (RPS walk-forward per lega) + storico pubblico scaricabile in JSON/CSV">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <style>
 :root { --bg:#0b0f14; --card:#12171e; --line:#242c37; --txt:#e8ecf1; --mut:#8b96a5; --acc:#38bdf8;
   --btnbg:#171e27; --rowline:#1b222b; --track:#1c232c; --codebg:#1a212b; --termbg:#0a0e13; --scr:#2a333f; --tabon:#141b24; }
@@ -134,8 +139,10 @@ details { margin-top:4px; font-size:11.5px; color:var(--mut); }
   <b>RPS</b> (0 = perfetto, più basso = meglio): edge positivo = il nostro modello ha RPS più basso del mercato (quote di chiusura).
   Il mercato resta il benchmark reale; l'obiettivo onesto non è "batterlo sempre" ma trovare i pochi casi con EV&gt;0 su ADM.</p>
   <div class="tablewrap"><table><tr><th>Lega</th><th>Partite</th><th>Acc modello</th><th>Acc mercato</th><th>RPS modello</th><th>RPS mercato</th><th>Edge (mkt−modello)</th></tr><tr><td colspan=7>Validazione non ancora eseguita (data/validation_multi.csv mancante).</td></tr></table></div>
-  <p class="sub">🧠 Stacker v7 (LOO su 535 match g6-g38): RPS 1X2 <b>0.1918</b> vs mercato <b>0.1963</b> — sotto il mercato in RPS grezzo,
-  oltre ai segnali extra (forma-xG, H2H, arbitro, meteo, assenze) che la media mercato non pesa.</p>
+  <p class="warn">📉 <b>Esito reale del confronto (walk-forward, 535 match g6-g38):</b> RPS modello <b>0.1989</b> vs mercato <b>0.1963</b> → il mercato è <b>migliore di 2,6 millesimi</b>. Vinciamo in 4 leghe su 13 (Primeira Liga +11,9, Championship +5,5, Bundesliga +3,5, Eredivisie +3,0 millesimi) e perdiamo nelle altre. Conseguenza dichiarata: le giocate con uno scarto modello-mercato superiore a ~10 punti percentuali sono più spesso <b>errore del modello</b> che valore, e da oggi sono <b>filtrate</b> (vedi Metodo). Il vantaggio, se esiste, è piccolo e non garantito: analisi, non promesse.</p>
+  <p class="sub">🧠 Stacker v7 (LOO su 535 match g6-g38): RPS 1X2 <b>0.1918</b> in LOO (a parità di addestramento), ma sul test <b>walk-forward puro</b> il modello sta a <b>0.1989</b> contro <b>0.1963</b> del mercato:
+  <b>−2,6 millesimi</b>, cioè il mercato resta leggermente avanti. Il nostro lavoro non è "battere il mercato in RPS"
+  ma trovare i pochi casi con EV&gt;0 su quote ADM, con segnali extra (forma-xG, H2H, arbitro, meteo, assenze) che la media mercato non pesa.</p>
 </div>
 <div class="card"><h2>🧾 ROI reale della schedina (archiviata)</h2><p class="sub">Singola+Raddoppio dei giorni passati, verificati con esito reale, a flat 1 unità: win% e ROI. Campione piccolo → tendance, non garanties.</p><div class="tablewrap"><table><tr><th>Tipo</th><th>Giocate</th><th>Win%</th><th>ROI (flat 1u)</th></tr><tr><td data-label='Tipo'><b>SINGOLA</b></td><td data-label='Giocate'>5</td><td data-label='Win%'>60.0%</td><td data-label='ROI (flat 1u)' class='ev-neg>-10.4%</td></tr><tr><td data-label='Tipo'><b>RADDOPPIO</b></td><td data-label='Giocate'>5</td><td data-label='Win%'>60.0%</td><td data-label='ROI (flat 1u)' class='ev-pos>+32.6%</td></tr></table></div></div>
 <div class="card">

@@ -236,7 +236,7 @@ LIVE_JS = """<script>
   var SLUG2NAME=__SLUG2NAME__;  // slug ESPN -> nome nostra lega
   var QMAP=__QMAP__;               // data|home|away -> quote 1X2 best-price (nostra finestra)
   var EVMAP=__EVMAP__;               // data|home|away -> pronostico EV>0 (nostra finestra)
-  var H2H=__H2H__;                   // norm(h)|norm(a) -> ultimi H2H (kaggle)
+  var H2H=__H2H__;                   // norm(h)|norm(a) -> ultimi H2H (storico pubblico)
   var FAV=JSON.parse(localStorage.getItem('favt')||'[]');
   function isFav(t){return FAV.indexOf(norm(t))>=0;}
   window.__fav=function(el){
@@ -274,9 +274,9 @@ LIVE_JS = """<script>
     return '<div class="'+cls+'" data-eid="'+e.id+'" onclick="window.__tg(this)">'
       +'<span class="star'+(isFav(e.h)||isFav(e.a)?' on':'')+'" data-h="'+esc(e.h)+'" data-a="'+esc(e.a)+'" onclick="event.stopPropagation();window.__fav(this)" aria-label="preferito">★</span>'
       +'<span class="tm">'+esc(e.hhmm||'')+(cd(e)?' <small>'+cd(e)+'</small>':'')+'</span>'
-      +'<span class="h"><img class="lg" loading="lazy" src="'+e.hl+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.h)+'</span>'
+      +'<span class="h"><img class="lg" alt="" loading="lazy" src="'+e.hl+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.h)+'</span>'
       +'<span class="sc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
-      +'<span class="a"><img class="lg" loading="lazy" src="'+e.al+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.a)+'</span>'
+      +'<span class="a"><img class="lg" alt="" loading="lazy" src="'+e.al+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.a)+'</span>'
       +'<span class="od">'+(function(){var q=qkey(e);return q&&q.h?('1 '+q.h+' · X '+(q.x||'–')+' · 2 '+q.a):'';})()+'</span>'
       +badge(e)+'</div>'
       +'<div class="det" id="det-'+e.id+'" style="display:none"></div>';
@@ -288,9 +288,9 @@ LIVE_JS = """<script>
     var q=qkey(e);
     return '<div class="hero" data-eid="'+e.id+'" onclick="window.__tg(this)">'
       +'<div class="ht"><span>'+esc(e.lg)+' · '+esc(e.hhmm||'')+'</span>'+badge+'</div>'
-      +'<div class="hm"><span class="htn"><img class="lg big" src="'+e.hl+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.h)+'</span>'
+      +'<div class="hm"><span class="htn"><img class="lg big" alt="" src="'+e.hl+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.h)+'</span>'
       +'<span class="hsc">'+esc(e.hs)+' - '+esc(e.as)+'</span>'
-      +'<span class="htn"><img class="lg big" src="'+e.al+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.a)+'</span></div>'
+      +'<span class="htn"><img class="lg big" alt="" src="'+e.al+'" onerror="this.style.display=&quot;none&quot;">'+esc(e.a)+'</span></div>'
       +'<div class="hb">'+fl+(q&&q.h?'<span class="od">1 '+q.h+' · X '+(q.x||'–')+' · 2 '+q.a+'</span>':'')+'</div>'
       +'</div><div class="det" id="det-'+e.id+'" style="display:none"></div>';
   }
@@ -338,7 +338,7 @@ LIVE_JS = """<script>
       });
     }
     list.innerHTML=out||'<p class="sub" style="padding:14px">Nessuna partita corrisponde ai filtri.</p>';
-    if(sub)sub.textContent=f.length+' partite · '+liveN+' LIVE · 🚩 '+evN+' con pronostico EV>0 · aggiornate '+new Date().toLocaleTimeString('it-IT')+' · fonte ESPN';
+    if(sub)sub.textContent=f.length+' partite · '+liveN+' LIVE · 🚩 '+evN+' con pronostico EV>0 · aggiornate '+new Date().toLocaleTimeString('it-IT')+' · dati live da fonti pubbliche gratuite';
     // riapplica dettagli aperti (con html già caricato)
     Object.keys(openDet).forEach(function(id){var d=document.getElementById('det-'+id);if(d&&openDet[id]){d.style.display='block';d.innerHTML=openDet[id];}});
   }
@@ -417,7 +417,7 @@ LIVE_JS = """<script>
         var hh=H2H[hk]||H2H[norm(ev.a)+'|'+norm(ev.h)];
         var h2hhtml='';
         if(hh&&hh.length){
-          h2hhtml='<p class="stt">🤝 Ultimi H2H (kaggle)</p><table><tr><th>Data</th><th>Avversario</th><th>Ris</th><th>Esito</th></tr>';
+          h2hhtml='<p class="stt">🤝 Ultimi H2H</p><table><tr><th>Data</th><th>Avversario</th><th>Ris</th><th>Esito</th></tr>';
           hh.slice(0,5).forEach(function(g){
             var es=g.w==='H'?'V':(g.w==='A'?'P':'N');
             var c=g.w==='H'?'g':(g.w==='A'?'r':'y');
@@ -867,7 +867,7 @@ html.big{{font-size:118%}}
 [data-theme="light"] .flag{{color:#92400e}}
 [data-theme="light"] .star{{color:#94a3b8}}
 </style></head><body>
-<header><a href="index.html" onclick="if(history.length>1){{history.back();return false;}}" style="color:#93c5fd;text-decoration:none;margin-right:8px" aria-label="torna indietro">‹ Indietro</a><button id="th" title="tema chiaro/scuro" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-right:6px">☀️</button><button id="inst" style="display:none;background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:3px 9px;cursor:pointer;font-size:12px">📲 Installa app</button><button id="fsz" aria-label="font grande" title="font grande" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-left:6px">A+</button><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · fonte ESPN (API pubblica, nessun reindirizzamento)</span></header>
+<header><a href="index.html" onclick="if(history.length>1){{history.back();return false;}}" style="color:#93c5fd;text-decoration:none;margin-right:8px" aria-label="torna indietro">‹ Indietro</a><button id="th" title="tema chiaro/scuro" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-right:6px">☀️</button><button id="inst" style="display:none;background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:3px 9px;cursor:pointer;font-size:12px">📲 Installa app</button><button id="fsz" aria-label="font grande" title="font grande" style="background:none;border:1px solid #22345a;color:#8ea3c8;border-radius:8px;padding:2px 8px;cursor:pointer;margin-left:6px">A+</button><b>🔴 Diretta {html.escape(a.date)}</b><span class="sub">{len(evs)} partite · {live_n} LIVE · dati da fonti pubbliche gratuite</span></header>
 {daybar_html(today)}
 <div id="fbar"><button data-f="all" class="on">Tutte</button><button data-f="live">🔴 LIVE</button><button data-f="ev">🚩 EV&gt;0</button><button data-f="fav">⭐ mie</button><input id="fq" type="search" placeholder="cerca squadra o lega…"><button data-m="lega" class="on">per lega</button><button data-m="orario">per orario</button></div>
 <span id="sub" class="sub" style="display:block;padding:4px 14px"></span>

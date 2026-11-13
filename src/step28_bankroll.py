@@ -116,8 +116,8 @@ async function verifica(){
       });
     }catch(e){console.log('verifica',d,e);}
   }
-  save();render();btn.textContent='✅ verificati '+n+' esiti (fonte ESPN)';
-  setTimeout(function(){btn.textContent='🔍 Verifica esiti ESPN';},4000);
+  save();render();btn.textContent='✅ verificati '+n+' esiti (dati live pubblici)';
+  setTimeout(function(){btn.textContent='🔍 Verifica esiti';},4000);
 }
 render();
 """
@@ -146,7 +146,7 @@ footer{{color:#475569;font-size:11px;text-align:center;padding:14px}}
 [data-theme="light"] body{{filter:invert(1) hue-rotate(180deg)}}
 </style></head><body><div class="wrap">
 <h1>💰 Bankroll personale</h1>
-<p class="sub">Le giocate restano solo nel TUO browser (localStorage) — analysis-only. Verifica esiti automatica via API pubblica ESPN. Stake consigliato: ¼ Kelly, solo EV&gt;+2%.</p>
+<p class="sub">Le giocate restano solo nel TUO browser (localStorage) — analysis-only. Verifica esiti automatica tramite dati live pubblici. Stake consigliato: ¼ Kelly, solo EV&gt;+2%.</p>
 {NAV}
 <div class="kpis">
  <div class="k"><b id="k-pnl">0</b><span>profitto (u)</span></div>
@@ -166,7 +166,7 @@ footer{{color:#475569;font-size:11px;text-align:center;padding:14px}}
  <button type="submit">+ Aggiungi</button>
 </form>
 <p>
- <button class="ghost" id="btn-verifica" onclick="verifica()">🔍 Verifica esiti ESPN</button>
+ <button class="ghost" id="btn-verifica" onclick="verifica()">🔍 Verifica esiti</button>
  <button class="ghost" onclick="exportCSV()">📤 Esporta CSV</button>
  <label class="ghost" style="display:inline-block;background:#16233d;border:1px solid #22345a;border-radius:8px;padding:7px 12px;font-size:12.5px;cursor:pointer">📥 Importa CSV<input type="file" accept=".csv" style="display:none" onchange="importCSV(this)"></label>
 </p>
