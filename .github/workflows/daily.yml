@@ -45,6 +45,7 @@ jobs:
           python3 src/step26_telegram.py --date $D --min 1.0 || true    # alert Telegram se env impostate
           python3 src/step27_schedina.py --date $D || true              # 🧾 schedina del giorno (html+pdf)
           python3 src/step28_bankroll.py || true                        # 💰 pagina tracker bankroll
+          python3 src/step29_squadra.py || true                          # 🔎 pagina cerca squadra
           python3 src/make_site.py || true
           python3 src/step23_ppa.py --minp 60 --topn 30 || true
           python3 src/step24_ppa_pdf.py --minp 60 || true
