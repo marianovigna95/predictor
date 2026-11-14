@@ -95,11 +95,12 @@ def page_html(date_str, rows):
   <div class="meta">🏆 {r.get('lega','')} · 🕐 {r.get('data','')} · mercato: <b>{r.get('mercato','')}</b> — esito <b>{r.get('esito','')}</b></div>
   {"<div class='perche'>"+r.get('perche','').replace('<','&lt;')+"</div>" if r.get('perche') else ""}
   <div class="kelly">
-    <div class="k"><b>{q}</b><span>quota ADM</span></div>
+    <div class="k"><b>{q}</b><span>quota best-price</span></div>
     <div class="k"><b>{p}%</b><span>p modello</span></div>
     <div class="k"><b>{stake100}%</b><span>stake ¼ Kelly</span></div>
     <div class="k"><b>+{win100}%</b><span>vincita se entra (su bankroll)</span></div>
   </div>
+  <div class="sub" style="font-size:10.5px;opacity:.75;margin-top:6px">Quota best-price = la migliore disponibile tra gli operatori ADM. Non è una quota negoziata né garantita: verifica sempre sul sito dell'operatore prima di giocare.</div>
 </div>""")
     body = "".join(cards) if cards else '<p class="empty">Oggi nessuna schedina: nessuna giocata con EV &gt; +2% (regola del sito: stake 0).</p>'
     return f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
@@ -153,7 +154,7 @@ def make_pdf(date_str, rows, path):
         pdf.cell(0, 8, f"{r.get('tipo','')} — EV +{float(r.get('ev',0) or 0):.1f}%", new_x="LMARGIN", new_y="NEXT")
         pdf.set_font("helvetica", "", 11)
         pdf.multi_cell(0, 6, f"{r.get('partita','')}  ({r.get('lega','')})")
-        pdf.multi_cell(0, 6, f"Mercato: {r.get('mercato','')}  |  Esito: {r.get('esito','')}  |  Quota ADM: {q}  |  p modello: {p}%")
+        pdf.multi_cell(0, 6, f"Mercato: {r.get('mercato','')}  |  Esito: {r.get('esito','')}  |  Quota best-price: {q}  |  p modello: {p}%")
         pdf.multi_cell(0, 6, f"Stake consigliato: {k:.2f}% del bankroll (1/4 Kelly)")
         pdf.ln(3)
     pdf.output(str(path))
