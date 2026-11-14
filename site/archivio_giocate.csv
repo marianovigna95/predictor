@@ -1,6 +1,6 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-14,SINGOLA,Nations League,Romania - Poland,U2.5,Under 2.5,61.6,1.83,12.73,0.04,,
-giocata,2026-11-14,RADDOPPIO,LaLiga 2 + Nations League,Real Oviedo - Girona [U2.5 Under 2.5] + Romania - Poland [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,25.9,3.97,2.75,0.0,,
+giocata,2026-11-14,SINGOLA,Nations League,Romania - Poland,U2.5,Under 2.5,61.6,1.8,10.88,0.0,,
+giocata,2026-11-14,RADDOPPIO,LaLiga 2 + Nations League,Real Oviedo - Girona [U2.5 Under 2.5] + Romania - Poland [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,25.9,3.91,1.07,0.0,,
 giocata,2026-11-15,SINGOLA,Nations League,France - Türkiye,GG,GG,60.3,1.73,4.32,0.0,,
 giocata,2026-11-15,RADDOPPIO,LaLiga 2,Tenerife - AD Ceuta FC [U2.5 Under 2.5] + Granada - Las Palmas [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,27.9,3.8,5.99,0.0,,
 giocata,2026-11-16,SINGOLA,Nations League,Greece - Serbia,GG,GG,63.2,1.85,16.92,1.27,,

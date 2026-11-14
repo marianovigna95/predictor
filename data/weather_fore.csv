@@ -479,6 +479,22 @@ Coventry,2026-11-26,0.95
 Coventry,2026-11-27,0.95
 Coventry,2026-11-28,1.0
 Coventry,2026-11-29,1.0
+Nottingham,2026-11-14,1.0
+Nottingham,2026-11-15,0.95
+Nottingham,2026-11-16,1.0
+Nottingham,2026-11-17,0.9
+Nottingham,2026-11-18,1.0
+Nottingham,2026-11-19,0.95
+Nottingham,2026-11-20,1.0
+Nottingham,2026-11-21,1.0
+Nottingham,2026-11-22,0.95
+Nottingham,2026-11-23,0.95
+Nottingham,2026-11-24,1.0
+Nottingham,2026-11-25,1.0
+Nottingham,2026-11-26,0.95
+Nottingham,2026-11-27,0.95
+Nottingham,2026-11-28,1.0
+Nottingham,2026-11-29,1.0
 Barcelona,2026-11-14,1.0
 Barcelona,2026-11-15,1.0
 Barcelona,2026-11-16,1.0
@@ -768,7 +784,7 @@ Frankfurt,2026-11-27,1.0
 Frankfurt,2026-11-28,0.95
 Frankfurt,2026-11-29,1.0
 Freiburg im Breisgau,2026-11-14,1.0
-Freiburg im Breisgau,2026-11-15,0.95
+Freiburg im Breisgau,2026-11-15,1.0
 Freiburg im Breisgau,2026-11-16,1.0
 Freiburg im Breisgau,2026-11-17,0.9
 Freiburg im Breisgau,2026-11-18,0.9
@@ -927,8 +943,24 @@ Mainz,2026-11-26,1.0
 Mainz,2026-11-27,1.0
 Mainz,2026-11-28,1.0
 Mainz,2026-11-29,1.0
+Augsburg,2026-11-14,1.0
+Augsburg,2026-11-15,1.0
+Augsburg,2026-11-16,0.95
+Augsburg,2026-11-17,0.95
+Augsburg,2026-11-18,0.9
+Augsburg,2026-11-19,1.0
+Augsburg,2026-11-20,0.95
+Augsburg,2026-11-21,1.0
+Augsburg,2026-11-22,1.0
+Augsburg,2026-11-23,1.0
+Augsburg,2026-11-24,1.0
+Augsburg,2026-11-25,1.0
+Augsburg,2026-11-26,0.95
+Augsburg,2026-11-27,1.0
+Augsburg,2026-11-28,0.95
+Augsburg,2026-11-29,0.9
 Sinsheim,2026-11-14,1.0
-Sinsheim,2026-11-15,1.0
+Sinsheim,2026-11-15,0.95
 Sinsheim,2026-11-16,1.0
 Sinsheim,2026-11-17,0.9
 Sinsheim,2026-11-18,0.95
@@ -1407,6 +1439,22 @@ Pisa,2026-11-26,1.0
 Pisa,2026-11-27,1.0
 Pisa,2026-11-28,0.95
 Pisa,2026-11-29,1.0
+Castellammare di Stabia,2026-11-14,1.0
+Castellammare di Stabia,2026-11-15,0.9
+Castellammare di Stabia,2026-11-16,0.9
+Castellammare di Stabia,2026-11-17,1.0
+Castellammare di Stabia,2026-11-18,1.0
+Castellammare di Stabia,2026-11-19,0.9
+Castellammare di Stabia,2026-11-20,0.95
+Castellammare di Stabia,2026-11-21,1.0
+Castellammare di Stabia,2026-11-22,1.0
+Castellammare di Stabia,2026-11-23,0.95
+Castellammare di Stabia,2026-11-24,0.9
+Castellammare di Stabia,2026-11-25,0.9
+Castellammare di Stabia,2026-11-26,0.9
+Castellammare di Stabia,2026-11-27,1.0
+Castellammare di Stabia,2026-11-28,1.0
+Castellammare di Stabia,2026-11-29,0.95
 Carrara,2026-11-14,0.95
 Carrara,2026-11-15,0.95
 Carrara,2026-11-16,0.95
@@ -1727,22 +1775,6 @@ Wolverhampton,2026-11-26,0.95
 Wolverhampton,2026-11-27,1.0
 Wolverhampton,2026-11-28,1.0
 Wolverhampton,2026-11-29,1.0
-Norwich,2026-11-14,1.0
-Norwich,2026-11-15,1.0
-Norwich,2026-11-16,1.0
-Norwich,2026-11-17,0.9
-Norwich,2026-11-18,0.95
-Norwich,2026-11-19,0.95
-Norwich,2026-11-20,1.0
-Norwich,2026-11-21,1.0
-Norwich,2026-11-22,0.95
-Norwich,2026-11-23,1.0
-Norwich,2026-11-24,1.0
-Norwich,2026-11-25,1.0
-Norwich,2026-11-26,1.0
-Norwich,2026-11-27,0.95
-Norwich,2026-11-28,1.0
-Norwich,2026-11-29,1.0
 West Bromwich,2026-11-14,1.0
 West Bromwich,2026-11-15,0.95
 West Bromwich,2026-11-16,1.0
@@ -1871,6 +1903,22 @@ Valladolid,2026-11-26,1.0
 Valladolid,2026-11-27,1.0
 Valladolid,2026-11-28,1.0
 Valladolid,2026-11-29,1.0
+Las Palmas de Gran Canaria,2026-11-14,1.0
+Las Palmas de Gran Canaria,2026-11-15,1.0
+Las Palmas de Gran Canaria,2026-11-16,1.0
+Las Palmas de Gran Canaria,2026-11-17,1.0
+Las Palmas de Gran Canaria,2026-11-18,1.0
+Las Palmas de Gran Canaria,2026-11-19,1.0
+Las Palmas de Gran Canaria,2026-11-20,1.0
+Las Palmas de Gran Canaria,2026-11-21,1.0
+Las Palmas de Gran Canaria,2026-11-22,1.0
+Las Palmas de Gran Canaria,2026-11-23,1.0
+Las Palmas de Gran Canaria,2026-11-24,0.95
+Las Palmas de Gran Canaria,2026-11-25,1.0
+Las Palmas de Gran Canaria,2026-11-26,1.0
+Las Palmas de Gran Canaria,2026-11-27,1.0
+Las Palmas de Gran Canaria,2026-11-28,0.95
+Las Palmas de Gran Canaria,2026-11-29,1.0
 Santa Cruz de Tenerife,2026-11-14,1.0
 Santa Cruz de Tenerife,2026-11-15,1.0
 Santa Cruz de Tenerife,2026-11-16,1.0
@@ -2351,6 +2399,22 @@ Dresden,2026-11-26,1.0
 Dresden,2026-11-27,0.97
 Dresden,2026-11-28,1.0
 Dresden,2026-11-29,0.9215
+Holstein Kiel,2026-11-14,1.0
+Holstein Kiel,2026-11-15,1.0
+Holstein Kiel,2026-11-16,0.95
+Holstein Kiel,2026-11-17,0.9
+Holstein Kiel,2026-11-18,1.0
+Holstein Kiel,2026-11-19,1.0
+Holstein Kiel,2026-11-20,1.0
+Holstein Kiel,2026-11-21,1.0
+Holstein Kiel,2026-11-22,1.0
+Holstein Kiel,2026-11-23,1.0
+Holstein Kiel,2026-11-24,1.0
+Holstein Kiel,2026-11-25,1.0
+Holstein Kiel,2026-11-26,1.0
+Holstein Kiel,2026-11-27,1.0
+Holstein Kiel,2026-11-28,1.0
+Holstein Kiel,2026-11-29,1.0
 Magdeburg,2026-11-14,1.0
 Magdeburg,2026-11-15,1.0
 Magdeburg,2026-11-16,1.0
@@ -2591,6 +2655,22 @@ Dunkerque,2026-11-26,1.0
 Dunkerque,2026-11-27,0.95
 Dunkerque,2026-11-28,1.0
 Dunkerque,2026-11-29,1.0
+Boulogne,2026-11-14,1.0
+Boulogne,2026-11-15,0.9
+Boulogne,2026-11-16,0.95
+Boulogne,2026-11-17,0.9
+Boulogne,2026-11-18,0.95
+Boulogne,2026-11-19,0.9
+Boulogne,2026-11-20,0.95
+Boulogne,2026-11-21,1.0
+Boulogne,2026-11-22,1.0
+Boulogne,2026-11-23,0.95
+Boulogne,2026-11-24,0.95
+Boulogne,2026-11-25,1.0
+Boulogne,2026-11-26,1.0
+Boulogne,2026-11-27,0.95
+Boulogne,2026-11-28,0.95
+Boulogne,2026-11-29,1.0
 Pau,2026-11-14,1.0
 Pau,2026-11-15,1.0
 Pau,2026-11-16,1.0
@@ -2607,7 +2687,23 @@ Pau,2026-11-26,1.0
 Pau,2026-11-27,0.95
 Pau,2026-11-28,0.95
 Pau,2026-11-29,1.0
-Annecy,2026-11-14,1.0
+"Saint-Ouen, Paris",2026-11-14,1.0
+"Saint-Ouen, Paris",2026-11-15,0.95
+"Saint-Ouen, Paris",2026-11-16,0.95
+"Saint-Ouen, Paris",2026-11-17,0.9
+"Saint-Ouen, Paris",2026-11-18,1.0
+"Saint-Ouen, Paris",2026-11-19,1.0
+"Saint-Ouen, Paris",2026-11-20,1.0
+"Saint-Ouen, Paris",2026-11-21,1.0
+"Saint-Ouen, Paris",2026-11-22,1.0
+"Saint-Ouen, Paris",2026-11-23,1.0
+"Saint-Ouen, Paris",2026-11-24,1.0
+"Saint-Ouen, Paris",2026-11-25,1.0
+"Saint-Ouen, Paris",2026-11-26,1.0
+"Saint-Ouen, Paris",2026-11-27,0.95
+"Saint-Ouen, Paris",2026-11-28,1.0
+"Saint-Ouen, Paris",2026-11-29,1.0
+Annecy,2026-11-14,0.95
 Annecy,2026-11-15,0.9
 Annecy,2026-11-16,1.0
 Annecy,2026-11-17,0.95
@@ -3055,6 +3151,22 @@ Vila Nova de Famalicão,2026-11-26,1.0
 Vila Nova de Famalicão,2026-11-27,1.0
 Vila Nova de Famalicão,2026-11-28,0.95
 Vila Nova de Famalicão,2026-11-29,1.0
+Arouca,2026-11-14,0.95
+Arouca,2026-11-15,0.9
+Arouca,2026-11-16,1.0
+Arouca,2026-11-17,0.9
+Arouca,2026-11-18,0.9
+Arouca,2026-11-19,0.9
+Arouca,2026-11-20,1.0
+Arouca,2026-11-21,0.95
+Arouca,2026-11-22,1.0
+Arouca,2026-11-23,1.0
+Arouca,2026-11-24,0.95
+Arouca,2026-11-25,1.0
+Arouca,2026-11-26,1.0
+Arouca,2026-11-27,0.95
+Arouca,2026-11-28,0.9
+Arouca,2026-11-29,1.0
 Rio Maior,2026-11-14,1.0
 Rio Maior,2026-11-15,1.0
 Rio Maior,2026-11-16,1.0
@@ -3375,22 +3487,6 @@ Stavanger,2026-11-26,1.0
 Stavanger,2026-11-27,1.0
 Stavanger,2026-11-28,1.0
 Stavanger,2026-11-29,1.0
-Slovan Bratislava,2026-11-14,1.0
-Slovan Bratislava,2026-11-15,1.0
-Slovan Bratislava,2026-11-16,1.0
-Slovan Bratislava,2026-11-17,1.0
-Slovan Bratislava,2026-11-18,0.95
-Slovan Bratislava,2026-11-19,1.0
-Slovan Bratislava,2026-11-20,0.95
-Slovan Bratislava,2026-11-21,1.0
-Slovan Bratislava,2026-11-22,1.0
-Slovan Bratislava,2026-11-23,1.0
-Slovan Bratislava,2026-11-24,1.0
-Slovan Bratislava,2026-11-25,0.95
-Slovan Bratislava,2026-11-26,0.9
-Slovan Bratislava,2026-11-27,1.0
-Slovan Bratislava,2026-11-28,1.0
-Slovan Bratislava,2026-11-29,1.0
 Brugge,2026-11-14,1.0
 Brugge,2026-11-15,0.95
 Brugge,2026-11-16,0.95
@@ -3487,6 +3583,22 @@ Praha,2026-11-26,0.95
 Praha,2026-11-27,0.97
 Praha,2026-11-28,0.95
 Praha,2026-11-29,1.0
+Piraeus,2026-11-14,1.0
+Piraeus,2026-11-15,1.0
+Piraeus,2026-11-16,1.0
+Piraeus,2026-11-17,1.0
+Piraeus,2026-11-18,1.0
+Piraeus,2026-11-19,1.0
+Piraeus,2026-11-20,1.0
+Piraeus,2026-11-21,1.0
+Piraeus,2026-11-22,1.0
+Piraeus,2026-11-23,1.0
+Piraeus,2026-11-24,0.95
+Piraeus,2026-11-25,1.0
+Piraeus,2026-11-26,0.95
+Piraeus,2026-11-27,0.9
+Piraeus,2026-11-28,1.0
+Piraeus,2026-11-29,1.0
 Brussels,2026-11-14,1.0
 Brussels,2026-11-15,0.95
 Brussels,2026-11-16,0.95
@@ -3887,6 +3999,22 @@ Kairat Almaty,2026-11-26,1.0
 Kairat Almaty,2026-11-27,0.95
 Kairat Almaty,2026-11-28,0.9215
 Kairat Almaty,2026-11-29,0.97
+Thun,2026-11-14,1.0
+Thun,2026-11-15,1.0
+Thun,2026-11-16,1.0
+Thun,2026-11-17,0.95
+Thun,2026-11-18,0.95
+Thun,2026-11-19,0.95
+Thun,2026-11-20,0.95
+Thun,2026-11-21,1.0
+Thun,2026-11-22,0.95
+Thun,2026-11-23,1.0
+Thun,2026-11-24,1.0
+Thun,2026-11-25,0.9
+Thun,2026-11-26,0.9
+Thun,2026-11-27,1.0
+Thun,2026-11-28,0.9
+Thun,2026-11-29,0.9
 Farum,2026-11-14,1.0
 Farum,2026-11-15,1.0
 Farum,2026-11-16,0.95

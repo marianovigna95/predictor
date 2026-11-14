@@ -1,2 +1,43 @@
 lega,partita,pronostico,reale,hit,p%,quota,rps_mod,rps_mkt,pO25%,ou_reale,ou_hit
 LaLiga 2,Leganés - Burgos CF,1,1,1,45.8,2.22,0.19370000000000004,0.19913369870228456,49.8,Over,0
+Nations League,Albania - Finland,1,2,0,57.1,2.07,0.4782385000000001,0.39928118357106424,46.5,Over,0
+Nations League,Moldova - Kazakhstan,1,1,1,49.8,2.75,0.163267,0.2625615449838286,46.4,Over,0
+Nations League,Serbia - Germany,1,2,0,45.3,9.9,0.34411699999999995,0.12946985265143118,50.1,Over,1
+Nations League,Slovakia - Faroe Islands,1,2,0,47.7,1.37,0.37224500000000005,0.6318184741641444,42.5,Over,0
+Nations League,Slovenia - Switzerland,1,2,0,48.4,5.82,0.380666,0.17169049506945747,48.7,Over,0
+Nations League,Scotland - North Macedonia,1,1,1,39.6,,0.23619999999999997,,37.1,Over,0
+Nations League,Liechtenstein - Azerbaijan,1,2,0,44.2,17.5,0.3419825000000001,0.12236857590692046,40.6,Under,1
+Nations League,Luxembourg - Estonia,1,2,0,42.2,2.2,0.32502650000000005,0.3515533428885783,39.7,Under,1
+Nations League,Andorra - Gibraltar,1,1,1,39.6,1.95,0.24123249999999996,0.15694226949612555,42.9,Under,1
+Nations League,Bulgaria - Iceland,1,2,0,49.2,4.39,0.3926165000000001,0.20607286611356684,46.0,Over,0
+Nations League,Netherlands - Greece,1,1,1,48.6,1.47,0.17046250000000002,0.06595742043125097,55.5,Over,1
+Nations League,Georgia - Hungary,1,2,0,42.1,3.28,0.31778500000000004,0.23388221912750534,45.7,Over,0
+Nations League,Northern Ireland - Ukraine,1,1,1,50.1,2.39,0.1547585,0.2102263835593817,32.6,Over,0
+Nations League,Austria - Republic of Ireland,1,2,0,49.7,,0.3928825,,51.1,Over,1
+Nations League,Romania - Poland,1,2,0,62.8,3.8,0.53668,0.2467782443833537,57.4,Over,1
+Nations League,Latvia - Armenia,1,X,0,45.9,,0.1456685,,39.2,Over,0
+Nations League,Spain - England,1,2,0,42.2,1.63,0.29512450000000007,0.47725891389416997,72.0,Over,1
+Nations League,Faroe Islands - Moldova,1,X,0,41.7,,0.138465,,50.4,Over,1
+Nations League,North Macedonia - Slovenia,1,1,1,47.2,,0.18086400000000002,,51.3,Over,1
+Nations League,Germany - Netherlands,1,1,1,48.8,1.8,0.16592,0.1250241127506774,44.0,Over,0
+Nations League,Hungary - Northern Ireland,1,2,0,39.2,1.83,0.29200050000000005,0.42585469976251816,48.2,Over,0
+Friendlies,Singapore - Paraguay,1,2,0,45.9,17.0,0.35174249999999996,0.11768497305668857,52.7,Over,1
+Friendlies,Kuwait - Syria,1,2,0,47.9,,0.376085,,56.8,Over,1
+Friendlies,United Arab Emirates - Honduras,1,1,1,61.0,,0.09101450000000001,,47.5,Over,0
+Friendlies,Saudi Arabia - South Korea,1,1,1,39.3,4.61,0.24373699999999998,0.40565481242080226,42.2,Over,0
+Friendlies,Qatar - Australia,1,2,0,41.6,3.39,0.31164850000000005,0.2252074977651426,41.0,Over,0
+Friendlies,Iraq - Lebanon,2,X,0,42.1,,0.14143300000000003,,55.6,Under,0
+Friendlies,Argentina - Uruguay,1,2,0,68.2,,0.6049465,,62.3,Over,1
+Friendlies,Ecuador - Costa Rica,1,1,1,70.1,,0.050751000000000025,,44.2,Under,1
+Friendlies,Colombia - Chile,1,1,1,41.9,,0.21590499999999999,,44.9,Under,1
+Friendlies,Peru - Bolivia,1,1,1,66.4,,0.06815299999999999,,57.2,Under,0
+Friendlies,Singapore - Brazil,2,2,1,39.1,,0.25688249999999996,,64.3,Over,1
+Friendlies,Japan - Paraguay,1,2,0,48.9,1.5,0.39558550000000003,0.568360222441776,40.3,Over,0
+Friendlies,Qatar - South Korea,2,1,0,40.5,,0.287453,,43.2,Over,0
+Friendlies,United Arab Emirates - Syria,1,1,1,64.5,,0.07456449999999999,,48.8,Over,0
+Friendlies,Saudi Arabia - Uzbekistan,1,1,1,42.3,,0.21267299999999997,,39.1,Over,0
+Friendlies,Jordan - Australia,1,2,0,49.8,,0.40226,,45.6,Over,0
+Friendlies,Iraq - Iran,2,X,0,43.4,,0.14526549999999996,,46.3,Under,1
+Friendlies,Kuwait - Honduras,1,1,1,51.6,,0.1486285,,55.4,Over,1
+Friendlies,Argentina - Costa Rica,1,2,0,82.6,,0.80002,,54.4,Over,1
+Friendlies,Ecuador - Bolivia,1,1,1,70.6,,0.048730500000000024,,43.3,Under,1
