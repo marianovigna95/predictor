@@ -1,0 +1,24 @@
+{
+ "aggiornato": "2026-11-14T14:05:35",
+ "fonte": "predictions_ensemble.csv (walk-forward), non le quote stesse",
+ "soglia_gap_pp": 2.0,
+ "partite_totali": 1610,
+ "partite_utilizzabili": 1610,
+ "righe_escluse_probabilita": 0,
+ "RPS_modello": 0.203,
+ "RPS_mercato": 0.1902,
+ "nota": "RPS piu' basso = meglio. Se modello > mercato, il modello e' peggiore.",
+ "stato": "ok",
+ "giocate": 1492,
+ "vinte": 407,
+ "win_rate_pct": 27.3,
+ "roi_pct": -17.7,
+ "ev_medio_pct": 30.47,
+ "giocate_per_stagione": {
+  "2025/2026": 358,
+  "2024/2025": 357,
+  "2022/2023": 353,
+  "2023/2024": 345,
+  "2026/2027": 79
+ }
+}
