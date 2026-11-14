@@ -1,70 +1,103 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-14,International Friendlies,Palestine - Iran,1x2,1,8.0,fastbet,6,2026-11-14T13:40:38
-2026-11-14,International Friendlies,Palestine - Iran,1x2,X,4.2,leovegas,6,2026-11-14T13:40:38
-2026-11-14,International Friendlies,Palestine - Iran,1x2,2,1.4,stake,6,2026-11-14T13:40:38
-2026-11-14,International Friendlies,Basque Country - Venezuela,1x2,1,1.58,bwin,2,2026-11-14T13:40:38
-2026-11-14,International Friendlies,Basque Country - Venezuela,1x2,X,3.9,bwin,2,2026-11-14T13:40:38
-2026-11-14,International Friendlies,Basque Country - Venezuela,1x2,2,5.5,bwin,2,2026-11-14T13:40:38
-2026-11-15,International Friendlies,Suriname - Eswatini,1x2,1,1.83,bwin,2,2026-11-14T13:40:38
-2026-11-15,International Friendlies,Suriname - Eswatini,1x2,X,2.55,bwin,2,2026-11-14T13:40:38
-2026-11-15,International Friendlies,Suriname - Eswatini,1x2,2,5.5,bwin,2,2026-11-14T13:40:38
-2026-11-14,International Friendlies,Palestine - Iran,2.5,O2.5,3.4,888sport,3,2026-11-14T13:40:39
-2026-11-14,International Friendlies,Palestine - Iran,2.5,U2.5,1.23,888sport,3,2026-11-14T13:40:39
-2026-11-14,International Friendlies,Basque Country - Venezuela,2.5,O2.5,1.82,bwin,2,2026-11-14T13:40:39
-2026-11-14,International Friendlies,Basque Country - Venezuela,2.5,U2.5,1.87,bwin,2,2026-11-14T13:40:39
-2026-11-15,International Friendlies,Suriname - Eswatini,2.5,O2.5,1.88,bwin,5,2026-11-14T13:40:39
-2026-11-15,International Friendlies,Suriname - Eswatini,2.5,U2.5,1.8,bwin,5,2026-11-14T13:40:39
-2026-11-14,Uefa Nations League,Kosovo - Israele,1x2,1,1.87,sunbet,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Kosovo - Israele,1x2,X,3.8,winamax,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Kosovo - Israele,1x2,2,4.5,eplay24,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Norvegia - Galles,1x2,1,1.31,sunbet,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Norvegia - Galles,1x2,X,6.5,snai,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Norvegia - Galles,1x2,2,10.5,888sport,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Georgia - Ungheria,1x2,1,3.25,snai,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Georgia - Ungheria,1x2,X,3.2,stake,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Georgia - Ungheria,1x2,2,2.49,sunbet,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Austria - Irlanda,1x2,1,1.71,sunbet,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Austria - Irlanda,1x2,X,3.85,goldbet,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Austria - Irlanda,1x2,2,5.5,snai,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Portogallo - Danimarca,1x2,1,1.62,eplay24,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Portogallo - Danimarca,1x2,X,4.7,sunbet,46,2026-11-14T13:40:40
-2026-11-14,Uefa Nations League,Portogallo - Danimarca,1x2,2,5.4,888sport,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Irlanda del Nord - Ucraina,1x2,1,2.65,sunbet,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Irlanda del Nord - Ucraina,1x2,X,2.96,winbet,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Irlanda del Nord - Ucraina,1x2,2,3.15,stanleybet,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Svezia - Bosnia Erzegovina,1x2,1,1.46,bwin,40,2026-11-14T13:40:40
-2026-11-14,Nations League,Svezia - Bosnia Erzegovina,1x2,X,4.7,sunbet,40,2026-11-14T13:40:40
-2026-11-14,Nations League,Svezia - Bosnia Erzegovina,1x2,2,7.6,marathonbet,40,2026-11-14T13:40:40
-2026-11-14,Nations League,Romania - Polonia,1x2,1,4.83,winbet,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Romania - Polonia,1x2,X,4.33,stake,46,2026-11-14T13:40:40
-2026-11-14,Nations League,Romania - Polonia,1x2,2,1.71,sunbet,46,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Lettonia - Armenia,1x2,1,3.15,codere,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Lettonia - Armenia,1x2,X,3.3,888sport,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Lettonia - Armenia,1x2,2,2.44,sunbet,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Cipro - Montenegro,1x2,1,3.2,goldbet,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Cipro - Montenegro,1x2,X,3.5,bwin,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Cipro - Montenegro,1x2,2,2.31,sunbet,45,2026-11-14T13:40:40
-2026-11-15,Nations League,Finlandia - San Marino,1x2,X,18.0,888sport,45,2026-11-14T13:40:40
-2026-11-15,Nations League,Finlandia - San Marino,1x2,2,55.0,marathonbet,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Bielorussia - Albania,1x2,1,4.4,goldbet,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Bielorussia - Albania,1x2,X,3.4,bwin,45,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Bielorussia - Albania,1x2,2,1.99,winbet,45,2026-11-14T13:40:40
-2026-11-15,Nations League,Finlandia - San Marino,1x2,1,1.25,zonagioco,29,2026-11-14T13:40:40
-2026-11-15,Nations League,Croazia - Repubblica Ceca,1x2,1,1.61,sunbet,46,2026-11-14T13:40:40
-2026-11-15,Nations League,Croazia - Repubblica Ceca,1x2,X,4.4,winamax,46,2026-11-14T13:40:40
-2026-11-15,Nations League,Croazia - Repubblica Ceca,1x2,2,5.4,888sport,46,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Spagna - Inghilterra,1x2,1,1.79,sunbet,43,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Spagna - Inghilterra,1x2,X,4.2,stake,43,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Spagna - Inghilterra,1x2,2,4.4,codere,43,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Belgio - Italia,1x2,1,2.27,sunbet,43,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Belgio - Italia,1x2,X,3.9,winamax,43,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Belgio - Italia,1x2,2,3.1,stake,43,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Francia - Turchia,1x2,1,1.25,bwin,46,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Francia - Turchia,1x2,X,7.25,bgame,46,2026-11-14T13:40:40
-2026-11-15,Uefa Nations League,Francia - Turchia,1x2,2,12.0,stanleybet,46,2026-11-14T13:40:40
-2026-11-16,Uefa Nations League,Kazakistan - Slovacchia,1x2,1,5.4,888sport,45,2026-11-14T13:40:40
-2026-11-16,Uefa Nations League,Kazakistan - Slovacchia,1x2,X,3.8,bwin,45,2026-11-14T13:40:40
-2026-11-16,Uefa Nations League,Kazakistan - Slovacchia,1x2,2,1.76,sunbet,45,2026-11-14T13:40:40
-2026-11-16,Uefa Nations League,Isole Far Oer - Moldova,1x2,1,1.87,sunbet,38,2026-11-14T13:40:40
-2026-11-16,Uefa Nations League,Isole Far Oer - Moldova,1x2,X,3.5,stanleybet,38,2026-11-14T13:40:40
-2026-11-16,Uefa Nations League,Isole Far Oer - Moldova,1x2,2,4.5,snai,38,2026-11-14T13:40:40
+2026-11-14,Uefa Nations League,Norvegia - Galles,1x2,1,1.31,sunbet,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Norvegia - Galles,1x2,X,6.75,winamax,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Norvegia - Galles,1x2,2,10.5,888sport,46,2026-11-14T14:49:47
+2026-11-14,Nations League,Georgia - Ungheria,1x2,1,3.35,sunbet,46,2026-11-14T14:49:47
+2026-11-14,Nations League,Georgia - Ungheria,1x2,X,3.25,sunbet,46,2026-11-14T14:49:47
+2026-11-14,Nations League,Georgia - Ungheria,1x2,2,2.35,bwin,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Austria - Irlanda,1x2,1,1.68,sunbet,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Austria - Irlanda,1x2,X,4.0,snai,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Austria - Irlanda,1x2,2,5.67,stake,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Portogallo - Danimarca,1x2,1,1.61,stake,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Portogallo - Danimarca,1x2,X,4.7,sunbet,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Portogallo - Danimarca,1x2,2,5.55,marathonbet,46,2026-11-14T14:49:47
+2026-11-14,Nations League,Irlanda del Nord - Ucraina,1x2,1,2.65,sunbet,46,2026-11-14T14:49:47
+2026-11-14,Nations League,Irlanda del Nord - Ucraina,1x2,X,2.96,winbet,46,2026-11-14T14:49:47
+2026-11-14,Nations League,Irlanda del Nord - Ucraina,1x2,2,3.15,stanleybet,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Svezia - Bosnia Erzegovina,1x2,1,1.47,sunbet,40,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Svezia - Bosnia Erzegovina,1x2,X,4.7,sunbet,40,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Svezia - Bosnia Erzegovina,1x2,2,7.6,marathonbet,40,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Romania - Polonia,1x2,1,4.83,winbet,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Romania - Polonia,1x2,X,4.33,stake,46,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Romania - Polonia,1x2,2,1.71,sunbet,46,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Lettonia - Armenia,1x2,1,3.15,codere,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Lettonia - Armenia,1x2,X,3.3,888sport,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Lettonia - Armenia,1x2,2,2.44,sunbet,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Cipro - Montenegro,1x2,1,3.2,goldbet,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Cipro - Montenegro,1x2,X,3.5,bwin,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Cipro - Montenegro,1x2,2,2.31,sunbet,45,2026-11-14T14:49:47
+2026-11-15,Nations League,Finlandia - San Marino,1x2,1,1.06,quigioco,46,2026-11-14T14:49:47
+2026-11-15,Nations League,Finlandia - San Marino,1x2,X,18.0,888sport,46,2026-11-14T14:49:47
+2026-11-15,Nations League,Finlandia - San Marino,1x2,2,55.0,marathonbet,46,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Bielorussia - Albania,1x2,1,4.4,goldbet,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Bielorussia - Albania,1x2,X,3.4,bwin,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Bielorussia - Albania,1x2,2,1.99,winbet,45,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Croazia - Repubblica Ceca,1x2,1,1.61,sunbet,46,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Croazia - Repubblica Ceca,1x2,X,4.4,winamax,46,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Croazia - Repubblica Ceca,1x2,2,5.4,888sport,46,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Spagna - Inghilterra,1x2,1,1.79,sunbet,43,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Spagna - Inghilterra,1x2,X,4.09,sisal,43,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Spagna - Inghilterra,1x2,2,4.4,codere,43,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Belgio - Italia,1x2,1,2.27,sunbet,43,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Belgio - Italia,1x2,X,3.9,winamax,43,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Belgio - Italia,1x2,2,3.1,stake,43,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Francia - Turchia,1x2,1,1.25,bwin,46,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Francia - Turchia,1x2,X,7.25,bgame,46,2026-11-14T14:49:47
+2026-11-15,Uefa Nations League,Francia - Turchia,1x2,2,12.0,stanleybet,46,2026-11-14T14:49:47
+2026-11-16,Uefa Nations League,Kazakistan - Slovacchia,1x2,1,4.4,888sport,45,2026-11-14T14:49:47
+2026-11-16,Uefa Nations League,Kazakistan - Slovacchia,1x2,X,3.7,bwin,45,2026-11-14T14:49:47
+2026-11-16,Uefa Nations League,Kazakistan - Slovacchia,1x2,2,1.92,sunbet,45,2026-11-14T14:49:47
+2026-11-16,Uefa Nations League,Isole Far Oer - Moldova,1x2,1,1.87,sunbet,38,2026-11-14T14:49:47
+2026-11-16,Uefa Nations League,Isole Far Oer - Moldova,1x2,X,3.5,stanleybet,38,2026-11-14T14:49:47
+2026-11-16,Uefa Nations League,Isole Far Oer - Moldova,1x2,2,4.5,snai,38,2026-11-14T14:49:47
+2026-11-14,Uefa Nations League,Norvegia - Galles,2.5,O2.5,1.12,sunbet,40,2026-11-14T14:49:48
+2026-11-14,Uefa Nations League,Norvegia - Galles,2.5,U2.5,7.0,888sport,40,2026-11-14T14:49:48
+2026-11-14,Nations League,Georgia - Ungheria,2.5,O2.5,1.46,sunbet,40,2026-11-14T14:49:48
+2026-11-14,Nations League,Georgia - Ungheria,2.5,U2.5,2.75,betpassion,40,2026-11-14T14:49:48
+2026-11-14,Uefa Nations League,Austria - Irlanda,2.5,O2.5,1.31,sunbet,40,2026-11-14T14:49:48
+2026-11-14,Uefa Nations League,Austria - Irlanda,2.5,U2.5,3.6,888sport,40,2026-11-14T14:49:48
+2026-11-14,Uefa Nations League,Portogallo - Danimarca,2.5,O2.5,1.16,sunbet,40,2026-11-14T14:49:48
+2026-11-14,Uefa Nations League,Portogallo - Danimarca,2.5,U2.5,5.6,888sport,40,2026-11-14T14:49:48
+2026-11-14,Nations League,Irlanda del Nord - Ucraina,2.5,O2.5,1.6,sunbet,43,2026-11-14T14:49:48
+2026-11-14,Nations League,Irlanda del Nord - Ucraina,2.5,U2.5,2.38,888sport,43,2026-11-14T14:49:48
+2026-11-14,Uefa Nations League,Svezia - Bosnia Erzegovina,2.5,O2.5,1.23,sunbet,37,2026-11-14T14:49:48
+2026-11-14,Uefa Nations League,Svezia - Bosnia Erzegovina,2.5,U2.5,4.22,betpassion,37,2026-11-14T14:49:48
+2026-11-14,LaLiga 2,Real Sociedad B - Sporting Gijón,1x2,1,2.25,admiralbet,40,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Real Sociedad B - Sporting Gijón,1x2,X,3.33,stake,40,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Real Sociedad B - Sporting Gijón,1x2,2,3.4,snai,40,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Almería - Andorra,1x2,1,1.83,admiralbet,44,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Almería - Andorra,1x2,X,4.0,winamax,44,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Almería - Andorra,1x2,2,4.3,winamax,44,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Tenerife - AD Ceuta,1x2,1,1.84,winamax,39,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Tenerife - AD Ceuta,1x2,X,3.65,winamax,39,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Tenerife - AD Ceuta,1x2,2,4.45,goldbet,39,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Granada - Las Palmas,1x2,1,2.17,stake,44,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Granada - Las Palmas,1x2,X,3.45,winamax,44,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Granada - Las Palmas,1x2,2,3.65,888sport,44,2026-11-14T14:49:49
+2026-11-16,LaLiga 2,Albacete - Celta de Vigo B,1x2,1,1.6,betpassion,7,2026-11-14T14:49:49
+2026-11-16,LaLiga 2,Albacete - Celta de Vigo B,1x2,X,4.0,snai,7,2026-11-14T14:49:49
+2026-11-16,LaLiga 2,Albacete - Celta de Vigo B,1x2,2,4.75,snai,7,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Eibar - Cadiz,1x2,1,1.66,winamax,21,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Eibar - Cadiz,1x2,X,4.1,winamax,21,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Eibar - Cadiz,1x2,2,5.0,eurobet,21,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Mallorca - Cordoba,1x2,1,2.22,zonagioco,12,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Mallorca - Cordoba,1x2,X,2.46,zonagioco,12,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Mallorca - Cordoba,1x2,2,4.25,sportium,12,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Eldense - Sabadell,1x2,1,2.45,winamax,7,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Eldense - Sabadell,1x2,X,3.15,winamax,7,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Eldense - Sabadell,1x2,2,3.2,fastbet,7,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Mallorca - Córdoba CF,1x2,1,2.1,leovegas,11,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Mallorca - Córdoba CF,1x2,X,2.85,leovegas,11,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Mallorca - Córdoba CF,1x2,2,4.0,fastbet,11,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,CD Eldense - Sabadell FC,1x2,1,2.8,fastbet,5,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,CD Eldense - Sabadell FC,1x2,X,2.35,leovegas,5,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,CD Eldense - Sabadell FC,1x2,2,3.6,fastbet,5,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Oviedo - Girona,1x2,1,2.4,stake,3,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Oviedo - Girona,1x2,X,3.33,stake,3,2026-11-14T14:49:49
+2026-11-14,LaLiga 2,Oviedo - Girona,1x2,2,2.83,stake,3,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Tenerife - Ceuta,1x2,1,1.78,stake,3,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Tenerife - Ceuta,1x2,X,3.5,stake,3,2026-11-14T14:49:49
+2026-11-15,LaLiga 2,Tenerife - Ceuta,1x2,2,4.5,stake,3,2026-11-14T14:49:49
+2026-11-16,LaLiga 2,Albacete - Celta Vigo B,1x2,1,1.61,stake,3,2026-11-14T14:49:49
+2026-11-16,LaLiga 2,Albacete - Celta Vigo B,1x2,X,4.0,stake,3,2026-11-14T14:49:49
+2026-11-16,LaLiga 2,Albacete - Celta Vigo B,1x2,2,4.75,stake,3,2026-11-14T14:49:49
