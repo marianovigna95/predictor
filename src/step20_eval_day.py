@@ -101,6 +101,13 @@ def main():
                      "pO25%": r.get("Over2.5%"), "ou_reale": "Over" if ou_hit else "Under",
                      "ou_hit": int((r["Over2.5%"] > 50) == ou_hit)})
     df = pd.DataFrame(rows)
+    # 🆕 14/11 FIX: prima si scriveva SEMPRE, anche con 0 righe → file da 0/1 byte
+    #   che al giro dopo faceva crashare step23_ppa.py (EmptyDataError) e la pagina
+    #   ppa.html restava congelata alla data precedente.
+    if len(df) == 0:
+        print(f"📅 Valutazione {a.date}: nessuna partita verificabile "
+              f"(leghe non coperte dai risultati o partite non ancora finite) → file non scritto")
+        return 0
     df.to_csv(DATA / f"eval_day_{a.date}.csv", index=False)
     n = len(df)
     print(f"📅 Valutazione TUTTI i pronostici del {a.date}: {n} partite giocate (su {len(f)} con forecast)")

@@ -29,8 +29,16 @@ def main():
     evday = {}
     ef = DATA / f"eval_day_{today}.csv"
     if ef.exists():
-        for _, r in pd.read_csv(ef).iterrows():
-            evday[(str(r["lega"]), str(r["partita"]))] = r
+        try:
+            _ev = pd.read_csv(ef)
+            for _, r in _ev.iterrows():
+                evday[(str(r["lega"]), str(r["partita"]))] = r
+        except Exception as e:
+            # 🆕 14/11 FIX: se eval_day_<oggi>.csv è vuoto/illeggibile (EmptyDataError),
+            #   prima lo script CRASHAVA e site/ppa.html non veniva più rigenerata:
+            #   la pagina restava congelata alla data del vecchio file (13/11).
+            #   Ora si continua senza esiti: la pagina si aggiorna comunque.
+            print(f"   ⚠️ {ef.name} illeggibile ({type(e).__name__}): proseguo senza esiti")
 
     od = pd.concat([pd.read_csv(f) for f in sorted(DATA.glob("odds_window_*_bestprice.csv"))], ignore_index=True)  # 🛠 09/11 tutte le finestre
     od["data"] = od["data"].astype(str)
@@ -75,6 +83,7 @@ def main():
                     want = "Over" if label == "O2.5" else "Under"
                     esito = "✅" if ou == want else f"❌ ({ou})"
             by_date.setdefault(o["data"], []).append({
+                "data": o["data"],
                 "ora": str(r["orario"])[-5:] if pd.notna(r.get("orario")) else str(o["orario"])[-5:], "lega": o["lega"], "partita": o["partita"],
                 "pick": label, "p%": round(p, 1), "quota": round(float(q), 2), "EV%": ev,
                 "esito": esito, "done": bool(esito),
@@ -104,7 +113,9 @@ def main():
             q_txt = f"{r['quota']:.2f}" if r["quota"] else "—"
             mot = html.escape(str(r.get("motivo") or ""))  # testo completo, senza taglio
             per = html.escape(str(r.get("perche") or ""))  # 🆕 13/11 frase breve "perché"
-            es = f" <b>{r['esito']}</b>" if r.get("esito") else (" <b class='sub'>⏳ in verifica</b>" if o["data"] < today else "")
+            # 🆕 14/11 FIX: qui c'era o["data"] (ultima riga del ciclo esterno, non questa riga).
+            #   Se le date erano ordinate male, una partita PASSATA non veniva marcata.
+            es = f" <b>{r['esito']}</b>" if r.get("esito") else (" <b class='sub'>⏳ in verifica</b>" if r["data"] < today else "")
             trs += (f"<tr><td data-label='Ora'>{r['ora']}</td><td data-label='Lega'>{html.escape(r['lega'])}</td><td data-label='Partita'>{html.escape(r['partita'])}{es}</td>"
                     f"<td data-label='Mercato'><b>{r['pick']}</b></td><td data-label='p modello'><b>{r['p%']}%</b></td><td data-label='Quota'>{q_txt}</td><td data-label='EV'>{ev_txt}</td></tr>")
             trs += ((f"<tr class='motrow'><td colspan='7' class='perche'>{per}</td></tr>") if per else "")
