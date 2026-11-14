@@ -40,7 +40,12 @@ jobs:
           python3 src/step22b_window.py --days 7 || true               # 🆕 10/11 quote best-price per TUTTA la finestra mobile oggi→+7 (wincomparator)
           python3 src/step22_odds_refresh.py --date $D || true          # refresh quote di oggi (file finestra precedente)
           python3 src/step1c_verify_espn.py $D || true                  # verifica esiti ESPN
-          python3 src/step20_eval_day.py --date $D || true
+          # 🆕 14/11 FIX: prima si verificava SOLO il giorno corrente, quindi le partite
+          #   di ieri restavano per sempre senza esito ("⏳ in verifica").
+          #   Ora si ri-verificano oggi + i 3 giorni precedenti (recupera i buchi).
+          for i in 0 1 2 3; do
+            python3 src/step20_eval_day.py --date $(date -d "-$i day" +%F) || true
+          done
           python3 src/step15_betarchives.py --since $(date -d "yesterday" +%F) || true
           python3 src/step11_clv.py || true
           python3 src/step30_weather.py || true   # 🆕 13/11 meteo+coordinate (open-meteo, gratis)
