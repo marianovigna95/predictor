@@ -1162,6 +1162,24 @@ Edge positivo = il modello batte il mercato su quella lega. Campioni piccoli: da
 {vtr}</table></div>"""
 
 
+def _adm_note(r):
+    """🆕 13/11-b se conosciamo la miglior quota ADM per quella partita, la affianchiamo.
+    (analisi only: nessun link al book, si mostra solo il prezzo giocabile in Italia)"""
+    try:
+        qa = _quote_adm()
+        if not qa:
+            return ""
+        merc = "1x2" if (r.get("mercato") or "").upper() == "1X2" else str(r.get("mercato") or "").lower()
+        k = (str(r.get("data", ""))[:10], _nn_name(str(r.get("partita", "")).split("[")[0]), merc)
+        if k in qa:
+            q, book, nb = qa[k]
+            return (f"<br><span class='sub' style='font-size:10.5px'>🇮🇹 miglior quota ADM <b>{q:.2f}</b>"
+                    f" su {nb} book</span>")
+    except Exception:
+        pass
+    return ""
+
+
 def giocata_card_html():
     """Card giocata RAGGRUPPATE PER GIORNO: per ogni data della finestra, Singola del giorno + Raddoppio del giorno."""
     # 🆕 13/11 esito reale sulle giocate dei giorni passati (da verifica_*.csv)
@@ -1194,7 +1212,7 @@ def giocata_card_html():
             gtr += (f"<tr><td data-label='Tipo'><span class='pill t-{r['tipo'].lower()}'>{r['tipo']}</span></td><td data-label='Lega'>{r['lega']}</td>"
                     f"<td data-label='Partita'>{r['partita']}{(' <b>' + ver_map.get((_nn(r.get('data','')), r['tipo'], _nn(str(r['partita']).split('[')[0].strip())), '') + '</b>') if ver_map.get((_nn(r.get('data','')), r['tipo'], _nn(str(r['partita']).split('[')[0].strip()))) else ''}</td><td data-label='Mercato'>{mc}</td>"
                     f"<td data-label='Esito'><b>{r['esito']}</b></td>"
-                    f"<td data-label='p modello'>{r['p_modello%']}%</td><td data-label='Quota best'>{r['quota_best']}</td>"
+                    f"<td data-label='p modello'>{r['p_modello%']}%</td><td data-label='Quota best'>{r['quota_best']}{_adm_note(r)}</td>"
                     f"<td data-label='EV'><span class='pill {evc}'>{r['EV%']}%</span></td></tr>"
                     + (f"<tr class='mrow'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
                     + f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{mot}</td></tr>"
@@ -1250,6 +1268,35 @@ best-price su comparatore ADM. Analisi educativa solo: stime con incertezza, mai
 def window_label(frows):
     days = sorted({r["orario"].split(" ")[0] for r in frows})
     return f"{days[0]}–{days[-1]}/11/2026" if days else "—"
+
+
+def _quote_adm():
+    """🆕 13/11-b quote ADM reali (da step31_quote_adm.py). Se il file manca → dict vuoto,
+    e le pagine non mostrano nulla in più: nessun blocco, nessuna regressione."""
+    p = os.path.join(DATA, "quote_adm.csv")
+    out = {}
+    if not os.path.exists(p):
+        return out
+    try:
+        with open(p) as f:
+            for r in csv.DictReader(f):
+                k = (str(r.get("data", ""))[:10], _nn_name(r.get("partita", "")), str(r.get("mercato", "")).lower())
+                try:
+                    out[k] = (float(r.get("quota_adm_best") or 0), r.get("book") or "", int(r.get("n_book") or 0))
+                except Exception:
+                    pass
+    except Exception:
+        return {}
+    return out
+
+
+def _nn_name(t):
+    """normalizza il nome partita per il match tra fonti diverse."""
+    import re as _re
+    t = str(t).lower().replace("–", "-").replace("—", "-")
+    t = _re.sub(r"(fc|cf|sc|ac|as|us|ss|rc|club|calcio)", " ", t)
+    t = _re.sub(r"[^a-z0-9]+", " ", t)
+    return _re.sub(r"\s+", " ", t).strip()
 
 
 def _desc(title, sub, maxlen=155):
@@ -1491,7 +1538,7 @@ def main():
             t = t.replace("</body>", '<p style="text-align:center;font-size:12px;color:#94a3b8;padding:12px">⬅ <a href="index.html" style="color:#60a5fa">Home</a> · ⚠️ 18+ · ADM · autoesclusione.it · 800 558822</p></body>')
             open(dst, "w", encoding="utf-8").write(t)
         n += 1
-    print(f" sito generato in {SITE}: index, metodo, glossario, top5, europa(coppe), giocate, archivio, {nq} quote, {n} report")
+    print(f" sito generato in {SITE}: index, metodo, glossario, multi-lega(TOP 5), europa(coppe), giocate, archivio, {nq} quote, {n} report")
 
 
 if __name__ == "__main__":
