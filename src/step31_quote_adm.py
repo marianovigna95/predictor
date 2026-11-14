@@ -62,10 +62,9 @@ MAX_CALLS_PER_RUN = 3
 #    Il contatore vive in data/quote_adm_usage.json e si azzera al cambio di mese.
 MONTHLY_BUDGET = 480
 
-MERCATI = {  # nome nel nostro CSV -> come lo chiediamo alla fonte
-    "1X2": "1x2",
-    "O2.5": "over_under",
-}
+# 🆕 14/11 chiavi CANONICHE della fonte (documentate, non da indovinare):
+#   "1x2" · "ou" (over/under, CON linea 2.5) · "btts" (GG/NG). NON esiste "over_under".
+MERCATI = ("1x2", "ou")
 
 
 def _get(path: str, params: dict | None = None, key: str | None = None, timeout: int = 25):
@@ -95,6 +94,31 @@ def stato():
                 "scan_s": d.get("scanIntervalSeconds")}
     except Exception as e:
         return {"ok": False, "errore": str(e)}
+
+
+# 🆕 14/11 la fonte filtra la lega per SOTTOSTRINGA sul nome reale del listino (spesso localizzato).
+#   "Friendlies" NON esiste: i nomi veri sono "International Friendlies", "Club Friendlies", ecc.
+#   "Nations League" esiste ma ci sono anche "UEFA Nations League", "Uefa Nations League", "CONCACAF...".
+#   Qui ogni nostra lega si traduce in una query che la trova davvero.
+LEGA_QUERY = {
+    "Friendlies": "international friendlies",
+    "Nations League": "nations league",
+    "Serie A": "serie a",
+    "Serie B": "serie b",
+    "LaLiga": "laliga",
+    "LaLiga 2": "laliga 2",
+    "Bundesliga": "bundesliga",
+    "Bundesliga 2": "2. bundesliga",
+    "Ligue 1": "ligue 1",
+    "Ligue 2": "ligue 2",
+    "Premier League": "premier league",
+    "Championship": "championship",
+    "Eredivisie": "eredivisie",
+    "Primeira Liga": "primeira liga",
+    "Super Lig": "super lig",
+    "Champions League": "champions league",
+    "Europa League": "europa league",
+}
 
 
 def _num(x):
@@ -187,13 +211,13 @@ def main():
     calls = 0
     righe = []
     # 1 lega × 2 mercati = 2 richieste esatte (tetto MAX_CALLS_PER_RUN)
-    mercati = ["1x2", "over_under"] if not a.league else ["1x2"]
+    mercati = ["1x2", "ou"] if not a.league else ["1x2"]
     for league in ([a.league] if a.league else []):
         pass
 
     # 🆕 13/11-b PRIORITÀ: prima le leghe dove abbiamo GIOCATE attive (è lì che serve la quota ADM),
     # poi il resto della finestra. Altrimenti si consumavano richieste su leghe senza valore.
-    leghe_da_chiedere = []
+    leghe_da_chiedere = []   # nomi NOSTRI (poi tradotti con LEGA_QUERY)
     gj = DATA / "giocata_multi.csv"
     if gj.exists():
         try:
@@ -224,9 +248,10 @@ def main():
         for mercato in mercati:
             if calls >= cap_run:
                 break
+            q_lega = LEGA_QUERY.get(lega, lega)
             try:
                 calls += 1
-                d = _get("/odds", {"sport": "calcio", "league": lega, "market": mercato, "limit": 50}, key=key)
+                d = _get("/odds", {"sport": "calcio", "league": q_lega, "market": mercato, "limit": 50}, key=key)
             except urllib.error.HTTPError as e:
                 print(f"   ⚠️ {lega}/{mercato}: HTTP {e.code}")
                 continue
@@ -238,7 +263,11 @@ def main():
                 books = [b for b in (ev.get("bookmakers") or []) if b.get("playable_it") is True]
                 if not books:
                     continue
-                esiti = ["HOME", "DRAW", "AWAY"] if mercato == "1x2" else ["OVER", "UNDER"]
+                # esiti canonici della fonte: 1x2 = HOME/DRAW/AWAY · ou = OVER/UNDER · btts = YES/NO
+                esiti = {"1x2": ["HOME", "DRAW", "AWAY"], "ou": ["OVER", "UNDER"],
+                         "btts": ["YES", "NO"]}.get(mercato, [])
+                # 🆕 14/11 UNA RIGA PER ESITO (non solo il migliore): senza l'esito una quota
+                #   "2.5" non si sa se e' Over o Under, e il confronto con la giocata sarebbe sbagliato.
                 for k in esiti:
                     best, best_book = None, None
                     for b in books:
@@ -249,26 +278,33 @@ def main():
                         righe.append({"data": (ev.get("commence_time") or "")[:10],
                                       "lega": ev.get("league") or lega,
                                       "partita": ev.get("event") or "",
-                                      "mercato": (mercato if mercato == "1x2" else k.lower()),
+                                      "mercato": {"ou": "2.5", "btts": "gg"}.get(mercato, mercato)
+                                                 if mercato != "1x2" else "1x2",
+                                      "esito": {"ou": {"OVER": "O2.5", "UNDER": "U2.5"},
+                                                "btts": {"YES": "GG", "NO": "NG"},
+                                                "1x2": {"HOME": "1", "DRAW": "X", "AWAY": "2"}}
+                                               .get(mercato, {}).get(k, k),
                                       "quota_adm_best": round(best, 2),
                                       "book": best_book, "n_book": len(books),
                                       "aggiornato": dt.datetime.now().isoformat(timespec="seconds")})
                 n_ev += 1
-            print(f"   ✅ {lega}/{mercato}: {n_ev} eventi, {len(righe)} righe finora (richieste usate: {calls})")
+            print(f"   ✅ {lega} [{q_lega}]/{mercato}: {n_ev} eventi, {len(righe)} quote (richieste: {calls})")
             time.sleep(0.4)
 
+    # 🆕 14/11 dedup PRIMA di contare (il meta diceva 176 "righe" mentre il CSV ne aveva 22)
+    df_out = pd.DataFrame(righe).drop_duplicates(subset=["data", "partita", "mercato", "esito"]) if righe else None
     meta = {"aggiornato": dt.datetime.now().isoformat(timespec="seconds"),
             "stato": "ok" if righe else "vuoto", "richieste_usate": calls,
-            "righe": len(righe), "copertura": cov, "feed": st}
+            "quote": len(righe), "righe": (len(df_out) if df_out is not None else 0),
+            "copertura": cov, "feed": st}
     if a.dry_run:
         print(f"\n🔍 dry-run: {len(righe)} righe, nessun file scritto")
         for r in righe[:8]:
             print("   ", r)
         return 0
     if righe:
-        df = pd.DataFrame(righe).drop_duplicates(subset=["data", "partita", "mercato"])
-        df.to_csv(out_csv, index=False)
-        print(f"💾 {out_csv} — {len(df)} righe (solo book ADM, playable_it=true)")
+        df_out.to_csv(out_csv, index=False)
+        print(f"💾 {out_csv} — {len(df_out)} righe (solo book ADM, playable_it=true)")
     else:
         print("ℹ️ nessuna quota ADM ottenuta: il file precedente (se c'è) resta intatto")
     meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=1))

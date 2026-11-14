@@ -1163,9 +1163,19 @@ Edge positivo = il modello batte il mercato su quella lega. Campioni piccoli: da
 
 
 def _adm_note(r):
-    """🆕 13/11-b se conosciamo la miglior quota ADM per quella partita, la affianchiamo.
-    (analisi only: nessun link al book, si mostra solo il prezzo giocabile in Italia)"""
-    try:
+    """🆕 14/11 DISATTIVATA (strada A, decisione utente).
+
+    I termini della fonte dati (odss-api.com/llms.txt) distinguono due usi:
+      - "internal use (models, bots, analysis, backtests)"  -> incluso in ogni piano, OK;
+      - "Showing the data to end users requires the SaaS/Enterprise Display
+        Redistribution license (+120 EUR/month)"             -> A PAGAMENTO.
+    Le quote ADM vengono quindi usate SOLO in analisi interna (report in data/,
+    escluso dal sito pubblico) e NON mostrate ai visitatori: questa funzione
+    resta come interruttore, non produce output. Per riattivarla serve la licenza.
+    """
+    return ""
+    try:  # codice storico, non raggiungibile (vedi sopra)
+
         qa = _quote_adm()
         if not qa:
             return ""
