@@ -1,10 +1,17 @@
 {
- "aggiornato": "2026-11-14T08:43:51",
- "stato": "senza_chiave",
+ "aggiornato": "2026-11-14T09:13:21",
+ "stato": "ok",
+ "richieste_usate": 3,
+ "righe": 176,
  "copertura": {
   "ok": true,
-  "italy": 46,
-  "total": 214
+  "italy": 47,
+  "total": 215
  },
- "nota": "ODSS_API_KEY non impostata: nessun dato ADM scaricato. Il sito continua con le quote best-price attuali."
+ "feed": {
+  "ok": true,
+  "stato": "operational",
+  "live": true,
+  "scan_s": 45
+ }
 }
