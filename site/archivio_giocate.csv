@@ -1,6 +1,6 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-14,SINGOLA,Friendlies,China - Malaysia,U2.5,Under 2.5,62.8,1.86,16.81,1.19,,
-giocata,2026-11-14,RADDOPPIO,Friendlies + Nations League,Romania - Poland [U2.5 Under 2.5] + China - Malaysia [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,32.1,3.53,13.53,0.29,,
+giocata,2026-11-14,SINGOLA,Friendlies,China - Malaysia,U2.5,Under 2.5,62.6,1.9,18.94,1.65,,
+giocata,2026-11-14,RADDOPPIO,Friendlies + Nations League,Romania - Poland [U2.5 Under 2.5] + China - Malaysia [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,32.0,3.61,15.51,0.45,,
 giocata,2026-11-15,SINGOLA,Nations League,France - Türkiye,GG,GG,60.3,1.73,4.32,0.0,,
 giocata,2026-11-15,RADDOPPIO,LaLiga 2 + Nations League,Eibar - Cádiz [O2.5 Over 2.5] + France - Türkiye [GG GG],O2.5/GG,Over 2.5/GG,27.5,3.68,1.44,0.0,,
 giocata,2026-11-16,SINGOLA,Nations League,Greece - Serbia,GG,GG,63.2,1.85,16.92,1.27,,
