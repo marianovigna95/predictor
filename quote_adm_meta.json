@@ -1,8 +1,0 @@
-{
- "aggiornato": "2026-11-14T07:50:43",
- "stato": "budget_esaurito",
- "mese": "2026-11",
- "usate_mese": 480,
- "tetto_mensile": 480,
- "nota": "Budget mensile del free tier esaurito: nessuna richiesta in questa run. Si riprende il mese prossimo (il contatore si azzera da solo)."
-}
