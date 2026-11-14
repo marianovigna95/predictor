@@ -81,9 +81,19 @@ def main():
                          "acc%": round((p.argmax(1) == y).mean()*100, 1)} for n, p in rows])
     print(tab.round(4).to_string(index=False))
 
-    best_name = min(ensembles, key=lambda k: rps(ensembles[k], y))
+    # 🆕 14/11 FIX: prima il "migliore" era scelto E valutato sullo stesso campione.
+    #   Ora si elegge sul primo 70% (selezione) e si riporta l'RPS sul 30% finale (test),
+    #   che il modello non ha mai visto: se il numero regge fuori campione, vale qualcosa.
+    split_sel = int(len(y) * 0.7)
+    best_name = min(ensembles, key=lambda k: rps(ensembles[k][:split_sel], y[:split_sel]))
     P_ens = ensembles[best_name]
-    print(f"\n🏆 Ensemble migliore: {best_name}  (RPS={rps(P_ens, y):.4f})")
+    _rps_sel = rps(P_ens[:split_sel], y[:split_sel])
+    _rps_test = rps(P_ens[split_sel:], y[split_sel:])
+    _rps_mkt_test = rps(P_mkt[split_sel:], y[split_sel:])
+    print(f"\n🏆 Ensemble migliore: {best_name}")
+    print(f"   RPS selezione (primo 70%): {_rps_sel:.4f}")
+    print(f"   RPS TEST (ultimo 30%, mai visto): {_rps_test:.4f}  ·  mercato {_rps_mkt_test:.4f}"
+          f"  → {'modello meglio' if _rps_test < _rps_mkt_test else 'MODELLO PEGGIO DEL MERCATO'}")
 
     # ---- calibrazione (isotonica allenata sul primo 60%, testata sul 40%) ----
     split = int(len(y) * 0.6)
@@ -127,9 +137,19 @@ def main():
                             "EV medio%": round(np.mean(evs)*100, 1),
                             "CLV medio%": round(np.mean(clvs)*100, 2)})
             if thr == 0.02:
-                bet_logs = [(feat["Date"].iloc[i], feat["Home"].iloc[i], feat["Away"].iloc[i],
-                             ["H", "D", "A"][int(np.argmax(P_ens[i] - P_mkt[i]))],
-                             float(bet_odds[i].max()), float(P_ens[i].max()), int(y[i])) for i in picks]
+                # 🆕 14/11 FIX (bug trovato nell'audit del backtest):
+                #   prima si salvavano max(quote) e max(probabilita') invece dei valori
+                #   DELL'ESITO SCELTO → EV gonfiato di ~95 punti % (verificato: p 0.505
+                #   dichiarata contro 0.382 reale). Ora si indicizza con j = esito scelto.
+                _logs = []
+                for i in picks:
+                    j_ = int(np.argmax(P_ens[i] - P_mkt[i]))
+                    _logs.append((feat["Date"].iloc[i], feat["Home"].iloc[i], feat["Away"].iloc[i],
+                                  ["H", "D", "A"][j_],
+                                  float(bet_odds[i, j_]),      # ✅ quota dell'esito scelto
+                                  float(P_ens[i, j_]),         # ✅ probabilita' dell'esito scelto
+                                  int(y[i])))
+                bet_logs = _logs
     print(pd.DataFrame(ev_rows).to_string(index=False) if ev_rows else "   nessuna scommessa a queste soglie")
 
     # scenario "price shopping": best price (MaxC) vs linea sharp Pinnacle closing (PSCC)
