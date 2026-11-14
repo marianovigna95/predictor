@@ -1,4 +1,214 @@
 city,date,factor
+Milano,2026-08-01,1.0
+Milano,2026-08-02,1.0
+Milano,2026-08-03,1.0
+Milano,2026-08-04,1.0
+Milano,2026-08-05,0.96
+Milano,2026-08-06,0.96
+Milano,2026-08-07,1.0
+Milano,2026-08-08,1.0
+Milano,2026-08-09,1.0
+Milano,2026-08-10,1.0
+Milano,2026-08-11,0.96
+Milano,2026-08-12,1.0
+Milano,2026-08-13,0.96
+Milano,2026-08-14,1.0
+Milano,2026-08-15,1.0
+Milano,2026-08-16,0.95
+Milano,2026-08-17,1.0
+Milano,2026-08-18,1.0
+Milano,2026-08-19,1.0
+Milano,2026-08-20,0.9
+Milano,2026-08-21,0.9
+Milano,2026-08-22,1.0
+Milano,2026-08-23,1.0
+Milano,2026-08-24,1.0
+Milano,2026-08-25,0.95
+Milano,2026-08-26,1.0
+Milano,2026-08-27,1.0
+Milano,2026-08-28,1.0
+Milano,2026-08-29,1.0
+Milano,2026-08-30,1.0
+Milano,2026-08-31,1.0
+Milano,2026-09-01,1.0
+Milano,2026-09-02,1.0
+Milano,2026-09-03,1.0
+Milano,2026-09-04,1.0
+Milano,2026-09-05,1.0
+Milano,2026-09-06,1.0
+Milano,2026-09-07,1.0
+Milano,2026-09-08,1.0
+Milano,2026-09-09,0.9
+Milano,2026-09-10,0.9
+Milano,2026-09-11,1.0
+Milano,2026-09-12,1.0
+Milano,2026-09-13,1.0
+Milano,2026-09-14,1.0
+Milano,2026-09-15,1.0
+Milano,2026-09-16,0.95
+Milano,2026-09-17,0.95
+Milano,2026-09-18,0.95
+Milano,2026-09-19,1.0
+Milano,2026-09-20,1.0
+Milano,2026-09-21,1.0
+Milano,2026-09-22,1.0
+Milano,2026-09-23,1.0
+Milano,2026-09-24,1.0
+Milano,2026-09-25,1.0
+Milano,2026-09-26,1.0
+Milano,2026-09-27,1.0
+Milano,2026-09-28,1.0
+Milano,2026-09-29,1.0
+Milano,2026-09-30,1.0
+Milano,2026-10-01,1.0
+Milano,2026-10-02,1.0
+Milano,2026-10-03,1.0
+Milano,2026-10-04,1.0
+Milano,2026-10-05,1.0
+Milano,2026-10-06,1.0
+Milano,2026-10-07,0.9
+Milano,2026-10-08,0.9
+Milano,2026-10-09,1.0
+Milano,2026-10-10,1.0
+Milano,2026-10-11,1.0
+Milano,2026-10-12,1.0
+Milano,2026-10-13,1.0
+Milano,2026-10-14,1.0
+Milano,2026-10-15,1.0
+Milano,2026-10-16,1.0
+Milano,2026-10-17,1.0
+Milano,2026-10-18,0.95
+Milano,2026-10-19,1.0
+Milano,2026-10-20,0.9
+Milano,2026-10-21,0.9
+Milano,2026-10-22,1.0
+Milano,2026-10-23,0.95
+Milano,2026-10-24,1.0
+Milano,2026-10-25,1.0
+Milano,2026-10-26,1.0
+Milano,2026-10-27,1.0
+Milano,2026-10-28,1.0
+Milano,2026-10-29,1.0
+Milano,2026-10-30,1.0
+Milano,2026-10-31,1.0
+Milano,2026-11-01,1.0
+Milano,2026-11-02,1.0
+Milano,2026-11-03,1.0
+Milano,2026-11-04,1.0
+Milano,2026-11-05,1.0
+Milano,2026-11-06,0.95
+Milano,2026-11-07,0.95
+Milano,2026-11-08,1.0
+Milano,2026-11-09,1.0
+Milano,2026-11-10,1.0
+Milano,2026-11-11,1.0
+Milano,2026-11-12,0.9
+Milano,2026-11-13,1.0
+Roma,2026-08-01,1.0
+Roma,2026-08-02,1.0
+Roma,2026-08-03,1.0
+Roma,2026-08-04,1.0
+Roma,2026-08-05,1.0
+Roma,2026-08-06,1.0
+Roma,2026-08-07,1.0
+Roma,2026-08-08,1.0
+Roma,2026-08-09,1.0
+Roma,2026-08-10,1.0
+Roma,2026-08-11,1.0
+Roma,2026-08-12,1.0
+Roma,2026-08-13,1.0
+Roma,2026-08-14,1.0
+Roma,2026-08-15,1.0
+Roma,2026-08-16,1.0
+Roma,2026-08-17,0.95
+Roma,2026-08-18,1.0
+Roma,2026-08-19,1.0
+Roma,2026-08-20,1.0
+Roma,2026-08-21,0.9
+Roma,2026-08-22,1.0
+Roma,2026-08-23,1.0
+Roma,2026-08-24,1.0
+Roma,2026-08-25,0.9
+Roma,2026-08-26,1.0
+Roma,2026-08-27,1.0
+Roma,2026-08-28,1.0
+Roma,2026-08-29,1.0
+Roma,2026-08-30,1.0
+Roma,2026-08-31,1.0
+Roma,2026-09-01,1.0
+Roma,2026-09-02,1.0
+Roma,2026-09-03,1.0
+Roma,2026-09-04,1.0
+Roma,2026-09-05,1.0
+Roma,2026-09-06,1.0
+Roma,2026-09-07,1.0
+Roma,2026-09-08,1.0
+Roma,2026-09-09,1.0
+Roma,2026-09-10,0.9
+Roma,2026-09-11,1.0
+Roma,2026-09-12,1.0
+Roma,2026-09-13,1.0
+Roma,2026-09-14,1.0
+Roma,2026-09-15,1.0
+Roma,2026-09-16,1.0
+Roma,2026-09-17,1.0
+Roma,2026-09-18,0.95
+Roma,2026-09-19,0.9
+Roma,2026-09-20,1.0
+Roma,2026-09-21,1.0
+Roma,2026-09-22,1.0
+Roma,2026-09-23,1.0
+Roma,2026-09-24,1.0
+Roma,2026-09-25,1.0
+Roma,2026-09-26,1.0
+Roma,2026-09-27,1.0
+Roma,2026-09-28,1.0
+Roma,2026-09-29,1.0
+Roma,2026-09-30,1.0
+Roma,2026-10-01,1.0
+Roma,2026-10-02,1.0
+Roma,2026-10-03,1.0
+Roma,2026-10-04,1.0
+Roma,2026-10-05,1.0
+Roma,2026-10-06,1.0
+Roma,2026-10-07,0.9
+Roma,2026-10-08,0.9
+Roma,2026-10-09,0.9
+Roma,2026-10-10,0.9
+Roma,2026-10-11,1.0
+Roma,2026-10-12,1.0
+Roma,2026-10-13,1.0
+Roma,2026-10-14,1.0
+Roma,2026-10-15,1.0
+Roma,2026-10-16,1.0
+Roma,2026-10-17,1.0
+Roma,2026-10-18,1.0
+Roma,2026-10-19,1.0
+Roma,2026-10-20,0.95
+Roma,2026-10-21,0.9
+Roma,2026-10-22,1.0
+Roma,2026-10-23,0.95
+Roma,2026-10-24,0.95
+Roma,2026-10-25,1.0
+Roma,2026-10-26,1.0
+Roma,2026-10-27,1.0
+Roma,2026-10-28,1.0
+Roma,2026-10-29,1.0
+Roma,2026-10-30,1.0
+Roma,2026-10-31,1.0
+Roma,2026-11-01,1.0
+Roma,2026-11-02,0.95
+Roma,2026-11-03,1.0
+Roma,2026-11-04,1.0
+Roma,2026-11-05,1.0
+Roma,2026-11-06,0.9
+Roma,2026-11-07,1.0
+Roma,2026-11-08,1.0
+Roma,2026-11-09,1.0
+Roma,2026-11-10,0.95
+Roma,2026-11-11,1.0
+Roma,2026-11-12,0.9
+Roma,2026-11-13,0.9
 Bergamo,2026-08-01,1.0
 Bergamo,2026-08-02,0.95
 Bergamo,2026-08-03,1.0
@@ -944,111 +1154,6 @@ Como,2026-11-10,1.0
 Como,2026-11-11,1.0
 Como,2026-11-12,0.9
 Como,2026-11-13,1.0
-Cagliari,2026-08-01,1.0
-Cagliari,2026-08-02,1.0
-Cagliari,2026-08-03,1.0
-Cagliari,2026-08-04,1.0
-Cagliari,2026-08-05,1.0
-Cagliari,2026-08-06,1.0
-Cagliari,2026-08-07,1.0
-Cagliari,2026-08-08,1.0
-Cagliari,2026-08-09,1.0
-Cagliari,2026-08-10,1.0
-Cagliari,2026-08-11,1.0
-Cagliari,2026-08-12,1.0
-Cagliari,2026-08-13,1.0
-Cagliari,2026-08-14,1.0
-Cagliari,2026-08-15,1.0
-Cagliari,2026-08-16,1.0
-Cagliari,2026-08-17,1.0
-Cagliari,2026-08-18,1.0
-Cagliari,2026-08-19,1.0
-Cagliari,2026-08-20,1.0
-Cagliari,2026-08-21,1.0
-Cagliari,2026-08-22,1.0
-Cagliari,2026-08-23,1.0
-Cagliari,2026-08-24,1.0
-Cagliari,2026-08-25,1.0
-Cagliari,2026-08-26,1.0
-Cagliari,2026-08-27,1.0
-Cagliari,2026-08-28,0.96
-Cagliari,2026-08-29,1.0
-Cagliari,2026-08-30,1.0
-Cagliari,2026-08-31,1.0
-Cagliari,2026-09-01,1.0
-Cagliari,2026-09-02,1.0
-Cagliari,2026-09-03,1.0
-Cagliari,2026-09-04,1.0
-Cagliari,2026-09-05,1.0
-Cagliari,2026-09-06,1.0
-Cagliari,2026-09-07,1.0
-Cagliari,2026-09-08,1.0
-Cagliari,2026-09-09,1.0
-Cagliari,2026-09-10,1.0
-Cagliari,2026-09-11,1.0
-Cagliari,2026-09-12,1.0
-Cagliari,2026-09-13,1.0
-Cagliari,2026-09-14,1.0
-Cagliari,2026-09-15,1.0
-Cagliari,2026-09-16,1.0
-Cagliari,2026-09-17,1.0
-Cagliari,2026-09-18,1.0
-Cagliari,2026-09-19,1.0
-Cagliari,2026-09-20,0.95
-Cagliari,2026-09-21,1.0
-Cagliari,2026-09-22,1.0
-Cagliari,2026-09-23,1.0
-Cagliari,2026-09-24,1.0
-Cagliari,2026-09-25,1.0
-Cagliari,2026-09-26,1.0
-Cagliari,2026-09-27,1.0
-Cagliari,2026-09-28,1.0
-Cagliari,2026-09-29,1.0
-Cagliari,2026-09-30,1.0
-Cagliari,2026-10-01,1.0
-Cagliari,2026-10-02,1.0
-Cagliari,2026-10-03,1.0
-Cagliari,2026-10-04,1.0
-Cagliari,2026-10-05,1.0
-Cagliari,2026-10-06,0.95
-Cagliari,2026-10-07,1.0
-Cagliari,2026-10-08,1.0
-Cagliari,2026-10-09,1.0
-Cagliari,2026-10-10,1.0
-Cagliari,2026-10-11,1.0
-Cagliari,2026-10-12,1.0
-Cagliari,2026-10-13,1.0
-Cagliari,2026-10-14,1.0
-Cagliari,2026-10-15,1.0
-Cagliari,2026-10-16,1.0
-Cagliari,2026-10-17,1.0
-Cagliari,2026-10-18,1.0
-Cagliari,2026-10-19,0.95
-Cagliari,2026-10-20,0.9
-Cagliari,2026-10-21,1.0
-Cagliari,2026-10-22,1.0
-Cagliari,2026-10-23,1.0
-Cagliari,2026-10-24,1.0
-Cagliari,2026-10-25,1.0
-Cagliari,2026-10-26,1.0
-Cagliari,2026-10-27,1.0
-Cagliari,2026-10-28,1.0
-Cagliari,2026-10-29,1.0
-Cagliari,2026-10-30,1.0
-Cagliari,2026-10-31,1.0
-Cagliari,2026-11-01,0.95
-Cagliari,2026-11-02,1.0
-Cagliari,2026-11-03,1.0
-Cagliari,2026-11-04,1.0
-Cagliari,2026-11-05,0.95
-Cagliari,2026-11-06,1.0
-Cagliari,2026-11-07,1.0
-Cagliari,2026-11-08,1.0
-Cagliari,2026-11-09,1.0
-Cagliari,2026-11-10,1.0
-Cagliari,2026-11-11,1.0
-Cagliari,2026-11-12,0.95
-Cagliari,2026-11-13,1.0
 Genova,2026-08-01,1.0
 Genova,2026-08-02,1.0
 Genova,2026-08-03,1.0
@@ -2309,111 +2414,6 @@ Manchester,2026-11-10,1.0
 Manchester,2026-11-11,1.0
 Manchester,2026-11-12,1.0
 Manchester,2026-11-13,1.0
-Newcastle-upon-Tyne,2026-08-01,1.0
-Newcastle-upon-Tyne,2026-08-02,1.0
-Newcastle-upon-Tyne,2026-08-03,1.0
-Newcastle-upon-Tyne,2026-08-04,0.9
-Newcastle-upon-Tyne,2026-08-05,1.0
-Newcastle-upon-Tyne,2026-08-06,1.0
-Newcastle-upon-Tyne,2026-08-07,1.0
-Newcastle-upon-Tyne,2026-08-08,1.0
-Newcastle-upon-Tyne,2026-08-09,1.0
-Newcastle-upon-Tyne,2026-08-10,1.0
-Newcastle-upon-Tyne,2026-08-11,1.0
-Newcastle-upon-Tyne,2026-08-12,1.0
-Newcastle-upon-Tyne,2026-08-13,1.0
-Newcastle-upon-Tyne,2026-08-14,1.0
-Newcastle-upon-Tyne,2026-08-15,1.0
-Newcastle-upon-Tyne,2026-08-16,1.0
-Newcastle-upon-Tyne,2026-08-17,0.95
-Newcastle-upon-Tyne,2026-08-18,0.95
-Newcastle-upon-Tyne,2026-08-19,0.9
-Newcastle-upon-Tyne,2026-08-20,1.0
-Newcastle-upon-Tyne,2026-08-21,1.0
-Newcastle-upon-Tyne,2026-08-22,1.0
-Newcastle-upon-Tyne,2026-08-23,1.0
-Newcastle-upon-Tyne,2026-08-24,1.0
-Newcastle-upon-Tyne,2026-08-25,1.0
-Newcastle-upon-Tyne,2026-08-26,1.0
-Newcastle-upon-Tyne,2026-08-27,1.0
-Newcastle-upon-Tyne,2026-08-28,0.95
-Newcastle-upon-Tyne,2026-08-29,1.0
-Newcastle-upon-Tyne,2026-08-30,0.9
-Newcastle-upon-Tyne,2026-08-31,1.0
-Newcastle-upon-Tyne,2026-09-01,1.0
-Newcastle-upon-Tyne,2026-09-02,0.95
-Newcastle-upon-Tyne,2026-09-03,0.95
-Newcastle-upon-Tyne,2026-09-04,1.0
-Newcastle-upon-Tyne,2026-09-05,1.0
-Newcastle-upon-Tyne,2026-09-06,0.95
-Newcastle-upon-Tyne,2026-09-07,1.0
-Newcastle-upon-Tyne,2026-09-08,1.0
-Newcastle-upon-Tyne,2026-09-09,1.0
-Newcastle-upon-Tyne,2026-09-10,1.0
-Newcastle-upon-Tyne,2026-09-11,1.0
-Newcastle-upon-Tyne,2026-09-12,0.95
-Newcastle-upon-Tyne,2026-09-13,1.0
-Newcastle-upon-Tyne,2026-09-14,1.0
-Newcastle-upon-Tyne,2026-09-15,1.0
-Newcastle-upon-Tyne,2026-09-16,1.0
-Newcastle-upon-Tyne,2026-09-17,1.0
-Newcastle-upon-Tyne,2026-09-18,1.0
-Newcastle-upon-Tyne,2026-09-19,1.0
-Newcastle-upon-Tyne,2026-09-20,1.0
-Newcastle-upon-Tyne,2026-09-21,1.0
-Newcastle-upon-Tyne,2026-09-22,1.0
-Newcastle-upon-Tyne,2026-09-23,0.95
-Newcastle-upon-Tyne,2026-09-24,1.0
-Newcastle-upon-Tyne,2026-09-25,1.0
-Newcastle-upon-Tyne,2026-09-26,1.0
-Newcastle-upon-Tyne,2026-09-27,1.0
-Newcastle-upon-Tyne,2026-09-28,1.0
-Newcastle-upon-Tyne,2026-09-29,1.0
-Newcastle-upon-Tyne,2026-09-30,0.95
-Newcastle-upon-Tyne,2026-10-01,1.0
-Newcastle-upon-Tyne,2026-10-02,0.95
-Newcastle-upon-Tyne,2026-10-03,0.95
-Newcastle-upon-Tyne,2026-10-04,1.0
-Newcastle-upon-Tyne,2026-10-05,1.0
-Newcastle-upon-Tyne,2026-10-06,1.0
-Newcastle-upon-Tyne,2026-10-07,0.95
-Newcastle-upon-Tyne,2026-10-08,0.95
-Newcastle-upon-Tyne,2026-10-09,1.0
-Newcastle-upon-Tyne,2026-10-10,1.0
-Newcastle-upon-Tyne,2026-10-11,1.0
-Newcastle-upon-Tyne,2026-10-12,1.0
-Newcastle-upon-Tyne,2026-10-13,1.0
-Newcastle-upon-Tyne,2026-10-14,1.0
-Newcastle-upon-Tyne,2026-10-15,1.0
-Newcastle-upon-Tyne,2026-10-16,1.0
-Newcastle-upon-Tyne,2026-10-17,1.0
-Newcastle-upon-Tyne,2026-10-18,1.0
-Newcastle-upon-Tyne,2026-10-19,1.0
-Newcastle-upon-Tyne,2026-10-20,1.0
-Newcastle-upon-Tyne,2026-10-21,0.95
-Newcastle-upon-Tyne,2026-10-22,1.0
-Newcastle-upon-Tyne,2026-10-23,0.9
-Newcastle-upon-Tyne,2026-10-24,0.9
-Newcastle-upon-Tyne,2026-10-25,1.0
-Newcastle-upon-Tyne,2026-10-26,0.95
-Newcastle-upon-Tyne,2026-10-27,1.0
-Newcastle-upon-Tyne,2026-10-28,1.0
-Newcastle-upon-Tyne,2026-10-29,1.0
-Newcastle-upon-Tyne,2026-10-30,1.0
-Newcastle-upon-Tyne,2026-10-31,1.0
-Newcastle-upon-Tyne,2026-11-01,1.0
-Newcastle-upon-Tyne,2026-11-02,1.0
-Newcastle-upon-Tyne,2026-11-03,1.0
-Newcastle-upon-Tyne,2026-11-04,1.0
-Newcastle-upon-Tyne,2026-11-05,1.0
-Newcastle-upon-Tyne,2026-11-06,1.0
-Newcastle-upon-Tyne,2026-11-07,1.0
-Newcastle-upon-Tyne,2026-11-08,1.0
-Newcastle-upon-Tyne,2026-11-09,1.0
-Newcastle-upon-Tyne,2026-11-10,1.0
-Newcastle-upon-Tyne,2026-11-11,1.0
-Newcastle-upon-Tyne,2026-11-12,1.0
-Newcastle-upon-Tyne,2026-11-13,1.0
 Birmingham,2026-08-01,1.0
 Birmingham,2026-08-02,1.0
 Birmingham,2026-08-03,1.0
@@ -3569,111 +3569,6 @@ San Sebastian,2026-11-10,0.95
 San Sebastian,2026-11-11,1.0
 San Sebastian,2026-11-12,0.9
 San Sebastian,2026-11-13,0.95
-La Coruña,2026-08-01,1.0
-La Coruña,2026-08-02,1.0
-La Coruña,2026-08-03,1.0
-La Coruña,2026-08-04,0.95
-La Coruña,2026-08-05,1.0
-La Coruña,2026-08-06,1.0
-La Coruña,2026-08-07,1.0
-La Coruña,2026-08-08,1.0
-La Coruña,2026-08-09,0.95
-La Coruña,2026-08-10,1.0
-La Coruña,2026-08-11,1.0
-La Coruña,2026-08-12,1.0
-La Coruña,2026-08-13,1.0
-La Coruña,2026-08-14,1.0
-La Coruña,2026-08-15,1.0
-La Coruña,2026-08-16,1.0
-La Coruña,2026-08-17,1.0
-La Coruña,2026-08-18,1.0
-La Coruña,2026-08-19,1.0
-La Coruña,2026-08-20,0.95
-La Coruña,2026-08-21,1.0
-La Coruña,2026-08-22,1.0
-La Coruña,2026-08-23,0.95
-La Coruña,2026-08-24,0.95
-La Coruña,2026-08-25,0.95
-La Coruña,2026-08-26,0.95
-La Coruña,2026-08-27,0.95
-La Coruña,2026-08-28,0.95
-La Coruña,2026-08-29,0.9
-La Coruña,2026-08-30,1.0
-La Coruña,2026-08-31,1.0
-La Coruña,2026-09-01,1.0
-La Coruña,2026-09-02,1.0
-La Coruña,2026-09-03,1.0
-La Coruña,2026-09-04,1.0
-La Coruña,2026-09-05,1.0
-La Coruña,2026-09-06,1.0
-La Coruña,2026-09-07,1.0
-La Coruña,2026-09-08,0.9
-La Coruña,2026-09-09,1.0
-La Coruña,2026-09-10,1.0
-La Coruña,2026-09-11,1.0
-La Coruña,2026-09-12,1.0
-La Coruña,2026-09-13,1.0
-La Coruña,2026-09-14,1.0
-La Coruña,2026-09-15,1.0
-La Coruña,2026-09-16,1.0
-La Coruña,2026-09-17,1.0
-La Coruña,2026-09-18,1.0
-La Coruña,2026-09-19,1.0
-La Coruña,2026-09-20,1.0
-La Coruña,2026-09-21,1.0
-La Coruña,2026-09-22,1.0
-La Coruña,2026-09-23,1.0
-La Coruña,2026-09-24,1.0
-La Coruña,2026-09-25,1.0
-La Coruña,2026-09-26,1.0
-La Coruña,2026-09-27,0.9
-La Coruña,2026-09-28,0.9
-La Coruña,2026-09-29,0.9
-La Coruña,2026-09-30,1.0
-La Coruña,2026-10-01,1.0
-La Coruña,2026-10-02,1.0
-La Coruña,2026-10-03,1.0
-La Coruña,2026-10-04,1.0
-La Coruña,2026-10-05,1.0
-La Coruña,2026-10-06,0.95
-La Coruña,2026-10-07,0.95
-La Coruña,2026-10-08,1.0
-La Coruña,2026-10-09,1.0
-La Coruña,2026-10-10,1.0
-La Coruña,2026-10-11,1.0
-La Coruña,2026-10-12,1.0
-La Coruña,2026-10-13,1.0
-La Coruña,2026-10-14,1.0
-La Coruña,2026-10-15,1.0
-La Coruña,2026-10-16,1.0
-La Coruña,2026-10-17,1.0
-La Coruña,2026-10-18,1.0
-La Coruña,2026-10-19,1.0
-La Coruña,2026-10-20,0.95
-La Coruña,2026-10-21,1.0
-La Coruña,2026-10-22,0.95
-La Coruña,2026-10-23,1.0
-La Coruña,2026-10-24,1.0
-La Coruña,2026-10-25,1.0
-La Coruña,2026-10-26,1.0
-La Coruña,2026-10-27,0.95
-La Coruña,2026-10-28,1.0
-La Coruña,2026-10-29,1.0
-La Coruña,2026-10-30,1.0
-La Coruña,2026-10-31,1.0
-La Coruña,2026-11-01,1.0
-La Coruña,2026-11-02,1.0
-La Coruña,2026-11-03,1.0
-La Coruña,2026-11-04,1.0
-La Coruña,2026-11-05,1.0
-La Coruña,2026-11-06,0.95
-La Coruña,2026-11-07,0.9
-La Coruña,2026-11-08,1.0
-La Coruña,2026-11-09,0.9
-La Coruña,2026-11-10,0.9
-La Coruña,2026-11-11,1.0
-La Coruña,2026-11-12,0.9
-La Coruña,2026-11-13,0.95
 Bilbao,2026-08-01,1.0
 Bilbao,2026-08-02,1.0
 Bilbao,2026-08-03,1.0
@@ -4829,111 +4724,6 @@ Aue,2026-11-10,1.0
 Aue,2026-11-11,0.9
 Aue,2026-11-12,0.95
 Aue,2026-11-13,1.0
-Frankfurt,2026-08-01,0.95
-Frankfurt,2026-08-02,1.0
-Frankfurt,2026-08-03,1.0
-Frankfurt,2026-08-04,1.0
-Frankfurt,2026-08-05,1.0
-Frankfurt,2026-08-06,1.0
-Frankfurt,2026-08-07,1.0
-Frankfurt,2026-08-08,1.0
-Frankfurt,2026-08-09,1.0
-Frankfurt,2026-08-10,1.0
-Frankfurt,2026-08-11,1.0
-Frankfurt,2026-08-12,1.0
-Frankfurt,2026-08-13,1.0
-Frankfurt,2026-08-14,1.0
-Frankfurt,2026-08-15,1.0
-Frankfurt,2026-08-16,0.95
-Frankfurt,2026-08-17,1.0
-Frankfurt,2026-08-18,0.95
-Frankfurt,2026-08-19,0.9
-Frankfurt,2026-08-20,1.0
-Frankfurt,2026-08-21,0.95
-Frankfurt,2026-08-22,0.95
-Frankfurt,2026-08-23,1.0
-Frankfurt,2026-08-24,1.0
-Frankfurt,2026-08-25,1.0
-Frankfurt,2026-08-26,1.0
-Frankfurt,2026-08-27,1.0
-Frankfurt,2026-08-28,0.95
-Frankfurt,2026-08-29,1.0
-Frankfurt,2026-08-30,1.0
-Frankfurt,2026-08-31,0.95
-Frankfurt,2026-09-01,1.0
-Frankfurt,2026-09-02,1.0
-Frankfurt,2026-09-03,1.0
-Frankfurt,2026-09-04,1.0
-Frankfurt,2026-09-05,1.0
-Frankfurt,2026-09-06,1.0
-Frankfurt,2026-09-07,1.0
-Frankfurt,2026-09-08,1.0
-Frankfurt,2026-09-09,1.0
-Frankfurt,2026-09-10,1.0
-Frankfurt,2026-09-11,1.0
-Frankfurt,2026-09-12,1.0
-Frankfurt,2026-09-13,0.95
-Frankfurt,2026-09-14,1.0
-Frankfurt,2026-09-15,1.0
-Frankfurt,2026-09-16,1.0
-Frankfurt,2026-09-17,1.0
-Frankfurt,2026-09-18,1.0
-Frankfurt,2026-09-19,1.0
-Frankfurt,2026-09-20,1.0
-Frankfurt,2026-09-21,1.0
-Frankfurt,2026-09-22,1.0
-Frankfurt,2026-09-23,1.0
-Frankfurt,2026-09-24,1.0
-Frankfurt,2026-09-25,1.0
-Frankfurt,2026-09-26,1.0
-Frankfurt,2026-09-27,1.0
-Frankfurt,2026-09-28,1.0
-Frankfurt,2026-09-29,1.0
-Frankfurt,2026-09-30,1.0
-Frankfurt,2026-10-01,0.9
-Frankfurt,2026-10-02,0.95
-Frankfurt,2026-10-03,1.0
-Frankfurt,2026-10-04,1.0
-Frankfurt,2026-10-05,1.0
-Frankfurt,2026-10-06,1.0
-Frankfurt,2026-10-07,1.0
-Frankfurt,2026-10-08,0.95
-Frankfurt,2026-10-09,1.0
-Frankfurt,2026-10-10,0.95
-Frankfurt,2026-10-11,1.0
-Frankfurt,2026-10-12,1.0
-Frankfurt,2026-10-13,1.0
-Frankfurt,2026-10-14,1.0
-Frankfurt,2026-10-15,1.0
-Frankfurt,2026-10-16,1.0
-Frankfurt,2026-10-17,0.95
-Frankfurt,2026-10-18,1.0
-Frankfurt,2026-10-19,1.0
-Frankfurt,2026-10-20,1.0
-Frankfurt,2026-10-21,0.95
-Frankfurt,2026-10-22,1.0
-Frankfurt,2026-10-23,1.0
-Frankfurt,2026-10-24,0.95
-Frankfurt,2026-10-25,0.9
-Frankfurt,2026-10-26,1.0
-Frankfurt,2026-10-27,1.0
-Frankfurt,2026-10-28,0.95
-Frankfurt,2026-10-29,1.0
-Frankfurt,2026-10-30,1.0
-Frankfurt,2026-10-31,1.0
-Frankfurt,2026-11-01,1.0
-Frankfurt,2026-11-02,1.0
-Frankfurt,2026-11-03,1.0
-Frankfurt,2026-11-04,1.0
-Frankfurt,2026-11-05,1.0
-Frankfurt,2026-11-06,1.0
-Frankfurt,2026-11-07,1.0
-Frankfurt,2026-11-08,1.0
-Frankfurt,2026-11-09,1.0
-Frankfurt,2026-11-10,1.0
-Frankfurt,2026-11-11,0.95
-Frankfurt,2026-11-12,1.0
-Frankfurt,2026-11-13,1.0
 Freiburg im Breisgau,2026-08-01,1.0
 Freiburg im Breisgau,2026-08-02,1.0
 Freiburg im Breisgau,2026-08-03,1.0
@@ -6194,111 +5984,6 @@ Sinsheim,2026-11-10,1.0
 Sinsheim,2026-11-11,0.95
 Sinsheim,2026-11-12,1.0
 Sinsheim,2026-11-13,1.0
-Spiesen-Elversberg,2026-08-01,1.0
-Spiesen-Elversberg,2026-08-02,1.0
-Spiesen-Elversberg,2026-08-03,1.0
-Spiesen-Elversberg,2026-08-04,1.0
-Spiesen-Elversberg,2026-08-05,1.0
-Spiesen-Elversberg,2026-08-06,1.0
-Spiesen-Elversberg,2026-08-07,1.0
-Spiesen-Elversberg,2026-08-08,1.0
-Spiesen-Elversberg,2026-08-09,1.0
-Spiesen-Elversberg,2026-08-10,1.0
-Spiesen-Elversberg,2026-08-11,1.0
-Spiesen-Elversberg,2026-08-12,1.0
-Spiesen-Elversberg,2026-08-13,1.0
-Spiesen-Elversberg,2026-08-14,1.0
-Spiesen-Elversberg,2026-08-15,1.0
-Spiesen-Elversberg,2026-08-16,1.0
-Spiesen-Elversberg,2026-08-17,1.0
-Spiesen-Elversberg,2026-08-18,0.95
-Spiesen-Elversberg,2026-08-19,0.95
-Spiesen-Elversberg,2026-08-20,1.0
-Spiesen-Elversberg,2026-08-21,0.95
-Spiesen-Elversberg,2026-08-22,1.0
-Spiesen-Elversberg,2026-08-23,1.0
-Spiesen-Elversberg,2026-08-24,1.0
-Spiesen-Elversberg,2026-08-25,0.95
-Spiesen-Elversberg,2026-08-26,1.0
-Spiesen-Elversberg,2026-08-27,0.95
-Spiesen-Elversberg,2026-08-28,0.95
-Spiesen-Elversberg,2026-08-29,1.0
-Spiesen-Elversberg,2026-08-30,1.0
-Spiesen-Elversberg,2026-08-31,0.95
-Spiesen-Elversberg,2026-09-01,1.0
-Spiesen-Elversberg,2026-09-02,1.0
-Spiesen-Elversberg,2026-09-03,1.0
-Spiesen-Elversberg,2026-09-04,1.0
-Spiesen-Elversberg,2026-09-05,1.0
-Spiesen-Elversberg,2026-09-06,1.0
-Spiesen-Elversberg,2026-09-07,1.0
-Spiesen-Elversberg,2026-09-08,1.0
-Spiesen-Elversberg,2026-09-09,1.0
-Spiesen-Elversberg,2026-09-10,1.0
-Spiesen-Elversberg,2026-09-11,1.0
-Spiesen-Elversberg,2026-09-12,1.0
-Spiesen-Elversberg,2026-09-13,0.95
-Spiesen-Elversberg,2026-09-14,1.0
-Spiesen-Elversberg,2026-09-15,1.0
-Spiesen-Elversberg,2026-09-16,1.0
-Spiesen-Elversberg,2026-09-17,1.0
-Spiesen-Elversberg,2026-09-18,1.0
-Spiesen-Elversberg,2026-09-19,1.0
-Spiesen-Elversberg,2026-09-20,1.0
-Spiesen-Elversberg,2026-09-21,1.0
-Spiesen-Elversberg,2026-09-22,1.0
-Spiesen-Elversberg,2026-09-23,1.0
-Spiesen-Elversberg,2026-09-24,1.0
-Spiesen-Elversberg,2026-09-25,1.0
-Spiesen-Elversberg,2026-09-26,1.0
-Spiesen-Elversberg,2026-09-27,1.0
-Spiesen-Elversberg,2026-09-28,1.0
-Spiesen-Elversberg,2026-09-29,1.0
-Spiesen-Elversberg,2026-09-30,1.0
-Spiesen-Elversberg,2026-10-01,0.9
-Spiesen-Elversberg,2026-10-02,1.0
-Spiesen-Elversberg,2026-10-03,1.0
-Spiesen-Elversberg,2026-10-04,1.0
-Spiesen-Elversberg,2026-10-05,1.0
-Spiesen-Elversberg,2026-10-06,1.0
-Spiesen-Elversberg,2026-10-07,1.0
-Spiesen-Elversberg,2026-10-08,0.95
-Spiesen-Elversberg,2026-10-09,1.0
-Spiesen-Elversberg,2026-10-10,0.95
-Spiesen-Elversberg,2026-10-11,1.0
-Spiesen-Elversberg,2026-10-12,1.0
-Spiesen-Elversberg,2026-10-13,1.0
-Spiesen-Elversberg,2026-10-14,1.0
-Spiesen-Elversberg,2026-10-15,1.0
-Spiesen-Elversberg,2026-10-16,1.0
-Spiesen-Elversberg,2026-10-17,0.95
-Spiesen-Elversberg,2026-10-18,0.95
-Spiesen-Elversberg,2026-10-19,1.0
-Spiesen-Elversberg,2026-10-20,0.95
-Spiesen-Elversberg,2026-10-21,0.95
-Spiesen-Elversberg,2026-10-22,1.0
-Spiesen-Elversberg,2026-10-23,0.95
-Spiesen-Elversberg,2026-10-24,0.95
-Spiesen-Elversberg,2026-10-25,0.9
-Spiesen-Elversberg,2026-10-26,1.0
-Spiesen-Elversberg,2026-10-27,1.0
-Spiesen-Elversberg,2026-10-28,1.0
-Spiesen-Elversberg,2026-10-29,1.0
-Spiesen-Elversberg,2026-10-30,1.0
-Spiesen-Elversberg,2026-10-31,1.0
-Spiesen-Elversberg,2026-11-01,1.0
-Spiesen-Elversberg,2026-11-02,1.0
-Spiesen-Elversberg,2026-11-03,1.0
-Spiesen-Elversberg,2026-11-04,1.0
-Spiesen-Elversberg,2026-11-05,1.0
-Spiesen-Elversberg,2026-11-06,1.0
-Spiesen-Elversberg,2026-11-07,1.0
-Spiesen-Elversberg,2026-11-08,1.0
-Spiesen-Elversberg,2026-11-09,1.0
-Spiesen-Elversberg,2026-11-10,1.0
-Spiesen-Elversberg,2026-11-11,0.95
-Spiesen-Elversberg,2026-11-12,1.0
-Spiesen-Elversberg,2026-11-13,1.0
 RB Leipzig,2026-08-01,0.95
 RB Leipzig,2026-08-02,1.0
 RB Leipzig,2026-08-03,1.0
@@ -7349,111 +7034,6 @@ Toulouse,2026-11-10,1.0
 Toulouse,2026-11-11,1.0
 Toulouse,2026-11-12,0.95
 Toulouse,2026-11-13,1.0
-Strasbourg,2026-08-01,1.0
-Strasbourg,2026-08-02,1.0
-Strasbourg,2026-08-03,1.0
-Strasbourg,2026-08-04,0.95
-Strasbourg,2026-08-05,1.0
-Strasbourg,2026-08-06,1.0
-Strasbourg,2026-08-07,1.0
-Strasbourg,2026-08-08,1.0
-Strasbourg,2026-08-09,1.0
-Strasbourg,2026-08-10,1.0
-Strasbourg,2026-08-11,1.0
-Strasbourg,2026-08-12,1.0
-Strasbourg,2026-08-13,1.0
-Strasbourg,2026-08-14,1.0
-Strasbourg,2026-08-15,1.0
-Strasbourg,2026-08-16,1.0
-Strasbourg,2026-08-17,1.0
-Strasbourg,2026-08-18,0.95
-Strasbourg,2026-08-19,1.0
-Strasbourg,2026-08-20,1.0
-Strasbourg,2026-08-21,0.95
-Strasbourg,2026-08-22,1.0
-Strasbourg,2026-08-23,1.0
-Strasbourg,2026-08-24,1.0
-Strasbourg,2026-08-25,0.95
-Strasbourg,2026-08-26,1.0
-Strasbourg,2026-08-27,0.95
-Strasbourg,2026-08-28,0.9
-Strasbourg,2026-08-29,1.0
-Strasbourg,2026-08-30,1.0
-Strasbourg,2026-08-31,1.0
-Strasbourg,2026-09-01,1.0
-Strasbourg,2026-09-02,1.0
-Strasbourg,2026-09-03,1.0
-Strasbourg,2026-09-04,1.0
-Strasbourg,2026-09-05,0.95
-Strasbourg,2026-09-06,1.0
-Strasbourg,2026-09-07,1.0
-Strasbourg,2026-09-08,1.0
-Strasbourg,2026-09-09,1.0
-Strasbourg,2026-09-10,1.0
-Strasbourg,2026-09-11,1.0
-Strasbourg,2026-09-12,1.0
-Strasbourg,2026-09-13,1.0
-Strasbourg,2026-09-14,1.0
-Strasbourg,2026-09-15,1.0
-Strasbourg,2026-09-16,0.95
-Strasbourg,2026-09-17,1.0
-Strasbourg,2026-09-18,1.0
-Strasbourg,2026-09-19,1.0
-Strasbourg,2026-09-20,1.0
-Strasbourg,2026-09-21,1.0
-Strasbourg,2026-09-22,1.0
-Strasbourg,2026-09-23,1.0
-Strasbourg,2026-09-24,1.0
-Strasbourg,2026-09-25,1.0
-Strasbourg,2026-09-26,1.0
-Strasbourg,2026-09-27,1.0
-Strasbourg,2026-09-28,1.0
-Strasbourg,2026-09-29,1.0
-Strasbourg,2026-09-30,1.0
-Strasbourg,2026-10-01,0.9
-Strasbourg,2026-10-02,1.0
-Strasbourg,2026-10-03,1.0
-Strasbourg,2026-10-04,1.0
-Strasbourg,2026-10-05,1.0
-Strasbourg,2026-10-06,1.0
-Strasbourg,2026-10-07,1.0
-Strasbourg,2026-10-08,0.9
-Strasbourg,2026-10-09,1.0
-Strasbourg,2026-10-10,0.95
-Strasbourg,2026-10-11,1.0
-Strasbourg,2026-10-12,1.0
-Strasbourg,2026-10-13,1.0
-Strasbourg,2026-10-14,0.95
-Strasbourg,2026-10-15,1.0
-Strasbourg,2026-10-16,1.0
-Strasbourg,2026-10-17,0.95
-Strasbourg,2026-10-18,0.95
-Strasbourg,2026-10-19,1.0
-Strasbourg,2026-10-20,1.0
-Strasbourg,2026-10-21,0.95
-Strasbourg,2026-10-22,1.0
-Strasbourg,2026-10-23,1.0
-Strasbourg,2026-10-24,0.95
-Strasbourg,2026-10-25,0.9
-Strasbourg,2026-10-26,1.0
-Strasbourg,2026-10-27,1.0
-Strasbourg,2026-10-28,1.0
-Strasbourg,2026-10-29,1.0
-Strasbourg,2026-10-30,1.0
-Strasbourg,2026-10-31,1.0
-Strasbourg,2026-11-01,1.0
-Strasbourg,2026-11-02,1.0
-Strasbourg,2026-11-03,1.0
-Strasbourg,2026-11-04,1.0
-Strasbourg,2026-11-05,1.0
-Strasbourg,2026-11-06,1.0
-Strasbourg,2026-11-07,1.0
-Strasbourg,2026-11-08,1.0
-Strasbourg,2026-11-09,0.95
-Strasbourg,2026-11-10,0.95
-Strasbourg,2026-11-11,0.9
-Strasbourg,2026-11-12,1.0
-Strasbourg,2026-11-13,1.0
 Lorient,2026-08-01,1.0
 Lorient,2026-08-02,1.0
 Lorient,2026-08-03,1.0
@@ -8399,111 +7979,6 @@ Modena,2026-11-10,0.9
 Modena,2026-11-11,0.95
 Modena,2026-11-12,0.9
 Modena,2026-11-13,0.9
-Empoli,2026-08-01,1.0
-Empoli,2026-08-02,1.0
-Empoli,2026-08-03,1.0
-Empoli,2026-08-04,1.0
-Empoli,2026-08-05,1.0
-Empoli,2026-08-06,1.0
-Empoli,2026-08-07,1.0
-Empoli,2026-08-08,1.0
-Empoli,2026-08-09,1.0
-Empoli,2026-08-10,1.0
-Empoli,2026-08-11,1.0
-Empoli,2026-08-12,1.0
-Empoli,2026-08-13,1.0
-Empoli,2026-08-14,1.0
-Empoli,2026-08-15,1.0
-Empoli,2026-08-16,1.0
-Empoli,2026-08-17,1.0
-Empoli,2026-08-18,1.0
-Empoli,2026-08-19,1.0
-Empoli,2026-08-20,1.0
-Empoli,2026-08-21,0.9
-Empoli,2026-08-22,1.0
-Empoli,2026-08-23,1.0
-Empoli,2026-08-24,1.0
-Empoli,2026-08-25,0.9
-Empoli,2026-08-26,1.0
-Empoli,2026-08-27,1.0
-Empoli,2026-08-28,1.0
-Empoli,2026-08-29,1.0
-Empoli,2026-08-30,1.0
-Empoli,2026-08-31,1.0
-Empoli,2026-09-01,1.0
-Empoli,2026-09-02,1.0
-Empoli,2026-09-03,1.0
-Empoli,2026-09-04,1.0
-Empoli,2026-09-05,1.0
-Empoli,2026-09-06,1.0
-Empoli,2026-09-07,1.0
-Empoli,2026-09-08,1.0
-Empoli,2026-09-09,0.9
-Empoli,2026-09-10,0.9
-Empoli,2026-09-11,1.0
-Empoli,2026-09-12,1.0
-Empoli,2026-09-13,1.0
-Empoli,2026-09-14,1.0
-Empoli,2026-09-15,1.0
-Empoli,2026-09-16,1.0
-Empoli,2026-09-17,0.95
-Empoli,2026-09-18,0.9
-Empoli,2026-09-19,1.0
-Empoli,2026-09-20,1.0
-Empoli,2026-09-21,1.0
-Empoli,2026-09-22,1.0
-Empoli,2026-09-23,1.0
-Empoli,2026-09-24,1.0
-Empoli,2026-09-25,1.0
-Empoli,2026-09-26,1.0
-Empoli,2026-09-27,1.0
-Empoli,2026-09-28,1.0
-Empoli,2026-09-29,1.0
-Empoli,2026-09-30,1.0
-Empoli,2026-10-01,1.0
-Empoli,2026-10-02,1.0
-Empoli,2026-10-03,1.0
-Empoli,2026-10-04,1.0
-Empoli,2026-10-05,1.0
-Empoli,2026-10-06,1.0
-Empoli,2026-10-07,0.9
-Empoli,2026-10-08,0.9
-Empoli,2026-10-09,1.0
-Empoli,2026-10-10,1.0
-Empoli,2026-10-11,1.0
-Empoli,2026-10-12,1.0
-Empoli,2026-10-13,1.0
-Empoli,2026-10-14,1.0
-Empoli,2026-10-15,1.0
-Empoli,2026-10-16,1.0
-Empoli,2026-10-17,1.0
-Empoli,2026-10-18,1.0
-Empoli,2026-10-19,1.0
-Empoli,2026-10-20,0.9
-Empoli,2026-10-21,0.9
-Empoli,2026-10-22,1.0
-Empoli,2026-10-23,0.9
-Empoli,2026-10-24,1.0
-Empoli,2026-10-25,1.0
-Empoli,2026-10-26,1.0
-Empoli,2026-10-27,1.0
-Empoli,2026-10-28,1.0
-Empoli,2026-10-29,1.0
-Empoli,2026-10-30,1.0
-Empoli,2026-10-31,1.0
-Empoli,2026-11-01,1.0
-Empoli,2026-11-02,1.0
-Empoli,2026-11-03,1.0
-Empoli,2026-11-04,1.0
-Empoli,2026-11-05,1.0
-Empoli,2026-11-06,0.95
-Empoli,2026-11-07,1.0
-Empoli,2026-11-08,1.0
-Empoli,2026-11-09,1.0
-Empoli,2026-11-10,0.9
-Empoli,2026-11-11,0.95
-Empoli,2026-11-12,0.9
-Empoli,2026-11-13,0.9
 Palermo,2026-08-01,1.0
 Palermo,2026-08-02,1.0
 Palermo,2026-08-03,1.0
@@ -9659,111 +9134,6 @@ Cremona,2026-11-10,1.0
 Cremona,2026-11-11,1.0
 Cremona,2026-11-12,0.9
 Cremona,2026-11-13,1.0
-Avellino,2026-08-01,1.0
-Avellino,2026-08-02,1.0
-Avellino,2026-08-03,1.0
-Avellino,2026-08-04,1.0
-Avellino,2026-08-05,1.0
-Avellino,2026-08-06,1.0
-Avellino,2026-08-07,1.0
-Avellino,2026-08-08,1.0
-Avellino,2026-08-09,1.0
-Avellino,2026-08-10,1.0
-Avellino,2026-08-11,1.0
-Avellino,2026-08-12,1.0
-Avellino,2026-08-13,1.0
-Avellino,2026-08-14,1.0
-Avellino,2026-08-15,1.0
-Avellino,2026-08-16,1.0
-Avellino,2026-08-17,1.0
-Avellino,2026-08-18,1.0
-Avellino,2026-08-19,1.0
-Avellino,2026-08-20,1.0
-Avellino,2026-08-21,1.0
-Avellino,2026-08-22,0.95
-Avellino,2026-08-23,1.0
-Avellino,2026-08-24,1.0
-Avellino,2026-08-25,1.0
-Avellino,2026-08-26,1.0
-Avellino,2026-08-27,1.0
-Avellino,2026-08-28,1.0
-Avellino,2026-08-29,1.0
-Avellino,2026-08-30,1.0
-Avellino,2026-08-31,1.0
-Avellino,2026-09-01,1.0
-Avellino,2026-09-02,1.0
-Avellino,2026-09-03,1.0
-Avellino,2026-09-04,1.0
-Avellino,2026-09-05,1.0
-Avellino,2026-09-06,1.0
-Avellino,2026-09-07,1.0
-Avellino,2026-09-08,1.0
-Avellino,2026-09-09,1.0
-Avellino,2026-09-10,1.0
-Avellino,2026-09-11,1.0
-Avellino,2026-09-12,0.95
-Avellino,2026-09-13,1.0
-Avellino,2026-09-14,1.0
-Avellino,2026-09-15,1.0
-Avellino,2026-09-16,1.0
-Avellino,2026-09-17,1.0
-Avellino,2026-09-18,0.9
-Avellino,2026-09-19,1.0
-Avellino,2026-09-20,1.0
-Avellino,2026-09-21,1.0
-Avellino,2026-09-22,1.0
-Avellino,2026-09-23,1.0
-Avellino,2026-09-24,1.0
-Avellino,2026-09-25,0.95
-Avellino,2026-09-26,1.0
-Avellino,2026-09-27,1.0
-Avellino,2026-09-28,1.0
-Avellino,2026-09-29,1.0
-Avellino,2026-09-30,1.0
-Avellino,2026-10-01,1.0
-Avellino,2026-10-02,1.0
-Avellino,2026-10-03,1.0
-Avellino,2026-10-04,1.0
-Avellino,2026-10-05,1.0
-Avellino,2026-10-06,1.0
-Avellino,2026-10-07,1.0
-Avellino,2026-10-08,0.95
-Avellino,2026-10-09,0.95
-Avellino,2026-10-10,0.95
-Avellino,2026-10-11,1.0
-Avellino,2026-10-12,0.95
-Avellino,2026-10-13,1.0
-Avellino,2026-10-14,1.0
-Avellino,2026-10-15,1.0
-Avellino,2026-10-16,1.0
-Avellino,2026-10-17,1.0
-Avellino,2026-10-18,1.0
-Avellino,2026-10-19,1.0
-Avellino,2026-10-20,1.0
-Avellino,2026-10-21,0.9
-Avellino,2026-10-22,1.0
-Avellino,2026-10-23,1.0
-Avellino,2026-10-24,0.95
-Avellino,2026-10-25,1.0
-Avellino,2026-10-26,1.0
-Avellino,2026-10-27,1.0
-Avellino,2026-10-28,1.0
-Avellino,2026-10-29,1.0
-Avellino,2026-10-30,0.95
-Avellino,2026-10-31,1.0
-Avellino,2026-11-01,0.95
-Avellino,2026-11-02,0.9
-Avellino,2026-11-03,1.0
-Avellino,2026-11-04,1.0
-Avellino,2026-11-05,1.0
-Avellino,2026-11-06,0.95
-Avellino,2026-11-07,1.0
-Avellino,2026-11-08,1.0
-Avellino,2026-11-09,1.0
-Avellino,2026-11-10,1.0
-Avellino,2026-11-11,1.0
-Avellino,2026-11-12,0.95
-Avellino,2026-11-13,0.95
 Benevento,2026-08-01,1.0
 Benevento,2026-08-02,1.0
 Benevento,2026-08-03,1.0
@@ -10919,111 +10289,6 @@ Blackburn,2026-11-10,1.0
 Blackburn,2026-11-11,1.0
 Blackburn,2026-11-12,1.0
 Blackburn,2026-11-13,1.0
-Middlesbrough,2026-08-01,1.0
-Middlesbrough,2026-08-02,1.0
-Middlesbrough,2026-08-03,1.0
-Middlesbrough,2026-08-04,1.0
-Middlesbrough,2026-08-05,1.0
-Middlesbrough,2026-08-06,1.0
-Middlesbrough,2026-08-07,1.0
-Middlesbrough,2026-08-08,1.0
-Middlesbrough,2026-08-09,1.0
-Middlesbrough,2026-08-10,1.0
-Middlesbrough,2026-08-11,1.0
-Middlesbrough,2026-08-12,1.0
-Middlesbrough,2026-08-13,1.0
-Middlesbrough,2026-08-14,1.0
-Middlesbrough,2026-08-15,1.0
-Middlesbrough,2026-08-16,0.95
-Middlesbrough,2026-08-17,0.95
-Middlesbrough,2026-08-18,1.0
-Middlesbrough,2026-08-19,0.95
-Middlesbrough,2026-08-20,0.95
-Middlesbrough,2026-08-21,1.0
-Middlesbrough,2026-08-22,1.0
-Middlesbrough,2026-08-23,1.0
-Middlesbrough,2026-08-24,1.0
-Middlesbrough,2026-08-25,1.0
-Middlesbrough,2026-08-26,1.0
-Middlesbrough,2026-08-27,1.0
-Middlesbrough,2026-08-28,0.9
-Middlesbrough,2026-08-29,1.0
-Middlesbrough,2026-08-30,0.95
-Middlesbrough,2026-08-31,0.95
-Middlesbrough,2026-09-01,1.0
-Middlesbrough,2026-09-02,1.0
-Middlesbrough,2026-09-03,0.95
-Middlesbrough,2026-09-04,0.95
-Middlesbrough,2026-09-05,1.0
-Middlesbrough,2026-09-06,1.0
-Middlesbrough,2026-09-07,1.0
-Middlesbrough,2026-09-08,1.0
-Middlesbrough,2026-09-09,1.0
-Middlesbrough,2026-09-10,1.0
-Middlesbrough,2026-09-11,1.0
-Middlesbrough,2026-09-12,1.0
-Middlesbrough,2026-09-13,1.0
-Middlesbrough,2026-09-14,1.0
-Middlesbrough,2026-09-15,0.95
-Middlesbrough,2026-09-16,1.0
-Middlesbrough,2026-09-17,1.0
-Middlesbrough,2026-09-18,1.0
-Middlesbrough,2026-09-19,1.0
-Middlesbrough,2026-09-20,1.0
-Middlesbrough,2026-09-21,1.0
-Middlesbrough,2026-09-22,1.0
-Middlesbrough,2026-09-23,0.9
-Middlesbrough,2026-09-24,1.0
-Middlesbrough,2026-09-25,1.0
-Middlesbrough,2026-09-26,1.0
-Middlesbrough,2026-09-27,1.0
-Middlesbrough,2026-09-28,1.0
-Middlesbrough,2026-09-29,1.0
-Middlesbrough,2026-09-30,1.0
-Middlesbrough,2026-10-01,1.0
-Middlesbrough,2026-10-02,1.0
-Middlesbrough,2026-10-03,1.0
-Middlesbrough,2026-10-04,1.0
-Middlesbrough,2026-10-05,1.0
-Middlesbrough,2026-10-06,1.0
-Middlesbrough,2026-10-07,0.95
-Middlesbrough,2026-10-08,0.95
-Middlesbrough,2026-10-09,0.95
-Middlesbrough,2026-10-10,1.0
-Middlesbrough,2026-10-11,1.0
-Middlesbrough,2026-10-12,1.0
-Middlesbrough,2026-10-13,1.0
-Middlesbrough,2026-10-14,1.0
-Middlesbrough,2026-10-15,1.0
-Middlesbrough,2026-10-16,0.95
-Middlesbrough,2026-10-17,1.0
-Middlesbrough,2026-10-18,1.0
-Middlesbrough,2026-10-19,1.0
-Middlesbrough,2026-10-20,0.95
-Middlesbrough,2026-10-21,1.0
-Middlesbrough,2026-10-22,1.0
-Middlesbrough,2026-10-23,0.9
-Middlesbrough,2026-10-24,0.95
-Middlesbrough,2026-10-25,1.0
-Middlesbrough,2026-10-26,1.0
-Middlesbrough,2026-10-27,1.0
-Middlesbrough,2026-10-28,1.0
-Middlesbrough,2026-10-29,1.0
-Middlesbrough,2026-10-30,1.0
-Middlesbrough,2026-10-31,1.0
-Middlesbrough,2026-11-01,1.0
-Middlesbrough,2026-11-02,1.0
-Middlesbrough,2026-11-03,1.0
-Middlesbrough,2026-11-04,1.0
-Middlesbrough,2026-11-05,1.0
-Middlesbrough,2026-11-06,1.0
-Middlesbrough,2026-11-07,1.0
-Middlesbrough,2026-11-08,1.0
-Middlesbrough,2026-11-09,1.0
-Middlesbrough,2026-11-10,1.0
-Middlesbrough,2026-11-11,1.0
-Middlesbrough,2026-11-12,1.0
-Middlesbrough,2026-11-13,1.0
 Derby,2026-08-01,1.0
 Derby,2026-08-02,1.0
 Derby,2026-08-03,1.0
@@ -12179,111 +11444,6 @@ Palma de Mallorca,2026-11-10,1.0
 Palma de Mallorca,2026-11-11,1.0
 Palma de Mallorca,2026-11-12,0.95
 Palma de Mallorca,2026-11-13,1.0
-Oviedo,2026-08-01,1.0
-Oviedo,2026-08-02,1.0
-Oviedo,2026-08-03,1.0
-Oviedo,2026-08-04,1.0
-Oviedo,2026-08-05,1.0
-Oviedo,2026-08-06,1.0
-Oviedo,2026-08-07,1.0
-Oviedo,2026-08-08,1.0
-Oviedo,2026-08-09,1.0
-Oviedo,2026-08-10,1.0
-Oviedo,2026-08-11,1.0
-Oviedo,2026-08-12,1.0
-Oviedo,2026-08-13,1.0
-Oviedo,2026-08-14,1.0
-Oviedo,2026-08-15,1.0
-Oviedo,2026-08-16,1.0
-Oviedo,2026-08-17,1.0
-Oviedo,2026-08-18,1.0
-Oviedo,2026-08-19,1.0
-Oviedo,2026-08-20,0.95
-Oviedo,2026-08-21,1.0
-Oviedo,2026-08-22,1.0
-Oviedo,2026-08-23,1.0
-Oviedo,2026-08-24,0.9
-Oviedo,2026-08-25,0.9
-Oviedo,2026-08-26,1.0
-Oviedo,2026-08-27,0.9
-Oviedo,2026-08-28,1.0
-Oviedo,2026-08-29,0.95
-Oviedo,2026-08-30,0.95
-Oviedo,2026-08-31,1.0
-Oviedo,2026-09-01,1.0
-Oviedo,2026-09-02,1.0
-Oviedo,2026-09-03,1.0
-Oviedo,2026-09-04,1.0
-Oviedo,2026-09-05,1.0
-Oviedo,2026-09-06,1.0
-Oviedo,2026-09-07,1.0
-Oviedo,2026-09-08,0.9
-Oviedo,2026-09-09,0.95
-Oviedo,2026-09-10,1.0
-Oviedo,2026-09-11,1.0
-Oviedo,2026-09-12,1.0
-Oviedo,2026-09-13,1.0
-Oviedo,2026-09-14,1.0
-Oviedo,2026-09-15,0.95
-Oviedo,2026-09-16,0.9
-Oviedo,2026-09-17,1.0
-Oviedo,2026-09-18,0.95
-Oviedo,2026-09-19,1.0
-Oviedo,2026-09-20,1.0
-Oviedo,2026-09-21,1.0
-Oviedo,2026-09-22,1.0
-Oviedo,2026-09-23,1.0
-Oviedo,2026-09-24,1.0
-Oviedo,2026-09-25,1.0
-Oviedo,2026-09-26,1.0
-Oviedo,2026-09-27,1.0
-Oviedo,2026-09-28,1.0
-Oviedo,2026-09-29,1.0
-Oviedo,2026-09-30,0.95
-Oviedo,2026-10-01,1.0
-Oviedo,2026-10-02,1.0
-Oviedo,2026-10-03,0.9
-Oviedo,2026-10-04,0.9
-Oviedo,2026-10-05,0.95
-Oviedo,2026-10-06,0.95
-Oviedo,2026-10-07,0.9
-Oviedo,2026-10-08,0.95
-Oviedo,2026-10-09,1.0
-Oviedo,2026-10-10,1.0
-Oviedo,2026-10-11,1.0
-Oviedo,2026-10-12,1.0
-Oviedo,2026-10-13,1.0
-Oviedo,2026-10-14,1.0
-Oviedo,2026-10-15,1.0
-Oviedo,2026-10-16,1.0
-Oviedo,2026-10-17,0.9
-Oviedo,2026-10-18,1.0
-Oviedo,2026-10-19,1.0
-Oviedo,2026-10-20,1.0
-Oviedo,2026-10-21,1.0
-Oviedo,2026-10-22,0.95
-Oviedo,2026-10-23,1.0
-Oviedo,2026-10-24,1.0
-Oviedo,2026-10-25,1.0
-Oviedo,2026-10-26,1.0
-Oviedo,2026-10-27,1.0
-Oviedo,2026-10-28,1.0
-Oviedo,2026-10-29,1.0
-Oviedo,2026-10-30,1.0
-Oviedo,2026-10-31,1.0
-Oviedo,2026-11-01,1.0
-Oviedo,2026-11-02,1.0
-Oviedo,2026-11-03,1.0
-Oviedo,2026-11-04,1.0
-Oviedo,2026-11-05,1.0
-Oviedo,2026-11-06,1.0
-Oviedo,2026-11-07,1.0
-Oviedo,2026-11-08,1.0
-Oviedo,2026-11-09,0.95
-Oviedo,2026-11-10,1.0
-Oviedo,2026-11-11,0.9
-Oviedo,2026-11-12,0.95
-Oviedo,2026-11-13,1.0
 Valladolid,2026-08-01,1.0
 Valladolid,2026-08-02,1.0
 Valladolid,2026-08-03,1.0
@@ -13439,111 +12599,6 @@ Almería,2026-11-10,1.0
 Almería,2026-11-11,0.9
 Almería,2026-11-12,1.0
 Almería,2026-11-13,1.0
-Elda,2026-08-01,1.0
-Elda,2026-08-02,1.0
-Elda,2026-08-03,1.0
-Elda,2026-08-04,1.0
-Elda,2026-08-05,1.0
-Elda,2026-08-06,1.0
-Elda,2026-08-07,1.0
-Elda,2026-08-08,1.0
-Elda,2026-08-09,1.0
-Elda,2026-08-10,1.0
-Elda,2026-08-11,1.0
-Elda,2026-08-12,1.0
-Elda,2026-08-13,1.0
-Elda,2026-08-14,1.0
-Elda,2026-08-15,1.0
-Elda,2026-08-16,1.0
-Elda,2026-08-17,1.0
-Elda,2026-08-18,1.0
-Elda,2026-08-19,1.0
-Elda,2026-08-20,0.9
-Elda,2026-08-21,1.0
-Elda,2026-08-22,1.0
-Elda,2026-08-23,0.95
-Elda,2026-08-24,1.0
-Elda,2026-08-25,1.0
-Elda,2026-08-26,1.0
-Elda,2026-08-27,1.0
-Elda,2026-08-28,0.95
-Elda,2026-08-29,1.0
-Elda,2026-08-30,1.0
-Elda,2026-08-31,1.0
-Elda,2026-09-01,1.0
-Elda,2026-09-02,1.0
-Elda,2026-09-03,1.0
-Elda,2026-09-04,1.0
-Elda,2026-09-05,1.0
-Elda,2026-09-06,1.0
-Elda,2026-09-07,1.0
-Elda,2026-09-08,1.0
-Elda,2026-09-09,0.95
-Elda,2026-09-10,1.0
-Elda,2026-09-11,1.0
-Elda,2026-09-12,1.0
-Elda,2026-09-13,1.0
-Elda,2026-09-14,1.0
-Elda,2026-09-15,1.0
-Elda,2026-09-16,1.0
-Elda,2026-09-17,0.95
-Elda,2026-09-18,1.0
-Elda,2026-09-19,1.0
-Elda,2026-09-20,1.0
-Elda,2026-09-21,1.0
-Elda,2026-09-22,1.0
-Elda,2026-09-23,1.0
-Elda,2026-09-24,1.0
-Elda,2026-09-25,1.0
-Elda,2026-09-26,1.0
-Elda,2026-09-27,1.0
-Elda,2026-09-28,1.0
-Elda,2026-09-29,1.0
-Elda,2026-09-30,1.0
-Elda,2026-10-01,1.0
-Elda,2026-10-02,0.9
-Elda,2026-10-03,1.0
-Elda,2026-10-04,0.95
-Elda,2026-10-05,1.0
-Elda,2026-10-06,0.95
-Elda,2026-10-07,0.95
-Elda,2026-10-08,1.0
-Elda,2026-10-09,1.0
-Elda,2026-10-10,1.0
-Elda,2026-10-11,1.0
-Elda,2026-10-12,1.0
-Elda,2026-10-13,1.0
-Elda,2026-10-14,1.0
-Elda,2026-10-15,1.0
-Elda,2026-10-16,1.0
-Elda,2026-10-17,0.95
-Elda,2026-10-18,0.9
-Elda,2026-10-19,0.95
-Elda,2026-10-20,0.95
-Elda,2026-10-21,1.0
-Elda,2026-10-22,1.0
-Elda,2026-10-23,1.0
-Elda,2026-10-24,1.0
-Elda,2026-10-25,1.0
-Elda,2026-10-26,1.0
-Elda,2026-10-27,1.0
-Elda,2026-10-28,1.0
-Elda,2026-10-29,1.0
-Elda,2026-10-30,1.0
-Elda,2026-10-31,0.95
-Elda,2026-11-01,1.0
-Elda,2026-11-02,1.0
-Elda,2026-11-03,0.95
-Elda,2026-11-04,0.95
-Elda,2026-11-05,1.0
-Elda,2026-11-06,1.0
-Elda,2026-11-07,1.0
-Elda,2026-11-08,1.0
-Elda,2026-11-09,1.0
-Elda,2026-11-10,1.0
-Elda,2026-11-11,1.0
-Elda,2026-11-12,0.95
-Elda,2026-11-13,1.0
 Córdoba,2026-08-01,0.96
 Córdoba,2026-08-02,1.0
 Córdoba,2026-08-03,1.0
@@ -14804,111 +13859,6 @@ Hannover,2026-11-10,1.0
 Hannover,2026-11-11,1.0
 Hannover,2026-11-12,1.0
 Hannover,2026-11-13,1.0
-Bielefeld,2026-08-01,1.0
-Bielefeld,2026-08-02,1.0
-Bielefeld,2026-08-03,1.0
-Bielefeld,2026-08-04,1.0
-Bielefeld,2026-08-05,1.0
-Bielefeld,2026-08-06,1.0
-Bielefeld,2026-08-07,1.0
-Bielefeld,2026-08-08,1.0
-Bielefeld,2026-08-09,1.0
-Bielefeld,2026-08-10,1.0
-Bielefeld,2026-08-11,1.0
-Bielefeld,2026-08-12,1.0
-Bielefeld,2026-08-13,1.0
-Bielefeld,2026-08-14,1.0
-Bielefeld,2026-08-15,1.0
-Bielefeld,2026-08-16,1.0
-Bielefeld,2026-08-17,1.0
-Bielefeld,2026-08-18,0.95
-Bielefeld,2026-08-19,0.9
-Bielefeld,2026-08-20,1.0
-Bielefeld,2026-08-21,1.0
-Bielefeld,2026-08-22,1.0
-Bielefeld,2026-08-23,1.0
-Bielefeld,2026-08-24,1.0
-Bielefeld,2026-08-25,1.0
-Bielefeld,2026-08-26,1.0
-Bielefeld,2026-08-27,1.0
-Bielefeld,2026-08-28,0.95
-Bielefeld,2026-08-29,1.0
-Bielefeld,2026-08-30,1.0
-Bielefeld,2026-08-31,0.95
-Bielefeld,2026-09-01,1.0
-Bielefeld,2026-09-02,1.0
-Bielefeld,2026-09-03,1.0
-Bielefeld,2026-09-04,0.95
-Bielefeld,2026-09-05,1.0
-Bielefeld,2026-09-06,1.0
-Bielefeld,2026-09-07,1.0
-Bielefeld,2026-09-08,0.95
-Bielefeld,2026-09-09,0.95
-Bielefeld,2026-09-10,1.0
-Bielefeld,2026-09-11,1.0
-Bielefeld,2026-09-12,1.0
-Bielefeld,2026-09-13,0.95
-Bielefeld,2026-09-14,1.0
-Bielefeld,2026-09-15,1.0
-Bielefeld,2026-09-16,0.9
-Bielefeld,2026-09-17,1.0
-Bielefeld,2026-09-18,1.0
-Bielefeld,2026-09-19,1.0
-Bielefeld,2026-09-20,1.0
-Bielefeld,2026-09-21,1.0
-Bielefeld,2026-09-22,1.0
-Bielefeld,2026-09-23,1.0
-Bielefeld,2026-09-24,1.0
-Bielefeld,2026-09-25,1.0
-Bielefeld,2026-09-26,1.0
-Bielefeld,2026-09-27,1.0
-Bielefeld,2026-09-28,1.0
-Bielefeld,2026-09-29,1.0
-Bielefeld,2026-09-30,1.0
-Bielefeld,2026-10-01,0.9
-Bielefeld,2026-10-02,1.0
-Bielefeld,2026-10-03,1.0
-Bielefeld,2026-10-04,1.0
-Bielefeld,2026-10-05,1.0
-Bielefeld,2026-10-06,1.0
-Bielefeld,2026-10-07,1.0
-Bielefeld,2026-10-08,0.9
-Bielefeld,2026-10-09,0.95
-Bielefeld,2026-10-10,0.95
-Bielefeld,2026-10-11,1.0
-Bielefeld,2026-10-12,1.0
-Bielefeld,2026-10-13,0.95
-Bielefeld,2026-10-14,1.0
-Bielefeld,2026-10-15,1.0
-Bielefeld,2026-10-16,1.0
-Bielefeld,2026-10-17,0.95
-Bielefeld,2026-10-18,1.0
-Bielefeld,2026-10-19,1.0
-Bielefeld,2026-10-20,1.0
-Bielefeld,2026-10-21,0.95
-Bielefeld,2026-10-22,0.95
-Bielefeld,2026-10-23,0.95
-Bielefeld,2026-10-24,0.9
-Bielefeld,2026-10-25,0.9
-Bielefeld,2026-10-26,1.0
-Bielefeld,2026-10-27,1.0
-Bielefeld,2026-10-28,1.0
-Bielefeld,2026-10-29,1.0
-Bielefeld,2026-10-30,1.0
-Bielefeld,2026-10-31,1.0
-Bielefeld,2026-11-01,1.0
-Bielefeld,2026-11-02,1.0
-Bielefeld,2026-11-03,1.0
-Bielefeld,2026-11-04,1.0
-Bielefeld,2026-11-05,1.0
-Bielefeld,2026-11-06,1.0
-Bielefeld,2026-11-07,1.0
-Bielefeld,2026-11-08,1.0
-Bielefeld,2026-11-09,1.0
-Bielefeld,2026-11-10,1.0
-Bielefeld,2026-11-11,1.0
-Bielefeld,2026-11-12,1.0
-Bielefeld,2026-11-13,1.0
 Braunschweig,2026-08-01,1.0
 Braunschweig,2026-08-02,1.0
 Braunschweig,2026-08-03,1.0
@@ -16064,111 +15014,6 @@ Guingamp,2026-11-10,0.95
 Guingamp,2026-11-11,0.9
 Guingamp,2026-11-12,0.9
 Guingamp,2026-11-13,1.0
-Metz,2026-08-01,1.0
-Metz,2026-08-02,1.0
-Metz,2026-08-03,1.0
-Metz,2026-08-04,0.95
-Metz,2026-08-05,1.0
-Metz,2026-08-06,1.0
-Metz,2026-08-07,1.0
-Metz,2026-08-08,1.0
-Metz,2026-08-09,1.0
-Metz,2026-08-10,1.0
-Metz,2026-08-11,1.0
-Metz,2026-08-12,1.0
-Metz,2026-08-13,1.0
-Metz,2026-08-14,1.0
-Metz,2026-08-15,1.0
-Metz,2026-08-16,1.0
-Metz,2026-08-17,1.0
-Metz,2026-08-18,0.95
-Metz,2026-08-19,1.0
-Metz,2026-08-20,1.0
-Metz,2026-08-21,0.95
-Metz,2026-08-22,1.0
-Metz,2026-08-23,1.0
-Metz,2026-08-24,1.0
-Metz,2026-08-25,0.9
-Metz,2026-08-26,1.0
-Metz,2026-08-27,0.95
-Metz,2026-08-28,0.95
-Metz,2026-08-29,1.0
-Metz,2026-08-30,0.95
-Metz,2026-08-31,0.95
-Metz,2026-09-01,1.0
-Metz,2026-09-02,1.0
-Metz,2026-09-03,1.0
-Metz,2026-09-04,1.0
-Metz,2026-09-05,1.0
-Metz,2026-09-06,1.0
-Metz,2026-09-07,1.0
-Metz,2026-09-08,1.0
-Metz,2026-09-09,1.0
-Metz,2026-09-10,1.0
-Metz,2026-09-11,1.0
-Metz,2026-09-12,1.0
-Metz,2026-09-13,1.0
-Metz,2026-09-14,1.0
-Metz,2026-09-15,1.0
-Metz,2026-09-16,1.0
-Metz,2026-09-17,1.0
-Metz,2026-09-18,1.0
-Metz,2026-09-19,1.0
-Metz,2026-09-20,1.0
-Metz,2026-09-21,1.0
-Metz,2026-09-22,1.0
-Metz,2026-09-23,1.0
-Metz,2026-09-24,1.0
-Metz,2026-09-25,1.0
-Metz,2026-09-26,1.0
-Metz,2026-09-27,1.0
-Metz,2026-09-28,1.0
-Metz,2026-09-29,1.0
-Metz,2026-09-30,1.0
-Metz,2026-10-01,0.95
-Metz,2026-10-02,1.0
-Metz,2026-10-03,1.0
-Metz,2026-10-04,1.0
-Metz,2026-10-05,1.0
-Metz,2026-10-06,1.0
-Metz,2026-10-07,0.95
-Metz,2026-10-08,0.95
-Metz,2026-10-09,1.0
-Metz,2026-10-10,0.95
-Metz,2026-10-11,1.0
-Metz,2026-10-12,1.0
-Metz,2026-10-13,1.0
-Metz,2026-10-14,1.0
-Metz,2026-10-15,1.0
-Metz,2026-10-16,1.0
-Metz,2026-10-17,1.0
-Metz,2026-10-18,0.95
-Metz,2026-10-19,1.0
-Metz,2026-10-20,1.0
-Metz,2026-10-21,0.95
-Metz,2026-10-22,1.0
-Metz,2026-10-23,0.95
-Metz,2026-10-24,0.95
-Metz,2026-10-25,0.9
-Metz,2026-10-26,1.0
-Metz,2026-10-27,1.0
-Metz,2026-10-28,1.0
-Metz,2026-10-29,1.0
-Metz,2026-10-30,1.0
-Metz,2026-10-31,1.0
-Metz,2026-11-01,1.0
-Metz,2026-11-02,1.0
-Metz,2026-11-03,1.0
-Metz,2026-11-04,1.0
-Metz,2026-11-05,1.0
-Metz,2026-11-06,1.0
-Metz,2026-11-07,1.0
-Metz,2026-11-08,1.0
-Metz,2026-11-09,1.0
-Metz,2026-11-10,1.0
-Metz,2026-11-11,0.95
-Metz,2026-11-12,1.0
-Metz,2026-11-13,1.0
 Saint-Etienne,2026-08-01,1.0
 Saint-Etienne,2026-08-02,1.0
 Saint-Etienne,2026-08-03,1.0
@@ -17324,111 +16169,6 @@ Dunkerque,2026-11-10,0.95
 Dunkerque,2026-11-11,0.95
 Dunkerque,2026-11-12,1.0
 Dunkerque,2026-11-13,1.0
-Boulogne,2026-08-01,1.0
-Boulogne,2026-08-02,1.0
-Boulogne,2026-08-03,1.0
-Boulogne,2026-08-04,1.0
-Boulogne,2026-08-05,1.0
-Boulogne,2026-08-06,1.0
-Boulogne,2026-08-07,1.0
-Boulogne,2026-08-08,1.0
-Boulogne,2026-08-09,0.95
-Boulogne,2026-08-10,1.0
-Boulogne,2026-08-11,1.0
-Boulogne,2026-08-12,1.0
-Boulogne,2026-08-13,1.0
-Boulogne,2026-08-14,1.0
-Boulogne,2026-08-15,0.95
-Boulogne,2026-08-16,0.95
-Boulogne,2026-08-17,1.0
-Boulogne,2026-08-18,1.0
-Boulogne,2026-08-19,1.0
-Boulogne,2026-08-20,1.0
-Boulogne,2026-08-21,1.0
-Boulogne,2026-08-22,1.0
-Boulogne,2026-08-23,1.0
-Boulogne,2026-08-24,0.95
-Boulogne,2026-08-25,1.0
-Boulogne,2026-08-26,0.9
-Boulogne,2026-08-27,0.95
-Boulogne,2026-08-28,0.95
-Boulogne,2026-08-29,0.95
-Boulogne,2026-08-30,1.0
-Boulogne,2026-08-31,1.0
-Boulogne,2026-09-01,1.0
-Boulogne,2026-09-02,1.0
-Boulogne,2026-09-03,1.0
-Boulogne,2026-09-04,1.0
-Boulogne,2026-09-05,1.0
-Boulogne,2026-09-06,1.0
-Boulogne,2026-09-07,1.0
-Boulogne,2026-09-08,1.0
-Boulogne,2026-09-09,1.0
-Boulogne,2026-09-10,1.0
-Boulogne,2026-09-11,1.0
-Boulogne,2026-09-12,1.0
-Boulogne,2026-09-13,1.0
-Boulogne,2026-09-14,1.0
-Boulogne,2026-09-15,1.0
-Boulogne,2026-09-16,1.0
-Boulogne,2026-09-17,1.0
-Boulogne,2026-09-18,1.0
-Boulogne,2026-09-19,1.0
-Boulogne,2026-09-20,1.0
-Boulogne,2026-09-21,1.0
-Boulogne,2026-09-22,1.0
-Boulogne,2026-09-23,1.0
-Boulogne,2026-09-24,1.0
-Boulogne,2026-09-25,1.0
-Boulogne,2026-09-26,1.0
-Boulogne,2026-09-27,1.0
-Boulogne,2026-09-28,0.95
-Boulogne,2026-09-29,1.0
-Boulogne,2026-09-30,0.95
-Boulogne,2026-10-01,1.0
-Boulogne,2026-10-02,1.0
-Boulogne,2026-10-03,1.0
-Boulogne,2026-10-04,1.0
-Boulogne,2026-10-05,1.0
-Boulogne,2026-10-06,0.95
-Boulogne,2026-10-07,0.95
-Boulogne,2026-10-08,1.0
-Boulogne,2026-10-09,1.0
-Boulogne,2026-10-10,1.0
-Boulogne,2026-10-11,1.0
-Boulogne,2026-10-12,0.95
-Boulogne,2026-10-13,1.0
-Boulogne,2026-10-14,1.0
-Boulogne,2026-10-15,1.0
-Boulogne,2026-10-16,1.0
-Boulogne,2026-10-17,1.0
-Boulogne,2026-10-18,1.0
-Boulogne,2026-10-19,1.0
-Boulogne,2026-10-20,1.0
-Boulogne,2026-10-21,0.95
-Boulogne,2026-10-22,0.95
-Boulogne,2026-10-23,0.9
-Boulogne,2026-10-24,0.95
-Boulogne,2026-10-25,0.95
-Boulogne,2026-10-26,1.0
-Boulogne,2026-10-27,1.0
-Boulogne,2026-10-28,1.0
-Boulogne,2026-10-29,1.0
-Boulogne,2026-10-30,1.0
-Boulogne,2026-10-31,1.0
-Boulogne,2026-11-01,1.0
-Boulogne,2026-11-02,1.0
-Boulogne,2026-11-03,1.0
-Boulogne,2026-11-04,1.0
-Boulogne,2026-11-05,1.0
-Boulogne,2026-11-06,1.0
-Boulogne,2026-11-07,1.0
-Boulogne,2026-11-08,1.0
-Boulogne,2026-11-09,1.0
-Boulogne,2026-11-10,1.0
-Boulogne,2026-11-11,0.95
-Boulogne,2026-11-12,1.0
-Boulogne,2026-11-13,1.0
 Pau,2026-08-01,1.0
 Pau,2026-08-02,1.0
 Pau,2026-08-03,1.0
@@ -18899,111 +17639,6 @@ Tilburg,2026-11-10,1.0
 Tilburg,2026-11-11,0.95
 Tilburg,2026-11-12,1.0
 Tilburg,2026-11-13,1.0
-Zwolle,2026-08-01,1.0
-Zwolle,2026-08-02,1.0
-Zwolle,2026-08-03,1.0
-Zwolle,2026-08-04,1.0
-Zwolle,2026-08-05,1.0
-Zwolle,2026-08-06,1.0
-Zwolle,2026-08-07,1.0
-Zwolle,2026-08-08,1.0
-Zwolle,2026-08-09,1.0
-Zwolle,2026-08-10,1.0
-Zwolle,2026-08-11,1.0
-Zwolle,2026-08-12,1.0
-Zwolle,2026-08-13,1.0
-Zwolle,2026-08-14,1.0
-Zwolle,2026-08-15,0.95
-Zwolle,2026-08-16,1.0
-Zwolle,2026-08-17,0.95
-Zwolle,2026-08-18,0.95
-Zwolle,2026-08-19,0.95
-Zwolle,2026-08-20,0.95
-Zwolle,2026-08-21,1.0
-Zwolle,2026-08-22,1.0
-Zwolle,2026-08-23,1.0
-Zwolle,2026-08-24,1.0
-Zwolle,2026-08-25,1.0
-Zwolle,2026-08-26,1.0
-Zwolle,2026-08-27,1.0
-Zwolle,2026-08-28,0.9
-Zwolle,2026-08-29,0.95
-Zwolle,2026-08-30,0.95
-Zwolle,2026-08-31,0.95
-Zwolle,2026-09-01,1.0
-Zwolle,2026-09-02,1.0
-Zwolle,2026-09-03,0.95
-Zwolle,2026-09-04,0.9
-Zwolle,2026-09-05,1.0
-Zwolle,2026-09-06,1.0
-Zwolle,2026-09-07,1.0
-Zwolle,2026-09-08,0.9
-Zwolle,2026-09-09,0.95
-Zwolle,2026-09-10,1.0
-Zwolle,2026-09-11,0.95
-Zwolle,2026-09-12,1.0
-Zwolle,2026-09-13,1.0
-Zwolle,2026-09-14,1.0
-Zwolle,2026-09-15,1.0
-Zwolle,2026-09-16,0.95
-Zwolle,2026-09-17,0.95
-Zwolle,2026-09-18,1.0
-Zwolle,2026-09-19,1.0
-Zwolle,2026-09-20,1.0
-Zwolle,2026-09-21,1.0
-Zwolle,2026-09-22,1.0
-Zwolle,2026-09-23,1.0
-Zwolle,2026-09-24,1.0
-Zwolle,2026-09-25,1.0
-Zwolle,2026-09-26,1.0
-Zwolle,2026-09-27,1.0
-Zwolle,2026-09-28,0.95
-Zwolle,2026-09-29,1.0
-Zwolle,2026-09-30,1.0
-Zwolle,2026-10-01,0.95
-Zwolle,2026-10-02,1.0
-Zwolle,2026-10-03,1.0
-Zwolle,2026-10-04,1.0
-Zwolle,2026-10-05,1.0
-Zwolle,2026-10-06,1.0
-Zwolle,2026-10-07,0.95
-Zwolle,2026-10-08,0.95
-Zwolle,2026-10-09,0.9
-Zwolle,2026-10-10,0.95
-Zwolle,2026-10-11,0.9
-Zwolle,2026-10-12,1.0
-Zwolle,2026-10-13,1.0
-Zwolle,2026-10-14,1.0
-Zwolle,2026-10-15,1.0
-Zwolle,2026-10-16,0.95
-Zwolle,2026-10-17,1.0
-Zwolle,2026-10-18,0.95
-Zwolle,2026-10-19,1.0
-Zwolle,2026-10-20,1.0
-Zwolle,2026-10-21,1.0
-Zwolle,2026-10-22,0.95
-Zwolle,2026-10-23,0.95
-Zwolle,2026-10-24,0.9
-Zwolle,2026-10-25,0.9
-Zwolle,2026-10-26,1.0
-Zwolle,2026-10-27,1.0
-Zwolle,2026-10-28,1.0
-Zwolle,2026-10-29,1.0
-Zwolle,2026-10-30,1.0
-Zwolle,2026-10-31,1.0
-Zwolle,2026-11-01,1.0
-Zwolle,2026-11-02,0.95
-Zwolle,2026-11-03,1.0
-Zwolle,2026-11-04,1.0
-Zwolle,2026-11-05,1.0
-Zwolle,2026-11-06,1.0
-Zwolle,2026-11-07,1.0
-Zwolle,2026-11-08,1.0
-Zwolle,2026-11-09,1.0
-Zwolle,2026-11-10,1.0
-Zwolle,2026-11-11,1.0
-Zwolle,2026-11-12,1.0
-Zwolle,2026-11-13,1.0
 Den Haag,2026-08-01,1.0
 Den Haag,2026-08-02,1.0
 Den Haag,2026-08-03,1.0
@@ -20159,111 +18794,6 @@ Vila do Conde,2026-11-10,0.9
 Vila do Conde,2026-11-11,0.9
 Vila do Conde,2026-11-12,0.9
 Vila do Conde,2026-11-13,0.9
-Guimarães,2026-08-01,1.0
-Guimarães,2026-08-02,1.0
-Guimarães,2026-08-03,1.0
-Guimarães,2026-08-04,0.95
-Guimarães,2026-08-05,1.0
-Guimarães,2026-08-06,1.0
-Guimarães,2026-08-07,1.0
-Guimarães,2026-08-08,1.0
-Guimarães,2026-08-09,1.0
-Guimarães,2026-08-10,1.0
-Guimarães,2026-08-11,1.0
-Guimarães,2026-08-12,1.0
-Guimarães,2026-08-13,1.0
-Guimarães,2026-08-14,1.0
-Guimarães,2026-08-15,1.0
-Guimarães,2026-08-16,1.0
-Guimarães,2026-08-17,1.0
-Guimarães,2026-08-18,1.0
-Guimarães,2026-08-19,1.0
-Guimarães,2026-08-20,1.0
-Guimarães,2026-08-21,1.0
-Guimarães,2026-08-22,1.0
-Guimarães,2026-08-23,0.95
-Guimarães,2026-08-24,0.9
-Guimarães,2026-08-25,0.95
-Guimarães,2026-08-26,0.9
-Guimarães,2026-08-27,0.9
-Guimarães,2026-08-28,1.0
-Guimarães,2026-08-29,1.0
-Guimarães,2026-08-30,1.0
-Guimarães,2026-08-31,1.0
-Guimarães,2026-09-01,1.0
-Guimarães,2026-09-02,1.0
-Guimarães,2026-09-03,1.0
-Guimarães,2026-09-04,1.0
-Guimarães,2026-09-05,1.0
-Guimarães,2026-09-06,1.0
-Guimarães,2026-09-07,1.0
-Guimarães,2026-09-08,0.95
-Guimarães,2026-09-09,1.0
-Guimarães,2026-09-10,1.0
-Guimarães,2026-09-11,1.0
-Guimarães,2026-09-12,1.0
-Guimarães,2026-09-13,1.0
-Guimarães,2026-09-14,1.0
-Guimarães,2026-09-15,1.0
-Guimarães,2026-09-16,1.0
-Guimarães,2026-09-17,1.0
-Guimarães,2026-09-18,1.0
-Guimarães,2026-09-19,1.0
-Guimarães,2026-09-20,1.0
-Guimarães,2026-09-21,1.0
-Guimarães,2026-09-22,1.0
-Guimarães,2026-09-23,1.0
-Guimarães,2026-09-24,1.0
-Guimarães,2026-09-25,1.0
-Guimarães,2026-09-26,1.0
-Guimarães,2026-09-27,1.0
-Guimarães,2026-09-28,0.95
-Guimarães,2026-09-29,0.9
-Guimarães,2026-09-30,0.95
-Guimarães,2026-10-01,1.0
-Guimarães,2026-10-02,1.0
-Guimarães,2026-10-03,1.0
-Guimarães,2026-10-04,1.0
-Guimarães,2026-10-05,1.0
-Guimarães,2026-10-06,0.95
-Guimarães,2026-10-07,1.0
-Guimarães,2026-10-08,1.0
-Guimarães,2026-10-09,1.0
-Guimarães,2026-10-10,1.0
-Guimarães,2026-10-11,1.0
-Guimarães,2026-10-12,1.0
-Guimarães,2026-10-13,1.0
-Guimarães,2026-10-14,1.0
-Guimarães,2026-10-15,1.0
-Guimarães,2026-10-16,1.0
-Guimarães,2026-10-17,1.0
-Guimarães,2026-10-18,1.0
-Guimarães,2026-10-19,1.0
-Guimarães,2026-10-20,1.0
-Guimarães,2026-10-21,1.0
-Guimarães,2026-10-22,1.0
-Guimarães,2026-10-23,1.0
-Guimarães,2026-10-24,1.0
-Guimarães,2026-10-25,1.0
-Guimarães,2026-10-26,1.0
-Guimarães,2026-10-27,1.0
-Guimarães,2026-10-28,1.0
-Guimarães,2026-10-29,1.0
-Guimarães,2026-10-30,1.0
-Guimarães,2026-10-31,1.0
-Guimarães,2026-11-01,1.0
-Guimarães,2026-11-02,1.0
-Guimarães,2026-11-03,1.0
-Guimarães,2026-11-04,1.0
-Guimarães,2026-11-05,1.0
-Guimarães,2026-11-06,1.0
-Guimarães,2026-11-07,1.0
-Guimarães,2026-11-08,1.0
-Guimarães,2026-11-09,0.9
-Guimarães,2026-11-10,0.9
-Guimarães,2026-11-11,0.9
-Guimarães,2026-11-12,0.9
-Guimarães,2026-11-13,0.9
 Ponta Delgada,2026-08-01,0.95
 Ponta Delgada,2026-08-02,1.0
 Ponta Delgada,2026-08-03,0.95
@@ -21314,111 +19844,6 @@ Izmir,2026-11-10,1.0
 Izmir,2026-11-11,0.95
 Izmir,2026-11-12,1.0
 Izmir,2026-11-13,1.0
-Kocaeli,2026-08-01,1.0
-Kocaeli,2026-08-02,1.0
-Kocaeli,2026-08-03,1.0
-Kocaeli,2026-08-04,1.0
-Kocaeli,2026-08-05,1.0
-Kocaeli,2026-08-06,1.0
-Kocaeli,2026-08-07,1.0
-Kocaeli,2026-08-08,1.0
-Kocaeli,2026-08-09,0.95
-Kocaeli,2026-08-10,0.95
-Kocaeli,2026-08-11,0.95
-Kocaeli,2026-08-12,1.0
-Kocaeli,2026-08-13,1.0
-Kocaeli,2026-08-14,1.0
-Kocaeli,2026-08-15,1.0
-Kocaeli,2026-08-16,1.0
-Kocaeli,2026-08-17,1.0
-Kocaeli,2026-08-18,1.0
-Kocaeli,2026-08-19,1.0
-Kocaeli,2026-08-20,1.0
-Kocaeli,2026-08-21,1.0
-Kocaeli,2026-08-22,1.0
-Kocaeli,2026-08-23,1.0
-Kocaeli,2026-08-24,1.0
-Kocaeli,2026-08-25,1.0
-Kocaeli,2026-08-26,1.0
-Kocaeli,2026-08-27,1.0
-Kocaeli,2026-08-28,0.95
-Kocaeli,2026-08-29,0.95
-Kocaeli,2026-08-30,0.95
-Kocaeli,2026-08-31,0.95
-Kocaeli,2026-09-01,1.0
-Kocaeli,2026-09-02,1.0
-Kocaeli,2026-09-03,1.0
-Kocaeli,2026-09-04,1.0
-Kocaeli,2026-09-05,1.0
-Kocaeli,2026-09-06,1.0
-Kocaeli,2026-09-07,1.0
-Kocaeli,2026-09-08,1.0
-Kocaeli,2026-09-09,1.0
-Kocaeli,2026-09-10,1.0
-Kocaeli,2026-09-11,1.0
-Kocaeli,2026-09-12,1.0
-Kocaeli,2026-09-13,1.0
-Kocaeli,2026-09-14,0.95
-Kocaeli,2026-09-15,1.0
-Kocaeli,2026-09-16,0.95
-Kocaeli,2026-09-17,1.0
-Kocaeli,2026-09-18,0.95
-Kocaeli,2026-09-19,1.0
-Kocaeli,2026-09-20,1.0
-Kocaeli,2026-09-21,1.0
-Kocaeli,2026-09-22,0.9
-Kocaeli,2026-09-23,0.9
-Kocaeli,2026-09-24,1.0
-Kocaeli,2026-09-25,1.0
-Kocaeli,2026-09-26,1.0
-Kocaeli,2026-09-27,1.0
-Kocaeli,2026-09-28,0.9
-Kocaeli,2026-09-29,0.9
-Kocaeli,2026-09-30,0.95
-Kocaeli,2026-10-01,1.0
-Kocaeli,2026-10-02,0.9
-Kocaeli,2026-10-03,1.0
-Kocaeli,2026-10-04,1.0
-Kocaeli,2026-10-05,1.0
-Kocaeli,2026-10-06,1.0
-Kocaeli,2026-10-07,1.0
-Kocaeli,2026-10-08,1.0
-Kocaeli,2026-10-09,1.0
-Kocaeli,2026-10-10,1.0
-Kocaeli,2026-10-11,1.0
-Kocaeli,2026-10-12,1.0
-Kocaeli,2026-10-13,0.9
-Kocaeli,2026-10-14,0.9
-Kocaeli,2026-10-15,0.9
-Kocaeli,2026-10-16,0.95
-Kocaeli,2026-10-17,0.9
-Kocaeli,2026-10-18,0.95
-Kocaeli,2026-10-19,1.0
-Kocaeli,2026-10-20,1.0
-Kocaeli,2026-10-21,1.0
-Kocaeli,2026-10-22,1.0
-Kocaeli,2026-10-23,0.95
-Kocaeli,2026-10-24,1.0
-Kocaeli,2026-10-25,1.0
-Kocaeli,2026-10-26,1.0
-Kocaeli,2026-10-27,0.9
-Kocaeli,2026-10-28,1.0
-Kocaeli,2026-10-29,0.9
-Kocaeli,2026-10-30,0.95
-Kocaeli,2026-10-31,1.0
-Kocaeli,2026-11-01,1.0
-Kocaeli,2026-11-02,0.9
-Kocaeli,2026-11-03,1.0
-Kocaeli,2026-11-04,0.9
-Kocaeli,2026-11-05,1.0
-Kocaeli,2026-11-06,1.0
-Kocaeli,2026-11-07,0.95
-Kocaeli,2026-11-08,1.0
-Kocaeli,2026-11-09,1.0
-Kocaeli,2026-11-10,1.0
-Kocaeli,2026-11-11,1.0
-Kocaeli,2026-11-12,1.0
-Kocaeli,2026-11-13,1.0
 Ankara,2026-08-01,1.0
 Ankara,2026-08-02,1.0
 Ankara,2026-08-03,1.0
@@ -22574,111 +20999,6 @@ Shakhtar Donetsk,2026-11-10,1.0
 Shakhtar Donetsk,2026-11-11,0.95
 Shakhtar Donetsk,2026-11-12,0.9
 Shakhtar Donetsk,2026-11-13,0.95
-Slavia Prague,2026-08-01,1.0
-Slavia Prague,2026-08-02,1.0
-Slavia Prague,2026-08-03,1.0
-Slavia Prague,2026-08-04,1.0
-Slavia Prague,2026-08-05,1.0
-Slavia Prague,2026-08-06,1.0
-Slavia Prague,2026-08-07,1.0
-Slavia Prague,2026-08-08,1.0
-Slavia Prague,2026-08-09,1.0
-Slavia Prague,2026-08-10,1.0
-Slavia Prague,2026-08-11,1.0
-Slavia Prague,2026-08-12,1.0
-Slavia Prague,2026-08-13,1.0
-Slavia Prague,2026-08-14,1.0
-Slavia Prague,2026-08-15,1.0
-Slavia Prague,2026-08-16,1.0
-Slavia Prague,2026-08-17,0.95
-Slavia Prague,2026-08-18,0.95
-Slavia Prague,2026-08-19,1.0
-Slavia Prague,2026-08-20,1.0
-Slavia Prague,2026-08-21,0.9
-Slavia Prague,2026-08-22,0.95
-Slavia Prague,2026-08-23,1.0
-Slavia Prague,2026-08-24,1.0
-Slavia Prague,2026-08-25,1.0
-Slavia Prague,2026-08-26,1.0
-Slavia Prague,2026-08-27,1.0
-Slavia Prague,2026-08-28,0.95
-Slavia Prague,2026-08-29,0.95
-Slavia Prague,2026-08-30,1.0
-Slavia Prague,2026-08-31,0.95
-Slavia Prague,2026-09-01,1.0
-Slavia Prague,2026-09-02,1.0
-Slavia Prague,2026-09-03,1.0
-Slavia Prague,2026-09-04,1.0
-Slavia Prague,2026-09-05,0.95
-Slavia Prague,2026-09-06,1.0
-Slavia Prague,2026-09-07,1.0
-Slavia Prague,2026-09-08,1.0
-Slavia Prague,2026-09-09,0.95
-Slavia Prague,2026-09-10,1.0
-Slavia Prague,2026-09-11,1.0
-Slavia Prague,2026-09-12,1.0
-Slavia Prague,2026-09-13,0.95
-Slavia Prague,2026-09-14,1.0
-Slavia Prague,2026-09-15,1.0
-Slavia Prague,2026-09-16,0.95
-Slavia Prague,2026-09-17,1.0
-Slavia Prague,2026-09-18,1.0
-Slavia Prague,2026-09-19,1.0
-Slavia Prague,2026-09-20,0.95
-Slavia Prague,2026-09-21,1.0
-Slavia Prague,2026-09-22,1.0
-Slavia Prague,2026-09-23,1.0
-Slavia Prague,2026-09-24,1.0
-Slavia Prague,2026-09-25,1.0
-Slavia Prague,2026-09-26,1.0
-Slavia Prague,2026-09-27,1.0
-Slavia Prague,2026-09-28,1.0
-Slavia Prague,2026-09-29,1.0
-Slavia Prague,2026-09-30,1.0
-Slavia Prague,2026-10-01,1.0
-Slavia Prague,2026-10-02,1.0
-Slavia Prague,2026-10-03,1.0
-Slavia Prague,2026-10-04,1.0
-Slavia Prague,2026-10-05,1.0
-Slavia Prague,2026-10-06,1.0
-Slavia Prague,2026-10-07,1.0
-Slavia Prague,2026-10-08,0.95
-Slavia Prague,2026-10-09,1.0
-Slavia Prague,2026-10-10,0.95
-Slavia Prague,2026-10-11,1.0
-Slavia Prague,2026-10-12,1.0
-Slavia Prague,2026-10-13,1.0
-Slavia Prague,2026-10-14,1.0
-Slavia Prague,2026-10-15,1.0
-Slavia Prague,2026-10-16,1.0
-Slavia Prague,2026-10-17,1.0
-Slavia Prague,2026-10-18,1.0
-Slavia Prague,2026-10-19,1.0
-Slavia Prague,2026-10-20,1.0
-Slavia Prague,2026-10-21,0.95
-Slavia Prague,2026-10-22,0.95
-Slavia Prague,2026-10-23,1.0
-Slavia Prague,2026-10-24,1.0
-Slavia Prague,2026-10-25,0.95
-Slavia Prague,2026-10-26,1.0
-Slavia Prague,2026-10-27,1.0
-Slavia Prague,2026-10-28,1.0
-Slavia Prague,2026-10-29,1.0
-Slavia Prague,2026-10-30,1.0
-Slavia Prague,2026-10-31,1.0
-Slavia Prague,2026-11-01,1.0
-Slavia Prague,2026-11-02,1.0
-Slavia Prague,2026-11-03,1.0
-Slavia Prague,2026-11-04,1.0
-Slavia Prague,2026-11-05,1.0
-Slavia Prague,2026-11-06,1.0
-Slavia Prague,2026-11-07,1.0
-Slavia Prague,2026-11-08,0.97
-Slavia Prague,2026-11-09,1.0
-Slavia Prague,2026-11-10,1.0
-Slavia Prague,2026-11-11,0.95
-Slavia Prague,2026-11-12,1.0
-Slavia Prague,2026-11-13,1.0
 Stavanger,2026-08-01,0.95
 Stavanger,2026-08-02,0.95
 Stavanger,2026-08-03,1.0
@@ -23834,111 +22154,6 @@ Levski Sofia,2026-11-10,1.0
 Levski Sofia,2026-11-11,1.0
 Levski Sofia,2026-11-12,1.0
 Levski Sofia,2026-11-13,1.0
-Dinamo Zagreb,2026-08-01,1.0
-Dinamo Zagreb,2026-08-02,1.0
-Dinamo Zagreb,2026-08-03,1.0
-Dinamo Zagreb,2026-08-04,1.0
-Dinamo Zagreb,2026-08-05,1.0
-Dinamo Zagreb,2026-08-06,1.0
-Dinamo Zagreb,2026-08-07,1.0
-Dinamo Zagreb,2026-08-08,1.0
-Dinamo Zagreb,2026-08-09,1.0
-Dinamo Zagreb,2026-08-10,1.0
-Dinamo Zagreb,2026-08-11,1.0
-Dinamo Zagreb,2026-08-12,1.0
-Dinamo Zagreb,2026-08-13,1.0
-Dinamo Zagreb,2026-08-14,1.0
-Dinamo Zagreb,2026-08-15,1.0
-Dinamo Zagreb,2026-08-16,1.0
-Dinamo Zagreb,2026-08-17,0.95
-Dinamo Zagreb,2026-08-18,1.0
-Dinamo Zagreb,2026-08-19,1.0
-Dinamo Zagreb,2026-08-20,1.0
-Dinamo Zagreb,2026-08-21,0.95
-Dinamo Zagreb,2026-08-22,0.95
-Dinamo Zagreb,2026-08-23,1.0
-Dinamo Zagreb,2026-08-24,1.0
-Dinamo Zagreb,2026-08-25,0.95
-Dinamo Zagreb,2026-08-26,0.95
-Dinamo Zagreb,2026-08-27,1.0
-Dinamo Zagreb,2026-08-28,1.0
-Dinamo Zagreb,2026-08-29,0.95
-Dinamo Zagreb,2026-08-30,1.0
-Dinamo Zagreb,2026-08-31,1.0
-Dinamo Zagreb,2026-09-01,1.0
-Dinamo Zagreb,2026-09-02,1.0
-Dinamo Zagreb,2026-09-03,1.0
-Dinamo Zagreb,2026-09-04,1.0
-Dinamo Zagreb,2026-09-05,1.0
-Dinamo Zagreb,2026-09-06,1.0
-Dinamo Zagreb,2026-09-07,1.0
-Dinamo Zagreb,2026-09-08,1.0
-Dinamo Zagreb,2026-09-09,1.0
-Dinamo Zagreb,2026-09-10,0.9
-Dinamo Zagreb,2026-09-11,0.9
-Dinamo Zagreb,2026-09-12,1.0
-Dinamo Zagreb,2026-09-13,1.0
-Dinamo Zagreb,2026-09-14,1.0
-Dinamo Zagreb,2026-09-15,1.0
-Dinamo Zagreb,2026-09-16,1.0
-Dinamo Zagreb,2026-09-17,1.0
-Dinamo Zagreb,2026-09-18,1.0
-Dinamo Zagreb,2026-09-19,0.95
-Dinamo Zagreb,2026-09-20,1.0
-Dinamo Zagreb,2026-09-21,1.0
-Dinamo Zagreb,2026-09-22,1.0
-Dinamo Zagreb,2026-09-23,1.0
-Dinamo Zagreb,2026-09-24,0.95
-Dinamo Zagreb,2026-09-25,1.0
-Dinamo Zagreb,2026-09-26,1.0
-Dinamo Zagreb,2026-09-27,1.0
-Dinamo Zagreb,2026-09-28,1.0
-Dinamo Zagreb,2026-09-29,1.0
-Dinamo Zagreb,2026-09-30,1.0
-Dinamo Zagreb,2026-10-01,1.0
-Dinamo Zagreb,2026-10-02,1.0
-Dinamo Zagreb,2026-10-03,1.0
-Dinamo Zagreb,2026-10-04,1.0
-Dinamo Zagreb,2026-10-05,1.0
-Dinamo Zagreb,2026-10-06,1.0
-Dinamo Zagreb,2026-10-07,1.0
-Dinamo Zagreb,2026-10-08,1.0
-Dinamo Zagreb,2026-10-09,1.0
-Dinamo Zagreb,2026-10-10,0.9
-Dinamo Zagreb,2026-10-11,1.0
-Dinamo Zagreb,2026-10-12,0.95
-Dinamo Zagreb,2026-10-13,1.0
-Dinamo Zagreb,2026-10-14,1.0
-Dinamo Zagreb,2026-10-15,1.0
-Dinamo Zagreb,2026-10-16,1.0
-Dinamo Zagreb,2026-10-17,1.0
-Dinamo Zagreb,2026-10-18,1.0
-Dinamo Zagreb,2026-10-19,1.0
-Dinamo Zagreb,2026-10-20,1.0
-Dinamo Zagreb,2026-10-21,0.95
-Dinamo Zagreb,2026-10-22,0.9
-Dinamo Zagreb,2026-10-23,1.0
-Dinamo Zagreb,2026-10-24,0.95
-Dinamo Zagreb,2026-10-25,1.0
-Dinamo Zagreb,2026-10-26,1.0
-Dinamo Zagreb,2026-10-27,1.0
-Dinamo Zagreb,2026-10-28,1.0
-Dinamo Zagreb,2026-10-29,1.0
-Dinamo Zagreb,2026-10-30,1.0
-Dinamo Zagreb,2026-10-31,1.0
-Dinamo Zagreb,2026-11-01,0.9
-Dinamo Zagreb,2026-11-02,1.0
-Dinamo Zagreb,2026-11-03,1.0
-Dinamo Zagreb,2026-11-04,0.95
-Dinamo Zagreb,2026-11-05,1.0
-Dinamo Zagreb,2026-11-06,1.0
-Dinamo Zagreb,2026-11-07,1.0
-Dinamo Zagreb,2026-11-08,1.0
-Dinamo Zagreb,2026-11-09,0.95
-Dinamo Zagreb,2026-11-10,0.9
-Dinamo Zagreb,2026-11-11,0.95
-Dinamo Zagreb,2026-11-12,0.9
-Dinamo Zagreb,2026-11-13,0.9
 Nicosia,2026-08-01,1.0
 Nicosia,2026-08-02,1.0
 Nicosia,2026-08-03,1.0
@@ -25094,111 +23309,6 @@ Viktoria Plzen,2026-11-10,0.95
 Viktoria Plzen,2026-11-11,0.95
 Viktoria Plzen,2026-11-12,1.0
 Viktoria Plzen,2026-11-13,1.0
-Be'er Sheva,2026-08-01,1.0
-Be'er Sheva,2026-08-02,1.0
-Be'er Sheva,2026-08-03,1.0
-Be'er Sheva,2026-08-04,1.0
-Be'er Sheva,2026-08-05,1.0
-Be'er Sheva,2026-08-06,1.0
-Be'er Sheva,2026-08-07,1.0
-Be'er Sheva,2026-08-08,1.0
-Be'er Sheva,2026-08-09,1.0
-Be'er Sheva,2026-08-10,1.0
-Be'er Sheva,2026-08-11,1.0
-Be'er Sheva,2026-08-12,1.0
-Be'er Sheva,2026-08-13,1.0
-Be'er Sheva,2026-08-14,1.0
-Be'er Sheva,2026-08-15,1.0
-Be'er Sheva,2026-08-16,1.0
-Be'er Sheva,2026-08-17,1.0
-Be'er Sheva,2026-08-18,1.0
-Be'er Sheva,2026-08-19,1.0
-Be'er Sheva,2026-08-20,1.0
-Be'er Sheva,2026-08-21,1.0
-Be'er Sheva,2026-08-22,1.0
-Be'er Sheva,2026-08-23,1.0
-Be'er Sheva,2026-08-24,1.0
-Be'er Sheva,2026-08-25,1.0
-Be'er Sheva,2026-08-26,1.0
-Be'er Sheva,2026-08-27,1.0
-Be'er Sheva,2026-08-28,1.0
-Be'er Sheva,2026-08-29,1.0
-Be'er Sheva,2026-08-30,1.0
-Be'er Sheva,2026-08-31,1.0
-Be'er Sheva,2026-09-01,1.0
-Be'er Sheva,2026-09-02,1.0
-Be'er Sheva,2026-09-03,1.0
-Be'er Sheva,2026-09-04,1.0
-Be'er Sheva,2026-09-05,1.0
-Be'er Sheva,2026-09-06,1.0
-Be'er Sheva,2026-09-07,1.0
-Be'er Sheva,2026-09-08,1.0
-Be'er Sheva,2026-09-09,1.0
-Be'er Sheva,2026-09-10,1.0
-Be'er Sheva,2026-09-11,1.0
-Be'er Sheva,2026-09-12,1.0
-Be'er Sheva,2026-09-13,1.0
-Be'er Sheva,2026-09-14,1.0
-Be'er Sheva,2026-09-15,1.0
-Be'er Sheva,2026-09-16,1.0
-Be'er Sheva,2026-09-17,1.0
-Be'er Sheva,2026-09-18,1.0
-Be'er Sheva,2026-09-19,1.0
-Be'er Sheva,2026-09-20,1.0
-Be'er Sheva,2026-09-21,1.0
-Be'er Sheva,2026-09-22,1.0
-Be'er Sheva,2026-09-23,1.0
-Be'er Sheva,2026-09-24,1.0
-Be'er Sheva,2026-09-25,1.0
-Be'er Sheva,2026-09-26,1.0
-Be'er Sheva,2026-09-27,1.0
-Be'er Sheva,2026-09-28,1.0
-Be'er Sheva,2026-09-29,1.0
-Be'er Sheva,2026-09-30,1.0
-Be'er Sheva,2026-10-01,1.0
-Be'er Sheva,2026-10-02,1.0
-Be'er Sheva,2026-10-03,1.0
-Be'er Sheva,2026-10-04,1.0
-Be'er Sheva,2026-10-05,1.0
-Be'er Sheva,2026-10-06,1.0
-Be'er Sheva,2026-10-07,1.0
-Be'er Sheva,2026-10-08,1.0
-Be'er Sheva,2026-10-09,1.0
-Be'er Sheva,2026-10-10,1.0
-Be'er Sheva,2026-10-11,1.0
-Be'er Sheva,2026-10-12,1.0
-Be'er Sheva,2026-10-13,1.0
-Be'er Sheva,2026-10-14,1.0
-Be'er Sheva,2026-10-15,1.0
-Be'er Sheva,2026-10-16,1.0
-Be'er Sheva,2026-10-17,1.0
-Be'er Sheva,2026-10-18,1.0
-Be'er Sheva,2026-10-19,1.0
-Be'er Sheva,2026-10-20,1.0
-Be'er Sheva,2026-10-21,1.0
-Be'er Sheva,2026-10-22,1.0
-Be'er Sheva,2026-10-23,1.0
-Be'er Sheva,2026-10-24,1.0
-Be'er Sheva,2026-10-25,1.0
-Be'er Sheva,2026-10-26,1.0
-Be'er Sheva,2026-10-27,0.95
-Be'er Sheva,2026-10-28,1.0
-Be'er Sheva,2026-10-29,1.0
-Be'er Sheva,2026-10-30,1.0
-Be'er Sheva,2026-10-31,1.0
-Be'er Sheva,2026-11-01,1.0
-Be'er Sheva,2026-11-02,1.0
-Be'er Sheva,2026-11-03,1.0
-Be'er Sheva,2026-11-04,1.0
-Be'er Sheva,2026-11-05,1.0
-Be'er Sheva,2026-11-06,1.0
-Be'er Sheva,2026-11-07,0.95
-Be'er Sheva,2026-11-08,1.0
-Be'er Sheva,2026-11-09,1.0
-Be'er Sheva,2026-11-10,1.0
-Be'er Sheva,2026-11-11,1.0
-Be'er Sheva,2026-11-12,1.0
-Be'er Sheva,2026-11-13,1.0
 Ararat-Armenia,2026-08-01,1.0
 Ararat-Armenia,2026-08-02,1.0
 Ararat-Armenia,2026-08-03,1.0
@@ -26354,111 +24464,6 @@ Thun,2026-11-10,0.9
 Thun,2026-11-11,0.95
 Thun,2026-11-12,0.9
 Thun,2026-11-13,0.9
-Farum,2026-08-01,1.0
-Farum,2026-08-02,1.0
-Farum,2026-08-03,1.0
-Farum,2026-08-04,1.0
-Farum,2026-08-05,0.95
-Farum,2026-08-06,1.0
-Farum,2026-08-07,1.0
-Farum,2026-08-08,1.0
-Farum,2026-08-09,1.0
-Farum,2026-08-10,1.0
-Farum,2026-08-11,1.0
-Farum,2026-08-12,1.0
-Farum,2026-08-13,1.0
-Farum,2026-08-14,1.0
-Farum,2026-08-15,1.0
-Farum,2026-08-16,1.0
-Farum,2026-08-17,1.0
-Farum,2026-08-18,1.0
-Farum,2026-08-19,0.9
-Farum,2026-08-20,1.0
-Farum,2026-08-21,1.0
-Farum,2026-08-22,1.0
-Farum,2026-08-23,0.9
-Farum,2026-08-24,1.0
-Farum,2026-08-25,1.0
-Farum,2026-08-26,1.0
-Farum,2026-08-27,1.0
-Farum,2026-08-28,0.9
-Farum,2026-08-29,0.95
-Farum,2026-08-30,0.9
-Farum,2026-08-31,0.95
-Farum,2026-09-01,1.0
-Farum,2026-09-02,0.95
-Farum,2026-09-03,0.95
-Farum,2026-09-04,0.9
-Farum,2026-09-05,0.95
-Farum,2026-09-06,1.0
-Farum,2026-09-07,1.0
-Farum,2026-09-08,0.95
-Farum,2026-09-09,0.95
-Farum,2026-09-10,1.0
-Farum,2026-09-11,1.0
-Farum,2026-09-12,1.0
-Farum,2026-09-13,1.0
-Farum,2026-09-14,1.0
-Farum,2026-09-15,0.95
-Farum,2026-09-16,1.0
-Farum,2026-09-17,1.0
-Farum,2026-09-18,1.0
-Farum,2026-09-19,1.0
-Farum,2026-09-20,0.95
-Farum,2026-09-21,1.0
-Farum,2026-09-22,1.0
-Farum,2026-09-23,1.0
-Farum,2026-09-24,0.95
-Farum,2026-09-25,1.0
-Farum,2026-09-26,1.0
-Farum,2026-09-27,1.0
-Farum,2026-09-28,1.0
-Farum,2026-09-29,1.0
-Farum,2026-09-30,1.0
-Farum,2026-10-01,1.0
-Farum,2026-10-02,0.95
-Farum,2026-10-03,1.0
-Farum,2026-10-04,1.0
-Farum,2026-10-05,1.0
-Farum,2026-10-06,1.0
-Farum,2026-10-07,1.0
-Farum,2026-10-08,0.95
-Farum,2026-10-09,1.0
-Farum,2026-10-10,0.95
-Farum,2026-10-11,0.95
-Farum,2026-10-12,1.0
-Farum,2026-10-13,0.95
-Farum,2026-10-14,1.0
-Farum,2026-10-15,1.0
-Farum,2026-10-16,1.0
-Farum,2026-10-17,1.0
-Farum,2026-10-18,1.0
-Farum,2026-10-19,1.0
-Farum,2026-10-20,0.95
-Farum,2026-10-21,0.95
-Farum,2026-10-22,0.95
-Farum,2026-10-23,0.95
-Farum,2026-10-24,1.0
-Farum,2026-10-25,0.9
-Farum,2026-10-26,1.0
-Farum,2026-10-27,1.0
-Farum,2026-10-28,1.0
-Farum,2026-10-29,1.0
-Farum,2026-10-30,1.0
-Farum,2026-10-31,1.0
-Farum,2026-11-01,1.0
-Farum,2026-11-02,0.95
-Farum,2026-11-03,1.0
-Farum,2026-11-04,1.0
-Farum,2026-11-05,1.0
-Farum,2026-11-06,1.0
-Farum,2026-11-07,1.0
-Farum,2026-11-08,1.0
-Farum,2026-11-09,1.0
-Farum,2026-11-10,0.95
-Farum,2026-11-11,1.0
-Farum,2026-11-12,0.95
-Farum,2026-11-13,1.0
 Ghent,2026-08-01,1.0
 Ghent,2026-08-02,1.0
 Ghent,2026-08-03,1.0
@@ -27614,108 +25619,3 @@ Egnatia,2026-11-10,1.0
 Egnatia,2026-11-11,1.0
 Egnatia,2026-11-12,1.0
 Egnatia,2026-11-13,1.0
-Paphos,2026-08-01,1.0
-Paphos,2026-08-02,1.0
-Paphos,2026-08-03,1.0
-Paphos,2026-08-04,1.0
-Paphos,2026-08-05,1.0
-Paphos,2026-08-06,1.0
-Paphos,2026-08-07,1.0
-Paphos,2026-08-08,1.0
-Paphos,2026-08-09,1.0
-Paphos,2026-08-10,1.0
-Paphos,2026-08-11,1.0
-Paphos,2026-08-12,1.0
-Paphos,2026-08-13,1.0
-Paphos,2026-08-14,1.0
-Paphos,2026-08-15,1.0
-Paphos,2026-08-16,1.0
-Paphos,2026-08-17,1.0
-Paphos,2026-08-18,1.0
-Paphos,2026-08-19,1.0
-Paphos,2026-08-20,1.0
-Paphos,2026-08-21,1.0
-Paphos,2026-08-22,1.0
-Paphos,2026-08-23,1.0
-Paphos,2026-08-24,1.0
-Paphos,2026-08-25,1.0
-Paphos,2026-08-26,1.0
-Paphos,2026-08-27,1.0
-Paphos,2026-08-28,1.0
-Paphos,2026-08-29,0.9
-Paphos,2026-08-30,1.0
-Paphos,2026-08-31,1.0
-Paphos,2026-09-01,1.0
-Paphos,2026-09-02,1.0
-Paphos,2026-09-03,1.0
-Paphos,2026-09-04,1.0
-Paphos,2026-09-05,1.0
-Paphos,2026-09-06,1.0
-Paphos,2026-09-07,1.0
-Paphos,2026-09-08,1.0
-Paphos,2026-09-09,1.0
-Paphos,2026-09-10,1.0
-Paphos,2026-09-11,1.0
-Paphos,2026-09-12,1.0
-Paphos,2026-09-13,1.0
-Paphos,2026-09-14,1.0
-Paphos,2026-09-15,1.0
-Paphos,2026-09-16,1.0
-Paphos,2026-09-17,1.0
-Paphos,2026-09-18,1.0
-Paphos,2026-09-19,1.0
-Paphos,2026-09-20,1.0
-Paphos,2026-09-21,1.0
-Paphos,2026-09-22,1.0
-Paphos,2026-09-23,1.0
-Paphos,2026-09-24,1.0
-Paphos,2026-09-25,1.0
-Paphos,2026-09-26,1.0
-Paphos,2026-09-27,1.0
-Paphos,2026-09-28,1.0
-Paphos,2026-09-29,1.0
-Paphos,2026-09-30,1.0
-Paphos,2026-10-01,1.0
-Paphos,2026-10-02,0.95
-Paphos,2026-10-03,1.0
-Paphos,2026-10-04,0.95
-Paphos,2026-10-05,1.0
-Paphos,2026-10-06,1.0
-Paphos,2026-10-07,1.0
-Paphos,2026-10-08,1.0
-Paphos,2026-10-09,1.0
-Paphos,2026-10-10,1.0
-Paphos,2026-10-11,1.0
-Paphos,2026-10-12,1.0
-Paphos,2026-10-13,1.0
-Paphos,2026-10-14,0.9
-Paphos,2026-10-15,0.9
-Paphos,2026-10-16,1.0
-Paphos,2026-10-17,0.95
-Paphos,2026-10-18,1.0
-Paphos,2026-10-19,1.0
-Paphos,2026-10-20,1.0
-Paphos,2026-10-21,1.0
-Paphos,2026-10-22,1.0
-Paphos,2026-10-23,1.0
-Paphos,2026-10-24,1.0
-Paphos,2026-10-25,1.0
-Paphos,2026-10-26,1.0
-Paphos,2026-10-27,1.0
-Paphos,2026-10-28,0.95
-Paphos,2026-10-29,0.9
-Paphos,2026-10-30,1.0
-Paphos,2026-10-31,1.0
-Paphos,2026-11-01,1.0
-Paphos,2026-11-02,1.0
-Paphos,2026-11-03,1.0
-Paphos,2026-11-04,0.95
-Paphos,2026-11-05,1.0
-Paphos,2026-11-06,1.0
-Paphos,2026-11-07,1.0
-Paphos,2026-11-08,1.0
-Paphos,2026-11-09,1.0
-Paphos,2026-11-10,1.0
-Paphos,2026-11-11,0.95
-Paphos,2026-11-12,1.0
-Paphos,2026-11-13,1.0

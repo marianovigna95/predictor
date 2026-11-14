@@ -49,7 +49,7 @@ Bergamo,2026-11-28,0.95
 Bergamo,2026-11-29,1.0
 Bologna,2026-11-14,1.0
 Bologna,2026-11-15,0.95
-Bologna,2026-11-16,0.9
+Bologna,2026-11-16,0.95
 Bologna,2026-11-17,1.0
 Bologna,2026-11-18,1.0
 Bologna,2026-11-19,0.95
@@ -128,7 +128,7 @@ Napoli,2026-11-27,1.0
 Napoli,2026-11-28,1.0
 Napoli,2026-11-29,0.95
 Parma,2026-11-14,1.0
-Parma,2026-11-15,0.95
+Parma,2026-11-15,1.0
 Parma,2026-11-16,1.0
 Parma,2026-11-17,0.95
 Parma,2026-11-18,1.0
@@ -559,7 +559,7 @@ Santander,2026-11-26,1.0
 Santander,2026-11-27,1.0
 Santander,2026-11-28,0.95
 Santander,2026-11-29,0.95
-San Sebastian,2026-11-14,1.0
+San Sebastian,2026-11-14,0.95
 San Sebastian,2026-11-15,0.95
 San Sebastian,2026-11-16,1.0
 San Sebastian,2026-11-17,0.9
@@ -639,7 +639,7 @@ Vitoria-Gasteiz,2026-11-26,1.0
 Vitoria-Gasteiz,2026-11-27,1.0
 Vitoria-Gasteiz,2026-11-28,1.0
 Vitoria-Gasteiz,2026-11-29,1.0
-Pamplona,2026-11-14,0.95
+Pamplona,2026-11-14,0.9
 Pamplona,2026-11-15,1.0
 Pamplona,2026-11-16,1.0
 Pamplona,2026-11-17,0.95
@@ -785,7 +785,7 @@ Frankfurt,2026-11-28,0.95
 Frankfurt,2026-11-29,1.0
 Freiburg im Breisgau,2026-11-14,1.0
 Freiburg im Breisgau,2026-11-15,1.0
-Freiburg im Breisgau,2026-11-16,0.95
+Freiburg im Breisgau,2026-11-16,1.0
 Freiburg im Breisgau,2026-11-17,0.9
 Freiburg im Breisgau,2026-11-18,0.9
 Freiburg im Breisgau,2026-11-19,0.95
@@ -801,7 +801,7 @@ Freiburg im Breisgau,2026-11-28,1.0
 Freiburg im Breisgau,2026-11-29,0.9
 Hamburg Norderstedt,2026-11-14,1.0
 Hamburg Norderstedt,2026-11-15,1.0
-Hamburg Norderstedt,2026-11-16,1.0
+Hamburg Norderstedt,2026-11-16,0.95
 Hamburg Norderstedt,2026-11-17,0.9
 Hamburg Norderstedt,2026-11-18,1.0
 Hamburg Norderstedt,2026-11-19,1.0
@@ -833,7 +833,7 @@ Leverkusen,2026-11-28,0.95
 Leverkusen,2026-11-29,1.0
 München,2026-11-14,1.0
 München,2026-11-15,1.0
-München,2026-11-16,0.95
+München,2026-11-16,1.0
 München,2026-11-17,1.0
 München,2026-11-18,0.95
 München,2026-11-19,1.0
@@ -880,7 +880,7 @@ Stuttgart,2026-11-27,1.0
 Stuttgart,2026-11-28,1.0
 Stuttgart,2026-11-29,0.9
 Bremen,2026-11-14,1.0
-Bremen,2026-11-15,1.0
+Bremen,2026-11-15,0.95
 Bremen,2026-11-16,1.0
 Bremen,2026-11-17,0.9
 Bremen,2026-11-18,1.0
@@ -960,8 +960,8 @@ Augsburg,2026-11-27,1.0
 Augsburg,2026-11-28,0.95
 Augsburg,2026-11-29,0.9
 Sinsheim,2026-11-14,1.0
-Sinsheim,2026-11-15,1.0
-Sinsheim,2026-11-16,0.95
+Sinsheim,2026-11-15,0.95
+Sinsheim,2026-11-16,1.0
 Sinsheim,2026-11-17,0.9
 Sinsheim,2026-11-18,0.95
 Sinsheim,2026-11-19,0.95
@@ -976,7 +976,7 @@ Sinsheim,2026-11-27,1.0
 Sinsheim,2026-11-28,1.0
 Sinsheim,2026-11-29,0.95
 Spiesen-Elversberg,2026-11-14,1.0
-Spiesen-Elversberg,2026-11-15,0.95
+Spiesen-Elversberg,2026-11-15,0.9
 Spiesen-Elversberg,2026-11-16,0.95
 Spiesen-Elversberg,2026-11-17,0.9
 Spiesen-Elversberg,2026-11-18,0.9
@@ -1087,7 +1087,7 @@ Auxerre,2026-11-26,1.0
 Auxerre,2026-11-27,1.0
 Auxerre,2026-11-28,0.95
 Auxerre,2026-11-29,1.0
-Monaco,2026-11-14,1.0
+Monaco,2026-11-14,0.95
 Monaco,2026-11-15,1.0
 Monaco,2026-11-16,1.0
 Monaco,2026-11-17,1.0
@@ -1168,7 +1168,7 @@ Strasbourg,2026-11-27,1.0
 Strasbourg,2026-11-28,0.95
 Strasbourg,2026-11-29,0.9
 Lorient,2026-11-14,1.0
-Lorient,2026-11-15,0.9
+Lorient,2026-11-15,0.95
 Lorient,2026-11-16,0.9
 Lorient,2026-11-17,0.9
 Lorient,2026-11-18,0.95
@@ -1183,7 +1183,7 @@ Lorient,2026-11-26,0.95
 Lorient,2026-11-27,0.95
 Lorient,2026-11-28,0.95
 Lorient,2026-11-29,1.0
-Nice,2026-11-14,1.0
+Nice,2026-11-14,0.95
 Nice,2026-11-15,1.0
 Nice,2026-11-16,1.0
 Nice,2026-11-17,1.0
@@ -1232,7 +1232,7 @@ Le Havre,2026-11-27,0.9
 Le Havre,2026-11-28,0.9
 Le Havre,2026-11-29,1.0
 Brest,2026-11-14,1.0
-Brest,2026-11-15,0.95
+Brest,2026-11-15,0.9
 Brest,2026-11-16,0.9
 Brest,2026-11-17,0.95
 Brest,2026-11-18,0.95
@@ -1313,7 +1313,7 @@ Modena,2026-11-28,1.0
 Modena,2026-11-29,1.0
 Empoli,2026-11-14,1.0
 Empoli,2026-11-15,1.0
-Empoli,2026-11-16,1.0
+Empoli,2026-11-16,0.95
 Empoli,2026-11-17,0.9
 Empoli,2026-11-18,0.9
 Empoli,2026-11-19,0.9
@@ -1455,7 +1455,7 @@ Castellammare di Stabia,2026-11-26,0.9
 Castellammare di Stabia,2026-11-27,1.0
 Castellammare di Stabia,2026-11-28,1.0
 Castellammare di Stabia,2026-11-29,0.95
-Carrara,2026-11-14,1.0
+Carrara,2026-11-14,0.95
 Carrara,2026-11-15,0.95
 Carrara,2026-11-16,0.95
 Carrara,2026-11-17,0.9
@@ -1535,8 +1535,8 @@ Benevento,2026-11-26,0.95
 Benevento,2026-11-27,1.0
 Benevento,2026-11-28,1.0
 Benevento,2026-11-29,0.95
-Chiavari,2026-11-14,0.95
-Chiavari,2026-11-15,0.95
+Chiavari,2026-11-14,1.0
+Chiavari,2026-11-15,1.0
 Chiavari,2026-11-16,1.0
 Chiavari,2026-11-17,0.9
 Chiavari,2026-11-18,1.0
@@ -1984,7 +1984,7 @@ Granada,2026-11-27,1.0
 Granada,2026-11-28,1.0
 Granada,2026-11-29,1.0
 Eibar,2026-11-14,0.95
-Eibar,2026-11-15,1.0
+Eibar,2026-11-15,0.95
 Eibar,2026-11-16,1.0
 Eibar,2026-11-17,0.95
 Eibar,2026-11-18,0.95
@@ -2175,7 +2175,7 @@ Burgos,2026-11-29,1.0
 "Leganés, Madrid",2026-11-27,1.0
 "Leganés, Madrid",2026-11-28,1.0
 "Leganés, Madrid",2026-11-29,1.0
-Encamp,2026-11-14,1.0
+Encamp,2026-11-14,0.95
 Encamp,2026-11-15,1.0
 Encamp,2026-11-16,1.0
 Encamp,2026-11-17,1.0
@@ -2209,7 +2209,7 @@ Bochum,2026-11-28,1.0
 Bochum,2026-11-29,1.0
 Cottbus,2026-11-14,1.0
 Cottbus,2026-11-15,1.0
-Cottbus,2026-11-16,0.95
+Cottbus,2026-11-16,1.0
 Cottbus,2026-11-17,0.9
 Cottbus,2026-11-18,1.0
 Cottbus,2026-11-19,0.95
@@ -2241,7 +2241,7 @@ Kaiserslautern,2026-11-28,1.0
 Kaiserslautern,2026-11-29,1.0
 Wolfsburg,2026-11-14,1.0
 Wolfsburg,2026-11-15,1.0
-Wolfsburg,2026-11-16,0.95
+Wolfsburg,2026-11-16,1.0
 Wolfsburg,2026-11-17,0.9
 Wolfsburg,2026-11-18,1.0
 Wolfsburg,2026-11-19,0.95
@@ -2305,7 +2305,7 @@ Bielefeld,2026-11-28,0.95
 Bielefeld,2026-11-29,0.97
 Braunschweig,2026-11-14,1.0
 Braunschweig,2026-11-15,1.0
-Braunschweig,2026-11-16,0.95
+Braunschweig,2026-11-16,1.0
 Braunschweig,2026-11-17,0.9
 Braunschweig,2026-11-18,1.0
 Braunschweig,2026-11-19,0.95
@@ -2336,8 +2336,8 @@ Fürth,2026-11-27,1.0
 Fürth,2026-11-28,1.0
 Fürth,2026-11-29,1.0
 Darmstadt,2026-11-14,1.0
-Darmstadt,2026-11-15,1.0
-Darmstadt,2026-11-16,0.95
+Darmstadt,2026-11-15,0.95
+Darmstadt,2026-11-16,1.0
 Darmstadt,2026-11-17,0.9
 Darmstadt,2026-11-18,0.95
 Darmstadt,2026-11-19,0.95
@@ -2352,7 +2352,7 @@ Darmstadt,2026-11-27,1.0
 Darmstadt,2026-11-28,1.0
 Darmstadt,2026-11-29,1.0
 Karlsruhe,2026-11-14,1.0
-Karlsruhe,2026-11-15,0.95
+Karlsruhe,2026-11-15,1.0
 Karlsruhe,2026-11-16,1.0
 Karlsruhe,2026-11-17,0.9
 Karlsruhe,2026-11-18,0.95
@@ -2384,8 +2384,8 @@ Heidenheim,2026-11-27,1.0
 Heidenheim,2026-11-28,0.97
 Heidenheim,2026-11-29,0.9
 VfL Osnabruck,2026-11-14,1.0
-VfL Osnabruck,2026-11-15,1.0
-VfL Osnabruck,2026-11-16,1.0
+VfL Osnabruck,2026-11-15,0.95
+VfL Osnabruck,2026-11-16,0.95
 VfL Osnabruck,2026-11-17,0.9
 VfL Osnabruck,2026-11-18,1.0
 VfL Osnabruck,2026-11-19,0.95
@@ -2417,7 +2417,7 @@ Dresden,2026-11-28,1.0
 Dresden,2026-11-29,0.9215
 Holstein Kiel,2026-11-14,1.0
 Holstein Kiel,2026-11-15,1.0
-Holstein Kiel,2026-11-16,1.0
+Holstein Kiel,2026-11-16,0.95
 Holstein Kiel,2026-11-17,0.9
 Holstein Kiel,2026-11-18,1.0
 Holstein Kiel,2026-11-19,1.0
@@ -2448,7 +2448,7 @@ Magdeburg,2026-11-27,0.97
 Magdeburg,2026-11-28,1.0
 Magdeburg,2026-11-29,0.97
 Nantes,2026-11-14,1.0
-Nantes,2026-11-15,0.9
+Nantes,2026-11-15,0.95
 Nantes,2026-11-16,0.9
 Nantes,2026-11-17,0.9
 Nantes,2026-11-18,0.95
@@ -2481,7 +2481,7 @@ Guingamp,2026-11-28,1.0
 Guingamp,2026-11-29,1.0
 Metz,2026-11-14,1.0
 Metz,2026-11-15,0.95
-Metz,2026-11-16,0.95
+Metz,2026-11-16,1.0
 Metz,2026-11-17,0.9
 Metz,2026-11-18,0.95
 Metz,2026-11-19,0.95
@@ -2608,7 +2608,7 @@ Laval,2026-11-27,0.95
 Laval,2026-11-28,1.0
 Laval,2026-11-29,1.0
 Nancy,2026-11-14,1.0
-Nancy,2026-11-15,0.95
+Nancy,2026-11-15,0.9
 Nancy,2026-11-16,0.95
 Nancy,2026-11-17,0.9
 Nancy,2026-11-18,0.95
@@ -2624,7 +2624,7 @@ Nancy,2026-11-27,1.0
 Nancy,2026-11-28,0.95
 Nancy,2026-11-29,0.9
 Grenoble,2026-11-14,1.0
-Grenoble,2026-11-15,0.9
+Grenoble,2026-11-15,0.95
 Grenoble,2026-11-16,1.0
 Grenoble,2026-11-17,0.95
 Grenoble,2026-11-18,0.9
@@ -3552,8 +3552,8 @@ Athens,2026-11-27,1.0
 Athens,2026-11-28,0.95
 Athens,2026-11-29,1.0
 Bodø/Glimt,2026-11-14,0.97
-Bodø/Glimt,2026-11-15,0.95
-Bodø/Glimt,2026-11-16,0.95
+Bodø/Glimt,2026-11-15,0.9
+Bodø/Glimt,2026-11-16,0.9
 Bodø/Glimt,2026-11-17,0.97
 Bodø/Glimt,2026-11-18,0.97
 Bodø/Glimt,2026-11-19,0.97
@@ -3777,7 +3777,7 @@ Poznan,2026-11-28,0.97
 Poznan,2026-11-29,1.0
 Ljubljana,2026-11-14,1.0
 Ljubljana,2026-11-15,1.0
-Ljubljana,2026-11-16,1.0
+Ljubljana,2026-11-16,0.95
 Ljubljana,2026-11-17,0.95
 Ljubljana,2026-11-18,1.0
 Ljubljana,2026-11-19,1.0
@@ -3793,7 +3793,7 @@ Ljubljana,2026-11-28,0.95
 Ljubljana,2026-11-29,1.0
 Graz,2026-11-14,1.0
 Graz,2026-11-15,1.0
-Graz,2026-11-16,0.95
+Graz,2026-11-16,1.0
 Graz,2026-11-17,1.0
 Graz,2026-11-18,1.0
 Graz,2026-11-19,1.0
