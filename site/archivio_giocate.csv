@@ -1,10 +1,10 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-14,SINGOLA,Friendlies,China - Malaysia,NG,NG,55.9,1.9,6.21,0.0,,
-giocata,2026-11-14,RADDOPPIO,Friendlies + Nations League,Romania - Poland [NG NG] + China - Malaysia [NG NG],NG/NG,NG/NG,24.7,4.08,0.99,0.0,,
+giocata,2026-11-14,SINGOLA,Friendlies,China - Malaysia,U2.5,Under 2.5,62.8,1.86,16.81,1.19,,
+giocata,2026-11-14,RADDOPPIO,Friendlies + Nations League,Romania - Poland [U2.5 Under 2.5] + China - Malaysia [U2.5 Under 2.5],U2.5/U2.5,Under 2.5/Under 2.5,32.1,3.53,13.53,0.29,,
 giocata,2026-11-15,SINGOLA,Nations League,France - Türkiye,GG,GG,60.3,1.73,4.32,0.0,,
 giocata,2026-11-15,RADDOPPIO,LaLiga 2 + Nations League,Eibar - Cádiz [O2.5 Over 2.5] + France - Türkiye [GG GG],O2.5/GG,Over 2.5/GG,27.5,3.68,1.44,0.0,,
 giocata,2026-11-16,SINGOLA,Nations League,Greece - Serbia,GG,GG,63.2,1.85,16.92,1.27,,
-giocata,2026-11-16,RADDOPPIO,Nations League,Greece - Serbia [GG GG] + Switzerland - Scotland [U2.5 Under 2.5],GG/U2.5,GG/Under 2.5,28.5,3.59,2.19,0.0,,
+giocata,2026-11-16,RADDOPPIO,Nations League,Iceland - Luxembourg [U2.5 Under 2.5] + Greece - Serbia [GG GG],U2.5/GG,Under 2.5/GG,30.0,3.52,5.55,0.0,,
 giocata,2026-11-17,SINGOLA,Friendlies,Russia - Venezuela,O2.5,Over 2.5,58.1,1.98,15.04,0.31,,
 giocata,2026-11-17,RADDOPPIO,Friendlies + Nations League,Bosnia-Herzegovina - Romania [U2.5 Under 2.5] + Russia - Venezuela [O2.5 Over 2.5],U2.5/O2.5,Under 2.5/Over 2.5,25.8,4.02,3.55,0.0,,
 giocata,2026-11-20,SINGOLA,Ligue 1,Troyes - Le Havre,GG,GG,63.9,1.67,6.71,0.0,,
