@@ -21,6 +21,11 @@ SLUGS = {"ita.1": "Serie A", "ita.2": "Serie B", "eng.1": "Premier League", "eng
          "esp.1": "LaLiga", "esp.2": "LaLiga 2", "ger.1": "Bundesliga", "ger.2": "Bundesliga 2",
          "fra.1": "Ligue 1", "fra.2": "Ligue 2", "ned.1": "Eredivisie", "por.1": "Primeira Liga",
          "tur.1": "Süper Lig", "uefa.champions": "Champions League", "uefa.europa": "Europa League",
+         # 🆕 14/11 FIX copertura: senza queste due righe le partite di nazionali e amichevoli
+         #   (segnalate dall'utente in ppa.html: Singapore-Paraguay, Qatar-Australia, ...)
+         #   non venivano MAI verificate, pur essendo i risultati disponibili su ESPN.
+         "fifa.friendly": "Friendlies", "uefa.nations": "Nations League",
+         "uefa.nations.league": "Nations League", "concacaf.nations": "Nations League",
          "uefa.europa.conf": "Conference League"}
 
 

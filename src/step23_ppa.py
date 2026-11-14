@@ -26,22 +26,30 @@ def main():
     today = datetime.date.today().isoformat()
 
     # 🆕 08/11 esiti reali (eval_day) per marcare ✅/❌ le pick finite
+    # 🆕 14/11 FIX (segnalazione utente: "le partite del 13 sono visibili e non verificate"):
+    #   a) gli esiti venivano letti SOLO da eval_day_<oggi>.csv → i giorni precedenti
+    #      restavano senza spunta anche quando il file esisteva;
+    #   b) un file vuoto (EmptyDataError) faceva crashare lo script: la pagina non
+    #      veniva più rigenerata e restava congelata alla data vecchia.
+    #   Ora si leggono TUTTI gli eval_day_*.csv, con la data nella chiave, e un file
+    #   illeggibile viene saltato invece di far cadere tutto.
     evday = {}
-    ef = DATA / f"eval_day_{today}.csv"
-    if ef.exists():
+    for ef in sorted(DATA.glob("eval_day_*.csv")):
+        dia = ef.stem.replace("eval_day_", "")
         try:
             _ev = pd.read_csv(ef)
-            for _, r in _ev.iterrows():
-                evday[(str(r["lega"]), str(r["partita"]))] = r
         except Exception as e:
-            # 🆕 14/11 FIX: se eval_day_<oggi>.csv è vuoto/illeggibile (EmptyDataError),
-            #   prima lo script CRASHAVA e site/ppa.html non veniva più rigenerata:
-            #   la pagina restava congelata alla data del vecchio file (13/11).
-            #   Ora si continua senza esiti: la pagina si aggiorna comunque.
-            print(f"   ⚠️ {ef.name} illeggibile ({type(e).__name__}): proseguo senza esiti")
+            print(f"   ⚠️ {ef.name} illeggibile ({type(e).__name__}): saltato")
+            continue
+        for _, r in _ev.iterrows():
+            evday[(dia, str(r["lega"]), str(r["partita"]))] = r
+    print(f"   esiti caricati: {len(evday)} da {len(list(DATA.glob('eval_day_*.csv')))} file")
 
     od = pd.concat([pd.read_csv(f) for f in sorted(DATA.glob("odds_window_*_bestprice.csv"))], ignore_index=True)  # 🛠 09/11 tutte le finestre
     od["data"] = od["data"].astype(str)
+    # la pagina resta rivolta al FUTURO: le partite passate non si mostrano (era
+    # la lamentela: "le partite del 13 sono ancora visibili"). Gli esiti del giorno
+    # corrente vengono comunque agganciati, perché step20 gira prima di step23.
     od = od[od["data"] >= today]
     fo = pd.read_csv(DATA / "forecast_multi.csv")
     fo["giornata"] = fo["giornata"].astype(int)
@@ -66,7 +74,7 @@ def main():
             if p < a.minp or q is None or pd.isna(q):
                 continue
             ev = round((p / 100 * (q - 1) - (1 - p / 100)) * 100, 2)
-            r7 = evday.get((o["lega"], o["partita"]))
+            r7 = evday.get((o["data"], o["lega"], o["partita"]))
             esito = ""
             if r7 is not None:
                 reale = str(r7.get("reale", ""))
