@@ -1,14 +1,16 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-15,SINGOLA,LaLiga 2,Eibar - Cádiz,1X2,1,69.9,1.66,16.03,2.35,,
-giocata,2026-11-15,RADDOPPIO,LaLiga 2 + Nations League,Eibar - Cádiz [1X2 1] + France - Türkiye [GG GG],1X2/GG,1/GG,36.3,2.95,7.38,0.0,,
-giocata,2026-11-16,SINGOLA,Nations League,Greece - Serbia,GG,GG,63.3,1.87,18.37,1.62,,
-giocata,2026-11-16,RADDOPPIO,Nations League,Iceland - Luxembourg [U2.5 Under 2.5] + Greece - Serbia [GG GG],U2.5/GG,Under 2.5/GG,30.0,3.38,1.62,0.0,,
-giocata,2026-11-17,SINGOLA,Nations League,Wales - Portugal,GG,GG,58.6,1.83,7.24,0.0,,
-giocata,2026-11-17,RADDOPPIO,Nations League,Denmark - Norway [NG NG] + Wales - Portugal [GG GG],NG/GG,NG/GG,21.5,4.81,3.4,0.0,,
+giocata,2026-11-15,SINGOLA,LaLiga 2,Eibar - Cádiz,1X2,1,69.9,1.62,13.24,1.47,,
+giocata,2026-11-15,RADDOPPIO,LaLiga 2 + Nations League,Eibar - Cádiz [1X2 1] + France - Türkiye [GG GG],1X2/GG,1/GG,36.1,3.03,9.22,0.0,,
+giocata,2026-11-16,SINGOLA,Nations League,Iceland - Luxembourg,U2.5,Under 2.5,55.8,1.9,6.02,0.0,,
+giocata,2026-11-16,RADDOPPIO,Nations League,Faroe Islands - Moldova [O2.5 Over 2.5] + Switzerland - Scotland [U2.5 Under 2.5],O2.5/U2.5,Over 2.5/Under 2.5,22.6,4.67,5.5,0.0,,
+giocata,2026-11-17,SINGOLA,Nations League,Bosnia-Herzegovina - Romania,GG,GG,61.5,1.85,13.78,0.31,,
+giocata,2026-11-17,RADDOPPIO,Nations League,Bosnia-Herzegovina - Romania [GG GG] + Wales - Portugal [GG GG],GG/GG,GG/GG,31.3,3.39,5.93,0.0,,
 giocata,2026-11-20,SINGOLA,Ligue 1,Troyes - Le Havre,GG,GG,63.9,1.67,6.71,0.0,,
-giocata,2026-11-20,RADDOPPIO,Ligue 1 + Ligue 2,Troyes - Le Havre [GG GG] + Guingamp - Rodez [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,27.0,3.89,5.08,0.0,,
+giocata,2026-11-20,RADDOPPIO,Bundesliga 2 + Ligue 1,Troyes - Le Havre [GG GG] + Bielefeld - Magdeburg [NG NG],GG/NG,GG/NG,25.0,4.17,4.48,0.0,,
 giocata,2026-11-21,SINGOLA,Serie B,Catanzaro - Palermo,GG,GG,73.9,1.55,14.55,2.62,,
 giocata,2026-11-21,RADDOPPIO,Bundesliga + Eredivisie,Elversberg - Freiburg [GG GG] + Telstar - Zwolle [GG GG],GG/GG,GG/GG,44.1,2.28,0.44,0.0,,
+giocata,2026-11-22,SINGOLA,Bundesliga,Augsburg - Mainz,GG,GG,79.3,1.4,11.02,1.87,,
+giocata,2026-11-22,RADDOPPIO,Bundesliga + LaLiga,Barcelona - Villarreal [GG GG] + Augsburg - Mainz [GG GG],GG/GG,GG/GG,47.7,2.2,4.79,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
 verifica,2026-11-03,RADDOPPIO,Champions League,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,63.9,2.0,,,Barcelona - Aston Villa 3-0 (GG no) | Bodø/Glimt - Lille 0-0 (Under 2.5),❌
 verifica,2026-11-04,SINGOLA,Champions League,Viking - Sabah FK,O2.5,Over 2.5,81.6,1.38,,,4-1 (5 gol),✅
