@@ -1631,11 +1631,11 @@ Nations League,UNL,0,2026-11-14 20:45,Portugal,Denmark,True,1,4
 Nations League,UNL,0,2026-11-14 20:45,Romania,Poland,True,2,1
 Nations League,UNL,0,2026-11-14 20:45,Sweden,Bosnia-Herzegovina,True,3,2
 Friendlies,FRD,0,2026-11-15 04:00,New Zealand,India,True,3,0
-Nations League,UNL,0,2026-11-15 15:00,Cyprus,Montenegro,False,,
-Nations League,UNL,0,2026-11-15 15:00,Latvia,Armenia,False,,
-Friendlies,FRD,0,2026-11-15 18:00,Suriname,Eswatini,False,,
-Nations League,UNL,0,2026-11-15 18:00,Belarus,Albania,False,,
-Nations League,UNL,0,2026-11-15 18:00,Finland,San Marino,False,,
+Nations League,UNL,0,2026-11-15 15:00,Cyprus,Montenegro,True,1,4
+Nations League,UNL,0,2026-11-15 15:00,Latvia,Armenia,True,0,0
+Friendlies,FRD,0,2026-11-15 18:00,Suriname,Eswatini,True,4,0
+Nations League,UNL,0,2026-11-15 18:00,Belarus,Albania,True,0,2
+Nations League,UNL,0,2026-11-15 18:00,Finland,San Marino,True,7,2
 Nations League,UNL,0,2026-11-15 20:45,Belgium,Italy,False,,
 Nations League,UNL,0,2026-11-15 20:45,Croatia,Czechia,False,,
 Nations League,UNL,0,2026-11-15 20:45,France,Türkiye,False,,
