@@ -1,11 +1,19 @@
 lega,partita,pronostico,reale,hit,p%,quota,rps_mod,rps_mkt,pO25%,ou_reale,ou_hit
 LaLiga 2,Tenerife - AD Ceuta FC,1,1,1,44.8,1.92,0.19825650000000003,0.14939032670889343,41.7,Under,1
 LaLiga 2,Granada - Las Palmas,1,1,1,54.7,1.75,0.12836949999999997,0.11499864758357593,41.4,Under,1
+LaLiga 2,Eibar - Cádiz,1,X,0,57.7,1.67,0.19088500000000003,0.2012501523345731,56.2,Under,0
+LaLiga 2,Eldense - Sabadell,1,1,1,49.9,2.47,0.162765,0.22968166835262085,50.6,Under,0
+Nations League,San Marino - Belarus,1,2,0,48.3,31.0,0.3744065,0.11197874075118211,60.8,Over,1
 Nations League,Montenegro - Latvia,1,2,0,45.3,1.37,0.3589325,0.636006929097466,36.4,Over,0
+Nations League,Slovakia - Faroe Islands,1,2,0,47.7,1.37,0.37224500000000005,0.6318184741641444,42.5,Over,0
+Nations League,Bulgaria - Iceland,1,2,0,49.2,4.39,0.3926165000000001,0.20607286611356684,46.0,Over,0
 Nations League,Latvia - Armenia,1,X,0,45.9,,0.1456685,,39.2,Under,1
 Nations League,Cyprus - Montenegro,1,2,0,51.5,,0.41311299999999995,,49.6,Over,0
 Nations League,Finland - San Marino,1,1,1,42.5,,0.21555699999999994,,44.2,Over,0
 Nations League,Belarus - Albania,1,2,0,55.7,,0.46245300000000006,,45.0,Under,1
+Nations League,Spain - England,1,2,0,42.2,1.63,0.29512450000000007,0.47725891389416997,72.0,Over,1
+Nations League,France - Türkiye,1,1,1,62.2,1.13,0.08623399999999999,0.007987755261121957,50.2,Over,1
 Nations League,Croatia - Czechia,1,X,0,38.7,1.33,0.1396845,0.2932779748621106,49.9,Under,1
+Nations League,Belgium - Italy,1,1,1,48.5,2.18,0.17553749999999999,0.193772555410526,64.7,Over,1
 Nations League,Estonia - Bulgaria,1,X,0,44.4,,0.13833,,32.5,Under,1
 Nations League,Gibraltar - Malta,1,2,0,43.8,,0.34232399999999996,,40.0,Under,1

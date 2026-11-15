@@ -1636,10 +1636,10 @@ Nations League,UNL,0,2026-11-15 15:00,Latvia,Armenia,True,0,0
 Friendlies,FRD,0,2026-11-15 18:00,Suriname,Eswatini,True,4,0
 Nations League,UNL,0,2026-11-15 18:00,Belarus,Albania,True,0,2
 Nations League,UNL,0,2026-11-15 18:00,Finland,San Marino,True,7,2
-Nations League,UNL,0,2026-11-15 20:45,Belgium,Italy,False,,
-Nations League,UNL,0,2026-11-15 20:45,Croatia,Czechia,False,,
-Nations League,UNL,0,2026-11-15 20:45,France,Türkiye,False,,
-Nations League,UNL,0,2026-11-15 20:45,Spain,England,False,,
+Nations League,UNL,0,2026-11-15 20:45,Belgium,Italy,True,4,1
+Nations League,UNL,0,2026-11-15 20:45,Croatia,Czechia,True,2,1
+Nations League,UNL,0,2026-11-15 20:45,France,Türkiye,True,2,1
+Nations League,UNL,0,2026-11-15 20:45,Spain,England,True,2,3
 Nations League,UNL,0,2026-11-16 16:00,Faroe Islands,Moldova,False,,
 Nations League,UNL,0,2026-11-16 16:00,Kazakhstan,Slovakia,False,,
 Nations League,UNL,0,2026-11-16 18:00,Estonia,Bulgaria,False,,
