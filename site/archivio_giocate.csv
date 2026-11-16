@@ -1,8 +1,6 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-16,SINGOLA,Nations League,Estonia - Bulgaria,GG,GG,54.5,2.2,19.9,0.92,,
-giocata,2026-11-16,RADDOPPIO,Nations League,Iceland - Luxembourg [O2.5 Over 2.5] + Lithuania - Liechtenstein [O2.5 Over 2.5],O2.5/O2.5,Over 2.5/Over 2.5,22.4,4.51,0.98,0.0,,
-giocata,2026-11-17,SINGOLA,Nations League,Hungary - Northern Ireland,U2.5,Under 2.5,49.7,2.5,24.25,1.1,,
-giocata,2026-11-17,RADDOPPIO,Nations League,Bosnia-Herzegovina - Romania [GG GG] + Wales - Portugal [GG GG],GG/GG,GG/GG,35.3,3.17,11.9,0.28,,
+giocata,2026-11-17,SINGOLA,Nations League,Poland - Sweden,1X2,2,40.5,3.12,26.36,0.55,,
+giocata,2026-11-17,RADDOPPIO,Nations League,Bosnia-Herzegovina - Romania [GG GG] + Wales - Portugal [GG GG],GG/GG,GG/GG,34.7,3.17,10.0,0.06,,
 giocata,2026-11-20,SINGOLA,Ligue 2,Guingamp - Rodez,O2.5,Over 2.5,52.1,2.33,21.39,0.93,,
 giocata,2026-11-20,RADDOPPIO,Ligue 1 + Ligue 2,Troyes - Le Havre [GG GG] + Guingamp - Rodez [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,27.0,3.89,5.08,0.0,,
 giocata,2026-11-21,SINGOLA,Serie B,Catanzaro - Palermo,GG,GG,73.9,1.55,14.55,2.62,,

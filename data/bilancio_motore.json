@@ -1,12 +1,29 @@
 {
- "aggiornato": "2026-11-16T18:37:38",
+ "aggiornato": "2026-11-16T22:16:53",
  "pronostici_totali": 10,
- "verificati": 0,
- "colti": 0,
- "acc_pct": null,
- "prob_media_pct": null,
- "scarto_pp": null,
- "per_mercato": {},
- "per_giorno": [],
- "non_verificabili": 10
+ "verificati": 10,
+ "colti": 4,
+ "acc_pct": 40.0,
+ "prob_media_pct": 58.2,
+ "scarto_pp": -18.2,
+ "per_mercato": {
+  "GG/NG": {
+   "n": 8,
+   "acc_pct": 37.5
+  },
+  "O/U 2.5": {
+   "n": 2,
+   "acc_pct": 50.0
+  }
+ },
+ "per_giorno": [
+  {
+   "data": "2026-11-16",
+   "pronostici": 10,
+   "colti": 4,
+   "acc_pct": 40.0,
+   "prob_media": 58.2
+  }
+ ],
+ "non_verificabili": 0
 }

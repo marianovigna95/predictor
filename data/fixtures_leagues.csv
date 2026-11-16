@@ -1652,7 +1652,7 @@ LaLiga 2,SP2,14,2026-11-15 14:00,Tenerife,AD Ceuta FC,True,2,0
 LaLiga 2,SP2,14,2026-11-15 16:15,Granada,Las Palmas,True,1,0
 LaLiga 2,SP2,14,2026-11-15 18:30,Eibar,Cádiz,True,1,1
 LaLiga 2,SP2,14,2026-11-15 18:30,Eldense,Sabadell,True,2,0
-LaLiga 2,SP2,14,2026-11-16 20:30,Albacete,Celta B,False,,
+LaLiga 2,SP2,14,2026-11-16 20:30,Albacete,Celta B,True,1,0
 Bundesliga 2,D2,12,2026-11-20 18:30,Bielefeld,Magdeburg,False,,
 Bundesliga 2,D2,12,2026-11-20 18:30,Darmstadt,Heidenheim,False,,
 Ligue 2,F2,13,2026-11-20 20:00,Annecy,Clermont,False,,
@@ -1676,7 +1676,6 @@ Premier League,E0,11,2026-11-21 13:30,Man City,Fulham,False,,
 LaLiga,SP1,13,2026-11-21 14:00,Alaves,La Coruna,False,,
 LaLiga 2,SP2,15,2026-11-21 14:00,Sabadell,Granada,False,,
 Ligue 2,F2,13,2026-11-21 14:00,Laval,Montpellier,False,,
-Ligue 2,F2,13,2026-11-21 14:00,Nantes,Grenoble,False,,
 Süper Lig,T1,12,2026-11-21 14:00,Amedspor,Rizespor,False,,
 Süper Lig,T1,12,2026-11-21 14:00,Galatasaray,Samsunspor,False,,
 Serie A,I1,12,2026-11-21 15:00,Como,Cagliari,False,,
@@ -1766,6 +1765,7 @@ LaLiga,SP1,13,2026-11-22 21:00,Getafe,Ath Madrid,False,,
 LaLiga 2,SP2,15,2026-11-22 21:00,Burgos CF,Albacete,False,,
 Süper Lig,T1,12,2026-11-23 18:00,Buyuksehyr,Corum,False,,
 LaLiga 2,SP2,15,2026-11-23 20:30,AD Ceuta FC,Almería,False,,
+Ligue 2,F2,13,2026-11-23 20:45,Nantes,Grenoble,False,,
 Ligue 2,F2,13,2026-11-23 20:45,Sochaux,Dunkerque,False,,
 Serie A,I1,12,2026-11-23 20:45,Monza,Fiorentina,False,,
 LaLiga,SP1,13,2026-11-23 21:00,Levante,Elche,False,,
