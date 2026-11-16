@@ -1,100 +1,112 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-20,Serie B,Verona - Cesena,gg,GG,1.71,fastbet,24,2026-11-16T14:29:32
-2026-11-20,Serie B,Verona - Cesena,gg,NG,2.11,winbet,24,2026-11-16T14:29:32
-2026-11-21,Serie B,Sudtirol - Cremonese,gg,GG,1.94,winbet,46,2026-11-16T14:29:32
-2026-11-21,Serie B,Sudtirol - Cremonese,gg,NG,1.95,goldbet,46,2026-11-16T14:29:32
-2026-11-21,Serie B,Ascoli - Vicenza,gg,GG,1.67,betpassion,26,2026-11-16T14:29:32
-2026-11-21,Serie B,Ascoli - Vicenza,gg,NG,2.2,snai,26,2026-11-16T14:29:32
-2026-11-21,Serie B,Carrarese - Virtus Entella,gg,GG,1.86,fastbet,22,2026-11-16T14:29:32
-2026-11-21,Serie B,Carrarese - Virtus Entella,gg,NG,1.93,goldbet,22,2026-11-16T14:29:32
-2026-11-21,Serie B,Sampdoria - Benevento,gg,GG,1.78,winbet,46,2026-11-16T14:29:32
-2026-11-21,Serie B,Sampdoria - Benevento,gg,NG,2.0,snai,46,2026-11-16T14:29:32
-2026-11-21,Serie B,Modena - Juve Stabia,gg,GG,1.75,leovegas,46,2026-11-16T14:29:32
-2026-11-21,Serie B,Modena - Juve Stabia,gg,NG,2.1,eurobet,46,2026-11-16T14:29:32
-2026-11-21,Serie B,Catanzaro - Palermo,gg,GG,1.56,stake,30,2026-11-16T14:29:32
-2026-11-21,Serie B,Catanzaro - Palermo,gg,NG,2.5,goldbet,30,2026-11-16T14:29:32
-2026-11-21,Serie B,Empoli - Pisa,gg,GG,1.68,leovegas,46,2026-11-16T14:29:32
-2026-11-21,Serie B,Empoli - Pisa,gg,NG,2.2,snai,46,2026-11-16T14:29:32
-2026-11-22,Serie B,Avellino - Mantova,gg,GG,1.76,fastbet,29,2026-11-16T14:29:32
-2026-11-22,Serie B,Avellino - Mantova,gg,NG,2.05,goldbet,29,2026-11-16T14:29:32
-2026-11-22,Serie B,Arezzo - Padova,gg,GG,1.81,winbet,46,2026-11-16T14:29:32
-2026-11-22,Serie B,Arezzo - Padova,gg,NG,2.0,goldbet,46,2026-11-16T14:29:32
-2026-11-20,Serie B,Hellas Verona - Cesena,gg,GG,1.78,leovegas,22,2026-11-16T14:29:32
-2026-11-20,Serie B,Hellas Verona - Cesena,gg,NG,2.15,goldbet,22,2026-11-16T14:29:32
-2026-11-21,Serie B,Südtirol - Cremonese,gg,GG,4.9,betflag,6,2026-11-16T14:29:32
-2026-11-21,Serie B,Südtirol - Cremonese,gg,NG,1.15,fastbet,6,2026-11-16T14:29:32
-2026-11-21,Serie B,Ascoli - L.R. Vicenza,gg,GG,1.65,vincitu,18,2026-11-16T14:29:32
-2026-11-21,Serie B,Ascoli - L.R. Vicenza,gg,NG,2.25,goldbet,18,2026-11-16T14:29:32
-2026-11-21,Serie B,Ascoli - LR Vicenza,gg,GG,1.61,bwin,2,2026-11-16T14:29:32
-2026-11-21,Serie B,Ascoli - LR Vicenza,gg,NG,2.1,bwin,2,2026-11-16T14:29:32
-2026-11-22,Brasileiro Serie B,Goianiense GO - Vila Nova FC GO,gg,GG,1.87,bwin,2,2026-11-16T14:29:32
-2026-11-22,Brasileiro Serie B,Goianiense GO - Vila Nova FC GO,gg,NG,1.82,bwin,2,2026-11-16T14:29:32
-2026-11-21,Serie B,Carrarese Calcio 1908-Virtus Entella,gg,GG,1.88,winbet,15,2026-11-16T14:29:32
-2026-11-21,Serie B,Carrarese Calcio 1908-Virtus Entella,gg,NG,1.88,winbet,15,2026-11-16T14:29:32
-2026-11-21,Serie B,US Catanzaro 1929-Palermo,gg,GG,1.55,betpassion,16,2026-11-16T14:29:32
-2026-11-21,Serie B,US Catanzaro 1929-Palermo,gg,NG,2.39,winbet,16,2026-11-16T14:29:32
-2026-11-22,Serie B,Avellino-Mantova 1911,gg,GG,1.8,winbet,17,2026-11-16T14:29:32
-2026-11-22,Serie B,Avellino-Mantova 1911,gg,NG,1.98,winbet,17,2026-11-16T14:29:32
-2026-11-20,Serie B,Verona - Cesena,2.5,O2.5,1.23,betpassion,18,2026-11-16T14:29:33
-2026-11-20,Serie B,Verona - Cesena,2.5,U2.5,4.2,stanleybet,18,2026-11-16T14:29:33
-2026-11-21,Serie B,Sudtirol - Cremonese,2.5,O2.5,1.37,leovegas,39,2026-11-16T14:29:33
-2026-11-21,Serie B,Sudtirol - Cremonese,2.5,U2.5,3.05,stanleybet,39,2026-11-16T14:29:33
-2026-11-21,Serie B,Ascoli - Vicenza,2.5,O2.5,1.23,betpassion,19,2026-11-16T14:29:33
-2026-11-21,Serie B,Ascoli - Vicenza,2.5,U2.5,4.1,stanleybet,19,2026-11-16T14:29:33
-2026-11-21,Serie B,Carrarese - Virtus Entella,2.5,O2.5,1.36,snai,18,2026-11-16T14:29:33
-2026-11-21,Serie B,Carrarese - Virtus Entella,2.5,U2.5,3.1,goldbet,18,2026-11-16T14:29:33
-2026-11-21,Serie B,Sampdoria - Benevento,2.5,O2.5,1.32,marathonbet,39,2026-11-16T14:29:33
-2026-11-21,Serie B,Sampdoria - Benevento,2.5,U2.5,3.35,leovegas,39,2026-11-16T14:29:33
-2026-11-21,Serie B,Modena - Juve Stabia,2.5,O2.5,1.22,marathonbet,39,2026-11-16T14:29:33
-2026-11-21,Serie B,Modena - Juve Stabia,2.5,U2.5,4.25,goldbet,39,2026-11-16T14:29:33
-2026-11-20,Serie B,Verona - Cesena,1x2,1,1.76,winbet,24,2026-11-16T14:29:34
-2026-11-20,Serie B,Verona - Cesena,1x2,X,3.76,winbet,24,2026-11-16T14:29:34
-2026-11-20,Serie B,Verona - Cesena,1x2,2,4.75,fastbet,24,2026-11-16T14:29:34
-2026-11-21,Serie B,Sudtirol - Cremonese,1x2,1,3.5,fastbet,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Sudtirol - Cremonese,1x2,X,3.25,giocodigitale,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Sudtirol - Cremonese,1x2,2,2.26,codere,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - Vicenza,1x2,1,1.89,betpassion,26,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - Vicenza,1x2,X,3.54,winbet,26,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - Vicenza,1x2,2,4.33,stake,26,2026-11-16T14:29:34
-2026-11-21,Serie B,Carrarese - Virtus Entella,1x2,1,2.38,leovegas,20,2026-11-16T14:29:34
-2026-11-21,Serie B,Carrarese - Virtus Entella,1x2,X,3.2,snai,20,2026-11-16T14:29:34
-2026-11-21,Serie B,Carrarese - Virtus Entella,1x2,2,3.25,goldbet,20,2026-11-16T14:29:34
-2026-11-21,Serie B,Sampdoria - Benevento,1x2,1,2.7,goldbet,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Sampdoria - Benevento,1x2,X,3.27,winbet,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Sampdoria - Benevento,1x2,2,2.75,codere,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Modena - Juve Stabia,1x2,1,1.65,codere,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Modena - Juve Stabia,1x2,X,4.02,winbet,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Modena - Juve Stabia,1x2,2,5.33,fastbet,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Catanzaro - Palermo,1x2,1,3.85,goldbet,30,2026-11-16T14:29:34
-2026-11-21,Serie B,Catanzaro - Palermo,1x2,X,4.0,fastbet,30,2026-11-16T14:29:34
-2026-11-21,Serie B,Catanzaro - Palermo,1x2,2,1.89,quigioco,30,2026-11-16T14:29:34
-2026-11-21,Serie B,Empoli - Pisa,1x2,1,4.0,fastbet,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Empoli - Pisa,1x2,X,3.75,fastbet,46,2026-11-16T14:29:34
-2026-11-21,Serie B,Empoli - Pisa,1x2,2,1.93,giocodigitale,46,2026-11-16T14:29:34
-2026-11-22,Serie B,Avellino - Mantova,1x2,1,2.43,leovegas,29,2026-11-16T14:29:34
-2026-11-22,Serie B,Avellino - Mantova,1x2,X,3.3,giocodigitale,29,2026-11-16T14:29:34
-2026-11-22,Serie B,Avellino - Mantova,1x2,2,3.0,betsson,29,2026-11-16T14:29:34
-2026-11-22,Serie B,Arezzo - Padova,1x2,1,2.48,leovegas,46,2026-11-16T14:29:34
-2026-11-22,Serie B,Arezzo - Padova,1x2,X,3.3,giocodigitale,46,2026-11-16T14:29:34
-2026-11-22,Serie B,Arezzo - Padova,1x2,2,3.0,goldbet,46,2026-11-16T14:29:34
-2026-11-20,Serie B,Hellas Verona - Cesena,1x2,1,1.75,codere,22,2026-11-16T14:29:34
-2026-11-20,Serie B,Hellas Verona - Cesena,1x2,X,3.75,giocodigitale,22,2026-11-16T14:29:34
-2026-11-20,Serie B,Hellas Verona - Cesena,1x2,2,5.0,leovegas,22,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - L.R. Vicenza,1x2,1,1.91,codere,18,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - L.R. Vicenza,1x2,X,3.5,sunbet,18,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - L.R. Vicenza,1x2,2,4.35,goldbet,18,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - LR Vicenza,1x2,1,2.3,bwin,2,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - LR Vicenza,1x2,X,2.2,bwin,2,2026-11-16T14:29:34
-2026-11-21,Serie B,Ascoli - LR Vicenza,1x2,2,4.1,bwin,2,2026-11-16T14:29:34
-2026-11-22,Brasileiro Serie B,Goianiense GO - Vila Nova FC GO,1x2,1,2.45,bwin,2,2026-11-16T14:29:34
-2026-11-22,Brasileiro Serie B,Goianiense GO - Vila Nova FC GO,1x2,X,2.15,bwin,2,2026-11-16T14:29:34
-2026-11-22,Brasileiro Serie B,Goianiense GO - Vila Nova FC GO,1x2,2,4.1,bwin,2,2026-11-16T14:29:34
-2026-11-21,Serie B,Carrarese Calcio 1908-Virtus Entella,1x2,1,2.38,codere,15,2026-11-16T14:29:34
-2026-11-21,Serie B,Carrarese Calcio 1908-Virtus Entella,1x2,X,3.18,winbet,15,2026-11-16T14:29:34
-2026-11-21,Serie B,Carrarese Calcio 1908-Virtus Entella,1x2,2,3.2,codere,15,2026-11-16T14:29:34
-2026-11-21,Serie B,US Catanzaro 1929-Palermo,1x2,1,3.8,codere,16,2026-11-16T14:29:34
-2026-11-21,Serie B,US Catanzaro 1929-Palermo,1x2,X,3.76,winbet,16,2026-11-16T14:29:34
-2026-11-21,Serie B,US Catanzaro 1929-Palermo,1x2,2,1.92,codere,16,2026-11-16T14:29:34
-2026-11-22,Serie B,Avellino-Mantova 1911,1x2,1,2.41,betpassion,17,2026-11-16T14:29:34
-2026-11-22,Serie B,Avellino-Mantova 1911,1x2,X,3.27,winbet,17,2026-11-16T14:29:34
-2026-11-22,Serie B,Avellino-Mantova 1911,1x2,2,3.05,codere,17,2026-11-16T14:29:34
+2026-11-20,Ligue 1,Troyes - Le Havre,gg,GG,1.71,stake,43,2026-11-16T14:59:58
+2026-11-20,Ligue 1,Troyes - Le Havre,gg,NG,2.23,leovegas,43,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Nizza - Paris Saint-Germain,gg,GG,1.56,winamax,25,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Nizza - Paris Saint-Germain,gg,NG,2.45,eurobet,25,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Lens - Tolosa,gg,GG,1.6,winamax,39,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Lens - Tolosa,gg,NG,2.33,betpassion,39,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Strasburgo - Brest,gg,GG,1.56,betpassion,40,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Strasburgo - Brest,gg,NG,2.5,leovegas,40,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Monaco  - Auxerre,gg,GG,1.8,winamax,45,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Monaco  - Auxerre,gg,NG,2.12,leovegas,45,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Lille - Lione,gg,GG,1.77,vincitu,27,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Lille - Lione,gg,NG,2.04,leovegas,27,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Paris FC - Angers,gg,GG,1.98,betpassion,45,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Paris FC - Angers,gg,NG,1.89,leovegas,45,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Lorient - Rennes,gg,GG,1.66,betpassion,27,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Lorient - Rennes,gg,NG,2.25,leovegas,27,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Marsiglia - Le Mans,gg,GG,1.68,winamax,20,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Marsiglia - Le Mans,gg,NG,2.2,goldbet,20,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Olympique Marsiglia - Le Mans Fc,gg,GG,1.66,giocodigitale,22,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Olympique Marsiglia - Le Mans Fc,gg,NG,2.18,betpassion,22,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Lens - Toulouse,gg,GG,3.65,leovegas,5,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Lens - Toulouse,gg,NG,1.25,stake,5,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Strasbourg - Brest,gg,GG,1.53,stake,3,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Strasbourg - Brest,gg,NG,2.43,fastbet,3,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Monaco - Auxerre,gg,GG,4.0,stake,5,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Monaco - Auxerre,gg,NG,1.21,fastbet,5,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Marseille - Le Mans,gg,GG,1.67,stake,3,2026-11-16T14:59:58
+2026-11-22,Ligue 1,Marseille - Le Mans,gg,NG,2.14,fastbet,3,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Nizza - PSG,gg,GG,3.35,leovegas,3,2026-11-16T14:59:58
+2026-11-21,Ligue 1,Nizza - PSG,gg,NG,1.24,leovegas,3,2026-11-16T14:59:58
+2026-11-21,Ligue 1,AS Monaco - Auxerre,gg,GG,3.2,stake,5,2026-11-16T14:59:58
+2026-11-21,Ligue 1,AS Monaco - Auxerre,gg,NG,1.33,leovegas,5,2026-11-16T14:59:58
+2026-11-27,Ligue 1,Brest - Paris FC,gg,GG,2.8,leovegas,3,2026-11-16T14:59:58
+2026-11-27,Ligue 1,Brest - Paris FC,gg,NG,1.33,leovegas,3,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Angers - Lens,gg,GG,2.8,leovegas,3,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Angers - Lens,gg,NG,1.34,leovegas,3,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Le Havre - Strasburgo,gg,GG,1.52,winamax,4,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Le Havre - Strasburgo,gg,NG,2.5,winamax,4,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Le Mans - Lille,gg,GG,1.85,stake,4,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Le Mans - Lille,gg,NG,1.97,leovegas,4,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Nizza - Troyes,gg,GG,1.7,winamax,4,2026-11-16T14:59:58
+2026-11-28,Ligue 1,Nizza - Troyes,gg,NG,2.15,winamax,4,2026-11-16T14:59:58
+2026-11-20,Ligue 1,Troyes - Le Havre,1x2,1,2.14,codere,44,2026-11-16T14:59:59
+2026-11-20,Ligue 1,Troyes - Le Havre,1x2,X,3.55,fastbet,44,2026-11-16T14:59:59
+2026-11-20,Ligue 1,Troyes - Le Havre,1x2,2,3.59,fastbet,44,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Nizza - Paris Saint-Germain,1x2,1,6.0,snai,25,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Nizza - Paris Saint-Germain,1x2,X,5.2,totosi,25,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Nizza - Paris Saint-Germain,1x2,2,1.47,giocodigitale,25,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lens - Tolosa,1x2,1,1.83,giocodigitale,40,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lens - Tolosa,1x2,X,4.0,goldbet,40,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lens - Tolosa,1x2,2,4.1,vincitu,40,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Strasburgo - Brest,1x2,1,2.25,888sport,41,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Strasburgo - Brest,1x2,X,3.75,snai,41,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Strasburgo - Brest,1x2,2,3.05,betitaly,41,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Monaco  - Auxerre,1x2,1,1.43,888sport,46,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Monaco  - Auxerre,1x2,X,5.2,totosi,46,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Monaco  - Auxerre,1x2,2,7.1,vincitu,46,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lille - Lione,1x2,1,2.39,vincitu,28,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lille - Lione,1x2,X,3.35,888sport,28,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lille - Lione,1x2,2,3.05,vincitu,28,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Paris FC - Angers,1x2,1,1.38,888sport,46,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Paris FC - Angers,1x2,X,5.4,totosi,46,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Paris FC - Angers,1x2,2,9.0,betitaly,46,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Lorient - Rennes,1x2,1,3.0,888sport,28,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Lorient - Rennes,1x2,X,3.55,888sport,28,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Lorient - Rennes,1x2,2,2.45,snai,28,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Marsiglia - Le Mans,1x2,1,1.45,goldbet,21,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Marsiglia - Le Mans,1x2,X,4.9,888sport,21,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Marsiglia - Le Mans,1x2,2,6.5,888sport,21,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Olympique Marsiglia - Le Mans Fc,1x2,1,1.48,betitaly,20,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Olympique Marsiglia - Le Mans Fc,1x2,X,4.9,totosi,20,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Olympique Marsiglia - Le Mans Fc,1x2,2,6.2,betitaly,20,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lens - Toulouse,1x2,1,1.84,888sport,6,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lens - Toulouse,1x2,X,4.2,stake,6,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Lens - Toulouse,1x2,2,3.98,fastbet,6,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Strasbourg - Brest,1x2,1,2.19,fastbet,3,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Strasbourg - Brest,1x2,X,3.74,fastbet,3,2026-11-16T14:59:59
+2026-11-21,Ligue 1,Strasbourg - Brest,1x2,2,3.02,fastbet,3,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Marseille - Le Mans,1x2,1,1.44,stake,3,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Marseille - Le Mans,1x2,X,4.9,fastbet,3,2026-11-16T14:59:59
+2026-11-22,Ligue 1,Marseille - Le Mans,1x2,2,6.4,fastbet,3,2026-11-16T14:59:59
+2026-11-27,Ligue 1,Brest - Paris FC,1x2,1,3.14,stake,5,2026-11-16T14:59:59
+2026-11-27,Ligue 1,Brest - Paris FC,1x2,X,3.5,888sport,5,2026-11-16T14:59:59
+2026-11-27,Ligue 1,Brest - Paris FC,1x2,2,2.25,888sport,5,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Angers - Lens,1x2,1,4.4,888sport,5,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Angers - Lens,1x2,X,4.0,stake,5,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Angers - Lens,1x2,2,1.74,winamax,5,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Nice - Troyes,1x2,1,1.67,stake,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Nice - Troyes,1x2,X,4.0,stake,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Nice - Troyes,1x2,2,4.5,stake,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Le Mans - Lille,1x2,1,4.25,stake,4,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Le Mans - Lille,1x2,X,3.6,stake,4,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Le Mans - Lille,1x2,2,1.88,888sport,4,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Le Havre - Strasbourg,1x2,1,2.86,stake,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Le Havre - Strasbourg,1x2,X,3.6,stake,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1,Le Havre - Strasbourg,1x2,2,2.25,stake,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1 McDonald's,Paris Saint-Germain - Lorient,1x2,1,1.22,winamax,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1 McDonald's,Paris Saint-Germain - Lorient,1x2,X,6.5,winamax,1,2026-11-16T14:59:59
+2026-11-28,Ligue 1 McDonald's,Paris Saint-Germain - Lorient,1x2,2,11.0,winamax,1,2026-11-16T14:59:59
+2026-11-20,Ligue 1,Troyes - Le Havre,2.5,O2.5,1.26,winamax,36,2026-11-16T15:00:01
+2026-11-20,Ligue 1,Troyes - Le Havre,2.5,U2.5,4.1,888sport,36,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Nizza - Paris Saint-Germain,2.5,O2.5,1.12,winamax,24,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Nizza - Paris Saint-Germain,2.5,U2.5,6.25,giocodigitale,24,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Lens - Tolosa,2.5,O2.5,1.19,winamax,35,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Lens - Tolosa,2.5,U2.5,4.7,stanleybet,35,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Strasburgo - Brest,2.5,O2.5,1.2,winamax,36,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Strasburgo - Brest,2.5,U2.5,4.9,888sport,36,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Monaco  - Auxerre,2.5,O2.5,1.17,winamax,38,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Monaco  - Auxerre,2.5,U2.5,5.25,888sport,38,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Lille - Lione,2.5,O2.5,1.31,codere,26,2026-11-16T15:00:01
+2026-11-21,Ligue 1,Lille - Lione,2.5,U2.5,3.45,888sport,26,2026-11-16T15:00:01
