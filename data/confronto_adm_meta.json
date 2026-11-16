@@ -1,15 +1,15 @@
 {
- "aggiornato": "2026-11-16T13:07:11",
+ "aggiornato": "2026-11-16T14:29:34",
  "stato": "ok",
- "confronti": 2,
- "giocate_non_coperte": 4,
- "delta_medio_pct": 0.56,
- "delta_min_pct": 0.0,
- "delta_max_pct": 1.11,
- "tenuta_ok": 2,
+ "confronti": 1,
+ "giocate_non_coperte": 5,
+ "delta_medio_pct": 0.65,
+ "delta_min_pct": 0.65,
+ "delta_max_pct": 0.65,
+ "tenuta_ok": 1,
  "tenuta_limite": 0,
  "edge_perso": 0,
- "EV_positivo_su_quota_adm": 2,
+ "EV_positivo_su_quota_adm": 1,
  "soglie": {
   "ok": -0.015,
   "rossa": -0.05
