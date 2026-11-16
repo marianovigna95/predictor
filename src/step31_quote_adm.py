@@ -162,6 +162,13 @@ def main():
                 usate_mese = int(u.get("usate") or 0)
     except Exception:
         usate_mese = 0
+    # 🆕 16/11 contatore di RUN (per la rotazione delle leghe): persistente, si azzera col mese
+    run_n = 0
+    try:
+        if usage_p.exists():
+            run_n = int(json.loads(usage_p.read_text()).get("run_n") or 0)
+    except Exception:
+        run_n = 0
     restanti = max(0, MONTHLY_BUDGET - usate_mese)
     cap_run = min(MAX_CALLS_PER_RUN, restanti)
     print(f"💰 budget mese {mese}: usate {usate_mese}/{MONTHLY_BUDGET} → richieste disponibili in questa run: {cap_run}")
@@ -232,7 +239,16 @@ def main():
                     mercati_richiesti.append("btts")
                 if "2.5" in mk and "ou" not in mercati_richiesti:
                     mercati_richiesti.append("ou")
-            for le in g["lega"].astype(str):
+            # 🆕 16/11 priorita' per STAKE: prima le leghe delle giocate che pesano
+            #   davvero sul bankroll. Prima contava uguale una giocata con stake 0,00%
+            #   e una con stake 2,62%: cosi' si sprecavano richieste su partite
+            #   che il sito stesso dice di non giocare.
+            try:
+                g["_st"] = pd.to_numeric(g.get("stake%", 0), errors="coerce").fillna(0.0)
+            except Exception:
+                g["_st"] = 0.0
+            g = g.sort_values("_st", ascending=False)
+            for le, _st in zip(g["lega"].astype(str), g["_st"]):
                 for parte in le.split("+"):
                     parte = parte.strip()
                     if parte and parte not in leghe_da_chiedere:
@@ -251,8 +267,26 @@ def main():
     mercati = mercati_richiesti + [m for m in ("1x2", "ou") if m not in mercati_richiesti]
     print(f"   ordine leghe: {leghe_da_chiedere[:4]}")
     print(f"   ordine mercati: {mercati}  (richiesti dalle giocate: {mercati_richiesti or 'nessuno'})")
+    # 🆕 16/11 ROTAZIONE: con 3 richieste/run possiamo interrogare al massimo 3 leghe
+    #   (1 richiesta per lega-mercato). Se le giocate sono sparse su 6 leghe, senza
+    #   rotazione le ultime NON vengono MAI interrogate e il confronto ADM resta vuoto
+    #   per costruzione. Qui la lista ruota a ogni run: la mattina le prime, il
+    #   pomeriggio le successive, la sera si riparte. Copertura doppia, costo zero.
+    #
+    #   L'indice di rotazione viene dal numero di run del giorno: usiamo l'ora UTC
+    #   (0-23) diviso per lo slot, così run ravvicinate non ripetono le stesse leghe.
     if a.league:
         leghe_da_chiedere = [a.league]
+    elif len(leghe_da_chiedere) > 3:
+        _n_leghe = len(leghe_da_chiedere)
+        _per_run = max(1, cap_run)                 # quante leghe entrano in questa run
+        # l'indice avanza di _per_run a ogni run: così la run successiva riprende
+        # esattamente da dove questa si è fermata (niente gruppi ripetuti).
+        _start = (run_n * _per_run) % _n_leghe
+        _ruotate = [leghe_da_chiedere[(_start + i) % _n_leghe] for i in range(_n_leghe)]
+        print(f"   🔄 rotazione (run #{run_n}): {_n_leghe} leghe in lista, parte da "
+              f"'{_ruotate[0]}' → questa run copre {_ruotate[:min(_per_run, 3)]}")
+        leghe_da_chiedere = _ruotate
     for lega in leghe_da_chiedere:
         if calls >= cap_run:
             print(f"   ⏹ stop a {calls} richieste (tetto run: {MAX_CALLS_PER_RUN}, budget mese: {restanti})")
@@ -322,6 +356,7 @@ def main():
     meta_p.write_text(json.dumps(meta, ensure_ascii=False, indent=1))
     try:
         usage_p.write_text(json.dumps({"mese": mese, "usate": usate_mese + calls,
+                                       "run_n": run_n + 1,
                                        "aggiornato": dt.datetime.now().isoformat(timespec="seconds")},
                                       ensure_ascii=False, indent=1))
         print(f"💰 contatore mese: {usate_mese + calls}/{MONTHLY_BUDGET}")
