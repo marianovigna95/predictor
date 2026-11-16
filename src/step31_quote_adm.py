@@ -210,19 +210,28 @@ def main():
 
     calls = 0
     righe = []
-    # 1 lega × 2 mercati = 2 richieste esatte (tetto MAX_CALLS_PER_RUN)
-    mercati = ["1x2", "ou"] if not a.league else ["1x2"]
     for league in ([a.league] if a.league else []):
         pass
 
     # 🆕 13/11-b PRIORITÀ: prima le leghe dove abbiamo GIOCATE attive (è lì che serve la quota ADM),
     # poi il resto della finestra. Altrimenti si consumavano richieste su leghe senza valore.
     leghe_da_chiedere = []   # nomi NOSTRI (poi tradotti con LEGA_QUERY)
+    mercati_richiesti = []
+    # 🆕 16/11 MERCATI ADATTIVI: prima si chiedevano sempre 1x2 + ou. Ma le nostre
+    #   giocate sono quasi tutte GG/NG, e senza il mercato "btts" il confronto
+    #   (data/confronto_adm.md) non poteva MAI agganciare: la partita c'era, il
+    #   mercato no. Ora si chiede PRIMA il mercato che ci serve davvero.
     gj = DATA / "giocata_multi.csv"
     if gj.exists():
         try:
             g = pd.read_csv(gj, low_memory=False)
             g = g[g["tipo"].isin(["SINGOLA", "RADDOPPIO"])]
+            for mk in g["mercato"].astype(str):
+                mu = mk.upper()
+                if ("GG" in mu or "NG" in mu) and "btts" not in mercati_richiesti:
+                    mercati_richiesti.append("btts")
+                if "2.5" in mk and "ou" not in mercati_richiesti:
+                    mercati_richiesti.append("ou")
             for le in g["lega"].astype(str):
                 for parte in le.split("+"):
                     parte = parte.strip()
@@ -238,7 +247,10 @@ def main():
                     leghe_da_chiedere.append(le)
         except Exception:
             pass
+    # ordine: prima i mercati che servono al confronto, poi 1x2 come riempimento
+    mercati = mercati_richiesti + [m for m in ("1x2", "ou") if m not in mercati_richiesti]
     print(f"   ordine leghe: {leghe_da_chiedere[:4]}")
+    print(f"   ordine mercati: {mercati}  (richiesti dalle giocate: {mercati_richiesti or 'nessuno'})")
     if a.league:
         leghe_da_chiedere = [a.league]
     for lega in leghe_da_chiedere:

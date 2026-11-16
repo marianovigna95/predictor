@@ -19,10 +19,17 @@ Output: data/confronto_adm.csv + data/confronto_adm_meta.json
 Nessuna chiamata API: legge solo CSV gia' presenti (non consuma quota).
 """
 import json
+import sys
 import unicodedata
 from pathlib import Path
 
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from nomi_squadre import chiave_partita      # 🆕 16/11 nomi IT/EN allineati
+except Exception:                                 # pragma: no cover
+    chiave_partita = None
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -40,6 +47,17 @@ def _n(s):
     for ch in ".-'’`":
         s = s.replace(ch, " ")
     return " ".join(s.split())
+
+
+def _chiave(pt):
+    """Chiave di aggancio della partita: nomi canonici (Galles == Wales).
+    Fallback al vecchio _n() se il modulo dei nomi non e' disponibile."""
+    if chiave_partita is not None:
+        k = chiave_partita(pt)
+        if k:
+            return k
+    n = _n(pt)
+    return (n, "") if n else None
 
 
 def _merc(m):
@@ -122,7 +140,10 @@ def main():
             continue
         if pd.isna(q) or q <= 1.05:
             continue
-        k = (str(r.get("data", ""))[:10], _n(r.get("partita", "")), _merc(r.get("mercato", "")))
+        ck = _chiave(r.get("partita", ""))
+        if not ck:
+            continue
+        k = (str(r.get("data", ""))[:10], ck, _merc(r.get("mercato", "")))
         adm.setdefault(k, []).append({
             "quota_adm": q, "book": r.get("book", ""), "n_book": r.get("n_book", ""),
             "esito": str(r.get("esito", "") or "").upper().strip(),
@@ -135,7 +156,11 @@ def main():
             continue
         mk = str(r.get("mercato", ""))
         amm = _esiti(mk) or _merc_esito(mk, r.get("esito", ""))[1]
-        k = (str(r.get("data", ""))[:10], _n(r.get("partita", "")), _merc(mk))
+        ck = _chiave(r.get("partita", ""))
+        if not ck:
+            senza += 1
+            continue
+        k = (str(r.get("data", ""))[:10], ck, _merc(mk))
         cand = adm.get(k) or []
         # tiene solo le quote dello STESSO esito (Under con Under, GG con GG...)
         if amm:
