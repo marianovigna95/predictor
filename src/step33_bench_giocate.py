@@ -59,6 +59,7 @@ DATA = Path(__file__).resolve().parent.parent / "data"
 
 OUT_CSV = DATA / "bets_1x2_onesto.csv"
 OUT_META = DATA / "bets_1x2_onesto_meta.json"
+OUT_BASE = DATA / "bench_mercato_puro.csv"   # 🆕 16/11 baseline "mercato puro"
 
 SOGLIA_GAP = 0.02        # stesse regole del sito: solo se il modello batte il mercato di > 2pp
 TOL_SOMMA = 1e-3         # tolleranza sulla somma delle 3 probabilita'
@@ -127,6 +128,55 @@ def main():
     rps_mod = _rps(P[m], y_all[m].astype(int)) if m.sum() else float("nan")
     rps_mkt = _rps(P_mkt[m], y_all[m].astype(int)) if m.sum() else float("nan")
 
+    # ---------- 🆕 16/11 BASELINE "MERCATO PURO": cosa succede se non si usa alcun modello ----------
+    # Serve a rispondere a una domanda sola: il modello AGGIUNGE qualcosa rispetto al
+    # mercato, o stiamo solo rimescolando il segnale del mercato stesso?
+    # Tre strategie a confronto sulle STESSE partite, stesso orizzonte walk-forward:
+    #   MKT_FAV  — gioca sempre l'esito che il mercato (de-vig) considera favorito, quota 1
+    #   MKT_VAL  — gioca solo dove il mercato e' "in disaccordo" ?? no: nessun modello, quindi
+    #              si usa il criterio piu' semplice e onesto: favorito del mercato, ma solo se
+    #              la quota del favorito e' >= 1.60 (filtro di prezzo, non di modello)
+    #   MODELLO  — le giocate vere del file onesto (pick = max gap modello-mercato)
+    try:
+        idx_fav = np.nanargmax(np.where(np.isfinite(P_mkt), P_mkt, -np.inf), axis=1)
+        _ok = m  # stessa maschera del RPS: righe con modello, esito e quote valide
+        righe_base = []
+        for nome, filtro in (("MKT_FAV", lambda q: True),
+                             ("MKT_FAV_q60", lambda q: q >= 1.60)):
+            pnl, vinte, n_b, qs, probs = 0.0, 0, 0, [], []
+            for i in np.where(_ok)[0]:
+                j = int(idx_fav[i])
+                q = float(odds[i, j])
+                if not np.isfinite(q) or q <= 1.0:
+                    continue
+                if not filtro(q):
+                    continue
+                v = int(y_all[i] == j)
+                pnl += (q - 1.0) if v else -1.0
+                vinte += v
+                n_b += 1
+                qs.append(q)
+                probs.append(float(P_mkt[i, j]))
+            if n_b:
+                righe_base.append({
+                    "strategia": nome,
+                    "giocate": n_b,
+                    "vinte": vinte,
+                    "win_rate_pct": round(vinte / n_b * 100, 1),
+                    "quota_media": round(float(np.mean(qs)), 3),
+                    "p_media_mercato": round(float(np.mean(probs)), 4),
+                    "roi_pct": round(pnl / n_b * 100, 1),
+                    "pnl_unita": round(pnl, 1),
+                })
+        if righe_base:
+            pd.DataFrame(righe_base).to_csv(OUT_BASE, index=False)
+            print("\n🏁 BASELINE mercato puro (stesse partite, nessun modello):")
+            for r in righe_base:
+                print(f"   {r['strategia']:12s} n={r['giocate']:>4d}  vinte {r['win_rate_pct']:>5.1f}%  "
+                      f"quota {r['quota_media']:.2f}  ROI {r['roi_pct']:>+6.1f}%")
+    except Exception as _e:
+        print(f"   ⚠️ baseline mercato puro non calcolata: {_e}")
+
     # ---------- costruzione delle giocate ----------
     LETTERE = ["H", "D", "A"]
     righe = []
@@ -176,6 +226,31 @@ def main():
     w = int(b["vinto"].sum())
     roi = b["pnl_unita"].sum() / n
     ev_medio = b["ev_pct"].mean()
+
+    # 🆕 16/11 confronto diretto modello vs mercato puro (stesse partite)
+    try:
+        _fav = int(np.nanargmax(np.where(np.isfinite(P_mkt), P_mkt, -np.inf), axis=1)[m].size)
+        _idx_fav = np.nanargmax(np.where(np.isfinite(P_mkt), P_mkt, -np.inf), axis=1)
+        pnl_f, n_f = 0.0, 0
+        for i in np.where(m)[0]:
+            j = int(_idx_fav[i]); q = float(odds[i, j])
+            if not np.isfinite(q) or q <= 1.0:
+                continue
+            pnl_f += (q - 1.0) if int(y_all[i] == j) else -1.0
+            n_f += 1
+        meta["baseline_mercato_puro"] = {
+            "giocate": n_f,
+            "roi_pct": round(pnl_f / n_f * 100, 1) if n_f else None,
+            "nota": "gioca sempre il favorito del mercato de-vig, nessun modello",
+        }
+        meta["modello_vs_mercato"] = {
+            "roi_modello_pct": round(roi * 100, 1),
+            "roi_mercato_puro_pct": round(pnl_f / n_f * 100, 1) if n_f else None,
+            "delta_pp": round(roi * 100 - (pnl_f / n_f * 100), 1) if n_f else None,
+            "lettura": "delta > 0 = il modello batte il non-modello; delta <= 0 = non aggiunge nulla",
+        }
+    except Exception:
+        pass
 
     meta.update({"stato": "ok", "giocate": n, "vinte": w,
                  "win_rate_pct": round(w / n * 100, 1),

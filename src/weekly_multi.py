@@ -46,6 +46,10 @@ def pois_cdf(k, lam):
     return min(1.0, sm)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from odds_util import devig as _devig
+except Exception:
+    _devig = None
 from step3_elo import update_elo
 from step4_dixon_coles import TeamHistory, score_matrix, matrix_to_markets, dc_weights
 from motivi import motivo_match, frase_motivo, perche_breve, perche_mercato
@@ -434,8 +438,23 @@ def predict_match_full(elo, dc_hist, ad, ahg, aag, draw_base, date, home, away, 
     pH, pD, pA, p_over, p_btts = matrix_to_markets(M)
     P_dc = np.array([pH, pD, pA])
     if odds is not None:
-        inv = 1 / np.array(odds, float)
-        P_mkt = inv / inv.sum()
+        # 🆕 16/11 pulizia-margine: prima P_mkt = (1/q)/somma(1/q), cioè la probabilità
+        # implicita GREZZA ancora carica del margine del book. Ora si toglie il margine
+        # con la stessa funzione usata dal resto del sito (odds_util.devig).
+        # Effetto: P_mkt scende, quindi cala anche il 20% di peso che il mercato ha nel
+        # pronostico finale → il modello dipende un po' meno dalle quote che poi confronta.
+        # ⚠️ NON è la rimozione del circolo vizioso (quella è W_MKT): è una correzione di misura.
+        _dv = None
+        try:
+            if _devig is not None:
+                _dv = _devig([float(x) for x in odds])
+        except Exception:
+            _dv = None
+        if _dv is not None:
+            P_mkt = np.array(_dv, float)
+        else:
+            inv = 1 / np.array(odds, float)
+            P_mkt = inv / inv.sum()
         P = W_ELO * P_elo + W_DC * P_dc + W_MKT * P_mkt
     else:
         P_mkt = None
@@ -830,6 +849,11 @@ def main():
                 "risultato+prob%": f"{top} ({top_p*100:.0f}%)",
                 "quota_best": round(o_max[pick], 2) if o_max else "",
                 "quota_media": round(o_avg[pick], 2) if o_avg else "",
+                # 🆕 16/11 P(best) senza margine: 1/q sul best-price include ancora il margine
+                # del book che offre quel prezzo. Qui si de-viga il TERZETTO di quel book
+                # (chiusure medie de-vigate × best-price) → vera probabilità implicita del
+                # miglior prezzo. È il numero su cui va misurato il gap (fix #2 completo).
+                "p_impl_fair": round(_p_impl_fair(o_avg, o_max, pick), 4) if (o_max and o_avg) else "",
                 "quota_GG_best": o_ex.get("GG", ""), "quota_NG_best": o_ex.get("NG", ""),
                 "quota_O25_best": o_ex.get("O2.5", ""), "quota_U25_best": o_ex.get("U2.5", ""),
                 "motivo": motivo_match(f["home"], f["away"], f["Date"], played, rh, ra, lh, la,
@@ -883,6 +907,25 @@ def main():
     g["giorno"] = g["orario"].str.split(" ").str[0]          # dd/mm
     g["data"] = g["giorno"].apply(lambda d: f"2026-{d[3:5]}-{d[:2]}")  # ISO
 
+    def _p_impl_fair(_avg, _max, _pick):
+        """P(best) de-vigata: chiusure medie de-vigate → quanto il best-price è sopra mercato.
+
+        P_fair_i = devig(avg)_i ;  P_fair(best) = min(1, P_fair_i × q_best_i / q_avg_i)
+        (il rapporto q_best/q_avg misura quanto il miglior prezzo è sopra la chiusura media).
+        Robusto: se manca qualcosa, ricade su 1/q_best (comportamento di prima).
+        """
+        try:
+            fa = _devig([float(x) for x in _avg]) if _devig is not None else None
+            if fa is None:
+                return 1.0 / float(_max[_pick])
+            ratio = float(_max[_pick]) / float(_avg[_pick])
+            return max(0.0, min(1.0, fa[_pick] * ratio))
+        except Exception:
+            try:
+                return 1.0 / float(_max[_pick])
+            except Exception:
+                return 0.0
+
     def build_pool(sub):
         pool = []
         for _, r in sub.iterrows():
@@ -911,9 +954,18 @@ def main():
                 if ev > 50:  # 🚨 quota anomala (es. 10.60 su un favorito): EV irrealistico → fuori dal pool
                     print(f"     🚨 quota anomala ignorata: {r['partita']} {mercato} {esito} @ {q_leg} (EV {ev:+.0f}%)")
                     continue
+                # 🆕 16/11 p_impl (fair) per il gap; per i mercati diversi dal 1X2 si usa
+                # la de-vig del mercato stesso, quando il file quote porta il lato opposto
+                if mercato == "1X2":
+                    try:
+                        _pimpl = float(r.get("p_impl_fair") or (1.0 / q_leg))
+                    except Exception:
+                        _pimpl = 1.0 / q_leg if q_leg else 0.0
+                else:
+                    _pimpl = 1.0 / q_leg if q_leg else 0.0
                 pool.append({"lega": r["lega"], "partita": r["partita"], "mercato": mercato,
                              "esito": esito, "p": p_leg, "q": q_leg, "EV%": ev, "motivo": mot,
-                             "perche": p_leg_breve})
+                             "perche": p_leg_breve, "p_impl": _pimpl})
         return pool
 
     # 🆕 13/11-b incertezza di p: oggetto Calib per lega → Calib.se_for(p)
@@ -977,8 +1029,14 @@ def main():
         GAP_MAX = 10.0
         _gapped = []
         for c in pool:
+            # 🆕 16/11 il gap si misura sulla probabilità FAIR (de-vigata), non su 1/q grezza:
+            # 1/q contiene il margine del book, quindi il gate a 10pp era calibrato su una
+            # misura gonfiata. Ora gap = p_modello − p_implicita_senza_margine.
             try:
-                gap = c["p"] * 100.0 - (100.0 / float(c["q"]))
+                _pi = c.get("p_impl")
+                if _pi in (None, "", 0.0):
+                    _pi = 1.0 / float(c["q"])
+                gap = c["p"] * 100.0 - float(_pi) * 100.0
             except Exception:
                 gap = 0.0
             c["gap_pp"] = round(gap, 1)
@@ -988,7 +1046,29 @@ def main():
         pos = [c for c in pool if c["EV%"] > 0]
         if not pos:
             return None, None, None, None, None
-        singola = max(pos, key=lambda c: c["p"])
+        # 🆕 16/11 SELEZIONE DELLA SINGOLA: prima era max(p) = "il pronostico più probabile",
+        # non "quello che vale di più". Effetto collaterale misurato sul backtest: 66% dei
+        # pick cadeva sull'esito SFavorito, cioè si comprava probabilità alta e valore basso.
+        # Ora: EV% × stake(¼ Kelly) = valore atteso per unità di rischio, con p_high come
+        # spareggio a parità. Se il criterio nuovo non trova nulla di giocabile si ricade
+        # su max(p) come prima (nessuna regressione: al massimo si sceglie come sempre).
+        def _vscore(c):
+            try:
+                _q = float(c["q"])
+                _ev = float(c["EV%"])
+                if _q <= 1.0 or not np.isfinite(_ev):
+                    return (0.0, _ev)
+                _se = se_pick(c["lega"], c["p"])
+                _st = kelly_stake(c["p"], _q, se=_se, ev=_ev)
+                return (_ev * _st, _ev)
+            except Exception:
+                return (0.0, float(c.get("EV%", 0.0) or 0.0))
+        _by_val = max(pos, key=_vscore)
+        _by_prob = max(pos, key=lambda c: c["p"])
+        singola = _by_val if _vscore(_by_val)[0] > 0 else _by_prob
+        if singola is not _by_prob:
+            print(f"     ↪️ singola scelta per valore: {singola['partita']} {singola['mercato']} "
+                  f"EV {singola['EV%']:+.2f}% (più probabile sarebbe {_by_prob['partita']} p={_by_prob['p']*100:.1f}%)")
         best = None
         for size in (2, 3):
             for combo in itertools.combinations(pos, size):
