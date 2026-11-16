@@ -17,6 +17,43 @@ DATA = ROOT / "data"
 SITE = ROOT / "site"
 
 
+def _norm(s):
+    """Normalizza un nome squadra: minuscolo, senza accenti/punteggiatura, spazi singoli."""
+    import unicodedata
+    s = unicodedata.normalize("NFKD", str(s))
+    s = "".join(c for c in s if not unicodedata.combining(c)).lower()
+    for ch in ".-'’`&":
+        s = s.replace(ch, " ")
+    return " ".join(s.split())
+
+
+def _match_partita(f, home, away):
+    """Trova la riga di forecast che corrisponde DAVVERO a questa partita.
+
+    1) match esatto sul nome normalizzato ('Squadra A - Squadra B')
+    2) altrimenti entrambi i nomi devono comparire nella stringa del forecast
+    3) altrimenti similarita' >= 0.88 (alta) sul nome completo
+    Se nulla convince: None (meglio saltare la partita che mostrare un EV falso).
+    """
+    if len(f) == 0:
+        return None
+    import difflib
+    nh, na = _norm(home), _norm(away)
+    if not nh or not na:
+        return None
+    for _, r in f.iterrows():
+        np_ = _norm(r.get("partita", ""))
+        if nh in np_ and na in np_:
+            return r
+    target = f"{nh} {na}"
+    best, best_ratio = None, 0.0
+    for _, r in f.iterrows():
+        ratio = difflib.SequenceMatcher(None, target, _norm(r.get("partita", ""))).ratio()
+        if ratio > best_ratio:
+            best, best_ratio = r, ratio
+    return best if best_ratio >= 0.88 else None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--minp", type=float, default=60.0)
@@ -58,10 +95,15 @@ def main():
     od["_hhmm"] = od["orario"].astype(str).str[-5:]
     for _, o in od.sort_values(["data", "_hhmm"]).iterrows():
         f = fo[(fo["lega"] == o["lega"]) & (fo["giornata"] == int(o["giornata"]))]
-        f = f[f["partita"].str.lower().str.contains(str(o["home"]).split()[0].lower()[:6], na=False)]
-        if len(f) == 0:
+        # 🆕 15/11 FIX collegamento quota<->partita (era il punto piu' fragile):
+        #   PRIMA: f["partita"].str.contains(home.split()[0][:6])  → abbinava sui primi
+        #   6 caratteri della prima parola. "Real Madrid" e "Real Sociedad" matchavano
+        #   entrambe e si prendeva la PRIMA riga: quota di un'altra partita, EV inventato.
+        #   ORA: confronto sull'intero nome, normalizzato, con fallback a similarita'
+        #   ALTA (>=0.88) solo se il match esatto non esiste. Altrimenti si scarta.
+        r = _match_partita(f, o.get("home"), o.get("away"))
+        if r is None:
             continue
-        r = f.iloc[0]
         p1, px, p2 = r["p1%"], r["pX%"], r["p2%"]
         pO, pGG = r["Over2.5%"], r["BTTS%"]
         dc1x = round(0.96 / (1 / o["best_1"] + 1 / o["best_X"]), 2) if pd.notna(o.get("best_1")) and pd.notna(o.get("best_X")) else None

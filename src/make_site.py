@@ -10,7 +10,9 @@ Genera:
   site/report_giornataN.html — copia dei report esistenti
 Tutto self-contained (CSS inline, link relativi). Footer 18+/ADM/autoesclusione su ogni pagina.
 """
-import csv, glob, os, shutil
+import csv, glob, os, shutil, sys
+
+DASH = "\u2014"
 from datetime import date, datetime
 from itertools import combinations
 
@@ -278,7 +280,7 @@ def giocata_oggi_html(today_iso):
                f"<td data-label='Mercato'>{r.get('mercato')}</td><td data-label='Esito'><b>{r.get('esito')}</b></td>"
                f"<td data-label='p modello'>{r.get('p_modello%')}%</td><td data-label='Quota'>{r.get('quota_best')}</td>"
                f"<td data-label='EV'><span class='pill {evc}'>{r.get('EV%')}%</span></td></tr>"
-               + (f"<tr class='mrow'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+               + (f"<tr class='mrow'><td colspan='9' class='perche'>{per}</td></tr>" if per else "")
                + f"<tr class='mrow'><td colspan='8' data-label='Motivo'>{mot}</td></tr>"
                + f"<tr class='mrow'><td colspan='8'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto: {vd}</div></td></tr>")
     return (f"<div class='card' style='border-color:#0ea5e9'><h2>🎯 Giocate — {label}</h2>"
@@ -350,7 +352,7 @@ def pronostici_finestra_html(frows, today_dm):
                f"<td data-label='O2.5'>{r.get('Over2.5%')}%</td><td data-label='GG'>{r.get('BTTS%')}%</td>"
                f"<td data-label='Quota best'>{r.get('quota_best')}</td>"
                f"<td data-label='EV'><span class='pill {evc}'>{evs}</span></td></tr>"
-               + (f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
+               + (f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='9' class='perche'>{per}</td></tr>" if per else "")
                + f"<tr class='mrow' data-day='{day}' data-cat='{c}'><td colspan='8'><details><summary>motivo dettagliato</summary>{mot}</details></td></tr>")
     n_today = sum(1 for r in frows if (r.get("orario") or "").split(" ")[0] == today_dm)
     js = ("<script>var curDay='" + today_dm + "',curCat='all';"
@@ -779,7 +781,9 @@ def build_metodo():
 
 GLOSSARIO = [
     ("Quota (odds)", "Quanto paga il bookmaker: quota 2.00 = 1€ puntato ne rende 2 (1 di vincita + 1 di posta)."),
-    ("Probabilità implicita", "p = (1 / quota) × 100. Quota 2.00 → 50%. È la stima del MERCATO, non la verità."),
+    ("Probabilità implicita", "p = (1 / quota) × 100. Quota 2.00 → 50%. Attenzione: contiene il MARGINE del bookmaker, quindi è gonfiata. È la stima del MERCATO, non la verità."),
+    ("Probabilità fair (de-vig)", "La probabilità implicita DEPURATA dal margine del bookmaker: si divide ogni 1/quota per la somma dei tre 1/quota. È la stima più onesta del mercato ed è quella che va confrontata col modello. Esempio: quote 1,85 / 3,40 / 4,20 → margine +7,3% → il favorito passa dal 54,1% al 50,4%."),
+    ("Overround (margine)", "La somma delle probabilità implicite di tutti gli esiti. Sopra 1 è il guadagno del bookmaker (tipico 3-8%). SOTTO 1,00 vuol dire che le quote insieme pagano più del dovuto: o è arbitraggio vero (raro, dura minuti) o sono quote vecchie che nessun book accetterebbe. Nel secondo caso l'EV calcolato è finto."),
     ("Overround / margine", "Somma delle probabilità implicite di tutti gli esiti: è >100% (tipicamente 105-108%). La differenza è il guadagno atteso del bookmaker."),
     ("Value bet", "Quando la TUA probabilità stimata p è maggiore di quella implicita dalla quota. Esempio: p=60%, quota 2.00 (implicita 50%) → c'è valore."),
     ("EV (valore atteso)", "EV = p·(quota−1) − (1−p). EV>0 → nel lungo periodo vinci in media. Buffer ~2% prima di considerare una giocata."),
@@ -791,7 +795,7 @@ GLOSSARIO = [
     ("Walk-forward / backtest", "Validazione onesta: prevedi la giornata N usando SOLO i dati disponibili prima di N. Niente leakage (niente dati del futuro)."),
     ("xG (expected goals)", "Gol attesi dai tiri (posizione, difficoltà). Misura la qualità delle occasioni, non solo i gol segnati. La forma «vera» si legge con l'xG."),
     ("Elo / DC", "Elo = forza storica squadra. DC (Dixon-Coles) = modello sui gol con forma pesata sui 180 giorni recenti."),
-    ("Edge vs mercato", "Differenza tra la probabilità del nostro modello e quella implicita dalla quota: |edge| > 3pp = segnale forte (🚨)."),
+    ("Edge vs mercato", "Differenza tra la probabilità del nostro modello e quella FAIR del mercato (de-vig, senza margine): |edge| > 3pp = segnale forte (🚨). Usare la probabilità implicita grezza gonfierebbe l'edge di circa un punto percentuale."),
     ("TiP (tiri in porta) Over 5.5", "TiP = Tiri in Porta (shots on target) di TUTTE e due le squadre sommati. O5.5 = Over 5.5, cioè la stima che le due squadre tirino in porta più di 5 volte e mezzo in totale (quindi almeno 6 tiri in porta). Non sono gol: sono i tiri che il portiere ha parato o che sono finiti in porta. È un mercato di volume, più prevedibile dei gol ma con quote più basse."),
     ("Cartellini Over 4.5", "Scommessa che nella partita ci siano più di 4.5 cartellini (quindi almeno 5) tra gialli e rossi. Il modello lo stima dalla frequenza storica di squadre e arbitro, ma è un mercato molto volatile: mai una certezza."),
     ("Edge vs quote (pp)", "Edge = differenza in punti percentuali (pp) tra la probabilità del NOSTRO modello e la probabilità implicita nella QUOTA del mercato. Esempio: modello 45.6%, quota 2.88 → mercato 34.7% → edge +10.9 pp. Edge positivo grande (🚨 sopra 3 pp) = la quota paga meno di quanto varrebbe secondo noi (c'è valore); edge negativo grande = il mercato la sopravvaluta. La quota da sola non basta mai: conta sempre l'edge."),
@@ -854,17 +858,56 @@ def build_glossario():
         f.write(wrap_tables(html))
 
 
+def _devig_tre(quote):
+    """Probabilità FAIR delle 3 quote 1X2 (margine rimosso). None se non calcolabile."""
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from odds_util import devig
+        p = devig(quote)
+        return p
+    except Exception:
+        return None
+
+
 def build_quote(bp):
     g = gj_num(bp)
     with open(bp) as f:
         rows = list(csv.DictReader(f))
+    # 🆕 15/11 de-vig: raggruppo per partita per rimuovere il margine sulle 3 quote 1X2
+    per_partita = {}
+    for r in rows:
+        per_partita.setdefault(r["partita"], {})[str(r["esito"]).strip()] = r.get("best_quota")
+    fair, ovr = {}, {}
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from odds_util import overround, devig
+        for pt, es in per_partita.items():
+            if {"1", "X", "2"} <= set(es):
+                qs = [float(es["1"]), float(es["X"]), float(es["2"])]
+                ps = devig(qs)
+                if ps:
+                    fair[pt] = {"1": ps[0], "X": ps[1], "2": ps[2]}
+                    ovr[pt] = overround(qs)
+    except Exception:
+        pass
+
     trs = ""
     for r in rows:
         pi = r.get("prob_implicita_pct") or ""
         aw = r.get("algo_fornitore_pct") or r.get("algo_wincomparator_pct") or ""   # 🆕 13/11-b nome neutro
-        trs += (f"<tr><td data-label='Partita'><b>{r['partita']}</b></td><td data-label='Data'>{r['data']}</td><td data-label='Esito'><b>{r['esito']}</b></td>"
+        pf = fair.get(r["partita"], {}).get(str(r["esito"]).strip())
+        pf_txt = f"{pf * 100:.1f}%" if pf else "—"
+        # 🆕 15/11 controllo overround: se le 3 migliori quote pagano insieme più del dovuto
+        #   sono probabilmente stantie → l'EV calcolato su quel prezzo è finto.
+        ov = ovr.get(r["partita"])
+        flag = ""
+        if ov is not None and ov < 0.98:
+            flag = (" <span title='Le tre migliori quote insieme pagano più del dovuto: "
+                    "probabili quote vecchie o non giocabili insieme. EV non affidabile.' "
+                    "style='color:#f87171'>⚠️</span>")
+        trs += (f"<tr><td data-label='Partita'><b>{r['partita']}</b>{flag}</td><td data-label='Data'>{r['data']}</td><td data-label='Esito'><b>{r['esito']}</b></td>"
                 f"<td data-label='Best quota'><b>{r['best_quota']}</b></td><td data-label='Bookmaker'>{r['bookmaker']}</td>"
-                f"<td data-label='Prob. implicita'>{pi}%</td><td data-label='Prob. algo'>{aw}%</td><td data-label='Fonte' class='sub'>{r['fonte']}</td></tr>")
+                f"<td data-label='Prob. implicita'>{pi}%</td><td data-label='Prob. fair'>{pf_txt}</td><td data-label='Prob. algo'>{aw}%</td><td data-label='Fonte' class='sub'>{r['fonte']}</td></tr>")
     html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
 <title>Quote best-price Giornata {g} — Serie A Predictor</title>
@@ -874,8 +917,11 @@ def build_quote(bp):
   <p class="sub">Per ogni esito 1X2 la <b>migliore quota disponibile</b> tra i bookmaker ADM mostrati dai comparatori
   (fonti pubbliche gratuite), con la <b>probabilità implicita</b> (1/quota × 100) e, per confronto, la probabilità stimata dall'algoritmo della fonte.
   Giocare sempre la quota più alta = massimizzare il CLV. <b>Le quote cambiano: verifica sempre sul sito dell'operatore.</b></p>
-  <table><tr><th>Partita</th><th>Data</th><th>Esito</th><th>Best quota</th><th>Bookmaker</th><th>Prob. implicita</th><th>Prob. algo (rif.)</th><th>Fonte</th></tr>{trs}</table>
-  <p class="sub" style="margin-top:10px">Nota: "prob. implicita" è la stima del mercato, non una previsione nostra. Il nostro modello la confronta col proprio edge (vedi report).</p>
+  <table><tr><th>Partita</th><th>Data</th><th>Esito</th><th>Best quota</th><th>Bookmaker</th><th>Prob. implicita <span class="sub">(1/quota)</span></th><th>Prob. fair <span class="sub">(senza margine)</span></th><th>Prob. algo (rif.)</th><th>Fonte</th></tr>{trs}</table>
+  <p class="sub" style="margin-top:10px"><b>Perché due colonne di probabilità.</b> "Prob. implicita" è 1/quota: contiene il <b>margine</b> del bookmaker (overround), quindi è gonfiata.
+  "Prob. fair" toglie quel margine e stima la probabilità vera secondo il mercato: è <b>questa</b> che va confrontata con il nostro modello.
+  Esempio: con quote 1,85 / 3,40 / 4,20 il margine è +7,3% e la probabilità del favorito scende dal 54,1% al 50,4%.
+  Nessuna delle due è una previsione nostra.</p>
 </div>
 <div class="warn">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente · <b>autoesclusione.it</b> · 800 558822 · Le quote mostrate sono indicative e possono variare.</div>
 {footer("archivio")}
@@ -905,6 +951,26 @@ def build_giocata(g):
     with open(bpath) as f:
         bp = list(csv.DictReader(f))
     pm = {"1": "p1%", "X": "pX%", "2": "p2%"}
+    # de-vig: la probabilita' del mercato va tolta dal margine (overround).
+    _fair_def = {}
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from odds_util import devig
+    except Exception:
+        devig = None
+    _per_partita = {}
+    for _r in bp:
+        _per_partita.setdefault(_r["partita"], {})[str(_r["esito"]).strip()] = _r.get("best_quota")
+    if devig:
+        for _pt, _es in _per_partita.items():
+            if {"1", "X", "2"} <= set(_es):
+                try:
+                    _ps = devig([float(_es["1"]), float(_es["X"]), float(_es["2"])])
+                    if _ps:
+                        _fair_def[_pt] = {"1": _ps[0], "X": _ps[1], "2": _ps[2]}
+                except Exception:
+                    pass
+
     cands = []
     for r in bp:
         key = norm(r["partita"])
@@ -913,11 +979,13 @@ def build_giocata(g):
         p = float(fc[key][pm[r["esito"]]]) / 100.0
         q = float(r["best_quota"])
         ev = p * (q - 1) - (1 - p)
-        edge_pp = (p - 1.0 / q) * 100
+        _pf = _fair_def.get(r["partita"], {}).get(str(r["esito"]).strip())
+        edge_pp = (p - (_pf if _pf else 1.0 / q)) * 100
         kelly = ev / (q - 1) if q > 1 else 0.0
         stake = min(max(kelly / 4 * 100, 0.0), 5.0)
         cands.append(dict(partita=r["partita"], data=r["data"], esito=r["esito"], q=q,
                           book=r["bookmaker"], p=p * 100, ev=ev * 100, edge=edge_pp,
+                          pf=(f"{_pf * 100:.1f}%" if _pf else DASH),
                           stake=stake, conf=fc[key].get("conf%", ""), orario=fc[key].get("orario", ""),
                           motivo=(fc[key].get("motivo_verbale") or fc[key].get("motivo") or "—").replace("<", "&lt;"),
                           perche=(fc[key].get("perche") or "").replace("<", "&lt;")))
@@ -950,11 +1018,12 @@ def build_giocata(g):
                 f"<td data-label='p modello'>{c['p']:.1f}%</td>"
                 f"<td data-label='Best quota'><b>{c['q']:.2f}</b> @ {c['book']}</td>"
                 f"<td data-label='Prob. implicita'>{100 / c['q']:.1f}%</td>"
+                f"<td data-label='Prob. fair'>{c.get('pf', DASH)}</td>"
                 f"<td data-label='Edge'>{c['edge']:+.1f} pp</td>"
                 f"<td data-label='EV'>{c['ev']:+.2f}%</td>"
                 f"<td data-label='Stake 1/4 Kelly'>{c['stake']:.2f}% bankroll</td></tr>"
-                + (f"<tr class='mrow'><td colspan='8' class='perche'>{c.get('perche')}</td></tr>" if c.get('perche') else "")
-                + f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{c.get('motivo','—')}</td></tr>")
+                + (f"<tr class='mrow'><td colspan='9' class='perche'>{c.get('perche')}</td></tr>" if c.get('perche') else "")
+                + f"<tr class='mrow'><td colspan='9' data-label='Motivo (perché)'>{c.get('motivo','—')}</td></tr>")
 
     if len(double) >= 2:
         q2 = 1.0
@@ -970,7 +1039,7 @@ def build_giocata(g):
 <div class="card">
   <h2>➕ Raddoppio/Tris del giorno <span class="sub">(2-3 eventi su partite diverse, quota combinata ≈ 2.00)</span></h2>
   <div class="tablewrap"><table>
-  <tr><th>Partita</th><th>Esito</th><th>p modello</th><th>Best quota</th><th>Prob. implicita</th><th>Edge</th><th>EV</th><th>Stake ¼ Kelly</th></tr>
+  <tr><th>Partita</th><th>Esito</th><th>p modello</th><th>Best quota</th><th>Prob. implicita</th><th>Prob. fair</th><th>Edge</th><th>EV</th><th>Stake ¼ Kelly</th></tr>
   {"".join(row_html(c) for c in double)}
   </table></div>
   <p class="sub" style="margin-top:10px"><b>Totale raddoppio/tris:</b> quota combinata <b>{q2:.2f}</b> ·
@@ -994,7 +1063,7 @@ def build_giocata(g):
 <div class="card">
   <h2>1️⃣ Singola del giorno <span class="sub">(max % di riuscita del modello)</span></h2>
   <div class="tablewrap"><table>
-  <tr><th>Partita</th><th>Esito</th><th>p modello</th><th>Best quota</th><th>Prob. implicita</th><th>Edge</th><th>EV</th><th>Stake ¼ Kelly</th></tr>
+  <tr><th>Partita</th><th>Esito</th><th>p modello</th><th>Best quota</th><th>Prob. implicita</th><th>Prob. fair</th><th>Edge</th><th>EV</th><th>Stake ¼ Kelly</th></tr>
   {row_html(single)}
   </table></div>
   <p class="sub" style="margin-top:10px">EV = p·(quota−1) − (1−p): se > 0 c'è valore teorico vs mercato. Edge = p modello − prob. implicita.
@@ -1224,8 +1293,8 @@ def giocata_card_html():
                     f"<td data-label='Esito'><b>{r['esito']}</b></td>"
                     f"<td data-label='p modello'>{r['p_modello%']}%</td><td data-label='Quota best'>{r['quota_best']}{_adm_note(r)}</td>"
                     f"<td data-label='EV'><span class='pill {evc}'>{r['EV%']}%</span></td></tr>"
-                    + (f"<tr class='mrow'><td colspan='8' class='perche'>{per}</td></tr>" if per else "")
-                    + f"<tr class='mrow'><td colspan='8' data-label='Motivo (perché)'>{mot}</td></tr>"
+                    + (f"<tr class='mrow'><td colspan='9' class='perche'>{per}</td></tr>" if per else "")
+                    + f"<tr class='mrow'><td colspan='9' data-label='Motivo (perché)'>{mot}</td></tr>"
                     + f"<tr class='mrow'><td colspan='8' data-label='Verdetto'><div class='verdetto {vc}'>🧑‍⚖️ Verdetto dell'analista: {vd}</div></td></tr>")
         parts.append(f"""<div class="card" style="border:1px solid #0ea5e9" id="g{label.replace('/', '')}">
 <h2 class="day">📅 {label} — Singola + Raddoppio del giorno</h2>
