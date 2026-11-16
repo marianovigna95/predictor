@@ -1,15 +1,16 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-16,SINGOLA,Nations League,Kazakhstan - Slovakia,GG,GG,61.6,1.75,7.8,0.0,,
-giocata,2026-11-16,RADDOPPIO,Nations League,Kazakhstan - Slovakia [GG GG] + Estonia - Bulgaria [GG GG],GG/GG,GG/GG,28.3,3.85,8.77,0.0,,
-giocata,2026-11-17,SINGOLA,Nations League,Bosnia-Herzegovina - Romania,GG,GG,64.9,1.8,16.82,1.46,,
-giocata,2026-11-17,RADDOPPIO,Nations League,Bosnia-Herzegovina - Romania [GG GG] + Poland - Sweden [GG GG],GG/GG,GG/GG,36.1,2.83,2.11,0.0,,
-giocata,2026-11-20,SINGOLA,Ligue 1,Troyes - Le Havre,GG,GG,61.3,1.67,2.37,0.0,,
-giocata,2026-11-20,RADDOPPIO,Bundesliga + Ligue 1,Bayern Munich - FC Koln [GG GG] + Troyes - Le Havre [GG GG],GG/GG,GG/GG,31.6,3.26,2.94,0.0,,
+giocata,2026-11-16,SINGOLA,Nations League,Estonia - Bulgaria,GG,GG,54.5,2.2,19.9,0.92,,
+giocata,2026-11-16,RADDOPPIO,Nations League,Iceland - Luxembourg [O2.5 Over 2.5] + Lithuania - Liechtenstein [O2.5 Over 2.5],O2.5/O2.5,Over 2.5/Over 2.5,22.4,4.51,0.98,0.0,,
+giocata,2026-11-17,SINGOLA,Nations League,Hungary - Northern Ireland,U2.5,Under 2.5,49.7,2.5,24.25,1.1,,
+giocata,2026-11-17,RADDOPPIO,Nations League,Bosnia-Herzegovina - Romania [GG GG] + Wales - Portugal [GG GG],GG/GG,GG/GG,35.3,3.17,11.9,0.28,,
+giocata,2026-11-20,SINGOLA,Ligue 2,Guingamp - Rodez,O2.5,Over 2.5,52.1,2.33,21.39,0.93,,
+giocata,2026-11-20,RADDOPPIO,Ligue 1 + Ligue 2,Troyes - Le Havre [GG GG] + Guingamp - Rodez [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,27.0,3.89,5.08,0.0,,
 giocata,2026-11-21,SINGOLA,Serie B,Catanzaro - Palermo,GG,GG,73.9,1.55,14.55,2.62,,
 giocata,2026-11-21,RADDOPPIO,Bundesliga + Serie B,Elversberg - Freiburg [GG GG] + Catanzaro - Palermo [GG GG],GG/GG,GG/GG,49.1,2.33,14.08,0.76,,
-giocata,2026-11-22,SINGOLA,Bundesliga,Augsburg - Mainz,GG,GG,79.3,1.4,11.02,1.87,,
+giocata,2026-11-22,SINGOLA,LaLiga 2,Córdoba - Real Oviedo,NG,NG,50.7,2.42,22.69,1.25,,
 giocata,2026-11-22,RADDOPPIO,Bundesliga + Eredivisie,Augsburg - Mainz [GG GG] + Sparta Rotterdam - AZ Alkmaar [GG GG],GG/GG,GG/GG,51.8,2.04,5.93,0.0,,
-giocata,2026-11-23,SINGOLA,LaLiga,Levante - Elche,GG,GG,68.1,1.6,8.96,0.0,,
+giocata,2026-11-23,SINGOLA,LaLiga 2,AD Ceuta FC - Almería,O2.5,Over 2.5,49.8,2.44,21.51,1.0,,
+giocata,2026-11-23,RADDOPPIO,LaLiga + LaLiga 2,Levante - Elche [GG GG] + AD Ceuta FC - Almería [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,27.8,3.9,8.56,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
 verifica,2026-11-03,RADDOPPIO,Champions League,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,63.9,2.0,,,Barcelona - Aston Villa 3-0 (GG no) | Bodø/Glimt - Lille 0-0 (Under 2.5),❌
 verifica,2026-11-04,SINGOLA,Champions League,Viking - Sabah FK,O2.5,Over 2.5,81.6,1.38,,,4-1 (5 gol),✅

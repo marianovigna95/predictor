@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-14T14:05:35",
+ "aggiornato": "2026-11-16T18:39:02",
  "fonte": "predictions_ensemble.csv (walk-forward), non le quote stesse",
  "soglia_gap_pp": 2.0,
  "partite_totali": 1610,
@@ -8,6 +8,17 @@
  "RPS_modello": 0.203,
  "RPS_mercato": 0.1902,
  "nota": "RPS piu' basso = meglio. Se modello > mercato, il modello e' peggiore.",
+ "baseline_mercato_puro": {
+  "giocate": 1610,
+  "roi_pct": -0.3,
+  "nota": "gioca sempre il favorito del mercato de-vig, nessun modello"
+ },
+ "modello_vs_mercato": {
+  "roi_modello_pct": -17.7,
+  "roi_mercato_puro_pct": -0.3,
+  "delta_pp": -17.4,
+  "lettura": "delta > 0 = il modello batte il non-modello; delta <= 0 = non aggiunge nulla"
+ },
  "stato": "ok",
  "giocate": 1492,
  "vinte": 407,
