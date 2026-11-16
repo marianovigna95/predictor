@@ -6,10 +6,15 @@
 name: daily-predictor
 on:
   schedule:
+    # ⏰ 16/11-b — da 5 a 4 run: NON si perde copertura del sito, si guadagna un esito in piu'.
+    #    Motivo: step20_eval_day riscrive l'esito di OGGI (non di ieri). Due run a meno di
+    #    ~3 ore di distanza vedono lo stesso stato (partite non ancora giocate) → la seconda
+    #    non aggiunge un esito ma consuma comunque una richiesta ADM.
+    #    Con 4 run in due coppie distanti 3h si ottengono 2 esiti al giorno (pomeriggio e sera)
+    #    invece di 1, spendendo il 20% in meno di budget ADM (4×3 = 12 richieste/giorno).
+    #
     # 06:00 UTC = 07:00 IT -> parte ~08:00. Quote appena aperte, molte partite quotate.
     - cron: "0 6 * * *"
-    # 09:30 UTC = 10:30 IT -> parte ~11:00. Rinforzo per il confronto ADM (leghe diverse).
-    - cron: "30 9 * * *"
     # 13:00 UTC = 14:00 IT -> parte ~14:45. ⭐ SLOT MIGLIORE: mercato formato, 6h di margine
     #    prima delle partite serali. E' qui che il sito deve essere piu' fresco.
     - cron: "0 13 * * *"
@@ -71,6 +76,12 @@ jobs:
           python3 src/validate_multi.py --from-md 6 --to-md 38 || true   # 🆕 13/11 validazione estesa -> benchmark.html sempre fresco
           python3 src/step31_quote_adm.py || true                      # 🆕 13/11-b quote ADM reali (senza chiave: skip pulito)
           python3 src/step32_confronto_adm.py || true                  # 🆕 14/11 confronto INTERNO best-price vs ADM (solo data/, mai sul sito)
+          # 🆕 16/11 BACKTEST ONESTO + BASELINE MERCATO PURO
+          #    step6 genera predictions_ensemble.csv (walk-forward) che step33 legge.
+          #    step33 produce bets_1x2_onesto.csv / _meta.json / bench_mercato_puro.csv.
+          #    Prima NON erano nel workflow: il fix "baseline mercato puro" non girava mai.
+          python3 src/step6_ensemble.py || true
+          python3 src/step33_bench_giocate.py || true
           python3 src/make_site.py || true
           python3 src/step23_ppa.py --minp 60 --topn 30 || true
           python3 src/step24_ppa_pdf.py --minp 60 || true
