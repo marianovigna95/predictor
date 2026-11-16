@@ -1,12 +1,24 @@
 # Auto-aggiornamento giornaliero del sito statico su GitHub Pages (repo pubblico, gratis).
-# Cron 2x/giorno (Europe/Rome): 07:30 forecast mattina, 21:30 verifica sera.
+# ⏰ 16/11 — orari RICOSTRUITI su quando si gioca davvero.
+#    GitHub ritarda i cron di 20-90 minuti: gli orari sotto sono scelti perche'
+#    l'esecuzione REALE cada nel momento giusto, non per far bello il numero.
+#    (misurato: 06:30 -> parte 07:30 · 12:30 -> parte 13:25 · 18:30 -> parte 19:15 · 22:00 -> parte 22:22)
 name: daily-predictor
 on:
   schedule:
-    - cron: "30 6 * * *"    # 07:30 IT — refresh quote + forecast + pagine
-    - cron: "30 12 * * *"   # 🆕 11/11 13:30 IT — refresh quote finestra (sosta FIFA: più update diurni)
-    - cron: "30 18 * * *"   # 🆕 11/11 19:30 IT — refresh pre-sera (partite 20:30-21:00)
-    - cron: "0 22 * * *"    # 🆕 11/11 23:00 IT — verifica esiti (partite 20:30-21:00 finite ~22:45) + CLV + surebets + alert
+    # 06:00 UTC = 07:00 IT -> parte ~08:00. Quote appena aperte, molte partite quotate.
+    - cron: "0 6 * * *"
+    # 09:30 UTC = 10:30 IT -> parte ~11:00. Rinforzo per il confronto ADM (leghe diverse).
+    - cron: "30 9 * * *"
+    # 13:00 UTC = 14:00 IT -> parte ~14:45. ⭐ SLOT MIGLIORE: mercato formato, 6h di margine
+    #    prima delle partite serali. E' qui che il sito deve essere piu' fresco.
+    - cron: "0 13 * * *"
+    # 17:30 UTC = 18:30 IT -> parte ~19:15. Ultimo aggiornamento utile prima dei match
+    #    18:30-21:00 (prima era alle 19:30 -> partiva alle 20:15, troppo tardi).
+    - cron: "30 17 * * *"
+    # 21:15 UTC = 22:15 IT -> parte ~22:45. Verifica esiti delle partite serali
+    #    (finite ~22:40) + CLV + surebets + alert. Ultima rete di sicurezza: 23:00 IT.
+    - cron: "15 21 * * *"
   workflow_dispatch:
 permissions:
   contents: write
