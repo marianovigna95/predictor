@@ -190,7 +190,37 @@ def main():
             "stato": stato,
         })
 
+    # 🆕 16/11 STORICO: prima il file veniva SOVRASCRITTO a ogni run, quindi il
+    #   campione restava sempre a 1-2 righe (quelle della run corrente) e non
+    #   poteva mai diventare statisticamente utile. Ora i confronti si APPENDONO
+    #   a data/confronto_adm_storico.csv, con deduplica su (data, partita, esito).
+    #   Dopo una settimana avremo 30-40 righe invece di 1-2 ricalcolate.
+    def _salva_storico(righe_nuove):
+        if not righe_nuove:
+            return 0, 0
+        st_path = DATA / "confronto_adm_storico.csv"
+        nuovi = pd.DataFrame(righe_nuove)
+        nuovi["rilevato"] = pd.Timestamp.now().isoformat(timespec="seconds")
+        if st_path.exists():
+            try:
+                old_df = pd.read_csv(st_path, low_memory=False)
+                df = pd.concat([old_df, nuovi], ignore_index=True)
+            except Exception:
+                df = nuovi
+        else:
+            df = nuovi
+        # una sola riga per giocata: se la stessa partita viene riletta in run
+        # diverse si tiene la PIU' RECENTE (le quote cambiano col tempo)
+        chiave = ["data", "partita", "mercato", "esito"]
+        chiave = [k for k in chiave if k in df.columns]
+        prima = len(df)
+        df = df.drop_duplicates(subset=chiave, keep="last")
+        df = df.sort_values(["data"] + ([c for c in ("lega", "partita") if c in df.columns]))
+        df.to_csv(st_path, index=False)
+        return len(df), prima - len(df)
+
     if not righe:
+        _salva_storico([])
         print(f"ℹ️ nessuna corrispondenza ({senza} giocate fuori copertura ADM oggi)")
         (DATA / "confronto_adm_meta.json").write_text(json.dumps(
             {**meta, "stato": "nessuna_corrispondenza", "giocate_non_coperte": senza}, indent=1))
@@ -198,6 +228,7 @@ def main():
 
     df = pd.DataFrame(righe).sort_values("delta_pct", ascending=False)
     df.to_csv(DATA / "confronto_adm.csv", index=False)
+    n_storico, n_scartate = _salva_storico(righe)
 
     n = len(df)
     medi = df["delta_pct"].mean()
@@ -206,7 +237,27 @@ def main():
     perso = int((df["stato"] == "edge_perso").sum())
     ev_ok = int((pd.to_numeric(df["EV_adm_pct"], errors="coerce") > 0).sum())
 
+    # statistiche sullo STORICO (tutto il campione accumulato), non solo su oggi
+    st_stats = {}
+    st_path = DATA / "confronto_adm_storico.csv"
+    if st_path.exists():
+        try:
+            st = pd.read_csv(st_path, low_memory=False)
+            if len(st):
+                st["delta_pct"] = pd.to_numeric(st["delta_pct"], errors="coerce")
+                st_stats = {
+                    "storico_righe": int(len(st)),
+                    "storico_delta_medio_pct": round(float(st["delta_pct"].mean()), 2),
+                    "storico_delta_mediana_pct": round(float(st["delta_pct"].median()), 2),
+                    "storico_tenuta_ok": int((st.get("stato") == "ok").sum()),
+                    "storico_edge_perso": int((st.get("stato") == "edge_perso").sum()),
+                    "storico_aggiornato": str(st["rilevato"].max())[:19] if "rilevato" in st else "",
+                }
+        except Exception as e:
+            st_stats = {"storico_errore": str(e)}
+
     out = {**meta, "stato": "ok", "confronti": n, "giocate_non_coperte": senza,
+           "storico_aggiunte": n_storico, **st_stats,
            "delta_medio_pct": round(medi, 2),
            "delta_min_pct": round(df["delta_pct"].min(), 2),
            "delta_max_pct": round(df["delta_pct"].max(), 2),
@@ -219,7 +270,12 @@ def main():
     # report leggibile (resta in data/, NON e' una pagina del sito)
     md = [f"# Confronto interno quota best-price vs quota ADM\n",
           f"_Aggiornato: {meta['aggiornato']} — uso interno, non pubblicato_\n",
-          f"- giocate confrontate: **{n}** (fuori copertura ADM: {senza})",
+          f"- giocate confrontate in questa run: **{n}** (fuori copertura ADM: {senza})",
+          (f"- **campione accumulato: {st_stats.get('storico_righe')} confronti** · "
+           f"delta medio {st_stats.get('storico_delta_medio_pct'):+.2f}% · "
+           f"mediana {st_stats.get('storico_delta_mediana_pct'):+.2f}% · "
+           f"ok {st_stats.get('storico_tenuta_ok')} / edge perso {st_stats.get('storico_edge_perso')}"
+           if st_stats.get("storico_righe") else "- campione accumulato: ancora nessuno storico"),
           f"- delta medio: **{medi:+.2f}%** (min {df['delta_pct'].min():+.2f}%, max {df['delta_pct'].max():+.2f}%)",
           f"- tenuta: **{ok} OK** · {lim} al limite · {perso} con edge perso",
           f"- EV ancora positivo con la quota ADM: **{ev_ok}/{n}**\n",
@@ -232,6 +288,10 @@ def main():
     (DATA / "confronto_adm.md").write_text("\n".join(md) + "\n", encoding="utf-8")
 
     print(f"📊 confronto su {n} giocate (non coperte: {senza})")
+    if st_stats.get("storico_righe"):
+        print(f"📚 STORICO: {st_stats['storico_righe']} confronti accumulati · "
+              f"delta medio {st_stats['storico_delta_medio_pct']:+.2f}% · "
+              f"mediana {st_stats['storico_delta_mediana_pct']:+.2f}%")
     print(f"   delta medio quota ADM vs best: {medi:+.2f}%  (min {df['delta_pct'].min():+.2f}%, max {df['delta_pct'].max():+.2f}%)")
     print(f"   tenuta OK: {ok} · al limite: {lim} · edge perso: {perso}")
     print(f"   EV ancora > 0 con la quota ADM: {ev_ok}/{n}")
