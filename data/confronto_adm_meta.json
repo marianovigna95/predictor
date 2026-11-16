@@ -1,5 +1,18 @@
 {
- "aggiornato": "2026-11-16T12:38:40",
- "stato": "nessuna_corrispondenza",
- "giocate_non_coperte": 6
+ "aggiornato": "2026-11-16T13:07:11",
+ "stato": "ok",
+ "confronti": 2,
+ "giocate_non_coperte": 4,
+ "delta_medio_pct": 0.56,
+ "delta_min_pct": 0.0,
+ "delta_max_pct": 1.11,
+ "tenuta_ok": 2,
+ "tenuta_limite": 0,
+ "edge_perso": 0,
+ "EV_positivo_su_quota_adm": 2,
+ "soglie": {
+  "ok": -0.015,
+  "rossa": -0.05
+ },
+ "nota": "USO INTERNO: non pubblicato sul sito (licenza Display non acquisita)."
 }
