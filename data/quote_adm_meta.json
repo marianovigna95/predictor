@@ -1,13 +1,13 @@
 {
- "aggiornato": "2026-11-16T09:37:32",
+ "aggiornato": "2026-11-16T12:38:40",
  "stato": "ok",
  "richieste_usate": 3,
- "quote": 372,
+ "quote": 366,
  "righe": 130,
  "copertura": {
   "ok": true,
   "italy": 47,
-  "total": 214
+  "total": 215
  },
  "feed": {
   "ok": true,
