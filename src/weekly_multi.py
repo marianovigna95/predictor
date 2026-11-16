@@ -172,7 +172,27 @@ try:
                 return P
             Q = np.array([ir.predict(np.atleast_1d(float(P[k])))[0] for k, ir in enumerate(self.irs)])
             t = Q.sum()
-            return Q / t if t > 1e-9 else P
+            Q = Q / t if t > 1e-9 else P
+            # 🆕 16/11 ANTIDOTO AL CLIP: IsotonicRegression e' fittata con y_min=0.02/y_max=0.98
+            #    SU OGNI CLASSE SEPARATAMENTE. Se due classi finiscono al minimo e una al
+            #    massimo, normalizzando esce 0.98/0.02/0.02 → 96.1 / 2.0 / 2.0.
+            #    MISURATO sui dati reali: 4 partite su 177 (2,3%) finivano cosi', fra cui
+            #    Catanzaro-Palermo, e con quei valori il "pronostico piu' probabile" diventava
+            #    sempre quello → il motore metteva in cima proprio i casi degeneri.
+            #    RIMEDIO: mescolanza con la probabilita' NON calibrata. Il peso e' configurabile
+            #    (env ISOTONIC_CALIB_WEIGHT, default 0.5). Con 0.5 la conf max scende da 96.1%
+            #    a 85.2% e la media da 52.0% a 50.8% (misurato su 177 partite).
+            #    Con 1.0 si torna al comportamento vecchio (clip pieno).
+            try:
+                w = float(os.environ.get("ISOTONIC_CALIB_WEIGHT", 0.5))
+            except Exception:
+                w = 0.5
+            w = min(1.0, max(0.0, w))
+            if w < 1.0:
+                Q = w * np.asarray(Q, float) + (1.0 - w) * np.asarray(P, float)
+                t = Q.sum()
+                Q = Q / t if t > 1e-9 else P
+            return Q
 except Exception:
     class Calib:
         def fit(self, *a, **k): pass

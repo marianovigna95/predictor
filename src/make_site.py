@@ -21,6 +21,7 @@ SITE = os.path.join(ROOT, "site")
 DATA = os.path.join(ROOT, "data")
 
 TABS = [("index.html", "⌂", "HOME", "home"),
+        ("pronostici.html", "🎯", "PRONOSTICI", "pronostici"),
         ("multi-lega.html", "🌍", "TOP 5", "top5"),
         ("giocata_multi.html", "🎯", "GIOCATE", "giocate"),
         ("ppa.html", "⚡", "PPA", "ppa"),
@@ -46,7 +47,7 @@ def footer(active=""):
         for h, ic, lb, key in TABS)
     return f"""<div class="tabbar">{bar}</div>
 <footer class="legal">
-  ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
+  🎯 <a href="pronostici.html">Pronostici</a> · ➕ <a href="altre-leghe.html">Altre leghe</a> · 📖 <a href="metodo.html">Metodo</a> · 📚 <a href="glossario.html">Glossario</a> · <a href="diretta.html">🔴 Diretta</a> · <a href="squadra.html">🔎 Squadra</a> · <a href="schedina.html">🧾 Schedina</a> · <a href="bankroll.html">💰 Bankroll</a> · <a href="ppa.html">⚡ PPA</a> · <a href="surebets.html">⚖️ Surebets</a> · 📅 <a href="verifica.html">Verifica</a> · 📊 <a href="report-weekend.html">Report weekend</a><br>
   ⚠️ <b>18+</b> — Il gioco d'azzardo è vietato ai minori di 18 anni e può causare dipendenza patologica.
   Gioca responsabilmente e solo presso operatori con <b>licenza ADM</b>.
   Autoesclusione: <b>autoesclusione.it</b> · Numero Verde 800 558822.<br>
@@ -369,6 +370,119 @@ def pronostici_finestra_html(frows, today_dm):
             f"<table id='ptable'><tr><th>Ora</th><th>Lega</th><th>Partita</th><th>Pron.</th><th>O2.5</th><th>GG</th><th>Quota</th><th>EV</th></tr>{tr}</table>"
             f"<p class='sub' style='margin:8px 0 0'>EV calcolato sul pronostico 1X2 (conf% × quota best). Dettaglio per lega: "
             f"<a href='multi-lega.html'>Top 5</a> · <a href='coppe.html'>Coppe</a> · <a href='altre-leghe.html'>Altre leghe</a>. Stime con incertezza, mai certezze.</p>{js}</div>")
+
+
+def build_pronostici():
+    """🎯 PRONOSTICI: il pronostico PIU' PROBABILE per ogni partita, su tutti i mercati.
+    Fonte: data/pronostico_motore.csv (prodotto da step35_motore.py).
+    Nessuna soglia: tutte le partite, con la probabilita' sempre visibile e ordinata.
+    Non e' la pagina delle giocate: li' il criterio e' il valore (EV), qui e' la probabilita'."""
+    pf = os.path.join(DATA, "pronostico_motore.csv")
+    rows, oggi, n_tot, p_media = "", "", 0, 0.0
+    if os.path.exists(pf):
+        with open(pf) as f:
+            rd = list(csv.DictReader(f))
+        n_tot = len(rd)
+        try:
+            p_media = sum(float(r["prob_pct"]) for r in rd) / n_tot if n_tot else 0.0
+        except Exception:
+            p_media = 0.0
+        # raggruppa per data, poi ordina per probabilità dentro ogni giorno
+        from collections import defaultdict
+        byd = defaultdict(list)
+        for r in rd:
+            byd[r.get("data", "")].append(r)
+        for d in sorted(byd):
+            gg = sorted(byd[d], key=lambda x: -float(x.get("prob_pct") or 0))
+            rows += (f"<tr class='dayrow'><td colspan=6><b>{d}</b> · {len(gg)} partite</td></tr>")
+            for r in gg:
+                p = float(r.get("prob_pct") or 0)
+                cls = "ev-pos" if p >= 65 else ("" if p >= 55 else "sub")
+                q = r.get("quota") or "—"
+                rows += (f"<tr><td data-label='Ora'>{r.get('ora','')}</td>"
+                         f"<td data-label='Lega'>{r.get('lega','')}</td>"
+                         f"<td data-label='Partita'><b>{r.get('partita','')}</b></td>"
+                         f"<td data-label='Mercato'>{r.get('mercato','')}</td>"
+                         f"<td data-label='Pronostico'><b>{r.get('esito','')}</b></td>"
+                         f"<td data-label='Probabilità' class='{cls}'>{p:.1f}%"
+                         f"<span class='sub'> · margine +{r.get('margine_pp','')}pp</span></td>"
+                         f"<td data-label='Quota'>{q}</td></tr>")
+    if not rows:
+        rows = "<tr><td colspan=7>Nessun pronostico disponibile: il motore gira con la pipeline giornaliera.</td></tr>"
+
+    # --- bilancio ---
+    bjson, bil = os.path.join(DATA, "bilancio_motore.json"), {}
+    if os.path.exists(bjson):
+        try:
+            with open(bjson) as f:
+                bil = json.load(f)
+        except Exception:
+            bil = {}
+    def _k(v, suf=""):
+        return f"{v}{suf}" if v not in (None, "") else "—"
+    card = ""
+    if bil.get("verificati"):
+        scarto = bil.get("scarto_pp")
+        classe = "ev-pos" if (scarto or 0) >= -2 else "ev-neg"
+        card = (f"<div class='cards'>"
+                f"<div class='card'><div class='lbl'>Pronostici verificati</div><div class='val'>{bil['verificati']}</div></div>"
+                f"<div class='card'><div class='lbl'>Azzeccati</div><div class='val'>{bil['colti']}</div></div>"
+                f"<div class='card'><div class='lbl'>Accuratezza</div><div class='val'>{_k(bil.get('acc_pct'), '%')}</div></div>"
+                f"<div class='card'><div class='lbl'>Probabilità media dichiarata</div><div class='val'>{_k(bil.get('prob_media_pct'), '%')}</div></div>"
+                f"<div class='card'><div class='lbl'>Scarto</div><div class='val {classe}'>{_k(scarto, 'pp')}</div></div>"
+                f"</div>"
+                f"<p class='sub'>Lo <b>scarto</b> dice se il motore è onesto: positivo = azzecca più di quanto dichiara, "
+                f"negativo = promette più di quanto mantiene. Con campioni sotto le 100 partite va letto come indicazione, non come verità.</p>")
+    # per giorno
+    giri = ""
+    for g in (bil.get("per_giorno") or [])[-10:]:
+        acc = g.get("acc_pct", 0)
+        cls = "ev-pos" if acc >= 55 else ("ev-neg" if acc < 45 else "")
+        giri += (f"<tr><td data-label='Data'>{g.get('data')}</td>"
+                 f"<td data-label='Pronostici'>{g.get('pronostici')}</td>"
+                 f"<td data-label='Azzeccati'>{g.get('colti')}</td>"
+                 f"<td data-label='Accuratezza' class='{cls}'>{acc}%</td>"
+                 f"<td data-label='Prob. media'>{g.get('prob_media')}%</td></tr>")
+    # per mercato
+    perm = ""
+    for m, v in (bil.get("per_mercato") or {}).items():
+        acc = v.get("acc_pct", 0)
+        cls = "ev-pos" if acc >= 55 else ("ev-neg" if acc < 45 else "")
+        perm += (f"<tr><td data-label='Mercato'><b>{m}</b></td>"
+                 f"<td data-label='Pronostici'>{v.get('n')}</td>"
+                 f"<td data-label='Accuratezza' class='{cls}'>{acc}%</td></tr>")
+
+    html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pronostici del giorno — il più probabile per partita</title>
+<style>{CSS}</style></head><body><div class="wrap">{NAV}
+<h1>🎯 Pronostici del giorno</h1>
+<p class="sub">Per ogni partita del palinsesto, <b>l'esito più probabile fra tutti i mercati</b> che sappiamo
+valutare: 1X2, Over/Under 2.5, GG/NG. Nessun filtro di quota e nessuna soglia: se il pronostico più solido
+della partita è un Over 2.5 al 74%, è quello che trovi qui. La probabilità è sempre in chiaro, così sai
+quanto è solida la stima.</p>
+<p class="warn">⚠️ Questa pagina risponde a <b>«qual è l'esito più probabile»</b>, non a <b>«dove c'è valore»</b>.
+Sono due domande diverse: un pronostico molto probabile può avere una quota così bassa da non convenire.
+Per il valore Economico vedi <a href="giocata_multi.html">Giocate</a>. Ogni percentuale è una stima con
+incertezza, mai una certezza.</p>
+
+<h2>Pronostici ({n_tot} partite · probabilità media {p_media:.1f}%)</h2>
+<div class="tbl"><table><thead><tr><th>Ora</th><th>Lega</th><th>Partita</th><th>Mercato</th>
+<th>Pronostico</th><th>Probabilità</th><th>Quota</th></tr></thead><tbody>{rows}</tbody></table></div>
+
+<h2>Bilancio del motore</h2>
+{card if card else "<p class='sub'>Nessun pronostico ancora verificato: il bilancio compare quando le partite finiscono.</p>"}
+{"<h3>Ultimi giorni</h3><div class='tbl'><table><thead><tr><th>Data</th><th>Pronostici</th><th>Azzeccati</th><th>Accuratezza</th><th>Prob. media</th></tr></thead><tbody>" + giri + "</tbody></table></div>" if giri else ""}
+{"<h3>Per mercato</h3><div class='tbl'><table><thead><tr><th>Mercato</th><th>Pronostici</th><th>Accuratezza</th></tr></thead><tbody>" + perm + "</tbody></table></div>" if perm else ""}
+<p class="sub">Il bilancio è calcolato <b>confrontando i pronostici salvati prima delle partite</b> con gli esiti
+reali recuperati dopo. I file sono pubblici in <code>data/</code>: chiunque può verificare.
+I pronostici non verificabili (partite rinviate, leghe senza copertura risultati) sono esclusi dal conteggio,
+non contati come successi.</p>
+{footer("")}
+</div></body></html>"""
+    with open(os.path.join(SITE, "pronostici.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"   ✅ pronostici.html ({n_tot} partite · {bil.get('verificati', 0)} verificati)")
 
 
 def build_index():
@@ -1603,6 +1717,7 @@ def main():
     build_benchmark()
     build_guida()
     build_report_weekend()
+    build_pronostici()
     nq = 0
     for bp in bestprice_files():
         build_quote(bp)
