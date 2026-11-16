@@ -1,0 +1,56 @@
+lega,w_mkt,rps,accuracy_pct,n
+Serie A,MERCATO DE-VIG (non modello),0.1613,75.0,80
+Serie A,0.0,0.1855,67.5,80
+Serie A,0.1,0.182,67.5,80
+Serie A,0.2 (attuale),0.1794,67.5,80
+Serie A,0.3,0.1773,67.5,80
+Serie B,MERCATO DE-VIG (non modello),0.2053,43.8,80
+Serie B,0.0,0.2152,38.8,80
+Serie B,0.1,0.2134,40.0,80
+Serie B,0.2 (attuale),0.212,38.8,80
+Serie B,0.3,0.211,38.8,80
+Premier League,MERCATO DE-VIG (non modello),0.2012,47.5,80
+Premier League,0.0,0.219,41.2,80
+Premier League,0.1,0.2156,42.5,80
+Premier League,0.2 (attuale),0.2131,42.5,80
+Premier League,0.3,0.2113,43.8,80
+Championship,MERCATO DE-VIG (non modello),0.2156,53.8,80
+Championship,0.0,0.2303,46.2,80
+Championship,0.1,0.2278,46.2,80
+Championship,0.2 (attuale),0.226,46.2,80
+Championship,0.3,0.2246,47.5,80
+LaLiga,MERCATO DE-VIG (non modello),0.1801,57.5,80
+LaLiga,0.0,0.2071,51.2,80
+LaLiga,0.1,0.2022,52.5,80
+LaLiga,0.2 (attuale),0.1987,51.2,80
+LaLiga,0.3,0.196,51.2,80
+LaLiga 2,MERCATO DE-VIG (non modello),0.2139,52.5,80
+LaLiga 2,0.0,0.2274,46.2,80
+LaLiga 2,0.1,0.2247,48.8,80
+LaLiga 2,0.2 (attuale),0.2227,48.8,80
+LaLiga 2,0.3,0.2213,48.8,80
+Bundesliga,MERCATO DE-VIG (non modello),0.2225,51.2,80
+Bundesliga,0.0,0.2143,45.0,80
+Bundesliga,0.1,0.2143,45.0,80
+Bundesliga,0.2 (attuale),0.2145,45.0,80
+Bundesliga,0.3,0.2148,45.0,80
+Bundesliga 2,MERCATO DE-VIG (non modello),0.2109,52.5,80
+Bundesliga 2,0.0,0.2162,47.5,80
+Bundesliga 2,0.1,0.2147,47.5,80
+Bundesliga 2,0.2 (attuale),0.2136,47.5,80
+Bundesliga 2,0.3,0.2129,47.5,80
+Ligue 1,MERCATO DE-VIG (non modello),0.1926,56.2,80
+Ligue 1,0.0,0.2002,60.0,80
+Ligue 1,0.1,0.1984,57.5,80
+Ligue 1,0.2 (attuale),0.197,57.5,80
+Ligue 1,0.3,0.1961,57.5,80
+Ligue 2,MERCATO DE-VIG (non modello),0.2107,47.5,80
+Ligue 2,0.0,0.2387,40.0,80
+Ligue 2,0.1,0.2345,38.8,80
+Ligue 2,0.2 (attuale),0.2313,41.2,80
+Ligue 2,0.3,0.2289,40.0,80
+Eredivisie,MERCATO DE-VIG (non modello),0.1987,50.0,80
+Eredivisie,0.0,0.2126,46.2,80
+Eredivisie,0.1,0.2095,47.5,80
+Eredivisie,0.2 (attuale),0.2074,47.5,80
+Eredivisie,0.3,0.2058,46.2,80
