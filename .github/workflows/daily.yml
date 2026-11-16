@@ -67,6 +67,9 @@ jobs:
           python3 src/step11_clv.py || true
           python3 src/step30_weather.py || true   # 🆕 13/11 meteo+coordinate (open-meteo, gratis)
           python3 src/weekly_multi.py || true
+          # 🆕 16/11 MOTORE DEI PRONOSTICI: il più probabile per partita su 1X2 + O/U + GG/NG
+          #    gira dopo weekly_multi (usa forecast_multi.csv) e aggiorna anche il bilancio
+          python3 src/step35_motore.py || true
           python3 src/step19_diretta.py || true
           python3 src/step21_surebets.py $D || true
           python3 src/step26_telegram.py --date $D --min 1.0 || true    # alert Telegram se env impostate
