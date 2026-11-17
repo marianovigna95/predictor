@@ -1,119 +1,110 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-20,LaLiga 2,Andorra - Leganes,gg,GG,1.7,vincitu,46,2026-11-17T14:32:41
-2026-11-20,LaLiga 2,Andorra - Leganes,gg,NG,2.1,snai,46,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,CE Sabadell - Granada,gg,GG,1.92,betpassion,39,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,CE Sabadell - Granada,gg,NG,1.8,giocodigitale,39,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Real Sociedad B - Cadice,gg,GG,1.68,vincitu,25,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Real Sociedad B - Cadice,gg,NG,2.1,snai,25,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Castellon - Eldense,gg,GG,1.74,vincitu,42,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Castellon - Eldense,gg,NG,2.0,snai,42,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Tenerife - Maiorca,gg,GG,1.88,winamax,32,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Tenerife - Maiorca,gg,NG,1.87,giocodigitale,32,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Cordoba CF - Real Oviedo,gg,GG,1.55,giocodigitale,43,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Cordoba CF - Real Oviedo,gg,NG,2.35,eurobet,43,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Sporting Gijón - Las Palmas,gg,GG,1.71,stake,42,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Sporting Gijón - Las Palmas,gg,NG,2.05,giocodigitale,42,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Girona - Eibar,gg,GG,1.7,vincitu,46,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Girona - Eibar,gg,NG,2.1,snai,46,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Burgos - Albacete,gg,GG,1.86,winamax,43,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Burgos - Albacete,gg,NG,1.9,eurobet,43,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Real Sociedad B - Cadiz,gg,GG,1.71,stake,21,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Real Sociedad B - Cadiz,gg,NG,2.08,quigioco,21,2026-11-17T14:32:41
-2026-11-20,LaLiga 2,FC Andorra - Leganes,gg,GG,4.2,betflag,4,2026-11-17T14:32:41
-2026-11-20,LaLiga 2,FC Andorra - Leganes,gg,NG,1.15,leovegas,4,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Sabadell - Granada,gg,GG,4.8,leovegas,3,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Sabadell - Granada,gg,NG,1.09,leovegas,3,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,CD Tenerife - Mallorca,gg,GG,1.89,leovegas,14,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,CD Tenerife - Mallorca,gg,NG,1.83,stake,14,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Córdoba CF - Real Oviedo,gg,GG,3.7,betflag,4,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Córdoba CF - Real Oviedo,gg,NG,1.2,leovegas,4,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Sporting de Gijón - UD Las Palmas,gg,GG,4.2,leovegas,3,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Sporting de Gijón - UD Las Palmas,gg,NG,1.14,leovegas,3,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Celta Vigo B - Valladolid,gg,GG,1.62,leovegas,6,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Celta Vigo B - Valladolid,gg,NG,2.25,stake,6,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Burgos - Albacete Balompié,gg,GG,4.4,leovegas,3,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Burgos - Albacete Balompié,gg,NG,1.12,leovegas,3,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,CE Sabadell FC - Granada,gg,GG,5.25,betflag,1,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,CE Sabadell FC - Granada,gg,NG,1.09,betflag,1,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Tenerife - RCD Maiorca,gg,GG,4.85,betflag,1,2026-11-17T14:32:41
-2026-11-21,LaLiga 2,Tenerife - RCD Maiorca,gg,NG,1.1,betflag,1,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Sporting Gijón - UD Las Palmas,gg,GG,4.25,betflag,1,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Sporting Gijón - UD Las Palmas,gg,NG,1.14,betflag,1,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Burgos CF - Albacete,gg,GG,4.7,betflag,1,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Burgos CF - Albacete,gg,NG,1.11,betflag,1,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,RC Celta de Vigo B - Real Valladolid,gg,GG,1.58,giocodigitale,6,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,RC Celta de Vigo B - Real Valladolid,gg,NG,2.2,bwin,6,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,RC CELTA FORTUNA - VALLADOLID,gg,GG,1.6,eplay24,8,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,RC CELTA FORTUNA - VALLADOLID,gg,NG,2.1,eplay24,8,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Cordoba - Oviedo,gg,GG,1.57,stake,3,2026-11-17T14:32:41
-2026-11-22,LaLiga 2,Cordoba - Oviedo,gg,NG,2.25,stake,3,2026-11-17T14:32:41
-2026-11-23,LaLiga 2,Ceuta - Almeria,gg,GG,1.62,stake,3,2026-11-17T14:32:41
-2026-11-23,LaLiga 2,Ceuta - Almeria,gg,NG,2.2,stake,3,2026-11-17T14:32:41
-2026-11-20,LaLiga 2,Andorra - Leganes,2.5,O2.5,1.24,stanleybet,39,2026-11-17T14:32:42
-2026-11-20,LaLiga 2,Andorra - Leganes,2.5,U2.5,3.75,goldbet,39,2026-11-17T14:32:42
-2026-11-21,LaLiga 2,CE Sabadell - Granada,2.5,O2.5,1.38,snai,35,2026-11-17T14:32:42
-2026-11-21,LaLiga 2,CE Sabadell - Granada,2.5,U2.5,2.82,stanleybet,35,2026-11-17T14:32:42
-2026-11-21,LaLiga 2,Real Sociedad B - Cadice,2.5,O2.5,1.24,marathonbet,25,2026-11-17T14:32:42
-2026-11-21,LaLiga 2,Real Sociedad B - Cadice,2.5,U2.5,3.8,giocodigitale,25,2026-11-17T14:32:42
-2026-11-21,LaLiga 2,Castellon - Eldense,2.5,O2.5,1.16,giocodigitale,35,2026-11-17T14:32:42
-2026-11-21,LaLiga 2,Castellon - Eldense,2.5,U2.5,4.9,leovegas,35,2026-11-17T14:32:42
-2026-11-20,LaLiga 2,Andorra - Leganes,1x2,1,1.92,winamax,46,2026-11-17T14:32:43
-2026-11-20,LaLiga 2,Andorra - Leganes,1x2,X,3.5,giocodigitale,46,2026-11-17T14:32:43
-2026-11-20,LaLiga 2,Andorra - Leganes,1x2,2,3.9,goldbet,46,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,CE Sabadell - Granada,1x2,1,2.33,vincitu,39,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,CE Sabadell - Granada,1x2,X,3.1,snai,39,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,CE Sabadell - Granada,1x2,2,3.2,betpassion,39,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Real Sociedad B - Cadice,1x2,1,1.94,vincitu,25,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Real Sociedad B - Cadice,1x2,X,3.5,snai,25,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Real Sociedad B - Cadice,1x2,2,3.75,goldbet,25,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Castellon - Eldense,1x2,1,1.43,stake,42,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Castellon - Eldense,1x2,X,4.8,winamax,42,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Castellon - Eldense,1x2,2,6.5,leovegas,42,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Tenerife - Maiorca,1x2,1,3.15,vincitu,32,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Tenerife - Maiorca,1x2,X,3.2,snai,32,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Tenerife - Maiorca,1x2,2,2.3,winamax,32,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Cordoba CF - Real Oviedo,1x2,1,1.94,winamax,43,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Cordoba CF - Real Oviedo,1x2,X,3.7,goldbet,43,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Cordoba CF - Real Oviedo,1x2,2,3.65,winamax,43,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Sporting Gijón - Las Palmas,1x2,1,1.95,vincitu,42,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Sporting Gijón - Las Palmas,1x2,X,3.5,snai,42,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Sporting Gijón - Las Palmas,1x2,2,3.75,fastbet,42,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Girona - Eibar,1x2,1,1.8,vincitu,46,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Girona - Eibar,1x2,X,3.75,stake,46,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Girona - Eibar,1x2,2,4.25,betpassion,46,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Burgos - Albacete,1x2,1,1.9,fastbet,43,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Burgos - Albacete,1x2,X,3.45,vincitu,43,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Burgos - Albacete,1x2,2,4.3,vincitu,43,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Real Sociedad B - Cadiz,1x2,1,1.94,winamax,21,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Real Sociedad B - Cadiz,1x2,X,3.6,stake,21,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Real Sociedad B - Cadiz,1x2,2,3.8,stake,21,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Sabadell - Granada,1x2,1,2.3,winamax,7,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Sabadell - Granada,1x2,X,3.1,stake,7,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Sabadell - Granada,1x2,2,3.25,888sport,7,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Tenerife - Mallorca,1x2,1,3.15,888sport,14,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Tenerife - Mallorca,1x2,X,3.15,eplay24,14,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Tenerife - Mallorca,1x2,2,2.33,fastbet,14,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Sabadell FC - Granada,1x2,1,2.55,leovegas,3,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Sabadell FC - Granada,1x2,X,2.3,leovegas,3,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,Sabadell FC - Granada,1x2,2,3.55,leovegas,3,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,CD Tenerife - Mallorca,1x2,1,3.4,leovegas,8,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,CD Tenerife - Mallorca,1x2,X,2.37,gioca7,8,2026-11-17T14:32:43
-2026-11-21,LaLiga 2,CD Tenerife - Mallorca,1x2,2,2.6,leovegas,8,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Sporting de Gijón - UD Las Palmas,1x2,1,1.95,888sport,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Sporting de Gijón - UD Las Palmas,1x2,X,3.2,leovegas,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Sporting de Gijón - UD Las Palmas,1x2,2,3.35,leovegas,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Celta Vigo B - Valladolid,1x2,1,3.5,888sport,6,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Celta Vigo B - Valladolid,1x2,X,3.6,stake,6,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Celta Vigo B - Valladolid,1x2,2,2.08,stake,6,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Burgos - Albacete Balompié,1x2,1,1.83,888sport,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Burgos - Albacete Balompié,1x2,X,3.25,888sport,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Burgos - Albacete Balompié,1x2,2,3.8,888sport,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,RC Celta de Vigo B - Real Valladolid,1x2,1,3.72,betpassion,6,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,RC Celta de Vigo B - Real Valladolid,1x2,X,2.35,giocodigitale,6,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,RC Celta de Vigo B - Real Valladolid,1x2,2,2.53,betpassion,6,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,RC CELTA FORTUNA - VALLADOLID,1x2,1,3.4,eplay24,8,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,RC CELTA FORTUNA - VALLADOLID,1x2,X,3.5,eplay24,8,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,RC CELTA FORTUNA - VALLADOLID,1x2,2,1.95,eplay24,8,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Cordoba - Oviedo,1x2,1,1.92,stake,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Cordoba - Oviedo,1x2,X,3.67,stake,3,2026-11-17T14:32:43
-2026-11-22,LaLiga 2,Cordoba - Oviedo,1x2,2,3.5,stake,3,2026-11-17T14:32:43
+2026-11-17,Uefa Nations League,Galles - Portogallo,gg,GG,1.73,zonagioco,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Galles - Portogallo,gg,NG,2.15,eurobet,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Israele - Austria,gg,GG,1.58,sunbet,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Israele - Austria,gg,NG,2.5,snai,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Irlanda - Kosovo,gg,GG,2.25,sunbet,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Irlanda - Kosovo,gg,NG,1.69,fastbet,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Danimarca - Norvegia,gg,GG,1.39,sunbet,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Danimarca - Norvegia,gg,NG,3.05,sunbet,45,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Ucraina - Georgia,gg,GG,2.19,sunbet,43,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Ucraina - Georgia,gg,NG,1.69,fastbet,43,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Polonia - Svezia,gg,GG,1.44,stake,43,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Polonia - Svezia,gg,NG,2.9,eurobet,43,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Ungheria - Irlanda del Nord,gg,GG,2.32,sunbet,43,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Ungheria - Irlanda del Nord,gg,NG,1.67,fastbet,43,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Bosnia Erzegovina - Romania,gg,GG,1.54,sunbet,35,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Bosnia Erzegovina - Romania,gg,NG,2.5,snai,35,2026-11-17T18:40:14
+2026-11-17,CONCACAF Nations League,Belize - Sint Maarten,gg,GG,1.58,leovegas,35,2026-11-17T18:40:14
+2026-11-17,CONCACAF Nations League,Belize - Sint Maarten,gg,NG,2.25,bwin,35,2026-11-17T18:40:14
+2026-11-17,America Concacaf Nations League,Dominica - Isole Cayman,gg,GG,1.87,fastbet,35,2026-11-17T18:40:14
+2026-11-17,America Concacaf Nations League,Dominica - Isole Cayman,gg,NG,1.98,winamax,35,2026-11-17T18:40:14
+2026-11-17,Nations League,St Lucia - Barbados,gg,GG,1.5,leovegas,4,2026-11-17T18:40:14
+2026-11-17,Nations League,St Lucia - Barbados,gg,NG,2.4,eurobet,4,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Bosnia-erzegovina - Romania,gg,GG,3.65,betflag,3,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Bosnia-erzegovina - Romania,gg,NG,1.27,sportium,3,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Ungheria - Irlanda Del Nord,gg,GG,6.25,betflag,8,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Ungheria - Irlanda Del Nord,gg,NG,1.12,fastbet,8,2026-11-17T18:40:14
+2026-11-18,America Concacaf Nations League,Guyana Francese - Saint Vincent E Grenadine,gg,GG,1.56,stake,35,2026-11-17T18:40:14
+2026-11-18,America Concacaf Nations League,Guyana Francese - Saint Vincent E Grenadine,gg,NG,2.3,eurobet,35,2026-11-17T18:40:14
+2026-11-18,America Concacaf Nations League,El Salvador - Su Sankt Martin,gg,GG,1.83,eurobet,1,2026-11-17T18:40:14
+2026-11-18,America Concacaf Nations League,El Salvador - Su Sankt Martin,gg,NG,1.75,eurobet,1,2026-11-17T18:40:14
+2026-11-18,CONCACAF Nations League,Messico - Giamaica,gg,GG,2.15,daznbet,39,2026-11-17T18:40:14
+2026-11-18,CONCACAF Nations League,Messico - Giamaica,gg,NG,1.68,eurobet,39,2026-11-17T18:40:14
+2026-11-18,CONCACAF Nations League,Nicaragua - Montserrat,gg,GG,2.05,betpassion,41,2026-11-17T18:40:14
+2026-11-18,CONCACAF Nations League,Nicaragua - Montserrat,gg,NG,1.77,eurobet,41,2026-11-17T18:40:14
+2026-11-17,CONCACAF Nations League,Dominica - Cayman Islands,gg,GG,1.85,leovegas,3,2026-11-17T18:40:14
+2026-11-17,CONCACAF Nations League,Dominica - Cayman Islands,gg,NG,1.74,leovegas,3,2026-11-17T18:40:14
+2026-11-17,CONCACAF Nations League,Saint Lucia - Barbados,gg,GG,1.52,bwin,2,2026-11-17T18:40:14
+2026-11-17,CONCACAF Nations League,Saint Lucia - Barbados,gg,NG,2.35,bwin,2,2026-11-17T18:40:14
+2026-11-17,Uefa Nations League,Galles - Portogallo,2.5,O2.5,1.15,sunbet,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Galles - Portogallo,2.5,U2.5,5.5,goldbet,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Israele - Austria,2.5,O2.5,1.19,winamax,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Israele - Austria,2.5,U2.5,4.95,goldbet,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Irlanda - Kosovo,2.5,O2.5,1.5,sunbet,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Irlanda - Kosovo,2.5,U2.5,2.6,leovegas,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Danimarca - Norvegia,2.5,O2.5,1.12,sunbet,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Danimarca - Norvegia,2.5,U2.5,6.56,betpassion,40,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Ucraina - Georgia,2.5,O2.5,1.5,sunbet,38,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Ucraina - Georgia,2.5,U2.5,2.6,sunbet,38,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Polonia - Svezia,2.5,O2.5,1.14,sunbet,38,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Polonia - Svezia,2.5,U2.5,6.0,eurobet,38,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Ungheria - Irlanda del Nord,2.5,O2.5,1.52,sunbet,38,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Ungheria - Irlanda del Nord,2.5,U2.5,2.65,888sport,38,2026-11-17T18:40:17
+2026-11-17,Uefa Nations League,Galles - Portogallo,1x2,1,7.5,snai,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Galles - Portogallo,1x2,X,5.3,goldbet,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Galles - Portogallo,1x2,2,1.43,sunbet,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Israele - Austria,1x2,1,4.1,888sport,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Israele - Austria,1x2,X,4.0,stake,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Israele - Austria,1x2,2,1.87,daznbet,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Irlanda - Kosovo,1x2,1,2.0,sunbet,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Irlanda - Kosovo,1x2,X,3.3,winbet,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Irlanda - Kosovo,1x2,2,4.38,winbet,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Danimarca - Norvegia,1x2,1,2.6,sunbet,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Danimarca - Norvegia,1x2,X,4.1,winamax,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Danimarca - Norvegia,1x2,2,2.5,bwin,45,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ucraina - Georgia,1x2,1,2.14,sunbet,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ucraina - Georgia,1x2,X,3.2,stake,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ucraina - Georgia,1x2,2,4.1,stanleybet,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Polonia - Svezia,1x2,1,2.29,sunbet,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Polonia - Svezia,1x2,X,4.0,snai,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Polonia - Svezia,1x2,2,3.0,snai,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ungheria - Irlanda del Nord,1x2,1,1.91,sunbet,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ungheria - Irlanda del Nord,1x2,X,3.4,stake,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ungheria - Irlanda del Nord,1x2,2,4.8,bwin,43,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Bosnia Erzegovina - Romania,1x2,1,2.13,sunbet,35,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Bosnia Erzegovina - Romania,1x2,X,3.75,goldbet,35,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Bosnia Erzegovina - Romania,1x2,2,3.32,marathonbet,35,2026-11-17T18:40:18
+2026-11-17,CONCACAF Nations League,Belize - Sint Maarten,1x2,1,2.43,daznbet,35,2026-11-17T18:40:18
+2026-11-17,CONCACAF Nations League,Belize - Sint Maarten,1x2,X,3.6,888sport_it,35,2026-11-17T18:40:18
+2026-11-17,CONCACAF Nations League,Belize - Sint Maarten,1x2,2,3.75,888sport_it,35,2026-11-17T18:40:18
+2026-11-17,America Concacaf Nations League,Dominica - Isole Cayman,1x2,1,1.39,fastbet,35,2026-11-17T18:40:18
+2026-11-17,America Concacaf Nations League,Dominica - Isole Cayman,1x2,X,4.9,winamax,35,2026-11-17T18:40:18
+2026-11-17,America Concacaf Nations League,Dominica - Isole Cayman,1x2,2,7.0,fastbet,35,2026-11-17T18:40:18
+2026-11-17,Nations League,St Lucia - Barbados,1x2,1,1.65,eurobet,4,2026-11-17T18:40:18
+2026-11-17,Nations League,St Lucia - Barbados,1x2,X,4.0,leovegas,4,2026-11-17T18:40:18
+2026-11-17,Nations League,St Lucia - Barbados,1x2,2,4.6,leovegas,4,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Bosnia-erzegovina - Romania,1x2,1,2.6,betsson,24,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Bosnia-erzegovina - Romania,1x2,X,2.41,sunbet,24,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Bosnia-erzegovina - Romania,1x2,2,3.7,sportium,24,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ungheria - Irlanda Del Nord,1x2,1,2.65,betpassion,34,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ungheria - Irlanda Del Nord,1x2,X,2.08,zonagioco,34,2026-11-17T18:40:18
+2026-11-17,Uefa Nations League,Ungheria - Irlanda Del Nord,1x2,2,5.4,sportium,34,2026-11-17T18:40:18
+2026-11-18,America Concacaf Nations League,Guyana Francese - Saint Vincent E Grenadine,1x2,1,2.8,goldbet,35,2026-11-17T18:40:18
+2026-11-18,America Concacaf Nations League,Guyana Francese - Saint Vincent E Grenadine,1x2,X,3.45,winamax,35,2026-11-17T18:40:18
+2026-11-18,America Concacaf Nations League,Guyana Francese - Saint Vincent E Grenadine,1x2,2,2.4,fastbet,35,2026-11-17T18:40:18
+2026-11-18,Nations League CONCACAF,Stati Uniti - Haiti,1x2,1,1.08,betpassion,36,2026-11-17T18:40:18
+2026-11-18,Nations League CONCACAF,Stati Uniti - Haiti,1x2,X,13.0,stanleybet,36,2026-11-17T18:40:18
+2026-11-18,Nations League CONCACAF,Stati Uniti - Haiti,1x2,2,24.0,domusbet,36,2026-11-17T18:40:18
+2026-11-18,America Concacaf Nations League,El Salvador - Su Sankt Martin,1x2,1,1.27,eurobet,1,2026-11-17T18:40:18
+2026-11-18,America Concacaf Nations League,El Salvador - Su Sankt Martin,1x2,X,4.5,eurobet,1,2026-11-17T18:40:18
+2026-11-18,America Concacaf Nations League,El Salvador - Su Sankt Martin,1x2,2,8.0,eurobet,1,2026-11-17T18:40:18
+2026-11-18,CONCACAF Nations League,Messico - Giamaica,1x2,1,1.14,betpassion,39,2026-11-17T18:40:18
+2026-11-18,CONCACAF Nations League,Messico - Giamaica,1x2,X,8.5,goldbet,39,2026-11-17T18:40:18
+2026-11-18,CONCACAF Nations League,Messico - Giamaica,1x2,2,17.0,fastbet,39,2026-11-17T18:40:18
+2026-11-18,CONCACAF Nations League,Nicaragua - Montserrat,1x2,1,1.25,fastbet,41,2026-11-17T18:40:18
+2026-11-18,CONCACAF Nations League,Nicaragua - Montserrat,1x2,X,6.5,goldbet,41,2026-11-17T18:40:18
+2026-11-18,CONCACAF Nations League,Nicaragua - Montserrat,1x2,2,11.0,stake,41,2026-11-17T18:40:18
+2026-11-17,CONCACAF Nations League,Dominica - Cayman Islands,1x2,1,1.35,leovegas,3,2026-11-17T18:40:18
+2026-11-17,CONCACAF Nations League,Dominica - Cayman Islands,1x2,X,4.75,leovegas,3,2026-11-17T18:40:18
+2026-11-17,CONCACAF Nations League,Dominica - Cayman Islands,1x2,2,7.5,leovegas,3,2026-11-17T18:40:18

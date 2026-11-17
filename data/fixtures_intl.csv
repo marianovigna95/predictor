@@ -1635,15 +1635,15 @@ Friendlies,FRD,0,2026-11-17 06:30,Tahiti,Cook Islands,True,3,3
 Friendlies,FRD,0,2026-11-17 07:00,Malaysia,Yemen,True,2,1
 Friendlies,FRD,0,2026-11-17 11:00,Singapore,Brazil,True,0,7
 Friendlies,FRD,0,2026-11-17 13:00,China,Bahrain,True,2,2
-Friendlies,FRD,0,2026-11-17 13:00,Kyrgyz Republic,Vietnam,False,,
-Friendlies,FRD,0,2026-11-17 14:00,Lebanon,Palestine,False,,
-Friendlies,FRD,0,2026-11-17 14:10,Japan,Paraguay,False,,
-Friendlies,FRD,0,2026-11-17 15:00,Qatar,South Korea,False,,
-Friendlies,FRD,0,2026-11-17 15:10,United Arab Emirates,Syria,False,,
-Friendlies,FRD,0,2026-11-17 16:30,Saudi Arabia,Uzbekistan,False,,
-Friendlies,FRD,0,2026-11-17 17:00,Jordan,Australia,False,,
-Friendlies,FRD,0,2026-11-17 17:00,Russia,Venezuela,False,,
-Friendlies,FRD,0,2026-11-17 17:15,Iraq,Iran,False,,
+Friendlies,FRD,0,2026-11-17 13:00,Kyrgyz Republic,Vietnam,True,2,1
+Friendlies,FRD,0,2026-11-17 14:00,Lebanon,Palestine,True,0,0
+Friendlies,FRD,0,2026-11-17 14:10,Japan,Paraguay,True,1,2
+Friendlies,FRD,0,2026-11-17 15:00,Qatar,South Korea,True,0,1
+Friendlies,FRD,0,2026-11-17 15:10,United Arab Emirates,Syria,True,4,2
+Friendlies,FRD,0,2026-11-17 16:30,Saudi Arabia,Uzbekistan,True,1,2
+Friendlies,FRD,0,2026-11-17 17:00,Jordan,Australia,True,2,0
+Friendlies,FRD,0,2026-11-17 17:00,Russia,Venezuela,True,2,0
+Friendlies,FRD,0,2026-11-17 17:15,Iraq,Iran,True,1,1
 Friendlies,FRD,0,2026-11-17 17:30,Kuwait,Honduras,False,,
 Nations League,UNL,0,2026-11-17 20:45,Bosnia-Herzegovina,Romania,False,,
 Nations League,UNL,0,2026-11-17 20:45,Denmark,Norway,False,,
