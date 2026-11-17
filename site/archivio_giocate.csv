@@ -1,15 +1,14 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-17,SINGOLA,Nations League,Denmark - Norway,NG,NG,41.9,3.05,27.8,0.79,,
-giocata,2026-11-17,RADDOPPIO,Nations League,Israel - Austria [O2.5 Over 2.5] + Wales - Portugal [GG GG],O2.5/GG,Over 2.5/GG,24.7,4.17,2.78,0.0,,
 giocata,2026-11-20,SINGOLA,Ligue 2,Guingamp - Rodez,O2.5,Over 2.5,52.1,2.33,21.39,0.93,,
-giocata,2026-11-20,RADDOPPIO,Bundesliga + Ligue 1,Bayern Munich - FC Koln [GG GG] + Troyes - Le Havre [GG GG],GG/GG,GG/GG,33.3,3.19,6.09,0.0,,
+giocata,2026-11-20,RADDOPPIO,Ligue 1 + Ligue 2,Troyes - Le Havre [GG GG] + Guingamp - Rodez [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,27.0,3.89,5.08,0.0,,
 giocata,2026-11-21,SINGOLA,LaLiga 2,Castellón - Eldense,O2.5,Over 2.5,48.6,2.55,23.93,1.21,,
-giocata,2026-11-21,RADDOPPIO,Bundesliga + Ligue 1,Elversberg - Freiburg [GG GG] + Strasbourg - Brest [GG GG],GG/GG,GG/GG,43.4,2.33,1.0,0.0,,
+giocata,2026-11-21,RADDOPPIO,Bundesliga + Ligue 1,Elversberg - Freiburg [GG GG] + Lens - Toulouse [GG GG],GG/GG,GG/GG,41.3,2.43,0.41,0.0,,
 giocata,2026-11-22,SINGOLA,Serie B,Arezzo - Padova,U2.5,Under 2.5,57.7,2.08,20.02,1.56,,
 giocata,2026-11-22,RADDOPPIO,Bundesliga + Eredivisie,Augsburg - Mainz [GG GG] + Sparta Rotterdam - AZ Alkmaar [GG GG],GG/GG,GG/GG,51.8,2.04,5.93,0.0,,
 giocata,2026-11-23,SINGOLA,LaLiga 2,AD Ceuta FC - Almería,O2.5,Over 2.5,49.8,2.44,21.51,1.0,,
-giocata,2026-11-23,RADDOPPIO,LaLiga + Premier League,Brentford - Everton [O2.5 Over 2.5] + Levante - Elche [GG GG],O2.5/GG,Over 2.5/GG,30.5,3.46,5.58,0.0,,
+giocata,2026-11-23,RADDOPPIO,LaLiga + LaLiga 2,Levante - Elche [GG GG] + AD Ceuta FC - Almería [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,27.8,3.9,8.56,0.0,,
 giocata,2026-11-24,SINGOLA,Champions League,Real Madrid - PSV Eindhoven,GG,GG,69.4,1.54,6.88,0.0,,
+giocata,2026-11-24,RADDOPPIO,Champions League,Real Madrid - PSV Eindhoven [GG GG] + Arsenal - Dortmund [GG GG],GG/GG,GG/GG,34.2,2.96,1.24,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
 verifica,2026-11-03,RADDOPPIO,Champions League,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,63.9,2.0,,,Barcelona - Aston Villa 3-0 (GG no) | Bodø/Glimt - Lille 0-0 (Under 2.5),❌
 verifica,2026-11-04,SINGOLA,Champions League,Viking - Sabah FK,O2.5,Over 2.5,81.6,1.38,,,4-1 (5 gol),✅

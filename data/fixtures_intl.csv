@@ -1644,15 +1644,15 @@ Friendlies,FRD,0,2026-11-17 16:30,Saudi Arabia,Uzbekistan,True,1,2
 Friendlies,FRD,0,2026-11-17 17:00,Jordan,Australia,True,2,0
 Friendlies,FRD,0,2026-11-17 17:00,Russia,Venezuela,True,2,0
 Friendlies,FRD,0,2026-11-17 17:15,Iraq,Iran,True,1,1
-Friendlies,FRD,0,2026-11-17 17:30,Kuwait,Honduras,False,,
-Nations League,UNL,0,2026-11-17 20:45,Bosnia-Herzegovina,Romania,False,,
-Nations League,UNL,0,2026-11-17 20:45,Denmark,Norway,False,,
-Nations League,UNL,0,2026-11-17 20:45,Hungary,Northern Ireland,False,,
-Nations League,UNL,0,2026-11-17 20:45,Poland,Sweden,False,,
-Nations League,UNL,0,2026-11-17 20:45,Israel,Austria,False,,
-Nations League,UNL,0,2026-11-17 20:45,Wales,Portugal,False,,
-Nations League,UNL,0,2026-11-17 20:45,Ukraine,Georgia,False,,
-Nations League,UNL,0,2026-11-17 20:45,Republic of Ireland,Kosovo,False,,
+Friendlies,FRD,0,2026-11-17 17:30,Kuwait,Honduras,True,0,2
+Nations League,UNL,0,2026-11-17 20:45,Bosnia-Herzegovina,Romania,True,2,1
+Nations League,UNL,0,2026-11-17 20:45,Denmark,Norway,True,2,3
+Nations League,UNL,0,2026-11-17 20:45,Hungary,Northern Ireland,True,1,1
+Nations League,UNL,0,2026-11-17 20:45,Poland,Sweden,True,1,1
+Nations League,UNL,0,2026-11-17 20:45,Israel,Austria,True,1,1
+Nations League,UNL,0,2026-11-17 20:45,Wales,Portugal,True,2,3
+Nations League,UNL,0,2026-11-17 20:45,Ukraine,Georgia,True,1,0
+Nations League,UNL,0,2026-11-17 20:45,Republic of Ireland,Kosovo,True,3,0
 Friendlies,FRD,0,2026-11-18 00:00,Argentina,Costa Rica,False,,
 Friendlies,FRD,0,2026-11-18 00:00,Chile,Colombia,False,,
 Friendlies,FRD,0,2026-11-18 00:30,Uruguay,Dominican Republic,False,,
