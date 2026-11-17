@@ -1,154 +1,37 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-17,England - Southern Premier League South,Havant and Waterlooville - Bracknell Town FC,gg,GG,1.45,snai,3,2026-11-16T22:18:04
-2026-11-17,England - Southern Premier League South,Havant and Waterlooville - Bracknell Town FC,gg,NG,2.4,snai,3,2026-11-16T22:18:04
-2026-11-21,Premier League,Manchester City - Fulham,gg,GG,1.72,winamax,46,2026-11-16T22:18:04
-2026-11-21,Premier League,Manchester City - Fulham,gg,NG,2.16,888sport,46,2026-11-16T22:18:04
-2026-11-21,Premier League,Tottenham - Ipswich Town,gg,GG,1.67,vincitu,27,2026-11-16T22:18:04
-2026-11-21,Premier League,Tottenham - Ipswich Town,gg,NG,2.15,eurobet,27,2026-11-16T22:18:04
-2026-11-21,Premier League,Coventry - Crystal Palace,gg,GG,1.56,stake,14,2026-11-16T22:18:04
-2026-11-21,Premier League,Coventry - Crystal Palace,gg,NG,2.4,snai,14,2026-11-16T22:18:04
-2026-11-21,Premier League,Aston Villa - Sunderland,gg,GG,1.76,winamax,46,2026-11-16T22:18:04
-2026-11-21,Premier League,Aston Villa - Sunderland,gg,NG,2.15,eurobet,46,2026-11-16T22:18:04
-2026-11-21,Premier League,Chelsea - Leeds,gg,GG,1.71,stake,23,2026-11-16T22:18:04
-2026-11-21,Premier League,Chelsea - Leeds,gg,NG,2.15,eurobet,23,2026-11-16T22:18:04
-2026-11-21,Premier League,Newcastle - Arsenal,gg,GG,1.8,winamax,22,2026-11-16T22:18:04
-2026-11-21,Premier League,Newcastle - Arsenal,gg,NG,2.1,snai,22,2026-11-16T22:18:04
-2026-11-22,Premier League,Hull City - Brighton,gg,GG,1.8,winamax,30,2026-11-16T22:18:04
-2026-11-22,Premier League,Hull City - Brighton,gg,NG,2.1,eurobet,30,2026-11-16T22:18:04
-2026-11-22,Premier League,Liverpool - Manchester United,gg,GG,1.52,stake,42,2026-11-16T22:18:04
-2026-11-22,Premier League,Liverpool - Manchester United,gg,NG,2.55,eurobet,42,2026-11-16T22:18:04
-2026-11-23,Premier League,Brentford - Everton,gg,GG,1.65,stake,46,2026-11-16T22:18:04
-2026-11-23,Premier League,Brentford - Everton,gg,NG,2.26,betpassion,46,2026-11-16T22:18:04
-2026-11-20,Premier League,Rostov - Krylia Sovetov Samara,gg,GG,1.85,goldbet,7,2026-11-16T22:18:04
-2026-11-20,Premier League,Rostov - Krylia Sovetov Samara,gg,NG,1.9,quigioco,7,2026-11-16T22:18:04
-2026-11-21,Premier League,Orenburg - Fc Baltika Kaliningrad,gg,GG,1.96,vincitu,9,2026-11-16T22:18:04
-2026-11-21,Premier League,Orenburg - Fc Baltika Kaliningrad,gg,NG,1.79,quigioco,9,2026-11-16T22:18:04
-2026-11-21,Premier League,Fk Akron Tolyatti - Fakel Voronezh,gg,GG,1.88,fastbet,9,2026-11-16T22:18:04
-2026-11-21,Premier League,Fk Akron Tolyatti - Fakel Voronezh,gg,NG,1.9,quigioco,9,2026-11-16T22:18:04
-2026-11-21,Premier League,Fk Rubin Kazan - Zenit San Pietroburgo,gg,GG,1.98,vincitu,11,2026-11-16T22:18:04
-2026-11-21,Premier League,Fk Rubin Kazan - Zenit San Pietroburgo,gg,NG,1.78,quigioco,11,2026-11-16T22:18:04
-2026-11-21,Premier League,Bournemouth - Nottingham Forest,gg,GG,1.74,stake,39,2026-11-16T22:18:04
-2026-11-21,Premier League,Bournemouth - Nottingham Forest,gg,NG,2.12,quigioco,39,2026-11-16T22:18:04
-2026-11-21,Premier League,Coventry City - Crystal Palace,gg,GG,1.6,winamax,32,2026-11-16T22:18:04
-2026-11-21,Premier League,Coventry City - Crystal Palace,gg,NG,2.36,quigioco,32,2026-11-16T22:18:04
-2026-11-21,Premier League,Fk Spartak 1918 Varna - Cherno More,gg,GG,1.84,stanleybet,14,2026-11-16T22:18:04
-2026-11-21,Premier League,Fk Spartak 1918 Varna - Cherno More,gg,NG,1.85,eurobet,14,2026-11-16T22:18:04
-2026-11-21,Premier League,Cska Mosca - Akhmat Grozny,gg,GG,1.65,fastbet,12,2026-11-16T22:18:04
-2026-11-21,Premier League,Cska Mosca - Akhmat Grozny,gg,NG,2.24,quigioco,12,2026-11-16T22:18:04
-2026-11-22,Premier League,Dinamo Mosca - Krasnodar,gg,GG,1.59,quigioco,9,2026-11-16T22:18:04
-2026-11-22,Premier League,Dinamo Mosca - Krasnodar,gg,NG,2.21,quigioco,9,2026-11-16T22:18:04
-2026-11-22,Premier League,Fc Dynamo-makhachkala - Spartak Mosca,gg,GG,1.8,goldbet,9,2026-11-16T22:18:04
-2026-11-22,Premier League,Fc Dynamo-makhachkala - Spartak Mosca,gg,NG,1.92,eurobet,9,2026-11-16T22:18:04
-2026-11-22,Premier League,Rodina Moscow - Lokomotiv Mosca,gg,GG,1.5,goldbet,9,2026-11-16T22:18:04
-2026-11-22,Premier League,Rodina Moscow - Lokomotiv Mosca,gg,NG,2.47,quigioco,9,2026-11-16T22:18:04
-2026-11-21,Premier League,Chelsea - Leeds United,gg,GG,1.65,goldbet,23,2026-11-16T22:18:04
-2026-11-21,Premier League,Chelsea - Leeds United,gg,NG,2.12,leovegas,23,2026-11-16T22:18:04
-2026-11-21,Premier League,Tottenham Hotspur - Ipswich Town,gg,GG,1.66,giocodigitale,2,2026-11-16T22:18:04
-2026-11-21,Premier League,Tottenham Hotspur - Ipswich Town,gg,NG,2.05,bwin,2,2026-11-16T22:18:04
-2026-11-21,Premier League,Newcastle United - Arsenal,gg,GG,4.35,betflag,4,2026-11-16T22:18:04
-2026-11-21,Premier League,Newcastle United - Arsenal,gg,NG,1.16,leovegas,4,2026-11-16T22:18:04
-2026-11-20,Premier League,Llandudno FC - Barry Town,gg,GG,1.53,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Llandudno FC - Barry Town,gg,NG,2.28,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Penybont - Haverfordwest County,gg,GG,1.76,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Penybont - Haverfordwest County,gg,NG,1.91,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Airbus UK Broughton - Colwyn Bay,gg,GG,1.64,winamax,5,2026-11-16T22:18:04
-2026-11-20,Premier League,Airbus UK Broughton - Colwyn Bay,gg,NG,2.15,leovegas,5,2026-11-16T22:18:04
-2026-11-20,Premier League,Caernarfon - Connah's Quay FC,gg,GG,1.58,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Caernarfon - Connah's Quay FC,gg,NG,2.18,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Cardiff Met University - Ammanford,gg,GG,1.95,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Cardiff Met University - Ammanford,gg,NG,1.73,leovegas,3,2026-11-16T22:18:04
-2026-11-20,Premier League,Briton Ferry Llansawel - Holywell Town,gg,GG,1.58,winamax,4,2026-11-16T22:18:04
-2026-11-20,Premier League,Briton Ferry Llansawel - Holywell Town,gg,NG,2.25,winamax,4,2026-11-16T22:18:04
-2026-11-21,Premier League,Southern District - Hong Kong Rangers,gg,GG,1.47,leovegas,3,2026-11-16T22:18:04
-2026-11-21,Premier League,Southern District - Hong Kong Rangers,gg,NG,2.4,leovegas,3,2026-11-16T22:18:04
-2026-11-21,Premier League,FC Kryvbas - FK Kudrivka,gg,GG,1.62,leovegas,3,2026-11-16T22:18:04
-2026-11-21,Premier League,FC Kryvbas - FK Kudrivka,gg,NG,2.12,leovegas,3,2026-11-16T22:18:04
-2026-11-21,Premier League,Karpaty Lviv - Zorya Luhansk,gg,GG,1.66,vincitu,4,2026-11-16T22:18:04
-2026-11-21,Premier League,Karpaty Lviv - Zorya Luhansk,gg,NG,2.28,leovegas,4,2026-11-16T22:18:04
-2026-11-17,England - Southern Premier League South,Havant and Waterlooville - Bracknell Town FC,2.5,O2.5,1.12,snai,3,2026-11-16T22:18:05
-2026-11-17,England - Southern Premier League South,Havant and Waterlooville - Bracknell Town FC,2.5,U2.5,4.75,snai,3,2026-11-16T22:18:05
-2026-11-21,Premier League,Manchester City - Fulham,2.5,O2.5,1.15,winamax,39,2026-11-16T22:18:05
-2026-11-21,Premier League,Manchester City - Fulham,2.5,U2.5,5.75,888sport,39,2026-11-16T22:18:05
-2026-11-21,Premier League,Tottenham - Ipswich Town,2.5,O2.5,1.17,sportbet,26,2026-11-16T22:18:05
-2026-11-21,Premier League,Tottenham - Ipswich Town,2.5,U2.5,4.9,888sport,26,2026-11-16T22:18:05
-2026-11-21,Premier League,Coventry - Crystal Palace,2.5,O2.5,1.19,gioca7,8,2026-11-16T22:18:05
-2026-11-21,Premier League,Coventry - Crystal Palace,2.5,U2.5,4.15,gioca7,8,2026-11-16T22:18:05
-2026-11-21,Premier League,Aston Villa - Sunderland,2.5,O2.5,1.25,winamax,39,2026-11-16T22:18:05
-2026-11-21,Premier League,Aston Villa - Sunderland,2.5,U2.5,3.95,goldbet,39,2026-11-16T22:18:05
-2026-11-21,Premier League,Chelsea - Leeds,2.5,O2.5,1.23,betpassion,16,2026-11-16T22:18:05
-2026-11-21,Premier League,Chelsea - Leeds,2.5,U2.5,4.1,stanleybet,16,2026-11-16T22:18:05
-2026-11-17,England - Southern Premier League South,Havant and Waterlooville - Bracknell Town FC,1x2,1,1.8,snai,3,2026-11-16T22:18:06
-2026-11-17,England - Southern Premier League South,Havant and Waterlooville - Bracknell Town FC,1x2,X,3.6,snai,3,2026-11-16T22:18:06
-2026-11-17,England - Southern Premier League South,Havant and Waterlooville - Bracknell Town FC,1x2,2,3.5,snai,3,2026-11-16T22:18:06
-2026-11-21,Premier League,Manchester City - Fulham,1x2,1,1.42,fastbet,46,2026-11-16T22:18:06
-2026-11-21,Premier League,Manchester City - Fulham,1x2,X,5.33,stake,46,2026-11-16T22:18:06
-2026-11-21,Premier League,Manchester City - Fulham,1x2,2,7.1,quigioco,46,2026-11-16T22:18:06
-2026-11-21,Premier League,Tottenham - Ipswich Town,1x2,1,1.55,eurobet,27,2026-11-16T22:18:06
-2026-11-21,Premier League,Tottenham - Ipswich Town,1x2,X,4.5,totosi,27,2026-11-16T22:18:06
-2026-11-21,Premier League,Tottenham - Ipswich Town,1x2,2,5.75,888sport,27,2026-11-16T22:18:06
-2026-11-21,Premier League,Coventry - Crystal Palace,1x2,1,2.4,stake,14,2026-11-16T22:18:06
-2026-11-21,Premier League,Coventry - Crystal Palace,1x2,X,3.58,fastbet,14,2026-11-16T22:18:06
-2026-11-21,Premier League,Coventry - Crystal Palace,1x2,2,2.8,stake,14,2026-11-16T22:18:06
-2026-11-21,Premier League,Aston Villa - Sunderland,1x2,1,1.84,codere,46,2026-11-16T22:18:06
-2026-11-21,Premier League,Aston Villa - Sunderland,1x2,X,3.8,winamax,46,2026-11-16T22:18:06
-2026-11-21,Premier League,Aston Villa - Sunderland,1x2,2,4.4,fastbet,46,2026-11-16T22:18:06
-2026-11-21,Premier League,Chelsea - Leeds,1x2,1,1.88,betpassion,23,2026-11-16T22:18:06
-2026-11-21,Premier League,Chelsea - Leeds,1x2,X,3.8,eurobet,23,2026-11-16T22:18:06
-2026-11-21,Premier League,Chelsea - Leeds,1x2,2,4.05,fastbet,23,2026-11-16T22:18:06
-2026-11-21,Premier League,Newcastle - Arsenal,1x2,1,5.6,eurobet,22,2026-11-16T22:18:06
-2026-11-21,Premier League,Newcastle - Arsenal,1x2,X,4.3,winamax,22,2026-11-16T22:18:06
-2026-11-21,Premier League,Newcastle - Arsenal,1x2,2,1.6,betitaly,22,2026-11-16T22:18:06
-2026-11-22,Premier League,Hull City - Brighton,1x2,1,6.0,eurobet,30,2026-11-16T22:18:06
-2026-11-22,Premier League,Hull City - Brighton,1x2,X,4.6,winamax,30,2026-11-16T22:18:06
-2026-11-22,Premier League,Hull City - Brighton,1x2,2,1.52,eurobet,30,2026-11-16T22:18:06
-2026-11-22,Premier League,Liverpool - Manchester United,1x2,1,1.79,vincitu,42,2026-11-16T22:18:06
-2026-11-22,Premier League,Liverpool - Manchester United,1x2,X,4.2,stake,42,2026-11-16T22:18:06
-2026-11-22,Premier League,Liverpool - Manchester United,1x2,2,4.35,fastbet,42,2026-11-16T22:18:06
-2026-11-23,Premier League,Brentford - Everton,1x2,1,2.11,vincitu,46,2026-11-16T22:18:06
-2026-11-23,Premier League,Brentford - Everton,1x2,X,3.63,fastbet,46,2026-11-16T22:18:06
-2026-11-23,Premier League,Brentford - Everton,1x2,2,3.41,betpassion,46,2026-11-16T22:18:06
-2026-11-20,Premier League,Rostov - Krylia Sovetov Samara,1x2,1,1.93,quigioco,8,2026-11-16T22:18:06
-2026-11-20,Premier League,Rostov - Krylia Sovetov Samara,1x2,X,3.35,quigioco,8,2026-11-16T22:18:06
-2026-11-20,Premier League,Rostov - Krylia Sovetov Samara,1x2,2,3.9,goldbet,8,2026-11-16T22:18:06
-2026-11-21,Premier League,Orenburg - Fc Baltika Kaliningrad,1x2,1,2.82,quigioco,10,2026-11-16T22:18:06
-2026-11-21,Premier League,Orenburg - Fc Baltika Kaliningrad,1x2,X,3.1,quigioco,10,2026-11-16T22:18:06
-2026-11-21,Premier League,Orenburg - Fc Baltika Kaliningrad,1x2,2,2.5,goldbet,10,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Akron Tolyatti - Fakel Voronezh,1x2,1,2.03,quigioco,10,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Akron Tolyatti - Fakel Voronezh,1x2,X,3.25,eurobet,10,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Akron Tolyatti - Fakel Voronezh,1x2,2,3.6,fastbet,10,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Rubin Kazan - Zenit San Pietroburgo,1x2,1,5.75,goldbet,12,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Rubin Kazan - Zenit San Pietroburgo,1x2,X,3.9,eurobet,12,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Rubin Kazan - Zenit San Pietroburgo,1x2,2,1.55,quigioco,12,2026-11-16T22:18:06
-2026-11-21,Premier League,Bournemouth - Nottingham Forest,1x2,1,2.06,codere,39,2026-11-16T22:18:06
-2026-11-21,Premier League,Bournemouth - Nottingham Forest,1x2,X,3.6,stake,39,2026-11-16T22:18:06
-2026-11-21,Premier League,Bournemouth - Nottingham Forest,1x2,2,3.8,eurobet,39,2026-11-16T22:18:06
-2026-11-21,Premier League,Coventry City - Crystal Palace,1x2,1,2.42,codere,32,2026-11-16T22:18:06
-2026-11-21,Premier League,Coventry City - Crystal Palace,1x2,X,3.61,betpassion,32,2026-11-16T22:18:06
-2026-11-21,Premier League,Coventry City - Crystal Palace,1x2,2,2.85,888sport,32,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Spartak 1918 Varna - Cherno More,1x2,1,2.95,goldbet,15,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Spartak 1918 Varna - Cherno More,1x2,X,3.2,vincitu,15,2026-11-16T22:18:06
-2026-11-21,Premier League,Fk Spartak 1918 Varna - Cherno More,1x2,2,2.37,vincitu,15,2026-11-16T22:18:06
-2026-11-21,Premier League,Cska Mosca - Akhmat Grozny,1x2,1,1.74,quigioco,13,2026-11-16T22:18:06
-2026-11-21,Premier League,Cska Mosca - Akhmat Grozny,1x2,X,3.75,fastbet,13,2026-11-16T22:18:06
-2026-11-21,Premier League,Cska Mosca - Akhmat Grozny,1x2,2,4.25,betpassion,13,2026-11-16T22:18:06
-2026-11-22,Premier League,Dinamo Mosca - Krasnodar,1x2,1,2.06,quigioco,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Dinamo Mosca - Krasnodar,1x2,X,3.5,quigioco,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Dinamo Mosca - Krasnodar,1x2,2,3.25,quigioco,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Fc Dynamo-makhachkala - Spartak Mosca,1x2,1,6.0,goldbet,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Fc Dynamo-makhachkala - Spartak Mosca,1x2,X,4.25,goldbet,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Fc Dynamo-makhachkala - Spartak Mosca,1x2,2,1.5,quigioco,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Rodina Moscow - Lokomotiv Mosca,1x2,1,2.65,quigioco,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Rodina Moscow - Lokomotiv Mosca,1x2,X,3.45,quigioco,11,2026-11-16T22:18:06
-2026-11-22,Premier League,Rodina Moscow - Lokomotiv Mosca,1x2,2,2.43,quigioco,11,2026-11-16T22:18:06
-2026-11-17,Premier League,Waterhouse - Mount Pleasant,1x2,1,2.55,fastbet,2,2026-11-16T22:18:06
-2026-11-17,Premier League,Waterhouse - Mount Pleasant,1x2,X,3.0,fastbet,2,2026-11-16T22:18:06
-2026-11-17,Premier League,Waterhouse - Mount Pleasant,1x2,2,2.6,fastbet,2,2026-11-16T22:18:06
-2026-11-21,Premier League,Orenburg - Baltika Kaliningrad,1x2,1,3.55,vincitu,4,2026-11-16T22:18:06
-2026-11-21,Premier League,Orenburg - Baltika Kaliningrad,1x2,X,1.95,fastbet,4,2026-11-16T22:18:06
-2026-11-21,Premier League,Orenburg - Baltika Kaliningrad,1x2,2,3.2,fastbet,4,2026-11-16T22:18:06
-2026-11-21,Premier League,Chelsea - Leeds United,1x2,1,2.45,betflag,17,2026-11-16T22:18:06
-2026-11-21,Premier League,Chelsea - Leeds United,1x2,X,2.32,vincitu,17,2026-11-16T22:18:06
-2026-11-21,Premier League,Chelsea - Leeds United,1x2,2,4.35,vincitu,17,2026-11-16T22:18:06
-2026-11-21,Premier League,Tottenham Hotspur - Ipswich Town,1x2,1,1.53,bwin,2,2026-11-16T22:18:06
-2026-11-21,Premier League,Tottenham Hotspur - Ipswich Town,1x2,X,4.33,bwin,2,2026-11-16T22:18:06
-2026-11-21,Premier League,Tottenham Hotspur - Ipswich Town,1x2,2,5.25,bwin,2,2026-11-16T22:18:06
+2026-11-21,Süper Lig,Genclerbirligi SK - Gaziantep FK,2.5,O2.5,1.22,snai,26,2026-11-17T07:02:23
+2026-11-21,Süper Lig,Genclerbirligi SK - Gaziantep FK,2.5,U2.5,4.05,quigioco,26,2026-11-17T07:02:23
+2026-11-21,Süper Lig,Amedspor - Caykur Rizespor,2.5,O2.5,1.16,snai,4,2026-11-17T07:02:23
+2026-11-21,Süper Lig,Amedspor - Caykur Rizespor,2.5,U2.5,4.55,goldbet,4,2026-11-17T07:02:23
+2026-11-21,Süper Lig,Gençlerbirliği SK - Gaziantep B.B.,2.5,O2.5,1.77,leovegas,3,2026-11-17T07:02:23
+2026-11-21,Süper Lig,Gençlerbirliği SK - Gaziantep B.B.,2.5,U2.5,1.91,leovegas,3,2026-11-17T07:02:23
+2026-11-21,Süper Lig,Genclerbirligi SK - Gaziantep FK,gg,GG,1.6,snai,32,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi SK - Gaziantep FK,gg,NG,2.29,quigioco,32,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Amedspor - Caykur Rizespor,gg,GG,1.6,goldbet,6,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Amedspor - Caykur Rizespor,gg,NG,2.25,snai,6,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Gençlerbirliği SK - Gaziantep B.B.,gg,GG,3.85,leovegas,3,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Gençlerbirliği SK - Gaziantep B.B.,gg,NG,1.18,leovegas,3,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum FK,gg,GG,1.53,fastbet,13,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum FK,gg,NG,2.35,goldbet,13,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi - Gaziantep,gg,GG,3.7,fastbet,1,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi - Gaziantep,gg,NG,1.22,fastbet,1,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi - Gaziantep Bld Spor,gg,GG,1.58,winamax,1,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi - Gaziantep Bld Spor,gg,NG,2.2,winamax,1,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi SK - Gaziantep FK,1x2,1,2.33,fastbet,33,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi SK - Gaziantep FK,1x2,X,3.5,snai,33,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi SK - Gaziantep FK,1x2,2,2.92,bgame,33,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Amedspor - Caykur Rizespor,1x2,1,1.7,snai,7,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Amedspor - Caykur Rizespor,1x2,X,4.1,goldbet,7,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Amedspor - Caykur Rizespor,1x2,2,4.25,snai,7,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Gençlerbirliği SK - Gaziantep B.B.,1x2,1,2.14,888sport,3,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Gençlerbirliği SK - Gaziantep B.B.,1x2,X,3.25,888sport,3,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Gençlerbirliği SK - Gaziantep B.B.,1x2,2,2.95,888sport,3,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum FK,1x2,1,1.87,goldbet,14,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum FK,1x2,X,3.7,goldbet,14,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum FK,1x2,2,3.65,eplay24,14,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum Fk,1x2,1,2.18,gioca7,5,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum Fk,1x2,X,2.77,gioca7,5,2026-11-17T07:02:24
+2026-11-23,Süper Lig,Basaksehir - Corum Fk,1x2,2,3.55,gioca7,5,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi - Gaziantep Bld Spor,1x2,1,2.15,winamax,1,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi - Gaziantep Bld Spor,1x2,X,3.45,winamax,1,2026-11-17T07:02:24
+2026-11-21,Süper Lig,Genclerbirligi - Gaziantep Bld Spor,1x2,2,2.75,winamax,1,2026-11-17T07:02:24

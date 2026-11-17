@@ -1,6 +1,6 @@
 {
- "aggiornato": "2026-11-16T22:16:53",
- "pronostici_totali": 10,
+ "aggiornato": "2026-11-17T07:00:09",
+ "pronostici_totali": 34,
  "verificati": 10,
  "colti": 4,
  "acc_pct": 40.0,
@@ -25,5 +25,5 @@
    "prob_media": 58.2
   }
  ],
- "non_verificabili": 0
+ "non_verificabili": 24
 }
