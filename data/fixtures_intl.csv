@@ -76,8 +76,8 @@ Friendlies,FRD,0,2023-03-28 20:00,United Arab Emirates,Thailand,True,2,0
 Friendlies,FRD,0,2023-03-28 20:30,Jordan,Philippines,True,4,0
 Friendlies,FRD,0,2023-03-28 20:30,Bahrain,Syria,True,1,0
 Friendlies,FRD,0,2023-03-28 20:45,Germany,Belgium,True,2,3
-Friendlies,FRD,0,2023-03-28 21:00,Kuwait,Tajikistan,True,2,1
 Friendlies,FRD,0,2023-03-28 21:00,Saudi Arabia,Bolivia,True,1,2
+Friendlies,FRD,0,2023-03-28 21:00,Kuwait,Tajikistan,True,2,1
 Friendlies,FRD,0,2023-03-28 21:30,Morocco,Peru,True,0,0
 Friendlies,FRD,0,2023-03-29 01:30,Argentina,Curacao,True,7,0
 Friendlies,FRD,0,2023-03-31 13:45,Nepal,Laos,True,2,1
@@ -128,8 +128,8 @@ Friendlies,FRD,0,2023-06-17 02:30,Chile,Dominican Republic,True,5,0
 Friendlies,FRD,0,2023-06-17 14:00,Djibouti,Pakistan,True,3,1
 Friendlies,FRD,0,2023-06-17 21:30,Brazil,Guinea,True,4,1
 Friendlies,FRD,0,2023-06-18 01:30,Ecuador,Bolivia,True,1,0
-Friendlies,FRD,0,2023-06-18 13:30,Singapore,Solomon Islands,True,1,1
 Friendlies,FRD,0,2023-06-18 13:30,Mauritius,Kenya,True,1,0
+Friendlies,FRD,0,2023-06-18 13:30,Singapore,Solomon Islands,True,1,1
 Friendlies,FRD,0,2023-06-18 16:00,India,Lebanon,True,2,0
 Friendlies,FRD,0,2023-06-18 16:30,Paraguay,Nicaragua,True,2,0
 Friendlies,FRD,0,2023-06-18 19:00,Egypt,South Sudan,True,3,0
@@ -203,8 +203,8 @@ Friendlies,FRD,0,2023-09-12 18:30,South Korea,Saudi Arabia,True,1,0
 Friendlies,FRD,0,2023-09-12 19:00,Egypt,Tunisia,True,1,3
 Friendlies,FRD,0,2023-09-12 20:30,Morocco,Burkina Faso,True,1,0
 Friendlies,FRD,0,2023-09-12 20:45,Scotland,England,True,1,3
-Friendlies,FRD,0,2023-09-12 21:00,Senegal,Algeria,True,0,1
 Friendlies,FRD,0,2023-09-12 21:00,Germany,France,True,2,1
+Friendlies,FRD,0,2023-09-12 21:00,Senegal,Algeria,True,0,1
 Friendlies,FRD,0,2023-09-13 02:00,Mexico,Uzbekistan,True,3,3
 Friendlies,FRD,0,2023-09-13 02:30,USA,Oman,True,4,0
 Friendlies,FRD,0,2023-09-30 16:00,Botswana,Zimbabwe,True,1,1
@@ -213,12 +213,12 @@ Friendlies,FRD,0,2023-10-10 13:35,China,Vietnam,True,2,0
 Friendlies,FRD,0,2023-10-11 04:00,Solomon Islands,Vanuatu,True,1,0
 Friendlies,FRD,0,2023-10-11 07:00,New Caledonia,Papua New Guinea,True,3,1
 Friendlies,FRD,0,2023-10-11 20:45,Wales,Gibraltar,True,4,0
-Friendlies,FRD,0,2023-10-12 17:59,Bahrain,Kyrgyzstan,True,2,0
+Friendlies,FRD,0,2023-10-12 17:59,Egypt,Zambia,True,1,0
 Friendlies,FRD,0,2023-10-12 17:59,Montenegro,Lebanon,True,3,2
 Friendlies,FRD,0,2023-10-12 17:59,United Arab Emirates,Kuwait,True,1,0
 Friendlies,FRD,0,2023-10-12 17:59,Russia,Cameroon,True,1,0
 Friendlies,FRD,0,2023-10-12 17:59,Georgia,Thailand,True,8,0
-Friendlies,FRD,0,2023-10-12 17:59,Egypt,Zambia,True,1,0
+Friendlies,FRD,0,2023-10-12 17:59,Bahrain,Kyrgyzstan,True,2,0
 Friendlies,FRD,0,2023-10-12 19:00,Sweden,Moldova,True,3,1
 Friendlies,FRD,0,2023-10-12 21:00,Algeria,Cape Verde,True,5,1
 Friendlies,FRD,0,2023-10-13 10:30,Palestine,Tajikistan,True,0,0
@@ -231,8 +231,8 @@ Friendlies,FRD,0,2023-10-13 16:00,Angola,Mozambique,True,1,1
 Friendlies,FRD,0,2023-10-13 17:00,Iraq,Qatar,True,0,0
 Friendlies,FRD,0,2023-10-13 17:59,Saudi Arabia,Nigeria,True,2,2
 Friendlies,FRD,0,2023-10-13 17:59,South Africa,Eswatini,True,0,0
-Friendlies,FRD,0,2023-10-13 17:59,New Zealand,Democratic Rep Congo,True,1,1
 Friendlies,FRD,0,2023-10-13 17:59,Guinea,Guinea Bissau,True,1,0
+Friendlies,FRD,0,2023-10-13 17:59,New Zealand,Democratic Rep Congo,True,1,1
 Friendlies,FRD,0,2023-10-13 20:10,Jordan,Iran,True,1,3
 Friendlies,FRD,0,2023-10-13 20:45,England,Australia,True,1,0
 Friendlies,FRD,0,2023-10-13 21:00,Mali,Uganda,True,1,0
@@ -381,14 +381,14 @@ Friendlies,FRD,0,2024-03-22 18:00,Norway,Czech Republic,True,1,2
 Friendlies,FRD,0,2024-03-22 20:00,Bermuda,Brunei Darussalam,True,2,0
 Friendlies,FRD,0,2024-03-22 20:00,Equatorial Guinea,Cambodia,True,2,0
 Friendlies,FRD,0,2024-03-22 20:30,Senegal,Gabon,True,3,0
-Friendlies,FRD,0,2024-03-22 20:45,Romania,Northern Ireland,True,1,1
 Friendlies,FRD,0,2024-03-22 20:45,Hungary,Turkey,True,1,0
 Friendlies,FRD,0,2024-03-22 20:45,Albania,Chile,True,0,3
 Friendlies,FRD,0,2024-03-22 20:45,Netherlands,Scotland,True,4,0
+Friendlies,FRD,0,2024-03-22 20:45,Romania,Northern Ireland,True,1,1
 Friendlies,FRD,0,2024-03-22 21:00,Egypt,New Zealand,True,1,0
 Friendlies,FRD,0,2024-03-22 21:30,Spain,Colombia,True,0,1
-Friendlies,FRD,0,2024-03-22 22:00,Algeria,Bolivia,True,3,2
 Friendlies,FRD,0,2024-03-22 22:00,Comoros,Uganda,True,4,0
+Friendlies,FRD,0,2024-03-22 22:00,Algeria,Bolivia,True,3,2
 Friendlies,FRD,0,2024-03-22 23:00,Sudan,Guinea Bissau,True,1,0
 Friendlies,FRD,0,2024-03-22 23:00,Burkina Faso,Libya,True,1,2
 Friendlies,FRD,0,2024-03-22 23:00,Mali,Mauritania,True,2,0
@@ -435,25 +435,25 @@ Friendlies,FRD,0,2024-03-26 13:00,Malawi,Zambia,True,1,2
 Friendlies,FRD,0,2024-03-26 15:00,Cayman Islands,Moldova,True,0,4
 Friendlies,FRD,0,2024-03-26 16:00,Zimbabwe,Kenya,True,1,3
 Friendlies,FRD,0,2024-03-26 16:59,Uganda,Ghana,True,2,2
-Friendlies,FRD,0,2024-03-26 18:00,Finland,Estonia,True,2,1
 Friendlies,FRD,0,2024-03-26 18:00,Latvia,Liechtenstein,True,1,1
+Friendlies,FRD,0,2024-03-26 18:00,Finland,Estonia,True,2,1
 Friendlies,FRD,0,2024-03-26 19:00,Norway,Slovakia,True,1,1
-Friendlies,FRD,0,2024-03-26 19:00,Hungary,Kosovo,True,2,0
 Friendlies,FRD,0,2024-03-26 19:00,Malta,Belarus,True,0,0
-Friendlies,FRD,0,2024-03-26 20:00,Czech Republic,Armenia,True,2,1
+Friendlies,FRD,0,2024-03-26 19:00,Hungary,Kosovo,True,2,0
 Friendlies,FRD,0,2024-03-26 20:00,Vanuatu,Brunei Darussalam,True,2,3
 Friendlies,FRD,0,2024-03-26 20:00,Guyana,Cambodia,True,4,1
+Friendlies,FRD,0,2024-03-26 20:00,Czech Republic,Armenia,True,2,1
 Friendlies,FRD,0,2024-03-26 20:15,Denmark,Faroe Islands,True,2,0
 Friendlies,FRD,0,2024-03-26 20:30,Benin,Senegal,True,0,1
 Friendlies,FRD,0,2024-03-26 20:30,Uruguay,Ivory Coast,True,1,2
 Friendlies,FRD,0,2024-03-26 20:30,Colombia,Romania,True,3,2
 Friendlies,FRD,0,2024-03-26 20:45,Luxembourg,Kazakhstan,True,2,1
 Friendlies,FRD,0,2024-03-26 20:45,Scotland,Northern Ireland,True,0,1
-Friendlies,FRD,0,2024-03-26 20:45,England,Belgium,True,2,2
+Friendlies,FRD,0,2024-03-26 20:45,Ireland,Switzerland,True,0,1
 Friendlies,FRD,0,2024-03-26 20:45,Slovenia,Portugal,True,2,0
 Friendlies,FRD,0,2024-03-26 20:45,Germany,Netherlands,True,2,1
 Friendlies,FRD,0,2024-03-26 20:45,Austria,Turkey,True,6,1
-Friendlies,FRD,0,2024-03-26 20:45,Ireland,Switzerland,True,0,1
+Friendlies,FRD,0,2024-03-26 20:45,England,Belgium,True,2,2
 Friendlies,FRD,0,2024-03-26 21:00,New Zealand,Tunisia,True,0,0
 Friendlies,FRD,0,2024-03-26 21:00,Egypt,Croatia,True,2,4
 Friendlies,FRD,0,2024-03-26 21:00,France,Chile,True,3,2
@@ -463,8 +463,8 @@ Friendlies,FRD,0,2024-03-26 22:00,Nigeria,Mali,True,0,2
 Friendlies,FRD,0,2024-03-26 23:00,Burkina Faso,Niger,True,1,1
 Friendlies,FRD,0,2024-03-26 23:00,Morocco,Mauritania,True,0,0
 Friendlies,FRD,0,2024-03-26 23:00,Togo,Libya,True,1,1
-Friendlies,FRD,0,2024-03-27 02:00,Nicaragua,Cuba,True,0,1
 Friendlies,FRD,0,2024-03-27 02:00,El Salvador,Honduras,True,1,1
+Friendlies,FRD,0,2024-03-27 02:00,Nicaragua,Cuba,True,0,1
 Friendlies,FRD,0,2024-03-27 02:30,Peru,Dominican Republic,True,4,1
 Friendlies,FRD,0,2024-03-27 04:00,Argentina,Costa Rica,True,3,1
 Friendlies,FRD,0,2024-04-06 09:00,Northern Mariana Island,Guam Island,True,2,2
@@ -490,9 +490,9 @@ Friendlies,FRD,0,2024-06-04 17:59,Slovenia,Armenia,True,2,1
 Friendlies,FRD,0,2024-06-04 19:30,Bonaire,Sint Maarten,True,1,3
 Friendlies,FRD,0,2024-06-04 20:15,Switzerland,Estonia,True,4,0
 Friendlies,FRD,0,2024-06-04 20:30,Romania,Bulgaria,True,0,0
+Friendlies,FRD,0,2024-06-04 20:45,Austria,Serbia,True,2,1
 Friendlies,FRD,0,2024-06-04 20:45,Ireland,Hungary,True,2,1
 Friendlies,FRD,0,2024-06-04 20:45,Portugal,Finland,True,4,2
-Friendlies,FRD,0,2024-06-04 20:45,Austria,Serbia,True,2,1
 Friendlies,FRD,0,2024-06-04 21:00,Italy,Turkey,True,0,0
 Friendlies,FRD,0,2024-06-05 17:59,Slovakia,San Marino,True,4,0
 Friendlies,FRD,0,2024-06-05 19:00,Norway,Kosovo,True,3,0
@@ -516,19 +516,19 @@ Friendlies,FRD,0,2024-06-07 20:45,Scotland,Finland,True,2,2
 Friendlies,FRD,0,2024-06-08 02:30,Peru,Paraguay,True,0,0
 Friendlies,FRD,0,2024-06-08 14:15,Brunei Darussalam,Sri Lanka,True,1,0
 Friendlies,FRD,0,2024-06-08 15:00,Slovenia,Bulgaria,True,1,1
-Friendlies,FRD,0,2024-06-08 17:59,Switzerland,Austria,True,1,1
-Friendlies,FRD,0,2024-06-08 17:59,Hungary,Israel,True,3,0
 Friendlies,FRD,0,2024-06-08 17:59,Sweden,Serbia,True,0,3
+Friendlies,FRD,0,2024-06-08 17:59,Switzerland,Austria,True,1,1
 Friendlies,FRD,0,2024-06-08 17:59,Moldova,Cyprus,True,3,2
+Friendlies,FRD,0,2024-06-08 17:59,Hungary,Israel,True,3,0
 Friendlies,FRD,0,2024-06-08 18:45,Portugal,Croatia,True,1,2
 Friendlies,FRD,0,2024-06-08 19:30,Denmark,Norway,True,3,1
 Friendlies,FRD,0,2024-06-08 20:00,Belgium,Luxembourg,True,3,0
 Friendlies,FRD,0,2024-06-08 21:30,Spain,Northern Ireland,True,5,1
 Friendlies,FRD,0,2024-06-08 23:30,USA,Colombia,True,1,5
 Friendlies,FRD,0,2024-06-09 03:00,Mexico,Brazil,True,2,3
-Friendlies,FRD,0,2024-06-09 20:45,Montenegro,Georgia,True,1,3
 Friendlies,FRD,0,2024-06-09 20:45,Slovakia,Wales,True,4,0
 Friendlies,FRD,0,2024-06-09 20:45,Italy,Bosnia and Herzegovina,True,1,0
+Friendlies,FRD,0,2024-06-09 20:45,Montenegro,Georgia,True,1,3
 Friendlies,FRD,0,2024-06-09 21:15,France,Canada,True,0,0
 Friendlies,FRD,0,2024-06-10 01:00,Argentina,Ecuador,True,1,0
 Friendlies,FRD,0,2024-06-10 17:59,Czech Republic,North Macedonia,True,2,1
@@ -537,10 +537,10 @@ Friendlies,FRD,0,2024-06-10 20:45,Netherlands,Iceland,True,4,0
 Friendlies,FRD,0,2024-06-11 11:00,Mongolia,Cambodia,True,2,1
 Friendlies,FRD,0,2024-06-11 14:15,Brunei Darussalam,Sri Lanka,True,1,0
 Friendlies,FRD,0,2024-06-11 16:00,Azerbaijan,Kazakhstan,True,3,2
-Friendlies,FRD,0,2024-06-11 17:59,Malta,Greece,True,0,2
 Friendlies,FRD,0,2024-06-11 17:59,Belarus,Israel,True,0,4
 Friendlies,FRD,0,2024-06-11 17:59,Moldova,Ukraine,True,0,4
 Friendlies,FRD,0,2024-06-11 17:59,San Marino,Cyprus,True,1,4
+Friendlies,FRD,0,2024-06-11 17:59,Malta,Greece,True,0,2
 Friendlies,FRD,0,2024-06-11 20:45,Portugal,Ireland,True,3,0
 Friendlies,FRD,0,2024-06-11 20:45,Northern Ireland,Andorra,True,2,0
 Friendlies,FRD,0,2024-06-12 02:00,Chile,Paraguay,True,3,0
@@ -569,19 +569,19 @@ Nations League,UNL,0,2024-09-05 20:45,Serbia,Spain,True,0,0
 Nations League,UNL,0,2024-09-05 20:45,Denmark,Switzerland,True,2,0
 Nations League,UNL,0,2024-09-05 20:45,Northern Ireland,Luxembourg,True,2,0
 Nations League,UNL,0,2024-09-05 20:45,San Marino,Liechtenstein,True,1,0
-Nations League,UNL,0,2024-09-05 20:45,Estonia,Slovakia,True,0,1
 Nations League,UNL,0,2024-09-05 20:45,Belarus,Bulgaria,True,0,0
 Nations League,UNL,0,2024-09-05 20:45,Scotland,Poland,True,2,3
+Nations League,UNL,0,2024-09-05 20:45,Estonia,Slovakia,True,0,1
 Nations League,UNL,0,2024-09-05 20:45,Portugal,Croatia,True,2,1
 Friendlies,FRD,0,2024-09-06 16:00,Syria,Mauritius,True,2,0
 Nations League,UNL,0,2024-09-06 16:00,Kazakhstan,Norway,True,0,0
 Nations League,UNL,0,2024-09-06 18:00,Lithuania,Cyprus,True,0,1
-Nations League,UNL,0,2024-09-06 20:45,Iceland,Montenegro,True,2,0
+Nations League,UNL,0,2024-09-06 20:45,Wales,Turkey,True,0,0
 Nations League,UNL,0,2024-09-06 20:45,Slovenia,Austria,True,1,1
 Nations League,UNL,0,2024-09-06 20:45,France,Italy,True,1,3
 Nations League,UNL,0,2024-09-06 20:45,Belgium,Israel,True,3,1
 Nations League,UNL,0,2024-09-06 20:45,Kosovo,Romania,True,0,3
-Nations League,UNL,0,2024-09-06 20:45,Wales,Turkey,True,0,0
+Nations League,UNL,0,2024-09-06 20:45,Iceland,Montenegro,True,2,0
 Nations League,UNL,0,2024-09-07 15:00,Faroe Islands,North Macedonia,True,1,1
 Nations League,UNL,0,2024-09-07 18:00,Georgia,Czech Republic,True,4,1
 Nations League,UNL,0,2024-09-07 18:00,Moldova,Malta,True,2,0
@@ -638,27 +638,27 @@ Nations League,UNL,0,2024-10-10 20:45,Faroe Islands,Armenia,True,2,2
 Nations League,UNL,0,2024-10-10 20:45,Italy,Belgium,True,2,2
 Nations League,UNL,0,2024-10-10 20:45,Israel,France,True,1,4
 Nations League,UNL,0,2024-10-10 20:45,Gibraltar,San Marino,True,1,0
-Nations League,UNL,0,2024-10-10 20:45,England,Greece,True,1,2
 Nations League,UNL,0,2024-10-10 20:45,Finland,Ireland,True,1,2
+Nations League,UNL,0,2024-10-10 20:45,England,Greece,True,1,2
 Friendlies,FRD,0,2024-10-11 04:00,Tokyo Verdy,Singapore,True,1,2
 Friendlies,FRD,0,2024-10-11 14:00,Cambodia,Chinese Taipei,True,3,2
 Nations League,UNL,0,2024-10-11 18:00,Estonia,Azerbaijan,True,3,1
-Nations League,UNL,0,2024-10-11 20:45,Hungary,Netherlands,True,1,1
 Nations League,UNL,0,2024-10-11 20:45,Slovakia,Sweden,True,2,2
+Nations League,UNL,0,2024-10-11 20:45,Hungary,Netherlands,True,1,1
 Nations League,UNL,0,2024-10-11 20:45,Bosnia and Herzegovina,Germany,True,1,2
-Nations League,UNL,0,2024-10-11 20:45,Ukraine,Georgia,True,1,0
-Nations League,UNL,0,2024-10-11 20:45,Iceland,Wales,True,2,2
 Nations League,UNL,0,2024-10-11 20:45,Czech Republic,Albania,True,2,0
+Nations League,UNL,0,2024-10-11 20:45,Ukraine,Georgia,True,1,0
 Nations League,UNL,0,2024-10-11 20:45,Turkey,Montenegro,True,1,0
+Nations League,UNL,0,2024-10-11 20:45,Iceland,Wales,True,2,2
 Friendlies,FRD,0,2024-10-12 13:00,Vietnam,India,True,1,1
 Nations League,UNL,0,2024-10-12 15:00,Lithuania,Kosovo,True,1,2
 Nations League,UNL,0,2024-10-12 18:00,Bulgaria,Luxembourg,True,0,0
 Nations League,UNL,0,2024-10-12 18:00,Croatia,Scotland,True,2,1
-Nations League,UNL,0,2024-10-12 20:45,Spain,Denmark,True,1,0
 Nations League,UNL,0,2024-10-12 20:45,Serbia,Switzerland,True,2,0
 Nations League,UNL,0,2024-10-12 20:45,Belarus,Northern Ireland,True,0,0
 Nations League,UNL,0,2024-10-12 20:45,Cyprus,Romania,True,0,3
 Nations League,UNL,0,2024-10-12 20:45,Poland,Portugal,True,1,3
+Nations League,UNL,0,2024-10-12 20:45,Spain,Denmark,True,1,0
 Friendlies,FRD,0,2024-10-13 03:00,USA,Panama,True,2,0
 Friendlies,FRD,0,2024-10-13 04:00,Mexico,Valencia,True,2,2
 Friendlies,FRD,0,2024-10-13 11:30,Myanmar,Sri Lanka,True,0,0
@@ -733,21 +733,21 @@ Nations League,UNL,0,2024-11-16 20:45,Sweden,Slovakia,True,2,1
 Friendlies,FRD,0,2024-11-17 13:30,Thailand,Laos,True,1,1
 Nations League,UNL,0,2024-11-17 15:00,North Macedonia,Faroe Islands,True,1,0
 Nations League,UNL,0,2024-11-17 15:00,Latvia,Armenia,True,1,2
-Nations League,UNL,0,2024-11-17 18:00,Austria,Slovenia,True,1,1
+Nations League,UNL,0,2024-11-17 18:00,Norway,Kazakhstan,True,5,0
 Nations League,UNL,0,2024-11-17 18:00,Finland,Greece,True,0,2
 Nations League,UNL,0,2024-11-17 18:00,England,Ireland,True,5,0
-Nations League,UNL,0,2024-11-17 18:00,Norway,Kazakhstan,True,5,0
+Nations League,UNL,0,2024-11-17 18:00,Austria,Slovenia,True,1,1
 Nations League,UNL,0,2024-11-17 20:45,Italy,France,True,1,3
 Nations League,UNL,0,2024-11-17 20:45,Israel,Belgium,True,1,0
 Friendlies,FRD,0,2024-11-18 13:00,Singapore,Chinese Taipei,True,2,3
 Friendlies,FRD,0,2024-11-18 15:00,India,Malaysia,True,1,1
-Nations League,UNL,0,2024-11-18 20:45,Luxembourg,Northern Ireland,True,2,2
 Nations League,UNL,0,2024-11-18 20:45,Kosovo,Lithuania,True,1,0
 Nations League,UNL,0,2024-11-18 20:45,Liechtenstein,San Marino,True,1,3
 Nations League,UNL,0,2024-11-18 20:45,Bulgaria,Belarus,True,1,1
 Nations League,UNL,0,2024-11-18 20:45,Romania,Cyprus,True,4,1
 Nations League,UNL,0,2024-11-18 20:45,Poland,Scotland,True,1,2
 Nations League,UNL,0,2024-11-18 20:45,Croatia,Portugal,True,1,1
+Nations League,UNL,0,2024-11-18 20:45,Luxembourg,Northern Ireland,True,2,2
 Nations League,UNL,0,2024-11-18 20:45,Serbia,Denmark,True,0,0
 Nations League,UNL,0,2024-11-18 20:45,Spain,Switzerland,True,3,2
 Friendlies,FRD,0,2024-11-19 11:30,Myanmar,Lebanon,True,2,3
@@ -758,13 +758,13 @@ Friendlies,FRD,0,2024-11-19 17:30,Russia,Syria,True,4,0
 Friendlies,FRD,0,2024-11-19 18:00,Gibraltar,Moldova,True,1,1
 Nations League,UNL,0,2024-11-19 20:45,Wales,Iceland,True,4,1
 Nations League,UNL,0,2024-11-19 20:45,Montenegro,Turkey,True,3,1
-Nations League,UNL,0,2024-11-19 20:45,Czech Republic,Georgia,True,2,1
+Nations League,UNL,0,2024-11-19 20:45,Albania,Ukraine,True,1,2
 Nations League,UNL,0,2024-11-19 20:45,Hungary,Germany,True,1,1
 Nations League,UNL,0,2024-11-19 20:45,Bosnia and Herzegovina,Netherlands,True,1,1
 Nations League,UNL,0,2024-11-19 20:45,Sweden,Azerbaijan,True,6,0
 Nations League,UNL,0,2024-11-19 20:45,Malta,Andorra,True,0,0
 Nations League,UNL,0,2024-11-19 20:45,Slovakia,Estonia,True,1,0
-Nations League,UNL,0,2024-11-19 20:45,Albania,Ukraine,True,1,2
+Nations League,UNL,0,2024-11-19 20:45,Czech Republic,Georgia,True,2,1
 Friendlies,FRD,0,2024-11-29 06:00,Daegu FC,Vietnam,True,0,2
 Friendlies,FRD,0,2024-12-01 06:00,Jeonbuk Hyundai Motors,Vietnam,True,1,3
 Friendlies,FRD,0,2024-12-09 16:15,Kuwait,Yemen,True,1,1
@@ -823,14 +823,14 @@ Nations League,UNL,0,2025-03-20 18:00,Turkey,Hungary,True,3,1
 Friendlies,FRD,0,2025-03-20 19:00,Lebanon,Timor Leste,True,4,0
 Nations League,UNL,0,2025-03-20 20:45,Slovakia,Slovenia,True,0,0
 Nations League,UNL,0,2025-03-20 20:45,Kosovo,Iceland,True,2,1
-Nations League,UNL,0,2025-03-20 20:45,Greece,Scotland,True,0,1
-Nations League,UNL,0,2025-03-20 20:45,Ukraine,Belgium,True,3,1
+Nations League,UNL,0,2025-03-20 20:45,Bulgaria,Ireland,True,1,2
 Nations League,UNL,0,2025-03-20 20:45,Austria,Serbia,True,1,1
 Nations League,UNL,0,2025-03-20 20:45,Netherlands,Spain,True,2,2
 Nations League,UNL,0,2025-03-20 20:45,Italy,Germany,True,1,2
 Nations League,UNL,0,2025-03-20 20:45,Denmark,Portugal,True,1,0
 Nations League,UNL,0,2025-03-20 20:45,Croatia,France,True,2,0
-Nations League,UNL,0,2025-03-20 20:45,Bulgaria,Ireland,True,1,2
+Nations League,UNL,0,2025-03-20 20:45,Greece,Scotland,True,0,1
+Nations League,UNL,0,2025-03-20 20:45,Ukraine,Belgium,True,3,1
 Friendlies,FRD,0,2025-03-21 13:30,Singapore,Nepal,True,0,1
 Friendlies,FRD,0,2025-03-21 14:00,Thailand,Afghanistan,True,2,0
 WC Qual. UEFA,WCQ,0,2025-03-21 18:00,Cyprus,San Marino,True,2,0
@@ -846,16 +846,16 @@ Friendlies,FRD,0,2025-03-22 18:00,Luxembourg,Sweden,True,1,0
 WC Qual. UEFA,WCQ,0,2025-03-22 18:00,Montenegro,Gibraltar,True,3,1
 WC Qual. UEFA,WCQ,0,2025-03-22 18:00,Moldova,Norway,True,0,5
 Friendlies,FRD,0,2025-03-22 18:45,Azerbaijan,Haiti,True,0,3
-WC Qual. UEFA,WCQ,0,2025-03-22 20:45,Czech Republic,Faroe Islands,True,2,1
 WC Qual. UEFA,WCQ,0,2025-03-22 20:45,Wales,Kazakhstan,True,3,1
 WC Qual. UEFA,WCQ,0,2025-03-22 20:45,Israel,Estonia,True,2,1
+WC Qual. UEFA,WCQ,0,2025-03-22 20:45,Czech Republic,Faroe Islands,True,2,1
 Friendlies,FRD,0,2025-03-23 01:30,El Salvador,Pachuca,True,1,1
 Nations League,UNL,0,2025-03-23 15:00,Georgia,Armenia,True,6,1
-Nations League,UNL,0,2025-03-23 18:00,Serbia,Austria,True,2,0
+Nations League,UNL,0,2025-03-23 18:00,Scotland,Greece,True,0,3
 Nations League,UNL,0,2025-03-23 18:00,Slovenia,Slovakia,True,0,0
 Nations League,UNL,0,2025-03-23 18:00,Iceland,Kosovo,True,1,3
 Nations League,UNL,0,2025-03-23 18:00,Hungary,Turkey,True,0,3
-Nations League,UNL,0,2025-03-23 18:00,Scotland,Greece,True,0,3
+Nations League,UNL,0,2025-03-23 18:00,Serbia,Austria,True,2,0
 Nations League,UNL,0,2025-03-23 20:45,Ireland,Bulgaria,True,2,1
 Nations League,UNL,0,2025-03-23 20:45,Belgium,Ukraine,True,3,0
 Nations League,UNL,0,2025-03-23 20:45,France,Croatia,True,2,0
@@ -920,10 +920,10 @@ Friendlies,FRD,0,2025-06-05 19:30,Belarus,Kazakhstan,True,4,1
 Friendlies,FRD,0,2025-06-05 20:00,Democratic Rep Congo,Mali,True,1,0
 Nations League,UNL,0,2025-06-05 21:00,Spain,France,True,5,4
 Friendlies,FRD,0,2025-06-06 17:00,Equatorial Guinea,Gambia,True,1,2
-Friendlies,FRD,0,2025-06-06 18:00,Central African Republic,Mauritania,True,2,1
 Friendlies,FRD,0,2025-06-06 18:00,Bulgaria,Cyprus,True,2,2
 Friendlies,FRD,0,2025-06-06 18:00,Burkina Faso,Zimbabwe,True,2,0
 Friendlies,FRD,0,2025-06-06 18:00,Guinea Bissau,Burundi,True,0,1
+Friendlies,FRD,0,2025-06-06 18:00,Central African Republic,Mauritania,True,2,1
 Friendlies,FRD,0,2025-06-06 19:00,Kosovo,Armenia,True,5,2
 Friendlies,FRD,0,2025-06-06 19:00,Russia,Nigeria,True,1,1
 Friendlies,FRD,0,2025-06-06 19:00,Luxembourg,Slovenia,True,0,1
@@ -944,8 +944,8 @@ Friendlies,FRD,0,2025-06-06 22:00,Morocco,Tunisia,True,2,0
 Friendlies,FRD,0,2025-06-07 15:00,Latvia,Azerbaijan,True,0,0
 WC Qual. UEFA,WCQ,0,2025-06-07 15:00,Bosnia and Herzegovina,San Marino,True,1,0
 Friendlies,FRD,0,2025-06-07 17:00,Kenya,Chad,True,0,0
-WC Qual. UEFA,WCQ,0,2025-06-07 18:00,Malta,Lithuania,True,0,0
 WC Qual. UEFA,WCQ,0,2025-06-07 18:00,Andorra,England,True,0,1
+WC Qual. UEFA,WCQ,0,2025-06-07 18:00,Malta,Lithuania,True,0,0
 Friendlies,FRD,0,2025-06-07 19:00,Denmark,Northern Ireland,True,2,1
 Friendlies,FRD,0,2025-06-07 20:45,Greece,Slovakia,True,4,1
 WC Qual. UEFA,WCQ,0,2025-06-07 20:45,Finland,Netherlands,True,0,2
@@ -967,8 +967,8 @@ Friendlies,FRD,0,2025-06-09 20:00,Montenegro,Armenia,True,2,2
 WC Qual. UEFA,WCQ,0,2025-06-09 20:45,Croatia,Czech Republic,True,5,1
 WC Qual. UEFA,WCQ,0,2025-06-09 20:45,Italy,Moldova,True,2,0
 WC Qual. UEFA,WCQ,0,2025-06-09 20:45,Faroe Islands,Gibraltar,True,2,1
-WC Qual. UEFA,WCQ,0,2025-06-09 20:45,Estonia,Norway,True,0,1
 WC Qual. UEFA,WCQ,0,2025-06-09 20:45,Belgium,Wales,True,4,3
+WC Qual. UEFA,WCQ,0,2025-06-09 20:45,Estonia,Norway,True,0,1
 Friendlies,FRD,0,2025-06-09 21:00,Algeria,Rwanda,True,2,0
 Friendlies,FRD,0,2025-06-09 21:00,Gabon,Guinea Bissau,True,2,0
 Friendlies,FRD,0,2025-06-09 22:00,Equatorial Guinea,Cameroon,True,1,1
@@ -1242,9 +1242,9 @@ WC Qual. UEFA,WCQ,0,2025-11-15 18:00,Turkey,Bulgaria,True,2,0
 Friendlies,FRD,0,2025-11-15 20:30,Basque,Palestine,True,3,0
 WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Denmark,Belarus,True,2,2
 WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Bosnia and Herzegovina,Romania,True,3,1
+WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Greece,Scotland,True,3,2
 WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Slovenia,Kosovo,True,0,2
 WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Switzerland,Sweden,True,4,1
-WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Greece,Scotland,True,3,2
 Friendlies,FRD,0,2025-11-15 23:00,USA,Paraguay,True,2,1
 Friendlies,FRD,0,2025-11-16 01:30,Colombia,New Zealand,True,2,1
 Friendlies,FRD,0,2025-11-16 02:00,Mexico,Uruguay,True,0,0
@@ -1583,7 +1583,6 @@ Friendlies,FRD,0,2026-11-13 16:00,Iraq,Lebanon,True,0,0
 Friendlies,FRD,0,2026-11-13 17:30,Kuwait,Syria,True,3,0
 Nations League,UNL,0,2026-11-13 18:00,Moldova,Kazakhstan,True,2,1
 Nations League,UNL,0,2026-11-13 20:45,Andorra,Gibraltar,True,2,0
-Nations League,UNL,0,2026-11-13 20:45,Bulgaria,Iceland,True,0,5
 Nations League,UNL,0,2026-11-13 20:45,Liechtenstein,Azerbaijan,True,0,1
 Nations League,UNL,0,2026-11-13 20:45,Luxembourg,Estonia,True,0,1
 Nations League,UNL,0,2026-11-13 20:45,Netherlands,Greece,True,7,0
@@ -1591,10 +1590,11 @@ Nations League,UNL,0,2026-11-13 20:45,Scotland,North Macedonia,True,2,1
 Nations League,UNL,0,2026-11-13 20:45,Serbia,Germany,True,1,3
 Nations League,UNL,0,2026-11-13 20:45,Slovakia,Faroe Islands,True,2,2
 Nations League,UNL,0,2026-11-13 20:45,Slovenia,Switzerland,True,0,0
+Nations League,UNL,0,2026-11-13 20:45,Bulgaria,Iceland,True,0,5
 Friendlies,FRD,0,2026-11-13 21:00,Jordan,Indonesia,True,0,0
 Friendlies,FRD,0,2026-11-14 00:00,Argentina,Uruguay,True,1,2
-Friendlies,FRD,0,2026-11-14 01:00,Colombia,Chile,True,1,0
 Friendlies,FRD,0,2026-11-14 01:00,Ecuador,Costa Rica,True,2,0
+Friendlies,FRD,0,2026-11-14 01:00,Colombia,Chile,True,1,0
 Friendlies,FRD,0,2026-11-14 02:00,Peru,Bolivia,True,2,0
 Friendlies,FRD,0,2026-11-14 06:30,Tahiti,Cook Islands,True,4,0
 Friendlies,FRD,0,2026-11-14 07:00,Bahrain,Yemen,True,3,1
@@ -1603,10 +1603,10 @@ Friendlies,FRD,0,2026-11-14 13:00,Chinese Taipei,Kyrgyz Republic,True,0,3
 Friendlies,FRD,0,2026-11-14 13:00,China,Malaysia,True,2,0
 Nations League,UNL,0,2026-11-14 15:00,Kosovo,Israel,True,0,0
 Friendlies,FRD,0,2026-11-14 16:00,Palestine,Iran,True,0,2
-Nations League,UNL,0,2026-11-14 18:00,Georgia,Hungary,True,0,2
 Nations League,UNL,0,2026-11-14 18:00,Norway,Wales,True,3,1
-Nations League,UNL,0,2026-11-14 20:45,Sweden,Bosnia-Herzegovina,True,3,2
+Nations League,UNL,0,2026-11-14 18:00,Georgia,Hungary,True,0,2
 Nations League,UNL,0,2026-11-14 20:45,Romania,Poland,True,2,1
+Nations League,UNL,0,2026-11-14 20:45,Sweden,Bosnia-Herzegovina,True,3,2
 Nations League,UNL,0,2026-11-14 20:45,Portugal,Denmark,True,1,4
 Nations League,UNL,0,2026-11-14 20:45,Northern Ireland,Ukraine,True,1,0
 Nations League,UNL,0,2026-11-14 20:45,Austria,Republic of Ireland,True,1,0
@@ -1620,8 +1620,8 @@ Nations League,UNL,0,2026-11-15 20:45,Belgium,Italy,True,4,1
 Nations League,UNL,0,2026-11-15 20:45,Croatia,Czechia,True,2,1
 Nations League,UNL,0,2026-11-15 20:45,France,Türkiye,True,2,1
 Nations League,UNL,0,2026-11-15 20:45,Spain,England,True,2,3
-Nations League,UNL,0,2026-11-16 16:00,Faroe Islands,Moldova,True,1,0
 Nations League,UNL,0,2026-11-16 16:00,Kazakhstan,Slovakia,True,2,2
+Nations League,UNL,0,2026-11-16 16:00,Faroe Islands,Moldova,True,1,0
 Nations League,UNL,0,2026-11-16 18:00,Estonia,Bulgaria,True,2,1
 Nations League,UNL,0,2026-11-16 18:00,Iceland,Luxembourg,True,3,0
 Nations League,UNL,0,2026-11-16 18:00,Lithuania,Liechtenstein,True,2,1
@@ -1647,14 +1647,13 @@ Friendlies,FRD,0,2026-11-17 17:15,Iraq,Iran,True,1,1
 Friendlies,FRD,0,2026-11-17 17:30,Kuwait,Honduras,True,0,2
 Nations League,UNL,0,2026-11-17 20:45,Bosnia-Herzegovina,Romania,True,2,1
 Nations League,UNL,0,2026-11-17 20:45,Denmark,Norway,True,2,3
-Nations League,UNL,0,2026-11-17 20:45,Hungary,Northern Ireland,True,1,1
-Nations League,UNL,0,2026-11-17 20:45,Poland,Sweden,True,1,1
 Nations League,UNL,0,2026-11-17 20:45,Israel,Austria,True,1,1
-Nations League,UNL,0,2026-11-17 20:45,Wales,Portugal,True,2,3
+Nations League,UNL,0,2026-11-17 20:45,Hungary,Northern Ireland,True,1,1
 Nations League,UNL,0,2026-11-17 20:45,Ukraine,Georgia,True,1,0
+Nations League,UNL,0,2026-11-17 20:45,Wales,Portugal,True,2,3
 Nations League,UNL,0,2026-11-17 20:45,Republic of Ireland,Kosovo,True,3,0
-Friendlies,FRD,0,2026-11-18 00:00,Argentina,Costa Rica,True,7,0
+Nations League,UNL,0,2026-11-17 20:45,Poland,Sweden,True,1,1
 Friendlies,FRD,0,2026-11-18 00:00,Chile,Colombia,True,0,0
+Friendlies,FRD,0,2026-11-18 00:00,Argentina,Costa Rica,True,7,0
 Friendlies,FRD,0,2026-11-18 00:30,Uruguay,Dominican Republic,True,5,0
 Friendlies,FRD,0,2026-11-18 00:30,Ecuador,Bolivia,True,2,0
-Friendlies,FRD,0,2026-11-28 18:00,Spain,Chile,False,,

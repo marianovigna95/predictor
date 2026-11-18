@@ -1,5 +1,5 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-20,SINGOLA,Ligue 1,Troyes - Le Havre,GG,GG,63.9,1.7,8.63,0.0,,
+giocata,2026-11-20,SINGOLA,Ligue 2,Guingamp - Rodez,NG,NG,49.5,2.44,20.78,0.61,,
 giocata,2026-11-20,RADDOPPIO,Bundesliga 2 + Ligue 1,Troyes - Le Havre [GG GG] + Bielefeld - Magdeburg [NG NG],GG/NG,GG/NG,25.0,4.05,1.26,0.0,,
 giocata,2026-11-21,SINGOLA,LaLiga 2,Castellón - Eldense,O2.5,Over 2.5,48.6,2.55,23.93,1.21,,
 giocata,2026-11-21,RADDOPPIO,Bundesliga + Eredivisie,Elversberg - Freiburg [GG GG] + Telstar - Zwolle [GG GG],GG/GG,GG/GG,44.1,2.35,3.74,0.0,,
