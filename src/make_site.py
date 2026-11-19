@@ -10,7 +10,7 @@ Genera:
   site/report_giornataN.html — copia dei report esistenti
 Tutto self-contained (CSS inline, link relativi). Footer 18+/ADM/autoesclusione su ogni pagina.
 """
-import csv, glob, os, shutil, sys
+import csv, glob, json, os, shutil, sys
 
 DASH = "\u2014"
 from datetime import date, datetime
@@ -506,10 +506,43 @@ def build_index():
     if os.path.exists(fc_p):
         with open(fc_p) as f:
             frows = list(csv.DictReader(f))
-    riepilogo = (f"Scoreboard pubblico: {tot_m} partite analizzate, accuratezza 1X2 modello {acc:.1f}%, "
-                 f"RPS medio {rps_avg:.4f} — <a href='archivio.html'>archivio completo →</a>")
+    # 🆕 19/11 LA VETRINA DEVE DIRE IL PRESENTE, NON OTTOBRE.
+    #    Prima qui compariva solo lo scoreboard per giornata (fermo a 10 partite,
+    #    giornata 10) dentro una pagina datata "oggi". Ora la riga principale è il
+    #    bilancio VIVO del motore pronostici (data/bilancio_motore.json, aggiornato a
+    #    ogni run), e sotto si mostra anche il numero scomodo del backtest: il ROI.
+    #    Un sito che pubblica solo i numeri belli non è verificabile.
+    _bm, _bt = {}, {}
+    try:
+        with open(os.path.join(DATA, "bilancio_motore.json")) as _f:
+            _bm = json.load(_f)
+    except Exception:
+        _bm = {}
+    try:
+        with open(os.path.join(DATA, "bets_1x2_onesto_meta.json")) as _f:
+            _bt = json.load(_f)
+    except Exception:
+        _bt = {}
+    _parti = []
+    if _bm.get("verificati"):
+        _parti.append(
+            f"<b>Motore pronostici</b>: {_bm['verificati']} partite verificate, "
+            f"<b>{_bm.get('acc_pct')}%</b> azzeccate "
+            f"(dichiara {_bm.get('prob_media_pct')}%, scarto {_bm.get('scarto_pp'):+}pp) — "
+            f"<a href='pronostici.html'>tutti i pronostici →</a>")
+    if _bt.get("giocate") and _bt.get("roi_pct") is not None:
+        _roi = _bt["roi_pct"]
+        _parti.append(
+            f"<b>Backtest onesto</b>: {_bt['giocate']} giocate storiche, "
+            f"ROI <b>{_roi:+.1f}%</b> (il mercato puro fa −0,3%): "
+            f"il modello <b>non</b> batte il mercato — <a href='benchmark.html'>i numeri →</a>")
+    if _parti:
+        riepilogo = " · ".join(_parti)
+    else:
+        riepilogo = (f"Scoreboard pubblico: {tot_m} partite analizzate, accuratezza 1X2 modello {acc:.1f}%, "
+                     f"RPS medio {rps_avg:.4f} — <a href='archivio.html'>archivio completo →</a>")
     html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator){{navigator.serviceWorker.register("sw.js").catch(function(){{}})}}</script>
 <title>Predictor — giocate di oggi e pronostici</title>
 <style>{CSS}</style></head><body><div class="wrap">{NAV_HOME}
 <div class="quicklinks">
@@ -814,7 +847,7 @@ function exportArchivio(){{
 
 def build_metodo():
     html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator){{navigator.serviceWorker.register("sw.js").catch(function(){{}})}}</script>
 <title>Metodo &amp; trasparenza — Serie A Predictor</title>
 <style>{CSS}</style></head><body><div class="wrap">{NAV}
 <div class="card">
@@ -948,7 +981,7 @@ def build_glossario():
     reds = "".join(f"<li>{r}</li>" for r in RED_FLAGS)
     greens = "".join(f"<li>{g}</li>" for g in GREEN_FLAGS)
     html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator){{navigator.serviceWorker.register("sw.js").catch(function(){{}})}}</script>
 <title>Glossario — Serie A Predictor</title>
 <style>{CSS}</style></head><body><div class="wrap">{NAV}
 <div class="card">
@@ -1023,7 +1056,7 @@ def build_quote(bp):
                 f"<td data-label='Best quota'><b>{r['best_quota']}</b></td><td data-label='Bookmaker'>{r['bookmaker']}</td>"
                 f"<td data-label='Prob. implicita'>{pi}%</td><td data-label='Prob. fair'>{pf_txt}</td><td data-label='Prob. algo'>{aw}%</td><td data-label='Fonte' class='sub'>{r['fonte']}</td></tr>")
     html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator){{navigator.serviceWorker.register("sw.js").catch(function(){{}})}}</script>
 <title>Quote best-price Giornata {g} — Serie A Predictor</title>
 <style>{CSS}</style></head><body><div class="wrap">{NAV}
 <div class="card">
@@ -1166,7 +1199,7 @@ def build_giocata(g):
         dbl_html = ""
 
     html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator){{navigator.serviceWorker.register("sw.js").catch(function(){{}})}}</script>
 <title>Giocata del giorno — Giornata {g} — Serie A Predictor</title>
 <style>{CSS}</style></head><body><div class="wrap">{NAV}
 <div class="card">
@@ -1503,7 +1536,7 @@ def _desc(title, sub, maxlen=155):
 
 def page(title, h1, sub, body, active=""):
     return f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator){{navigator.serviceWorker.register("sw.js").catch(function(){{}})}}</script>
 <title>{title} — Serie A Predictor</title>
 <meta name="description" content="{_desc(title, sub)}">
 <meta property="og:title" content="{title} — Serie A Predictor">
@@ -1671,7 +1704,7 @@ RPS: 0 = perfetto, più basso è meglio. Le partite del 02/11 ancora in corso so
 </div>"""
         body += f'<div class="card"><h2>🏴 {l}</h2><div class="mc-grid">{cards}</div></div>'
     html = f"""<!DOCTYPE html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="manifest" href="manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="icon-192.png"><script>if("serviceWorker" in navigator){{navigator.serviceWorker.register("sw.js").catch(function(){{}})}}</script>
 <title>Report weekend multi-lega — Serie A Predictor</title>
 <style>{CSS}</style></head><body><div class="wrap">{NAV}
 <div class="card"><h1>📊 <span class="g">Report weekend</span> — Top 5 (31/10-02/11/2026)</h1>

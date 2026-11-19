@@ -946,6 +946,22 @@ def main():
             except Exception:
                 return 0.0
 
+    # 🆕 19/11 TETTO DI QUOTA sulle giocate 1X2 — derivato dai dati, non dal gusto.
+    #    Misurato sul backtest onesto (1.492 giocate, walk-forward):
+    #        quota 1.00-2.00 → 196 giocate, vinte 54,6%, ROI  -8,3%
+    #        quota 2.00-3.00 → 400 giocate, vinte 39,8%, ROI  -3,1%
+    #        quota 3.00-5.00 → 477 giocate, vinte 21,0%, ROI -18,4%
+    #        quota 5.00-10.0 → 367 giocate, vinte 10,4%, ROI -34,7%
+    #        quota 10.0+     →  52 giocate, vinte  5,8%, ROI -37,7%
+    #    Sopra 3.00 la perdita cresce in modo monotono: il pick cade dove il modello
+    #    si discosta di più dal mercato (gap medio +8,4pp), cioè dove sbaglia di più.
+    #    Quindi: non si compra più sopra 3.00. Non è un cambio di modello, è smettere
+    #    di usarlo dove abbiamo la prova che fa danni. Reversibile con QUOTA_MAX.
+    try:
+        QUOTA_MAX = float(os.environ.get("QUOTA_MAX", 3.00))
+    except Exception:
+        QUOTA_MAX = 3.00
+
     def build_pool(sub):
         pool = []
         for _, r in sub.iterrows():
@@ -971,6 +987,9 @@ def main():
                     p_leg_breve = (r.get("perche") or "")
                 else:
                     p_leg_breve = "💬 " + perche_mercato(mercato, str(esito), float(r.get("xg_h") or 1.3), float(r.get("xg_a") or 1.3), q=q_leg, p=p_leg)
+                # 🆕 19/11 tetto di quota (vedi commento sopra build_pool)
+                if QUOTA_MAX and q_leg > QUOTA_MAX:
+                    continue
                 if ev > 50:  # 🚨 quota anomala (es. 10.60 su un favorito): EV irrealistico → fuori dal pool
                     print(f"     🚨 quota anomala ignorata: {r['partita']} {mercato} {esito} @ {q_leg} (EV {ev:+.0f}%)")
                     continue

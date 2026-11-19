@@ -41,6 +41,55 @@ def build_desc(s):
     return title, desc
 
 
+# 🆕 19/11 TABBAR UNIVERSALE — riparazione automatica della navigazione.
+#    Misurato il 19/11 sulle 24 pagine pubblicate: 6 non avevano la tabbar in basso
+#    (bankroll, schedina, squadra, verifica, apri-sito, report_giornataNN) → da quelle
+#    pagine non si poteva tornare al sito se non col tasto indietro del browser.
+#    Invece di rattoppare i singoli generatori (fragile: la prossima pagina nuova
+#    avrebbe lo stesso difetto), si interviene QUI, che gira su TUTTE le pagine
+#    come ultimo passo della pipeline. Idempotente: chi ha già una tabbar non viene
+#    toccato.
+_TAB_LINKS = [
+    ("index.html", "⌂", "HOME"),
+    ("pronostici.html", "🎯", "PRONOSTICI"),
+    ("giocata_multi.html", "💎", "GIOCATE"),
+    ("ppa.html", "⚡", "PPA"),
+    ("archivio.html", "🗂", "ARCHIVIO"),
+]
+_TAB_CSS = ("<style>.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:#0b0f14;"
+            "border-top:1px solid #242c37;display:flex;overflow-x:auto}"
+            ".tabbar a{flex:1;text-align:center;padding:10px 4px;color:#8b96a5;font-size:12px;"
+            "font-weight:600;border-right:1px solid #242c37;text-decoration:none}"
+            ".tabbar a:last-child{border-right:none}"
+            "html[data-theme=light] .tabbar{background:#f4f6f9;border-top-color:#d8dee6}"
+            "html[data-theme=light] .tabbar a{color:#5c6878;border-right-color:#d8dee6}"
+            "body{padding-bottom:96px!important}</style>")
+
+
+def ensure_tabbar(path):
+    """Aggiunge la tabbar alla pagina se manca. Ritorna True se ha modificato il file."""
+    try:
+        s = open(path, encoding="utf-8").read()
+    except Exception:
+        return False
+    if 'class="tabbar"' in s:
+        return False
+    if "</body>" not in s:
+        return False
+    cur = os.path.basename(path)
+    links = "".join(
+        f'<a href="{h}"{" class=\"on\"" if h == cur else ""}><span>{ic}</span>{lb}</a>'
+        for h, ic, lb in _TAB_LINKS)
+    bar = f'<div class="tabbar">{links}</div>'
+    s = s.replace("</head>", _TAB_CSS + "</head>", 1) if "</head>" in s else s
+    s = s.replace("</body>", bar + "</body>", 1)
+    try:
+        open(path, "w", encoding="utf-8").write(s)
+        return True
+    except Exception:
+        return False
+
+
 def main():
     n = 0
     for p in sorted(glob.glob(os.path.join(SITE, "*.html"))):
@@ -66,6 +115,21 @@ def main():
         n += 1
         print(f"  ✅ {os.path.basename(p)}: {desc[:70]}…")
     print(f"🔎 meta aggiunte a {n} pagine")
+    # 🆕 19/11 tabbar su ogni pagina che ne è priva (vedi ensure_tabbar)
+    #    ⚠️ Si guardano DUE cartelle: site/ (pagine di make_site) e ROOT (pagine scritte
+    #    direttamente lì da step19_diretta, step25_verifica_mensile, step27_schedina,
+    #    step28_bankroll, step29_squadra). Il primo tentativo guardava solo site/ e
+    #    4 pagine su 22 restavano senza navigazione: misurato, non supposto.
+    nav = 0
+    for p in sorted(set(glob.glob(os.path.join(SITE, "*.html")) +
+                        glob.glob(os.path.join(ROOT, "*.html")))):
+        if ensure_tabbar(p):
+            nav += 1
+            print(f"  🧭 tabbar aggiunta: {os.path.basename(p)}")
+    if nav:
+        print(f"🧭 navigazione riparata su {nav} pagine")
+    else:
+        print("🧭 navigazione: tutte le pagine hanno già la tabbar")
 
 
 
