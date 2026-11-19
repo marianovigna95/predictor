@@ -73,6 +73,8 @@ def main():
                     help="eta' massima accettabile dei file critici (default 30h)")
     ap.add_argument("--no-clean", action="store_true",
                     help="non eliminare i file da 1 byte (solo segnalarli)")
+    ap.add_argument("--max-fermo", type=int, default=3,
+                    help="dopo quante run con forecast identico avvisare (default 3)")
     a = ap.parse_args()
 
     errori, avvisi = [], []
@@ -155,6 +157,42 @@ def main():
         except Exception as e:
             avvisi.append(f"bilancio_motore.json illeggibile: {e}")
             print(f"   ⚠️  bilancio_motore.json illeggibile ({type(e).__name__})")
+
+    # ---- 5. FORECAST FERMO: il file è fresco ma il contenuto non cambia ----
+    #    🆕 19/11 un file riscritto identico ogni run è "fresco" per il controllo
+    #    sull'età, ma il sito mostra le stesse partite da giorni. Qui si guarda una
+    #    IMPRONTA del contenuto: se non cambia per N run consecutive, si avvisa.
+    #    Non fa fallire la run: a fine finestra (es. pausa nazionali) è normale.
+    impronta_p = os.path.join(DATA, "forecast_impronta.json")
+    fp = os.path.join(DATA, "forecast_multi.csv")
+    if os.path.exists(fp):
+        try:
+            import hashlib
+            with open(fp, "rb") as f:
+                h = hashlib.md5(f.read()).hexdigest()[:12]
+            st = {"impronta": h, "invariata_da": 0}
+            if os.path.exists(impronta_p):
+                try:
+                    with open(impronta_p) as f:
+                        st = json.load(f)
+                except Exception:
+                    pass
+            if st.get("impronta") == h:
+                st["invariata_da"] = int(st.get("invariata_da", 0)) + 1
+            else:
+                st = {"impronta": h, "invariata_da": 1}
+            with open(impronta_p, "w") as f:
+                json.dump(st, f)
+            n_inv = st["invariata_da"]
+            if n_inv >= a.max_fermo:
+                avvisi.append(f"forecast invariato da {n_inv} run consecutive")
+                print(f"   ⚠️  forecast_multi.csv: contenuto INVARIATO da {n_inv} run")
+                print(f"      (non bloccante: può essere la pausa del campionato, "
+                      f"ma se dura giorni è un sintomo)")
+            else:
+                print(f"   ✅ forecast_multi.csv: contenuto aggiornato (invariato da {n_inv} run)")
+        except Exception as e:
+            print(f"   ⚠️  impronta forecast non calcolata ({type(e).__name__})")
 
     # ---- verdetto ----
     print()

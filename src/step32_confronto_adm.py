@@ -221,9 +221,69 @@ def main():
 
     if not righe:
         _salva_storico([])
-        print(f"ℹ️ nessuna corrispondenza ({senza} giocate fuori copertura ADM oggi)")
+        # 🆕 19/11 DIAGNOSI, NON SILENZIO.
+        #    Il meta diceva solo "nessuna_corrispondenza" e restava cosi' per giorni.
+        #    MISURATO il 19/11: 0 confronti per 3 giorni di fila, con 87 richieste ADM
+        #    su 480 spese — quindi non era un problema di budget.
+        #    Causa vera: le quote ADM disponibili erano TUTTE sulla stessa data
+        #    (26/11, Conference League) mentre le giocate erano su altre date.
+        #    Due insiemi che non si sovrappongono non si incontrano mai, e nessun
+        #    aumento di richieste lo risolve.
+        #    Ora il file dice PERCHE': date delle giocate, date delle quote ADM,
+        #    e se il problema e' di date, di mercati o di nomi.
+        diag = {}
+        try:
+            # `g` = giocate (DataFrame), `a` = quote ADM (DataFrame): sono già in scope qui
+            _gio_date = sorted({str(x)[:10] for x in g.get("data", []) if str(x) not in ("", "nan")})
+            _adm_date = sorted({str(x)[:10] for x in a.get("data", []) if str(x) not in ("", "nan")})
+            _gio_merc = sorted({str(x).lower() for x in g.get("mercato", []) if str(x) not in ("", "nan")})
+            _adm_merc = sorted({str(x).lower() for x in a.get("mercato", []) if str(x) not in ("", "nan")})
+            diag["date_giocate"] = _gio_date
+            diag["date_quote_adm"] = _adm_date
+            diag["date_in_comune"] = [d for d in _gio_date if d in _adm_date]
+            diag["mercati_giocate"] = _gio_merc
+            diag["mercati_adm"] = _adm_merc
+            diag["leghe_adm"] = sorted({str(x) for x in a.get("lega", []) if str(x) not in ("", "nan")})
+            # 🆕 19/11 la diagnosi deve distinguere "poche date in comune" da
+            #    "date in comune ma niente da confrontare". Il primo tentativo diceva
+            #    "nomi squadre" mentre la causa vera era che le quote ADM coprivano
+            #    UNA SOLA data (26/11) e le giocate su quella data erano quasi tutte
+            #    RADDOPPI (esclusi per definizione). Corretto dopo averlo verificato.
+            _n_com = len(diag["date_in_comune"])
+            _n_gio_tot = len(_gio_date)
+            # quante giocate SINGOLA cadono in una data coperta dalle quote ADM
+            _comuni = set(diag["date_in_comune"])
+            _gio_su_comuni = int(g["data"].astype(str).str[:10].isin(_comuni).sum())
+            diag["giocate_su_date_coperte"] = _gio_su_comuni
+            if _n_gio_tot and _n_com <= max(1, _n_gio_tot // 4):
+                diag["causa_probabile"] = (
+                    f"COPERTURA TROPPO STRETTA: le quote ADM coprono solo {_n_com} data/e "
+                    f"({', '.join(diag['date_quote_adm'])}) su {_n_gio_tot} date di giocate. "
+                    "Il confronto puo' avvenire solo nei giorni in cui l'API restituisce "
+                    "quote delle nostre leghe. Aumentare le richieste non serve: serve che "
+                    "le leghe ruotate abbiano partite nelle date coperte.")
+            elif _gio_su_comuni == 0:
+                diag["causa_probabile"] = (
+                    "NESSUNA GIOCATA SINGOLA nelle date coperte dalle quote ADM "
+                    "(i raddoppi sono esclusi per definizione: non hanno una quota "
+                    "ADM equivalente).")
+            elif not set(_gio_merc) & set(_adm_merc):
+                diag["causa_probabile"] = "MERCATI DISALLINEATI: date comuni ma mercati diversi."
+            else:
+                diag["causa_probabile"] = (
+                    "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, "
+                    "ma nessuna partita agganciata → probabile differenza di "
+                    "denominazione squadre.")
+        except Exception as _e:
+            diag["errore_diagnosi"] = str(_e)
+        print(f"ℹ️ nessuna corrispondenza ({senza} giocate fuori copertura ADM)")
+        if diag.get("causa_probabile"):
+            print(f"   🔎 {diag['causa_probabile']}")
+            print(f"      date giocate: {diag.get('date_giocate')}")
+            print(f"      date quote ADM: {diag.get('date_quote_adm')}")
         (DATA / "confronto_adm_meta.json").write_text(json.dumps(
-            {**meta, "stato": "nessuna_corrispondenza", "giocate_non_coperte": senza}, indent=1))
+            {**meta, "stato": "nessuna_corrispondenza", "giocate_non_coperte": senza,
+             "diagnosi": diag}, indent=1, ensure_ascii=False))
         return 0
 
     df = pd.DataFrame(righe).sort_values("delta_pct", ascending=False)

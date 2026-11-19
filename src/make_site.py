@@ -583,6 +583,12 @@ def build_index():
   <p class="sub">Analisi statistiche calcio 2026/27 (16 leghe: Top 5 + 8 extra + coppe UEFA). Ogni pronostico è una <b>stima con incertezza</b>, mai una certezza.</p>
   <p class="sub">{riepilogo}</p>
   <p class="sub" style="margin-top:2px">🕒 Ultimo aggiornamento dati: <b>{_agg}</b>{' <span style="color:#f59e0b;font-weight:700">· ⚠️ dati non recenti</span>' if _vecchio else ''}</p>
+  <p class="sub" style="margin-top:8px;border-left:3px solid #38bdf8;padding-left:10px">
+  <b>Due cose diverse, due numeri diversi.</b> Il <b>motore pronostici</b> indica l'esito più probabile
+  di ogni partita: azzecca circa 6 volte su 10. Le <b>giocate</b> invece puntano sugli esiti in cui il
+  modello si discosta dal mercato, ed è lì che perde. Le due pagine rispondono a due domande diverse:
+  <a href="pronostici.html">Pronostici</a> = «qual è l'esito più probabile» ·
+  <a href="giocata_multi.html">Giocate</a> = «dove c'è valore secondo il modello».</p>
   <p style="margin-top:10px"><a href="diretta.html" style="display:inline-block;background:#dc2626;color:#fff;font-weight:800;font-size:17px;padding:12px 26px;border-radius:12px;text-decoration:none;box-shadow:0 6px 18px rgba(220,38,38,.5)">🔴 VAI ALLA DIRETTA (score live)</a></p>
   <div class="warn" style="margin-top:10px">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente ·
   Autoesclusione <b>autoesclusione.it</b> · 800 558822 · Sito solo informativo: non raccogliamo scommesse né gestiamo denaro.</div>
