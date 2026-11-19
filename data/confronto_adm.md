@@ -1,10 +1,10 @@
 # Confronto interno quota best-price vs quota ADM
 
-_Aggiornato: 2026-11-18T18:32:57 — uso interno, non pubblicato_
+_Aggiornato: 2026-11-19T07:13:22 — uso interno, non pubblicato_
 
-- giocate confrontate in questa run: **1** (fuori copertura ADM: 5)
-- **campione accumulato: 5 confronti** · delta medio +12.95% · mediana +0.00% · ok 4 / edge perso 1
-- delta medio: **+116.87%** (min +116.87%, max +116.87%)
+- giocate confrontate in questa run: **1** (fuori copertura ADM: 6)
+- **campione accumulato: 6 confronti** · delta medio +10.84% · mediana +0.15% · ok 5 / edge perso 1
+- delta medio: **+0.30%** (min +0.30%, max +0.30%)
 - tenuta: **1 OK** · 0 al limite · 0 con edge perso
 - EV ancora positivo con la quota ADM: **1/1**
 
@@ -12,4 +12,4 @@ _Aggiornato: 2026-11-18T18:32:57 — uso interno, non pubblicato_
 
 | Data | Partita | Mercato | best | ADM | delta | EV best | EV ADM | esito |
 |---|---|---|---|---|---|---|---|---|
-| 2026-11-22 | Marseille - Le Mans | GG | 1.66 | 3.6 | +116.87% | 16.03% | 151.64% | ok |
+| 2026-11-20 | Darmstadt - Heidenheim | 1X2 | 3.32 | 3.33 | +0.30% | 29.81% | 30.2% | ok |
