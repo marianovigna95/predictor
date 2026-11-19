@@ -1,5 +1,38 @@
 {
- "aggiornato": "2026-11-19T18:33:48",
+ "aggiornato": "2026-11-19T22:16:55",
  "stato": "nessuna_corrispondenza",
- "giocate_non_coperte": 7
+ "giocate_non_coperte": 7,
+ "diagnosi": {
+  "date_giocate": [
+   "2026-11-20",
+   "2026-11-21",
+   "2026-11-22",
+   "2026-11-23",
+   "2026-11-24",
+   "2026-11-25",
+   "2026-11-26"
+  ],
+  "date_quote_adm": [
+   "2026-11-27",
+   "2026-11-28",
+   "2026-11-29",
+   "2026-11-30"
+  ],
+  "date_in_comune": [],
+  "mercati_giocate": [
+   "1x2",
+   "gg",
+   "o2.5"
+  ],
+  "mercati_adm": [
+   "1x2",
+   "2.5",
+   "gg"
+  ],
+  "leghe_adm": [
+   "Primeira Liga"
+  ],
+  "giocate_su_date_coperte": 0,
+  "causa_probabile": "COPERTURA TROPPO STRETTA: le quote ADM coprono solo 0 data/e (2026-11-27, 2026-11-28, 2026-11-29, 2026-11-30) su 7 date di giocate. Il confronto puo' avvenire solo nei giorni in cui l'API restituisce quote delle nostre leghe. Aumentare le richieste non serve: serve che le leghe ruotate abbiano partite nelle date coperte."
+ }
 }

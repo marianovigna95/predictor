@@ -1,205 +1,66 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-26,Conference League,Kairat Almaty - Mjallby,gg,GG,1.73,vincitu,34,2026-11-19T18:33:44
-2026-11-26,Conference League,Kairat Almaty - Mjallby,gg,NG,2.05,eurobet,34,2026-11-19T18:33:44
-2026-11-26,Conference League,Ajax - Thun,gg,GG,1.82,leovegas,36,2026-11-19T18:33:44
-2026-11-26,Conference League,Ajax - Thun,gg,NG,2.1,goldbet,36,2026-11-19T18:33:44
-2026-11-26,Conference League,Brann - Aarhus,gg,GG,1.49,giocodigitale,33,2026-11-19T18:33:44
-2026-11-26,Conference League,Brann - Aarhus,gg,NG,2.55,betpassion,33,2026-11-19T18:33:44
-2026-11-26,Conference League,Brighton - Cs Universitatea Craiova Ii,gg,GG,2.05,eurobet,1,2026-11-19T18:33:44
-2026-11-26,Conference League,Brighton - Cs Universitatea Craiova Ii,gg,NG,1.65,eurobet,1,2026-11-19T18:33:44
-2026-11-26,Conference League,Egnatia Rrogozhine - Lincoln Red Imps,gg,GG,1.82,winamax,33,2026-11-19T18:33:44
-2026-11-26,Conference League,Egnatia Rrogozhine - Lincoln Red Imps,gg,NG,2.05,betpassion,33,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Fk Jablonec - Lugano,gg,GG,1.58,goldbet,37,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Fk Jablonec - Lugano,gg,NG,2.3,eurobet,37,2026-11-19T18:33:44
-2026-11-26,Conference League,Fk Kauno Zalgiris - Riga,gg,GG,1.74,winamax,39,2026-11-19T18:33:44
-2026-11-26,Conference League,Fk Kauno Zalgiris - Riga,gg,NG,2.1,eurobet,39,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Heart Of Midlothian Fc - Monaco,gg,GG,1.6,goldbet,35,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Heart Of Midlothian Fc - Monaco,gg,NG,2.4,betpassion,35,2026-11-19T18:33:44
-2026-11-26,Conference League,Iberia - Getafe,gg,GG,2.15,goldbet,31,2026-11-19T18:33:44
-2026-11-26,Conference League,Iberia - Getafe,gg,NG,1.68,eurobet,31,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Pafos - Midtjylland,gg,GG,1.53,stake,39,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Pafos - Midtjylland,gg,NG,2.6,eurobet,39,2026-11-19T18:33:44
-2026-11-26,Conference League,Borac Banja Luka - Atalanta,gg,GG,1.63,vincitu,38,2026-11-19T18:33:44
-2026-11-26,Conference League,Borac Banja Luka - Atalanta,gg,NG,2.23,betpassion,38,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Cska Sofia - Trabzonspor,gg,GG,1.59,vincitu,39,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Cska Sofia - Trabzonspor,gg,NG,2.25,eurobet,39,2026-11-19T18:33:44
-2026-11-26,Conference League,Friburgo - Twente,gg,GG,1.47,leovegas,36,2026-11-19T18:33:44
-2026-11-26,Conference League,Friburgo - Twente,gg,NG,2.68,betpassion,36,2026-11-19T18:33:44
-2026-11-26,Conference League,Gent - Stella Rossa,gg,GG,1.65,goldbet,28,2026-11-19T18:33:44
-2026-11-26,Conference League,Gent - Stella Rossa,gg,NG,2.15,eurobet,28,2026-11-19T18:33:44
-2026-11-26,Conference League,Hajduk Spalato - St. Truidense Vv,gg,GG,1.64,vincitu,28,2026-11-19T18:33:44
-2026-11-26,Conference League,Hajduk Spalato - St. Truidense Vv,gg,NG,2.2,eurobet,28,2026-11-19T18:33:44
-2026-11-26,Conference League,Inter Club De Escaldes - Copenaghen,gg,GG,1.96,vincitu,21,2026-11-19T18:33:44
-2026-11-26,Conference League,Inter Club De Escaldes - Copenaghen,gg,NG,1.78,quigioco,21,2026-11-19T18:33:44
-2026-11-26,Conference League,Sporting Braga - Kuopion Palloseura,gg,GG,2.08,vincitu,28,2026-11-19T18:33:44
-2026-11-26,Conference League,Sporting Braga - Kuopion Palloseura,gg,NG,1.73,eurobet,28,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Kairat Almaty - Mjällby AIF,gg,GG,4.1,leovegas,2,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Kairat Almaty - Mjällby AIF,gg,NG,1.14,leovegas,2,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Pafos FC - FC Midtjylland,gg,GG,3.4,stake,3,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Pafos FC - FC Midtjylland,gg,NG,1.27,stake,3,2026-11-19T18:33:44
-2026-11-26,Conference League,FK Kauno Zalgiris - Riga FC,gg,GG,4.2,stake,3,2026-11-19T18:33:44
-2026-11-26,Conference League,FK Kauno Zalgiris - Riga FC,gg,NG,1.18,stake,3,2026-11-19T18:33:44
-2026-11-26,Conference League,FK Baumit Jablonec - Lugano,gg,GG,3.85,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,FK Baumit Jablonec - Lugano,gg,NG,1.17,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,FK Egnatia - Lincoln Red IMPS FC,gg,GG,4.1,leovegas,3,2026-11-19T18:33:44
-2026-11-26,Conference League,FK Egnatia - Lincoln Red IMPS FC,gg,NG,1.2,stake,3,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Brann - AGF Aarhus,gg,GG,3.35,leovegas,3,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Brann - AGF Aarhus,gg,NG,1.29,stake,3,2026-11-19T18:33:44
-2026-11-26,Conference League,Brighton - Universitatea Craiova,gg,GG,2.15,goldbet,25,2026-11-19T18:33:44
-2026-11-26,Conference League,Brighton - Universitatea Craiova,gg,NG,1.79,leovegas,25,2026-11-19T18:33:44
-2026-11-26,Conference League,Iberia 1999 - Getafe,gg,GG,2.18,leovegas,8,2026-11-19T18:33:44
-2026-11-26,Conference League,Iberia 1999 - Getafe,gg,NG,1.69,stake,8,2026-11-19T18:33:44
-2026-11-26,Conference League,Hearts - AS Monaco,gg,GG,3.4,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,Hearts - AS Monaco,gg,NG,1.22,leovegas,2,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,CSKA Sofia - Trabzonspor,gg,GG,3.55,leovegas,2,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,CSKA Sofia - Trabzonspor,gg,NG,1.2,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,FC Nordsjælland - Panathinaikos,gg,GG,3.8,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,FC Nordsjælland - Panathinaikos,gg,NG,1.17,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,Hajduk Split - Sint-Truiden,gg,GG,1.65,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,Hajduk Split - Sint-Truiden,gg,NG,2.07,leovegas,2,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Inter Club d'Escaldes - FC Copenhagen,gg,GG,4.5,leovegas,2,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Inter Club d'Escaldes - FC Copenhagen,gg,NG,1.11,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,KAA Gent - Crvena Zvezda,gg,GG,3.85,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,KAA Gent - Crvena Zvezda,gg,NG,1.17,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,S.C. Braga - KuPS,gg,GG,2.12,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,S.C. Braga - KuPS,gg,NG,1.62,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,SC Friburgo - FC Twente,gg,GG,3.35,leovegas,2,2026-11-19T18:33:44
-2026-11-26,Conference League,SC Friburgo - FC Twente,gg,NG,1.22,leovegas,2,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Nordsjaelland - Panathinaikos,gg,GG,1.56,vincitu,27,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Nordsjaelland - Panathinaikos,gg,NG,2.3,goldbet,27,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Ajax Amsterdam - Thun,gg,GG,1.68,giocodigitale,3,2026-11-19T18:33:44
-2026-11-26,UEFA Conference League,Ajax Amsterdam - Thun,gg,NG,2.12,quigioco,3,2026-11-19T18:33:44
-2026-11-26,Conference League,Brighton - CS Universitatea Craiova,gg,GG,2.1,giocodigitale,3,2026-11-19T18:33:44
-2026-11-26,Conference League,Brighton - CS Universitatea Craiova,gg,NG,1.72,winamax,3,2026-11-19T18:33:44
-2026-11-26,Conference League,Kairat Almaty - Mjallby,2.5,O2.5,1.88,sportbet,34,2026-11-19T18:33:46
-2026-11-26,Conference League,Kairat Almaty - Mjallby,2.5,U2.5,1.85,eurobet,34,2026-11-19T18:33:46
-2026-11-26,Conference League,Ajax - Thun,2.5,O2.5,1.3,leovegas,34,2026-11-19T18:33:46
-2026-11-26,Conference League,Ajax - Thun,2.5,U2.5,3.75,eurobet,34,2026-11-19T18:33:46
-2026-11-26,Conference League,Brann - Aarhus,2.5,O2.5,1.52,eurobet,33,2026-11-19T18:33:46
-2026-11-26,Conference League,Brann - Aarhus,2.5,U2.5,2.44,betsson,33,2026-11-19T18:33:46
-2026-11-26,Conference League,Brighton - Cs Universitatea Craiova Ii,2.5,O2.5,1.32,eurobet,1,2026-11-19T18:33:46
-2026-11-26,Conference League,Brighton - Cs Universitatea Craiova Ii,2.5,U2.5,3.05,eurobet,1,2026-11-19T18:33:46
-2026-11-26,Conference League,Egnatia Rrogozhine - Lincoln Red Imps,2.5,O2.5,1.68,eurobet,33,2026-11-19T18:33:46
-2026-11-26,Conference League,Egnatia Rrogozhine - Lincoln Red Imps,2.5,U2.5,2.1,betpassion,33,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Fk Jablonec - Lugano,2.5,O2.5,1.66,vincitu,37,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Fk Jablonec - Lugano,2.5,U2.5,2.14,betsson,37,2026-11-19T18:33:46
-2026-11-26,Conference League,Fk Kauno Zalgiris - Riga,2.5,O2.5,1.92,leovegas,39,2026-11-19T18:33:46
-2026-11-26,Conference League,Fk Kauno Zalgiris - Riga,2.5,U2.5,1.87,betsson,39,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Heart Of Midlothian Fc - Monaco,2.5,O2.5,1.53,eurobet,35,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Heart Of Midlothian Fc - Monaco,2.5,U2.5,2.41,betsson,35,2026-11-19T18:33:46
-2026-11-26,Conference League,Iberia - Getafe,2.5,O2.5,2.05,goldbet,31,2026-11-19T18:33:46
-2026-11-26,Conference League,Iberia - Getafe,2.5,U2.5,1.74,betsson,31,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Pafos - Midtjylland,2.5,O2.5,1.56,stake,39,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Pafos - Midtjylland,2.5,U2.5,2.37,betsson,39,2026-11-19T18:33:46
-2026-11-26,Conference League,Borac Banja Luka - Atalanta,2.5,O2.5,1.56,leovegas,38,2026-11-19T18:33:46
-2026-11-26,Conference League,Borac Banja Luka - Atalanta,2.5,U2.5,2.35,betsson,38,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Cska Sofia - Trabzonspor,2.5,O2.5,1.65,eurobet,39,2026-11-19T18:33:46
-2026-11-26,UEFA Conference League,Cska Sofia - Trabzonspor,2.5,U2.5,2.18,leovegas,39,2026-11-19T18:33:46
-2026-11-26,Conference League,Friburgo - Twente,2.5,O2.5,1.5,leovegas,36,2026-11-19T18:33:46
-2026-11-26,Conference League,Friburgo - Twente,2.5,U2.5,2.6,betsson,36,2026-11-19T18:33:46
-2026-11-26,Conference League,Gent - Stella Rossa,2.5,O2.5,1.77,goldbet,28,2026-11-19T18:33:46
-2026-11-26,Conference League,Gent - Stella Rossa,2.5,U2.5,1.99,betsson,28,2026-11-19T18:33:46
-2026-11-26,Conference League,Hajduk Spalato - St. Truidense Vv,2.5,O2.5,1.75,goldbet,28,2026-11-19T18:33:46
-2026-11-26,Conference League,Hajduk Spalato - St. Truidense Vv,2.5,U2.5,2.01,betsson,28,2026-11-19T18:33:46
-2026-11-26,Conference League,Inter Club De Escaldes - Copenaghen,2.5,O2.5,1.48,goldbet,21,2026-11-19T18:33:46
-2026-11-26,Conference League,Inter Club De Escaldes - Copenaghen,2.5,U2.5,2.5,goldbet,21,2026-11-19T18:33:46
-2026-11-26,Conference League,Sporting Braga - Kuopion Palloseura,2.5,O2.5,1.34,quigioco,28,2026-11-19T18:33:46
-2026-11-26,Conference League,Sporting Braga - Kuopion Palloseura,2.5,U2.5,3.05,eurobet,28,2026-11-19T18:33:46
-2026-11-26,Conference League,Iberia 1999 - Getafe,2.5,O2.5,1.9,winamax,1,2026-11-19T18:33:46
-2026-11-26,Conference League,Iberia 1999 - Getafe,2.5,U2.5,1.82,winamax,1,2026-11-19T18:33:46
-2026-11-26,Conference League,Kauno Zalgiris - Riga FC,2.5,O2.5,1.8,winamax,1,2026-11-19T18:33:46
-2026-11-26,Conference League,Kauno Zalgiris - Riga FC,2.5,U2.5,1.92,winamax,1,2026-11-19T18:33:46
-2026-11-26,Conference League,Brighton - Universitatea Craiova,2.5,O2.5,1.95,betpassion,25,2026-11-19T18:33:46
-2026-11-26,Conference League,Brighton - Universitatea Craiova,2.5,U2.5,1.87,leovegas,25,2026-11-19T18:33:46
-2026-11-26,Conference League,Hearts - Monaco,2.5,O2.5,2.2,fastbet,3,2026-11-19T18:33:46
-2026-11-26,Conference League,Hearts - Monaco,2.5,U2.5,1.62,leovegas,3,2026-11-19T18:33:46
-2026-11-26,Conference League,Kairat Almaty - Mjallby,1x2,1,2.22,vincitu,35,2026-11-19T18:33:47
-2026-11-26,Conference League,Kairat Almaty - Mjallby,1x2,X,3.5,totosi,35,2026-11-19T18:33:47
-2026-11-26,Conference League,Kairat Almaty - Mjallby,1x2,2,3.2,eurobet,35,2026-11-19T18:33:47
-2026-11-26,Conference League,Ajax - Thun,1x2,1,1.2,vincitu,37,2026-11-19T18:33:47
-2026-11-26,Conference League,Ajax - Thun,1x2,X,7.8,totosi,37,2026-11-19T18:33:47
-2026-11-26,Conference League,Ajax - Thun,1x2,2,12.5,888sport,37,2026-11-19T18:33:47
-2026-11-26,Conference League,Brann - Aarhus,1x2,1,1.98,vincitu,34,2026-11-19T18:33:47
-2026-11-26,Conference League,Brann - Aarhus,1x2,X,3.9,goldbet,34,2026-11-19T18:33:47
-2026-11-26,Conference League,Brann - Aarhus,1x2,2,3.55,vincitu,34,2026-11-19T18:33:47
-2026-11-26,Conference League,Brighton - Cs Universitatea Craiova Ii,1x2,1,1.13,eurobet,1,2026-11-19T18:33:47
-2026-11-26,Conference League,Brighton - Cs Universitatea Craiova Ii,1x2,X,8.2,eurobet,1,2026-11-19T18:33:47
-2026-11-26,Conference League,Brighton - Cs Universitatea Craiova Ii,1x2,2,14.0,eurobet,1,2026-11-19T18:33:47
-2026-11-26,Conference League,Egnatia Rrogozhine - Lincoln Red Imps,1x2,1,1.61,totosi,34,2026-11-19T18:33:47
-2026-11-26,Conference League,Egnatia Rrogozhine - Lincoln Red Imps,1x2,X,4.6,winamax,34,2026-11-19T18:33:47
-2026-11-26,Conference League,Egnatia Rrogozhine - Lincoln Red Imps,1x2,2,5.5,goldbet,34,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Fk Jablonec - Lugano,1x2,1,3.15,vincitu,38,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Fk Jablonec - Lugano,1x2,X,3.75,stake,38,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Fk Jablonec - Lugano,1x2,2,2.16,totosi,38,2026-11-19T18:33:47
-2026-11-26,Conference League,Fk Kauno Zalgiris - Riga,1x2,1,3.5,fastbet,40,2026-11-19T18:33:47
-2026-11-26,Conference League,Fk Kauno Zalgiris - Riga,1x2,X,3.55,winamax,40,2026-11-19T18:33:47
-2026-11-26,Conference League,Fk Kauno Zalgiris - Riga,1x2,2,2.2,leovegas,40,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Heart Of Midlothian Fc - Monaco,1x2,1,4.65,vincitu,36,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Heart Of Midlothian Fc - Monaco,1x2,X,4.4,goldbet,36,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Heart Of Midlothian Fc - Monaco,1x2,2,1.7,betpassion,36,2026-11-19T18:33:47
-2026-11-26,Conference League,Iberia - Getafe,1x2,1,6.2,totosi,32,2026-11-19T18:33:47
-2026-11-26,Conference League,Iberia - Getafe,1x2,X,4.1,totosi,32,2026-11-19T18:33:47
-2026-11-26,Conference League,Iberia - Getafe,1x2,2,1.56,vincitu,32,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Pafos - Midtjylland,1x2,1,3.2,vincitu,40,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Pafos - Midtjylland,1x2,X,3.7,totosi,40,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Pafos - Midtjylland,1x2,2,2.16,vincitu,40,2026-11-19T18:33:47
-2026-11-26,Conference League,Borac Banja Luka - Atalanta,1x2,1,5.0,vincitu,39,2026-11-19T18:33:47
-2026-11-26,Conference League,Borac Banja Luka - Atalanta,1x2,X,4.4,totosi,39,2026-11-19T18:33:47
-2026-11-26,Conference League,Borac Banja Luka - Atalanta,1x2,2,1.62,betpassion,39,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Cska Sofia - Trabzonspor,1x2,1,3.7,totosi,40,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Cska Sofia - Trabzonspor,1x2,X,3.95,winamax,40,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Cska Sofia - Trabzonspor,1x2,2,1.95,goldbet,40,2026-11-19T18:33:47
-2026-11-26,Conference League,Friburgo - Twente,1x2,1,2.0,eurobet,37,2026-11-19T18:33:47
-2026-11-26,Conference League,Friburgo - Twente,1x2,X,4.0,totosi,37,2026-11-19T18:33:47
-2026-11-26,Conference League,Friburgo - Twente,1x2,2,3.45,goldbet,37,2026-11-19T18:33:47
-2026-11-26,Conference League,Gent - Stella Rossa,1x2,1,2.15,totosi,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Gent - Stella Rossa,1x2,X,3.5,eurobet,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Gent - Stella Rossa,1x2,2,3.35,vincitu,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Hajduk Spalato - St. Truidense Vv,1x2,1,2.1,eurobet,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Hajduk Spalato - St. Truidense Vv,1x2,X,3.6,totosi,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Hajduk Spalato - St. Truidense Vv,1x2,2,3.4,vincitu,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Inter Club De Escaldes - Copenaghen,1x2,1,11.0,totosi,22,2026-11-19T18:33:47
-2026-11-26,Conference League,Inter Club De Escaldes - Copenaghen,1x2,X,6.2,totosi,22,2026-11-19T18:33:47
-2026-11-26,Conference League,Inter Club De Escaldes - Copenaghen,1x2,2,1.26,totosi,22,2026-11-19T18:33:47
-2026-11-26,Conference League,Sporting Braga - Kuopion Palloseura,1x2,1,1.15,eurobet,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Sporting Braga - Kuopion Palloseura,1x2,X,8.6,totosi,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Sporting Braga - Kuopion Palloseura,1x2,2,17.0,totosi,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Hearts - Monaco,1x2,1,4.35,leovegas,3,2026-11-19T18:33:47
-2026-11-26,Conference League,Hearts - Monaco,1x2,X,2.5,leovegas,3,2026-11-19T18:33:47
-2026-11-26,Conference League,Hearts - Monaco,1x2,2,2.14,fastbet,3,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Jablonec - FC Lugano,1x2,1,3.65,vincitu,27,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Jablonec - FC Lugano,1x2,X,2.37,giocodigitale,27,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Jablonec - FC Lugano,1x2,2,2.7,betpassion,27,2026-11-19T18:33:47
-2026-11-26,Conference League,Iberia 1999 - Getafe,1x2,1,6.25,leovegas,6,2026-11-19T18:33:47
-2026-11-26,Conference League,Iberia 1999 - Getafe,1x2,X,2.25,bwin,6,2026-11-19T18:33:47
-2026-11-26,Conference League,Iberia 1999 - Getafe,1x2,2,2.08,fastbet,6,2026-11-19T18:33:47
-2026-11-26,Conference League,Kauno Zalgiris - Riga FC,1x2,1,4.0,vincitu,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Kauno Zalgiris - Riga FC,1x2,X,2.2,giocodigitale,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Kauno Zalgiris - Riga FC,1x2,2,2.75,leovegas,29,2026-11-19T18:33:47
-2026-11-26,Conference League,Brighton - Universitatea Craiova,1x2,1,1.48,betpassion,20,2026-11-19T18:33:47
-2026-11-26,Conference League,Brighton - Universitatea Craiova,1x2,X,3.3,leovegas,20,2026-11-19T18:33:47
-2026-11-26,Conference League,Brighton - Universitatea Craiova,1x2,2,11.0,vincitu,20,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Freiburg - FC Twente,1x2,1,1.93,stake,2,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Freiburg - FC Twente,1x2,X,3.67,stake,2,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Freiburg - FC Twente,1x2,2,3.33,stake,2,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Braga - KuPS,1x2,1,1.15,bwin,5,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Braga - KuPS,1x2,X,8.5,winamax,5,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Braga - KuPS,1x2,2,14.0,stake,5,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,CSKA Sofia - Trabzonspor,1x2,1,4.1,williamhill,27,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,CSKA Sofia - Trabzonspor,1x2,X,2.4,giocodigitale,27,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,CSKA Sofia - Trabzonspor,1x2,2,2.48,betpassion,27,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,FC Nordsjaelland - Panathinaikos,1x2,1,2.8,totosi,28,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,FC Nordsjaelland - Panathinaikos,1x2,X,3.55,bgame,28,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,FC Nordsjaelland - Panathinaikos,1x2,2,2.43,totosi,28,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Inter Club d'Escaldes - FC Copenhagen,1x2,1,11.0,leovegas,2,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Inter Club d'Escaldes - FC Copenhagen,1x2,X,5.8,leovegas,2,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Inter Club d'Escaldes - FC Copenhagen,1x2,2,1.18,leovegas,2,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Kairat Almaty - Mjällby AIF,1x2,1,2.17,leovegas,4,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Kairat Almaty - Mjällby AIF,1x2,X,3.3,bwin,4,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Kairat Almaty - Mjällby AIF,1x2,2,3.1,bwin,4,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Pafos FC - FC Midtjylland,1x2,1,3.33,stake,27,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Pafos FC - FC Midtjylland,1x2,X,2.8,leovegas,27,2026-11-19T18:33:47
-2026-11-26,UEFA Conference League,Pafos FC - FC Midtjylland,1x2,2,2.45,betpassion,27,2026-11-19T18:33:47
-2026-11-26,Conference League,FK Kauno Zalgiris - Riga FC,1x2,1,3.67,stake,27,2026-11-19T18:33:47
-2026-11-26,Conference League,FK Kauno Zalgiris - Riga FC,1x2,X,2.6,betsson,27,2026-11-19T18:33:47
-2026-11-26,Conference League,FK Kauno Zalgiris - Riga FC,1x2,2,2.63,leovegas,27,2026-11-19T18:33:47
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,2.5,O2.5,1.97,goldbet,19,2026-11-19T22:16:52
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,2.5,U2.5,1.81,quigioco,19,2026-11-19T22:16:52
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,2.5,O2.5,1.78,goldbet,13,2026-11-19T22:16:52
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,2.5,U2.5,1.99,quigioco,13,2026-11-19T22:16:52
+2026-11-30,Primeira Liga,Benfica - Famalicao,2.5,O2.5,1.4,goldbet,33,2026-11-19T22:16:52
+2026-11-30,Primeira Liga,Benfica - Famalicao,2.5,U2.5,2.83,betpassion,33,2026-11-19T22:16:52
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,2.5,O2.5,1.9,goldbet,23,2026-11-19T22:16:52
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,2.5,U2.5,1.89,quigioco,23,2026-11-19T22:16:52
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,2.5,O2.5,1.9,betpassion,11,2026-11-19T22:16:52
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,2.5,U2.5,1.8,betpassion,11,2026-11-19T22:16:52
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,gg,GG,1.75,betpassion,19,2026-11-19T22:16:53
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,gg,NG,2.05,quigioco,19,2026-11-19T22:16:53
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,GG,1.78,winamax,13,2026-11-19T22:16:53
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,NG,2.02,quigioco,13,2026-11-19T22:16:53
+2026-11-30,Primeira Liga,Benfica - Famalicao,gg,GG,2.0,winamax,33,2026-11-19T22:16:53
+2026-11-30,Primeira Liga,Benfica - Famalicao,gg,NG,1.77,goldbet,33,2026-11-19T22:16:53
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,GG,2.15,goldbet,23,2026-11-19T22:16:53
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,NG,1.72,quigioco,23,2026-11-19T22:16:53
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,gg,GG,1.85,goldbet,3,2026-11-19T22:16:53
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,gg,NG,1.87,goldbet,3,2026-11-19T22:16:53
+2026-11-28,Primeira Liga,VITORIA GUIMARAES - ESTRELA,gg,GG,1.76,eplay24,7,2026-11-19T22:16:53
+2026-11-28,Primeira Liga,VITORIA GUIMARAES - ESTRELA,gg,NG,1.92,eplay24,7,2026-11-19T22:16:53
+2026-11-29,Primeira Liga,GIL VICENTE - ESTORIL,gg,GG,1.78,eplay24,11,2026-11-19T22:16:53
+2026-11-29,Primeira Liga,GIL VICENTE - ESTORIL,gg,NG,1.92,betpassion,11,2026-11-19T22:16:53
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,gg,GG,1.86,winamax,1,2026-11-19T22:16:53
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,gg,NG,1.86,winamax,1,2026-11-19T22:16:53
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,1,2.5,goldbet,20,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,X,3.25,quigioco,20,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,2,2.95,goldbet,20,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,1,1.7,betpassion,14,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,X,3.85,winamax,14,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,2,4.75,betpassion,14,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,1,1.2,bwin,34,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,X,7.25,goldbet,34,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,2,12.0,betpassion,34,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,1,7.2,marathonbet,24,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,X,4.35,betsson,24,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,2,1.45,betpassion,24,2026-11-19T22:16:54
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,1,1.9,betpassion,11,2026-11-19T22:16:54
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,X,3.55,betpassion,11,2026-11-19T22:16:54
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,2,4.0,betpassion,11,2026-11-19T22:16:54
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,1,2.1,goldbet,4,2026-11-19T22:16:54
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,X,3.2,goldbet,4,2026-11-19T22:16:54
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,2,3.35,goldbet,4,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,VITORIA GUIMARAES - ESTRELA,1x2,1,1.68,eplay24,7,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,VITORIA GUIMARAES - ESTRELA,1x2,X,3.75,eplay24,7,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,VITORIA GUIMARAES - ESTRELA,1x2,2,4.55,eplay24,7,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,1,3.05,betpassion,10,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,X,2.1,gioca7,10,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,2,3.45,betpassion,10,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,1,2.28,betpassion,7,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,X,2.25,domusbet,7,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,2,4.8,betpassion,7,2026-11-19T22:16:54
+2026-11-29,Primeira Liga,Gil Vicente-Estoril,1x2,1,2.3,betpassion,8,2026-11-19T22:16:54
+2026-11-29,Primeira Liga,Gil Vicente-Estoril,1x2,X,2.52,gioca7,8,2026-11-19T22:16:54
+2026-11-29,Primeira Liga,Gil Vicente-Estoril,1x2,2,4.15,betpassion,8,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,1,7.2,sunbet,17,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,X,2.39,sunbet,17,2026-11-19T22:16:54
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,2,1.98,betpassion,17,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela,1x2,1,2.2,gioca7,4,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela,1x2,X,2.27,gioca7,4,2026-11-19T22:16:54
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela,1x2,2,4.9,gioca7,4,2026-11-19T22:16:54
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,1,2.05,winamax,1,2026-11-19T22:16:54
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,X,3.15,winamax,1,2026-11-19T22:16:54
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,2,3.0,winamax,1,2026-11-19T22:16:54

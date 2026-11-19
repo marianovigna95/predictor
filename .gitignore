@@ -2,3 +2,6 @@
 *.py
 !src/**
 !*/*.py
+__pycache__/
+*.pyc
+*.pyo

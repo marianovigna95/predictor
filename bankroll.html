@@ -26,7 +26,7 @@ button{background:#b91c1c;color:#fff;border:0;border-radius:8px;padding:7px 12px
 button.ghost{background:#16233d;border:1px solid #22345a}
 footer{color:#475569;font-size:11px;text-align:center;padding:14px}
 [data-theme="light"] body{filter:invert(1) hue-rotate(180deg)}
-</style></head><body><div class="wrap">
+</style><style>.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:#0b0f14;border-top:1px solid #242c37;display:flex;overflow-x:auto}.tabbar a{flex:1;text-align:center;padding:10px 4px;color:#8b96a5;font-size:12px;font-weight:600;border-right:1px solid #242c37;text-decoration:none}.tabbar a:last-child{border-right:none}html[data-theme=light] .tabbar{background:#f4f6f9;border-top-color:#d8dee6}html[data-theme=light] .tabbar a{color:#5c6878;border-right-color:#d8dee6}body{padding-bottom:96px!important}</style></head><body><div class="wrap">
 <h1>💰 Bankroll personale</h1>
 <p class="sub">Le giocate restano solo nel TUO browser (localStorage) — analysis-only. Verifica esiti automatica tramite dati live pubblici. Stake consigliato: ¼ Kelly, solo EV&gt;+2%.</p>
 <nav><button id="themeBtn" title="tema chiaro/scuro" style="background:none;border:1px solid var(--line,#22345a);color:inherit;border-radius:8px;padding:3px 8px;cursor:pointer">☀️</button><a href="index.html" onclick="if(history.length>1){history.back();return false;}" aria-label="torna indietro" title="indietro">‹</a><a href="index.html">Home</a><a href="diretta.html">🔴 Diretta</a><a href="multi-lega.html">Multi-lega</a><a href="coppe.html">Coppe</a><a href="giocata_multi.html">Giocate</a><a href="ppa.html">⚡ PPA</a><a href="surebets.html">⚖️ Surebets</a><a href="schedina.html">🧾 Schedina</a><a class="on" href="bankroll.html">💰 Bankroll</a><a href="archivio.html">Archivio+CLV</a><a href="metodo.html">Metodo</a><a href="glossario.html">Glossario</a></nav>
@@ -162,4 +162,4 @@ function set(t){document.documentElement.setAttribute('data-theme',t);try{localS
 var t='dark';try{t=localStorage.getItem('theme')||'dark';}catch(e){}
 set(t);b.onclick=function(){set(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light');};})();
 </script>
-</body></html>
+<div class="tabbar"><a href="index.html"><span>⌂</span>HOME</a><a href="pronostici.html"><span>🎯</span>PRONOSTICI</a><a href="giocata_multi.html"><span>💎</span>GIOCATE</a><a href="ppa.html"><span>⚡</span>PPA</a><a href="archivio.html"><span>🗂</span>ARCHIVIO</a></div></body></html>

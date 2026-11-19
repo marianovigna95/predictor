@@ -9,7 +9,6 @@ data,lega,partita,mercato,esito,prob_pct,margine_pp,gol_casa,gol_ospite,risultat
 2026-11-16,Nations League,Lithuania - Liechtenstein,GG/NG,GG,59.6,3.7,2,1,2-1,1,1
 2026-11-16,Nations League,North Macedonia - Slovenia,GG/NG,GG,59.1,3.0,0,3,0-3,0,1
 2026-11-16,Nations League,Switzerland - Scotland,GG/NG,GG,56.2,5.4,4,0,4-0,0,1
-2026-11-17,Nations League,Bosnia-Herzegovina - Romania,GG/NG,GG,64.7,0.6,2,1,2-1,1,1
 2026-11-17,Nations League,Bosnia-Herzegovina - Romania,O/U 2.5,Over 2.5,65.5,1.2,2,1,2-1,1,1
 2026-11-17,Friendlies,China - Bahrain,O/U 2.5,Under 2.5,60.3,2.3,2,2,2-2,0,1
 2026-11-17,Nations League,Denmark - Norway,GG/NG,GG,58.1,3.3,2,3,2-3,1,1
@@ -31,7 +30,6 @@ data,lega,partita,mercato,esito,prob_pct,margine_pp,gol_casa,gol_ospite,risultat
 2026-11-17,Friendlies,Tahiti - Cook Islands,1X2,1,69.0,2.5,3,3,3-3,0,1
 2026-11-17,Nations League,Ukraine - Georgia,GG/NG,GG,56.7,0.7,1,0,1-0,0,1
 2026-11-17,Friendlies,United Arab Emirates - Syria,1X2,1,69.3,8.7,4,2,4-2,1,1
-2026-11-17,Nations League,Wales - Portugal,GG/NG,GG,62.8,0.5,2,3,2-3,1,1
 2026-11-17,Nations League,Wales - Portugal,O/U 2.5,Over 2.5,63.8,1.5,2,3,2-3,1,1
 2026-11-18,Friendlies,Argentina - Costa Rica,1X2,1,78.8,8.3,,,n.d.,,0
 2026-11-18,Friendlies,Chile - Colombia,GG/NG,GG,57.1,1.1,,,n.d.,,0
