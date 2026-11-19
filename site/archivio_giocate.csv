@@ -1,6 +1,6 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-20,SINGOLA,Bundesliga 2,Darmstadt - Heidenheim,1X2,1,39.1,3.32,29.81,0.74,,
-giocata,2026-11-20,RADDOPPIO,Bundesliga + Ligue 1,Bayern Munich - FC Koln [GG GG] + Troyes - Le Havre [GG GG],GG/GG,GG/GG,34.9,3.24,12.85,0.35,,
+giocata,2026-11-20,SINGOLA,Bundesliga 2,Darmstadt - Heidenheim,1X2,1,39.1,3.4,32.94,0.99,,
+giocata,2026-11-20,RADDOPPIO,Bundesliga + Ligue 1,Bayern Munich - FC Koln [GG GG] + Troyes - Le Havre [GG GG],GG/GG,GG/GG,34.9,3.15,9.62,0.02,,
 giocata,2026-11-21,SINGOLA,LaLiga 2,Castellón - Eldense,O2.5,Over 2.5,48.6,2.55,23.93,1.21,,
 giocata,2026-11-21,RADDOPPIO,Bundesliga + Eredivisie,Elversberg - Freiburg [GG GG] + Telstar - Zwolle [GG GG],GG/GG,GG/GG,44.1,2.35,3.74,0.0,,
 giocata,2026-11-22,SINGOLA,Ligue 1,Marseille - Le Mans,GG,GG,69.9,1.66,16.03,1.99,,
@@ -10,7 +10,7 @@ giocata,2026-11-23,RADDOPPIO,LaLiga + Ligue 2,Levante - Elche [GG GG] + Nantes -
 giocata,2026-11-24,SINGOLA,Champions League,Arsenal - Dortmund,GG,GG,59.6,1.95,16.22,0.71,,
 giocata,2026-11-24,RADDOPPIO,Champions League,Real Madrid - PSV Eindhoven [GG GG] + Arsenal - Dortmund [GG GG],GG/GG,GG/GG,36.2,3.02,9.3,0.03,,
 giocata,2026-11-25,SINGOLA,Serie B,Cremonese - Avellino,1X2,X,38.1,3.55,35.25,1.27,,
-giocata,2026-11-25,RADDOPPIO,Champions League,Club Brugge - Liverpool [GG GG] + Lille - Bayern Munich [GG GG],GG/GG,GG/GG,48.7,2.22,8.0,0.28,,
+giocata,2026-11-25,RADDOPPIO,Champions League,Club Brugge - Liverpool [GG GG] + Lille - Bayern Munich [GG GG],GG/GG,GG/GG,48.7,2.24,8.79,0.42,,
 giocata,2026-11-26,SINGOLA,Europa League,Celta - Bournemouth,O2.5,Over 2.5,61.3,1.94,18.92,1.48,,
 giocata,2026-11-26,RADDOPPIO,Conference League,Kairat Almaty - Mjällby [GG GG] + Freiburg - FC Twente [GG GG],GG/GG,GG/GG,41.7,2.54,5.92,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
