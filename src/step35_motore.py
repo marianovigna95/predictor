@@ -53,7 +53,8 @@ import json
 import os
 import sys
 import urllib.request
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 import numpy as np
@@ -152,8 +153,18 @@ def costruisci_pronostici():
             ora = str(r["orario"]).split(" ")[1]
         except Exception:
             iso, ora = "", ""
+        # 🆕 19/11 CALCIO D'INIZIO in UTC: l'orario del forecast è Europe/Rome, i timestamp
+        #    delle run sono UTC. Senza conversione si sbaglia di 1-2 ore e si rischia di
+        #    includere una rilevazione fatta DOPO l'inizio (guardare il futuro).
+        kick = ""
+        try:
+            _loc = datetime.strptime(f"{iso} {ora}", "%Y-%m-%d %H:%M").replace(tzinfo=ZoneInfo("Europe/Rome"))
+            kick = _loc.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
+        except Exception:
+            kick = ""
         righe.append({
-            "data": iso, "ora": ora, "lega": r["lega"], "partita": r["partita"],
+            "data": iso, "ora": ora, "kickoff_utc": kick,
+            "lega": r["lega"], "partita": r["partita"],
             "mercato": mercato, "esito": esito,
             "prob_pct": round(p * 100, 1),
             "margine_pp": round((p - secondo) * 100, 1),
@@ -165,7 +176,8 @@ def costruisci_pronostici():
 
 
 def salva_pronostici(df, quando=None):
-    quando = quando or datetime.now().isoformat(timespec="seconds")
+    # 🆕 19/11 timestamp SEMPRE in UTC: servono per congelare il pronostico prima del via
+    quando = quando or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
     df = df.copy()
     df["rilevato"] = quando
     df.to_csv(OUT_OGGI, index=False)
@@ -247,12 +259,66 @@ def esito_osservato(mercato, esito, gh, ga):
 
 
 # ---------------------------------------------------------------- 3. BILANCIO
+def pronostico_congelato(st):
+    """🆕 19/11 IL PRONOSTICO CHE IL SITO MOSTRAVA PRIMA DEL VIA.
+
+    REGOLA (scelta utente 19/11)
+        Per ogni partita si tiene l'ULTIMA rilevazione fatta PRIMA del calcio d'inizio.
+        E' la piu' informata: se il pronostico e' cambiato durante la giornata, vuol dire
+        che sono arrivate notizie, movimenti di quota o formazioni ufficiali. Quella e'
+        la versione da cui il lettore ha deciso, quindi quella va conteggiata.
+
+    PERCHE' SERVE
+        Senza questo, il bilancio contava piu' righe per la stessa partita (una per ogni
+        run in cui il pronostico cambiava) e finiva per pesare due volte partite come
+        Bosnia-Romania e Wales-Portugal, dove il motore era passato da GG a Over 2.5.
+        Due mercati correlati sulla stessa partita = due successi facili da incassare.
+        MISURATO: 38 righe di bilancio su 36 partite distinte, accuratezza gonfiata
+        dal 56,3% al 58,8%.
+
+    SICUREZZA
+        Si scartano le rilevazioni con timestamp successivo al via (guarderebbero il
+        futuro). Se una partita non ha NESSUNA rilevazione prima del via, resta fuori
+        dal bilancio: meglio un caso in meno che un caso disonesto.
+    """
+    if st.empty:
+        return st
+    d = st.copy()
+    d["rilevato_dt"] = pd.to_datetime(d["rilevato"], errors="coerce", utc=True)
+    if "kickoff_utc" in d.columns:
+        d["kick_dt"] = pd.to_datetime(d["kickoff_utc"], errors="coerce", utc=True)
+    else:
+        # 🆕 19/11 righe scritte PRIMA di questa modifica: niente kickoff. Serve un NaT
+        #   CONSAPEVOLE DEL FUSO, altrimenti il confronto con rilevato_dt (UTC) solleva
+        #   "Cannot compare tz-naive and tz-aware" e il bilancio non si aggiorna piu'.
+        #   (bug trovato dal test sullo storico reale di 266 righe, non in produzione)
+        d["kick_dt"] = pd.Series(pd.NaT, index=d.index, dtype="datetime64[ns, UTC]")
+    # se manca il calcio d'inizio (righe vecchie), si tiene l'ultima rilevazione e basta
+    noto = d["kick_dt"].notna()
+    prima = d[noto & (d["rilevato_dt"] < d["kick_dt"])].copy()
+    senza_via = d[~noto].copy()
+    senza_via = senza_via.sort_values("rilevato_dt").groupby(
+        ["data", "partita"], as_index=False).last()
+    cong = (pd.concat([prima, senza_via], ignore_index=True)
+              .sort_values("rilevato_dt")
+              .groupby(["data", "partita"], as_index=False).last())
+    n_escluse = 0
+    if noto.any():
+        tutte = d[d["rilevato_dt"].notna()]
+        n_escluse = len(tutte) - len(prima) - len(senza_via)
+    return cong, n_escluse
+
+
 def aggiorna_bilancio(giorni_indietro=7):
     if not OUT_STO.exists():
         print("❌ nessuno storico pronostici: niente bilancio")
         return None
     st = pd.read_csv(OUT_STO)
     st["data"] = st["data"].astype(str)
+    # 🆕 19/11 si conteggia SOLO l'ultimo pronostico fatto prima del via (una riga per partita)
+    st, _n_escl = pronostico_congelato(st)
+    print(f"   🧊 pronostici congelati prima del via: {len(st)} partite"
+          + (f" · {_n_escl} rilevazioni scartate (dopo il via o sostituite)" if _n_escl else ""))
     oggi = datetime.now().date()
     date_da_verificare = sorted({
         d for d in st["data"].unique()
@@ -323,6 +389,8 @@ def aggiorna_bilancio(giorni_indietro=7):
     tot = {
         "aggiornato": datetime.now().isoformat(timespec="seconds"),
         "pronostici_totali": int(len(b)),
+        "partite_distinte": int(b.groupby(["data", "partita"]).ngroups),
+        "regola": "si conteggia l'ultimo pronostico pubblicato prima del calcio d'inizio",
         "verificati": int(len(v)),
         "colti": int(v["colto"].sum()) if len(v) else 0,
         "acc_pct": round(float(v["colto"].mean() * 100), 1) if len(v) else None,
