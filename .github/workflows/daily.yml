@@ -45,6 +45,9 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.13" }
       - run: pip install pandas numpy scikit-learn requests fpdf2 pymupdf
+      # 🆕 19/11 Python non deve scrivere __pycache__ nel repo: 12 file .pyc
+      #    venivano committati a ogni run (cambiano sempre → diff sempre "modificato").
+      - run: echo "PYTHONDONTWRITEBYTECODE=1" >> $GITHUB_ENV
       - name: Pipeline mattina/sera (fonti keyless; step con throttling non bloccanti)
         env:
           # 🆕 14/11 secret -> variabile d'ambiente letta da src/step31_quote_adm.py
@@ -91,13 +94,24 @@ jobs:
           python3 src/step25_verifica_mensile.py || true
           python3 src/step29_bench_pinnacle.py || true                # 🆕 13/11-b bench vs quota sharp -> data/bench_pinnacle.csv
           python3 src/step30_meta.py || true                          # 🆕 13/11-b meta description/OG + anonimizzatore fonti (ULTIMO passo, tocca tutte le pagine)
+      - name: 🩺 Controllo di salute dei dati (fallisce se sono vecchi)
+        # ⚠️ VOLUTAMENTE senza "|| true": se i dati non sono freschi la run deve
+        #    diventare ROSSA. Meglio un allarme che un sito fermo in silenzio.
+        run: python3 src/step36_check.py
+
       - name: Pubblica su GitHub Pages (root del repo)
         run: |
           cp site/*.html site/manifest.webmanifest site/sw.js site/icon-*.png . 2>/dev/null || true
           cp site/fixtures.json . 2>/dev/null || true
           cp site/ppa_*.pdf . 2>/dev/null || true
           # 🆕 13/11-b anti-doppioni: i .py in root sono solo la copia di lavoro, la fonte è src/
-          printf '%s\n' '# copie di lavoro dei .py in root (la fonte è src/): non versionare' '*.py' '!src/**' '!*/*.py' > .gitignore
+          # 🆕 19/11 aggiunti __pycache__/ e *.pyc: la regola '!src/**' li riammetteva,
+          #    quindi finivano nel commit a ogni run.
+          printf '%s\n' '# copie di lavoro dei .py in root (la fonte è src/): non versionare' '*.py' '!src/**' '!*/*.py' '__pycache__/' '*.pyc' '*.pyo' > .gitignore
+          # 🆕 19/11 rotazione archivi datati + pulizia dei __pycache__ già committati
+          python3 src/step37_rotazione.py || true
+          git rm -r --cached --ignore-unmatch src/__pycache__ >/dev/null 2>&1 || true
+          rm -rf src/__pycache__ || true
           git config user.email "bot@arena.ai" && git config user.name "predictor-bot"
           git add -A && git commit -m "auto-update $(date -u +%F_%H:%M)" || echo "nessuna modifica"
           git push
