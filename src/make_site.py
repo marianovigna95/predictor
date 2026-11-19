@@ -256,6 +256,14 @@ def giocata_oggi_html(today_iso):
         return ""
     with open(gj_p) as f:
         grows = list(csv.DictReader(f))
+    # 🆕 19/11 FIX: con il file ESISTENTE ma VUOTO (0 byte, o solo intestazione)
+    #    la riga sotto faceva min() su un iterabile vuoto → ValueError →
+    #    make_site crashava e le pagine NON venivano rigenerate (restavano
+    #    congelate alla versione precedente, in silenzio perché il workflow
+    #    ha "|| true"). Trovato il 19/11 testando i dati vecchi.
+    grows = [r for r in grows if (r.get("data") or "")]
+    if not grows:
+        return ""
     rows = [r for r in grows if (r.get("data") or "") == today_iso]
     if not rows:
         # oggi non c'è più nel file (finestra già slittata): mostra la prima giornata disponibile
@@ -523,6 +531,25 @@ def build_index():
             _bt = json.load(_f)
     except Exception:
         _bt = {}
+    # 🆕 19/11 "ULTIMO AGGIORNAMENTO": il lettore deve sapere se sta guardando
+    #    dati di oggi o di tre giorni fa. Si prende il file DATI più recente fra
+    #    quelli che alimentano la pagina (non la data della build, che sarebbe
+    #    sempre "adesso" anche a dati fermi).
+    _fresco = None
+    for _f in ("forecast_multi.csv", "pronostico_motore.csv", "giocata_multi.csv"):
+        _p = os.path.join(DATA, _f)
+        try:
+            _t = os.path.getmtime(_p)
+            if _fresco is None or _t > _fresco:
+                _fresco = _t
+        except Exception:
+            continue
+    _agg = "—"
+    _vecchio = False
+    if _fresco:
+        _dt = datetime.fromtimestamp(_fresco)
+        _agg = _dt.strftime("%d/%m/%Y %H:%M")
+        _vecchio = (datetime.now() - _dt).total_seconds() > 36 * 3600
     _parti = []
     if _bm.get("verificati"):
         _parti.append(
@@ -555,6 +582,7 @@ def build_index():
   <h1>⚽ Predictor <span class="g">— oggi {today_dm}/2026</span></h1>
   <p class="sub">Analisi statistiche calcio 2026/27 (16 leghe: Top 5 + 8 extra + coppe UEFA). Ogni pronostico è una <b>stima con incertezza</b>, mai una certezza.</p>
   <p class="sub">{riepilogo}</p>
+  <p class="sub" style="margin-top:2px">🕒 Ultimo aggiornamento dati: <b>{_agg}</b>{' <span style="color:#f59e0b;font-weight:700">· ⚠️ dati non recenti</span>' if _vecchio else ''}</p>
   <p style="margin-top:10px"><a href="diretta.html" style="display:inline-block;background:#dc2626;color:#fff;font-weight:800;font-size:17px;padding:12px 26px;border-radius:12px;text-decoration:none;box-shadow:0 6px 18px rgba(220,38,38,.5)">🔴 VAI ALLA DIRETTA (score live)</a></p>
   <div class="warn" style="margin-top:10px">⚠️ <b>18+</b> · Solo operatori con <b>licenza ADM</b> · Gioca responsabilmente ·
   Autoesclusione <b>autoesclusione.it</b> · 800 558822 · Sito solo informativo: non raccogliamo scommesse né gestiamo denaro.</div>
