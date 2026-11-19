@@ -1,11 +1,23 @@
-const C='predictor-v2';
-self.addEventListener('install',e=>{self.skipWaiting();});
-self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
-self.addEventListener('fetch',e=>{
-  const r=e.request;
-  if(r.mode==='navigate'){
-    e.respondWith(fetch(r).then(res=>{if(res&&res.ok){const cp=res.clone();caches.open(C).then(c=>c.put(r,cp));}return res;}).catch(()=>caches.match(r).then(m=>m||caches.match('index.html'))));
-  }else{
-    e.respondWith(caches.match(r).then(h=>h||fetch(r).then(res=>{if(res&&res.ok){const cp=res.clone();caches.open(C).then(c=>c.put(r,cp));}return res;})));
-  }
+// sw.js — service worker minimale.
+// Due scopi soltanto: (1) la pagina non genera errori in console quando registra
+// il worker, (2) una pagina gia' visitata si riapre anche senza rete.
+// NON mette in cache dati, CSV o API: i pronostici devono essere sempre freschi.
+const CACHE = "predictor-v1";
+
+self.addEventListener("install", () => self.skipWaiting());
+self.addEventListener("activate", (e) => e.waitUntil(self.clients.claim()));
+
+self.addEventListener("fetch", (e) => {
+  const req = e.request;
+  // solo navigazioni GET: nessun dato, nessuna API, nessun file in data/
+  if (req.method !== "GET" || req.mode !== "navigate") return;
+  e.respondWith(
+    fetch(req)
+      .then((res) => {
+        const copia = res.clone();
+        caches.open(CACHE).then((c) => c.put(req, copia)).catch(() => {});
+        return res;
+      })
+      .catch(() => caches.match(req))
+  );
 });
