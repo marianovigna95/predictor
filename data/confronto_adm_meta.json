@@ -1,51 +1,25 @@
 {
- "aggiornato": "2026-11-20T07:14:54",
- "stato": "nessuna_corrispondenza",
- "giocate_non_coperte": 8,
- "diagnosi": {
-  "date_giocate": [
-   "2026-11-20",
-   "2026-11-21",
-   "2026-11-22",
-   "2026-11-23",
-   "2026-11-24",
-   "2026-11-25",
-   "2026-11-26",
-   "2026-11-27"
-  ],
-  "date_quote_adm": [
-   "2026-11-20",
-   "2026-11-21",
-   "2026-11-22",
-   "2026-11-24",
-   "2026-11-25"
-  ],
-  "date_in_comune": [
-   "2026-11-20",
-   "2026-11-21",
-   "2026-11-22",
-   "2026-11-24",
-   "2026-11-25"
-  ],
-  "mercati_giocate": [
-   "1x2",
-   "gg",
-   "o2.5",
-   "u2.5"
-  ],
-  "mercati_adm": [
-   "1x2",
-   "2.5",
-   "gg"
-  ],
-  "leghe_adm": [
-   "Brasileirao Serie B",
-   "Brasileiro Serie B",
-   "Brazil - Serie B",
-   "Liga Premier Serie B",
-   "Serie B"
-  ],
-  "giocate_su_date_coperte": 5,
-  "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
- }
+ "aggiornato": "2026-11-20T14:32:10",
+ "stato": "ok",
+ "confronti": 2,
+ "giocate_non_coperte": 6,
+ "storico_aggiunte": 7,
+ "storico_righe": 7,
+ "storico_delta_medio_pct": 8.5,
+ "storico_delta_mediana_pct": 0.0,
+ "storico_tenuta_ok": 4,
+ "storico_edge_perso": 1,
+ "storico_aggiornato": "2026-11-20T14:32:10",
+ "delta_medio_pct": -2.79,
+ "delta_min_pct": -3.64,
+ "delta_max_pct": -1.94,
+ "tenuta_ok": 0,
+ "tenuta_limite": 2,
+ "edge_perso": 0,
+ "EV_positivo_su_quota_adm": 2,
+ "soglie": {
+  "ok": -0.015,
+  "rossa": -0.05
+ },
+ "nota": "USO INTERNO: non pubblicato sul sito (licenza Display non acquisita)."
 }
