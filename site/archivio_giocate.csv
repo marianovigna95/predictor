@@ -1,19 +1,19 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-20,SINGOLA,Ligue 1,Troyes - Le Havre,1X2,1,51.7,2.29,18.39,0.43,,
-giocata,2026-11-20,RADDOPPIO,Bundesliga + Ligue 1,Bayern Munich - FC Koln [GG GG] + Troyes - Le Havre [GG GG],GG/GG,GG/GG,34.9,3.08,7.34,0.0,,
+giocata,2026-11-20,SINGOLA,Bundesliga,Bayern Munich - FC Koln,GG,GG,62.9,1.85,16.37,1.1,,
+giocata,2026-11-20,RADDOPPIO,Bundesliga + Ligue 1,Bayern Munich - FC Koln [GG GG] + Troyes - Le Havre [GG GG],GG/GG,GG/GG,34.9,3.15,9.62,0.02,,
 giocata,2026-11-21,SINGOLA,LaLiga 2,Castellón - Eldense,O2.5,Over 2.5,48.6,2.55,23.93,1.21,,
 giocata,2026-11-21,RADDOPPIO,Bundesliga + Eredivisie,Elversberg - Freiburg [GG GG] + Groningen - Heerenveen [GG GG],GG/GG,GG/GG,48.1,2.11,1.75,0.0,,
 giocata,2026-11-22,SINGOLA,Serie B,Arezzo - Padova,U2.5,Under 2.5,57.7,2.08,20.02,1.56,,
 giocata,2026-11-22,RADDOPPIO,Bundesliga + Eredivisie,Augsburg - Mainz [GG GG] + Sparta Rotterdam - AZ Alkmaar [GG GG],GG/GG,GG/GG,51.8,2.07,7.38,0.27,,
 giocata,2026-11-23,SINGOLA,LaLiga 2,AD Ceuta FC - Almería,O2.5,Over 2.5,49.8,2.42,20.52,0.86,,
 giocata,2026-11-23,RADDOPPIO,LaLiga + Ligue 2,Levante - Elche [GG GG] + Nantes - Grenoble [NG NG],GG/NG,GG/NG,36.3,2.88,4.58,0.0,,
-giocata,2026-11-24,SINGOLA,Champions League,Real Madrid - PSV Eindhoven,GG,GG,69.4,1.55,7.57,0.0,,
-giocata,2026-11-25,SINGOLA,Champions League,Shakhtar Donetsk - Fenerbahçe,1X2,1,46.1,2.75,26.78,1.06,,
-giocata,2026-11-25,RADDOPPIO,Champions League,Shakhtar Donetsk - Fenerbahçe [1X2 1] + Club Brugge - Liverpool [GG GG],1X2/GG,1/GG,28.7,3.79,8.73,0.0,,
+giocata,2026-11-24,SINGOLA,Champions League,Real Madrid - PSV Eindhoven,GG,GG,66.9,1.55,3.7,0.0,,
+giocata,2026-11-25,SINGOLA,Champions League,Lille - Bayern Munich,GG,GG,71.4,1.62,15.67,2.14,,
+giocata,2026-11-25,RADDOPPIO,Champions League,Club Brugge - Liverpool [GG GG] + Lille - Bayern Munich [GG GG],GG/GG,GG/GG,48.7,2.24,8.79,0.42,,
 giocata,2026-11-26,SINGOLA,Europa League,Celta - Bournemouth,O2.5,Over 2.5,61.3,1.94,18.92,1.48,,
 giocata,2026-11-26,RADDOPPIO,Conference League,Kairat Almaty - Mjällby [GG GG] + Freiburg - FC Twente [GG GG],GG/GG,GG/GG,41.7,2.54,5.92,0.0,,
-giocata,2026-11-27,SINGOLA,Eredivisie,Groningen - Willem II,GG,GG,67.7,1.67,13.06,0.75,,
-giocata,2026-11-27,RADDOPPIO,Eredivisie + Serie A,Venezia - Bologna [GG GG] + Groningen - Willem II [GG GG],GG/GG,GG/GG,37.6,2.79,4.86,0.0,,
+giocata,2026-11-27,SINGOLA,Süper Lig,Alanyaspor - Konyaspor,1X2,1,50.8,2.43,23.44,1.1,,
+giocata,2026-11-27,RADDOPPIO,Eredivisie + Serie A,Venezia - Bologna [GG GG] + Groningen - Willem II [GG GG],GG/GG,GG/GG,37.6,2.71,1.72,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
 verifica,2026-11-03,RADDOPPIO,Champions League,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,63.9,2.0,,,Barcelona - Aston Villa 3-0 (GG no) | Bodø/Glimt - Lille 0-0 (Under 2.5),❌
 verifica,2026-11-04,SINGOLA,Champions League,Viking - Sabah FK,O2.5,Over 2.5,81.6,1.38,,,4-1 (5 gol),✅

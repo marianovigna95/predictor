@@ -1650,16 +1650,16 @@ LaLiga 2,SP2,14,2026-11-15 16:15,Granada,Las Palmas,True,1,0
 LaLiga 2,SP2,14,2026-11-15 18:30,Eibar,Cádiz,True,1,1
 LaLiga 2,SP2,14,2026-11-15 18:30,Eldense,Sabadell,True,2,0
 LaLiga 2,SP2,14,2026-11-16 20:30,Albacete,Celta B,True,1,0
-Bundesliga 2,D2,12,2026-11-20 18:30,Bielefeld,Magdeburg,False,,
-Bundesliga 2,D2,12,2026-11-20 18:30,Darmstadt,Heidenheim,False,,
-Ligue 2,F2,13,2026-11-20 20:00,Annecy,Clermont,False,,
-Ligue 2,F2,13,2026-11-20 20:00,Guingamp,Rodez,False,,
-Ligue 2,F2,13,2026-11-20 20:00,Metz,Boulogne,False,,
-Ligue 2,F2,13,2026-11-20 20:00,Nancy,Dijon,False,,
-Ligue 2,F2,13,2026-11-20 20:00,Red Star,Pau FC,False,,
+Bundesliga 2,D2,12,2026-11-20 18:30,Bielefeld,Magdeburg,True,1,2
+Bundesliga 2,D2,12,2026-11-20 18:30,Darmstadt,Heidenheim,True,3,1
+Ligue 2,F2,13,2026-11-20 20:00,Annecy,Clermont,True,4,2
+Ligue 2,F2,13,2026-11-20 20:00,Guingamp,Rodez,True,1,3
+Ligue 2,F2,13,2026-11-20 20:00,Metz,Boulogne,True,2,1
+Ligue 2,F2,13,2026-11-20 20:00,Nancy,Dijon,True,1,0
+Ligue 2,F2,13,2026-11-20 20:00,Red Star,Pau FC,True,2,1
 Bundesliga,D1,10,2026-11-20 20:30,Bayern Munich,FC Koln,False,,
-LaLiga 2,SP2,15,2026-11-20 20:30,FC Andorra,Leganés,False,,
-Serie B,I2,12,2026-11-20 20:30,Verona,Cesena,False,,
+LaLiga 2,SP2,15,2026-11-20 20:30,FC Andorra,Leganés,True,1,3
+Serie B,I2,12,2026-11-20 20:30,Verona,Cesena,True,0,2
 Ligue 1,F1,11,2026-11-20 20:45,Troyes,Le Havre,False,,
 LaLiga,SP1,13,2026-11-20 21:00,Ath Bilbao,Espanol,False,,
 Süper Lig,T1,12,2026-11-21 11:30,Genclerbirligi,Gaziantep,False,,

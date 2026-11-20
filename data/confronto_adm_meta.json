@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-20T18:44:59",
+ "aggiornato": "2026-11-20T22:19:36",
  "stato": "nessuna_corrispondenza",
  "giocate_non_coperte": 8,
  "diagnosi": {
@@ -14,14 +14,12 @@
    "2026-11-27"
   ],
   "date_quote_adm": [
-   "2026-11-20",
    "2026-11-21",
-   "2026-11-22"
+   "2026-11-23"
   ],
   "date_in_comune": [
-   "2026-11-20",
    "2026-11-21",
-   "2026-11-22"
+   "2026-11-23"
   ],
   "mercati_giocate": [
    "1x2",
@@ -35,15 +33,10 @@
    "gg"
   ],
   "leghe_adm": [
-   "2. Bundesliga",
-   "2nd Bundesliga",
-   "Bundesliga",
-   "Bundesliga 2",
-   "Bundesliga 3",
-   "Bundesliga Femminile",
-   "Germany - Bundesliga Women"
+   "FRANCE LIGUE 2",
+   "Ligue 2"
   ],
-  "giocate_su_date_coperte": 3,
-  "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
+  "giocate_su_date_coperte": 2,
+  "causa_probabile": "COPERTURA TROPPO STRETTA: le quote ADM coprono solo 2 data/e (2026-11-21, 2026-11-23) su 8 date di giocate. Il confronto puo' avvenire solo nei giorni in cui l'API restituisce quote delle nostre leghe. Aumentare le richieste non serve: serve che le leghe ruotate abbiano partite nelle date coperte."
  }
 }
