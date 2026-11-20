@@ -1,7 +1,7 @@
 {
- "aggiornato": "2026-11-19T22:16:39",
- "pronostici_totali": 36,
- "partite_distinte": 36,
+ "aggiornato": "2026-11-20T07:12:44",
+ "pronostici_totali": 48,
+ "partite_distinte": 48,
  "regola": "si conteggia l'ultimo pronostico pubblicato prima del calcio d'inizio",
  "verificati": 32,
  "colti": 18,
@@ -38,5 +38,5 @@
    "prob_media": 60.4
   }
  ],
- "non_verificabili": 4
+ "non_verificabili": 16
 }
