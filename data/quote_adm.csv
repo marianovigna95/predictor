@@ -1,164 +1,135 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-21,Championship,Norwich - Cardiff,2.5,O2.5,1.09,sportium,17,2026-11-21T07:22:58
-2026-11-21,Championship,Norwich - Cardiff,2.5,U2.5,7.0,goldbet,17,2026-11-21T07:22:58
-2026-11-21,Championship,Millwall - QPR,2.5,O2.5,1.21,sportium,15,2026-11-21T07:22:58
-2026-11-21,Championship,Millwall - QPR,2.5,U2.5,4.2,stanleybet,15,2026-11-21T07:22:58
-2026-11-21,Championship,Southampton - Derby,2.5,O2.5,1.14,snai,3,2026-11-21T07:22:58
-2026-11-21,Championship,Southampton - Derby,2.5,U2.5,4.75,snai,3,2026-11-21T07:22:58
-2026-11-21,Cymru Championship,Ynyshir Albions - Llantwit Major,2.5,O2.5,1.15,domusbet,25,2026-11-21T07:22:58
-2026-11-21,Cymru Championship,Ynyshir Albions - Llantwit Major,2.5,U2.5,5.1,quigioco,25,2026-11-21T07:22:58
-2026-11-21,Cymru Championship,Pontardawe Town FC - Baglan Dragons,2.5,O2.5,1.17,gioca7,27,2026-11-21T07:22:58
-2026-11-21,Cymru Championship,Pontardawe Town FC - Baglan Dragons,2.5,U2.5,4.6,quigioco,27,2026-11-21T07:22:58
-2026-11-21,Cymru Championship,Treowen Stars - Afan Lido,2.5,O2.5,1.1,gioca7,25,2026-11-21T07:22:58
-2026-11-21,Cymru Championship,Treowen Stars - Afan Lido,2.5,U2.5,6.3,quigioco,25,2026-11-21T07:22:58
-2026-11-21,Championship,Norwich - Cardiff,gg,GG,1.37,eplay24,23,2026-11-21T07:23:00
-2026-11-21,Championship,Norwich - Cardiff,gg,NG,3.1,snai,23,2026-11-21T07:23:00
-2026-11-21,Championship,Millwall - QPR,gg,GG,1.62,stake,20,2026-11-21T07:23:00
-2026-11-21,Championship,Millwall - QPR,gg,NG,2.33,quigioco,20,2026-11-21T07:23:00
-2026-11-21,Championship,Southampton - Derby,gg,GG,1.8,snai,6,2026-11-21T07:23:00
-2026-11-21,Championship,Southampton - Derby,gg,NG,1.95,stake,6,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Ynyshir Albions - Llantwit Major,gg,GG,1.48,snai,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Ynyshir Albions - Llantwit Major,gg,NG,2.46,quigioco,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Pontardawe Town FC - Baglan Dragons,gg,GG,1.55,fastbet,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Pontardawe Town FC - Baglan Dragons,gg,NG,2.34,quigioco,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Treowen Stars - Afan Lido,gg,GG,1.36,eplay24,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Treowen Stars - Afan Lido,gg,NG,2.9,eurobet,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Penrhyncoch - Rhyl,gg,GG,1.55,eplay24,32,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Penrhyncoch - Rhyl,gg,NG,2.35,eurobet,32,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Brickfield Rangers - Newtown AFC,gg,GG,1.52,fastbet,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Brickfield Rangers - Newtown AFC,gg,NG,2.42,quigioco,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Mold Alexandra FC - Porthmadog FC,gg,GG,1.48,eplay24,36,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Mold Alexandra FC - Porthmadog FC,gg,NG,2.47,quigioco,36,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Caersws - Denbigh Town,gg,GG,1.32,eplay24,36,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Caersws - Denbigh Town,gg,NG,3.25,snai,36,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Llanuwchllyn - Ruthin Town,gg,GG,1.47,eplay24,35,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Llanuwchllyn - Ruthin Town,gg,NG,2.52,quigioco,35,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Holyhead Hotspur - Bala Town,gg,GG,1.52,fastbet,33,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Holyhead Hotspur - Bala Town,gg,NG,2.4,eurobet,33,2026-11-21T07:23:00
-2026-11-21,Championship,West Ham - Preston,gg,GG,1.87,stake,19,2026-11-21T07:23:00
-2026-11-21,Championship,West Ham - Preston,gg,NG,1.95,stake,19,2026-11-21T07:23:00
-2026-11-21,The Championship,Stoke City - Birmingham,gg,GG,1.9,betpassion,14,2026-11-21T07:23:00
-2026-11-21,The Championship,Stoke City - Birmingham,gg,NG,1.92,888sport,14,2026-11-21T07:23:00
-2026-11-21,Championship,Sheffield United - Watford,gg,GG,1.87,giocodigitale,33,2026-11-21T07:23:00
-2026-11-21,Championship,Sheffield United - Watford,gg,NG,1.94,888sport,33,2026-11-21T07:23:00
-2026-11-21,Championship,Swansea - West Bromwich,gg,GG,1.74,daznbet,15,2026-11-21T07:23:00
-2026-11-21,Championship,Swansea - West Bromwich,gg,NG,2.1,snai,15,2026-11-21T07:23:00
-2026-11-21,Championship,Lincoln City - Wrexham AFC,gg,GG,1.89,sunbet,32,2026-11-21T07:23:00
-2026-11-21,Championship,Lincoln City - Wrexham AFC,gg,NG,1.93,888sport,32,2026-11-21T07:23:00
-2026-11-21,Championship,Middlesbrough - Bristol City,gg,GG,1.77,sunbet,36,2026-11-21T07:23:00
-2026-11-21,Championship,Middlesbrough - Bristol City,gg,NG,2.06,quigioco,36,2026-11-21T07:23:00
-2026-11-21,Championship,Bolton - Portsmouth,gg,GG,1.69,sunbet,42,2026-11-21T07:23:00
-2026-11-21,Championship,Bolton - Portsmouth,gg,NG,2.2,snai,42,2026-11-21T07:23:00
-2026-11-21,Championship,Wolverhampton - Charlton,gg,GG,1.92,winamax,12,2026-11-21T07:23:00
-2026-11-21,Championship,Wolverhampton - Charlton,gg,NG,1.85,snai,12,2026-11-21T07:23:00
-2026-11-22,Championship,Burnley - Blackburn,gg,GG,1.65,daznbet,21,2026-11-21T07:23:00
-2026-11-22,Championship,Burnley - Blackburn,gg,NG,2.2,snai,21,2026-11-21T07:23:00
-2026-11-21,Championship,Millwall - Queens Park Rangers,gg,GG,1.6,goldbet,24,2026-11-21T07:23:00
-2026-11-21,Championship,Millwall - Queens Park Rangers,gg,NG,2.29,sunbet,24,2026-11-21T07:23:00
-2026-11-21,Championship,Southampton - Derby County,gg,GG,1.84,sunbet,38,2026-11-21T07:23:00
-2026-11-21,Championship,Southampton - Derby County,gg,NG,2.0,888sport,38,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Cardiff Draconians - Aberystwyth Town Fc,gg,GG,1.56,eplay24,32,2026-11-21T07:23:00
-2026-11-21,Cymru Championship,Cardiff Draconians - Aberystwyth Town Fc,gg,NG,2.3,eurobet,32,2026-11-21T07:23:00
-2026-11-21,Championship North,Guilsfield Fc - Cpd Dinas Bangor City 1876 Fc,gg,GG,1.38,goldbet,33,2026-11-21T07:23:00
-2026-11-21,Championship North,Guilsfield Fc - Cpd Dinas Bangor City 1876 Fc,gg,NG,2.78,quigioco,33,2026-11-21T07:23:00
-2026-11-21,Championship,Lincoln - Wrexham,gg,GG,1.91,stake,11,2026-11-21T07:23:00
-2026-11-21,Championship,Lincoln - Wrexham,gg,NG,1.91,stake,11,2026-11-21T07:23:00
-2026-11-21,The Championship,Swansea City - West Bromwich,gg,GG,1.77,sunbet,23,2026-11-21T07:23:00
-2026-11-21,The Championship,Swansea City - West Bromwich,gg,NG,2.02,sunbet,23,2026-11-21T07:23:00
-2026-11-21,Championship,Ards Fc - Newington Fc,gg,GG,1.5,goldbet,30,2026-11-21T07:23:00
-2026-11-21,Championship,Ards Fc - Newington Fc,gg,NG,2.45,bwin,30,2026-11-21T07:23:00
-2026-11-21,Championship,Armagh City Fc - Rathfriland Rangers,gg,GG,1.55,fastbet,28,2026-11-21T07:23:00
-2026-11-21,Championship,Armagh City Fc - Rathfriland Rangers,gg,NG,2.37,bwin,28,2026-11-21T07:23:00
-2026-11-21,Championship,Glenavon Fc - Newry City Afc,gg,GG,1.6,daznbet,31,2026-11-21T07:23:00
-2026-11-21,Championship,Glenavon Fc - Newry City Afc,gg,NG,2.25,eurobet,31,2026-11-21T07:23:00
-2026-11-21,Championship,Harland And Wolff Welders - Annagh United Fc,gg,GG,1.5,goldbet,29,2026-11-21T07:23:00
-2026-11-21,Championship,Harland And Wolff Welders - Annagh United Fc,gg,NG,2.5,fastbet,29,2026-11-21T07:23:00
-2026-11-21,Championship,Moyola Park Fc - Queens University,gg,GG,1.5,fastbet,31,2026-11-21T07:23:00
-2026-11-21,Championship,Moyola Park Fc - Queens University,gg,NG,2.45,bwin,31,2026-11-21T07:23:00
-2026-11-21,Championship,Warrenpoint Town Fc - Institute Fc,gg,GG,1.54,fastbet,30,2026-11-21T07:23:00
-2026-11-21,Championship,Warrenpoint Town Fc - Institute Fc,gg,NG,2.35,eurobet,30,2026-11-21T07:23:00
-2026-11-21,Championship,Arbroath Fc - Stenhousemuir Fc,gg,GG,1.88,stanleybet,38,2026-11-21T07:23:00
-2026-11-21,Championship,Arbroath Fc - Stenhousemuir Fc,gg,NG,1.88,quigioco,38,2026-11-21T07:23:00
-2026-11-21,Championship,Dunfermline Athletic Fc - Greenock Morton Fc,gg,GG,2.13,betpassion,36,2026-11-21T07:23:00
-2026-11-21,Championship,Dunfermline Athletic Fc - Greenock Morton Fc,gg,NG,1.71,quigioco,36,2026-11-21T07:23:00
-2026-11-21,Championship,Queens Park Fc - Livingston,gg,GG,1.8,bwin,32,2026-11-21T07:23:00
-2026-11-21,Championship,Queens Park Fc - Livingston,gg,NG,1.98,quigioco,32,2026-11-21T07:23:00
-2026-11-21,Championship,Raith Rovers - Partick Thistle Fc,gg,GG,1.78,winamax,38,2026-11-21T07:23:00
-2026-11-21,Championship,Raith Rovers - Partick Thistle Fc,gg,NG,2.0,leovegas,38,2026-11-21T07:23:00
-2026-11-21,USL Championship,Sacramento Republic - Louisville City,gg,GG,1.85,eplay24,36,2026-11-21T07:23:00
-2026-11-21,USL Championship,Sacramento Republic - Louisville City,gg,NG,1.97,leovegas,36,2026-11-21T07:23:00
-2026-11-22,Australian Championship,Adelaide City - Broadmeadow Magic,gg,GG,1.44,fastbet,21,2026-11-21T07:23:00
-2026-11-22,Australian Championship,Adelaide City - Broadmeadow Magic,gg,NG,2.65,eurobet,21,2026-11-21T07:23:00
-2026-11-22,Australian Championship,Avondale Fc - Apia Leichhardt,gg,GG,1.44,eplay24,11,2026-11-21T07:23:00
-2026-11-22,Australian Championship,Avondale Fc - Apia Leichhardt,gg,NG,2.55,eurobet,11,2026-11-21T07:23:00
-2026-11-21,The Championship,Norwich City - Cardiff City,gg,GG,1.35,quigioco,4,2026-11-21T07:23:00
-2026-11-21,The Championship,Norwich City - Cardiff City,gg,NG,2.94,quigioco,4,2026-11-21T07:23:00
-2026-11-21,Championship,Raith Rovers - Partick Thistle,gg,GG,4.0,leovegas,3,2026-11-21T07:23:00
-2026-11-21,Championship,Raith Rovers - Partick Thistle,gg,NG,1.13,leovegas,3,2026-11-21T07:23:00
-2026-11-21,Championship,Bolton Wanderers - Portsmouth,gg,GG,1.62,quigioco,1,2026-11-21T07:23:00
-2026-11-21,Championship,Bolton Wanderers - Portsmouth,gg,NG,2.16,quigioco,1,2026-11-21T07:23:00
-2026-11-21,Championship,Wolverhampton - Charlton Athletic,gg,GG,1.95,sunbet,20,2026-11-21T07:23:00
-2026-11-21,Championship,Wolverhampton - Charlton Athletic,gg,NG,1.82,sunbet,20,2026-11-21T07:23:00
-2026-11-21,Championship,Norwich - Cardiff,1x2,1,1.8,betpassion,23,2026-11-21T07:23:01
-2026-11-21,Championship,Norwich - Cardiff,1x2,X,4.25,betpassion,23,2026-11-21T07:23:01
-2026-11-21,Championship,Norwich - Cardiff,1x2,2,4.0,stake,23,2026-11-21T07:23:01
-2026-11-21,Championship,Millwall - QPR,1x2,1,2.67,stake,20,2026-11-21T07:23:01
-2026-11-21,Championship,Millwall - QPR,1x2,X,3.5,stake,20,2026-11-21T07:23:01
-2026-11-21,Championship,Millwall - QPR,1x2,2,2.57,stake,20,2026-11-21T07:23:01
-2026-11-21,Championship,Southampton - Derby,1x2,1,1.36,stake,6,2026-11-21T07:23:01
-2026-11-21,Championship,Southampton - Derby,1x2,X,5.25,snai,6,2026-11-21T07:23:01
-2026-11-21,Championship,Southampton - Derby,1x2,2,8.5,stake,6,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Ynyshir Albions - Llantwit Major,1x2,1,1.95,snai,34,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Ynyshir Albions - Llantwit Major,1x2,X,4.05,betflag,34,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Ynyshir Albions - Llantwit Major,1x2,2,3.15,eplay24,34,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Pontardawe Town FC - Baglan Dragons,1x2,1,1.94,eplay24,34,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Pontardawe Town FC - Baglan Dragons,1x2,X,3.75,eplay24,34,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Pontardawe Town FC - Baglan Dragons,1x2,2,3.25,eplay24,34,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Treowen Stars - Afan Lido,1x2,1,2.1,snai,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Treowen Stars - Afan Lido,1x2,X,3.9,eplay24,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Treowen Stars - Afan Lido,1x2,2,2.85,eplay24,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Penrhyncoch - Rhyl,1x2,1,4.75,snai,32,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Penrhyncoch - Rhyl,1x2,X,4.3,eplay24,32,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Penrhyncoch - Rhyl,1x2,2,1.55,eplay24,32,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Brickfield Rangers - Newtown AFC,1x2,1,2.55,eurobet,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Brickfield Rangers - Newtown AFC,1x2,X,3.75,fastbet,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Brickfield Rangers - Newtown AFC,1x2,2,2.35,eplay24,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Mold Alexandra FC - Porthmadog FC,1x2,1,2.05,snai,37,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Mold Alexandra FC - Porthmadog FC,1x2,X,3.7,eplay24,37,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Mold Alexandra FC - Porthmadog FC,1x2,2,3.05,eplay24,37,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Caersws - Denbigh Town,1x2,1,2.05,fastbet,37,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Caersws - Denbigh Town,1x2,X,3.85,eplay24,37,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Caersws - Denbigh Town,1x2,2,3.0,snai,37,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Llanuwchllyn - Ruthin Town,1x2,1,2.05,goldbet,36,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Llanuwchllyn - Ruthin Town,1x2,X,3.8,eplay24,36,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Llanuwchllyn - Ruthin Town,1x2,2,3.05,eplay24,36,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Holyhead Hotspur - Bala Town,1x2,1,3.35,eplay24,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Holyhead Hotspur - Bala Town,1x2,X,3.7,eplay24,33,2026-11-21T07:23:01
-2026-11-21,Cymru Championship,Holyhead Hotspur - Bala Town,1x2,2,1.92,eplay24,33,2026-11-21T07:23:01
-2026-11-21,Championship,West Ham - Preston,1x2,1,1.25,stake,19,2026-11-21T07:23:01
-2026-11-21,Championship,West Ham - Preston,1x2,X,6.67,stake,19,2026-11-21T07:23:01
-2026-11-21,Championship,West Ham - Preston,1x2,2,11.0,snai,19,2026-11-21T07:23:01
-2026-11-21,The Championship,Stoke City - Birmingham,1x2,1,3.0,snai,14,2026-11-21T07:23:01
-2026-11-21,The Championship,Stoke City - Birmingham,1x2,X,3.25,888sport,14,2026-11-21T07:23:01
-2026-11-21,The Championship,Stoke City - Birmingham,1x2,2,2.45,888sport,14,2026-11-21T07:23:01
-2026-11-21,Championship,Sheffield United - Watford,1x2,1,1.58,888sport,34,2026-11-21T07:23:01
-2026-11-21,Championship,Sheffield United - Watford,1x2,X,4.33,giocodigitale,34,2026-11-21T07:23:01
-2026-11-21,Championship,Sheffield United - Watford,1x2,2,5.6,stanleybet,34,2026-11-21T07:23:01
-2026-11-21,Championship,Swansea - West Bromwich,1x2,1,2.55,goldbet,16,2026-11-21T07:23:01
-2026-11-21,Championship,Swansea - West Bromwich,1x2,X,3.3,goldbet,16,2026-11-21T07:23:01
-2026-11-21,Championship,Swansea - West Bromwich,1x2,2,2.7,snai,16,2026-11-21T07:23:01
-2026-11-21,Championship,Lincoln City - Wrexham AFC,1x2,1,2.75,888sport,33,2026-11-21T07:23:01
-2026-11-21,Championship,Lincoln City - Wrexham AFC,1x2,X,3.2,888sport,33,2026-11-21T07:23:01
-2026-11-21,Championship,Lincoln City - Wrexham AFC,1x2,2,2.85,goldbet,33,2026-11-21T07:23:01
-2026-11-21,Championship,Middlesbrough - Bristol City,1x2,1,1.41,giocodigitale,37,2026-11-21T07:23:01
-2026-11-21,Championship,Middlesbrough - Bristol City,1x2,X,5.25,bgame,37,2026-11-21T07:23:01
-2026-11-21,Championship,Middlesbrough - Bristol City,1x2,2,7.5,stake,37,2026-11-21T07:23:01
-2026-11-21,Championship,Bolton - Portsmouth,1x2,1,2.95,goldbet,43,2026-11-21T07:23:01
-2026-11-21,Championship,Bolton - Portsmouth,1x2,X,3.5,giocodigitale,43,2026-11-21T07:23:01
-2026-11-21,Championship,Bolton - Portsmouth,1x2,2,2.5,stake,43,2026-11-21T07:23:01
-2026-11-21,Championship,Wolverhampton - Charlton,1x2,1,1.32,eurobet,12,2026-11-21T07:23:01
-2026-11-21,Championship,Wolverhampton - Charlton,1x2,X,5.3,eplay24,12,2026-11-21T07:23:01
-2026-11-21,Championship,Wolverhampton - Charlton,1x2,2,9.0,snai,12,2026-11-21T07:23:01
-2026-11-22,Championship,Burnley - Blackburn,1x2,1,1.92,stake,21,2026-11-21T07:23:01
-2026-11-22,Championship,Burnley - Blackburn,1x2,X,3.75,stake,21,2026-11-21T07:23:01
-2026-11-22,Championship,Burnley - Blackburn,1x2,2,3.8,stake,21,2026-11-21T07:23:01
+2026-11-21,2. Bundesliga,St. Pauli - Vfl Bochum 1848,gg,GG,1.62,sunbet,15,2026-11-21T14:24:31
+2026-11-21,2. Bundesliga,St. Pauli - Vfl Bochum 1848,gg,NG,2.26,sunbet,15,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha Berlino,gg,GG,1.46,winamax,11,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha Berlino,gg,NG,2.65,eurobet,11,2026-11-21T14:24:31
+2026-11-21,2. Bundesliga,St. Pauli - Bochum,gg,GG,1.62,stake,22,2026-11-21T14:24:31
+2026-11-21,2. Bundesliga,St. Pauli - Bochum,gg,NG,2.31,quigioco,22,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Kaiserslautern - Dynamo Dresden,gg,GG,1.62,stake,4,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Kaiserslautern - Dynamo Dresden,gg,NG,2.2,stake,4,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruher - Osnabruck,gg,GG,1.48,eplay24,7,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruher - Osnabruck,gg,NG,2.38,eplay24,7,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha BSC,gg,GG,1.48,sunbet,15,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha BSC,gg,NG,2.64,quigioco,15,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruhe SC - Osnabruck,gg,GG,3.4,fastbet,5,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruhe SC - Osnabruck,gg,NG,1.27,stake,5,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,1. FC Kaiserslautern - Dynamo Dresden,gg,GG,1.55,quigioco,4,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,1. FC Kaiserslautern - Dynamo Dresden,gg,NG,2.31,quigioco,4,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,1. FC Heidenheim - 1. FC Norimberga,gg,GG,1.32,leovegas,2,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,1. FC Heidenheim - 1. FC Norimberga,gg,NG,2.9,leovegas,2,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,VfL Bochum - Darmstadt 98,gg,GG,1.47,leovegas,2,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,VfL Bochum - Darmstadt 98,gg,NG,2.38,leovegas,2,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,Dynamo Dresden - FC St. Pauli,gg,GG,1.48,leovegas,2,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,Dynamo Dresden - FC St. Pauli,gg,NG,2.35,leovegas,2,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe SC,gg,GG,3.0,leovegas,2,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe SC,gg,NG,1.32,leovegas,2,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,Holstein Kiel - 1. FC Kaiserslautern,gg,GG,3.45,leovegas,2,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,Holstein Kiel - 1. FC Kaiserslautern,gg,NG,1.25,leovegas,2,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Kaiserslautern - Dinamo Dresda,gg,GG,1.6,betpassion,7,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Kaiserslautern - Dinamo Dresda,gg,NG,2.25,giocodigitale,7,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,ENERGIE COTTBUS - HERTHA,gg,GG,1.47,daznbet,8,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,ENERGIE COTTBUS - HERTHA,gg,NG,2.55,daznbet,8,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,HERTHA - KARLSRUHER,gg,GG,1.45,eplay24,7,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,HERTHA - KARLSRUHER,gg,NG,2.5,eplay24,7,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,SG DYNAMO DRESDEN - ST. PAULI,gg,GG,1.56,vincitu,8,2026-11-21T14:24:31
+2026-11-28,2. Bundesliga,SG DYNAMO DRESDEN - ST. PAULI,gg,NG,2.27,vincitu,8,2026-11-21T14:24:31
+2026-11-29,2. Bundesliga,BRAUNSCHWEIG - WOLFSBURG,gg,GG,1.4,eplay24,7,2026-11-21T14:24:31
+2026-11-29,2. Bundesliga,BRAUNSCHWEIG - WOLFSBURG,gg,NG,2.67,eplay24,7,2026-11-21T14:24:31
+2026-11-29,2. Bundesliga,FURTH - ARMINIA BIELEFELD,gg,GG,1.53,eplay24,7,2026-11-21T14:24:31
+2026-11-29,2. Bundesliga,FURTH - ARMINIA BIELEFELD,gg,NG,2.28,eplay24,7,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Cottbus - Hertha Berlin,gg,GG,1.46,stake,3,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Cottbus - Hertha Berlin,gg,NG,2.6,stake,3,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,gg,GG,1.58,betpassion,8,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,gg,NG,2.25,stake,8,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,gg,GG,1.39,stake,3,2026-11-21T14:24:31
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,gg,NG,2.85,stake,3,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruhe - VfL Osnabruck,gg,GG,2.71,stake,2,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruhe - VfL Osnabruck,gg,NG,1.4,stake,2,2026-11-21T14:24:31
+2026-11-29,2. Bundesliga,Greuther Furth-Arminia Bielefeld,gg,GG,1.55,betpassion,4,2026-11-21T14:24:31
+2026-11-29,2. Bundesliga,Greuther Furth-Arminia Bielefeld,gg,NG,2.3,betpassion,4,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruher Sc - Vfl 1899 Osnabruck,gg,GG,1.46,quigioco,1,2026-11-21T14:24:31
+2026-11-22,2. Bundesliga,Karlsruher Sc - Vfl 1899 Osnabruck,gg,NG,2.53,quigioco,1,2026-11-21T14:24:31
+2026-11-21,2. Bundesliga,St. Pauli - Vfl Bochum 1848,2.5,O2.5,1.71,sunbet,15,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Vfl Bochum 1848,2.5,U2.5,2.1,sunbet,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha Berlino,2.5,O2.5,1.37,giocodigitale,11,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha Berlino,2.5,U2.5,3.0,leovegas,11,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Bochum,2.5,O2.5,5.0,giocodigitale,16,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Bochum,2.5,U2.5,1.16,daznbet,16,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha BSC,2.5,O2.5,1.96,sunbet,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha BSC,2.5,U2.5,1.83,quigioco,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dynamo Dresden,2.5,O2.5,4.65,daznbet,1,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dynamo Dresden,2.5,U2.5,1.16,daznbet,1,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruher - Osnabruck,2.5,O2.5,4.0,gioca7,4,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruher - Osnabruck,2.5,U2.5,1.19,gioca7,4,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Vfl Bochum 1848,1x2,1,2.14,sunbet,15,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Vfl Bochum 1848,1x2,X,3.6,sunbet,15,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Vfl Bochum 1848,1x2,2,3.3,sunbet,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha Berlino,1x2,1,4.75,giocodigitale,11,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha Berlino,1x2,X,4.5,betpassion,11,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha Berlino,1x2,2,1.62,giocodigitale,11,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Bochum,1x2,1,2.11,quigioco,22,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Bochum,1x2,X,3.6,bwin,22,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,St. Pauli - Bochum,1x2,2,3.33,fastbet,22,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha BSC,1x2,1,4.9,sunbet,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha BSC,1x2,X,4.6,sunbet,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Energie Cottbus - Hertha BSC,1x2,2,1.59,sunbet,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dynamo Dresden,1x2,1,2.15,daznbet,4,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dynamo Dresden,1x2,X,3.5,stake,4,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dynamo Dresden,1x2,2,3.14,stake,4,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruher - Osnabruck,1x2,1,2.28,eplay24,7,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruher - Osnabruck,1x2,X,3.55,eplay24,7,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruher - Osnabruck,1x2,2,2.85,eplay24,7,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,1x2,1,2.43,zonagioco,2,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,1x2,X,2.57,zonagioco,2,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,1x2,2,3.35,zonagioco,2,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,Greuther Furth - Arminia Bielefeld,1x2,1,3.1,betpassion,4,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,Greuther Furth - Arminia Bielefeld,1x2,X,3.5,betpassion,4,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,Greuther Furth - Arminia Bielefeld,1x2,2,2.15,betpassion,4,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,FC St. Pauli - VfL Bochum,1x2,1,2.45,betpassion,15,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,FC St. Pauli - VfL Bochum,1x2,X,2.65,leovegas,15,2026-11-21T14:24:32
+2026-11-21,2. Bundesliga,FC St. Pauli - VfL Bochum,1x2,2,3.5,fastbet,15,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruhe SC - Osnabruck,1x2,1,2.33,fastbet,13,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruhe SC - Osnabruck,1x2,X,3.7,giocodigitale,13,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Karlsruhe SC - Osnabruck,1x2,2,2.87,giocodigitale,13,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,1. FC Kaiserslautern - Dynamo Dresden,1x2,1,2.18,quigioco,4,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,1. FC Kaiserslautern - Dynamo Dresden,1x2,X,3.5,leovegas,4,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,1. FC Kaiserslautern - Dynamo Dresden,1x2,2,3.15,leovegas,4,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,1. FC Heidenheim - 1. FC Norimberga,1x2,1,2.0,leovegas,2,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,1. FC Heidenheim - 1. FC Norimberga,1x2,X,3.75,leovegas,2,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,1. FC Heidenheim - 1. FC Norimberga,1x2,2,2.95,leovegas,2,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,VfL Bochum - Darmstadt 98,1x2,1,2.2,leovegas,2,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,VfL Bochum - Darmstadt 98,1x2,X,2.43,leovegas,2,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,VfL Bochum - Darmstadt 98,1x2,2,3.8,leovegas,2,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Dynamo Dresden - FC St. Pauli,1x2,1,2.6,leovegas,2,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Dynamo Dresden - FC St. Pauli,1x2,X,2.65,leovegas,2,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Dynamo Dresden - FC St. Pauli,1x2,2,2.88,leovegas,2,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe SC,1x2,1,1.83,betpassion,7,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe SC,1x2,X,2.9,winamax,7,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe SC,1x2,2,5.1,winamax,7,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Holstein Kiel - 1. FC Kaiserslautern,1x2,1,1.98,leovegas,2,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Holstein Kiel - 1. FC Kaiserslautern,1x2,X,3.55,leovegas,2,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,Holstein Kiel - 1. FC Kaiserslautern,1x2,2,3.15,leovegas,2,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dinamo Dresda,1x2,1,2.68,betpassion,7,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dinamo Dresda,1x2,X,2.3,bwin,7,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Kaiserslautern - Dinamo Dresda,1x2,2,3.55,betpassion,7,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,ENERGIE COTTBUS - HERTHA,1x2,1,4.75,eplay24,8,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,ENERGIE COTTBUS - HERTHA,1x2,X,4.5,eplay24,8,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,ENERGIE COTTBUS - HERTHA,1x2,2,1.57,eplay24,8,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,HERTHA - KARLSRUHER,1x2,1,1.41,eplay24,7,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,HERTHA - KARLSRUHER,1x2,X,5.1,eplay24,7,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,HERTHA - KARLSRUHER,1x2,2,5.75,eplay24,7,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,SG DYNAMO DRESDEN - ST. PAULI,1x2,1,2.38,eplay24,8,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,SG DYNAMO DRESDEN - ST. PAULI,1x2,X,3.55,eplay24,8,2026-11-21T14:24:32
+2026-11-28,2. Bundesliga,SG DYNAMO DRESDEN - ST. PAULI,1x2,2,2.65,eplay24,8,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,BRAUNSCHWEIG - WOLFSBURG,1x2,1,3.35,eplay24,7,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,BRAUNSCHWEIG - WOLFSBURG,1x2,X,3.9,eplay24,7,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,BRAUNSCHWEIG - WOLFSBURG,1x2,2,1.9,eplay24,7,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,FURTH - ARMINIA BIELEFELD,1x2,1,3.05,eplay24,7,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,FURTH - ARMINIA BIELEFELD,1x2,X,3.5,eplay24,7,2026-11-21T14:24:32
+2026-11-29,2. Bundesliga,FURTH - ARMINIA BIELEFELD,1x2,2,2.14,eplay24,7,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Cottbus - Hertha Berlin,1x2,1,4.75,fastbet,3,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Cottbus - Hertha Berlin,1x2,X,4.5,stake,3,2026-11-21T14:24:32
+2026-11-22,2. Bundesliga,Cottbus - Hertha Berlin,1x2,2,1.6,stake,3,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,1x2,1,1.82,fastbet,8,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,1x2,X,3.9,betpassion,8,2026-11-21T14:24:32
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,1x2,2,3.9,betpassion,8,2026-11-21T14:24:32
