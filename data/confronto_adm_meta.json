@@ -1,28 +1,27 @@
 {
- "aggiornato": "2026-11-20T22:19:36",
+ "aggiornato": "2026-11-21T07:23:01",
  "stato": "nessuna_corrispondenza",
  "giocate_non_coperte": 8,
  "diagnosi": {
   "date_giocate": [
-   "2026-11-20",
    "2026-11-21",
    "2026-11-22",
    "2026-11-23",
    "2026-11-24",
    "2026-11-25",
    "2026-11-26",
-   "2026-11-27"
+   "2026-11-27",
+   "2026-11-28"
   ],
   "date_quote_adm": [
    "2026-11-21",
-   "2026-11-23"
+   "2026-11-22"
   ],
   "date_in_comune": [
    "2026-11-21",
-   "2026-11-23"
+   "2026-11-22"
   ],
   "mercati_giocate": [
-   "1x2",
    "gg",
    "o2.5",
    "u2.5"
@@ -33,10 +32,14 @@
    "gg"
   ],
   "leghe_adm": [
-   "FRANCE LIGUE 2",
-   "Ligue 2"
+   "Australian Championship",
+   "Championship",
+   "Championship North",
+   "Cymru Championship",
+   "The Championship",
+   "USL Championship"
   ],
   "giocate_su_date_coperte": 2,
-  "causa_probabile": "COPERTURA TROPPO STRETTA: le quote ADM coprono solo 2 data/e (2026-11-21, 2026-11-23) su 8 date di giocate. Il confronto puo' avvenire solo nei giorni in cui l'API restituisce quote delle nostre leghe. Aumentare le richieste non serve: serve che le leghe ruotate abbiano partite nelle date coperte."
+  "causa_probabile": "COPERTURA TROPPO STRETTA: le quote ADM coprono solo 2 data/e (2026-11-21, 2026-11-22) su 8 date di giocate. Il confronto puo' avvenire solo nei giorni in cui l'API restituisce quote delle nostre leghe. Aumentare le richieste non serve: serve che le leghe ruotate abbiano partite nelle date coperte."
  }
 }
