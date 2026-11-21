@@ -1663,47 +1663,47 @@ Serie B,I2,12,2026-11-20 20:30,Verona,Cesena,True,0,2
 Ligue 1,F1,11,2026-11-20 20:45,Troyes,Le Havre,True,3,1
 LaLiga,SP1,13,2026-11-20 21:00,Ath Bilbao,Espanol,True,0,1
 Süper Lig,T1,12,2026-11-21 11:30,Genclerbirligi,Gaziantep,True,1,0
-Bundesliga 2,D2,12,2026-11-21 13:00,Hannover,Greuther Furth,False,,
-Bundesliga 2,D2,12,2026-11-21 13:00,Nurnberg,Braunschweig,False,,
-Bundesliga 2,D2,12,2026-11-21 13:00,Wolfsburg,Holstein Kiel,False,,
-Championship,E1,16,2026-11-21 13:30,Millwall,QPR,False,,
-Championship,E1,16,2026-11-21 13:30,Norwich City,Cardiff City,False,,
-Championship,E1,16,2026-11-21 13:30,Southampton,Derby County,False,,
-Premier League,E0,11,2026-11-21 13:30,Man City,Fulham,False,,
-LaLiga,SP1,13,2026-11-21 14:00,Alaves,La Coruna,False,,
-LaLiga 2,SP2,15,2026-11-21 14:00,Sabadell,Granada,False,,
-Ligue 2,F2,13,2026-11-21 14:00,Laval,Montpellier,False,,
-Süper Lig,T1,12,2026-11-21 14:00,Amedspor,Rizespor,False,,
-Süper Lig,T1,12,2026-11-21 14:00,Galatasaray,Samsunspor,False,,
-Serie A,I1,12,2026-11-21 15:00,Como,Cagliari,False,,
-Serie A,I1,12,2026-11-21 15:00,Lazio,Lecce,False,,
-Serie B,I2,12,2026-11-21 15:00,Ascoli,Vicenza,False,,
-Serie B,I2,12,2026-11-21 15:00,Carrarese,Virtus Entella,False,,
-Serie B,I2,12,2026-11-21 15:00,Modena,Juve Stabia,False,,
-Serie B,I2,12,2026-11-21 15:00,Sampdoria,Benevento,False,,
-Serie B,I2,12,2026-11-21 15:00,Sudtirol,Cremonese,False,,
-Bundesliga,D1,10,2026-11-21 15:30,Leverkusen,Paderborn,False,,
-Bundesliga,D1,10,2026-11-21 15:30,M'gladbach,Dortmund,False,,
-Bundesliga,D1,10,2026-11-21 15:30,Ein Frankfurt,Hoffenheim,False,,
-Bundesliga,D1,10,2026-11-21 15:30,Elversberg,Freiburg,False,,
-Bundesliga,D1,10,2026-11-21 15:30,Union Berlin,RB Leipzig,False,,
-Championship,E1,16,2026-11-21 16:00,Bolton Wanderers,Portsmouth,False,,
-Championship,E1,16,2026-11-21 16:00,Lincoln City,Wrexham,False,,
-Championship,E1,16,2026-11-21 16:00,Middlesbrough,Bristol City,False,,
-Championship,E1,16,2026-11-21 16:00,Sheffield United,Watford,False,,
-Championship,E1,16,2026-11-21 16:00,Stoke City,Birmingham City,False,,
-Championship,E1,16,2026-11-21 16:00,Swansea City,West Bromwich Albion,False,,
-Championship,E1,16,2026-11-21 16:00,West Ham United,Preston North End,False,,
-Championship,E1,16,2026-11-21 16:00,Wolves,Charlton Athletic,False,,
-Premier League,E0,11,2026-11-21 16:00,Bournemouth,Nott'm Forest,False,,
-Premier League,E0,11,2026-11-21 16:00,Aston Villa,Sunderland,False,,
-Premier League,E0,11,2026-11-21 16:00,Chelsea,Leeds,False,,
-Premier League,E0,11,2026-11-21 16:00,Coventry,Crystal Palace,False,,
-Premier League,E0,11,2026-11-21 16:00,Tottenham,Ipswich,False,,
-LaLiga,SP1,13,2026-11-21 16:15,Vallecano,Valencia,False,,
-LaLiga 2,SP2,15,2026-11-21 16:15,Real Sociedad B,Cádiz,False,,
-Eredivisie,N1,13,2026-11-21 16:30,Nijmegen,PSV Eindhoven,False,,
-Süper Lig,T1,12,2026-11-21 17:00,Kocaelispor,Fenerbahce,False,,
+Bundesliga 2,D2,12,2026-11-21 13:00,Hannover,Greuther Furth,True,2,1
+Bundesliga 2,D2,12,2026-11-21 13:00,Nurnberg,Braunschweig,True,1,2
+Bundesliga 2,D2,12,2026-11-21 13:00,Wolfsburg,Holstein Kiel,True,3,0
+Championship,E1,16,2026-11-21 13:30,Millwall,QPR,True,0,1
+Championship,E1,16,2026-11-21 13:30,Norwich City,Cardiff City,True,2,1
+Championship,E1,16,2026-11-21 13:30,Southampton,Derby County,True,2,0
+Premier League,E0,11,2026-11-21 13:30,Man City,Fulham,True,1,1
+LaLiga,SP1,13,2026-11-21 14:00,Alaves,La Coruna,True,3,1
+LaLiga 2,SP2,15,2026-11-21 14:00,Sabadell,Granada,True,1,1
+Ligue 2,F2,13,2026-11-21 14:00,Laval,Montpellier,True,1,0
+Süper Lig,T1,12,2026-11-21 14:00,Amedspor,Rizespor,True,0,2
+Süper Lig,T1,12,2026-11-21 14:00,Galatasaray,Samsunspor,True,2,1
+Serie A,I1,12,2026-11-21 15:00,Como,Cagliari,True,2,0
+Serie A,I1,12,2026-11-21 15:00,Lazio,Lecce,True,3,0
+Serie B,I2,12,2026-11-21 15:00,Ascoli,Vicenza,True,2,2
+Serie B,I2,12,2026-11-21 15:00,Carrarese,Virtus Entella,True,1,0
+Serie B,I2,12,2026-11-21 15:00,Modena,Juve Stabia,True,2,0
+Serie B,I2,12,2026-11-21 15:00,Sampdoria,Benevento,True,3,1
+Serie B,I2,12,2026-11-21 15:00,Sudtirol,Cremonese,True,1,0
+Bundesliga,D1,10,2026-11-21 15:30,Leverkusen,Paderborn,True,4,0
+Bundesliga,D1,10,2026-11-21 15:30,M'gladbach,Dortmund,True,0,1
+Bundesliga,D1,10,2026-11-21 15:30,Ein Frankfurt,Hoffenheim,True,1,0
+Bundesliga,D1,10,2026-11-21 15:30,Elversberg,Freiburg,True,0,1
+Bundesliga,D1,10,2026-11-21 15:30,Union Berlin,RB Leipzig,True,1,5
+Championship,E1,16,2026-11-21 16:00,Bolton Wanderers,Portsmouth,True,1,1
+Championship,E1,16,2026-11-21 16:00,Lincoln City,Wrexham,True,0,1
+Championship,E1,16,2026-11-21 16:00,Middlesbrough,Bristol City,True,2,0
+Championship,E1,16,2026-11-21 16:00,Sheffield United,Watford,True,4,0
+Championship,E1,16,2026-11-21 16:00,Stoke City,Birmingham City,True,1,0
+Championship,E1,16,2026-11-21 16:00,Swansea City,West Bromwich Albion,True,2,2
+Championship,E1,16,2026-11-21 16:00,West Ham United,Preston North End,True,1,1
+Championship,E1,16,2026-11-21 16:00,Wolves,Charlton Athletic,True,2,1
+Premier League,E0,11,2026-11-21 16:00,Bournemouth,Nott'm Forest,True,2,0
+Premier League,E0,11,2026-11-21 16:00,Aston Villa,Sunderland,True,0,0
+Premier League,E0,11,2026-11-21 16:00,Chelsea,Leeds,True,1,4
+Premier League,E0,11,2026-11-21 16:00,Coventry,Crystal Palace,True,3,2
+Premier League,E0,11,2026-11-21 16:00,Tottenham,Ipswich,True,2,0
+LaLiga,SP1,13,2026-11-21 16:15,Vallecano,Valencia,True,0,1
+LaLiga 2,SP2,15,2026-11-21 16:15,Real Sociedad B,Cádiz,True,0,3
+Eredivisie,N1,13,2026-11-21 16:30,Nijmegen,PSV Eindhoven,True,1,4
+Süper Lig,T1,12,2026-11-21 17:00,Kocaelispor,Fenerbahce,True,2,2
 Ligue 1,F1,11,2026-11-21 17:15,Nice,Paris SG,False,,
 Serie B,I2,12,2026-11-21 17:15,Catanzaro,Palermo,False,,
 Serie A,I1,12,2026-11-21 18:00,Parma,Roma,False,,
