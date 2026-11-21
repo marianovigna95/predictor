@@ -1704,22 +1704,22 @@ LaLiga,SP1,13,2026-11-21 16:15,Vallecano,Valencia,True,0,1
 LaLiga 2,SP2,15,2026-11-21 16:15,Real Sociedad B,Cádiz,True,0,3
 Eredivisie,N1,13,2026-11-21 16:30,Nijmegen,PSV Eindhoven,True,1,4
 Süper Lig,T1,12,2026-11-21 17:00,Kocaelispor,Fenerbahce,True,2,2
-Ligue 1,F1,11,2026-11-21 17:15,Nice,Paris SG,False,,
-Serie B,I2,12,2026-11-21 17:15,Catanzaro,Palermo,False,,
-Serie A,I1,12,2026-11-21 18:00,Parma,Roma,False,,
-Bundesliga,D1,10,2026-11-21 18:30,Schalke 04,Stuttgart,False,,
-LaLiga,SP1,13,2026-11-21 18:30,Sevilla,Betis,False,,
-LaLiga 2,SP2,15,2026-11-21 18:30,Castellón,Eldense,False,,
-Premier League,E0,11,2026-11-21 18:30,Newcastle,Arsenal,False,,
-Eredivisie,N1,13,2026-11-21 18:45,Utrecht,Cambuur,False,,
-Eredivisie,N1,13,2026-11-21 18:45,Feyenoord,Excelsior,False,,
-Serie B,I2,12,2026-11-21 19:30,Empoli,Pisa,False,,
-Ligue 2,F2,13,2026-11-21 20:00,Reims,St Etienne,False,,
-Bundesliga 2,D2,12,2026-11-21 20:30,St Pauli,Bochum,False,,
-Ligue 1,F1,11,2026-11-21 20:45,Lens,Toulouse,False,,
-Ligue 1,F1,11,2026-11-21 20:45,Lille,Lyon,False,,
-Ligue 1,F1,11,2026-11-21 20:45,Monaco,Auxerre,False,,
-Ligue 1,F1,11,2026-11-21 20:45,Strasbourg,Brest,False,,
+Ligue 1,F1,11,2026-11-21 17:15,Nice,Paris SG,True,2,3
+Serie B,I2,12,2026-11-21 17:15,Catanzaro,Palermo,True,3,1
+Serie A,I1,12,2026-11-21 18:00,Parma,Roma,True,1,5
+Bundesliga,D1,10,2026-11-21 18:30,Schalke 04,Stuttgart,True,0,0
+LaLiga,SP1,13,2026-11-21 18:30,Sevilla,Betis,True,1,1
+LaLiga 2,SP2,15,2026-11-21 18:30,Castellón,Eldense,True,2,0
+Premier League,E0,11,2026-11-21 18:30,Newcastle,Arsenal,True,2,2
+Eredivisie,N1,13,2026-11-21 18:45,Utrecht,Cambuur,True,2,3
+Eredivisie,N1,13,2026-11-21 18:45,Feyenoord,Excelsior,True,2,3
+Serie B,I2,12,2026-11-21 19:30,Empoli,Pisa,True,0,1
+Ligue 2,F2,13,2026-11-21 20:00,Reims,St Etienne,True,0,1
+Bundesliga 2,D2,12,2026-11-21 20:30,St Pauli,Bochum,True,2,0
+Ligue 1,F1,11,2026-11-21 20:45,Lens,Toulouse,True,1,1
+Ligue 1,F1,11,2026-11-21 20:45,Lille,Lyon,True,0,1
+Ligue 1,F1,11,2026-11-21 20:45,Monaco,Auxerre,True,1,1
+Ligue 1,F1,11,2026-11-21 20:45,Strasbourg,Brest,True,0,1
 Serie A,I1,12,2026-11-21 20:45,Napoli,Torino,False,,
 Eredivisie,N1,13,2026-11-21 21:00,Groningen,Heerenveen,False,,
 Eredivisie,N1,13,2026-11-21 21:00,Telstar,Zwolle,False,,

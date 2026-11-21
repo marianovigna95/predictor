@@ -49,30 +49,25 @@ data,lega,partita,mercato,esito,prob_pct,margine_pp,gol_casa,gol_ospite,risultat
 2026-11-21,Premier League,Coventry - Crystal Palace,GG/NG,GG,53.7,1.4,3,2,3-2,1,1
 2026-11-21,Bundesliga,Ein Frankfurt - Hoffenheim,O/U 2.5,Over 2.5,72.6,3.4,1,0,1-0,0,1
 2026-11-21,Bundesliga,Elversberg - Freiburg,O/U 2.5,Over 2.5,72.5,0.0,0,1,0-1,0,1
-2026-11-21,Serie B,Empoli - Pisa,GG/NG,GG,63.0,0.3,,,n.d.,,0
+2026-11-21,Serie B,Empoli - Pisa,GG/NG,GG,63.0,0.3,0,1,0-1,0,1
 2026-11-21,Süper Lig,Genclerbirligi - Gaziantep,O/U 2.5,Over 2.5,58.2,1.7,1,0,1-0,0,1
-2026-11-21,Eredivisie,Groningen - Heerenveen,O/U 2.5,Over 2.5,72.8,0.1,,,n.d.,,0
 2026-11-21,Süper Lig,Kocaelispor - Fenerbahce,O/U 2.5,Under 2.5,55.8,4.4,2,2,2-2,0,1
-2026-11-21,Ligue 1,Lens - Toulouse,O/U 2.5,Over 2.5,63.8,0.0,,,n.d.,,0
+2026-11-21,Ligue 1,Lens - Toulouse,O/U 2.5,Over 2.5,63.8,0.0,1,1,1-1,0,1
 2026-11-21,Bundesliga,Leverkusen - Paderborn,O/U 2.5,Over 2.5,67.8,5.6,4,0,4-0,1,1
-2026-11-21,Ligue 1,Lille - Lyon,1X2,1,58.4,1.8,,,n.d.,,0
+2026-11-21,Ligue 1,Lille - Lyon,1X2,1,58.4,1.8,0,1,0-1,0,1
 2026-11-21,Championship,Lincoln City - Wrexham,GG/NG,GG,54.9,4.0,0,1,0-1,0,1
 2026-11-21,Bundesliga,M'gladbach - Dortmund,O/U 2.5,Over 2.5,70.4,1.7,0,1,0-1,0,1
 2026-11-21,Championship,Middlesbrough - Bristol City,1X2,1,59.5,3.0,2,0,2-0,1,1
-2026-11-21,Ligue 1,Monaco - Auxerre,GG/NG,GG,58.8,3.2,,,n.d.,,0
+2026-11-21,Ligue 1,Monaco - Auxerre,GG/NG,GG,58.8,3.2,1,1,1-1,1,1
 2026-11-21,Ligue 2,Nantes - Grenoble,O/U 2.5,Under 2.5,67.4,6.3,,,n.d.,,0
-2026-11-21,Serie A,Napoli - Torino,O/U 2.5,Under 2.5,61.6,7.2,,,n.d.,,0
 2026-11-21,Eredivisie,Nijmegen - PSV Eindhoven,GG/NG,GG,69.9,1.0,1,4,1-4,1,1
-2026-11-21,LaLiga,Real Madrid - Celta,1X2,1,64.0,10.5,,,n.d.,,0
 2026-11-21,LaLiga 2,Real Sociedad B - Cádiz,GG/NG,GG,54.5,4.3,0,3,0-3,0,1
-2026-11-21,Ligue 2,Reims - St Etienne,GG/NG,GG,62.2,3.5,,,n.d.,,0
+2026-11-21,Ligue 2,Reims - St Etienne,GG/NG,GG,62.2,3.5,0,1,0-1,0,1
 2026-11-21,Championship,Sheffield United - Watford,O/U 2.5,Under 2.5,55.8,4.2,4,0,4-0,0,1
-2026-11-21,Bundesliga 2,St Pauli - Bochum,GG/NG,GG,54.3,1.7,,,n.d.,,0
+2026-11-21,Bundesliga 2,St Pauli - Bochum,GG/NG,GG,54.3,1.7,2,0,2-0,0,1
 2026-11-21,Championship,Stoke City - Birmingham City,GG/NG,GG,58.9,4.0,1,0,1-0,0,1
-2026-11-21,Ligue 1,Strasbourg - Brest,GG/NG,GG,66.6,0.4,,,n.d.,,0
+2026-11-21,Ligue 1,Strasbourg - Brest,GG/NG,GG,66.6,0.4,0,1,0-1,0,1
 2026-11-21,Championship,Swansea City - West Bromwich Albion,GG/NG,GG,58.9,4.0,2,2,2-2,1,1
-2026-11-21,Eredivisie,Telstar - Zwolle,GG/NG,GG,67.4,0.3,,,n.d.,,0
-2026-11-21,LaLiga 2,Tenerife - Mallorca,O/U 2.5,Under 2.5,60.2,6.0,,,n.d.,,0
 2026-11-21,Premier League,Tottenham - Ipswich,GG/NG,GG,54.6,3.9,2,0,2-0,0,1
 2026-11-21,Bundesliga,Union Berlin - RB Leipzig,O/U 2.5,Over 2.5,66.9,0.4,1,5,1-5,1,1
 2026-11-21,LaLiga,Vallecano - Valencia,GG/NG,GG,56.9,3.8,0,1,0-1,0,1
