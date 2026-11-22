@@ -1728,26 +1728,26 @@ LaLiga 2,SP2,15,2026-11-21 21:00,Tenerife,Mallorca,True,0,0
 Süper Lig,T1,12,2026-11-22 11:30,Erzurumspor,Goztep,True,0,1
 Eredivisie,N1,13,2026-11-22 12:15,Twente,Willem II,True,2,1
 Serie A,I1,12,2026-11-22 12:30,Juventus,Venezia,True,4,0
-Championship,E1,16,2026-11-22 13:00,Burnley,Blackburn Rovers,False,,
-Bundesliga 2,D2,12,2026-11-22 13:30,Cottbus,Hertha,False,,
-Bundesliga 2,D2,12,2026-11-22 13:30,Kaiserslautern,Dresden,False,,
-Bundesliga 2,D2,12,2026-11-22 13:30,Karlsruhe,Osnabruck,False,,
-LaLiga,SP1,13,2026-11-22 14:00,Barcelona,Villarreal,False,,
-LaLiga 2,SP2,15,2026-11-22 14:00,Córdoba,Real Oviedo,False,,
-Süper Lig,T1,12,2026-11-22 14:00,Kasimpasa,Alanyaspor,False,,
-Süper Lig,T1,12,2026-11-22 14:00,Konyaspor,Besiktas,False,,
-Eredivisie,N1,13,2026-11-22 14:30,Ajax,Den Haag,False,,
-Eredivisie,N1,13,2026-11-22 14:30,Sparta Rotterdam,AZ Alkmaar,False,,
-Ligue 1,F1,11,2026-11-22 15:00,Paris FC,Angers,False,,
-Premier League,E0,11,2026-11-22 15:00,Hull,Brighton,False,,
-Serie A,I1,12,2026-11-22 15:00,Bologna,Udinese,False,,
-Serie A,I1,12,2026-11-22 15:00,Sassuolo,Genoa,False,,
-Serie B,I2,12,2026-11-22 15:00,Avellino,Mantova,False,,
-Bundesliga,D1,10,2026-11-22 15:30,Augsburg,Mainz,False,,
-LaLiga,SP1,13,2026-11-22 16:15,Santander,Sociedad,False,,
-LaLiga 2,SP2,15,2026-11-22 16:15,Sp Gijon,Las Palmas,False,,
-Eredivisie,N1,13,2026-11-22 16:45,Go Ahead Eagles,For Sittard,False,,
-Süper Lig,T1,12,2026-11-22 17:00,Trabzonspor,Eyupspor,False,,
+Championship,E1,16,2026-11-22 13:00,Burnley,Blackburn Rovers,True,2,2
+Bundesliga 2,D2,12,2026-11-22 13:30,Cottbus,Hertha,True,0,4
+Bundesliga 2,D2,12,2026-11-22 13:30,Kaiserslautern,Dresden,True,2,2
+Bundesliga 2,D2,12,2026-11-22 13:30,Karlsruhe,Osnabruck,True,0,0
+LaLiga,SP1,13,2026-11-22 14:00,Barcelona,Villarreal,True,3,2
+LaLiga 2,SP2,15,2026-11-22 14:00,Córdoba,Real Oviedo,True,3,0
+Süper Lig,T1,12,2026-11-22 14:00,Kasimpasa,Alanyaspor,True,2,1
+Süper Lig,T1,12,2026-11-22 14:00,Konyaspor,Besiktas,True,2,4
+Eredivisie,N1,13,2026-11-22 14:30,Ajax,Den Haag,True,3,0
+Eredivisie,N1,13,2026-11-22 14:30,Sparta Rotterdam,AZ Alkmaar,True,1,5
+Ligue 1,F1,11,2026-11-22 15:00,Paris FC,Angers,True,4,0
+Premier League,E0,11,2026-11-22 15:00,Hull,Brighton,True,2,0
+Serie A,I1,12,2026-11-22 15:00,Bologna,Udinese,True,1,1
+Serie A,I1,12,2026-11-22 15:00,Sassuolo,Genoa,True,0,2
+Serie B,I2,12,2026-11-22 15:00,Avellino,Mantova,True,4,1
+Bundesliga,D1,10,2026-11-22 15:30,Augsburg,Mainz,True,3,1
+LaLiga,SP1,13,2026-11-22 16:15,Santander,Sociedad,True,3,2
+LaLiga 2,SP2,15,2026-11-22 16:15,Sp Gijon,Las Palmas,True,0,2
+Eredivisie,N1,13,2026-11-22 16:45,Go Ahead Eagles,For Sittard,True,0,1
+Süper Lig,T1,12,2026-11-22 17:00,Trabzonspor,Eyupspor,True,1,0
 Ligue 1,F1,11,2026-11-22 17:15,Lorient,Rennes,False,,
 Serie B,I2,12,2026-11-22 17:15,Arezzo,Padova,False,,
 Bundesliga,D1,10,2026-11-22 17:30,Werder Bremen,Hamburg,False,,
