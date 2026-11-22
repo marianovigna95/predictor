@@ -1,21 +1,21 @@
 {
- "aggiornato": "2026-11-22T18:22:50",
- "pronostici_totali": 92,
- "partite_distinte": 92,
+ "aggiornato": "2026-11-22T22:05:45",
+ "pronostici_totali": 90,
+ "partite_distinte": 90,
  "regola": "si conteggia l'ultimo pronostico pubblicato prima del calcio d'inizio",
- "verificati": 83,
- "colti": 36,
- "acc_pct": 43.4,
+ "verificati": 85,
+ "colti": 38,
+ "acc_pct": 44.7,
  "prob_media_pct": 60.1,
- "scarto_pp": -16.7,
+ "scarto_pp": -15.4,
  "per_mercato": {
   "1X2": {
-   "n": 11,
-   "acc_pct": 54.5
+   "n": 12,
+   "acc_pct": 58.3
   },
   "GG/NG": {
-   "n": 43,
-   "acc_pct": 44.2
+   "n": 44,
+   "acc_pct": 45.5
   },
   "O/U 2.5": {
    "n": 29,
@@ -53,11 +53,11 @@
   },
   {
    "data": "2026-11-22",
-   "pronostici": 14,
-   "colti": 5,
-   "acc_pct": 35.7,
-   "prob_media": 62.2
+   "pronostici": 16,
+   "colti": 7,
+   "acc_pct": 43.8,
+   "prob_media": 62.1
   }
  ],
- "non_verificabili": 9
+ "non_verificabili": 5
 }
