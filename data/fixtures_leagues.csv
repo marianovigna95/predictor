@@ -1725,9 +1725,9 @@ Eredivisie,N1,13,2026-11-21 21:00,Groningen,Heerenveen,True,1,3
 Eredivisie,N1,13,2026-11-21 21:00,Telstar,Zwolle,True,1,3
 LaLiga,SP1,13,2026-11-21 21:00,Real Madrid,Celta,True,2,1
 LaLiga 2,SP2,15,2026-11-21 21:00,Tenerife,Mallorca,True,0,0
-Süper Lig,T1,12,2026-11-22 11:30,Erzurumspor,Goztep,False,,
-Eredivisie,N1,13,2026-11-22 12:15,Twente,Willem II,False,,
-Serie A,I1,12,2026-11-22 12:30,Juventus,Venezia,False,,
+Süper Lig,T1,12,2026-11-22 11:30,Erzurumspor,Goztep,True,0,1
+Eredivisie,N1,13,2026-11-22 12:15,Twente,Willem II,True,2,1
+Serie A,I1,12,2026-11-22 12:30,Juventus,Venezia,True,4,0
 Championship,E1,16,2026-11-22 13:00,Burnley,Blackburn Rovers,False,,
 Bundesliga 2,D2,12,2026-11-22 13:30,Cottbus,Hertha,False,,
 Bundesliga 2,D2,12,2026-11-22 13:30,Kaiserslautern,Dresden,False,,
