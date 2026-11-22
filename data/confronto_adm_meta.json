@@ -1,49 +1,25 @@
 {
- "aggiornato": "2026-11-21T22:22:18",
- "stato": "nessuna_corrispondenza",
- "giocate_non_coperte": 8,
- "diagnosi": {
-  "date_giocate": [
-   "2026-11-21",
-   "2026-11-22",
-   "2026-11-23",
-   "2026-11-24",
-   "2026-11-25",
-   "2026-11-26",
-   "2026-11-27",
-   "2026-11-28"
-  ],
-  "date_quote_adm": [
-   "2026-11-22",
-   "2026-11-27",
-   "2026-11-28",
-   "2026-11-29"
-  ],
-  "date_in_comune": [
-   "2026-11-22",
-   "2026-11-27",
-   "2026-11-28"
-  ],
-  "mercati_giocate": [
-   "1x2",
-   "gg",
-   "o2.5",
-   "u2.5"
-  ],
-  "mercati_adm": [
-   "1x2",
-   "2.5",
-   "gg"
-  ],
-  "leghe_adm": [
-   "2. Bundesliga",
-   "Bundesliga",
-   "Bundesliga (W)",
-   "Bundesliga 2",
-   "Bundesliga Femminile",
-   "Germany - Bundesliga Women"
-  ],
-  "giocate_su_date_coperte": 3,
-  "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
- }
+ "aggiornato": "2026-11-22T07:22:04",
+ "stato": "ok",
+ "confronti": 1,
+ "giocate_non_coperte": 7,
+ "storico_aggiunte": 8,
+ "storico_righe": 8,
+ "storico_delta_medio_pct": 7.29,
+ "storico_delta_mediana_pct": -0.58,
+ "storico_tenuta_ok": 5,
+ "storico_edge_perso": 1,
+ "storico_aggiornato": "2026-11-22T07:22:04",
+ "delta_medio_pct": -1.16,
+ "delta_min_pct": -1.16,
+ "delta_max_pct": -1.16,
+ "tenuta_ok": 1,
+ "tenuta_limite": 0,
+ "edge_perso": 0,
+ "EV_positivo_su_quota_adm": 1,
+ "soglie": {
+  "ok": -0.015,
+  "rossa": -0.05
+ },
+ "nota": "USO INTERNO: non pubblicato sul sito (licenza Display non acquisita)."
 }

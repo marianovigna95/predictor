@@ -1720,11 +1720,11 @@ Ligue 1,F1,11,2026-11-21 20:45,Lens,Toulouse,True,1,1
 Ligue 1,F1,11,2026-11-21 20:45,Lille,Lyon,True,0,1
 Ligue 1,F1,11,2026-11-21 20:45,Monaco,Auxerre,True,1,1
 Ligue 1,F1,11,2026-11-21 20:45,Strasbourg,Brest,True,0,1
-Serie A,I1,12,2026-11-21 20:45,Napoli,Torino,False,,
-Eredivisie,N1,13,2026-11-21 21:00,Groningen,Heerenveen,False,,
-Eredivisie,N1,13,2026-11-21 21:00,Telstar,Zwolle,False,,
-LaLiga,SP1,13,2026-11-21 21:00,Real Madrid,Celta,False,,
-LaLiga 2,SP2,15,2026-11-21 21:00,Tenerife,Mallorca,False,,
+Serie A,I1,12,2026-11-21 20:45,Napoli,Torino,True,1,0
+Eredivisie,N1,13,2026-11-21 21:00,Groningen,Heerenveen,True,1,3
+Eredivisie,N1,13,2026-11-21 21:00,Telstar,Zwolle,True,1,3
+LaLiga,SP1,13,2026-11-21 21:00,Real Madrid,Celta,True,2,1
+LaLiga 2,SP2,15,2026-11-21 21:00,Tenerife,Mallorca,True,0,0
 Süper Lig,T1,12,2026-11-22 11:30,Erzurumspor,Goztep,False,,
 Eredivisie,N1,13,2026-11-22 12:15,Twente,Willem II,False,,
 Serie A,I1,12,2026-11-22 12:30,Juventus,Venezia,False,,
