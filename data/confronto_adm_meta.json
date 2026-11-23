@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-23T18:29:48",
+ "aggiornato": "2026-11-23T22:14:34",
  "stato": "nessuna_corrispondenza",
  "giocate_non_coperte": 8,
  "diagnosi": {
@@ -21,6 +21,7 @@
   ],
   "mercati_giocate": [
    "1x2",
+   "ng",
    "o2.5"
   ],
   "mercati_adm": [
