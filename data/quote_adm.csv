@@ -1,72 +1,168 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,2.5,O2.5,1.97,goldbet,24,2026-11-23T07:20:37
-2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,2.5,U2.5,1.81,quigioco,24,2026-11-23T07:20:37
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,2.5,O2.5,1.8,betpassion,28,2026-11-23T07:20:37
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,2.5,U2.5,1.99,quigioco,28,2026-11-23T07:20:37
-2026-11-30,Primeira Liga,Benfica - Famalicao,2.5,O2.5,1.4,giocodigitale,33,2026-11-23T07:20:37
-2026-11-30,Primeira Liga,Benfica - Famalicao,2.5,U2.5,2.85,goldbet,33,2026-11-23T07:20:37
-2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,2.5,O2.5,1.92,goldbet,23,2026-11-23T07:20:37
-2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,2.5,U2.5,1.81,vincitu,23,2026-11-23T07:20:37
-2026-11-29,Primeira Liga,Gil Vicente - Estoril,2.5,O2.5,1.96,leovegas,14,2026-11-23T07:20:37
-2026-11-29,Primeira Liga,Gil Vicente - Estoril,2.5,U2.5,1.8,betpassion,14,2026-11-23T07:20:37
-2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,gg,GG,1.75,betpassion,24,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,gg,NG,2.05,quigioco,24,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,GG,1.78,winamax,28,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,NG,2.02,quigioco,28,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Benfica - Famalicao,gg,GG,2.05,betpassion,33,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Benfica - Famalicao,gg,NG,1.72,goldbet,33,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,GG,2.15,goldbet,23,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,NG,1.65,eurobet,23,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,gg,GG,4.25,leovegas,3,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,gg,NG,1.14,leovegas,3,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,gg,GG,1.79,fastbet,12,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,gg,NG,1.92,fastbet,12,2026-11-23T07:20:38
-2026-11-29,Primeira Liga,Gil Vicente - Estoril,gg,GG,4.3,leovegas,3,2026-11-23T07:20:38
-2026-11-29,Primeira Liga,Gil Vicente - Estoril,gg,NG,1.14,leovegas,3,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,gg,GG,1.85,goldbet,4,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,gg,NG,1.87,goldbet,4,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC - FC Alverca SAD,gg,GG,4.6,betflag,1,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC - FC Alverca SAD,gg,NG,1.13,betflag,1,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,gg,GG,1.86,winamax,3,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,gg,NG,1.86,winamax,3,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela,gg,GG,3.25,fastbet,1,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela,gg,NG,1.28,fastbet,1,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,1,2.5,goldbet,24,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,X,3.25,quigioco,24,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,2,2.95,goldbet,24,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,1,1.71,marathonbet,28,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,X,3.85,winamax,28,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,2,4.7,marathonbet,28,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,1,1.19,bwin,33,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,X,7.75,winamax,33,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,2,14.0,marathonbet,33,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,1,7.0,eurobet,23,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,X,4.3,betsson,23,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,2,1.45,betpassion,23,2026-11-23T07:20:38
-2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,1,1.87,eplay24,14,2026-11-23T07:20:38
-2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,X,3.55,betpassion,14,2026-11-23T07:20:38
-2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,2,4.0,betpassion,14,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,1x2,1,2.0,leovegas,3,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,1x2,X,3.2,leovegas,3,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,1x2,2,3.35,leovegas,3,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,1x2,1,1.7,fastbet,12,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,1x2,X,3.78,fastbet,12,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,1x2,2,4.7,leovegas,12,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,1,2.1,goldbet,4,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,X,3.2,goldbet,4,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,2,3.35,goldbet,4,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC - FC Alverca SAD,1x2,1,3.05,betpassion,13,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC - FC Alverca SAD,1x2,X,2.13,sunbet,13,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC - FC Alverca SAD,1x2,2,3.5,stanleybet,13,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,1,2.13,fastbet,3,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,X,3.26,fastbet,3,2026-11-23T07:20:38
-2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,2,3.4,fastbet,3,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,1,2.83,betpassion,12,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,X,2.5,sunbet,12,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,2,3.25,betpassion,12,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,1,2.1,betpassion,18,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,X,2.7,sunbet,18,2026-11-23T07:20:38
-2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,2,4.55,betpassion,18,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,1,6.4,betpassion,17,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,X,2.7,betpassion,17,2026-11-23T07:20:38
-2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,2,1.82,sunbet,17,2026-11-23T07:20:38
+2026-11-27,Eredivisie,Groningen - Willem Ii,gg,GG,1.56,fastbet,39,2026-11-23T14:36:06
+2026-11-27,Eredivisie,Groningen - Willem Ii,gg,NG,2.46,quigioco,39,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Excelsior Rotterdam - Telstar,gg,GG,1.53,daznbet,34,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Excelsior Rotterdam - Telstar,gg,NG,2.48,888sport,34,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Psv Eindhoven - Go Ahead Eagles,gg,GG,1.49,bwin,34,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Psv Eindhoven - Go Ahead Eagles,gg,NG,2.55,888sport,34,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Cambuur - Sparta Rotterdam,gg,GG,1.42,goldbet,37,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Cambuur - Sparta Rotterdam,gg,NG,2.8,betpassion,37,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Ado Den Haag - Utrecht,gg,GG,1.5,vincitu,25,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Ado Den Haag - Utrecht,gg,NG,2.45,eurobet,25,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Feyenoord - Ajax,gg,GG,1.37,vincitu,39,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Feyenoord - Ajax,gg,NG,2.99,quigioco,39,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Fortuna Sittard - Heerenveen,gg,GG,1.46,giocodigitale,40,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Fortuna Sittard - Heerenveen,gg,NG,2.7,888sport,40,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Zwolle - Az Alkmaar,gg,GG,1.56,fastbet,37,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Zwolle - Az Alkmaar,gg,NG,2.45,eurobet,37,2026-11-23T14:36:06
+2026-11-27,Eredivisie,Groningen - Willem II,gg,GG,3.4,leovegas,3,2026-11-23T14:36:06
+2026-11-27,Eredivisie,Groningen - Willem II,gg,NG,1.22,888sport,3,2026-11-23T14:36:06
+2026-11-27,Eredivisie,FC Groningen - Willem II,gg,GG,2.55,leovegas,3,2026-11-23T14:36:06
+2026-11-27,Eredivisie,FC Groningen - Willem II,gg,NG,1.4,leovegas,3,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Excelsior Rotterdam - SC Telstar,gg,GG,2.55,leovegas,3,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Excelsior Rotterdam - SC Telstar,gg,NG,1.41,leovegas,3,2026-11-23T14:36:06
+2026-11-28,Eredivisie,PSV Eindhoven - Go Ahead Eagles,gg,GG,2.3,leovegas,3,2026-11-23T14:36:06
+2026-11-28,Eredivisie,PSV Eindhoven - Go Ahead Eagles,gg,NG,1.5,leovegas,3,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Cambuur Leeuwarden - Sparta Rotterdam,gg,GG,2.38,leovegas,3,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Cambuur Leeuwarden - Sparta Rotterdam,gg,NG,1.47,leovegas,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,ADO Den Haag - FC Utrecht,gg,GG,3.5,leovegas,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,ADO Den Haag - FC Utrecht,gg,NG,1.2,leovegas,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Fortuna Sittard - SC Heerenveen,gg,GG,3.2,leovegas,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Fortuna Sittard - SC Heerenveen,gg,NG,1.24,leovegas,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,PEC Zwolle - AZ Alkmaar,gg,GG,1.54,888sport,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,PEC Zwolle - AZ Alkmaar,gg,NG,2.25,888sport,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,NEC Nijmegen - FC Twente,gg,GG,3.15,leovegas,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,NEC Nijmegen - FC Twente,gg,NG,1.25,leovegas,3,2026-11-23T14:36:06
+2026-11-29,Eredivisie,NEC Nimega - Twente,gg,GG,1.39,giocodigitale,22,2026-11-23T14:36:06
+2026-11-29,Eredivisie,NEC Nimega - Twente,gg,NG,2.85,goldbet,22,2026-11-23T14:36:06
+2026-11-27,Eredivisie,Groningen - Willem II Tilburg,gg,GG,1.53,giocodigitale,2,2026-11-23T14:36:06
+2026-11-27,Eredivisie,Groningen - Willem II Tilburg,gg,NG,2.3,giocodigitale,2,2026-11-23T14:36:06
+2026-11-29,Eredivisie,ADO L'Aia - Utrecht,gg,GG,1.49,giocodigitale,2,2026-11-23T14:36:06
+2026-11-29,Eredivisie,ADO L'Aia - Utrecht,gg,NG,2.45,giocodigitale,2,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Feyenoord - Ajax Amsterdam,gg,GG,1.36,giocodigitale,2,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Feyenoord - Ajax Amsterdam,gg,NG,2.87,giocodigitale,2,2026-11-23T14:36:06
+2026-11-29,Eredivisie,DE HAAG - UTRECHT,gg,GG,1.48,eplay24,7,2026-11-23T14:36:06
+2026-11-29,Eredivisie,DE HAAG - UTRECHT,gg,NG,2.4,eplay24,7,2026-11-23T14:36:06
+2026-11-29,Eredivisie,NIJMEGEN - TWENTE,gg,GG,1.39,fastbet,9,2026-11-23T14:36:06
+2026-11-29,Eredivisie,NIJMEGEN - TWENTE,gg,NG,2.8,fastbet,9,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Excelsior - Telstar,gg,GG,1.52,fastbet,7,2026-11-23T14:36:06
+2026-11-28,Eredivisie,Excelsior - Telstar,gg,NG,2.49,quigioco,7,2026-11-23T14:36:06
+2026-11-28,Eredivisie,PSV - Go Ahead Eagles,gg,GG,1.48,fastbet,6,2026-11-23T14:36:06
+2026-11-28,Eredivisie,PSV - Go Ahead Eagles,gg,NG,2.63,betpassion,6,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Den Haag - Utrecht,gg,GG,1.5,fastbet,7,2026-11-23T14:36:06
+2026-11-29,Eredivisie,Den Haag - Utrecht,gg,NG,2.55,quigioco,7,2026-11-23T14:36:06
+2026-12-04,Eredivisie,Telstar - Groningen,gg,GG,1.38,winamax,1,2026-11-23T14:36:06
+2026-12-04,Eredivisie,Telstar - Groningen,gg,NG,2.85,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,Willem II - Feyenoord,gg,GG,1.7,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,Willem II - Feyenoord,gg,NG,2.0,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,Sparta Rotterdam - NEC Nijmegen,gg,GG,1.38,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,Sparta Rotterdam - NEC Nijmegen,gg,NG,2.85,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,AZ Alkmaar - PSV Eindhoven,gg,GG,1.28,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,AZ Alkmaar - PSV Eindhoven,gg,NG,3.35,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,Fortuna Sittard - Zwolle,gg,GG,1.49,winamax,1,2026-11-23T14:36:06
+2026-12-05,Eredivisie,Fortuna Sittard - Zwolle,gg,NG,2.45,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,Heerenveen - Cambuur,gg,GG,1.39,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,Heerenveen - Cambuur,gg,NG,2.8,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,Ajax - Utrecht,gg,GG,1.62,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,Ajax - Utrecht,gg,NG,2.15,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,Go Ahead Eagles - Twente,gg,GG,1.42,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,Go Ahead Eagles - Twente,gg,NG,2.65,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,ADO Den Haag - Excelsior Rotterdam,gg,GG,1.5,winamax,1,2026-11-23T14:36:06
+2026-12-06,Eredivisie,ADO Den Haag - Excelsior Rotterdam,gg,NG,2.45,winamax,1,2026-11-23T14:36:06
+2026-11-27,Eredivisie,Groningen - Willem Ii,2.5,O2.5,1.34,betpassion,37,2026-11-23T14:36:07
+2026-11-27,Eredivisie,Groningen - Willem Ii,2.5,U2.5,3.2,888sport,37,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Excelsior Rotterdam - Telstar,2.5,O2.5,1.58,sunbet,34,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Excelsior Rotterdam - Telstar,2.5,U2.5,2.45,888sport,34,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Psv Eindhoven - Go Ahead Eagles,2.5,O2.5,1.2,888sport,34,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Psv Eindhoven - Go Ahead Eagles,2.5,U2.5,4.45,goldbet,34,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Cambuur - Sparta Rotterdam,2.5,O2.5,1.45,goldbet,35,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Cambuur - Sparta Rotterdam,2.5,U2.5,2.65,betpassion,35,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Ado Den Haag - Utrecht,2.5,O2.5,1.57,888sport,25,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Ado Den Haag - Utrecht,2.5,U2.5,2.32,888sport,25,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Feyenoord - Ajax,2.5,O2.5,1.43,888sport,37,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Feyenoord - Ajax,2.5,U2.5,2.96,quigioco,37,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Fortuna Sittard - Heerenveen,2.5,O2.5,1.47,goldbet,38,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Fortuna Sittard - Heerenveen,2.5,U2.5,2.63,888sport,38,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Zwolle - Az Alkmaar,2.5,O2.5,1.43,goldbet,35,2026-11-23T14:36:07
+2026-11-29,Eredivisie,Zwolle - Az Alkmaar,2.5,U2.5,2.65,eurobet,35,2026-11-23T14:36:07
+2026-11-27,Eredivisie,Groningen - Willem II,2.5,O2.5,1.89,fastbet,35,2026-11-23T14:36:07
+2026-11-27,Eredivisie,Groningen - Willem II,2.5,U2.5,1.89,888sport,35,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Excelsior - Telstar,2.5,O2.5,4.25,betitaly,5,2026-11-23T14:36:07
+2026-11-28,Eredivisie,Excelsior - Telstar,2.5,U2.5,1.18,quigioco,5,2026-11-23T14:36:07
+2026-11-28,Eredivisie,PSV - Go Ahead Eagles,2.5,O2.5,5.6,betpassion,4,2026-11-23T14:36:07
+2026-11-28,Eredivisie,PSV - Go Ahead Eagles,2.5,U2.5,1.08,betpassion,4,2026-11-23T14:36:07
+2026-11-27,Eredivisie,Groningen - Willem Ii,1x2,1,1.4,betpassion,40,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem Ii,1x2,X,5.5,888sport,40,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem Ii,1x2,2,8.0,888sport,40,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior Rotterdam - Telstar,1x2,1,2.05,goldbet,35,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior Rotterdam - Telstar,1x2,X,3.85,888sport,35,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior Rotterdam - Telstar,1x2,2,3.55,888sport,35,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Psv Eindhoven - Go Ahead Eagles,1x2,1,1.26,888sport,35,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Psv Eindhoven - Go Ahead Eagles,1x2,X,7.25,giocodigitale,35,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Psv Eindhoven - Go Ahead Eagles,1x2,2,9.0,888sport,35,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Cambuur - Sparta Rotterdam,1x2,1,2.25,giocodigitale,38,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Cambuur - Sparta Rotterdam,1x2,X,3.75,giocodigitale,38,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Cambuur - Sparta Rotterdam,1x2,2,2.96,fastbet,38,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Ado Den Haag - Utrecht,1x2,1,2.88,888sport,26,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Ado Den Haag - Utrecht,1x2,X,3.6,888sport,26,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Ado Den Haag - Utrecht,1x2,2,2.4,goldbet,26,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Feyenoord - Ajax,1x2,1,2.1,888sport_it,40,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Feyenoord - Ajax,1x2,X,3.97,fastbet,40,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Feyenoord - Ajax,1x2,2,3.2,888sport,40,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Fortuna Sittard - Heerenveen,1x2,1,3.5,888sport,41,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Fortuna Sittard - Heerenveen,1x2,X,3.9,bwin,41,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Fortuna Sittard - Heerenveen,1x2,2,2.01,marathonbet,41,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Zwolle - Az Alkmaar,1x2,1,5.3,fastbet,38,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Zwolle - Az Alkmaar,1x2,X,4.65,fastbet,38,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Zwolle - Az Alkmaar,1x2,2,1.55,bwin,38,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem II,1x2,1,1.82,betpassion,27,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem II,1x2,X,2.9,sunbet,27,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem II,1x2,2,5.8,888sport,27,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior - Telstar,1x2,1,2.05,betitaly,7,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior - Telstar,1x2,X,3.69,fastbet,7,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior - Telstar,1x2,2,3.45,betpassion,7,2026-11-23T14:36:08
+2026-11-28,Eredivisie,PSV - Go Ahead Eagles,1x2,1,1.25,betpassion,6,2026-11-23T14:36:08
+2026-11-28,Eredivisie,PSV - Go Ahead Eagles,1x2,X,7.2,fastbet,6,2026-11-23T14:36:08
+2026-11-28,Eredivisie,PSV - Go Ahead Eagles,1x2,2,9.0,fastbet,6,2026-11-23T14:36:08
+2026-11-29,Eredivisie,ADO Den Haag - FC Utrecht,1x2,1,3.2,stanleybet,18,2026-11-23T14:36:08
+2026-11-29,Eredivisie,ADO Den Haag - FC Utrecht,1x2,X,2.38,sunbet,18,2026-11-23T14:36:08
+2026-11-29,Eredivisie,ADO Den Haag - FC Utrecht,1x2,2,2.85,stanleybet,18,2026-11-23T14:36:08
+2026-11-29,Eredivisie,PEC Zwolle - AZ Alkmaar,1x2,1,6.0,888sport,3,2026-11-23T14:36:08
+2026-11-29,Eredivisie,PEC Zwolle - AZ Alkmaar,1x2,X,4.7,888sport,3,2026-11-23T14:36:08
+2026-11-29,Eredivisie,PEC Zwolle - AZ Alkmaar,1x2,2,1.46,888sport,3,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nijmegen - FC Twente,1x2,1,3.7,888sport,4,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nijmegen - FC Twente,1x2,X,3.9,888sport,4,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nijmegen - FC Twente,1x2,2,1.86,888sport,4,2026-11-23T14:36:08
+2026-11-27,Eredivisie,FC Groningen - Willem II,1x2,1,1.68,betpassion,25,2026-11-23T14:36:08
+2026-11-27,Eredivisie,FC Groningen - Willem II,1x2,X,3.5,leovegas,25,2026-11-23T14:36:08
+2026-11-27,Eredivisie,FC Groningen - Willem II,1x2,2,5.8,leovegas,25,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior Rotterdam - SC Telstar,1x2,1,2.34,sunbet,23,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior Rotterdam - SC Telstar,1x2,X,2.88,leovegas,23,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Excelsior Rotterdam - SC Telstar,1x2,2,3.5,leovegas,23,2026-11-23T14:36:08
+2026-11-28,Eredivisie,PSV Eindhoven - Go Ahead Eagles,1x2,1,1.55,sunbet,24,2026-11-23T14:36:08
+2026-11-28,Eredivisie,PSV Eindhoven - Go Ahead Eagles,1x2,X,3.5,bwin,24,2026-11-23T14:36:08
+2026-11-28,Eredivisie,PSV Eindhoven - Go Ahead Eagles,1x2,2,7.0,stanleybet,24,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Cambuur Leeuwarden - Sparta Rotterdam,1x2,1,2.32,888sport,3,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Cambuur Leeuwarden - Sparta Rotterdam,1x2,X,3.75,888sport,3,2026-11-23T14:36:08
+2026-11-28,Eredivisie,Cambuur Leeuwarden - Sparta Rotterdam,1x2,2,2.75,888sport,3,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Fortuna Sittard - SC Heerenveen,1x2,1,3.5,betpassion,27,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Fortuna Sittard - SC Heerenveen,1x2,X,3.0,leovegas,27,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Fortuna Sittard - SC Heerenveen,1x2,2,2.3,betpassion,27,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nimega - Twente,1x2,1,3.85,marathonbet,23,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nimega - Twente,1x2,X,4.2,giocodigitale,23,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nimega - Twente,1x2,2,1.9,giocodigitale,23,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem II Tilburg,1x2,1,1.73,giocodigitale,2,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem II Tilburg,1x2,X,2.87,giocodigitale,2,2026-11-23T14:36:08
+2026-11-27,Eredivisie,Groningen - Willem II Tilburg,1x2,2,5.0,bwin,2,2026-11-23T14:36:08
+2026-11-29,Eredivisie,ADO L'Aia - Utrecht,1x2,1,2.95,giocodigitale,2,2026-11-23T14:36:08
+2026-11-29,Eredivisie,ADO L'Aia - Utrecht,1x2,X,2.4,bwin,2,2026-11-23T14:36:08
+2026-11-29,Eredivisie,ADO L'Aia - Utrecht,1x2,2,2.7,giocodigitale,2,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Feyenoord - Ajax Amsterdam,1x2,1,2.37,giocodigitale,2,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Feyenoord - Ajax Amsterdam,1x2,X,2.6,bwin,2,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Feyenoord - Ajax Amsterdam,1x2,2,3.1,giocodigitale,2,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Zwolle - AZ Alkmaar,1x2,1,4.7,betpassion,24,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Zwolle - AZ Alkmaar,1x2,X,3.1,sunbet,24,2026-11-23T14:36:08
+2026-11-29,Eredivisie,Zwolle - AZ Alkmaar,1x2,2,1.88,betpassion,24,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nimega - FC Twente,1x2,1,3.95,sunbet,16,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nimega - FC Twente,1x2,X,2.65,bwin,16,2026-11-23T14:36:08
+2026-11-29,Eredivisie,NEC Nimega - FC Twente,1x2,2,2.21,sunbet,16,2026-11-23T14:36:08

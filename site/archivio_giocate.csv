@@ -1,19 +1,20 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-23,SINGOLA,LaLiga 2,AD Ceuta FC - Almería,O2.5,Over 2.5,49.8,2.42,20.52,0.86,,
+giocata,2026-11-23,SINGOLA,Premier League,Brentford - Everton,1X2,1,50.7,2.34,18.64,0.39,,
 giocata,2026-11-23,RADDOPPIO,LaLiga + Ligue 2,Levante - Elche [GG GG] + Nantes - Grenoble [NG NG],GG/NG,GG/NG,36.3,2.77,0.51,0.0,,
-giocata,2026-11-24,SINGOLA,Serie B,Virtus Entella - Verona,1X2,2,52.6,2.33,22.56,1.42,,
-giocata,2026-11-24,RADDOPPIO,Champions League + Serie B,Real Madrid - PSV Eindhoven [GG GG] + Palermo - Sudtirol [GG GG],GG/GG,GG/GG,35.9,2.8,0.65,0.0,,
-giocata,2026-11-25,SINGOLA,Champions League,Shakhtar Donetsk - Fenerbahçe,1X2,1,46.3,2.75,27.32,1.13,,
-giocata,2026-11-25,RADDOPPIO,Champions League,Club Brugge - Liverpool [GG GG] + Lille - Bayern Munich [GG GG],GG/GG,GG/GG,49.8,2.17,7.84,0.29,,
+giocata,2026-11-24,SINGOLA,Championship,Bristol City - Wrexham,U2.5,Under 2.5,58.5,2.04,19.34,1.53,,
+giocata,2026-11-24,RADDOPPIO,Champions League + Serie B,Real Madrid - PSV Eindhoven [GG GG] + Palermo - Sudtirol [GG GG],GG/GG,GG/GG,35.9,2.85,2.62,0.0,,
+giocata,2026-11-25,SINGOLA,Serie B,Pisa - Modena,NG,NG,52.9,2.3,21.67,1.32,,
+giocata,2026-11-25,RADDOPPIO,Champions League,Club Brugge - Liverpool [GG GG] + Lille - Bayern Munich [GG GG],GG/GG,GG/GG,50.8,2.17,10.06,0.76,,
 giocata,2026-11-26,SINGOLA,Europa League,Celta - Bournemouth,O2.5,Over 2.5,61.3,1.94,18.92,1.48,,
 giocata,2026-11-26,RADDOPPIO,Conference League,Kairat Almaty - Mjällby [GG GG] + Freiburg - FC Twente [GG GG],GG/GG,GG/GG,39.7,2.62,4.33,0.0,,
 giocata,2026-11-27,SINGOLA,LaLiga 2,Leganés - Sabadell,1X2,1,48.4,2.57,24.39,1.24,,
 giocata,2026-11-27,RADDOPPIO,Eredivisie + Serie A,Venezia - Bologna [GG GG] + Groningen - Willem II [GG GG],GG/GG,GG/GG,37.6,2.9,8.96,0.04,,
 giocata,2026-11-28,SINGOLA,Championship,Lincoln City - Wolves,O2.5,Over 2.5,57.6,2.1,20.96,1.72,,
-giocata,2026-11-28,RADDOPPIO,Eredivisie + LaLiga,Betis - Vallecano [GG GG] + PSV Eindhoven - Go Ahead Eagles [GG GG],GG/GG,GG/GG,40.5,2.47,0.12,0.0,,
+giocata,2026-11-28,RADDOPPIO,Eredivisie + Ligue 1,Le Mans - Lille [GG GG] + PSV Eindhoven - Go Ahead Eagles [GG GG],GG/GG,GG/GG,37.6,2.83,6.38,0.0,,
 giocata,2026-11-29,SINGOLA,Primeira Liga,Gil Vicente - Estoril,NG,NG,59.4,2.0,18.8,1.23,,
 giocata,2026-11-29,RADDOPPIO,Eredivisie + Serie A,Roma - Monza [GG GG] + Nijmegen - Twente [GG GG],GG/GG,GG/GG,39.5,2.61,3.0,0.0,,
-giocata,2026-11-30,SINGOLA,Serie A,Cagliari - Milan,GG,GG,57.5,1.8,3.5,0.0,,
+giocata,2026-11-30,SINGOLA,Serie B,Catanzaro - Avellino,O2.5,Over 2.5,62.7,1.85,16.0,1.31,,
+giocata,2026-11-30,RADDOPPIO,Serie B + Süper Lig,Catanzaro - Avellino [O2.5 Over 2.5] + Besiktas - Galatasaray [NG NG],O2.5/NG,Over 2.5/NG,21.5,5.09,9.6,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
 verifica,2026-11-03,RADDOPPIO,Champions League,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,63.9,2.0,,,Barcelona - Aston Villa 3-0 (GG no) | Bodø/Glimt - Lille 0-0 (Under 2.5),❌
 verifica,2026-11-04,SINGOLA,Champions League,Viking - Sabah FK,O2.5,Over 2.5,81.6,1.38,,,4-1 (5 gol),✅
