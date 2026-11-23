@@ -1,15 +1,15 @@
 # Confronto interno quota best-price vs quota ADM
 
-_Aggiornato: 2026-11-22T07:22:04 — uso interno, non pubblicato_
+_Aggiornato: 2026-11-23T07:20:39 — uso interno, non pubblicato_
 
 - giocate confrontate in questa run: **1** (fuori copertura ADM: 7)
-- **campione accumulato: 8 confronti** · delta medio +7.29% · mediana -0.58% · ok 5 / edge perso 1
-- delta medio: **-1.16%** (min -1.16%, max -1.16%)
-- tenuta: **1 OK** · 0 al limite · 0 con edge perso
-- EV ancora positivo con la quota ADM: **1/1**
+- **campione accumulato: 9 confronti** · delta medio +1.70% · mediana -1.16% · ok 5 / edge perso 2
+- delta medio: **-43.00%** (min -43.00%, max -43.00%)
+- tenuta: **0 OK** · 0 al limite · 1 con edge perso
+- EV ancora positivo con la quota ADM: **0/1**
 
 ## Dettaglio
 
 | Data | Partita | Mercato | best | ADM | delta | EV best | EV ADM | esito |
 |---|---|---|---|---|---|---|---|---|
-| 2026-11-27 | Leganés - Sabadell | 1X2 | 2.58 | 2.55 | -1.16% | 24.87% | 23.42% | ok |
+| 2026-11-29 | Gil Vicente - Estoril | NG | 2.0 | 1.14 | -43.00% | 18.8% | -32.28% | edge_perso |

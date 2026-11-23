@@ -1757,8 +1757,8 @@ LaLiga,SP1,13,2026-11-22 18:30,Osasuna,Malaga,True,1,0
 LaLiga 2,SP2,15,2026-11-22 18:30,Celta B,Real Valladolid,True,1,1
 LaLiga 2,SP2,15,2026-11-22 18:30,Girona,Eibar,True,2,1
 Ligue 1,F1,11,2026-11-22 20:45,Marseille,Le Mans,True,2,3
-Serie A,I1,12,2026-11-22 20:45,Atalanta,Inter,False,,
-LaLiga,SP1,13,2026-11-22 21:00,Getafe,Ath Madrid,False,,
+Serie A,I1,12,2026-11-22 20:45,Atalanta,Inter,True,4,4
+LaLiga,SP1,13,2026-11-22 21:00,Getafe,Ath Madrid,True,0,3
 LaLiga 2,SP2,15,2026-11-22 21:00,Burgos CF,Albacete,True,1,0
 Süper Lig,T1,12,2026-11-23 18:00,Buyuksehyr,Corum,False,,
 LaLiga 2,SP2,15,2026-11-23 20:30,AD Ceuta FC,Almería,False,,
