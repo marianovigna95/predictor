@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-24T18:25:50",
+ "aggiornato": "2026-11-24T22:24:07",
  "stato": "nessuna_corrispondenza",
  "giocate_non_coperte": 8,
  "diagnosi": {
@@ -14,12 +14,20 @@
    "2026-12-01"
   ],
   "date_quote_adm": [
+   "2026-11-25",
+   "2026-11-26",
+   "2026-11-27",
    "2026-11-28",
-   "2026-11-29"
+   "2026-11-29",
+   "2026-12-01"
   ],
   "date_in_comune": [
+   "2026-11-25",
+   "2026-11-26",
+   "2026-11-27",
    "2026-11-28",
-   "2026-11-29"
+   "2026-11-29",
+   "2026-12-01"
   ],
   "mercati_giocate": [
    "1x2",
@@ -33,9 +41,12 @@
    "gg"
   ],
   "leghe_adm": [
-   "Süper Lig"
+   "Australian Championship",
+   "Championship",
+   "NIFL Championship",
+   "The Championship"
   ],
-  "giocate_su_date_coperte": 2,
-  "causa_probabile": "COPERTURA TROPPO STRETTA: le quote ADM coprono solo 2 data/e (2026-11-28, 2026-11-29) su 8 date di giocate. Il confronto puo' avvenire solo nei giorni in cui l'API restituisce quote delle nostre leghe. Aumentare le richieste non serve: serve che le leghe ruotate abbiano partite nelle date coperte."
+  "giocate_su_date_coperte": 6,
+  "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
  }
 }

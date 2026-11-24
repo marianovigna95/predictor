@@ -1,22 +1,118 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-28,Süper Lig,Gaziantep FK - Amedspor,gg,GG,1.6,goldbet,8,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep FK - Amedspor,gg,NG,2.25,snai,8,2026-11-24T18:25:48
-2026-11-29,Süper Lig,Eyupspor - Basaksehir,gg,GG,1.7,goldbet,16,2026-11-24T18:25:48
-2026-11-29,Süper Lig,Eyupspor - Basaksehir,gg,NG,2.13,quigioco,16,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep Bld Spor - Amedspor,gg,GG,1.58,winamax,1,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep Bld Spor - Amedspor,gg,NG,2.25,winamax,1,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep FK - Amedspor,2.5,O2.5,1.18,snai,6,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep FK - Amedspor,2.5,U2.5,4.2,goldbet,6,2026-11-24T18:25:48
-2026-11-29,Süper Lig,Eyupspor - Basaksehir,2.5,O2.5,1.17,gioca7,11,2026-11-24T18:25:48
-2026-11-29,Süper Lig,Eyupspor - Basaksehir,2.5,U2.5,4.65,quigioco,11,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep Bld Spor - Amedspor,2.5,U2.5,13.0,winamax,1,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep Bld Spor - Amedspor,2.5,O2.5,1.19,winamax,1,2026-11-24T18:25:48
-2026-11-28,Süper Lig,Gaziantep FK - Amedspor,1x2,1,3.3,goldbet,9,2026-11-24T18:25:49
-2026-11-28,Süper Lig,Gaziantep FK - Amedspor,1x2,X,3.65,goldbet,9,2026-11-24T18:25:49
-2026-11-28,Süper Lig,Gaziantep FK - Amedspor,1x2,2,2.0,snai,9,2026-11-24T18:25:49
-2026-11-29,Süper Lig,Eyupspor - Basaksehir,1x2,1,5.5,snai,17,2026-11-24T18:25:49
-2026-11-29,Süper Lig,Eyupspor - Basaksehir,1x2,X,4.35,goldbet,17,2026-11-24T18:25:49
-2026-11-29,Süper Lig,Eyupspor - Basaksehir,1x2,2,1.52,eplay24,17,2026-11-24T18:25:49
-2026-11-28,Süper Lig,Gaziantep Bld Spor - Amedspor,1x2,1,3.2,winamax,1,2026-11-24T18:25:49
-2026-11-28,Süper Lig,Gaziantep Bld Spor - Amedspor,1x2,X,3.6,winamax,1,2026-11-24T18:25:49
-2026-11-28,Süper Lig,Gaziantep Bld Spor - Amedspor,1x2,2,1.9,winamax,1,2026-11-24T18:25:49
+2026-11-25,The Championship,Bolton - West Bromwich,gg,GG,1.65,sunbet,39,2026-11-24T22:24:04
+2026-11-25,The Championship,Bolton - West Bromwich,gg,NG,2.24,quigioco,39,2026-11-24T22:24:04
+2026-11-25,The Championship,Burnley - Birmingham,gg,GG,1.58,betpassion,21,2026-11-24T22:24:04
+2026-11-25,The Championship,Burnley - Birmingham,gg,NG,2.3,stake,21,2026-11-24T22:24:04
+2026-11-25,Championship,Watford - Blackburn,gg,GG,1.74,stake,18,2026-11-24T22:24:04
+2026-11-25,Championship,Watford - Blackburn,gg,NG,2.05,eurobet,18,2026-11-24T22:24:04
+2026-11-25,Championship,Stoke City - Millwall,gg,GG,1.77,goldbet,32,2026-11-24T22:24:04
+2026-11-25,Championship,Stoke City - Millwall,gg,NG,2.04,888sport,32,2026-11-24T22:24:04
+2026-11-26,Australian Championship,South Melbourne - Oakleigh Cannons,gg,GG,1.57,fastbet,14,2026-11-24T22:24:04
+2026-11-26,Australian Championship,South Melbourne - Oakleigh Cannons,gg,NG,2.3,eurobet,14,2026-11-24T22:24:04
+2026-11-27,Championship,Southampton - Middlesbrough,gg,GG,1.5,sunbet,33,2026-11-24T22:24:04
+2026-11-27,Championship,Southampton - Middlesbrough,gg,NG,2.7,888sport,33,2026-11-24T22:24:04
+2026-12-01,Championship,Greenock Morton Fc - Ayr United Fc,gg,GG,1.76,leovegas,16,2026-11-24T22:24:04
+2026-12-01,Championship,Greenock Morton Fc - Ayr United Fc,gg,NG,2.2,eurobet,16,2026-11-24T22:24:04
+2026-11-25,The Championship,Watford - Blackburn Rovers,gg,GG,4.0,leovegas,3,2026-11-24T22:24:04
+2026-11-25,The Championship,Watford - Blackburn Rovers,gg,NG,1.15,leovegas,3,2026-11-24T22:24:04
+2026-11-25,Championship,Burnley - Birmingham City,gg,GG,1.62,goldbet,22,2026-11-24T22:24:04
+2026-11-25,Championship,Burnley - Birmingham City,gg,NG,2.31,sunbet,22,2026-11-24T22:24:04
+2026-11-28,Championship,Lincoln City - Wolverhampton,gg,GG,1.8,winamax,3,2026-11-24T22:24:04
+2026-11-28,Championship,Lincoln City - Wolverhampton,gg,NG,1.95,giocodigitale,3,2026-11-24T22:24:04
+2026-11-27,Australian Championship,Broadmeadow Magic FC - Queensland Lions,gg,GG,1.42,leovegas,19,2026-11-24T22:24:04
+2026-11-27,Australian Championship,Broadmeadow Magic FC - Queensland Lions,gg,NG,2.83,betpassion,19,2026-11-24T22:24:04
+2026-11-27,NIFL Championship,Newry City - Ballinamallard United,gg,GG,1.55,leovegas,3,2026-11-24T22:24:04
+2026-11-27,NIFL Championship,Newry City - Ballinamallard United,gg,NG,2.23,leovegas,3,2026-11-24T22:24:04
+2026-11-28,Australian Championship,Preston Lions - APIA Leichhardt Tigers,gg,GG,1.57,bwin,5,2026-11-24T22:24:04
+2026-11-28,Australian Championship,Preston Lions - APIA Leichhardt Tigers,gg,NG,2.28,leovegas,5,2026-11-24T22:24:04
+2026-11-28,Australian Championship,Bayswater City - Sydney United,gg,GG,1.52,leovegas,5,2026-11-24T22:24:04
+2026-11-28,Australian Championship,Bayswater City - Sydney United,gg,NG,2.38,fastbet,5,2026-11-24T22:24:04
+2026-11-28,Championship,Blackburn Rovers - Charlton Athletic,gg,GG,1.73,888sport,5,2026-11-24T22:24:04
+2026-11-28,Championship,Blackburn Rovers - Charlton Athletic,gg,NG,1.95,bwin,5,2026-11-24T22:24:04
+2026-11-28,The Championship,Lincoln City - Wolves,gg,GG,1.68,888sport,3,2026-11-24T22:24:04
+2026-11-28,The Championship,Lincoln City - Wolves,gg,NG,1.98,888sport,3,2026-11-24T22:24:04
+2026-11-28,Championship,Preston North End - Norwich City,gg,GG,2.6,leovegas,3,2026-11-24T22:24:04
+2026-11-28,Championship,Preston North End - Norwich City,gg,NG,1.38,leovegas,3,2026-11-24T22:24:04
+2026-11-28,Championship,Millwall - Burnley,gg,GG,1.57,stake,9,2026-11-24T22:24:04
+2026-11-28,Championship,Millwall - Burnley,gg,NG,2.3,giocodigitale,9,2026-11-24T22:24:04
+2026-11-28,Championship,Birmingham - Bolton,gg,GG,2.88,leovegas,3,2026-11-24T22:24:04
+2026-11-28,Championship,Birmingham - Bolton,gg,NG,1.3,leovegas,3,2026-11-24T22:24:04
+2026-11-25,The Championship,Bolton - West Bromwich,2.5,O2.5,1.74,sunbet,39,2026-11-24T22:24:05
+2026-11-25,The Championship,Bolton - West Bromwich,2.5,U2.5,2.08,quigioco,39,2026-11-24T22:24:05
+2026-11-25,The Championship,Burnley - Birmingham,2.5,O2.5,1.71,stake,21,2026-11-24T22:24:05
+2026-11-25,The Championship,Burnley - Birmingham,2.5,U2.5,2.14,stake,21,2026-11-24T22:24:05
+2026-11-25,Championship,Watford - Blackburn,2.5,O2.5,1.94,stake,18,2026-11-24T22:24:05
+2026-11-25,Championship,Watford - Blackburn,2.5,U2.5,1.89,stake,18,2026-11-24T22:24:05
+2026-11-25,Championship,Stoke City - Millwall,2.5,O2.5,1.98,goldbet,32,2026-11-24T22:24:05
+2026-11-25,Championship,Stoke City - Millwall,2.5,U2.5,1.83,888sport,32,2026-11-24T22:24:05
+2026-11-26,Australian Championship,South Melbourne - Oakleigh Cannons,2.5,O2.5,1.66,leovegas,14,2026-11-24T22:24:05
+2026-11-26,Australian Championship,South Melbourne - Oakleigh Cannons,2.5,U2.5,2.15,leovegas,14,2026-11-24T22:24:05
+2026-11-27,Championship,Southampton - Middlesbrough,2.5,O2.5,1.55,sunbet,33,2026-11-24T22:24:05
+2026-11-27,Championship,Southampton - Middlesbrough,2.5,U2.5,2.5,888sport,33,2026-11-24T22:24:05
+2026-12-01,Championship,Greenock Morton Fc - Ayr United Fc,2.5,O2.5,1.98,leovegas,17,2026-11-24T22:24:05
+2026-12-01,Championship,Greenock Morton Fc - Ayr United Fc,2.5,U2.5,1.97,quigioco,17,2026-11-24T22:24:05
+2026-11-25,The Championship,Watford - Blackburn Rovers,2.5,O2.5,1.87,betsson,19,2026-11-24T22:24:05
+2026-11-25,The Championship,Watford - Blackburn Rovers,2.5,U2.5,1.86,888sport,19,2026-11-24T22:24:05
+2026-11-25,The Championship,Bolton - West Bromwich,1x2,1,3.5,codere,39,2026-11-24T22:24:06
+2026-11-25,The Championship,Bolton - West Bromwich,1x2,X,3.65,bgame,39,2026-11-24T22:24:06
+2026-11-25,The Championship,Bolton - West Bromwich,1x2,2,2.05,giocodigitale,39,2026-11-24T22:24:06
+2026-11-25,The Championship,Burnley - Birmingham,1x2,1,2.8,stake,21,2026-11-24T22:24:06
+2026-11-25,The Championship,Burnley - Birmingham,1x2,X,3.5,888sport,21,2026-11-24T22:24:06
+2026-11-25,The Championship,Burnley - Birmingham,1x2,2,2.46,stake,21,2026-11-24T22:24:06
+2026-11-25,Championship,Watford - Blackburn,1x2,1,2.57,stake,18,2026-11-24T22:24:06
+2026-11-25,Championship,Watford - Blackburn,1x2,X,3.4,stake,18,2026-11-24T22:24:06
+2026-11-25,Championship,Watford - Blackburn,1x2,2,2.71,stake,18,2026-11-24T22:24:06
+2026-11-25,Championship,Stoke City - Millwall,1x2,1,2.3,goldbet,32,2026-11-24T22:24:06
+2026-11-25,Championship,Stoke City - Millwall,1x2,X,3.4,giocodigitale,32,2026-11-24T22:24:06
+2026-11-25,Championship,Stoke City - Millwall,1x2,2,3.2,giocodigitale,32,2026-11-24T22:24:06
+2026-11-26,Australian Championship,South Melbourne - Oakleigh Cannons,1x2,1,2.05,fastbet,14,2026-11-24T22:24:06
+2026-11-26,Australian Championship,South Melbourne - Oakleigh Cannons,1x2,X,3.65,leovegas,14,2026-11-24T22:24:06
+2026-11-26,Australian Championship,South Melbourne - Oakleigh Cannons,1x2,2,3.55,leovegas,14,2026-11-24T22:24:06
+2026-11-27,Championship,Southampton - Middlesbrough,1x2,1,2.9,stake,34,2026-11-24T22:24:06
+2026-11-27,Championship,Southampton - Middlesbrough,1x2,X,3.85,sunbet,34,2026-11-24T22:24:06
+2026-11-27,Championship,Southampton - Middlesbrough,1x2,2,2.33,888sport,34,2026-11-24T22:24:06
+2026-12-01,Championship,Greenock Morton Fc - Ayr United Fc,1x2,1,3.2,leovegas,18,2026-11-24T22:24:06
+2026-12-01,Championship,Greenock Morton Fc - Ayr United Fc,1x2,X,3.35,vincitu,18,2026-11-24T22:24:06
+2026-12-01,Championship,Greenock Morton Fc - Ayr United Fc,1x2,2,2.25,eurobet,18,2026-11-24T22:24:06
+2026-11-25,The Championship,Watford - Blackburn Rovers,1x2,1,2.55,codere,19,2026-11-24T22:24:06
+2026-11-25,The Championship,Watford - Blackburn Rovers,1x2,X,3.45,bgame,19,2026-11-24T22:24:06
+2026-11-25,The Championship,Watford - Blackburn Rovers,1x2,2,2.75,888sport,19,2026-11-24T22:24:06
+2026-11-25,Championship,Burnley - Birmingham City,1x2,1,2.75,codere,22,2026-11-24T22:24:06
+2026-11-25,Championship,Burnley - Birmingham City,1x2,X,3.55,bgame,22,2026-11-24T22:24:06
+2026-11-25,Championship,Burnley - Birmingham City,1x2,2,2.48,codere,22,2026-11-24T22:24:06
+2026-11-27,Australian Championship,Broadmeadow Magic - Queensland Lions,1x2,1,4.1,leovegas,19,2026-11-24T22:24:06
+2026-11-27,Australian Championship,Broadmeadow Magic - Queensland Lions,1x2,X,4.0,leovegas,19,2026-11-24T22:24:06
+2026-11-27,Australian Championship,Broadmeadow Magic - Queensland Lions,1x2,2,1.85,betpassion,19,2026-11-24T22:24:06
+2026-11-28,Australian Championship,Bayswater City - Sydney United,1x2,1,3.15,leovegas,5,2026-11-24T22:24:06
+2026-11-28,Australian Championship,Bayswater City - Sydney United,1x2,X,3.5,fastbet,5,2026-11-24T22:24:06
+2026-11-28,Australian Championship,Bayswater City - Sydney United,1x2,2,2.18,leovegas,5,2026-11-24T22:24:06
+2026-11-28,Championship,Lincoln City - Wolverhampton,1x2,1,5.0,giocodigitale,3,2026-11-24T22:24:06
+2026-11-28,Championship,Lincoln City - Wolverhampton,1x2,X,3.95,winamax,3,2026-11-24T22:24:06
+2026-11-28,Championship,Lincoln City - Wolverhampton,1x2,2,1.68,giocodigitale,3,2026-11-24T22:24:06
+2026-11-28,Championship,Preston North End - Norwich City,1x2,1,4.25,leovegas,3,2026-11-24T22:24:06
+2026-11-28,Championship,Preston North End - Norwich City,1x2,X,2.48,leovegas,3,2026-11-24T22:24:06
+2026-11-28,Championship,Preston North End - Norwich City,1x2,2,2.18,leovegas,3,2026-11-24T22:24:06
+2026-11-28,Championship,Queens Park Rangers - Sheffield United,1x2,1,2.55,leovegas,6,2026-11-24T22:24:06
+2026-11-28,Championship,Queens Park Rangers - Sheffield United,1x2,X,2.3,bwin,6,2026-11-24T22:24:06
+2026-11-28,Championship,Queens Park Rangers - Sheffield United,1x2,2,3.65,winamax,6,2026-11-24T22:24:06
+2026-11-28,Championship,Wrexham - Portsmouth,1x2,1,2.55,leovegas,8,2026-11-24T22:24:06
+2026-11-28,Championship,Wrexham - Portsmouth,1x2,X,2.15,bwin,8,2026-11-24T22:24:06
+2026-11-28,Championship,Wrexham - Portsmouth,1x2,2,4.25,zonagioco,8,2026-11-24T22:24:06
+2026-11-29,Championship,Swansea City - Cardiff City,1x2,1,2.0,giocodigitale,5,2026-11-24T22:24:06
+2026-11-29,Championship,Swansea City - Cardiff City,1x2,X,3.9,giocodigitale,5,2026-11-24T22:24:06
+2026-11-29,Championship,Swansea City - Cardiff City,1x2,2,3.55,888sport,5,2026-11-24T22:24:06
+2026-12-01,Championship,Greenock Morton - Ayr United,1x2,1,3.8,leovegas,14,2026-11-24T22:24:06
+2026-12-01,Championship,Greenock Morton - Ayr United,1x2,X,2.22,stanleybet,14,2026-11-24T22:24:06
+2026-12-01,Championship,Greenock Morton - Ayr United,1x2,2,2.82,stanleybet,14,2026-11-24T22:24:06
+2026-12-01,Championship,Dunfermline Athletic - Arbroath,1x2,1,2.07,leovegas,18,2026-11-24T22:24:06
+2026-12-01,Championship,Dunfermline Athletic - Arbroath,1x2,X,2.39,marathonbet,18,2026-11-24T22:24:06
+2026-12-01,Championship,Dunfermline Athletic - Arbroath,1x2,2,6.6,stanleybet,18,2026-11-24T22:24:06
+2026-11-27,NIFL Championship,Newry City - Ballinamallard United,1x2,1,2.02,leovegas,4,2026-11-24T22:24:06
+2026-11-27,NIFL Championship,Newry City - Ballinamallard United,1x2,X,3.4,vincitu,4,2026-11-24T22:24:06
+2026-11-27,NIFL Championship,Newry City - Ballinamallard United,1x2,2,3.15,vincitu,4,2026-11-24T22:24:06
+2026-11-28,Australian Championship,Preston Lions - APIA Leichhardt Tigers,1x2,1,2.33,leovegas,5,2026-11-24T22:24:06
+2026-11-28,Australian Championship,Preston Lions - APIA Leichhardt Tigers,1x2,X,3.45,leovegas,5,2026-11-24T22:24:06
+2026-11-28,Australian Championship,Preston Lions - APIA Leichhardt Tigers,1x2,2,2.8,leovegas,5,2026-11-24T22:24:06
+2026-11-28,Championship,Blackburn Rovers - Charlton Athletic,1x2,1,1.83,giocodigitale,5,2026-11-24T22:24:06
+2026-11-28,Championship,Blackburn Rovers - Charlton Athletic,1x2,X,3.7,giocodigitale,5,2026-11-24T22:24:06
+2026-11-28,Championship,Blackburn Rovers - Charlton Athletic,1x2,2,4.25,888sport,5,2026-11-24T22:24:06

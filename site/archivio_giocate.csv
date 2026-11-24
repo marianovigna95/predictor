@@ -1,9 +1,9 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-24,SINGOLA,Serie B,Benevento - Empoli,1X2,1,76.6,1.48,13.37,2.75,,
-giocata,2026-11-24,RADDOPPIO,Champions League + Serie B,Real Madrid - PSV Eindhoven [GG GG] + Benevento - Empoli [1X2 1],GG/1X2,GG/1,48.0,2.35,13.07,0.57,,
+giocata,2026-11-24,SINGOLA,Serie B,Vicenza - Carrarese,1X2,2,46.6,2.7,25.82,1.24,,
+giocata,2026-11-24,RADDOPPIO,Champions League + Serie B,Real Madrid - PSV Eindhoven [GG GG] + Palermo - Sudtirol [GG GG],GG/GG,GG/GG,35.9,2.85,2.62,0.0,,
 giocata,2026-11-25,SINGOLA,Serie B,Cremonese - Avellino,U2.5,Under 2.5,58.5,2.05,19.92,1.64,,
-giocata,2026-11-25,RADDOPPIO,Champions League + Serie B,Club Brugge - Liverpool [GG GG] + Cremonese - Avellino [U2.5 Under 2.5],GG/U2.5,GG/Under 2.5,38.0,2.79,5.82,0.0,,
-giocata,2026-11-26,SINGOLA,Conference League,Kairat Almaty - Mjällby,GG,GG,66.7,1.75,16.73,1.69,,
+giocata,2026-11-25,RADDOPPIO,Champions League + Serie B,Club Brugge - Liverpool [GG GG] + Cremonese - Avellino [U2.5 Under 2.5],GG/U2.5,GG/Under 2.5,38.8,2.79,8.21,0.0,,
+giocata,2026-11-26,SINGOLA,Conference League,Borac Banja Luka - Atalanta,O2.5,Over 2.5,48.5,2.55,23.67,0.91,,
 giocata,2026-11-26,RADDOPPIO,Conference League + Europa League,Celta - Bournemouth [GG GG] + Freiburg - FC Twente [GG GG],GG/GG,GG/GG,38.6,2.59,0.12,0.0,,
 giocata,2026-11-27,SINGOLA,Serie A,Venezia - Bologna,GG,GG,63.2,1.8,13.76,0.46,,
 giocata,2026-11-27,RADDOPPIO,Eredivisie + Serie A,Venezia - Bologna [GG GG] + Groningen - Willem II [GG GG],GG/GG,GG/GG,37.6,2.88,8.29,0.0,,

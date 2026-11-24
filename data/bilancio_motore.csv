@@ -84,23 +84,9 @@ data,lega,partita,mercato,esito,prob_pct,margine_pp,gol_casa,gol_ospite,risultat
 2026-11-23,Serie A,Monza - Fiorentina,GG/NG,GG,58.1,4.6,3,0,3-0,0,1
 2026-11-23,Ligue 2,Nantes - Grenoble,O/U 2.5,Under 2.5,67.3,6.3,1,0,1-0,1,1
 2026-11-23,Ligue 2,Sochaux - Dunkerque,O/U 2.5,Under 2.5,56.1,5.3,2,3,2-3,0,1
-2026-11-24,Champions League,Arsenal - Dortmund,GG/NG,GG,62.1,1.8,,,n.d.,,0
-2026-11-24,Serie B,Benevento - Empoli,1X2,1,76.6,22.2,,,n.d.,,0
-2026-11-24,Championship,Bristol City - Wrexham,O/U 2.5,Under 2.5,55.3,5.2,,,n.d.,,0
-2026-11-24,Championship,Cardiff City - Preston North End,GG/NG,GG,58.9,4.0,,,n.d.,,0
-2026-11-24,Serie B,Cesena - Ascoli,GG/NG,GG,56.4,3.9,,,n.d.,,0
-2026-11-24,Championship,Charlton Athletic - Lincoln City,GG/NG,GG,58.0,4.0,,,n.d.,,0
-2026-11-24,Champions League,Como - AEK Athens,1X2,1,56.1,0.8,,,n.d.,,0
-2026-11-24,Champions League,Feyenoord - FC Porto,GG/NG,GG,64.3,2.7,,,n.d.,,0
-2026-11-24,Champions League,Man City - Napoli,1X2,1,70.8,2.5,,,n.d.,,0
-2026-11-24,Championship,Middlesbrough - Swansea City,1X2,1,69.6,16.5,,,n.d.,,0
-2026-11-24,Championship,Norwich City - QPR,GG/NG,GG,57.3,4.1,,,n.d.,,0
-2026-11-24,Serie B,Palermo - Sudtirol,1X2,1,79.9,17.0,,,n.d.,,0
-2026-11-24,Championship,Portsmouth - West Ham United,GG/NG,GG,54.3,3.6,,,n.d.,,0
-2026-11-24,Champions League,RB Leipzig - Lens,O/U 2.5,Over 2.5,78.7,2.5,,,n.d.,,0
-2026-11-24,Champions League,Real Madrid - PSV Eindhoven,O/U 2.5,Over 2.5,69.7,0.3,,,n.d.,,0
-2026-11-24,Championship,Sheffield United - Southampton,1X2,2,59.2,1.1,,,n.d.,,0
-2026-11-24,Champions League,Slovan Bratislava - Betis,O/U 2.5,Over 2.5,83.3,4.2,,,n.d.,,0
-2026-11-24,Serie B,Vicenza - Carrarese,GG/NG,GG,54.7,3.5,,,n.d.,,0
-2026-11-24,Serie B,Virtus Entella - Verona,O/U 2.5,Under 2.5,61.0,7.9,,,n.d.,,0
-2026-11-24,Championship,Wolves - Derby County,1X2,1,61.5,8.2,,,n.d.,,0
+2026-11-24,Champions League,Arsenal - Dortmund,1X2,1,58.0,1.1,1,1,1-1,0,1
+2026-11-24,Championship,Charlton Athletic - Lincoln City,O/U 2.5,Under 2.5,52.9,0.2,4,0,4-0,0,1
+2026-11-24,Championship,Norwich City - QPR,O/U 2.5,Under 2.5,53.7,1.8,1,1,1-1,1,1
+2026-11-24,Championship,Portsmouth - West Ham United,O/U 2.5,Under 2.5,57.4,6.5,1,0,1-0,1,1
+2026-11-24,Champions League,Real Madrid - PSV Eindhoven,GG/NG,GG,66.9,0.6,5,1,5-1,1,1
+2026-11-24,Serie B,Vicenza - Carrarese,O/U 2.5,Under 2.5,54.5,2.4,0,1,0-1,1,1
