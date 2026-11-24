@@ -1766,7 +1766,7 @@ Ligue 2,F2,13,2026-11-23 20:45,Nantes,Grenoble,True,1,0
 Ligue 2,F2,13,2026-11-23 20:45,Sochaux,Dunkerque,True,2,3
 Serie A,I1,12,2026-11-23 20:45,Monza,Fiorentina,True,3,0
 LaLiga,SP1,13,2026-11-23 21:00,Levante,Elche,True,1,1
-Premier League,E0,11,2026-11-23 21:00,Brentford,Everton,False,,
+Premier League,E0,11,2026-11-23 21:00,Brentford,Everton,True,4,0
 Champions League,UCL,5,2026-11-24 18:45,Bodø/Glimt,LASK,False,,
 Champions League,UCL,5,2026-11-24 18:45,Galatasaray,Aston Villa,False,,
 Serie B,I2,13,2026-11-24 19:00,Juve Stabia,Catanzaro,False,,
@@ -2529,7 +2529,6 @@ Ligue 2,F2,16,2027-01-02 19:00,Rodez,Red Star,False,,
 Serie A,I1,17,2027-01-02 20:45,Monza,Milan,False,,
 Ligue 1,F1,15,2027-01-02 21:00,Lorient,Auxerre,False,,
 Ligue 1,F1,15,2027-01-02 21:00,Monaco,Nice,False,,
-Ligue 1,F1,15,2027-01-02 21:00,Paris FC,Le Havre,False,,
 Ligue 1,F1,15,2027-01-02 21:00,Toulouse,Angers,False,,
 Ligue 1,F1,15,2027-01-02 21:00,Troyes,Rennes,False,,
 LaLiga 2,SP2,20,2027-01-03 01:00,Cádiz,Albacete,False,,
@@ -2559,6 +2558,7 @@ Premier League,E0,19,2027-01-03 15:00,Chelsea,Newcastle,False,,
 Serie A,I1,17,2027-01-03 15:00,Como,Lecce,False,,
 Serie A,I1,17,2027-01-03 15:00,Udinese,Atalanta,False,,
 Ligue 1,F1,15,2027-01-03 17:15,Lille,Strasbourg,False,,
+Ligue 1,F1,15,2027-01-03 17:15,Paris FC,Le Havre,False,,
 Premier League,E0,19,2027-01-03 17:30,Man City,Tottenham,False,,
 Serie A,I1,17,2027-01-03 18:00,Parma,Napoli,False,,
 Ligue 1,F1,15,2027-01-03 20:45,Lens,Paris SG,False,,
