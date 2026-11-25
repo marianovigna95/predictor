@@ -1,6 +1,6 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
 giocata,2026-11-25,SINGOLA,Serie B,Cremonese - Avellino,U2.5,Under 2.5,58.5,2.05,19.92,1.64,,
-giocata,2026-11-25,RADDOPPIO,Champions League,Club Brugge - Liverpool [GG GG] + Inter - Stuttgart [GG GG],GG/GG,GG/GG,51.0,2.04,4.33,0.0,,
+giocata,2026-11-25,RADDOPPIO,Champions League + Serie B,Club Brugge - Liverpool [GG GG] + Cremonese - Avellino [U2.5 Under 2.5],GG/U2.5,GG/Under 2.5,38.8,2.79,8.21,0.0,,
 giocata,2026-11-26,SINGOLA,Europa League,Celta - Bournemouth,O2.5,Over 2.5,61.3,1.94,18.92,1.48,,
 giocata,2026-11-26,RADDOPPIO,Conference League,Pafos FC - FC Midtjylland [GG GG] + Freiburg - FC Twente [GG GG],GG/GG,GG/GG,43.6,2.29,0.17,0.0,,
 giocata,2026-11-27,SINGOLA,Eredivisie,Groningen - Willem II,GG,GG,67.7,1.67,13.06,0.75,,
