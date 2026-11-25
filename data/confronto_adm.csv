@@ -1,2 +1,3 @@
 data,tipo,lega,partita,mercato,quota_best,quota_adm,delta_pct,book_adm,n_book,p_modello,EV_best_pct,EV_adm_pct,stato
-2026-11-29,SINGOLA,Primeira Liga,Gil Vicente - Estoril,NG,2.0,1.14,-43.0,leovegas,3,59.4,18.8,-32.28,edge_perso
+2026-11-25,SINGOLA,Serie B,Mantova - Arezzo,U2.5,2.0,2.0,0.0,stake,26,58.3,16.6,16.6,ok
+2026-11-29,SINGOLA,Serie B,Sudtirol - Mantova,1X2,2.55,2.55,0.0,fastbet,8,48.4,23.42,23.42,ok

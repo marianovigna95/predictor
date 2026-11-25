@@ -1,26 +1,4 @@
 data,lega,partita,mercato,esito,prob_pct,margine_pp,gol_casa,gol_ospite,risultato,colto,verificato
-2026-11-17,Nations League,Bosnia-Herzegovina - Romania,O/U 2.5,Over 2.5,65.5,1.2,2,1,2-1,1,1
-2026-11-17,Friendlies,China - Bahrain,O/U 2.5,Under 2.5,60.3,2.3,2,2,2-2,0,1
-2026-11-17,Nations League,Denmark - Norway,GG/NG,GG,58.1,3.3,2,3,2-3,1,1
-2026-11-17,Nations League,Hungary - Northern Ireland,GG/NG,GG,55.5,5.1,1,1,1-1,1,1
-2026-11-17,Friendlies,Iraq - Iran,O/U 2.5,Under 2.5,59.4,7.6,1,1,1-1,1,1
-2026-11-17,Nations League,Israel - Austria,GG/NG,GG,55.2,5.0,1,1,1-1,1,1
-2026-11-17,Friendlies,Japan - Paraguay,GG/NG,GG,60.2,3.7,1,2,1-2,1,1
-2026-11-17,Friendlies,Jordan - Australia,O/U 2.5,Over 2.5,58.9,3.1,2,0,2-0,0,1
-2026-11-17,Friendlies,Kuwait - Honduras,1X2,1,60.8,2.8,0,2,0-2,0,1
-2026-11-17,Friendlies,Kyrgyz Republic - Vietnam,O/U 2.5,Under 2.5,54.5,3.2,2,1,2-1,0,1
-2026-11-17,Friendlies,Lebanon - Palestine,O/U 2.5,Under 2.5,61.4,5.5,0,0,0-0,1,1
-2026-11-17,Friendlies,Malaysia - Yemen,GG/NG,GG,56.1,0.7,2,1,2-1,1,1
-2026-11-17,Nations League,Poland - Sweden,GG/NG,GG,63.2,0.8,1,1,1-1,1,1
-2026-11-17,Friendlies,Qatar - South Korea,O/U 2.5,Under 2.5,53.5,0.8,0,1,0-1,1,1
-2026-11-17,Nations League,Republic of Ireland - Kosovo,GG/NG,GG,59.6,3.4,3,0,3-0,0,1
-2026-11-17,Friendlies,Russia - Venezuela,1X2,1,69.9,14.2,2,0,2-0,1,1
-2026-11-17,Friendlies,Saudi Arabia - Uzbekistan,GG/NG,GG,52.0,1.5,1,2,1-2,1,1
-2026-11-17,Friendlies,Singapore - Brazil,GG/NG,GG,64.9,1.9,0,7,0-7,0,1
-2026-11-17,Friendlies,Tahiti - Cook Islands,1X2,1,69.0,2.5,3,3,3-3,0,1
-2026-11-17,Nations League,Ukraine - Georgia,GG/NG,GG,56.7,0.7,1,0,1-0,0,1
-2026-11-17,Friendlies,United Arab Emirates - Syria,1X2,1,69.3,8.7,4,2,4-2,1,1
-2026-11-17,Nations League,Wales - Portugal,O/U 2.5,Over 2.5,63.8,1.5,2,3,2-3,1,1
 2026-11-18,Friendlies,Argentina - Costa Rica,1X2,1,78.8,8.3,,,n.d.,,0
 2026-11-18,Friendlies,Chile - Colombia,GG/NG,GG,57.1,1.1,,,n.d.,,0
 2026-11-18,Friendlies,Ecuador - Bolivia,GG/NG,NG,74.8,0.9,,,n.d.,,0
@@ -90,3 +68,20 @@ data,lega,partita,mercato,esito,prob_pct,margine_pp,gol_casa,gol_ospite,risultat
 2026-11-24,Championship,Portsmouth - West Ham United,O/U 2.5,Under 2.5,57.4,6.5,1,0,1-0,1,1
 2026-11-24,Champions League,Real Madrid - PSV Eindhoven,GG/NG,GG,66.9,0.6,5,1,5-1,1,1
 2026-11-24,Serie B,Vicenza - Carrarese,O/U 2.5,Under 2.5,54.5,2.4,0,1,0-1,1,1
+2026-11-25,Champions League,Ath Madrid - Viking,GG/NG,GG,60.2,1.2,,,n.d.,,0
+2026-11-25,Championship,Bolton Wanderers - West Bromwich Albion,GG/NG,GG,58.9,4.0,,,n.d.,,0
+2026-11-25,Championship,Burnley - Birmingham City,GG/NG,GG,56.0,4.6,,,n.d.,,0
+2026-11-25,Champions League,Club Brugge - Liverpool,O/U 2.5,Over 2.5,80.2,4.4,,,n.d.,,0
+2026-11-25,Serie B,Cremonese - Avellino,O/U 2.5,Under 2.5,58.5,2.9,,,n.d.,,0
+2026-11-25,Champions League,Inter - Stuttgart,O/U 2.5,Over 2.5,74.3,1.2,,,n.d.,,0
+2026-11-25,Champions League,Lille - Bayern Munich,GG/NG,GG,72.8,0.1,,,n.d.,,0
+2026-11-25,Serie B,Mantova - Arezzo,O/U 2.5,Under 2.5,58.3,6.0,,,n.d.,,0
+2026-11-25,Serie B,Padova - Sampdoria,GG/NG,GG,52.4,0.1,,,n.d.,,0
+2026-11-25,Champions League,Paris SG - Roma,1X2,1,73.9,5.5,,,n.d.,,0
+2026-11-25,Serie B,Pisa - Modena,O/U 2.5,Under 2.5,54.4,4.1,,,n.d.,,0
+2026-11-25,Champions League,Sabah FK - Barcelona,O/U 2.5,Over 2.5,77.5,1.5,,,n.d.,,0
+2026-11-25,Champions League,Shakhtar Donetsk - Fenerbahçe,GG/NG,GG,63.1,3.3,,,n.d.,,0
+2026-11-25,Champions League,Slavia Prague - Villarreal,GG/NG,GG,66.1,1.7,,,n.d.,,0
+2026-11-25,Champions League,Sporting CP - Man United,O/U 2.5,Over 2.5,65.2,1.8,,,n.d.,,0
+2026-11-25,Championship,Stoke City - Millwall,GG/NG,GG,61.6,3.6,,,n.d.,,0
+2026-11-25,Championship,Watford - Blackburn Rovers,GG/NG,GG,62.6,1.4,,,n.d.,,0

@@ -1241,10 +1241,10 @@ WC Qual. UEFA,WCQ,0,2025-11-15 18:00,Cyprus,Austria,True,0,2
 WC Qual. UEFA,WCQ,0,2025-11-15 18:00,Turkey,Bulgaria,True,2,0
 Friendlies,FRD,0,2025-11-15 20:30,Basque,Palestine,True,3,0
 WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Denmark,Belarus,True,2,2
-WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Bosnia and Herzegovina,Romania,True,3,1
+WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Greece,Scotland,True,3,2
 WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Slovenia,Kosovo,True,0,2
 WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Switzerland,Sweden,True,4,1
-WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Greece,Scotland,True,3,2
+WC Qual. UEFA,WCQ,0,2025-11-15 20:45,Bosnia and Herzegovina,Romania,True,3,1
 Friendlies,FRD,0,2025-11-15 23:00,USA,Paraguay,True,2,1
 Friendlies,FRD,0,2025-11-16 01:30,Colombia,New Zealand,True,2,1
 Friendlies,FRD,0,2025-11-16 02:00,Mexico,Uruguay,True,0,0
@@ -1658,3 +1658,4 @@ Friendlies,FRD,0,2026-11-18 00:00,Chile,Colombia,True,0,0
 Friendlies,FRD,0,2026-11-18 00:30,Uruguay,Dominican Republic,True,5,0
 Friendlies,FRD,0,2026-11-18 00:30,Ecuador,Bolivia,True,2,0
 Friendlies,FRD,0,2026-12-05 18:30,England,Ukraine,False,,
+Friendlies,FRD,0,2026-12-10 00:00,Peru,Panama,False,,
