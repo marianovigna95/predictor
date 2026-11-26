@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-26T14:36:32",
+ "aggiornato": "2026-11-26T18:36:39",
  "stato": "nessuna_corrispondenza",
  "giocate_non_coperte": 8,
  "diagnosi": {
@@ -14,16 +14,18 @@
    "2026-12-03"
   ],
   "date_quote_adm": [
-   "2026-11-26",
    "2026-11-27",
    "2026-11-28",
-   "2026-11-29"
+   "2026-11-29",
+   "2026-11-30",
+   "2026-12-02"
   ],
   "date_in_comune": [
-   "2026-11-26",
    "2026-11-27",
    "2026-11-28",
-   "2026-11-29"
+   "2026-11-29",
+   "2026-11-30",
+   "2026-12-02"
   ],
   "mercati_giocate": [
    "1x2",
@@ -37,10 +39,10 @@
    "gg"
   ],
   "leghe_adm": [
-   "Premier League",
-   "Ukraine - Premier League"
+   "LaLiga",
+   "LaLiga 2"
   ],
-  "giocate_su_date_coperte": 4,
+  "giocate_su_date_coperte": 5,
   "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
  }
 }
