@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-11-26T18:36:39",
+ "aggiornato": "2026-11-26T22:26:19",
  "stato": "nessuna_corrispondenza",
  "giocate_non_coperte": 8,
  "diagnosi": {
@@ -16,21 +16,16 @@
   "date_quote_adm": [
    "2026-11-27",
    "2026-11-28",
-   "2026-11-29",
-   "2026-11-30",
-   "2026-12-02"
+   "2026-11-29"
   ],
   "date_in_comune": [
    "2026-11-27",
    "2026-11-28",
-   "2026-11-29",
-   "2026-11-30",
-   "2026-12-02"
+   "2026-11-29"
   ],
   "mercati_giocate": [
    "1x2",
    "gg",
-   "ng",
    "o2.5"
   ],
   "mercati_adm": [
@@ -39,10 +34,12 @@
    "gg"
   ],
   "leghe_adm": [
-   "LaLiga",
-   "LaLiga 2"
+   "2. Bundesliga",
+   "Bundesliga",
+   "Bundesliga 2",
+   "Bundesliga 3"
   ],
-  "giocate_su_date_coperte": 5,
+  "giocate_su_date_coperte": 3,
   "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
  }
 }

@@ -1,125 +1,159 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,2.5,O2.5,1.42,snai,37,2026-11-26T18:36:36
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,2.5,U2.5,2.72,betpassion,37,2026-11-26T18:36:36
-2026-11-27,LaLiga,Levante - Racing Santander,2.5,O2.5,1.13,sunbet,37,2026-11-26T18:36:36
-2026-11-27,LaLiga,Levante - Racing Santander,2.5,U2.5,6.2,stanleybet,37,2026-11-26T18:36:36
-2026-11-28,LaLiga,Betis - Rayo Vallecano,2.5,O2.5,1.15,snai,3,2026-11-26T18:36:36
-2026-11-28,LaLiga,Betis - Rayo Vallecano,2.5,U2.5,4.5,snai,3,2026-11-26T18:36:36
-2026-11-28,LaLiga 2,Las Palmas - Andorra,2.5,O2.5,1.23,stake,43,2026-11-26T18:36:36
-2026-11-28,LaLiga 2,Las Palmas - Andorra,2.5,U2.5,4.0,leovegas,43,2026-11-26T18:36:36
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,gg,GG,1.97,vincitu,38,2026-11-26T18:36:37
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,gg,NG,1.77,eurobet,38,2026-11-26T18:36:37
-2026-11-27,LaLiga,Levante - Racing Santander,gg,GG,1.42,betflag,38,2026-11-26T18:36:37
-2026-11-27,LaLiga,Levante - Racing Santander,gg,NG,3.1,eurobet,38,2026-11-26T18:36:37
-2026-11-28,LaLiga,Betis - Rayo Vallecano,gg,GG,1.57,snai,3,2026-11-26T18:36:37
-2026-11-28,LaLiga,Betis - Rayo Vallecano,gg,NG,2.25,snai,3,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Las Palmas - Andorra,gg,GG,1.62,stake,45,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Las Palmas - Andorra,gg,NG,2.2,snai,45,2026-11-26T18:36:37
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,gg,GG,1.77,daznbet,11,2026-11-26T18:36:37
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,gg,NG,1.96,eplay24,11,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Albacete - Tenerife,gg,GG,1.84,winamax,42,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Albacete - Tenerife,gg,NG,1.9,snai,42,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Eldense - Girona,gg,GG,1.78,vincitu,41,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Eldense - Girona,gg,NG,1.96,leovegas,41,2026-11-26T18:36:37
-2026-11-28,LaLiga,Elche - Atletico Madrid,gg,GG,1.78,sunbet,44,2026-11-26T18:36:37
-2026-11-28,LaLiga,Elche - Atletico Madrid,gg,NG,2.13,stanleybet,44,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Eibar - Burgos,gg,GG,1.92,winamax,45,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Eibar - Burgos,gg,NG,1.83,eurobet,45,2026-11-26T18:36:37
-2026-11-28,LaLiga,Real Madrid - Alavés,gg,GG,2.15,eurobet,43,2026-11-26T18:36:37
-2026-11-28,LaLiga,Real Madrid - Alavés,gg,NG,1.8,stanleybet,43,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,gg,GG,1.65,stake,17,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,gg,NG,2.21,quigioco,17,2026-11-26T18:36:37
-2026-11-29,LaLiga,Valencia - Osasuna,gg,GG,2.0,stake,45,2026-11-26T18:36:37
-2026-11-29,LaLiga,Valencia - Osasuna,gg,NG,1.87,leovegas,45,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Granada - AD Ceuta,gg,GG,1.78,winamax,41,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Granada - AD Ceuta,gg,NG,2.0,snai,41,2026-11-26T18:36:37
-2026-11-29,LaLiga,Celta Vigo - Villarreal,gg,GG,1.64,sunbet,42,2026-11-26T18:36:37
-2026-11-29,LaLiga,Celta Vigo - Villarreal,gg,NG,2.27,sunbet,42,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,gg,GG,1.79,fastbet,40,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,gg,NG,2.0,snai,40,2026-11-26T18:36:37
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,gg,GG,1.75,giocodigitale,9,2026-11-26T18:36:37
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,gg,NG,1.98,betpassion,9,2026-11-26T18:36:37
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,gg,GG,1.66,sunbet,37,2026-11-26T18:36:37
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,gg,NG,2.25,eurobet,37,2026-11-26T18:36:37
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,gg,GG,1.8,leovegas,33,2026-11-26T18:36:37
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,gg,NG,2.03,betpassion,33,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,gg,GG,1.6,goldbet,28,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,gg,NG,2.25,eurobet,28,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Cadiz - Cordoba,gg,GG,1.48,leovegas,20,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Cadiz - Cordoba,gg,NG,2.6,eurobet,20,2026-11-26T18:36:37
-2026-11-27,LaLiga 2,Leganes - Sabadell,gg,GG,1.98,winamax,8,2026-11-26T18:36:37
-2026-11-27,LaLiga 2,Leganes - Sabadell,gg,NG,1.76,quigioco,8,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Las Palmas - FC Andorra,gg,GG,3.75,stake,5,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Las Palmas - FC Andorra,gg,NG,1.22,fastbet,5,2026-11-26T18:36:37
-2026-11-28,LaLiga,Real Madrid - Alaves,gg,GG,4.35,leovegas,6,2026-11-26T18:36:37
-2026-11-28,LaLiga,Real Madrid - Alaves,gg,NG,1.19,sportium,6,2026-11-26T18:36:37
-2026-11-29,LaLiga,Deportivo La Coruna - Barcelona,gg,GG,3.2,fastbet,2,2026-11-26T18:36:37
-2026-11-29,LaLiga,Deportivo La Coruna - Barcelona,gg,NG,1.3,fastbet,2,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Mallorca - Castellon,gg,GG,4.0,stake,4,2026-11-26T18:36:37
-2026-11-29,LaLiga 2,Mallorca - Castellon,gg,NG,1.2,stake,4,2026-11-26T18:36:37
-2026-11-29,LaLiga,Real Sociedad - Sevilla,gg,GG,1.67,stake,4,2026-11-26T18:36:37
-2026-11-29,LaLiga,Real Sociedad - Sevilla,gg,NG,2.2,fastbet,4,2026-11-26T18:36:37
-2026-12-02,LaLiga,Real Sociedad - Real Madrid,gg,GG,1.48,winamax,17,2026-11-26T18:36:37
-2026-12-02,LaLiga,Real Sociedad - Real Madrid,gg,NG,2.67,fastbet,17,2026-11-26T18:36:37
-2026-12-02,LaLiga,Barcelona - Atletico Madrid,gg,GG,3.0,stake,3,2026-11-26T18:36:37
-2026-12-02,LaLiga,Barcelona - Atletico Madrid,gg,NG,1.33,stake,3,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,gg,GG,1.75,leovegas,3,2026-11-26T18:36:37
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,gg,NG,1.9,leovegas,3,2026-11-26T18:36:37
-2026-11-28,LaLiga,Málaga - Athletic Bilbao,gg,GG,3.33,stake,5,2026-11-26T18:36:37
-2026-11-28,LaLiga,Málaga - Athletic Bilbao,gg,NG,1.29,fastbet,5,2026-11-26T18:36:37
-2026-11-28,LaLiga,Elche - Atlético Madrid,gg,GG,3.15,sportium,6,2026-11-26T18:36:37
-2026-11-28,LaLiga,Elche - Atlético Madrid,gg,NG,1.34,fastbet,6,2026-11-26T18:36:37
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,1,2.39,vincitu,38,2026-11-26T18:36:38
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,X,3.1,giocodigitale,38,2026-11-26T18:36:38
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,2,3.1,goldbet,38,2026-11-26T18:36:38
-2026-11-27,LaLiga,Levante - Racing Santander,1x2,1,2.11,sunbet,38,2026-11-26T18:36:38
-2026-11-27,LaLiga,Levante - Racing Santander,1x2,X,3.9,bwin,38,2026-11-26T18:36:38
-2026-11-27,LaLiga,Levante - Racing Santander,1x2,2,3.33,betpassion,38,2026-11-26T18:36:38
-2026-11-28,LaLiga,Betis - Rayo Vallecano,1x2,1,1.57,snai,3,2026-11-26T18:36:38
-2026-11-28,LaLiga,Betis - Rayo Vallecano,1x2,X,4.0,snai,3,2026-11-26T18:36:38
-2026-11-28,LaLiga,Betis - Rayo Vallecano,1x2,2,5.25,snai,3,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,1,2.25,winamax,46,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,X,3.5,winamax,46,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,2,3.15,goldbet,46,2026-11-26T18:36:38
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,1x2,1,4.75,snai,11,2026-11-26T18:36:38
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,1x2,X,3.8,daznbet,11,2026-11-26T18:36:38
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,1x2,2,1.74,eplay24,11,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,1,2.15,admiralbet,43,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,X,3.3,winamax,43,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,2,3.55,goldbet,43,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,1,3.15,winamax,42,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,X,3.35,winamax,42,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,2,2.33,stake,42,2026-11-26T18:36:38
-2026-11-28,LaLiga,Elche - Atletico Madrid,1x2,1,6.6,vincitu,45,2026-11-26T18:36:38
-2026-11-28,LaLiga,Elche - Atletico Madrid,1x2,X,5.05,betpassion,45,2026-11-26T18:36:38
-2026-11-28,LaLiga,Elche - Atletico Madrid,1x2,2,1.49,fastbet,45,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,1,1.86,winamax,46,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,X,3.4,winamax,46,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,2,4.75,stake,46,2026-11-26T18:36:38
-2026-11-28,LaLiga,Real Madrid - Alavés,1x2,1,1.17,betpassion,44,2026-11-26T18:36:38
-2026-11-28,LaLiga,Real Madrid - Alavés,1x2,X,10.0,snai,44,2026-11-26T18:36:38
-2026-11-28,LaLiga,Real Madrid - Alavés,1x2,2,18.31,betpassion,44,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,1,1.75,snai,17,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,X,3.8,stake,17,2026-11-26T18:36:38
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,2,4.2,stake,17,2026-11-26T18:36:38
-2026-11-29,LaLiga,Valencia - Osasuna,1x2,1,2.23,sunbet,46,2026-11-26T18:36:38
-2026-11-29,LaLiga,Valencia - Osasuna,1x2,X,3.26,betpassion,46,2026-11-26T18:36:38
-2026-11-29,LaLiga,Valencia - Osasuna,1x2,2,3.67,fastbet,46,2026-11-26T18:36:38
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,1,1.56,winamax,42,2026-11-26T18:36:38
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,X,4.3,winamax,42,2026-11-26T18:36:38
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,2,6.0,snai,42,2026-11-26T18:36:38
-2026-11-29,LaLiga,Celta Vigo - Villarreal,1x2,1,2.83,betpassion,43,2026-11-26T18:36:38
-2026-11-29,LaLiga,Celta Vigo - Villarreal,1x2,X,3.5,bwin,43,2026-11-26T18:36:38
-2026-11-29,LaLiga,Celta Vigo - Villarreal,1x2,2,2.55,888sport,43,2026-11-26T18:36:38
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,1x2,1,1.69,vincitu,41,2026-11-26T18:36:38
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,1x2,X,3.8,stake,41,2026-11-26T18:36:38
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,1x2,2,4.75,stake,41,2026-11-26T18:36:38
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,1,1.5,snai,9,2026-11-26T18:36:38
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,X,4.25,snai,9,2026-11-26T18:36:38
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,2,5.7,betpassion,9,2026-11-26T18:36:38
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,1x2,1,1.63,sunbet,38,2026-11-26T18:36:38
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,1x2,X,4.5,888sport,38,2026-11-26T18:36:38
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,1x2,2,5.5,888sport,38,2026-11-26T18:36:38
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,1x2,1,4.79,betpassion,34,2026-11-26T18:36:38
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,1x2,X,3.83,fastbet,34,2026-11-26T18:36:38
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,1x2,2,1.79,sunbet,34,2026-11-26T18:36:38
+2026-11-27,Bundesliga,Werder Brema - Borussia Monchengladbach,2.5,O2.5,1.17,sunbet,32,2026-11-26T22:26:16
+2026-11-27,Bundesliga,Werder Brema - Borussia Monchengladbach,2.5,U2.5,5.6,leovegas,32,2026-11-26T22:26:16
+2026-11-28,Bundesliga,Mainz - Union Berlino,2.5,O2.5,1.18,sunbet,32,2026-11-26T22:26:16
+2026-11-28,Bundesliga,Mainz - Union Berlino,2.5,U2.5,5.0,goldbet,32,2026-11-26T22:26:16
+2026-11-28,Bundesliga,Paderborn - Schalke 04,2.5,O2.5,1.25,sunbet,33,2026-11-26T22:26:16
+2026-11-28,Bundesliga,Paderborn - Schalke 04,2.5,U2.5,4.0,snai,33,2026-11-26T22:26:16
+2026-11-28,Bundesliga,Amburgo - Bayern Monaco,2.5,O2.5,1.09,sunbet,39,2026-11-26T22:26:16
+2026-11-28,Bundesliga,Amburgo - Bayern Monaco,2.5,U2.5,9.0,stanleybet,39,2026-11-26T22:26:16
+2026-11-27,Bundesliga,Werder Brema - Borussia Monchengladbach,gg,GG,1.57,sunbet,33,2026-11-26T22:26:17
+2026-11-27,Bundesliga,Werder Brema - Borussia Monchengladbach,gg,NG,2.55,leovegas,33,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Mainz - Union Berlino,gg,GG,1.7,sunbet,33,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Mainz - Union Berlino,gg,NG,2.2,eurobet,33,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Paderborn - Schalke 04,gg,GG,1.65,sunbet,34,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Paderborn - Schalke 04,gg,NG,2.4,snai,34,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Amburgo - Bayern Monaco,gg,GG,1.66,sunbet,40,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Amburgo - Bayern Monaco,gg,NG,2.38,stanleybet,40,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Stoccarda - Eintracht Francoforte,gg,GG,1.34,sunbet,40,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Stoccarda - Eintracht Francoforte,gg,NG,3.55,eurobet,40,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Friburgo - Lipsia,gg,GG,1.46,sunbet,33,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Friburgo - Lipsia,gg,NG,2.9,snai,33,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Hoffenheim - Augsburg,gg,GG,1.37,sunbet,41,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Hoffenheim - Augsburg,gg,NG,3.2,eurobet,41,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Borussia Dortmund - Bayer Leverkusen,gg,GG,1.45,sunbet,44,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Borussia Dortmund - Bayer Leverkusen,gg,NG,2.77,betpassion,44,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,1. Fc Heidenheim 1846 - Norimberga,gg,GG,1.36,sunbet,16,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,1. Fc Heidenheim 1846 - Norimberga,gg,NG,3.05,eurobet,16,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,Vfl Bochum 1848 - Sv Darmstadt 98,gg,GG,1.58,sunbet,17,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,Vfl Bochum 1848 - Sv Darmstadt 98,gg,NG,2.35,eurobet,17,2026-11-26T22:26:17
+2026-11-27,Bundesliga,Grazer Ak - Scr Altach,gg,GG,1.75,sunbet,25,2026-11-26T22:26:17
+2026-11-27,Bundesliga,Grazer Ak - Scr Altach,gg,NG,2.05,eurobet,25,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe,gg,GG,1.5,betpassion,11,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe,gg,NG,2.55,leovegas,11,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Holstein Kiel - Kaiserslautern,gg,GG,1.59,sunbet,38,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Holstein Kiel - Kaiserslautern,gg,NG,2.32,sunbet,38,2026-11-26T22:26:17
+2026-11-28,Bundesliga 2,Sg Dynamo Dresden - St. Pauli,gg,GG,1.57,sunbet,27,2026-11-26T22:26:17
+2026-11-28,Bundesliga 2,Sg Dynamo Dresden - St. Pauli,gg,NG,2.36,sunbet,27,2026-11-26T22:26:17
+2026-11-28,Bundesliga 3,Sv Waldhof Mannheim 07 - Stoccarda Ii,gg,GG,1.38,goldbet,4,2026-11-26T22:26:17
+2026-11-28,Bundesliga 3,Sv Waldhof Mannheim 07 - Stoccarda Ii,gg,NG,2.75,eurobet,4,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Colonia - Sv 07 Elversberg,gg,GG,1.56,sunbet,21,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Colonia - Sv 07 Elversberg,gg,NG,2.57,stanleybet,21,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Fk Austria Wien - Wolfsberger,gg,GG,1.71,sunbet,21,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Fk Austria Wien - Wolfsberger,gg,NG,2.15,eurobet,21,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Austria Lustenau - Sk Rapid,gg,GG,1.7,sunbet,18,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Austria Lustenau - Sk Rapid,gg,NG,2.12,sunbet,18,2026-11-26T22:26:17
+2026-11-28,Bundesliga 2,Vfl 1899 Osnabruck - Hannover,gg,GG,1.55,goldbet,21,2026-11-26T22:26:17
+2026-11-28,Bundesliga 2,Vfl 1899 Osnabruck - Hannover,gg,NG,2.45,sunbet,21,2026-11-26T22:26:17
+2026-11-29,Bundesliga 3,Viktoria Colonia - Sc Fortuna Cologne,gg,GG,1.64,stanleybet,24,2026-11-26T22:26:17
+2026-11-29,Bundesliga 3,Viktoria Colonia - Sc Fortuna Cologne,gg,NG,2.2,eurobet,24,2026-11-26T22:26:17
+2026-11-29,2. Bundesliga,Eintracht Braunschweig - Wolfsburg,gg,GG,1.44,sunbet,25,2026-11-26T22:26:17
+2026-11-29,2. Bundesliga,Eintracht Braunschweig - Wolfsburg,gg,NG,2.8,eurobet,25,2026-11-26T22:26:17
+2026-11-29,2. Bundesliga,Greuther Furth - Dsc Arminia Bielefeld,gg,GG,1.61,sunbet,17,2026-11-26T22:26:17
+2026-11-29,2. Bundesliga,Greuther Furth - Dsc Arminia Bielefeld,gg,NG,2.29,sunbet,17,2026-11-26T22:26:17
+2026-11-29,Bundesliga 2,Magdeburgo - Energie Cottbus,gg,GG,1.45,sunbet,23,2026-11-26T22:26:17
+2026-11-29,Bundesliga 2,Magdeburgo - Energie Cottbus,gg,NG,2.8,eurobet,23,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Ried - Hartberg,gg,GG,1.52,leovegas,41,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Ried - Hartberg,gg,NG,2.55,eurobet,41,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Sk Sturm Graz - Wsg Tirol,gg,GG,1.62,sunbet,35,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Sk Sturm Graz - Wsg Tirol,gg,NG,2.35,leovegas,35,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Salisburgo - Lask Linz,gg,GG,1.4,sunbet,21,2026-11-26T22:26:17
+2026-11-29,Bundesliga,Salisburgo - Lask Linz,gg,NG,2.9,sunbet,21,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,gg,GG,1.57,stake,19,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,gg,NG,2.4,quigioco,19,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,gg,GG,2.9,stake,2,2026-11-26T22:26:17
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,gg,NG,1.36,fastbet,2,2026-11-26T22:26:17
+2026-11-27,Bundesliga,Grazer AK - SCR Altach,gg,GG,4.45,betflag,1,2026-11-26T22:26:17
+2026-11-27,Bundesliga,Grazer AK - SCR Altach,gg,NG,1.14,betflag,1,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Dynamo Dresden - St. Pauli,gg,GG,1.56,stake,7,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Dynamo Dresden - St. Pauli,gg,NG,2.35,leovegas,7,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Mainz 05 - Union Berlin,gg,GG,1.67,stake,3,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Mainz 05 - Union Berlin,gg,NG,2.15,stake,3,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Stuttgart - Eintracht Frankfurt,gg,GG,2.71,stake,2,2026-11-26T22:26:17
+2026-11-28,Bundesliga,Stuttgart - Eintracht Frankfurt,gg,NG,1.43,fastbet,2,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Osnabruck - Hannover 96,gg,GG,3.3,leovegas,3,2026-11-26T22:26:17
+2026-11-28,2. Bundesliga,Osnabruck - Hannover 96,gg,NG,1.27,leovegas,3,2026-11-26T22:26:17
+2026-11-27,Bundesliga,Werder Brema - Borussia Monchengladbach,1x2,1,1.76,sunbet,33,2026-11-26T22:26:18
+2026-11-27,Bundesliga,Werder Brema - Borussia Monchengladbach,1x2,X,4.33,bwin,33,2026-11-26T22:26:18
+2026-11-27,Bundesliga,Werder Brema - Borussia Monchengladbach,1x2,2,4.5,snai,33,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Mainz - Union Berlino,1x2,1,1.54,sunbet,34,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Mainz - Union Berlino,1x2,X,4.7,totosi,34,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Mainz - Union Berlino,1x2,2,5.75,goldbet,34,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Paderborn - Schalke 04,1x2,1,2.55,sunbet,35,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Paderborn - Schalke 04,1x2,X,3.5,bwin,35,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Paderborn - Schalke 04,1x2,2,2.85,betitaly,35,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Amburgo - Bayern Monaco,1x2,1,9.6,domusbet,41,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Amburgo - Bayern Monaco,1x2,X,7.0,domusbet,41,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Amburgo - Bayern Monaco,1x2,2,1.28,sunbet,41,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Stoccarda - Eintracht Francoforte,1x2,1,1.81,sunbet,41,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Stoccarda - Eintracht Francoforte,1x2,X,4.5,snai,41,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Stoccarda - Eintracht Francoforte,1x2,2,3.95,888sport,41,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Friburgo - Lipsia,1x2,1,2.75,codere,34,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Friburgo - Lipsia,1x2,X,4.0,stanleybet,34,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Friburgo - Lipsia,1x2,2,2.42,sunbet,34,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Hoffenheim - Augsburg,1x2,1,1.75,betitaly,42,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Hoffenheim - Augsburg,1x2,X,4.8,fastbet,42,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Hoffenheim - Augsburg,1x2,2,4.0,betitaly,42,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Borussia Dortmund - Bayer Leverkusen,1x2,1,2.17,sunbet,45,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Borussia Dortmund - Bayer Leverkusen,1x2,X,4.0,stake,45,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Borussia Dortmund - Bayer Leverkusen,1x2,2,3.15,888sport,45,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,1. Fc Heidenheim 1846 - Norimberga,1x2,1,2.2,sunbet,16,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,1. Fc Heidenheim 1846 - Norimberga,1x2,X,3.9,sunbet,16,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,1. Fc Heidenheim 1846 - Norimberga,1x2,2,2.95,sunbet,16,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Vfl Bochum 1848 - Sv Darmstadt 98,1x2,1,1.82,sunbet,17,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Vfl Bochum 1848 - Sv Darmstadt 98,1x2,X,3.95,sunbet,17,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Vfl Bochum 1848 - Sv Darmstadt 98,1x2,2,4.1,sunbet,17,2026-11-26T22:26:18
+2026-11-27,Bundesliga,Grazer Ak - Scr Altach,1x2,1,3.4,goldbet,25,2026-11-26T22:26:18
+2026-11-27,Bundesliga,Grazer Ak - Scr Altach,1x2,X,3.4,sunbet,25,2026-11-26T22:26:18
+2026-11-27,Bundesliga,Grazer Ak - Scr Altach,1x2,2,2.24,sunbet,25,2026-11-26T22:26:18
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe,1x2,1,1.44,bwin,11,2026-11-26T22:26:18
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe,1x2,X,5.0,bwin,11,2026-11-26T22:26:18
+2026-11-28,2. Bundesliga,Hertha Berlino - Karlsruhe,1x2,2,6.2,betpassion,11,2026-11-26T22:26:18
+2026-11-28,2. Bundesliga,Holstein Kiel - Kaiserslautern,1x2,1,2.36,stake,39,2026-11-26T22:26:18
+2026-11-28,2. Bundesliga,Holstein Kiel - Kaiserslautern,1x2,X,3.6,giocodigitale,39,2026-11-26T22:26:18
+2026-11-28,2. Bundesliga,Holstein Kiel - Kaiserslautern,1x2,2,2.9,sunbet,39,2026-11-26T22:26:18
+2026-11-28,Bundesliga 2,Sg Dynamo Dresden - St. Pauli,1x2,1,2.75,sunbet,28,2026-11-26T22:26:18
+2026-11-28,Bundesliga 2,Sg Dynamo Dresden - St. Pauli,1x2,X,3.5,sunbet,28,2026-11-26T22:26:18
+2026-11-28,Bundesliga 2,Sg Dynamo Dresden - St. Pauli,1x2,2,2.5,sunbet,28,2026-11-26T22:26:18
+2026-11-28,Bundesliga 3,Sv Waldhof Mannheim 07 - Stoccarda Ii,1x2,1,1.85,lottomatica,5,2026-11-26T22:26:18
+2026-11-28,Bundesliga 3,Sv Waldhof Mannheim 07 - Stoccarda Ii,1x2,X,3.9,goldbet,5,2026-11-26T22:26:18
+2026-11-28,Bundesliga 3,Sv Waldhof Mannheim 07 - Stoccarda Ii,1x2,2,3.65,goldbet,5,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Colonia - Sv 07 Elversberg,1x2,1,2.07,sunbet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Colonia - Sv 07 Elversberg,1x2,X,3.8,goldbet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Colonia - Sv 07 Elversberg,1x2,2,3.45,stanleybet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Fk Austria Wien - Wolfsberger,1x2,1,1.73,sunbet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Fk Austria Wien - Wolfsberger,1x2,X,4.0,sunbet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Fk Austria Wien - Wolfsberger,1x2,2,4.5,goldbet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Austria Lustenau - Sk Rapid,1x2,1,7.8,sunbet,18,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Austria Lustenau - Sk Rapid,1x2,X,5.6,sunbet,18,2026-11-26T22:26:18
+2026-11-28,Bundesliga,Austria Lustenau - Sk Rapid,1x2,2,1.34,sunbet,18,2026-11-26T22:26:18
+2026-11-28,Bundesliga 2,Vfl 1899 Osnabruck - Hannover,1x2,1,3.05,goldbet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga 2,Vfl 1899 Osnabruck - Hannover,1x2,X,3.65,sunbet,22,2026-11-26T22:26:18
+2026-11-28,Bundesliga 2,Vfl 1899 Osnabruck - Hannover,1x2,2,2.22,sunbet,22,2026-11-26T22:26:18
+2026-11-29,Bundesliga 3,Viktoria Colonia - Sc Fortuna Cologne,1x2,1,1.55,eplay24,25,2026-11-26T22:26:18
+2026-11-29,Bundesliga 3,Viktoria Colonia - Sc Fortuna Cologne,1x2,X,4.1,stanleybet,25,2026-11-26T22:26:18
+2026-11-29,Bundesliga 3,Viktoria Colonia - Sc Fortuna Cologne,1x2,2,6.0,goldbet,25,2026-11-26T22:26:18
+2026-11-29,2. Bundesliga,Eintracht Braunschweig - Wolfsburg,1x2,1,3.75,goldbet,26,2026-11-26T22:26:18
+2026-11-29,2. Bundesliga,Eintracht Braunschweig - Wolfsburg,1x2,X,4.1,giocodigitale,26,2026-11-26T22:26:18
+2026-11-29,2. Bundesliga,Eintracht Braunschweig - Wolfsburg,1x2,2,1.89,sunbet,26,2026-11-26T22:26:18
+2026-11-29,2. Bundesliga,Greuther Furth - Dsc Arminia Bielefeld,1x2,1,3.1,eurobet,17,2026-11-26T22:26:18
+2026-11-29,2. Bundesliga,Greuther Furth - Dsc Arminia Bielefeld,1x2,X,3.55,sunbet,17,2026-11-26T22:26:18
+2026-11-29,2. Bundesliga,Greuther Furth - Dsc Arminia Bielefeld,1x2,2,2.25,sunbet,17,2026-11-26T22:26:18
+2026-11-29,Bundesliga 2,Magdeburgo - Energie Cottbus,1x2,1,1.65,giocodigitale,24,2026-11-26T22:26:18
+2026-11-29,Bundesliga 2,Magdeburgo - Energie Cottbus,1x2,X,4.6,sunbet,24,2026-11-26T22:26:18
+2026-11-29,Bundesliga 2,Magdeburgo - Energie Cottbus,1x2,2,4.7,eurobet,24,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Ried - Hartberg,1x2,1,2.25,sunbet,42,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Ried - Hartberg,1x2,X,3.8,sunbet,42,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Ried - Hartberg,1x2,2,2.95,leovegas,42,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Sk Sturm Graz - Wsg Tirol,1x2,1,1.6,giocodigitale,36,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Sk Sturm Graz - Wsg Tirol,1x2,X,4.5,sunbet,36,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Sk Sturm Graz - Wsg Tirol,1x2,2,5.0,fastbet,36,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Salisburgo - Lask Linz,1x2,1,2.44,sunbet,22,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Salisburgo - Lask Linz,1x2,X,3.85,sunbet,22,2026-11-26T22:26:18
+2026-11-29,Bundesliga,Salisburgo - Lask Linz,1x2,2,2.65,sunbet,22,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,1x2,1,2.17,stake,3,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,1x2,X,3.8,stake,3,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Heidenheim - Nurnberg,1x2,2,2.9,stake,3,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,1x2,1,1.8,eplay24,19,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,1x2,X,3.9,bwin,19,2026-11-26T22:26:18
+2026-11-27,2. Bundesliga,Bochum - Darmstadt,1x2,2,4.1,bwin,19,2026-11-26T22:26:18
