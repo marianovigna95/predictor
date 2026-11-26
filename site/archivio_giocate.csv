@@ -1,17 +1,17 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
-giocata,2026-11-26,SINGOLA,Conference League,Kairat Almaty - Mjällby,GG,GG,66.7,1.75,16.73,1.69,,
-giocata,2026-11-26,RADDOPPIO,Conference League,Pafos FC - FC Midtjylland [GG GG] + Freiburg - FC Twente [GG GG],GG/GG,GG/GG,43.6,2.33,1.48,0.0,,
+giocata,2026-11-26,SINGOLA,Europa League,Celta - Bournemouth,O2.5,Over 2.5,61.3,1.92,17.7,1.21,,
+giocata,2026-11-26,RADDOPPIO,Conference League + Europa League,Crystal Palace - Sociedad [GG GG] + Freiburg - FC Twente [GG GG],GG/GG,GG/GG,42.7,2.41,3.03,0.0,,
 giocata,2026-11-27,SINGOLA,Eredivisie,Groningen - Willem II,GG,GG,67.7,1.7,15.09,1.37,,
-giocata,2026-11-27,RADDOPPIO,Eredivisie + Serie A,Venezia - Bologna [GG GG] + Groningen - Willem II [GG GG],GG/GG,GG/GG,37.6,3.06,15.05,0.71,,
-giocata,2026-11-28,SINGOLA,Serie B,Empoli - Verona,O2.5,Over 2.5,56.7,2.09,18.5,1.18,,
-giocata,2026-11-28,RADDOPPIO,LaLiga + Ligue 1,Betis - Vallecano [GG GG] + Angers - Lens [GG GG],GG/GG,GG/GG,37.4,2.76,3.12,0.0,,
+giocata,2026-11-27,RADDOPPIO,Eredivisie + Ligue 1,Brest - Paris FC [GG GG] + Groningen - Willem II [GG GG],GG/GG,GG/GG,35.8,2.89,3.58,0.0,,
+giocata,2026-11-28,SINGOLA,Championship,Lincoln City - Wolves,O2.5,Over 2.5,57.6,2.05,18.08,1.19,,
+giocata,2026-11-28,RADDOPPIO,Eredivisie + LaLiga,Betis - Vallecano [GG GG] + PSV Eindhoven - Go Ahead Eagles [GG GG],GG/GG,GG/GG,40.5,2.5,1.47,0.0,,
 giocata,2026-11-29,SINGOLA,Ligue 1,Toulouse - Rennes,1X2,1,47.7,2.64,25.93,1.11,,
 giocata,2026-11-29,RADDOPPIO,Eredivisie + Serie B,Arezzo - Pisa [GG GG] + Nijmegen - Twente [GG GG],GG/GG,GG/GG,41.2,2.49,2.57,0.0,,
-giocata,2026-11-30,SINGOLA,Serie B,Catanzaro - Avellino,GG,GG,61.5,1.7,4.55,0.0,,
+giocata,2026-11-30,SINGOLA,Serie B,Catanzaro - Avellino,GG,GG,61.5,1.64,0.86,0.0,,
 giocata,2026-12-01,SINGOLA,Premier League,Coventry - Ipswich,O2.5,Over 2.5,52.6,2.25,18.35,0.49,,
-giocata,2026-12-02,SINGOLA,Premier League,Aston Villa - Everton,O2.5,Over 2.5,54.9,2.22,21.88,1.28,,
+giocata,2026-12-02,SINGOLA,Premier League,Liverpool - Sunderland,NG,NG,57.0,2.1,19.7,1.14,,
 giocata,2026-12-02,RADDOPPIO,LaLiga + Premier League,Liverpool - Sunderland [NG NG] + Sociedad - Real Madrid [GG GG],NG/GG,NG/GG,34.9,3.04,6.36,0.0,,
-giocata,2026-12-03,SINGOLA,Premier League,Tottenham - Fulham,U2.5,Under 2.5,51.5,2.0,3.0,0.0,,
+giocata,2026-12-03,SINGOLA,Premier League,Tottenham - Fulham,O2.5,Over 2.5,48.5,2.14,3.79,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
 verifica,2026-11-03,RADDOPPIO,Champions League,Barcelona - Aston Villa [GG GG] + Bodø/Glimt - Lille [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,63.9,2.0,,,Barcelona - Aston Villa 3-0 (GG no) | Bodø/Glimt - Lille 0-0 (Under 2.5),❌
 verifica,2026-11-04,SINGOLA,Champions League,Viking - Sabah FK,O2.5,Over 2.5,81.6,1.38,,,4-1 (5 gol),✅
