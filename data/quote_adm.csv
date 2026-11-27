@@ -1,103 +1,177 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,gg,GG,1.98,goldbet,36,2026-11-27T18:23:54
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,gg,NG,1.8,snai,36,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Las Palmas - Andorra,gg,GG,1.65,stake,43,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Las Palmas - Andorra,gg,NG,2.2,snai,43,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Albacete - Tenerife,gg,GG,1.83,vincitu,39,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Albacete - Tenerife,gg,NG,1.9,snai,39,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Eldense - Girona,gg,GG,1.78,vincitu,38,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Eldense - Girona,gg,NG,1.96,leovegas,38,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Eibar - Burgos,gg,GG,1.9,goldbet,42,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Eibar - Burgos,gg,NG,1.83,eurobet,42,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,gg,GG,1.62,stake,15,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,gg,NG,2.21,quigioco,15,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Granada - AD Ceuta,gg,GG,1.77,vincitu,38,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Granada - AD Ceuta,gg,NG,1.99,eurobet,38,2026-11-27T18:23:54
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,gg,GG,1.72,snai,5,2026-11-27T18:23:54
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,gg,NG,1.98,betpassion,5,2026-11-27T18:23:54
-2026-11-27,LaLiga 2,Leganes - Ce Sabadell Fc,gg,GG,5.5,betflag,3,2026-11-27T18:23:54
-2026-11-27,LaLiga 2,Leganes - Ce Sabadell Fc,gg,NG,1.13,sportium,3,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,gg,GG,1.62,goldbet,27,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,gg,NG,2.25,eurobet,27,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Cadiz - Cordoba,gg,GG,1.48,leovegas,19,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Cadiz - Cordoba,gg,NG,2.6,eurobet,19,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Las Palmas - FC Andorra,gg,GG,4.15,betflag,5,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Las Palmas - FC Andorra,gg,NG,1.2,stake,5,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Mallorca - Castellon,gg,GG,4.0,stake,4,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Mallorca - Castellon,gg,NG,1.2,stake,4,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,gg,GG,1.75,leovegas,3,2026-11-27T18:23:54
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,gg,NG,1.9,leovegas,3,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Almeria - Sporting de Gijón,gg,GG,4.1,leovegas,3,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Almeria - Sporting de Gijón,gg,NG,1.14,leovegas,3,2026-11-27T18:23:54
-2026-11-30,LaLiga 2,Real Oviedo - Celta Vigo B,gg,GG,1.83,leovegas,2,2026-11-27T18:23:54
-2026-11-30,LaLiga 2,Real Oviedo - Celta Vigo B,gg,NG,1.81,leovegas,2,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Granada - Ceuta,gg,GG,1.77,stake,4,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Granada - Ceuta,gg,NG,1.96,quigioco,4,2026-11-27T18:23:54
-2026-11-30,LaLiga 2,Oviedo - Celta Vigo B,gg,GG,1.77,stake,3,2026-11-27T18:23:54
-2026-11-30,LaLiga 2,Oviedo - Celta Vigo B,gg,NG,1.92,fastbet,3,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Mallorca - Castellón,gg,GG,3.0,stake,1,2026-11-27T18:23:54
-2026-11-29,LaLiga 2,Mallorca - Castellón,gg,NG,1.33,stake,1,2026-11-27T18:23:54
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,2.5,O2.5,1.42,snai,36,2026-11-27T18:23:55
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,2.5,U2.5,2.7,eurobet,36,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Las Palmas - Andorra,2.5,O2.5,1.25,stake,41,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Las Palmas - Andorra,2.5,U2.5,4.0,leovegas,41,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete - Tenerife,2.5,O2.5,1.33,stake,37,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete - Tenerife,2.5,U2.5,3.15,goldbet,37,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eldense - Girona,2.5,O2.5,1.32,fastbet,36,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eldense - Girona,2.5,U2.5,3.35,leovegas,36,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eibar - Burgos,2.5,O2.5,1.33,stake,40,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eibar - Burgos,2.5,U2.5,3.15,leovegas,40,2026-11-27T18:23:55
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,1,2.35,admiralbet,36,2026-11-27T18:23:55
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,X,3.05,eplay24,36,2026-11-27T18:23:55
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,2,3.25,snai,36,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,1,2.08,stake,43,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,X,3.45,vincitu,43,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,2,3.55,goldbet,43,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,1,2.14,stake,40,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,X,3.25,vincitu,40,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,2,3.6,goldbet,40,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,1,3.2,goldbet,39,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,X,3.3,vincitu,39,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,2,2.25,snai,39,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,1,1.88,stake,43,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,X,3.35,vincitu,43,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,2,4.6,goldbet,43,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,1,1.79,fastbet,15,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,X,3.75,snai,15,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,2,4.2,stake,15,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,1,1.55,vincitu,39,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,X,4.25,betpassion,39,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,2,5.5,888sport,39,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,1,1.5,snai,5,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,X,4.25,snai,5,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,2,5.7,betpassion,5,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,1x2,1,1.76,vincitu,28,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,1x2,X,3.85,goldbet,28,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,1x2,2,4.25,betpassion,28,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Cadiz - Cordoba,1x2,1,3.0,stake,19,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Cadiz - Cordoba,1x2,X,3.75,stake,19,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Cadiz - Cordoba,1x2,2,2.15,eurobet,19,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Mallorca - Castellon,1x2,1,2.25,stake,14,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Mallorca - Castellon,1x2,X,3.3,leovegas,14,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Mallorca - Castellon,1x2,2,3.14,stake,14,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,1x2,1,2.04,888sport,3,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,1x2,X,3.1,888sport,3,2026-11-27T18:23:55
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,1x2,2,3.3,888sport,3,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Mallorca - CD Castellon,1x2,1,2.57,stake,8,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Mallorca - CD Castellon,1x2,X,2.6,leovegas,8,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Mallorca - CD Castellon,1x2,2,3.33,stake,8,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Cadiz - Córdoba CF,1x2,1,3.2,betpassion,12,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Cadiz - Córdoba CF,1x2,X,2.75,gioca7,12,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Cadiz - Córdoba CF,1x2,2,2.48,leovegas,12,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Almeria - Sporting de Gijón,1x2,1,2.2,leovegas,3,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Almeria - Sporting de Gijón,1x2,X,2.33,leovegas,3,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Almeria - Sporting de Gijón,1x2,2,4.7,leovegas,3,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Real Oviedo - Celta Vigo B,1x2,1,1.42,888sport,2,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Real Oviedo - Celta Vigo B,1x2,X,4.1,888sport,2,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Real Oviedo - Celta Vigo B,1x2,2,6.0,leovegas,2,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Granada - Ceuta,1x2,1,1.55,fastbet,4,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Granada - Ceuta,1x2,X,4.2,stake,4,2026-11-27T18:23:55
-2026-11-29,LaLiga 2,Granada - Ceuta,1x2,2,5.33,stake,4,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Oviedo - Celta Vigo B,1x2,1,1.5,fastbet,3,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Oviedo - Celta Vigo B,1x2,X,4.33,stake,3,2026-11-27T18:23:55
-2026-11-30,LaLiga 2,Oviedo - Celta Vigo B,1x2,2,6.0,fastbet,3,2026-11-27T18:23:55
+2026-11-28,Premier League,Leeds - Coventry,2.5,O2.5,1.2,fastbet,13,2026-11-27T22:20:09
+2026-11-28,Premier League,Leeds - Coventry,2.5,U2.5,4.33,stake,13,2026-11-27T22:20:09
+2026-11-28,Premier League,Manchester United - Brentford,2.5,O2.5,1.18,sunbet,39,2026-11-27T22:20:09
+2026-11-28,Premier League,Manchester United - Brentford,2.5,U2.5,5.0,giocodigitale,39,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Gainsborough Trinity FC - Alfreton Town FC,2.5,O2.5,1.19,daznbet,16,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Gainsborough Trinity FC - Alfreton Town FC,2.5,U2.5,4.1,daznbet,16,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Guiseley FC - Whitby Town FC,2.5,O2.5,1.09,domusbet,19,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Guiseley FC - Whitby Town FC,2.5,U2.5,6.8,betpassion,19,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Cleethorpes Town - Quorn FC,2.5,O2.5,1.11,betsson,20,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Cleethorpes Town - Quorn FC,2.5,U2.5,5.6,betpassion,20,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Ilkeston Town FC - AFC Emley,2.5,O2.5,1.21,domusbet,20,2026-11-27T22:20:09
+2026-11-28,England - Northern Premier League,Ilkeston Town FC - AFC Emley,2.5,U2.5,4.0,snai,20,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Burgess Hill Town - Eastbourne Borough,2.5,O2.5,1.13,betsson,15,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Burgess Hill Town - Eastbourne Borough,2.5,U2.5,5.0,snai,15,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Brentwood Town - Whitehawk,2.5,O2.5,1.12,gioca7,19,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Brentwood Town - Whitehawk,2.5,U2.5,5.3,betpassion,19,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Three Bridges - Wingate and Finchley FC,2.5,O2.5,1.12,snai,3,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Three Bridges - Wingate and Finchley FC,2.5,U2.5,4.75,snai,3,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Dulwich Hamlet FC - Stanway Rovers,2.5,O2.5,1.15,betsson,20,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Dulwich Hamlet FC - Stanway Rovers,2.5,U2.5,4.75,snai,20,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Chatham Town - Carshalton Athletic,2.5,O2.5,1.14,gioca7,16,2026-11-27T22:20:09
+2026-11-28,England - Isthmian Premier League,Chatham Town - Carshalton Athletic,2.5,U2.5,4.75,snai,16,2026-11-27T22:20:09
+2026-11-28,Premier League,Leeds - Coventry,gg,GG,1.8,stake,13,2026-11-27T22:20:10
+2026-11-28,Premier League,Leeds - Coventry,gg,NG,1.96,fastbet,13,2026-11-27T22:20:10
+2026-11-28,Premier League,Manchester United - Brentford,gg,GG,1.53,sunbet,40,2026-11-27T22:20:10
+2026-11-28,Premier League,Manchester United - Brentford,gg,NG,2.65,eurobet,40,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Gainsborough Trinity FC - Alfreton Town FC,gg,GG,1.66,bgame,21,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Gainsborough Trinity FC - Alfreton Town FC,gg,NG,2.18,bgame,21,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Guiseley FC - Whitby Town FC,gg,GG,1.91,bgame,23,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Guiseley FC - Whitby Town FC,gg,NG,1.87,bgame,23,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Cleethorpes Town - Quorn FC,gg,GG,1.56,bgame,25,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Cleethorpes Town - Quorn FC,gg,NG,2.4,eurobet,25,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Ilkeston Town FC - AFC Emley,gg,GG,1.61,bgame,25,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Ilkeston Town FC - AFC Emley,gg,NG,2.27,bgame,25,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Burgess Hill Town - Eastbourne Borough,gg,GG,1.49,bgame,20,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Burgess Hill Town - Eastbourne Borough,gg,NG,2.6,eurobet,20,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Brentwood Town - Whitehawk,gg,GG,1.62,bgame,24,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Brentwood Town - Whitehawk,gg,NG,2.3,eurobet,24,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Three Bridges - Wingate and Finchley FC,gg,GG,1.45,snai,3,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Three Bridges - Wingate and Finchley FC,gg,NG,2.4,snai,3,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Dulwich Hamlet FC - Stanway Rovers,gg,GG,1.62,bgame,25,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Dulwich Hamlet FC - Stanway Rovers,gg,NG,2.3,eurobet,25,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Chatham Town - Carshalton Athletic,gg,GG,1.5,eplay24,20,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Chatham Town - Carshalton Athletic,gg,NG,2.4,snai,20,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Maldon and Tiptree - St Albans City,gg,GG,1.47,bgame,17,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Maldon and Tiptree - St Albans City,gg,NG,2.65,bgame,17,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Welling United - Enfield Town,gg,GG,1.4,stanleybet,15,2026-11-27T22:20:10
+2026-11-28,England - Isthmian Premier League,Welling United - Enfield Town,gg,NG,2.7,eurobet,15,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Ashton United - Stockton Town,gg,GG,1.57,bgame,18,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Ashton United - Stockton Town,gg,NG,2.37,bgame,18,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Hyde United FC - Warrington Town,gg,GG,1.62,bgame,14,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Hyde United FC - Warrington Town,gg,NG,2.26,bgame,14,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Leek Town FC - FC United of Manchester,gg,GG,1.5,bgame,18,2026-11-27T22:20:10
+2026-11-28,England - Northern Premier League,Leek Town FC - FC United of Manchester,gg,NG,2.55,eurobet,18,2026-11-27T22:20:10
+2026-11-28,Premier League,Ipswich Town - Aston Villa,gg,GG,1.55,sunbet,26,2026-11-27T22:20:10
+2026-11-28,Premier League,Ipswich Town - Aston Villa,gg,NG,2.6,snai,26,2026-11-27T22:20:10
+2026-11-29,Premier League,Everton - Liverpool,gg,GG,1.66,sunbet,42,2026-11-27T22:20:10
+2026-11-29,Premier League,Everton - Liverpool,gg,NG,2.3,goldbet,42,2026-11-27T22:20:10
+2026-11-29,Premier League,Sunderland - Tottenham,gg,GG,1.84,sunbet,40,2026-11-27T22:20:10
+2026-11-29,Premier League,Sunderland - Tottenham,gg,NG,2.0,eurobet,40,2026-11-27T22:20:10
+2026-11-29,Premier League,Fulham - Bournemouth,gg,GG,1.63,betpassion,42,2026-11-27T22:20:10
+2026-11-29,Premier League,Fulham - Bournemouth,gg,NG,2.3,goldbet,42,2026-11-27T22:20:10
+2026-11-29,Premier League,Crystal Palace - Hull City,gg,GG,1.68,sunbet,26,2026-11-27T22:20:10
+2026-11-29,Premier League,Crystal Palace - Hull City,gg,NG,2.2,snai,26,2026-11-27T22:20:10
+2026-11-29,Premier League,Brighton - Newcastle,gg,GG,1.62,stake,18,2026-11-27T22:20:10
+2026-11-29,Premier League,Brighton - Newcastle,gg,NG,2.32,betpassion,18,2026-11-27T22:20:10
+2026-11-29,Premier League,Arsenal - Manchester City,gg,GG,1.67,sunbet,42,2026-11-27T22:20:10
+2026-11-29,Premier League,Arsenal - Manchester City,gg,NG,2.24,betpassion,42,2026-11-27T22:20:10
+2026-11-28,Premier League,North District Fc - Southern District,gg,GG,1.52,stanleybet,29,2026-11-27T22:20:10
+2026-11-28,Premier League,North District Fc - Southern District,gg,NG,2.4,eurobet,29,2026-11-27T22:20:10
+2026-11-28,Premier League,Bate Borisov - Isloch,gg,GG,1.9,bwin,16,2026-11-27T22:20:10
+2026-11-28,Premier League,Bate Borisov - Isloch,gg,NG,1.8,eurobet,16,2026-11-27T22:20:10
+2026-11-28,Premier League,Balestier Khalsa Fc - Hougang United Fc,gg,GG,1.32,stanleybet,34,2026-11-27T22:20:10
+2026-11-28,Premier League,Balestier Khalsa Fc - Hougang United Fc,gg,NG,3.25,eurobet,34,2026-11-27T22:20:10
+2026-11-28,Premier League,Turan Tovuz - Kapaz,gg,GG,2.12,bgame,22,2026-11-27T22:20:10
+2026-11-28,Premier League,Turan Tovuz - Kapaz,gg,NG,1.7,bgame,22,2026-11-27T22:20:10
+2026-11-28,Ethiopia - Premier League,Ethio Electric - Hadiya Hossana Fc,gg,GG,2.5,stanleybet,15,2026-11-27T22:20:10
+2026-11-28,Ethiopia - Premier League,Ethio Electric - Hadiya Hossana Fc,gg,NG,1.45,eurobet,15,2026-11-27T22:20:10
+2026-11-28,Premier League,Bnei Sakhnin Fc - Maccabi Haifa Fc,gg,GG,1.73,fastbet,33,2026-11-27T22:20:10
+2026-11-28,Premier League,Bnei Sakhnin Fc - Maccabi Haifa Fc,gg,NG,2.05,eurobet,33,2026-11-27T22:20:10
+2026-11-28,Premier League,Cska Mosca - Zenit San Pietroburgo,gg,GG,1.61,sunbet,12,2026-11-27T22:20:10
+2026-11-28,Premier League,Cska Mosca - Zenit San Pietroburgo,gg,NG,2.15,eurobet,12,2026-11-27T22:20:10
+2026-11-28,Premier League,Fc Urartu - Fc Shirak Gyumri,gg,GG,1.68,stanleybet,8,2026-11-27T22:20:10
+2026-11-28,Premier League,Fc Urartu - Fc Shirak Gyumri,gg,NG,2.1,bwin,8,2026-11-27T22:20:10
+2026-11-28,Premier League,Floriana Fc - Hamrun Spartans Fc,gg,GG,1.69,stanleybet,16,2026-11-27T22:20:10
+2026-11-28,Premier League,Floriana Fc - Hamrun Spartans Fc,gg,NG,2.05,bwin,16,2026-11-27T22:20:10
+2026-11-28,Premier League,Leeds - Coventry City,gg,GG,1.8,betpassion,7,2026-11-27T22:20:10
+2026-11-28,Premier League,Leeds - Coventry City,gg,NG,1.99,betpassion,7,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Anstey Nomads - Stratford Town,gg,GG,1.55,bgame,14,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Anstey Nomads - Stratford Town,gg,NG,2.45,eurobet,14,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Banbury United - Halesowen Town Fc,gg,GG,1.63,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Banbury United - Halesowen Town Fc,gg,NG,2.23,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Basingstoke Town Fc - Gloucester City,gg,GG,1.52,bgame,11,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Basingstoke Town Fc - Gloucester City,gg,NG,2.49,bgame,11,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Berkhamsted Fc - Evesham United,gg,GG,1.68,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Berkhamsted Fc - Evesham United,gg,NG,2.15,eurobet,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Bracknell Town Fc - Wimborne Town,gg,GG,1.6,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Bracknell Town Fc - Wimborne Town,gg,NG,2.3,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Chichester City Fc - Uxbridge,gg,GG,1.51,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Chichester City Fc - Uxbridge,gg,NG,2.55,eurobet,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Chippenham Town Fc - Bath City Fc,gg,GG,1.68,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Chippenham Town Fc - Bath City Fc,gg,NG,2.15,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Malvern Town - Chertsey Town Fc,gg,GG,1.4,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Malvern Town - Chertsey Town Fc,gg,NG,2.9,eurobet,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Redditch United - Bury Town,gg,GG,1.52,bgame,14,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Redditch United - Bury Town,gg,NG,2.49,bgame,14,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Stourbridge Fc - Rushall Olympic,gg,GG,1.48,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League Central,Stourbridge Fc - Rushall Olympic,gg,NG,2.6,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Yate Town - Hanworth Villa,gg,GG,1.61,bgame,15,2026-11-27T22:20:10
+2026-11-28,England - Southern Premier League South,Yate Town - Hanworth Villa,gg,NG,2.28,bgame,15,2026-11-27T22:20:10
+2026-11-28,Premier League,Leeds - Coventry,1x2,1,1.5,fastbet,13,2026-11-27T22:20:11
+2026-11-28,Premier League,Leeds - Coventry,1x2,X,4.75,stake,13,2026-11-27T22:20:11
+2026-11-28,Premier League,Leeds - Coventry,1x2,2,6.5,snai,13,2026-11-27T22:20:11
+2026-11-28,Premier League,Manchester United - Brentford,1x2,1,2.27,fastbet,41,2026-11-27T22:20:11
+2026-11-28,Premier League,Manchester United - Brentford,1x2,X,3.75,888sport,41,2026-11-27T22:20:11
+2026-11-28,Premier League,Manchester United - Brentford,1x2,2,3.15,domusbet,41,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Gainsborough Trinity FC - Alfreton Town FC,1x2,1,1.72,daznbet,21,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Gainsborough Trinity FC - Alfreton Town FC,1x2,X,3.85,daznbet,21,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Gainsborough Trinity FC - Alfreton Town FC,1x2,2,3.85,daznbet,21,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Guiseley FC - Whitby Town FC,1x2,1,1.16,daznbet,24,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Guiseley FC - Whitby Town FC,1x2,X,7.0,snai,24,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Guiseley FC - Whitby Town FC,1x2,2,12.0,snai,24,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Cleethorpes Town - Quorn FC,1x2,1,1.44,daznbet,25,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Cleethorpes Town - Quorn FC,1x2,X,4.75,snai,25,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Cleethorpes Town - Quorn FC,1x2,2,5.25,snai,25,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Ilkeston Town FC - AFC Emley,1x2,1,2.55,betpassion,25,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Ilkeston Town FC - AFC Emley,1x2,X,3.6,snai,25,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Ilkeston Town FC - AFC Emley,1x2,2,2.37,daznbet,25,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Burgess Hill Town - Eastbourne Borough,1x2,1,3.5,snai,20,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Burgess Hill Town - Eastbourne Borough,1x2,X,4.0,snai,20,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Burgess Hill Town - Eastbourne Borough,1x2,2,1.78,daznbet,20,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Brentwood Town - Whitehawk,1x2,1,1.43,daznbet,24,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Brentwood Town - Whitehawk,1x2,X,4.75,snai,24,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Brentwood Town - Whitehawk,1x2,2,5.75,snai,24,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Three Bridges - Wingate and Finchley FC,1x2,1,2.6,snai,3,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Three Bridges - Wingate and Finchley FC,1x2,X,3.75,snai,3,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Three Bridges - Wingate and Finchley FC,1x2,2,2.15,snai,3,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Dulwich Hamlet FC - Stanway Rovers,1x2,1,1.56,daznbet,25,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Dulwich Hamlet FC - Stanway Rovers,1x2,X,4.25,snai,25,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Dulwich Hamlet FC - Stanway Rovers,1x2,2,4.5,snai,25,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Chatham Town - Carshalton Athletic,1x2,1,1.73,daznbet,21,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Chatham Town - Carshalton Athletic,1x2,X,3.85,betflag,21,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Chatham Town - Carshalton Athletic,1x2,2,3.8,betflag,21,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Maldon and Tiptree - St Albans City,1x2,1,3.15,betpassion,17,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Maldon and Tiptree - St Albans City,1x2,X,4.0,snai,17,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Maldon and Tiptree - St Albans City,1x2,2,1.88,daznbet,17,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Welling United - Enfield Town,1x2,1,2.28,daznbet,15,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Welling United - Enfield Town,1x2,X,3.7,stanleybet,15,2026-11-27T22:20:11
+2026-11-28,England - Isthmian Premier League,Welling United - Enfield Town,1x2,2,2.55,daznbet,15,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Ashton United - Stockton Town,1x2,1,2.85,eurobet,18,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Ashton United - Stockton Town,1x2,X,3.6,snai,18,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Ashton United - Stockton Town,1x2,2,2.15,snai,18,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Hyde United FC - Warrington Town,1x2,1,2.67,daznbet,14,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Hyde United FC - Warrington Town,1x2,X,3.6,snai,14,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Hyde United FC - Warrington Town,1x2,2,2.31,daznbet,14,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Leek Town FC - FC United of Manchester,1x2,1,2.3,betpassion,19,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Leek Town FC - FC United of Manchester,1x2,X,3.75,snai,19,2026-11-27T22:20:11
+2026-11-28,England - Northern Premier League,Leek Town FC - FC United of Manchester,1x2,2,2.55,eurobet,19,2026-11-27T22:20:11
+2026-11-28,Premier League,Ipswich Town - Aston Villa,1x2,1,3.55,888sport,27,2026-11-27T22:20:11
+2026-11-28,Premier League,Ipswich Town - Aston Villa,1x2,X,3.85,888sport,27,2026-11-27T22:20:11
+2026-11-28,Premier League,Ipswich Town - Aston Villa,1x2,2,2.06,sunbet,27,2026-11-27T22:20:11
+2026-11-29,Premier League,Everton - Liverpool,1x2,1,4.75,stanleybet,43,2026-11-27T22:20:11
+2026-11-29,Premier League,Everton - Liverpool,1x2,X,3.9,sunbet,43,2026-11-27T22:20:11
+2026-11-29,Premier League,Everton - Liverpool,1x2,2,1.81,sunbet,43,2026-11-27T22:20:11
+2026-11-29,Premier League,Sunderland - Tottenham,1x2,1,4.1,eurobet,41,2026-11-27T22:20:11
+2026-11-29,Premier League,Sunderland - Tottenham,1x2,X,3.5,stake,41,2026-11-27T22:20:11
+2026-11-29,Premier League,Sunderland - Tottenham,1x2,2,2.06,sunbet,41,2026-11-27T22:20:11
+2026-11-29,Premier League,Fulham - Bournemouth,1x2,1,2.82,betpassion,43,2026-11-27T22:20:11
+2026-11-29,Premier League,Fulham - Bournemouth,1x2,X,3.45,eurobet,43,2026-11-27T22:20:11
+2026-11-29,Premier League,Fulham - Bournemouth,1x2,2,2.55,fastbet,43,2026-11-27T22:20:11
+2026-11-29,Premier League,Crystal Palace - Hull City,1x2,1,1.97,sunbet,27,2026-11-27T22:20:11
+2026-11-29,Premier League,Crystal Palace - Hull City,1x2,X,3.75,888sport,27,2026-11-27T22:20:11
+2026-11-29,Premier League,Crystal Palace - Hull City,1x2,2,4.1,888sport,27,2026-11-27T22:20:11
+2026-11-29,Premier League,Brighton - Newcastle,1x2,1,1.58,stake,18,2026-11-27T22:20:11
+2026-11-29,Premier League,Brighton - Newcastle,1x2,X,4.5,betpassion,18,2026-11-27T22:20:11
+2026-11-29,Premier League,Brighton - Newcastle,1x2,2,5.33,stake,18,2026-11-27T22:20:11
