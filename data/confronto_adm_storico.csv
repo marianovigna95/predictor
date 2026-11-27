@@ -11,3 +11,4 @@ data,tipo,lega,partita,mercato,quota_best,quota_adm,delta_pct,book_adm,n_book,p_
 2026-11-27,SINGOLA,LaLiga 2,Leganés - Sabadell,1X2,2.58,2.55,-1.16,winamax,7,48.4,24.87,23.42,ok,2026-11-22T07:22:04
 2026-11-29,SINGOLA,Primeira Liga,Gil Vicente - Estoril,NG,2.0,1.14,-43.0,leovegas,3,59.4,18.8,-32.28,edge_perso,2026-11-23T07:20:39
 2026-11-29,SINGOLA,Serie B,Sudtirol - Mantova,1X2,2.55,2.55,0.0,fastbet,8,48.4,23.42,23.42,ok,2026-11-25T07:12:09
+2026-12-02,SINGOLA,LaLiga,Sociedad - Real Madrid,GG,1.45,3.05,110.34,leovegas,4,70.4,2.08,114.72,ok,2026-11-27T07:14:03

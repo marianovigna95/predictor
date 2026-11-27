@@ -1,45 +1,25 @@
 {
- "aggiornato": "2026-11-26T22:26:19",
- "stato": "nessuna_corrispondenza",
- "giocate_non_coperte": 8,
- "diagnosi": {
-  "date_giocate": [
-   "2026-11-26",
-   "2026-11-27",
-   "2026-11-28",
-   "2026-11-29",
-   "2026-11-30",
-   "2026-12-01",
-   "2026-12-02",
-   "2026-12-03"
-  ],
-  "date_quote_adm": [
-   "2026-11-27",
-   "2026-11-28",
-   "2026-11-29"
-  ],
-  "date_in_comune": [
-   "2026-11-27",
-   "2026-11-28",
-   "2026-11-29"
-  ],
-  "mercati_giocate": [
-   "1x2",
-   "gg",
-   "o2.5"
-  ],
-  "mercati_adm": [
-   "1x2",
-   "2.5",
-   "gg"
-  ],
-  "leghe_adm": [
-   "2. Bundesliga",
-   "Bundesliga",
-   "Bundesliga 2",
-   "Bundesliga 3"
-  ],
-  "giocate_su_date_coperte": 3,
-  "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
- }
+ "aggiornato": "2026-11-27T07:14:03",
+ "stato": "ok",
+ "confronti": 1,
+ "giocate_non_coperte": 7,
+ "storico_aggiunte": 13,
+ "storico_righe": 13,
+ "storico_delta_medio_pct": 9.84,
+ "storico_delta_mediana_pct": 0.0,
+ "storico_tenuta_ok": 9,
+ "storico_edge_perso": 2,
+ "storico_aggiornato": "2026-11-27T07:14:03",
+ "delta_medio_pct": 110.34,
+ "delta_min_pct": 110.34,
+ "delta_max_pct": 110.34,
+ "tenuta_ok": 1,
+ "tenuta_limite": 0,
+ "edge_perso": 0,
+ "EV_positivo_su_quota_adm": 1,
+ "soglie": {
+  "ok": -0.015,
+  "rossa": -0.05
+ },
+ "nota": "USO INTERNO: non pubblicato sul sito (licenza Display non acquisita)."
 }
