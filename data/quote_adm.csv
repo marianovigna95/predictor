@@ -1,128 +1,101 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,2.5,O2.5,1.42,snai,37,2026-11-27T07:13:59
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,2.5,U2.5,2.72,betpassion,37,2026-11-27T07:13:59
-2026-11-28,LaLiga,Betis - Rayo Vallecano,2.5,O2.5,1.15,snai,3,2026-11-27T07:13:59
-2026-11-28,LaLiga,Betis - Rayo Vallecano,2.5,U2.5,4.5,snai,3,2026-11-27T07:13:59
-2026-11-28,LaLiga 2,Las Palmas - Andorra,2.5,O2.5,1.23,stake,43,2026-11-27T07:13:59
-2026-11-28,LaLiga 2,Las Palmas - Andorra,2.5,U2.5,4.0,leovegas,43,2026-11-27T07:13:59
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,2.5,O2.5,1.25,daznbet,11,2026-11-27T07:13:59
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,2.5,U2.5,3.6,snai,11,2026-11-27T07:13:59
-2026-11-28,LaLiga 2,Albacete - Tenerife,2.5,O2.5,1.33,stake,40,2026-11-27T07:13:59
-2026-11-28,LaLiga 2,Albacete - Tenerife,2.5,U2.5,3.15,goldbet,40,2026-11-27T07:13:59
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,gg,GG,1.98,goldbet,38,2026-11-27T07:14:01
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,gg,NG,1.8,snai,38,2026-11-27T07:14:01
-2026-11-28,LaLiga,Betis - Rayo Vallecano,gg,GG,1.57,snai,3,2026-11-27T07:14:01
-2026-11-28,LaLiga,Betis - Rayo Vallecano,gg,NG,2.25,snai,3,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Las Palmas - Andorra,gg,GG,1.62,stake,45,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Las Palmas - Andorra,gg,NG,2.2,snai,45,2026-11-27T07:14:01
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,gg,GG,1.77,daznbet,11,2026-11-27T07:14:01
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,gg,NG,1.96,eplay24,11,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Albacete - Tenerife,gg,GG,1.83,vincitu,42,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Albacete - Tenerife,gg,NG,1.9,snai,42,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Eldense - Girona,gg,GG,1.78,vincitu,41,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Eldense - Girona,gg,NG,1.96,leovegas,41,2026-11-27T07:14:01
-2026-11-28,LaLiga,Elche - Atletico Madrid,gg,GG,1.75,sunbet,43,2026-11-27T07:14:01
-2026-11-28,LaLiga,Elche - Atletico Madrid,gg,NG,2.17,stanleybet,43,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Eibar - Burgos,gg,GG,1.91,vincitu,45,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Eibar - Burgos,gg,NG,1.83,eurobet,45,2026-11-27T07:14:01
-2026-11-28,LaLiga,Real Madrid - Alavés,gg,GG,2.15,eurobet,42,2026-11-27T07:14:01
-2026-11-28,LaLiga,Real Madrid - Alavés,gg,NG,1.79,fastbet,42,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,gg,GG,1.65,stake,17,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,gg,NG,2.21,quigioco,17,2026-11-27T07:14:01
-2026-11-29,LaLiga,Valencia - Osasuna,gg,GG,2.0,stake,44,2026-11-27T07:14:01
-2026-11-29,LaLiga,Valencia - Osasuna,gg,NG,1.87,leovegas,44,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Granada - AD Ceuta,gg,GG,1.77,vincitu,41,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Granada - AD Ceuta,gg,NG,1.99,eurobet,41,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,gg,GG,1.79,fastbet,41,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,gg,NG,2.0,snai,41,2026-11-27T07:14:01
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,gg,GG,1.75,giocodigitale,9,2026-11-27T07:14:01
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,gg,NG,1.98,betpassion,9,2026-11-27T07:14:01
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,gg,GG,1.66,sunbet,36,2026-11-27T07:14:01
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,gg,NG,2.25,eurobet,36,2026-11-27T07:14:01
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,gg,GG,1.8,leovegas,32,2026-11-27T07:14:01
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,gg,NG,2.05,eurobet,32,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,gg,GG,1.6,goldbet,28,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,gg,NG,2.25,eurobet,28,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Cadiz - Cordoba,gg,GG,1.48,leovegas,19,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Cadiz - Cordoba,gg,NG,2.6,eurobet,19,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Las Palmas - FC Andorra,gg,GG,4.1,betflag,6,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Las Palmas - FC Andorra,gg,NG,1.22,fastbet,6,2026-11-27T07:14:01
-2026-11-28,LaLiga,Real Madrid - Alaves,gg,GG,4.3,leovegas,6,2026-11-27T07:14:01
-2026-11-28,LaLiga,Real Madrid - Alaves,gg,NG,1.19,fastbet,6,2026-11-27T07:14:01
-2026-11-29,LaLiga,Deportivo La Coruna - Barcelona,gg,GG,1.57,stake,3,2026-11-27T07:14:01
-2026-11-29,LaLiga,Deportivo La Coruna - Barcelona,gg,NG,2.3,stake,3,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Mallorca - Castellon,gg,GG,4.0,stake,4,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Mallorca - Castellon,gg,NG,1.2,stake,4,2026-11-27T07:14:01
-2026-11-29,LaLiga,Real Sociedad - Sevilla,gg,GG,1.67,stake,4,2026-11-27T07:14:01
-2026-11-29,LaLiga,Real Sociedad - Sevilla,gg,NG,2.2,fastbet,4,2026-11-27T07:14:01
-2026-12-02,LaLiga,Real Sociedad - Real Madrid,gg,GG,3.05,leovegas,4,2026-11-27T07:14:01
-2026-12-02,LaLiga,Real Sociedad - Real Madrid,gg,NG,1.33,stake,4,2026-11-27T07:14:01
-2026-12-02,LaLiga,Barcelona - Atletico Madrid,gg,GG,3.0,stake,3,2026-11-27T07:14:01
-2026-12-02,LaLiga,Barcelona - Atletico Madrid,gg,NG,1.33,stake,3,2026-11-27T07:14:01
-2026-11-28,LaLiga,Málaga - Athletic Bilbao,gg,GG,3.33,stake,5,2026-11-27T07:14:01
-2026-11-28,LaLiga,Málaga - Athletic Bilbao,gg,NG,1.29,fastbet,5,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,gg,GG,1.75,leovegas,3,2026-11-27T07:14:01
-2026-11-28,LaLiga 2,Albacete Balompié - CD Tenerife,gg,NG,1.9,leovegas,3,2026-11-27T07:14:01
-2026-11-28,LaLiga,Elche - Atlético Madrid,gg,GG,3.1,sportium,6,2026-11-27T07:14:01
-2026-11-28,LaLiga,Elche - Atlético Madrid,gg,NG,1.33,stake,6,2026-11-27T07:14:01
-2026-11-29,LaLiga,Deportivo A Coruña - FC Barcelona,gg,GG,3.2,leovegas,3,2026-11-27T07:14:01
-2026-11-29,LaLiga,Deportivo A Coruña - FC Barcelona,gg,NG,1.26,leovegas,3,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Cadiz - Córdoba CF,gg,GG,3.4,leovegas,4,2026-11-27T07:14:01
-2026-11-29,LaLiga 2,Cadiz - Córdoba CF,gg,NG,1.3,stake,4,2026-11-27T07:14:01
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,1,2.4,snai,38,2026-11-27T07:14:02
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,X,3.1,giocodigitale,38,2026-11-27T07:14:02
-2026-11-27,LaLiga 2,Leganes - CE Sabadell,1x2,2,3.15,goldbet,38,2026-11-27T07:14:02
-2026-11-28,LaLiga,Betis - Rayo Vallecano,1x2,1,1.57,snai,3,2026-11-27T07:14:02
-2026-11-28,LaLiga,Betis - Rayo Vallecano,1x2,X,4.0,snai,3,2026-11-27T07:14:02
-2026-11-28,LaLiga,Betis - Rayo Vallecano,1x2,2,5.25,snai,3,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,1,2.21,vincitu,45,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,X,3.4,stake,45,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Las Palmas - Andorra,1x2,2,3.15,goldbet,45,2026-11-27T07:14:02
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,1x2,1,4.6,daznbet,11,2026-11-27T07:14:02
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,1x2,X,3.8,eplay24,11,2026-11-27T07:14:02
-2026-11-28,LaLiga,Malaga - Atletico Bilbao,1x2,2,1.73,eplay24,11,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,1,2.1,giocodigitale,42,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,X,3.25,vincitu,42,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Albacete - Tenerife,1x2,2,3.6,goldbet,42,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,1,3.1,goldbet,41,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,X,3.25,eurobet,41,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Eldense - Girona,1x2,2,2.33,stake,41,2026-11-27T07:14:02
-2026-11-28,LaLiga,Elche - Atletico Madrid,1x2,1,6.57,betpassion,44,2026-11-27T07:14:02
-2026-11-28,LaLiga,Elche - Atletico Madrid,1x2,X,4.8,fastbet,44,2026-11-27T07:14:02
-2026-11-28,LaLiga,Elche - Atletico Madrid,1x2,2,1.48,sunbet,44,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,1,1.84,vincitu,45,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,X,3.35,vincitu,45,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Eibar - Burgos,1x2,2,4.75,stake,45,2026-11-27T07:14:02
-2026-11-28,LaLiga,Real Madrid - Alavés,1x2,1,1.16,fastbet,43,2026-11-27T07:14:02
-2026-11-28,LaLiga,Real Madrid - Alavés,1x2,X,10.0,snai,43,2026-11-27T07:14:02
-2026-11-28,LaLiga,Real Madrid - Alavés,1x2,2,17.0,snai,43,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,1,1.75,snai,17,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,X,3.8,stake,17,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Valladolid - Real Sociedad B,1x2,2,4.2,stake,17,2026-11-27T07:14:02
-2026-11-29,LaLiga,Valencia - Osasuna,1x2,1,2.2,sunbet,45,2026-11-27T07:14:02
-2026-11-29,LaLiga,Valencia - Osasuna,1x2,X,3.31,betpassion,45,2026-11-27T07:14:02
-2026-11-29,LaLiga,Valencia - Osasuna,1x2,2,3.72,betpassion,45,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,1,1.55,vincitu,41,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,X,4.25,betpassion,41,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Granada - AD Ceuta,1x2,2,5.5,888sport,41,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,1x2,1,1.68,giocodigitale,41,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,1x2,X,3.8,stake,41,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Almería - Sporting Gijón,1x2,2,4.75,stake,41,2026-11-27T07:14:02
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,1,1.5,snai,9,2026-11-27T07:14:02
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,X,4.25,snai,9,2026-11-27T07:14:02
-2026-11-30,LaLiga 2,Real Oviedo - Celta de Vigo B,1x2,2,5.7,betpassion,9,2026-11-27T07:14:02
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,1x2,1,1.64,sunbet,37,2026-11-27T07:14:02
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,1x2,X,4.4,stanleybet,37,2026-11-27T07:14:02
-2026-11-28,LaLiga,Real Betis - Rayo Vallecano,1x2,2,5.2,eurobet,37,2026-11-27T07:14:02
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,1x2,1,4.79,betpassion,33,2026-11-27T07:14:02
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,1x2,X,3.9,stanleybet,33,2026-11-27T07:14:02
-2026-11-28,LaLiga,Malaga - Athletic Bilbao,1x2,2,1.78,sunbet,33,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,1x2,1,1.76,vincitu,28,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,1x2,X,3.8,vincitu,28,2026-11-27T07:14:02
-2026-11-28,LaLiga 2,Real Valladolid - Real Sociedad B,1x2,2,4.25,betpassion,28,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Cadiz - Cordoba,1x2,1,3.0,stake,19,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Cadiz - Cordoba,1x2,X,3.75,stake,19,2026-11-27T07:14:02
-2026-11-29,LaLiga 2,Cadiz - Cordoba,1x2,2,2.15,eurobet,19,2026-11-27T07:14:02
-2026-11-29,LaLiga,Deportivo La Coruna - Barcelona,1x2,1,10.6,fastbet,3,2026-11-27T07:14:02
-2026-11-29,LaLiga,Deportivo La Coruna - Barcelona,1x2,X,7.3,fastbet,3,2026-11-27T07:14:02
-2026-11-29,LaLiga,Deportivo La Coruna - Barcelona,1x2,2,1.22,stake,3,2026-11-27T07:14:02
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,2.5,O2.5,1.38,fastbet,3,2026-11-27T14:34:42
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,2.5,U2.5,2.9,snai,3,2026-11-27T14:34:42
+2026-11-28,Primeira Liga,Moreirense - Santa Clara,2.5,O2.5,1.46,sunbet,38,2026-11-27T14:34:42
+2026-11-28,Primeira Liga,Moreirense - Santa Clara,2.5,U2.5,2.85,leovegas,38,2026-11-27T14:34:42
+2026-11-28,Portugal - Primeira Liga,Academico de Viseu FC - Alverca,2.5,O2.5,1.3,snai,1,2026-11-27T14:34:42
+2026-11-28,Portugal - Primeira Liga,Academico de Viseu FC - Alverca,2.5,U2.5,3.1,snai,1,2026-11-27T14:34:42
+2026-11-28,Primeira Liga,Vitoria Guimaraes - CF Estrela,2.5,O2.5,1.25,eplay24,12,2026-11-27T14:34:42
+2026-11-28,Primeira Liga,Vitoria Guimaraes - CF Estrela,2.5,U2.5,3.75,snai,12,2026-11-27T14:34:42
+2026-11-29,Primeira Liga,Porto - Sporting Lisbona,2.5,O2.5,1.27,888sport,24,2026-11-27T14:34:42
+2026-11-29,Primeira Liga,Porto - Sporting Lisbona,2.5,U2.5,3.7,goldbet,24,2026-11-27T14:34:42
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,gg,GG,1.93,fastbet,3,2026-11-27T14:34:43
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,gg,NG,1.85,snai,3,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Moreirense - Santa Clara,gg,GG,2.05,sunbet,40,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Moreirense - Santa Clara,gg,NG,1.8,snai,40,2026-11-27T14:34:43
+2026-11-28,Portugal - Primeira Liga,Academico de Viseu FC - Alverca,gg,GG,1.65,snai,1,2026-11-27T14:34:43
+2026-11-28,Portugal - Primeira Liga,Academico de Viseu FC - Alverca,gg,NG,2.1,snai,1,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimaraes - CF Estrela,gg,GG,1.77,leovegas,6,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimaraes - CF Estrela,gg,NG,2.0,snai,6,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,Porto - Sporting Lisbona,gg,GG,1.8,leovegas,25,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,Porto - Sporting Lisbona,gg,NG,2.2,snai,25,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Benfica - Famalicao,gg,GG,2.12,sunbet,30,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Benfica - Famalicao,gg,NG,1.72,snai,30,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Casa Pia - Braga,gg,GG,2.12,fastbet,4,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Casa Pia - Braga,gg,NG,1.74,quigioco,4,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,gg,GG,1.77,sunbet,25,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,gg,NG,2.01,sunbet,25,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,GG,1.81,sunbet,25,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,NG,2.0,eurobet,25,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,GG,2.15,goldbet,25,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,NG,1.7,sunbet,25,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,gg,GG,4.3,leovegas,3,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,gg,NG,1.14,leovegas,3,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,Porto - Sporting CP,gg,GG,4.0,fastbet,1,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,Porto - Sporting CP,gg,NG,1.19,fastbet,1,2026-11-27T14:34:43
+2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,gg,GG,4.6,leovegas,3,2026-11-27T14:34:43
+2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,gg,NG,1.12,leovegas,3,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,gg,GG,4.2,leovegas,4,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,gg,NG,1.19,fastbet,4,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,gg,GG,4.3,leovegas,3,2026-11-27T14:34:43
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,gg,NG,1.14,leovegas,3,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,gg,GG,4.7,leovegas,2,2026-11-27T14:34:43
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,gg,NG,1.11,leovegas,2,2026-11-27T14:34:43
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,gg,GG,1.95,goldbet,4,2026-11-27T14:34:43
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,gg,NG,1.77,goldbet,4,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela,gg,GG,3.2,fastbet,1,2026-11-27T14:34:43
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela,gg,NG,1.29,fastbet,1,2026-11-27T14:34:43
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,1,2.11,fastbet,3,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,X,3.18,fastbet,3,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Maritimo - Nacional Madeira,1x2,2,3.68,fastbet,3,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Moreirense - Santa Clara,1x2,1,3.2,leovegas,41,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Moreirense - Santa Clara,1x2,X,3.1,sunbet,41,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Moreirense - Santa Clara,1x2,2,2.45,goldbet,41,2026-11-27T14:34:44
+2026-11-28,Portugal - Primeira Liga,Academico de Viseu FC - Alverca,1x2,1,2.5,snai,1,2026-11-27T14:34:44
+2026-11-28,Portugal - Primeira Liga,Academico de Viseu FC - Alverca,1x2,X,3.0,snai,1,2026-11-27T14:34:44
+2026-11-28,Portugal - Primeira Liga,Academico de Viseu FC - Alverca,1x2,2,2.8,snai,1,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes - CF Estrela,1x2,1,1.7,snai,13,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes - CF Estrela,1x2,X,3.87,fastbet,13,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes - CF Estrela,1x2,2,4.7,leovegas,13,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Porto - Sporting Lisbona,1x2,1,1.94,sunbet,26,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Porto - Sporting Lisbona,1x2,X,3.45,sunbet,26,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Porto - Sporting Lisbona,1x2,2,4.35,goldbet,26,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,1,1.19,eplay24,38,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,X,7.6,sunbet,38,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,2,14.0,leovegas,38,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia - Braga,1x2,1,6.8,fastbet,4,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia - Braga,1x2,X,4.2,fastbet,4,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia - Braga,1x2,2,1.48,quigioco,4,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,1,2.55,goldbet,33,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,X,3.25,sunbet,33,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Academico De Viseu Fc - Fc Alverca Sad,1x2,2,2.87,eplay24,33,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,1,1.71,sunbet,26,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,X,3.9,goldbet,26,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,2,4.8,codere,26,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,1,6.8,sunbet,26,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,X,4.3,sunbet,26,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,2,1.5,betpassion,26,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,1,2.42,betpassion,11,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,X,2.17,betpassion,11,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,2,4.65,gioca7,11,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Porto - Sporting CP,1x2,1,1.9,quigioco,3,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Porto - Sporting CP,1x2,X,3.4,quigioco,3,2026-11-27T14:34:44
+2026-11-29,Primeira Liga,Porto - Sporting CP,1x2,2,4.45,fastbet,3,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,1x2,1,2.05,leovegas,3,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,1x2,X,3.05,leovegas,3,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Marítimo Funchal - Nacional Madeira,1x2,2,3.35,leovegas,3,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,1x2,1,6.1,leovegas,2,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,1x2,X,2.33,leovegas,2,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,1x2,2,1.86,leovegas,2,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,1,2.1,goldbet,4,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,X,3.1,goldbet,4,2026-11-27T14:34:44
+2026-11-27,Primeira Liga,Maritimo Madeira - Nacional Madeira,1x2,2,3.65,goldbet,4,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,1,3.15,betpassion,22,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,X,2.13,sunbet,22,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Academico de Viseu FC-FC Alverca SAD,1x2,2,3.45,sunbet,22,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,1,2.28,betpassion,18,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,X,2.32,sunbet,18,2026-11-27T14:34:44
+2026-11-28,Primeira Liga,Vitoria Guimaraes-Estrela Amadora,1x2,2,5.0,stanleybet,18,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,1,6.8,sunbet,18,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,X,2.34,sunbet,18,2026-11-27T14:34:44
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,2,2.06,betpassion,18,2026-11-27T14:34:44
