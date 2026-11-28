@@ -1,143 +1,78 @@
 data,lega,partita,mercato,esito,quota_adm_best,book,n_book,aggiornato
-2026-11-28,Ligue 1,Angers - Lens,gg,GG,1.73,sunbet,41,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Angers - Lens,gg,NG,2.2,eurobet,41,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Havre - Strasburgo,gg,GG,1.64,sunbet,35,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Havre - Strasburgo,gg,NG,2.28,leovegas,35,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Mans Fc - Lille,gg,GG,1.82,sunbet,32,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Mans Fc - Lille,gg,NG,2.0,sunbet,32,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Nizza - Troyes,gg,GG,1.76,sunbet,35,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Nizza - Troyes,gg,NG,2.1,eurobet,35,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Paris Saint Germain - Lorient,gg,GG,2.25,eurobet,19,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Paris Saint Germain - Lorient,gg,NG,1.68,sunbet,19,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Hammam-lif - Olympique De Beja,gg,GG,2.68,stanleybet,32,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Hammam-lif - Olympique De Beja,gg,NG,1.43,bwin,32,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Js Omrane - Monastir,gg,GG,2.38,betpassion,24,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Js Omrane - Monastir,gg,NG,1.55,bwin,24,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Auxerre - Olympique Marsiglia,gg,GG,1.58,sunbet,23,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Auxerre - Olympique Marsiglia,gg,NG,2.39,sunbet,23,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Tolosa - Rennes,gg,GG,1.55,betpassion,16,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Tolosa - Rennes,gg,NG,2.4,eurobet,16,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Lione - Monaco,gg,GG,1.77,sunbet,31,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Lione - Monaco,gg,NG,2.12,leovegas,31,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Havre - Strasbourg,gg,GG,3.8,fastbet,2,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Havre - Strasbourg,gg,NG,1.22,fastbet,2,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Nice - Troyes,gg,GG,4.0,fastbet,2,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Nice - Troyes,gg,NG,1.2,fastbet,2,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Mans - Lille,gg,GG,4.4,leovegas,5,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Le Mans - Lille,gg,NG,1.18,fastbet,5,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Auxerre - Marseille,gg,GG,3.6,stake,2,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Auxerre - Marseille,gg,NG,1.25,fastbet,2,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Toulouse - Rennes,gg,GG,3.6,stake,5,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Toulouse - Rennes,gg,NG,1.26,fastbet,5,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Monaco - Angers,gg,GG,4.2,leovegas,2,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Monaco - Angers,gg,NG,1.15,leovegas,2,2026-11-28T14:23:19
-2026-11-28,Ligue 1,PSG - Lorient,gg,GG,4.0,stake,6,2026-11-28T14:23:19
-2026-11-28,Ligue 1,PSG - Lorient,gg,NG,1.23,leovegas,6,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Auxerre - Marsiglia,gg,GG,1.55,eplay24,14,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Auxerre - Marsiglia,gg,NG,2.4,goldbet,14,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Lione - AS Monaco,gg,GG,3.3,sportium,4,2026-11-28T14:23:19
-2026-11-29,Ligue 1,Lione - AS Monaco,gg,NG,1.3,leovegas,4,2026-11-28T14:23:19
-2026-12-04,Ligue 1,Toulouse - PSG,gg,GG,3.4,leovegas,3,2026-11-28T14:23:19
-2026-12-04,Ligue 1,Toulouse - PSG,gg,NG,1.23,leovegas,3,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Lille - Auxerre,gg,GG,1.94,stake,5,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Lille - Auxerre,gg,NG,1.82,zonagioco,5,2026-11-28T14:23:19
-2026-12-05,Ligue 1,AS Monaco - Angers,gg,GG,3.1,leovegas,2,2026-11-28T14:23:19
-2026-12-05,Ligue 1,AS Monaco - Angers,gg,NG,1.28,leovegas,2,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Lens - Le Havre,gg,GG,1.75,stake,5,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Lens - Le Havre,gg,NG,2.08,leovegas,5,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Paris FC - Le Mans,gg,GG,3.1,leovegas,2,2026-11-28T14:23:19
-2026-12-05,Ligue 1,Paris FC - Le Mans,gg,NG,1.28,leovegas,2,2026-11-28T14:23:19
-2026-11-28,Ligue 1,Angers - Lens,2.5,O2.5,1.71,stake,41,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Angers - Lens,2.5,U2.5,2.23,888sport,41,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasburgo,2.5,O2.5,1.76,sunbet,35,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasburgo,2.5,U2.5,2.08,sunbet,35,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans Fc - Lille,2.5,O2.5,2.0,888sport_it,32,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans Fc - Lille,2.5,U2.5,1.87,sunbet,32,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nizza - Troyes,2.5,O2.5,1.78,sunbet,35,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nizza - Troyes,2.5,U2.5,2.04,sunbet,35,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint Germain - Lorient,2.5,O2.5,1.52,sunbet,19,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint Germain - Lorient,2.5,U2.5,2.57,stanleybet,19,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Hammam-lif - Olympique De Beja,2.5,O2.5,3.5,bwin,32,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Hammam-lif - Olympique De Beja,2.5,U2.5,1.27,domusbet,32,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Js Omrane - Monastir,2.5,O2.5,2.95,bwin,24,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Js Omrane - Monastir,2.5,U2.5,1.35,bwin,24,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Olympique Marsiglia,2.5,O2.5,1.63,sunbet,23,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Olympique Marsiglia,2.5,U2.5,2.28,sunbet,23,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Tolosa - Rennes,2.5,O2.5,1.63,betitaly,16,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Tolosa - Rennes,2.5,U2.5,2.22,domusbet,16,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Lione - Monaco,2.5,O2.5,1.96,sunbet,31,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Lione - Monaco,2.5,U2.5,1.9,888sport,31,2026-11-28T14:23:20
-2026-11-28,Ligue 1,ASEC Mimosas - OFC Adiake,2.5,O2.5,1.43,fastbet,16,2026-11-28T14:23:20
-2026-11-28,Ligue 1,ASEC Mimosas - OFC Adiake,2.5,U2.5,2.55,stanleybet,16,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Angers - Lens,1x2,1,4.75,888sport,42,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Angers - Lens,1x2,X,4.1,888sport,42,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Angers - Lens,1x2,2,1.74,sunbet,42,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasburgo,1x2,1,3.25,betitaly,36,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasburgo,1x2,X,3.5,goldbet,36,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasburgo,1x2,2,2.27,sunbet,36,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans Fc - Lille,1x2,1,4.2,888sport,33,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans Fc - Lille,1x2,X,3.6,stake,33,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans Fc - Lille,1x2,2,2.01,sunbet,33,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nizza - Troyes,1x2,1,1.8,sunbet,36,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nizza - Troyes,1x2,X,3.85,888sport,36,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nizza - Troyes,1x2,2,4.75,888sport,36,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint Germain - Lorient,1x2,1,1.22,sunbet,19,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint Germain - Lorient,1x2,X,7.0,bwin,19,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint Germain - Lorient,1x2,2,14.0,eurobet,19,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Hammam-lif - Olympique De Beja,1x2,1,2.17,fastbet,32,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Hammam-lif - Olympique De Beja,1x2,X,2.63,stanleybet,32,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Hammam-lif - Olympique De Beja,1x2,2,3.9,betpassion,32,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Js Omrane - Monastir,1x2,1,3.45,stanleybet,24,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Js Omrane - Monastir,1x2,X,2.75,betpassion,24,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Js Omrane - Monastir,1x2,2,2.25,bwin,24,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Olympique Marsiglia,1x2,1,3.6,codere,21,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Olympique Marsiglia,1x2,X,3.75,betitaly,21,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Olympique Marsiglia,1x2,2,2.03,sunbet,21,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Tolosa - Rennes,1x2,1,2.35,goldbet,17,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Tolosa - Rennes,1x2,X,3.65,betitaly,17,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Tolosa - Rennes,1x2,2,2.85,betitaly,17,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Lione - Monaco,1x2,1,2.46,sunbet,32,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Lione - Monaco,1x2,X,3.4,888sport,32,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Lione - Monaco,1x2,2,3.05,stanleybet,32,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nice - Troyes,1x2,1,1.79,fastbet,4,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nice - Troyes,1x2,X,3.75,stake,4,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Nice - Troyes,1x2,2,4.5,stake,4,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint-Germain - Lorient,1x2,1,1.6,betpassion,16,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint-Germain - Lorient,1x2,X,3.0,stanleybet,16,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Paris Saint-Germain - Lorient,1x2,2,10.5,vincitu,16,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans - Lille,1x2,1,4.4,fastbet,24,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans - Lille,1x2,X,2.22,fastbet,24,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Mans - Lille,1x2,2,2.62,betpassion,24,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasbourg,1x2,1,3.6,fastbet,3,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasbourg,1x2,X,2.3,fastbet,3,2026-11-28T14:23:20
-2026-11-28,Ligue 1,Le Havre - Strasbourg,1x2,2,2.8,fastbet,3,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Marseille,1x2,1,3.67,stake,4,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Marseille,1x2,X,3.84,fastbet,4,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Auxerre - Marseille,1x2,2,1.98,quigioco,4,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Toulouse - Rennes,1x2,1,2.46,stake,6,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Toulouse - Rennes,1x2,X,3.63,fastbet,6,2026-11-28T14:23:20
-2026-11-29,Ligue 1,Toulouse - Rennes,1x2,2,2.75,888sport,6,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Lille - Auxerre,1x2,1,1.53,vincitu,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Lille - Auxerre,1x2,X,4.35,zonagioco,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Lille - Auxerre,1x2,2,6.33,stake,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Strasbourg - Lorient,1x2,1,2.06,zonagioco,2,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Strasbourg - Lorient,1x2,X,3.38,zonagioco,2,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Strasbourg - Lorient,1x2,2,3.65,zonagioco,2,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Monaco - Angers,1x2,1,1.32,vincitu,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Monaco - Angers,1x2,X,5.7,zonagioco,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Monaco - Angers,1x2,2,9.0,888sport,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Paris FC - Le Mans,1x2,1,1.43,888sport,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Paris FC - Le Mans,1x2,X,4.85,zonagioco,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Paris FC - Le Mans,1x2,2,7.0,888sport,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Lens - Le Havre,1x2,1,1.46,vincitu,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Lens - Le Havre,1x2,X,4.85,zonagioco,5,2026-11-28T14:23:20
-2026-12-05,Ligue 1,Lens - Le Havre,1x2,2,6.5,888sport,5,2026-11-28T14:23:20
-2026-12-06,Ligue 1,Rennes - Brest,1x2,1,1.78,zonagioco,4,2026-11-28T14:23:20
-2026-12-06,Ligue 1,Rennes - Brest,1x2,X,4.2,stake,4,2026-11-28T14:23:20
-2026-12-06,Ligue 1,Rennes - Brest,1x2,2,4.25,888sport,4,2026-11-28T14:23:20
-2026-12-06,Ligue 1,Marseille - Nice,1x2,1,1.92,zonagioco,2,2026-11-28T14:23:20
-2026-12-06,Ligue 1,Marseille - Nice,1x2,X,3.84,zonagioco,2,2026-11-28T14:23:20
-2026-12-06,Ligue 1,Marseille - Nice,1x2,2,3.65,zonagioco,2,2026-11-28T14:23:20
-2026-11-28,Ligue 1,PSG - Lorient,1x2,1,1.2,888sport,23,2026-11-28T14:23:20
-2026-11-28,Ligue 1,PSG - Lorient,1x2,X,7.85,goldbet,23,2026-11-28T14:23:20
-2026-11-28,Ligue 1,PSG - Lorient,1x2,2,15.0,stake,23,2026-11-28T14:23:20
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,GG,1.62,sunbet,26,2026-11-28T18:30:49
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,gg,NG,2.3,eurobet,26,2026-11-28T18:30:49
+2026-11-29,Primeira Liga,Fc Porto - Sporting Lisbona,gg,GG,1.8,leovegas,26,2026-11-28T18:30:49
+2026-11-29,Primeira Liga,Fc Porto - Sporting Lisbona,gg,NG,2.1,eurobet,26,2026-11-28T18:30:49
+2026-11-30,Primeira Liga,Benfica - Famalicao,gg,GG,2.17,fastbet,39,2026-11-28T18:30:49
+2026-11-30,Primeira Liga,Benfica - Famalicao,gg,NG,1.7,betpassion,39,2026-11-28T18:30:49
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,GG,2.15,goldbet,25,2026-11-28T18:30:49
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,gg,NG,1.7,sunbet,25,2026-11-28T18:30:49
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,gg,GG,4.3,leovegas,3,2026-11-28T18:30:49
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,gg,NG,1.14,leovegas,3,2026-11-28T18:30:49
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,gg,GG,1.68,leovegas,12,2026-11-28T18:30:49
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,gg,NG,2.2,eplay24,12,2026-11-28T18:30:49
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,gg,GG,4.3,leovegas,3,2026-11-28T18:30:49
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,gg,NG,1.14,leovegas,3,2026-11-28T18:30:49
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,gg,GG,4.7,leovegas,3,2026-11-28T18:30:49
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,gg,NG,1.11,leovegas,3,2026-11-28T18:30:49
+2026-12-04,Primeira Liga,Sporting Lisbona - Marítimo Funchal,gg,GG,4.6,leovegas,3,2026-11-28T18:30:49
+2026-12-04,Primeira Liga,Sporting Lisbona - Marítimo Funchal,gg,NG,1.12,leovegas,3,2026-11-28T18:30:49
+2026-12-05,Primeira Liga,Nacional Madeira - Benfica,gg,GG,4.4,leovegas,3,2026-11-28T18:30:49
+2026-12-05,Primeira Liga,Nacional Madeira - Benfica,gg,NG,1.13,leovegas,3,2026-11-28T18:30:49
+2026-12-05,Primeira Liga,Santa Clara - FC Porto,gg,GG,2.12,leovegas,3,2026-11-28T18:30:49
+2026-12-05,Primeira Liga,Santa Clara - FC Porto,gg,NG,1.62,leovegas,3,2026-11-28T18:30:49
+2026-11-28,Primeira Liga,VITORIA GUIMARAES - ESTRELA,gg,GG,2.9,fastbet,2,2026-11-28T18:30:49
+2026-11-28,Primeira Liga,VITORIA GUIMARAES - ESTRELA,gg,NG,1.34,fastbet,2,2026-11-28T18:30:49
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,2.5,O2.5,1.65,sunbet,26,2026-11-28T18:30:50
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,2.5,U2.5,2.21,sunbet,26,2026-11-28T18:30:50
+2026-11-29,Primeira Liga,Fc Porto - Sporting Lisbona,2.5,O2.5,1.9,leovegas,26,2026-11-28T18:30:50
+2026-11-29,Primeira Liga,Fc Porto - Sporting Lisbona,2.5,U2.5,1.95,sunbet,26,2026-11-28T18:30:50
+2026-11-30,Primeira Liga,Benfica - Famalicao,2.5,O2.5,1.46,fastbet,39,2026-11-28T18:30:50
+2026-11-30,Primeira Liga,Benfica - Famalicao,2.5,U2.5,2.75,leovegas,39,2026-11-28T18:30:50
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,2.5,O2.5,1.93,goldbet,25,2026-11-28T18:30:50
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,2.5,U2.5,1.85,sunbet,25,2026-11-28T18:30:50
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,2.5,O2.5,1.96,leovegas,14,2026-11-28T18:30:50
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,2.5,U2.5,1.83,betpassion,14,2026-11-28T18:30:50
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,2.5,O2.5,1.68,leovegas,12,2026-11-28T18:30:50
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,2.5,U2.5,2.18,eplay24,12,2026-11-28T18:30:50
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,2.5,O2.5,2.75,leovegas,25,2026-11-28T18:30:50
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,2.5,U2.5,1.45,daznbet,25,2026-11-28T18:30:50
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,1,1.87,sunbet,26,2026-11-28T18:30:51
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,X,3.8,sunbet,26,2026-11-28T18:30:51
+2026-11-28,Primeira Liga,Vitoria Guimaraes - Estrela Amadora,1x2,2,4.05,goldbet,26,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,Fc Porto - Sporting Lisbona,1x2,1,1.94,sunbet,27,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,Fc Porto - Sporting Lisbona,1x2,X,3.45,sunbet,27,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,Fc Porto - Sporting Lisbona,1x2,2,4.3,goldbet,27,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,1,1.19,sunbet,40,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,X,7.5,goldbet,40,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Benfica - Famalicao,1x2,2,14.0,fastbet,40,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,1,6.8,sunbet,26,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,X,4.3,sunbet,26,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia Lisbona - Sporting Braga,1x2,2,1.5,betpassion,26,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,1,1.81,eplay24,14,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,X,3.65,betpassion,14,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,Gil Vicente - Estoril,1x2,2,4.25,betpassion,14,2026-11-28T18:30:51
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,1x2,1,1.83,fastbet,12,2026-11-28T18:30:51
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,1x2,X,3.75,eplay24,12,2026-11-28T18:30:51
+2026-11-28,Primeira Liga,Vitoria Guimarães - CF Estrela,1x2,2,4.35,eplay24,12,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,1x2,1,2.28,sunbet,19,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,1x2,X,2.6,sunbet,19,2026-11-28T18:30:51
+2026-11-29,Primeira Liga,FC Porto - Sporting Lisbona,1x2,2,4.0,leovegas,19,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Benfica - Famalicão,1x2,1,1.44,sunbet,28,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Benfica - Famalicão,1x2,X,3.75,leovegas,28,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Benfica - Famalicão,1x2,2,10.5,fastbet,28,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,1x2,1,6.1,leovegas,3,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,1x2,X,2.33,leovegas,3,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia - S.C. Braga,1x2,2,1.86,leovegas,3,2026-11-28T18:30:51
+2026-12-04,Primeira Liga,Sporting Lisbona - Marítimo Funchal,1x2,1,1.4,leovegas,3,2026-11-28T18:30:51
+2026-12-04,Primeira Liga,Sporting Lisbona - Marítimo Funchal,1x2,X,3.2,leovegas,3,2026-11-28T18:30:51
+2026-12-04,Primeira Liga,Sporting Lisbona - Marítimo Funchal,1x2,2,10.0,leovegas,3,2026-11-28T18:30:51
+2026-12-05,Primeira Liga,Nacional Madeira - Benfica,1x2,1,11.0,leovegas,3,2026-11-28T18:30:51
+2026-12-05,Primeira Liga,Nacional Madeira - Benfica,1x2,X,4.35,leovegas,3,2026-11-28T18:30:51
+2026-12-05,Primeira Liga,Nacional Madeira - Benfica,1x2,2,1.28,leovegas,3,2026-11-28T18:30:51
+2026-12-05,Primeira Liga,Santa Clara - FC Porto,1x2,1,6.0,leovegas,3,2026-11-28T18:30:51
+2026-12-05,Primeira Liga,Santa Clara - FC Porto,1x2,X,2.65,leovegas,3,2026-11-28T18:30:51
+2026-12-05,Primeira Liga,Santa Clara - FC Porto,1x2,2,1.79,leovegas,3,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,1,6.8,sunbet,18,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,X,2.34,sunbet,18,2026-11-28T18:30:51
+2026-11-30,Primeira Liga,Casa Pia Lisbona-Sporting Braga,1x2,2,2.06,betpassion,18,2026-11-28T18:30:51
