@@ -1,6 +1,6 @@
 sezione,data,tipo,lega,partita,mercato,esito,p_modello%,quota_best,EV%,stake%,risultato,vinto
 giocata,2026-11-28,SINGOLA,Serie B,Vicenza - Cesena,1X2,2,47.3,2.65,25.34,1.25,,
-giocata,2026-11-28,RADDOPPIO,Eredivisie + LaLiga,Betis - Vallecano [GG GG] + PSV Eindhoven - Go Ahead Eagles [GG GG],GG/GG,GG/GG,40.5,2.58,4.32,0.0,,
+giocata,2026-11-28,RADDOPPIO,Eredivisie + LaLiga,Betis - Vallecano [GG GG] + PSV Eindhoven - Go Ahead Eagles [GG GG],GG/GG,GG/GG,40.5,2.54,3.0,0.0,,
 giocata,2026-11-29,SINGOLA,Serie B,Modena - Padova,U2.5,Under 2.5,61.3,1.9,16.47,1.26,,
 giocata,2026-11-29,RADDOPPIO,Eredivisie + Serie B,Arezzo - Pisa [GG GG] + Nijmegen - Twente [GG GG],GG/GG,GG/GG,41.2,2.51,3.3,0.0,,
 giocata,2026-11-30,SINGOLA,Serie B,Catanzaro - Avellino,GG,GG,61.5,1.64,0.86,0.0,,
@@ -8,8 +8,8 @@ giocata,2026-12-01,SINGOLA,Premier League,Coventry - Ipswich,O2.5,Over 2.5,52.6,
 giocata,2026-12-02,SINGOLA,Premier League,Aston Villa - Everton,O2.5,Over 2.5,54.9,2.22,21.88,1.28,,
 giocata,2026-12-02,RADDOPPIO,LaLiga + Premier League,Liverpool - Sunderland [NG NG] + Sociedad - Real Madrid [GG GG],NG/GG,NG/GG,33.2,3.08,2.24,0.0,,
 giocata,2026-12-03,SINGOLA,Premier League,Tottenham - Fulham,O2.5,Over 2.5,48.5,2.14,3.79,0.0,,
-giocata,2026-12-04,SINGOLA,Ligue 2,Dijon - Sochaux,O2.5,Over 2.5,56.8,2.01,14.17,0.02,,
-giocata,2026-12-04,RADDOPPIO,Eredivisie + Ligue 2,Telstar - Groningen [GG GG] + Dijon - Sochaux [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,35.8,2.83,1.54,0.0,,
+giocata,2026-12-04,SINGOLA,Ligue 2,Dijon - Sochaux,O2.5,Over 2.5,56.8,2.04,15.87,0.38,,
+giocata,2026-12-04,RADDOPPIO,Eredivisie + Ligue 2,Telstar - Groningen [GG GG] + Dijon - Sochaux [O2.5 Over 2.5],GG/O2.5,GG/Over 2.5,35.8,2.88,3.06,0.0,,
 giocata,2026-12-05,SINGOLA,Bundesliga,Freiburg - Hoffenheim,1X2,1,55.8,2.18,21.64,1.34,,
 giocata,2026-12-05,RADDOPPIO,Bundesliga + Serie B,Augsburg - FC Koln [GG GG] + Modena - Arezzo [1X2 1],GG/1X2,GG/1,51.7,1.97,2.15,0.0,,
 verifica,2026-11-03,SINGOLA,Champions League,Villarreal - Paris SG,O2.5,Over 2.5,88.7,1.43,,,0-6 (6 gol),✅
