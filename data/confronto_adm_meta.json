@@ -1,30 +1,36 @@
 {
- "aggiornato": "2026-11-27T22:20:12",
+ "aggiornato": "2026-11-28T07:08:11",
  "stato": "nessuna_corrispondenza",
  "giocate_non_coperte": 8,
  "diagnosi": {
   "date_giocate": [
-   "2026-11-27",
    "2026-11-28",
    "2026-11-29",
    "2026-11-30",
    "2026-12-01",
    "2026-12-02",
    "2026-12-03",
-   "2026-12-04"
+   "2026-12-04",
+   "2026-12-05"
   ],
   "date_quote_adm": [
    "2026-11-28",
-   "2026-11-29"
+   "2026-11-29",
+   "2026-12-04",
+   "2026-12-05",
+   "2026-12-06"
   ],
   "date_in_comune": [
    "2026-11-28",
-   "2026-11-29"
+   "2026-11-29",
+   "2026-12-04",
+   "2026-12-05"
   ],
   "mercati_giocate": [
    "1x2",
    "gg",
-   "o2.5"
+   "o2.5",
+   "u2.5"
   ],
   "mercati_adm": [
    "1x2",
@@ -32,14 +38,9 @@
    "gg"
   ],
   "leghe_adm": [
-   "England - Isthmian Premier League",
-   "England - Northern Premier League",
-   "England - Southern Premier League Central",
-   "England - Southern Premier League South",
-   "Ethiopia - Premier League",
-   "Premier League"
+   "Eredivisie"
   ],
-  "giocate_su_date_coperte": 2,
-  "causa_probabile": "COPERTURA TROPPO STRETTA: le quote ADM coprono solo 2 data/e (2026-11-28, 2026-11-29) su 8 date di giocate. Il confronto puo' avvenire solo nei giorni in cui l'API restituisce quote delle nostre leghe. Aumentare le richieste non serve: serve che le leghe ruotate abbiano partite nelle date coperte."
+  "giocate_su_date_coperte": 4,
+  "causa_probabile": "NOMI O ABBINAMENTO: date e mercati in comune e giocate presenti, ma nessuna partita agganciata → probabile differenza di denominazione squadre."
  }
 }
